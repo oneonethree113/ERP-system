@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MSR00036_container" targetNamespace="http://tempuri.org/MSR00036_container.xsd" xmlns:mstns="http://tempuri.org/MSR00036_container.xsd" xmlns="http://tempuri.org/MSR00036_container.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MSR00036_container" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="MSR00036_container" msprop:Generator_UserDSName="MSR00036_container" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MSR00036_container" msprop:Generator_UserTableName="MSR00036_container" msprop:Generator_RowDeletedName="MSR00036_containerRowDeleted" msprop:Generator_TableClassName="MSR00036_containerDataTable" msprop:Generator_RowChangedName="MSR00036_containerRowChanged" msprop:Generator_RowClassName="MSR00036_containerRow" msprop:Generator_RowChangingName="MSR00036_containerRowChanging" msprop:Generator_RowEvArgName="MSR00036_containerRowChangeEvent" msprop:Generator_RowEvHandlerName="MSR00036_containerRowChangeEventHandler" msprop:Generator_TablePropName="_MSR00036_container" msprop:Generator_TableVarName="tableMSR00036_container" msprop:Generator_RowDeletingName="MSR00036_containerRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Primary_x0020_Customer" msprop:Generator_UserColumnName="Primary Customer" msprop:Generator_ColumnPropNameInRow="Primary_Customer" msprop:Generator_ColumnVarNameInTable="columnPrimary_Customer" msprop:Generator_ColumnPropNameInTable="Primary_CustomerColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Secondary_x0020_Customer" msprop:Generator_UserColumnName="Secondary Customer" msprop:Generator_ColumnPropNameInRow="Secondary_Customer" msprop:Generator_ColumnVarNameInTable="columnSecondary_Customer" msprop:Generator_ColumnPropNameInTable="Secondary_CustomerColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Container_x0020_Size" msprop:Generator_UserColumnName="Container Size" msprop:Generator_ColumnPropNameInRow="Container_Size" msprop:Generator_ColumnVarNameInTable="columnContainer_Size" msprop:Generator_ColumnPropNameInTable="Container_SizeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Total_x0020_CBM" msprop:Generator_UserColumnName="Total CBM" msprop:Generator_ColumnPropNameInRow="Total_CBM" msprop:Generator_ColumnVarNameInTable="columnTotal_CBM" msprop:Generator_ColumnPropNameInTable="Total_CBMColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="No_x0020_of_x0020_Container" msprop:Generator_UserColumnName="No of Container" msprop:Generator_ColumnPropNameInRow="No_of_Container" msprop:Generator_ColumnVarNameInTable="columnNo_of_Container" msprop:Generator_ColumnPropNameInTable="No_of_ContainerColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="No_x0020_of_x0020_Invoice" msprop:Generator_UserColumnName="No of Invoice" msprop:Generator_ColumnPropNameInRow="No_of_Invoice" msprop:Generator_ColumnVarNameInTable="columnNo_of_Invoice" msprop:Generator_ColumnPropNameInTable="No_of_InvoiceColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ETDFrom" msprop:Generator_UserColumnName="ETDFrom" msprop:Generator_ColumnPropNameInRow="ETDFrom" msprop:Generator_ColumnVarNameInTable="columnETDFrom" msprop:Generator_ColumnPropNameInTable="ETDFromColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ETDTo" msprop:Generator_UserColumnName="ETDTo" msprop:Generator_ColumnPropNameInRow="ETDTo" msprop:Generator_ColumnVarNameInTable="columnETDTo" msprop:Generator_ColumnPropNameInTable="ETDToColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="COMPNAME" msprop:Generator_UserColumnName="COMPNAME" msprop:Generator_ColumnPropNameInRow="COMPNAME" msprop:Generator_ColumnVarNameInTable="columnCOMPNAME" msprop:Generator_ColumnPropNameInTable="COMPNAMEColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

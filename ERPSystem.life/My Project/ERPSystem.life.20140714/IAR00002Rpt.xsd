@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsIAR00002Rpt" targetNamespace="http://tempuri.org/IAR00002Rpt.xsd" xmlns:mstns="http://tempuri.org/IAR00002Rpt.xsd" xmlns="http://tempuri.org/IAR00002Rpt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsIAR00002Rpt" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsIAR00002Rpt" msprop:Generator_DataSetName="dsIAR00002Rpt" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="IAR00002" msprop:Generator_UserTableName="IAR00002" msprop:Generator_RowDeletedName="IAR00002RowDeleted" msprop:Generator_RowChangedName="IAR00002RowChanged" msprop:Generator_RowClassName="IAR00002Row" msprop:Generator_RowChangingName="IAR00002RowChanging" msprop:Generator_RowEvArgName="IAR00002RowChangeEvent" msprop:Generator_RowEvHandlerName="IAR00002RowChangeEventHandler" msprop:Generator_TableClassName="IAR00002DataTable" msprop:Generator_TableVarName="tableIAR00002" msprop:Generator_RowDeletingName="IAR00002RowDeleting" msprop:Generator_TablePropName="IAR00002">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ibi_itmno" msprop:Generator_UserColumnName="ibi_itmno" msprop:Generator_ColumnVarNameInTable="columnibi_itmno" msprop:Generator_ColumnPropNameInRow="ibi_itmno" msprop:Generator_ColumnPropNameInTable="ibi_itmnoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ipi_pckseq" msprop:Generator_UserColumnName="ipi_pckseq" msprop:Generator_ColumnVarNameInTable="columnipi_pckseq" msprop:Generator_ColumnPropNameInRow="ipi_pckseq" msprop:Generator_ColumnPropNameInTable="ipi_pckseqColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ipi_pckunt" msprop:Generator_UserColumnName="ipi_pckunt" msprop:Generator_ColumnVarNameInTable="columnipi_pckunt" msprop:Generator_ColumnPropNameInRow="ipi_pckunt" msprop:Generator_ColumnPropNameInTable="ipi_pckuntColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="imu_ftyprc" msprop:Generator_UserColumnName="imu_ftyprc" msprop:Generator_ColumnVarNameInTable="columnimu_ftyprc" msprop:Generator_ColumnPropNameInRow="imu_ftyprc" msprop:Generator_ColumnPropNameInTable="imu_ftyprcColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="imu_basprc" msprop:Generator_UserColumnName="imu_basprc" msprop:Generator_ColumnVarNameInTable="columnimu_basprc" msprop:Generator_ColumnPropNameInRow="imu_basprc" msprop:Generator_ColumnPropNameInTable="imu_basprcColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ipi_credat" msprop:Generator_UserColumnName="ipi_credat" msprop:Generator_ColumnVarNameInTable="columnipi_credat" msprop:Generator_ColumnPropNameInRow="ipi_credat" msprop:Generator_ColumnPropNameInTable="ipi_credatColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="beforepacking" msprop:Generator_UserColumnName="beforepacking" msprop:Generator_ColumnVarNameInTable="columnbeforepacking" msprop:Generator_ColumnPropNameInRow="beforepacking" msprop:Generator_ColumnPropNameInTable="beforepackingColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="afterpacking" msprop:Generator_UserColumnName="afterpacking" msprop:Generator_ColumnVarNameInTable="columnafterpacking" msprop:Generator_ColumnPropNameInRow="afterpacking" msprop:Generator_ColumnPropNameInTable="afterpackingColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="beforeftyprc" msprop:Generator_UserColumnName="beforeftyprc" msprop:Generator_ColumnVarNameInTable="columnbeforeftyprc" msprop:Generator_ColumnPropNameInRow="beforeftyprc" msprop:Generator_ColumnPropNameInTable="beforeftyprcColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="afterftyprc" msprop:Generator_UserColumnName="afterftyprc" msprop:Generator_ColumnVarNameInTable="columnafterftyprc" msprop:Generator_ColumnPropNameInRow="afterftyprc" msprop:Generator_ColumnPropNameInTable="afterftyprcColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="yfi_prcfml" msprop:Generator_UserColumnName="yfi_prcfml" msprop:Generator_ColumnVarNameInTable="columnyfi_prcfml" msprop:Generator_ColumnPropNameInRow="yfi_prcfml" msprop:Generator_ColumnPropNameInTable="yfi_prcfmlColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ibi_engdsc" msprop:Generator_UserColumnName="ibi_engdsc" msprop:Generator_ColumnVarNameInTable="columnibi_engdsc" msprop:Generator_ColumnPropNameInRow="ibi_engdsc" msprop:Generator_ColumnPropNameInTable="ibi_engdscColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="existflag" msprop:Generator_UserColumnName="existflag" msprop:Generator_ColumnVarNameInTable="columnexistflag" msprop:Generator_ColumnPropNameInRow="existflag" msprop:Generator_ColumnPropNameInTable="existflagColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ibi_cocde" msprop:Generator_UserColumnName="ibi_cocde" msprop:Generator_ColumnVarNameInTable="columnibi_cocde" msprop:Generator_ColumnPropNameInRow="ibi_cocde" msprop:Generator_ColumnPropNameInTable="ibi_cocdeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ivi_venitm" msprop:Generator_UserColumnName="ivi_venitm" msprop:Generator_ColumnVarNameInTable="columnivi_venitm" msprop:Generator_ColumnPropNameInRow="ivi_venitm" msprop:Generator_ColumnPropNameInTable="ivi_venitmColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="compName" msprop:Generator_UserColumnName="compName" msprop:Generator_ColumnVarNameInTable="columncompName" msprop:Generator_ColumnPropNameInRow="compName" msprop:Generator_ColumnPropNameInTable="compNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="imu_cus1no" msprop:Generator_UserColumnName="imu_cus1no" msprop:Generator_ColumnPropNameInRow="imu_cus1no" msprop:Generator_ColumnVarNameInTable="columnimu_cus1no" msprop:Generator_ColumnPropNameInTable="imu_cus1noColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="imu_cus2no" msprop:Generator_UserColumnName="imu_cus2no" msprop:Generator_ColumnPropNameInRow="imu_cus2no" msprop:Generator_ColumnVarNameInTable="columnimu_cus2no" msprop:Generator_ColumnPropNameInTable="imu_cus2noColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="mpr00002" msprop:Generator_UserTableName="mpr00002" msprop:Generator_RowDeletedName="mpr00002RowDeleted" msprop:Generator_RowChangedName="mpr00002RowChanged" msprop:Generator_RowClassName="mpr00002Row" msprop:Generator_RowChangingName="mpr00002RowChanging" msprop:Generator_RowEvArgName="mpr00002RowChangeEvent" msprop:Generator_RowEvHandlerName="mpr00002RowChangeEventHandler" msprop:Generator_TableClassName="mpr00002DataTable" msprop:Generator_TableVarName="tablempr00002" msprop:Generator_RowDeletingName="mpr00002RowDeleting" msprop:Generator_TablePropName="mpr00002">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Mph_MPONO" msprop:Generator_UserColumnName="Mph_MPONO" msprop:Generator_ColumnVarNameInTable="columnMph_MPONO" msprop:Generator_ColumnPropNameInRow="Mph_MPONO" msprop:Generator_ColumnPropNameInTable="Mph_MPONOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mph_VenNo" msprop:Generator_UserColumnName="Mph_VenNo" msprop:Generator_ColumnPropNameInRow="Mph_VenNo" msprop:Generator_ColumnVarNameInTable="columnMph_VenNo" msprop:Generator_ColumnPropNameInTable="Mph_VenNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="vbi_vennam" msprop:Generator_UserColumnName="vbi_vennam" msprop:Generator_ColumnPropNameInRow="vbi_vennam" msprop:Generator_ColumnVarNameInTable="columnvbi_vennam" msprop:Generator_ColumnPropNameInTable="vbi_vennamColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mph_ImpFty" msprop:Generator_UserColumnName="Mph_ImpFty" msprop:Generator_ColumnPropNameInRow="Mph_ImpFty" msprop:Generator_ColumnVarNameInTable="columnMph_ImpFty" msprop:Generator_ColumnPropNameInTable="Mph_ImpFtyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Gvi_VenNam" msprop:Generator_UserColumnName="Gvi_VenNam" msprop:Generator_ColumnPropNameInRow="Gvi_VenNam" msprop:Generator_ColumnVarNameInTable="columnGvi_VenNam" msprop:Generator_ColumnPropNameInTable="Gvi_VenNamColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Gvi_EngNam" msprop:Generator_UserColumnName="Gvi_EngNam" msprop:Generator_ColumnPropNameInRow="Gvi_EngNam" msprop:Generator_ColumnVarNameInTable="columnGvi_EngNam" msprop:Generator_ColumnPropNameInTable="Gvi_EngNamColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Gvi_VenAddr" msprop:Generator_UserColumnName="Gvi_VenAddr" msprop:Generator_ColumnPropNameInRow="Gvi_VenAddr" msprop:Generator_ColumnVarNameInTable="columnGvi_VenAddr" msprop:Generator_ColumnPropNameInTable="Gvi_VenAddrColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Gvi_EngAddr" msprop:Generator_UserColumnName="Gvi_EngAddr" msprop:Generator_ColumnPropNameInRow="Gvi_EngAddr" msprop:Generator_ColumnVarNameInTable="columnGvi_EngAddr" msprop:Generator_ColumnPropNameInTable="Gvi_EngAddrColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Gvi_Tel1" msprop:Generator_UserColumnName="Gvi_Tel1" msprop:Generator_ColumnPropNameInRow="Gvi_Tel1" msprop:Generator_ColumnVarNameInTable="columnGvi_Tel1" msprop:Generator_ColumnPropNameInTable="Gvi_Tel1Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Gvi_Tel2" msprop:Generator_UserColumnName="Gvi_Tel2" msprop:Generator_ColumnPropNameInRow="Gvi_Tel2" msprop:Generator_ColumnVarNameInTable="columnGvi_Tel2" msprop:Generator_ColumnPropNameInTable="Gvi_Tel2Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Gvi_Fax" msprop:Generator_UserColumnName="Gvi_Fax" msprop:Generator_ColumnPropNameInRow="Gvi_Fax" msprop:Generator_ColumnVarNameInTable="columnGvi_Fax" msprop:Generator_ColumnPropNameInTable="Gvi_FaxColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Gvi_TLX" msprop:Generator_UserColumnName="Gvi_TLX" msprop:Generator_ColumnPropNameInRow="Gvi_TLX" msprop:Generator_ColumnVarNameInTable="columnGvi_TLX" msprop:Generator_ColumnPropNameInTable="Gvi_TLXColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mph_Curr" msprop:Generator_UserColumnName="Mph_Curr" msprop:Generator_ColumnPropNameInRow="Mph_Curr" msprop:Generator_ColumnVarNameInTable="columnMph_Curr" msprop:Generator_ColumnPropNameInTable="Mph_CurrColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mph_ShpPlc" msprop:Generator_UserColumnName="Mph_ShpPlc" msprop:Generator_ColumnPropNameInRow="Mph_ShpPlc" msprop:Generator_ColumnVarNameInTable="columnMph_ShpPlc" msprop:Generator_ColumnPropNameInTable="Mph_ShpPlcColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mph_rmk" msprop:Generator_UserColumnName="Mph_rmk" msprop:Generator_ColumnPropNameInRow="Mph_rmk" msprop:Generator_ColumnVarNameInTable="columnMph_rmk" msprop:Generator_ColumnPropNameInTable="Mph_rmkColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mph_VenAdr" msprop:Generator_UserColumnName="Mph_VenAdr" msprop:Generator_ColumnPropNameInRow="Mph_VenAdr" msprop:Generator_ColumnVarNameInTable="columnMph_VenAdr" msprop:Generator_ColumnPropNameInTable="Mph_VenAdrColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mph_VenStt" msprop:Generator_UserColumnName="Mph_VenStt" msprop:Generator_ColumnPropNameInRow="Mph_VenStt" msprop:Generator_ColumnVarNameInTable="columnMph_VenStt" msprop:Generator_ColumnPropNameInTable="Mph_VenSttColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mph_VenCty" msprop:Generator_UserColumnName="Mph_VenCty" msprop:Generator_ColumnPropNameInRow="Mph_VenCty" msprop:Generator_ColumnVarNameInTable="columnMph_VenCty" msprop:Generator_ColumnPropNameInTable="Mph_VenCtyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ysi_dsc" msprop:Generator_UserColumnName="ysi_dsc" msprop:Generator_ColumnPropNameInRow="ysi_dsc" msprop:Generator_ColumnVarNameInTable="columnysi_dsc" msprop:Generator_ColumnPropNameInTable="ysi_dscColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mph_VenPst" msprop:Generator_UserColumnName="Mph_VenPst" msprop:Generator_ColumnPropNameInRow="Mph_VenPst" msprop:Generator_ColumnVarNameInTable="columnMph_VenPst" msprop:Generator_ColumnPropNameInTable="Mph_VenPstColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mph_MporCtp" msprop:Generator_UserColumnName="Mph_MporCtp" msprop:Generator_ColumnPropNameInRow="Mph_MporCtp" msprop:Generator_ColumnVarNameInTable="columnMph_MporCtp" msprop:Generator_ColumnPropNameInTable="Mph_MporCtpColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mph_DisCnt" msprop:Generator_UserColumnName="Mph_DisCnt" msprop:Generator_ColumnPropNameInRow="Mph_DisCnt" msprop:Generator_ColumnVarNameInTable="columnMph_DisCnt" msprop:Generator_ColumnPropNameInTable="Mph_DisCntColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mph_ShpAdr" msprop:Generator_UserColumnName="Mph_ShpAdr" msprop:Generator_ColumnPropNameInRow="Mph_ShpAdr" msprop:Generator_ColumnVarNameInTable="columnMph_ShpAdr" msprop:Generator_ColumnPropNameInTable="Mph_ShpAdrColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mph_CreDat" msprop:Generator_UserColumnName="Mph_CreDat" msprop:Generator_ColumnPropNameInRow="Mph_CreDat" msprop:Generator_ColumnVarNameInTable="columnMph_CreDat" msprop:Generator_ColumnPropNameInTable="Mph_CreDatColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mph_UpdDat" msprop:Generator_UserColumnName="Mph_UpdDat" msprop:Generator_ColumnPropNameInRow="Mph_UpdDat" msprop:Generator_ColumnVarNameInTable="columnMph_UpdDat" msprop:Generator_ColumnPropNameInTable="Mph_UpdDatColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mpd_ItmNo" msprop:Generator_UserColumnName="Mpd_ItmNo" msprop:Generator_ColumnVarNameInTable="columnMpd_ItmNo" msprop:Generator_ColumnPropNameInRow="Mpd_ItmNo" msprop:Generator_ColumnPropNameInTable="Mpd_ItmNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mpd_VenItm" msprop:Generator_UserColumnName="Mpd_VenItm" msprop:Generator_ColumnVarNameInTable="columnMpd_VenItm" msprop:Generator_ColumnPropNameInRow="Mpd_VenItm" msprop:Generator_ColumnPropNameInTable="Mpd_VenItmColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mpd_ItmNam" msprop:Generator_UserColumnName="Mpd_ItmNam" msprop:Generator_ColumnVarNameInTable="columnMpd_ItmNam" msprop:Generator_ColumnPropNameInRow="Mpd_ItmNam" msprop:Generator_ColumnPropNameInTable="Mpd_ItmNamColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mpd_UM" msprop:Generator_UserColumnName="Mpd_UM" msprop:Generator_ColumnVarNameInTable="columnMpd_UM" msprop:Generator_ColumnPropNameInRow="Mpd_UM" msprop:Generator_ColumnPropNameInTable="Mpd_UMColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="detailinfo" msprop:Generator_UserColumnName="detailinfo" msprop:Generator_ColumnVarNameInTable="columndetailinfo" msprop:Generator_ColumnPropNameInRow="detailinfo" msprop:Generator_ColumnPropNameInTable="detailinfoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MPD_QTY" msprop:Generator_UserColumnName="MPD_QTY" msprop:Generator_ColumnVarNameInTable="columnMPD_QTY" msprop:Generator_ColumnPropNameInRow="MPD_QTY" msprop:Generator_ColumnPropNameInTable="MPD_QTYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Mpd_MinPrc" msprop:Generator_UserColumnName="Mpd_MinPrc" msprop:Generator_ColumnVarNameInTable="columnMpd_MinPrc" msprop:Generator_ColumnPropNameInRow="Mpd_MinPrc" msprop:Generator_ColumnPropNameInTable="Mpd_MinPrcColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="mpd_subamt" msprop:Generator_UserColumnName="mpd_subamt" msprop:Generator_ColumnVarNameInTable="columnmpd_subamt" msprop:Generator_ColumnPropNameInRow="mpd_subamt" msprop:Generator_ColumnPropNameInTable="mpd_subamtColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Mpd_ShpDat" msprop:Generator_UserColumnName="Mpd_ShpDat" msprop:Generator_ColumnVarNameInTable="columnMpd_ShpDat" msprop:Generator_ColumnPropNameInRow="Mpd_ShpDat" msprop:Generator_ColumnPropNameInTable="Mpd_ShpDatColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Revised_Flag" msprop:Generator_UserColumnName="Revised_Flag" msprop:Generator_ColumnVarNameInTable="columnRevised_Flag" msprop:Generator_ColumnPropNameInRow="Revised_Flag" msprop:Generator_ColumnPropNameInTable="Revised_FlagColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

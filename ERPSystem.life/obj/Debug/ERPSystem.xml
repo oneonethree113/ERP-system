@@ -1,0 +1,1418 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ERPSystem
+</name>
+</assembly>
+<members>
+<member name="F:ERPSystem.QUM00001.flag_cbopacking_keypress">
+20140129
+ 
+
+</member><member name="T:ERPSystem.dsIAR00001Rpt.IAR00001DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsIAR00001Rpt.IAR00001Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsIAR00001Rpt.IAR00001RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsIAR00001Rpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00013aRpt.IMR00013aDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00013aRpt.IMR00013aRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00013aRpt.IMR00013aRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsIMR00013aRpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00022.IMR00022RptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00022.IMR00022RptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00022.IMR00022RptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsIMR00022">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00033Rpt.IMR00033DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00033Rpt.IMR00033Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00033Rpt.IMR00033RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsIMR00033Rpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.DataSet2.MPR00003_pckDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet2.MPR00003_pckRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet2.MPR00003_pckRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet2">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.MSR00001ADS1.MSR00001ADataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.MSR00001ADS1.MSR00001ARow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.MSR00001ADS1.MSR00001ARowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.MSR00001ADS1">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsPKA00001.PKA00001DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsPKA00001.PKA00001Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsPKA00001.PKA00001RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsPKA00001">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00021.IMR00021RptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00021.IMR00021RptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00021.IMR00021RptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsIMR00021">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00002.MSR00002RptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00002.MSR00002RptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00002.MSR00002RptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsMSR00002">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00005_PDO.POR00005_PDODataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00005_PDO.POR00005_PDO_ShpDatDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00005_PDO.POR00005_PDO_AssortmentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00005_PDO.POR00005_PDO_AttchListDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00005_PDO.POR00005_PDO_AttachmentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00005_PDO.POR00005_PDORow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00005_PDO.POR00005_PDO_ShpDatRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00005_PDO.POR00005_PDO_AssortmentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00005_PDO.POR00005_PDO_AttchListRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00005_PDO.POR00005_PDO_AttachmentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00005_PDO.POR00005_PDORowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsPOR00005_PDO.POR00005_PDO_ShpDatRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsPOR00005_PDO.POR00005_PDO_AssortmentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsPOR00005_PDO.POR00005_PDO_AttchListRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsPOR00005_PDO.POR00005_PDO_AttachmentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsPOR00005_PDO">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.POR00005_shipmentReport.POR00005_shipmentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.POR00005_shipmentReport.POR00005_shipmentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.POR00005_shipmentReport.POR00005_shipmentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.POR00005_shipmentReport">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.DataSet9.SCR00002RptBDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet9.SCR00002RptBRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet9.SCR00002RptBRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet9">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00004Rpt.MSR00004DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00004Rpt.MSR00004Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00004Rpt.MSR00004RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsMSR00004Rpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00022.MSR00022RptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00022.MSR00022RptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00022.MSR00022RptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsMSR00022">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.PGM00007Rpt.PGM00007RptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.PGM00007Rpt.PGM00007_DisprmDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.PGM00007Rpt.PGM00007RptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.PGM00007Rpt.PGM00007_DisprmRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.PGM00007Rpt.PGM00007RptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.PGM00007Rpt.PGM00007_DisprmRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.PGM00007Rpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.POR00005Report.POR00005DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.POR00005Report.POR00005_assortmentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.POR00005Report.POR00005Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.POR00005Report.POR00005_assortmentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.POR00005Report.POR00005RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.POR00005Report.POR00005_assortmentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.POR00005Report">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.DataSet7.INR00011rptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet7.INR00011rptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet7.INR00011rptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet7">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00020.MSR00020RptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00020.MSR00020RptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00020.MSR00020RptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsMSR00020">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00018Rpt.IMR00018DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00018Rpt.IMR00018Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00018Rpt.IMR00018RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsIMR00018Rpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.DataSet14.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet14.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet14.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet14">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.DataSet3.MPR00003_invDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet3.MPR00003_invRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet3.MPR00003_invRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet3">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00019.MSR00019RptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00019.MSR00019RptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00019.MSR00019RptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsMSR00019">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.MSR00036_container.MSR00036_containerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.MSR00036_container.MSR00036_containerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.MSR00036_container.MSR00036_containerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.MSR00036_container">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="M:ERPSystem.PGM00009.txtBox_KeyPress_summary(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+</member><member name="T:ERPSystem.dsIMR00010Rpt.IMR00010DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00010Rpt.IMR00010Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00010Rpt.IMR00010RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsIMR00010Rpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00013dRpt.IMR00013dDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00013dRpt.IMR00013dRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00013dRpt.IMR00013dRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsIMR00013dRpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.DataSet4.MPR00003_custDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet4.MPR00003_custRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet4.MPR00003_custRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet4">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.DataSet18.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet18.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet18.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet18">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsINR00001A.INR00001ADataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsINR00001A.INR00001SUBDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsINR00001A.INR00001DPDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsINR00001A.INR00001DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsINR00001A.INR00001ARow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsINR00001A.INR00001SUBRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsINR00001A.INR00001DPRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsINR00001A.INR00001Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsINR00001A.INR00001ARowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsINR00001A.INR00001SUBRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsINR00001A.INR00001DPRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsINR00001A.INR00001RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsINR00001A">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.DataSet13.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet13.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet13.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet13">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00003.POR00003DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00003.POR00003Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00003.POR00003RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsPOR00003">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsSCR00003Rpt.SCR00003RptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsSCR00003Rpt.SCR00003RptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsSCR00003Rpt.SCR00003RptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsSCR00003Rpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.DataSet16.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet16.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet16.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet16">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.DataSet5.MPR00003_rptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet5.MPR00003_rptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet5.MPR00003_rptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet5">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.DataSet8.SCR00002RptADataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet8.SCR00002RptARow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet8.SCR00002RptARowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet8">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.DataSet1.mpr00002DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet1.mpr00002Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet1.mpr00002RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet1">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.QUR0000B.QUR0000BDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.QUR0000B.QUR0000BRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.QUR0000B.QUR0000BRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.QUR0000B">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.SAR00005Report.SAR00005DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.SAR00005Report.SAR00005Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.SAR00005Report.SAR00005RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.SAR00005Report">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsIAR00003Rpt.IAR00003DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsIAR00003Rpt.IAR00003Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsIAR00003Rpt.IAR00003RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsIAR00003Rpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="M:ERPSystem.modGlobalFunction.GetEMLINF(System.String,System.String,System.String,System.String)">
+	<summary>
+ ''''the below codes are added by Danny Yiu
+ </summary>
+	<remarks></remarks>
+</member><member name="T:ERPSystem.dsIMR00013cRpt.IMR00013cDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00013cRpt.IMR00013cRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00013cRpt.IMR00013cRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsIMR00013cRpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00033.MSR00033RptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00033.MSR00033RptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00033.MSR00033RptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsMSR00033">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsPKA00003.PKA00003DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsPKA00003.PKA00003Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsPKA00003.PKA00003RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsPKA00003">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.SAR00007Report.SAR00007DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.SAR00007Report.SAR00007Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.SAR00007Report.SAR00007RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.SAR00007Report">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsIAR00002SUBRpt.IAR00002SUBDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsIAR00002SUBRpt.IAR00002SUBRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsIAR00002SUBRpt.IAR00002SUBRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsIAR00002SUBRpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00005Rpt.IMR00005DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00005Rpt.IMR00005Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00005Rpt.IMR00005RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsIMR00005Rpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="P:ERPSystem.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:ERPSystem.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:ERPSystem.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:ERPSystem.DataSet10.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet10.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet10.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet10">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.MSR00009_container.MSR0009_containerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.MSR00009_container.MSR0009_containerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.MSR00009_container.MSR0009_containerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.MSR00009_container">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00031.MSR00031RptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00031.MSR00031RptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00031.MSR00031RptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsMSR00031">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.CLR00001Rpt2.CLR00001Rpt2DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.CLR00001Rpt2.CLR00001Rpt2Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.CLR00001Rpt2.CLR00001Rpt2RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.CLR00001Rpt2">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.MSR00027_container.MSR00027_containerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.MSR00027_container.MSR00027_containerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.MSR00027_container.MSR00027_containerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.MSR00027_container">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem._PKR00001A.INR00001SUBADataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem._PKR00001A.PKR00001DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem._PKR00001A.INR00001SUBARow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem._PKR00001A.PKR00001Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem._PKR00001A.INR00001SUBARowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem._PKR00001A.PKR00001RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem._PKR00001A">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.POR00005_assortmentReport.POR00005_assortmentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.POR00005_assortmentReport.POR00005_assortmentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.POR00005_assortmentReport.POR00005_assortmentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.POR00005_assortmentReport">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00006.POR00006DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00006.POR00006Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00006.POR00006RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsPOR00006">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsIAR00002Rpt.IAR00002DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsIAR00002Rpt.IAR00002Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsIAR00002Rpt.IAR00002RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsIAR00002Rpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.SHR00001_container.SHR00001_containerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.SHR00001_container.SHR00001_containerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.SHR00001_container.SHR00001_containerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.SHR00001_container">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00013bRpt.IMR00013bDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00013bRpt.IMR00013bRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00013bRpt.IMR00013bRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsIMR00013bRpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.DataSet12.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet12.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet12.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet12">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsPKA00002.PKA00002DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsPKA00002.PKA00002Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsPKA00002.PKA00002RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsPKA00002">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsPKR00001B.PKR00001BDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsPKR00001B.PKR00001BRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsPKR00001B.PKR00001BRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsPKR00001B">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.POR00005_cartonReport.POR00005_cartonDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.POR00005_cartonReport.POR00005_cartonRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.POR00005_cartonReport.POR00005_cartonRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.POR00005_cartonReport">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00004Rpt.IMR00004DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00004Rpt.IMR00004Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsIMR00004Rpt.IMR00004RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsIMR00004Rpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsINR00001B.INR00001BDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsINR00001B.INR00001B_CPTBKDDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsINR00001B.INR00001B_ASSORTDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsINR00001B.INR00001BRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsINR00001B.INR00001B_CPTBKDRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsINR00001B.INR00001B_ASSORTRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsINR00001B.INR00001BRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsINR00001B.INR00001B_CPTBKDRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsINR00001B.INR00001B_ASSORTRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsINR00001B">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.DataSet17.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet17.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet17.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet17">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00001Rpt.MSR00001DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00001Rpt.MSR00001Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00001Rpt.MSR00001RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsMSR00001Rpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00001.POR00001DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00001.POR00001_assortmentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00001.POR00001_cartonDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00001.POR00001_disprmDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00001.POR00001_shipmentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00001.POR00001Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00001.POR00001_assortmentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00001.POR00001_cartonRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00001.POR00001_disprmRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00001.POR00001_shipmentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsPOR00001.POR00001RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsPOR00001.POR00001_assortmentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsPOR00001.POR00001_cartonRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsPOR00001.POR00001_disprmRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsPOR00001.POR00001_shipmentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsPOR00001">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.QUR0000A.QUR0000ADataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.QUR0000A.QUR0000ASubDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.QUR0000A.QUR0000ARow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.QUR0000A.QUR0000ASubRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.QUR0000A.QUR0000ARowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.QUR0000A.QUR0000ASubRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.QUR0000A">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001_assortmentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001_shipmentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001_cartonDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001_disprmDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001_matbkdDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001_assortmentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001_shipmentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001_cartonRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001_disprmRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001_matbkdRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001_assortmentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001_shipmentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001_cartonRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001_disprmRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001.SCR00001_matbkdRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsSCR00001">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsSHR00010Rpt.SHR00010EDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsSHR00010Rpt.SHR00010ERow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsSHR00010Rpt.SHR00010ERowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsSHR00010Rpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.DataSet11.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet11.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet11.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet11">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.DataSet6.MSR00005rptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.DataSet6.MSR00005rptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.DataSet6.MSR00005rptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.DataSet6">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00012Rpt.MSR00012DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00012Rpt.MSR00012Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ERPSystem.dsMSR00012Rpt.MSR00012RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ERPSystem.dsMSR00012Rpt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+</members>
+</doc>

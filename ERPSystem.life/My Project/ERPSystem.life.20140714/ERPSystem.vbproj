@@ -1,0 +1,3439 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C018DBF9-4C54-45A9-A9F2-C3F1F44AA1DA}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>ERPSystem</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>ERPSystem</RootNamespace>
+    <StartupObject>ERPSystem.My.MyApplication</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsForms</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>7C62A327B7266D9C59E379971BDCC8382D000C43</ManifestCertificateThumbprint>
+    <ManifestKeyFile>ERPSystem_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <PublishUrl>C:\Documents and Settings\davidyue\Desktop\ERP EXE\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ERPSystem.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ERPSystem.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\Microsoft.NET\Primary Interop Assemblies\adodb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AxInterop.Microsoft.Vbe.Interop.Forms, Version=11.0.0.0, Culture=neutral" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.Vbe.Interop, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Vbe.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+      <Private>True</Private>
+    </Reference>
+    <COMReference Include="ADOR">
+      <Guid>{00000300-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxMSMask">
+      <Guid>{C932BA88-4374-101B-A56C-00AA003668DC}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+    </COMReference>
+    <COMReference Include="MSDataGridLib">
+      <Guid>{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MSDATASRC">
+      <Guid>{7C0FFAB0-CD84-11D0-949A-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="MSMask">
+      <Guid>{C932BA88-4374-101B-A56C-00AA003668DC}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+    </COMReference>
+    <COMReference Include="StdFormat">
+      <Guid>{6B263850-900B-11D0-9484-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Private>True</Private>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseTabControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BJR00001.designer.vb">
+      <DependentUpon>BJR00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BJR00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BOM00001.Designer.vb">
+      <DependentUpon>BOM00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BOM00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BOR00001.Designer.vb">
+      <DependentUpon>BOR00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BOR00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLM00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLM00002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLM00005.Designer.vb">
+      <DependentUpon>CLM00005.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CLM00005.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLR00001.designer.vb">
+      <DependentUpon>CLR00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CLR00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLR00001Rpt.vb">
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CLR00001Rpt.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="CLR00001Rpt2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CLR00001Rpt2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CLR00002.designer.vb">
+      <DependentUpon>CLR00002.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CLR00002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLR00003.designer.vb">
+      <DependentUpon>CLR00003.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CLR00003.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COR00001.designer.vb">
+      <DependentUpon>COR00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="COR00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CUM00001.designer.vb">
+      <DependentUpon>CUM00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CUM00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CUM00002.Designer.vb">
+      <DependentUpon>CUM00002.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CUM00002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CUM00003.designer.vb">
+      <DependentUpon>CUM00003.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CUM00003.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CUM00004.Designer.vb">
+      <DependentUpon>CUM00004.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CUM00004.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ERP00002.Designer.vb">
+      <DependentUpon>ERP00002.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ERP00002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAttchUpload.Designer.vb">
+      <DependentUpon>frmAttchUpload.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAttchUpload.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCopyQut.designer.vb">
+      <DependentUpon>frmCopyQut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCopyQut.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrtSel_G.Designer.vb">
+      <DependentUpon>frmCrtSel_G.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrtSel_G.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImgPrevw.Designer.vb">
+      <DependentUpon>frmImgPrevw.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmImgPrevw.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmItemList.Designer.vb">
+      <DependentUpon>frmItemList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmItemList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPOAss.Designer.vb">
+      <DependentUpon>frmPOAss.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPOAss.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPOBom.Designer.vb">
+      <DependentUpon>frmPOBom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPOBom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPOCarton.Designer.vb">
+      <DependentUpon>frmPOCarton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPOCarton.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPOShip.Designer.vb">
+      <DependentUpon>frmPOShip.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPOShip.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQut.designer.vb">
+      <DependentUpon>frmQut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQut.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQutUpdItm.designer.vb">
+      <DependentUpon>frmQutUpdItm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQutUpdItm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRenewQuot.designer.vb">
+      <DependentUpon>frmRenewQuot.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRenewQuot.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTY00001.designer.vb">
+      <DependentUpon>FTY00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FTY00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTY00004.designer.vb">
+      <DependentUpon>FTY00004.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FTY00004.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00009.Designer.vb">
+      <DependentUpon>IMR00009.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00009.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00010.Designer.vb">
+      <DependentUpon>IMR00010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00010Rpt.vb">
+      <DependentUpon>IMR00010Rpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IMR00010Rpt1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00010Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00013.designer.vb">
+      <DependentUpon>IMR00013.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00013.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00013aRpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00013aRpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00013aRpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00013aRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IMR00013bRpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00013bRpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00013bRpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00013bRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IMR00013cRpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00013cRpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00013cRpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00013cRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IMR00013dRpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00013dRpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00013dRpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00013dRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IMR00019.designer.vb">
+      <DependentUpon>IMR00019.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00019.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00021.designer.vb">
+      <DependentUpon>IMR00021.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00021.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR000211.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00021.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00021Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00021Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IMR00022.designer.vb">
+      <DependentUpon>IMR00022.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00022.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR000221.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00022.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00023.designer.vb">
+      <DependentUpon>IMR00023.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00023.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00024.Designer.vb">
+      <DependentUpon>IMR00024.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00024.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00025.Designer.vb">
+      <DependentUpon>IMR00025.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00025.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00027.designer.vb">
+      <DependentUpon>IMR00027.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00027.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00029.Designer.vb">
+      <DependentUpon>IMR00029.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00029.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00030.Designer.vb">
+      <DependentUpon>IMR00030.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00030.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00031.Designer.vb">
+      <DependentUpon>IMR00031.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00031.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00032.designer.vb">
+      <DependentUpon>IMR00032.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00032.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00033Rpt.Designer.vb">
+      <DependentUpon>IMR00033Rpt.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="IMR00033Rpt.vb">
+      <DependentUpon>IMR00033Rpt.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IMXLS004.Designer.vb">
+      <DependentUpon>IMXLS004.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMXLS004.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INR00001.designer.vb">
+      <DependentUpon>INR00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INR00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INR00001A.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INR00001A.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INR00001A2Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INR00001A2Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INR00001A3Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INR00001A3Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INR00001ARpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INR00001ARpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INR00001B1Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INR00001B1Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INR00001B2Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INR00001B2Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INR00001BRpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INR00001BRpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INR00001Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INR00001Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MSR00001.designer.vb">
+      <DependentUpon>MSR00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSR00001Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00001Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00001Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00001Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MSR00002.designer.vb">
+      <DependentUpon>MSR00002.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSR000021.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00002.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00002Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00002Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MSR00004.designer.vb">
+      <DependentUpon>MSR00004.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00004.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSR00004Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00004Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00004Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00004Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MSR00012.designer.vb">
+      <DependentUpon>MSR00012.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00012.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSR00012Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00012Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00012Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00012Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MSR00019.designer.vb">
+      <DependentUpon>MSR00019.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00019.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSR000191.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00019.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00019Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00019Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MSR00020.designer.vb">
+      <DependentUpon>MSR00020.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00020.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSR000201.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00020.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00020Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00020Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MSR00022.designer.vb">
+      <DependentUpon>MSR00022.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00022.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSR000221.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00022.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00022Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00022Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MSR00031.designer.vb">
+      <DependentUpon>MSR00031.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00031.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSR000311.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00031.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00031Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00031Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MSR00032Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00032Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MSR00033.designer.vb">
+      <DependentUpon>MSR00033.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00033.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSR000331.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00033.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00033BRpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00033BRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MSR00033Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSR00033Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PGM00001.Designer.vb">
+      <DependentUpon>PGM00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PGM00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PGM00002.Designer.vb">
+      <DependentUpon>PGM00002.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PGM00002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PGM00003.Designer.vb">
+      <DependentUpon>PGM00003.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PGM00003.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PGM00004.designer.vb">
+      <DependentUpon>PGM00004.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PGM00004.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PGM00005.designer.vb">
+      <DependentUpon>PGM00005.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PGM00005.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PGM00006.Designer.vb">
+      <DependentUpon>PGM00006.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PGM00006.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PGM00007.Designer.vb">
+      <DependentUpon>PGM00007.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PGM00007.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PGM00007Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PGM00007Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PGM00007RptA.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PGM00007RptA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PGM00008.Designer.vb">
+      <DependentUpon>PGM00008.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PGM00008.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PGM00009.Designer.vb">
+      <DependentUpon>PGM00009.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PGM00009.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PGM00010.Designer.vb">
+      <DependentUpon>PGM00010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PGM00010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PKA00001Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PKA00001Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PKA00001Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PKA00001Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PKA00002Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PKA00002Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PKA00002Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PKA00002Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PKA00003Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PKA00003Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PKA00003Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PKA00003Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PKR00001.Designer.vb">
+      <DependentUpon>PKR00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PKR00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PKR00001A.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PKR00001A.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PKR00001A2Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PKR00001A2Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PKR00001A3Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PKR00001A3Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PKR00001ARpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PKR00001ARpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PKR00001B.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PKR00001B.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PKR00001B1Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PKR00001B1Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PKR00001B2Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PKR00001B2Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="POM00001.Designer.vb">
+      <DependentUpon>POM00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POM00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POR00001.Designer.vb">
+      <DependentUpon>POR00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POR00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POR00001Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POR00001Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="POR00001Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POR00001Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="POR00003.Designer.vb">
+      <DependentUpon>POR00003.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POR00003.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POR00003Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POR00003Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="POR00003Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POR00003Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="POR00005.Designer.vb">
+      <DependentUpon>POR00005.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POR00005.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POR00005Report.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POR00005Report.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="POR00005Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POR00005Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="POR00005_assortmentReport1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POR00005_assortmentReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="POR00005_cartonReport.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POR00005_cartonReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="POR00005_PDORpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POR00005_PDORpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="POR00005_PDORpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POR00005_PDORpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="POR00005_shipmentReport.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POR00005_shipmentReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="POR00006Rpt.designer.vb">
+      <DependentUpon>POR00006Rpt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POR00006Rpt.vb">
+      <DependentUpon>POR00006Rpt.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="POR00007.Designer.vb">
+      <DependentUpon>POR00007.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POR00007.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QUAPP001.designer.vb">
+      <DependentUpon>QUAPP001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QUAPP001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QUM00001.designer.vb">
+      <DependentUpon>QUM00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QUM00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QUM00001_1.designer.vb">
+      <DependentUpon>QUM00001_1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QUM00001_1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QUM00001_2.designer.vb">
+      <DependentUpon>QUM00001_2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QUM00001_2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QUM00004.designer.vb">
+      <DependentUpon>QUM00004.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QUM00004.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QUR00001.Designer.vb">
+      <DependentUpon>QUR00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QUR00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QUR00001Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QUR00001Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QUR00002.designer.vb">
+      <DependentUpon>QUR00002.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QUR00002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QUR00003.designer.vb">
+      <DependentUpon>QUR00003.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QUR00003.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QUR00004CA.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QUR00004CA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QUR00006CA.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QUR00006CA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QUR0000A.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QUR0000A.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QUR0000B.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QUR0000B.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QUXLS001.Designer.vb">
+      <DependentUpon>QUXLS001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QUXLS001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SAM00001.Designer.vb">
+      <DependentUpon>SAM00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SAM00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SAM00001_1.Designer.vb">
+      <DependentUpon>SAM00001_1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SAM00001_1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SAM00002.designer.vb">
+      <DependentUpon>SAM00002.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SAM00002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SAM00003.Designer.vb">
+      <DependentUpon>SAM00003.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SAM00003.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SAM00003_1.Designer.vb">
+      <DependentUpon>SAM00003_1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SAM00003_1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SAM00004.designer.vb">
+      <DependentUpon>SAM00004.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SAM00004.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SAM00005.Designer.vb">
+      <DependentUpon>SAM00005.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SAM00005.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SAR00005.Designer.vb">
+      <DependentUpon>SAR00005.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SAR00005.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SAR00005Report.designer.vb">
+      <DependentUpon>SAR00005Report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SAR00005Report.vb">
+      <DependentUpon>SAR00005Report.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAR00005Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAR00005Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SAR00006.Designer.vb">
+      <DependentUpon>SAR00006.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SAR00006.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SAR00006Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAR00006Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SAR00007.Designer.vb">
+      <DependentUpon>SAR00007.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SAR00007.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SAR00007Report.designer.vb">
+      <DependentUpon>SAR00007Report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SAR00007Report.vb">
+      <DependentUpon>SAR00007Report.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAR00007Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAR00007Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SCM00001_ShpmrkAtchmt.Designer.vb">
+      <DependentUpon>SCM00001_ShpmrkAtchmt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SCM00001_ShpmrkAtchmt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCM00003.Designer.vb">
+      <DependentUpon>SCM00003.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SCM00003.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCombineImage.designer.vb">
+      <DependentUpon>frmCombineImage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCombineImage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCopySC.Designer.vb">
+      <DependentUpon>frmCopySC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCopySC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCopySC_Cust.Designer.vb">
+      <DependentUpon>frmCopySC_Cust.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCopySC_Cust.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImage.designer.vb">
+      <DependentUpon>frmImage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmImage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IAR00001.Designer.vb">
+      <DependentUpon>IAR00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IAR00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IAR00001NRpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IAR00001NRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IAR00001Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IAR00001Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IAR00001Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IAR00001Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IAR00002Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IAR00002Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IAR00002Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IAR00002Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IAR00002SUBRpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IAR00002SUBRpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IAR00003Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IAR00003Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IAR00003Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IAR00003Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IMG00001.Designer.vb">
+      <DependentUpon>IMG00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMG00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMG00002.Designer.vb">
+      <DependentUpon>IMG00002.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMG00002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMM00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMM00002.Designer.vb">
+      <DependentUpon>IMM00002.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMM00002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMM00013.Designer.vb">
+      <DependentUpon>IMM00013.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMM00013.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMM00012.Designer.vb">
+      <DependentUpon>IMM00012.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMM00012.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00004.Designer.vb">
+      <DependentUpon>IMR00004.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00004.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00004Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00004Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00004Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00004Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IMR00005.Designer.vb">
+      <DependentUpon>IMR00005.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00005.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00005Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00005Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00005Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00005Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IMR00017.designer.vb">
+      <DependentUpon>IMR00017.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00017.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00018.Designer.vb">
+      <DependentUpon>IMR00018.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00018.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00018Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00018Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00034.Designer.vb">
+      <DependentUpon>IMR00034.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00034.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMR00035.Designer.vb">
+      <DependentUpon>IMR00035.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00035.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMXLS001.Designer.vb">
+      <DependentUpon>IMXLS001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMXLS001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMXLS005.Designer.vb">
+      <DependentUpon>IMXLS005.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMXLS005.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FQM00001.designer.vb">
+      <DependentUpon>FQM00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FQM00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCLMQuickInsert.designer.vb">
+      <DependentUpon>frmCLMQuickInsert.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCLMQuickInsert.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMM00007.Designer.vb">
+      <DependentUpon>IMM00007.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMM00007.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMM00008.Designer.vb">
+      <DependentUpon>IMM00008.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMM00008.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMXLS007.Designer.vb">
+      <DependentUpon>IMXLS007.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMXLS007.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSR00032.Designer.vb">
+      <DependentUpon>MSR00032.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00032.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="IMR00018Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMR00018Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SCM00001.Designer.vb">
+      <DependentUpon>SCM00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SCM00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCM00001_ASS.Designer.vb">
+      <DependentUpon>SCM00001_ASS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SCM00001_ASS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCM00001_BOM.Designer.vb">
+      <DependentUpon>SCM00001_BOM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SCM00001_BOM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCM00001_OrgSCst.Designer.vb">
+      <DependentUpon>SCM00001_OrgSCst.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SCM00001_OrgSCst.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCM00004.Designer.vb">
+      <DependentUpon>SCM00004.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SCM00004.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCM00004_ATH.Designer.vb">
+      <DependentUpon>SCM00004_ATH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SCM00004_ATH.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCM00006.designer.vb">
+      <DependentUpon>SCM00006.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SCM00006.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCR00001.Designer.vb">
+      <DependentUpon>SCR00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SCR00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCR00001Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SCR00001Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SCR00001Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SCR00001Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SCR00003.Designer.vb">
+      <DependentUpon>SCR00003.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SCR00003.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCR00003Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SCR00003Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SCR00003Rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SCR00003Rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SHR00002.Designer.vb">
+      <DependentUpon>SHR00002.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SHR00002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SHR00003.Designer.vb">
+      <DependentUpon>SHR00003.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SHR00003.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00001.Designer.vb">
+      <DependentUpon>SYM00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00004.Designer.vb">
+      <DependentUpon>SYM00004.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00004.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00006.Designer.vb">
+      <DependentUpon>SYM00006.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00006.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00008.Designer.vb">
+      <DependentUpon>SYM00008.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00008.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00009.Designer.vb">
+      <DependentUpon>SYM00009.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00009.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00011.Designer.vb">
+      <DependentUpon>SYM00011.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00011.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00012.Designer.vb">
+      <DependentUpon>SYM00012.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00012.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00013.Designer.vb">
+      <DependentUpon>SYM00013.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00013.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00016.Designer.vb">
+      <DependentUpon>SYM00016.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00016.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00018.designer.vb">
+      <DependentUpon>SYM00018.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00018.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00021.Designer.vb">
+      <DependentUpon>SYM00021.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00021.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00022.Designer.vb">
+      <DependentUpon>SYM00022.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00022.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00023.Designer.vb">
+      <DependentUpon>SYM00023.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00023.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00024.Designer.vb">
+      <DependentUpon>SYM00024.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00024.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00026.Designer.vb">
+      <DependentUpon>SYM00026.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00026.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00028.Designer.vb">
+      <DependentUpon>SYM00028.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00028.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00029.Designer.vb">
+      <DependentUpon>SYM00029.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00029.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00031.Designer.vb">
+      <DependentUpon>SYM00031.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00031.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00104.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00103.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00102.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DYR00010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DYR00009.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DYR00008.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DYR00007.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DYR00006.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SHR00010RptE.Designer.vb">
+      <DependentUpon>SHR00010RptE.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="SHR00010RptE.vb">
+      <DependentUpon>SHR00010RptE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DYR00005.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DYR00004.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DYR00003.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DYR00002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DYR00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INR00014.Designer.vb">
+      <DependentUpon>INR00014.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INR00014.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ERP00000.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ERP00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmComSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.vb">
+      <DependentUpon>frmReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modDBConn.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="modGlobalConst.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="modGlobalFunction.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POM00010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SHM00010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SHR00010.Designer.vb">
+      <DependentUpon>SHR00010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SHR00010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00002.Designer.vb">
+      <DependentUpon>SYM00002.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00003.Designer.vb">
+      <DependentUpon>SYM00003.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00003.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00005.Designer.vb">
+      <DependentUpon>SYM00005.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00005.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00007.Designer.vb">
+      <DependentUpon>SYM00007.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00007.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00010.Designer.vb">
+      <DependentUpon>SYM00010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00014.Designer.vb">
+      <DependentUpon>SYM00014.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00014.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00015.Designer.vb">
+      <DependentUpon>SYM00015.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00015.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00017.Designer.vb">
+      <DependentUpon>SYM00017.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00017.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00101.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00105.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00106.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00107.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYM00108.designer.vb">
+      <DependentUpon>SYM00108.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYM00108.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYR00103.Designer.vb">
+      <DependentUpon>SYR00103.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYR00103.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS00001.Designer.vb">
+      <DependentUpon>SYS00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYS00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS00002.Designer.vb">
+      <DependentUpon>SYS00002.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYS00002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS00003.designer.vb">
+      <DependentUpon>SYS00003.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYS00003.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS00004.Designer.vb">
+      <DependentUpon>SYS00004.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYS00004.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOM00001.designer.vb">
+      <DependentUpon>TOM00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TOM00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOM00002.designer.vb">
+      <DependentUpon>TOM00002.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TOM00002.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOM00003.designer.vb">
+      <DependentUpon>TOM00003.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TOM00003.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOM00004.Designer.vb">
+      <DependentUpon>TOM00004.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TOM00004.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOM00005.Designer.vb">
+      <DependentUpon>TOM00005.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TOM00005.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VNM00001.designer.vb">
+      <DependentUpon>VNM00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VNM00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="BJR00001.resx">
+      <DependentUpon>BJR00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BOM00001.resx">
+      <DependentUpon>BOM00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BOR00001.resx">
+      <DependentUpon>BOR00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLM00001.resx">
+      <DependentUpon>CLM00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLM00002.resx">
+      <DependentUpon>CLM00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLM00005.resx">
+      <DependentUpon>CLM00005.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLR00001.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CLR00001.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLR00001Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CLR00001Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLR00002.resx">
+      <DependentUpon>CLR00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLR00003.resx">
+      <DependentUpon>CLR00003.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COR00001.resx">
+      <DependentUpon>COR00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CUM00001.resx">
+      <DependentUpon>CUM00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CUM00002.resx">
+      <DependentUpon>CUM00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CUM00003.resx">
+      <DependentUpon>CUM00003.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CUM00004.resx">
+      <DependentUpon>CUM00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ERP00002.resx">
+      <DependentUpon>ERP00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FQM00001.resx">
+      <DependentUpon>FQM00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAttchUpload.resx">
+      <DependentUpon>frmAttchUpload.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCLMQuickInsert.resx">
+      <DependentUpon>frmCLMQuickInsert.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCombineImage.resx">
+      <DependentUpon>frmCombineImage.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCopyQut.resx">
+      <DependentUpon>frmCopyQut.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCopySC.resx">
+      <DependentUpon>frmCopySC.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCopySC_Cust.resx">
+      <DependentUpon>frmCopySC_Cust.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrtSel_G.resx">
+      <DependentUpon>frmCrtSel_G.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImage.resx">
+      <DependentUpon>frmImage.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImgPrevw.resx">
+      <DependentUpon>frmImgPrevw.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmItemList.resx">
+      <DependentUpon>frmItemList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPOAss.resx">
+      <DependentUpon>frmPOAss.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPOBom.resx">
+      <DependentUpon>frmPOBom.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPOCarton.resx">
+      <DependentUpon>frmPOCarton.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPOShip.resx">
+      <DependentUpon>frmPOShip.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQut.resx">
+      <DependentUpon>frmQut.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQutUpdItm.resx">
+      <DependentUpon>frmQutUpdItm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRenewQuot.resx">
+      <DependentUpon>frmRenewQuot.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTY00001.resx">
+      <DependentUpon>FTY00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTY00004.resx">
+      <DependentUpon>FTY00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IAR00001.resx">
+      <DependentUpon>IAR00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IAR00001NRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IAR00001NRpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IAR00001Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IAR00001Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IAR00002Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IAR00002Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IAR00003Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IAR00003Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMG00001.resx">
+      <DependentUpon>IMG00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMG00002.resx">
+      <DependentUpon>IMG00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMM00001.resx">
+      <DependentUpon>IMM00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMM00002.resx">
+      <DependentUpon>IMM00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMM00007.resx">
+      <DependentUpon>IMM00007.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMM00008.resx">
+      <DependentUpon>IMM00008.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMM00013.resx">
+      <DependentUpon>IMM00013.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMM00012.resx">
+      <DependentUpon>IMM00012.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00004.resx">
+      <DependentUpon>IMR00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00004Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IMR00004Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00005.resx">
+      <DependentUpon>IMR00005.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00005Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IMR00005Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00009.resx">
+      <DependentUpon>IMR00009.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00010.resx">
+      <DependentUpon>IMR00010.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00010Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IMR00010Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00013.resx">
+      <DependentUpon>IMR00013.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00013aRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IMR00013aRpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00013bRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IMR00013bRpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00013cRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IMR00013cRpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00013dRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IMR00013dRpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00017.resx">
+      <DependentUpon>IMR00017.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00018.resx">
+      <DependentUpon>IMR00018.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00019.resx">
+      <DependentUpon>IMR00019.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00021.resx">
+      <DependentUpon>IMR00021.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00021Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IMR00021Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00022.resx">
+      <DependentUpon>IMR00022.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00023.resx">
+      <DependentUpon>IMR00023.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00024.resx">
+      <DependentUpon>IMR00024.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00025.resx">
+      <DependentUpon>IMR00025.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00027.resx">
+      <DependentUpon>IMR00027.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00029.resx">
+      <DependentUpon>IMR00029.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00030.resx">
+      <DependentUpon>IMR00030.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00031.resx">
+      <DependentUpon>IMR00031.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00032.resx">
+      <DependentUpon>IMR00032.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00034.resx">
+      <DependentUpon>IMR00034.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00035.resx">
+      <DependentUpon>IMR00035.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMXLS001.resx">
+      <DependentUpon>IMXLS001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMXLS004.resx">
+      <DependentUpon>IMXLS004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMXLS005.resx">
+      <DependentUpon>IMXLS005.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMXLS007.resx">
+      <DependentUpon>IMXLS007.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INR00001.resx">
+      <DependentUpon>INR00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INR00001A2Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>INR00001A2Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INR00001A3Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>INR00001A3Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INR00001ARpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>INR00001ARpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INR00001B1Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>INR00001B1Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INR00001B2Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>INR00001B2Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INR00001Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>INR00001Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00001.resx">
+      <DependentUpon>MSR00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00001Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MSR00001Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00002.resx">
+      <DependentUpon>MSR00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00002Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MSR00002Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00004.resx">
+      <DependentUpon>MSR00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00004Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MSR00004Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00012.resx">
+      <DependentUpon>MSR00012.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00012Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MSR00012Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00019.resx">
+      <DependentUpon>MSR00019.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00019Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MSR00019Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00020.resx">
+      <DependentUpon>MSR00020.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00020Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MSR00020Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00022.resx">
+      <DependentUpon>MSR00022.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00022Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MSR00022Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00031.resx">
+      <DependentUpon>MSR00031.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00031Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MSR00031Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00032.resx">
+      <DependentUpon>MSR00032.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00032Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MSR00032Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00033.resx">
+      <DependentUpon>MSR00033.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00033BRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MSR00033BRpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00033Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MSR00033Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMR00018Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IMR00018Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PGM00001.resx">
+      <DependentUpon>PGM00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PGM00002.resx">
+      <DependentUpon>PGM00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PGM00003.resx">
+      <DependentUpon>PGM00003.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PGM00004.resx">
+      <DependentUpon>PGM00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PGM00005.resx">
+      <DependentUpon>PGM00005.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PGM00006.resx">
+      <DependentUpon>PGM00006.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PGM00007.resx">
+      <DependentUpon>PGM00007.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PGM00007RptA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PGM00007RptA.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PGM00008.resx">
+      <DependentUpon>PGM00008.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PGM00009.resx">
+      <DependentUpon>PGM00009.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PGM00010.resx">
+      <DependentUpon>PGM00010.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PKA00001Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PKA00001Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PKA00002Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PKA00002Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PKA00003Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PKA00003Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PKR00001.resx">
+      <DependentUpon>PKR00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PKR00001A2Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PKR00001A2Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PKR00001A3Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PKR00001A3Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PKR00001ARpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PKR00001ARpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PKR00001B1Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PKR00001B1Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PKR00001B2Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PKR00001B2Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POM00001.resx">
+      <DependentUpon>POM00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POR00001Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POR00001Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POR00003Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POR00003Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POR00005.resx">
+      <DependentUpon>POR00005.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POR00005Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POR00005Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POR00005_PDORpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POR00005_PDORpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POR00006Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POR00006Rpt1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POR00007.resx">
+      <DependentUpon>POR00007.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QUAPP001.resx">
+      <DependentUpon>QUAPP001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QUM00001.resx">
+      <DependentUpon>QUM00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QUM00001_1.resx">
+      <DependentUpon>QUM00001_1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QUM00001_2.resx">
+      <DependentUpon>QUM00001_2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QUM00004.resx">
+      <DependentUpon>QUM00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QUR00001.resx">
+      <DependentUpon>QUR00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QUR00001Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>QUR00001Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QUR00002.resx">
+      <DependentUpon>QUR00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QUR00003.resx">
+      <DependentUpon>QUR00003.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QUR00004CA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>QUR00004CA.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QUR00006CA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>QUR00006CA.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QUXLS001.resx">
+      <DependentUpon>QUXLS001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SAM00001.resx">
+      <DependentUpon>SAM00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SAM00001_1.resx">
+      <DependentUpon>SAM00001_1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SAM00002.resx">
+      <DependentUpon>SAM00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SAM00003.resx">
+      <DependentUpon>SAM00003.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SAM00003_1.resx">
+      <DependentUpon>SAM00003_1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SAM00004.resx">
+      <DependentUpon>SAM00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SAM00005.resx">
+      <DependentUpon>SAM00005.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SAR00005.resx">
+      <DependentUpon>SAR00005.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SAR00005Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SAR00005Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SAR00006.resx">
+      <DependentUpon>SAR00006.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SAR00006Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SAR00006Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SAR00007.resx">
+      <DependentUpon>SAR00007.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SAR00007Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SAR00007Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCM00001.resx">
+      <DependentUpon>SCM00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCM00001_ASS.resx">
+      <DependentUpon>SCM00001_ASS.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCM00001_BOM.resx">
+      <DependentUpon>SCM00001_BOM.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCM00001_OrgSCst.resx">
+      <DependentUpon>SCM00001_OrgSCst.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCM00001_ShpmrkAtchmt.resx">
+      <DependentUpon>SCM00001_ShpmrkAtchmt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCM00003.resx">
+      <DependentUpon>SCM00003.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCM00004.resx">
+      <DependentUpon>SCM00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCM00004_ATH.resx">
+      <DependentUpon>SCM00004_ATH.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCM00006.resx">
+      <DependentUpon>SCM00006.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCR00001.resx">
+      <DependentUpon>SCR00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCR00001Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SCR00001Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCR00003.resx">
+      <DependentUpon>SCR00003.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCR00003Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SCR00003Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SHR00002.resx">
+      <DependentUpon>SHR00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SHR00003.resx">
+      <DependentUpon>SHR00003.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00001.resx">
+      <DependentUpon>SYM00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00002.resx">
+      <DependentUpon>SYM00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00004.resx">
+      <DependentUpon>SYM00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00006.resx">
+      <DependentUpon>SYM00006.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00008.resx">
+      <DependentUpon>SYM00008.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00009.resx">
+      <DependentUpon>SYM00009.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00011.resx">
+      <DependentUpon>SYM00011.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00012.resx">
+      <DependentUpon>SYM00012.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00013.resx">
+      <DependentUpon>SYM00013.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00016.resx">
+      <DependentUpon>SYM00016.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00018.resx">
+      <DependentUpon>SYM00018.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00021.resx">
+      <DependentUpon>SYM00021.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00022.resx">
+      <DependentUpon>SYM00022.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00023.resx">
+      <DependentUpon>SYM00023.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00024.resx">
+      <DependentUpon>SYM00024.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00026.resx">
+      <DependentUpon>SYM00026.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00028.resx">
+      <DependentUpon>SYM00028.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00029.resx">
+      <DependentUpon>SYM00029.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00031.resx">
+      <DependentUpon>SYM00031.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00104.resx">
+      <DependentUpon>SYM00104.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00103.resx">
+      <DependentUpon>SYM00103.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00102.resx">
+      <DependentUpon>SYM00102.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DYR00010.resx">
+      <DependentUpon>DYR00010.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DYR00009.resx">
+      <DependentUpon>DYR00009.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DYR00008.resx">
+      <DependentUpon>DYR00008.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DYR00007.resx">
+      <DependentUpon>DYR00007.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DYR00006.resx">
+      <DependentUpon>DYR00006.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SHR00010RptE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SHR00010RptE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DYR00005.resx">
+      <DependentUpon>DYR00005.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DYR00004.resx">
+      <DependentUpon>DYR00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DYR00003.resx">
+      <DependentUpon>DYR00003.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DYR00002.resx">
+      <DependentUpon>DYR00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DYR00001.resx">
+      <DependentUpon>DYR00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INR00014.resx">
+      <DependentUpon>INR00014.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ERP00000.resx">
+      <DependentUpon>ERP00000.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ERP00001.resx">
+      <DependentUpon>ERP00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmComSearch.resx">
+      <DependentUpon>frmComSearch.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POM00010.resx">
+      <DependentUpon>POM00010.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SHM00010.resx">
+      <DependentUpon>SHM00010.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SHR00010.resx">
+      <DependentUpon>SHR00010.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00003.resx">
+      <DependentUpon>SYM00003.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00005.resx">
+      <DependentUpon>SYM00005.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00007.resx">
+      <DependentUpon>SYM00007.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00010.resx">
+      <DependentUpon>SYM00010.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00014.resx">
+      <DependentUpon>SYM00014.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00015.resx">
+      <DependentUpon>SYM00015.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00017.resx">
+      <DependentUpon>SYM00017.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00101.resx">
+      <DependentUpon>SYM00101.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00105.resx">
+      <DependentUpon>SYM00105.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00106.resx">
+      <DependentUpon>SYM00106.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00107.resx">
+      <DependentUpon>SYM00107.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00108.resx">
+      <DependentUpon>SYM00108.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYR00103.resx">
+      <DependentUpon>SYR00103.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS00001.resx">
+      <DependentUpon>SYS00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS00002.resx">
+      <DependentUpon>SYS00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS00003.resx">
+      <DependentUpon>SYS00003.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS00004.resx">
+      <DependentUpon>SYS00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOM00001.resx">
+      <DependentUpon>TOM00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOM00002.resx">
+      <DependentUpon>TOM00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOM00003.resx">
+      <DependentUpon>TOM00003.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOM00004.resx">
+      <DependentUpon>TOM00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOM00005.resx">
+      <DependentUpon>TOM00005.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VNM00001.resx">
+      <DependentUpon>VNM00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CLR00001Rpt2.xsc">
+      <DependentUpon>CLR00001Rpt2.xsd</DependentUpon>
+    </None>
+    <None Include="CLR00001Rpt2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CLR00001Rpt2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CLR00001Rpt2.xss">
+      <DependentUpon>CLR00001Rpt2.xsd</DependentUpon>
+    </None>
+    <None Include="SHR00010RptE.xsc">
+      <DependentUpon>SHR00010RptE.xsd</DependentUpon>
+    </None>
+    <None Include="SHR00010RptE.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SHR00010RptE.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SHR00010RptE.xss">
+      <DependentUpon>SHR00010RptE.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ERPSystem_TemporaryKey.pfx" />
+    <None Include="IAR00001Rpt.xsc">
+      <DependentUpon>IAR00001Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="IAR00001Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IAR00001Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="IAR00001Rpt.xss">
+      <DependentUpon>IAR00001Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="IAR00002Rpt.xsc">
+      <DependentUpon>IAR00002Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="IAR00002Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IAR00002Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="IAR00002Rpt.xss">
+      <DependentUpon>IAR00002Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="IAR00002SUBRpt.xsc">
+      <DependentUpon>IAR00002SUBRpt.xsd</DependentUpon>
+    </None>
+    <None Include="IAR00002SUBRpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IAR00002SUBRpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="IAR00002SUBRpt.xss">
+      <DependentUpon>IAR00002SUBRpt.xsd</DependentUpon>
+    </None>
+    <None Include="IAR00003Rpt.xsc">
+      <DependentUpon>IAR00003Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="IAR00003Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IAR00003Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="IAR00003Rpt.xss">
+      <DependentUpon>IAR00003Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00004Rpt.xsc">
+      <DependentUpon>IMR00004Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00004Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IMR00004Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="IMR00004Rpt.xss">
+      <DependentUpon>IMR00004Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00005Rpt.xsc">
+      <DependentUpon>IMR00005Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00005Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IMR00005Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="IMR00005Rpt.xss">
+      <DependentUpon>IMR00005Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00010Rpt.xsc">
+      <DependentUpon>IMR00010Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00010Rpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IMR00010Rpt1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IMR00010Rpt.xss">
+      <DependentUpon>IMR00010Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00013aRpt.xsc">
+      <DependentUpon>IMR00013aRpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00013aRpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IMR00013aRpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IMR00013aRpt.xss">
+      <DependentUpon>IMR00013aRpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00013bRpt.xsc">
+      <DependentUpon>IMR00013bRpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00013bRpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IMR00013bRpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IMR00013bRpt.xss">
+      <DependentUpon>IMR00013bRpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00013cRpt.xsc">
+      <DependentUpon>IMR00013cRpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00013cRpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IMR00013cRpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IMR00013cRpt.xss">
+      <DependentUpon>IMR00013cRpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00013dRpt.xsc">
+      <DependentUpon>IMR00013dRpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00013dRpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IMR00013dRpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IMR00013dRpt.xss">
+      <DependentUpon>IMR00013dRpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00018Rpt.xsc">
+      <DependentUpon>IMR00018Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00018Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IMR00018Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="IMR00018Rpt.xss">
+      <DependentUpon>IMR00018Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00021.xsc">
+      <DependentUpon>IMR00021.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00021.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IMR000211.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IMR00021.xss">
+      <DependentUpon>IMR00021.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00022.xsc">
+      <DependentUpon>IMR00022.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00022.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IMR000221.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IMR00022.xss">
+      <DependentUpon>IMR00022.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00033Rpt.xsc">
+      <DependentUpon>IMR00033Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="IMR00033Rpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IMR00033Rpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IMR00033Rpt.xss">
+      <DependentUpon>IMR00033Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="INR00001A.xsc">
+      <DependentUpon>INR00001A.xsd</DependentUpon>
+    </None>
+    <None Include="INR00001A.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INR00001A.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INR00001A.xss">
+      <DependentUpon>INR00001A.xsd</DependentUpon>
+    </None>
+    <None Include="INR00001BRpt.xsc">
+      <DependentUpon>INR00001BRpt.xsd</DependentUpon>
+    </None>
+    <None Include="INR00001BRpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INR00001BRpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INR00001BRpt.xss">
+      <DependentUpon>INR00001BRpt.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00001Rpt.xsc">
+      <DependentUpon>MSR00001Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00001Rpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSR00001Rpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSR00001Rpt.xss">
+      <DependentUpon>MSR00001Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00002.xsc">
+      <DependentUpon>MSR00002.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00002.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSR000021.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSR00002.xss">
+      <DependentUpon>MSR00002.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00004Rpt.xsc">
+      <DependentUpon>MSR00004Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00004Rpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSR00004Rpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSR00004Rpt.xss">
+      <DependentUpon>MSR00004Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00012Rpt.xsc">
+      <DependentUpon>MSR00012Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00012Rpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSR00012Rpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSR00012Rpt.xss">
+      <DependentUpon>MSR00012Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00019.xsc">
+      <DependentUpon>MSR00019.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00019.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSR000191.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSR00019.xss">
+      <DependentUpon>MSR00019.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00020.xsc">
+      <DependentUpon>MSR00020.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00020.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSR000201.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSR00020.xss">
+      <DependentUpon>MSR00020.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00022.xsc">
+      <DependentUpon>MSR00022.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00022.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSR000221.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSR00022.xss">
+      <DependentUpon>MSR00022.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00031.xsc">
+      <DependentUpon>MSR00031.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00031.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSR000311.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSR00031.xss">
+      <DependentUpon>MSR00031.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00033.xsc">
+      <DependentUpon>MSR00033.xsd</DependentUpon>
+    </None>
+    <None Include="MSR00033.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSR000331.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSR00033.xss">
+      <DependentUpon>MSR00033.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="PGM00007Rpt.xsc">
+      <DependentUpon>PGM00007Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="PGM00007Rpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PGM00007Rpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PGM00007Rpt.xss">
+      <DependentUpon>PGM00007Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="PKA00001Rpt.xsc">
+      <DependentUpon>PKA00001Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="PKA00001Rpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PKA00001Rpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PKA00001Rpt.xss">
+      <DependentUpon>PKA00001Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="PKA00002Rpt.xsc">
+      <DependentUpon>PKA00002Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="PKA00002Rpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PKA00002Rpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PKA00002Rpt.xss">
+      <DependentUpon>PKA00002Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="PKA00003Rpt.xsc">
+      <DependentUpon>PKA00003Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="PKA00003Rpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PKA00003Rpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PKA00003Rpt.xss">
+      <DependentUpon>PKA00003Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="PKR00001A.xsc">
+      <DependentUpon>PKR00001A.xsd</DependentUpon>
+    </None>
+    <None Include="PKR00001A.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PKR00001A.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PKR00001A.xss">
+      <DependentUpon>PKR00001A.xsd</DependentUpon>
+    </None>
+    <None Include="PKR00001B.xsc">
+      <DependentUpon>PKR00001B.xsd</DependentUpon>
+    </None>
+    <None Include="PKR00001B.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PKR00001B.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PKR00001B.xss">
+      <DependentUpon>PKR00001B.xsd</DependentUpon>
+    </None>
+    <None Include="POR00001Rpt.xsc">
+      <DependentUpon>POR00001Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="POR00001Rpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POR00001Rpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="POR00001Rpt.xss">
+      <DependentUpon>POR00001Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="POR00003Rpt.xsc">
+      <DependentUpon>POR00003Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="POR00003Rpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POR00003Rpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="POR00003Rpt.xss">
+      <DependentUpon>POR00003Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="POR00005Report.xsc">
+      <DependentUpon>POR00005Report.xsd</DependentUpon>
+    </None>
+    <None Include="POR00005Report.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POR00005Report.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="POR00005Report.xss">
+      <DependentUpon>POR00005Report.xsd</DependentUpon>
+    </None>
+    <None Include="POR00005_assortmentReport.xsc">
+      <DependentUpon>POR00005_assortmentReport.xsd</DependentUpon>
+    </None>
+    <None Include="POR00005_assortmentReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POR00005_assortmentReport1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="POR00005_assortmentReport.xss">
+      <DependentUpon>POR00005_assortmentReport.xsd</DependentUpon>
+    </None>
+    <None Include="POR00005_cartonReport.xsc">
+      <DependentUpon>POR00005_cartonReport.xsd</DependentUpon>
+    </None>
+    <None Include="POR00005_cartonReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POR00005_cartonReport.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="POR00005_cartonReport.xss">
+      <DependentUpon>POR00005_cartonReport.xsd</DependentUpon>
+    </None>
+    <None Include="POR00005_PDORpt.xsc">
+      <DependentUpon>POR00005_PDORpt.xsd</DependentUpon>
+    </None>
+    <None Include="POR00005_PDORpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POR00005_PDORpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="POR00005_PDORpt.xss">
+      <DependentUpon>POR00005_PDORpt.xsd</DependentUpon>
+    </None>
+    <None Include="POR00005_shipmentReport.xsc">
+      <DependentUpon>POR00005_shipmentReport.xsd</DependentUpon>
+    </None>
+    <None Include="POR00005_shipmentReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POR00005_shipmentReport.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="POR00005_shipmentReport.xss">
+      <DependentUpon>POR00005_shipmentReport.xsd</DependentUpon>
+    </None>
+    <None Include="POR00006Rpt.xsc">
+      <DependentUpon>POR00006Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="POR00006Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POR00006Rpt1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="POR00006Rpt.xss">
+      <DependentUpon>POR00006Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="QUR0000A.xsc">
+      <DependentUpon>QUR0000A.xsd</DependentUpon>
+    </None>
+    <None Include="QUR0000A.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QUR0000A.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QUR0000A.xss">
+      <DependentUpon>QUR0000A.xsd</DependentUpon>
+    </None>
+    <None Include="QUR0000B.xsc">
+      <DependentUpon>QUR0000B.xsd</DependentUpon>
+    </None>
+    <None Include="QUR0000B.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QUR0000B.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QUR0000B.xss">
+      <DependentUpon>QUR0000B.xsd</DependentUpon>
+    </None>
+    <None Include="SAR00005Report.xsc">
+      <DependentUpon>SAR00005Report.xsd</DependentUpon>
+    </None>
+    <None Include="SAR00005Report.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAR00005Report1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAR00005Report.xss">
+      <DependentUpon>SAR00005Report.xsd</DependentUpon>
+    </None>
+    <None Include="SAR00006Report.xsc">
+      <DependentUpon>SAR00006Report.xsd</DependentUpon>
+    </None>
+    <None Include="SAR00006Report.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAR00006Report1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAR00006Report.xss">
+      <DependentUpon>SAR00006Report.xsd</DependentUpon>
+    </None>
+    <None Include="SAR00007Report.xsc">
+      <DependentUpon>SAR00007Report.xsd</DependentUpon>
+    </None>
+    <None Include="SAR00007Report.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAR00007Report1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAR00007Report.xss">
+      <DependentUpon>SAR00007Report.xsd</DependentUpon>
+    </None>
+    <None Include="SCR00001Rpt.xsc">
+      <DependentUpon>SCR00001Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="SCR00001Rpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SCR00001Rpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SCR00001Rpt.xss">
+      <DependentUpon>SCR00001Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="SCR00003Rpt.xsc">
+      <DependentUpon>SCR00003Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="SCR00003Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SCR00003Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="SCR00003Rpt.xss">
+      <DependentUpon>SCR00003Rpt.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BROWSE.BMP" />
+    <Content Include="OLD.bmp" />
+    <Content Include="QUM00001_DetailBackground.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

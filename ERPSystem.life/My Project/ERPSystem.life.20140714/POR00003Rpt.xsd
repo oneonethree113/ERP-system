@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPOR00003" targetNamespace="http://tempuri.org/POR00003Rpt.xsd" xmlns:mstns="http://tempuri.org/POR00003Rpt.xsd" xmlns="http://tempuri.org/POR00003Rpt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPOR00003" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dsPOR00003" msprop:Generator_UserDSName="dsPOR00003" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="POR00003" msprop:Generator_UserTableName="POR00003" msprop:Generator_RowDeletedName="POR00003RowDeleted" msprop:Generator_TableClassName="POR00003DataTable" msprop:Generator_RowChangedName="POR00003RowChanged" msprop:Generator_RowClassName="POR00003Row" msprop:Generator_RowChangingName="POR00003RowChanging" msprop:Generator_RowEvArgName="POR00003RowChangeEvent" msprop:Generator_RowEvHandlerName="POR00003RowChangeEventHandler" msprop:Generator_TablePropName="POR00003" msprop:Generator_TableVarName="tablePOR00003" msprop:Generator_RowDeletingName="POR00003RowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cocde" msprop:Generator_UserColumnName="cocde" msprop:Generator_ColumnPropNameInRow="cocde" msprop:Generator_ColumnVarNameInTable="columncocde" msprop:Generator_ColumnPropNameInTable="cocdeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="vbi_cocde" msprop:Generator_UserColumnName="vbi_cocde" msprop:Generator_ColumnPropNameInRow="vbi_cocde" msprop:Generator_ColumnVarNameInTable="columnvbi_cocde" msprop:Generator_ColumnPropNameInTable="vbi_cocdeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="vbi_vennam" msprop:Generator_UserColumnName="vbi_vennam" msprop:Generator_ColumnPropNameInRow="vbi_vennam" msprop:Generator_ColumnVarNameInTable="columnvbi_vennam" msprop:Generator_ColumnPropNameInTable="vbi_vennamColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="vbi_venno" msprop:Generator_UserColumnName="vbi_venno" msprop:Generator_ColumnPropNameInRow="vbi_venno" msprop:Generator_ColumnVarNameInTable="columnvbi_venno" msprop:Generator_ColumnPropNameInTable="vbi_vennoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ysi_dsc" msprop:Generator_UserColumnName="ysi_dsc" msprop:Generator_ColumnPropNameInRow="ysi_dsc" msprop:Generator_ColumnVarNameInTable="columnysi_dsc" msprop:Generator_ColumnPropNameInTable="ysi_dscColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbh_oriven" msprop:Generator_UserColumnName="pbh_oriven" msprop:Generator_ColumnPropNameInRow="pbh_oriven" msprop:Generator_ColumnVarNameInTable="columnpbh_oriven" msprop:Generator_ColumnPropNameInTable="pbh_orivenColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbh_bompo" msprop:Generator_UserColumnName="pbh_bompo" msprop:Generator_ColumnPropNameInRow="pbh_bompo" msprop:Generator_ColumnVarNameInTable="columnpbh_bompo" msprop:Generator_ColumnPropNameInTable="pbh_bompoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbh_bvenadr" msprop:Generator_UserColumnName="pbh_bvenadr" msprop:Generator_ColumnPropNameInRow="pbh_bvenadr" msprop:Generator_ColumnVarNameInTable="columnpbh_bvenadr" msprop:Generator_ColumnPropNameInTable="pbh_bvenadrColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbh_bvenstt" msprop:Generator_UserColumnName="pbh_bvenstt" msprop:Generator_ColumnPropNameInRow="pbh_bvenstt" msprop:Generator_ColumnVarNameInTable="columnpbh_bvenstt" msprop:Generator_ColumnPropNameInTable="pbh_bvensttColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbh_bvenpst" msprop:Generator_UserColumnName="pbh_bvenpst" msprop:Generator_ColumnPropNameInRow="pbh_bvenpst" msprop:Generator_ColumnVarNameInTable="columnpbh_bvenpst" msprop:Generator_ColumnPropNameInTable="pbh_bvenpstColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbh_ctp1" msprop:Generator_UserColumnName="pbh_ctp1" msprop:Generator_ColumnPropNameInRow="pbh_ctp1" msprop:Generator_ColumnVarNameInTable="columnpbh_ctp1" msprop:Generator_ColumnPropNameInTable="pbh_ctp1Column" type="xs:string" minOccurs="0" />
+              <xs:element name="pbh_issdat" msprop:Generator_UserColumnName="pbh_issdat" msprop:Generator_ColumnPropNameInRow="pbh_issdat" msprop:Generator_ColumnVarNameInTable="columnpbh_issdat" msprop:Generator_ColumnPropNameInTable="pbh_issdatColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbh_rvsdat" msprop:Generator_UserColumnName="pbh_rvsdat" msprop:Generator_ColumnPropNameInRow="pbh_rvsdat" msprop:Generator_ColumnVarNameInTable="columnpbh_rvsdat" msprop:Generator_ColumnPropNameInTable="pbh_rvsdatColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbh_candat" msprop:Generator_UserColumnName="pbh_candat" msprop:Generator_ColumnPropNameInRow="pbh_candat" msprop:Generator_ColumnVarNameInTable="columnpbh_candat" msprop:Generator_ColumnPropNameInTable="pbh_candatColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbh_cuspo" msprop:Generator_UserColumnName="pbh_cuspo" msprop:Generator_ColumnPropNameInRow="pbh_cuspo" msprop:Generator_ColumnVarNameInTable="columnpbh_cuspo" msprop:Generator_ColumnPropNameInTable="pbh_cuspoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbh_rmk" msprop:Generator_UserColumnName="pbh_rmk" msprop:Generator_ColumnPropNameInRow="pbh_rmk" msprop:Generator_ColumnVarNameInTable="columnpbh_rmk" msprop:Generator_ColumnPropNameInTable="pbh_rmkColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbh_curcde" msprop:Generator_UserColumnName="pbh_curcde" msprop:Generator_ColumnPropNameInRow="pbh_curcde" msprop:Generator_ColumnVarNameInTable="columnpbh_curcde" msprop:Generator_ColumnPropNameInTable="pbh_curcdeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbd_regitm" msprop:Generator_UserColumnName="pbd_regitm" msprop:Generator_ColumnPropNameInRow="pbd_regitm" msprop:Generator_ColumnVarNameInTable="columnpbd_regitm" msprop:Generator_ColumnPropNameInTable="pbd_regitmColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbd_refpo" msprop:Generator_UserColumnName="pbd_refpo" msprop:Generator_ColumnPropNameInRow="pbd_refpo" msprop:Generator_ColumnVarNameInTable="columnpbd_refpo" msprop:Generator_ColumnPropNameInTable="pbd_refpoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbd_itmno" msprop:Generator_UserColumnName="pbd_itmno" msprop:Generator_ColumnPropNameInRow="pbd_itmno" msprop:Generator_ColumnVarNameInTable="columnpbd_itmno" msprop:Generator_ColumnPropNameInTable="pbd_itmnoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbd_venitm" msprop:Generator_UserColumnName="pbd_venitm" msprop:Generator_ColumnPropNameInRow="pbd_venitm" msprop:Generator_ColumnVarNameInTable="columnpbd_venitm" msprop:Generator_ColumnPropNameInTable="pbd_venitmColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbd_engdsc" msprop:Generator_UserColumnName="pbd_engdsc" msprop:Generator_ColumnPropNameInRow="pbd_engdsc" msprop:Generator_ColumnVarNameInTable="columnpbd_engdsc" msprop:Generator_ColumnPropNameInTable="pbd_engdscColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbd_chndsc" msprop:Generator_UserColumnName="pbd_chndsc" msprop:Generator_ColumnPropNameInRow="pbd_chndsc" msprop:Generator_ColumnVarNameInTable="columnpbd_chndsc" msprop:Generator_ColumnPropNameInTable="pbd_chndscColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbd_adjqty" msprop:Generator_UserColumnName="pbd_adjqty" msprop:Generator_ColumnPropNameInRow="pbd_adjqty" msprop:Generator_ColumnVarNameInTable="columnpbd_adjqty" msprop:Generator_ColumnPropNameInTable="pbd_adjqtyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbd_negprc" msprop:Generator_UserColumnName="pbd_negprc" msprop:Generator_ColumnPropNameInRow="pbd_negprc" msprop:Generator_ColumnVarNameInTable="columnpbd_negprc" msprop:Generator_ColumnPropNameInTable="pbd_negprcColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="pbd_bomamt" msprop:Generator_UserColumnName="pbd_bomamt" msprop:Generator_ColumnPropNameInRow="pbd_bomamt" msprop:Generator_ColumnVarNameInTable="columnpbd_bomamt" msprop:Generator_ColumnPropNameInTable="pbd_bomamtColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="pbd_shpstr" msprop:Generator_UserColumnName="pbd_shpstr" msprop:Generator_ColumnPropNameInRow="pbd_shpstr" msprop:Generator_ColumnVarNameInTable="columnpbd_shpstr" msprop:Generator_ColumnPropNameInTable="pbd_shpstrColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbd_shpend" msprop:Generator_UserColumnName="pbd_shpend" msprop:Generator_ColumnPropNameInRow="pbd_shpend" msprop:Generator_ColumnVarNameInTable="columnpbd_shpend" msprop:Generator_ColumnPropNameInTable="pbd_shpendColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ysi_dsc05" msprop:Generator_UserColumnName="ysi_dsc05" msprop:Generator_ColumnPropNameInRow="ysi_dsc05" msprop:Generator_ColumnVarNameInTable="columnysi_dsc05" msprop:Generator_ColumnPropNameInTable="ysi_dsc05Column" type="xs:string" minOccurs="0" />
+              <xs:element name="ivi_venitm" msprop:Generator_UserColumnName="ivi_venitm" msprop:Generator_ColumnPropNameInRow="ivi_venitm" msprop:Generator_ColumnVarNameInTable="columnivi_venitm" msprop:Generator_ColumnPropNameInTable="ivi_venitmColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="priCustNo" msprop:Generator_UserColumnName="priCustNo" msprop:Generator_ColumnPropNameInRow="priCustNo" msprop:Generator_ColumnVarNameInTable="columnpriCustNo" msprop:Generator_ColumnPropNameInTable="priCustNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="JobNo" msprop:Generator_UserColumnName="JobNo" msprop:Generator_ColumnPropNameInRow="JobNo" msprop:Generator_ColumnVarNameInTable="columnJobNo" msprop:Generator_ColumnPropNameInTable="JobNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbd_vencol" msprop:Generator_UserColumnName="pbd_vencol" msprop:Generator_ColumnPropNameInRow="pbd_vencol" msprop:Generator_ColumnVarNameInTable="columnpbd_vencol" msprop:Generator_ColumnPropNameInTable="pbd_vencolColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="pbd_vcodsc" msprop:Generator_UserColumnName="pbd_vcodsc" msprop:Generator_ColumnPropNameInRow="pbd_vcodsc" msprop:Generator_ColumnVarNameInTable="columnpbd_vcodsc" msprop:Generator_ColumnPropNameInTable="pbd_vcodscColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
