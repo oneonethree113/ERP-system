@@ -33,20 +33,18 @@ Partial Class frmPOQCRpt
         '
         'cmdClear
         '
-        Me.cmdClear.Location = New System.Drawing.Point(297, 4)
-        Me.cmdClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmdClear.Location = New System.Drawing.Point(223, 3)
         Me.cmdClear.Name = "cmdClear"
-        Me.cmdClear.Size = New System.Drawing.Size(75, 31)
+        Me.cmdClear.Size = New System.Drawing.Size(56, 23)
         Me.cmdClear.TabIndex = 8
         Me.cmdClear.Text = "&Clear"
         Me.cmdClear.UseVisualStyleBackColor = True
         '
         'cmdOK
         '
-        Me.cmdOK.Location = New System.Drawing.Point(217, 4)
-        Me.cmdOK.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmdOK.Location = New System.Drawing.Point(163, 3)
         Me.cmdOK.Name = "cmdOK"
-        Me.cmdOK.Size = New System.Drawing.Size(72, 31)
+        Me.cmdOK.Size = New System.Drawing.Size(54, 23)
         Me.cmdOK.TabIndex = 7
         Me.cmdOK.Text = "&OK"
         Me.cmdOK.UseVisualStyleBackColor = True
@@ -56,56 +54,51 @@ Partial Class frmPOQCRpt
         Me.dgQCRpt.AllowUserToAddRows = False
         Me.dgQCRpt.AllowUserToDeleteRows = False
         Me.dgQCRpt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgQCRpt.Location = New System.Drawing.Point(4, 39)
-        Me.dgQCRpt.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgQCRpt.Location = New System.Drawing.Point(3, 29)
         Me.dgQCRpt.Name = "dgQCRpt"
         Me.dgQCRpt.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgQCRpt.RowTemplate.Height = 18
-        Me.dgQCRpt.Size = New System.Drawing.Size(1048, 470)
+        Me.dgQCRpt.Size = New System.Drawing.Size(786, 352)
         Me.dgQCRpt.TabIndex = 6
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(16, 11)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(12, 8)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(50, 17)
+        Me.Label1.Size = New System.Drawing.Size(36, 12)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "PO No"
         '
         'txtPONo
         '
-        Me.txtPONo.Location = New System.Drawing.Point(76, 7)
-        Me.txtPONo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPONo.Location = New System.Drawing.Point(57, 5)
         Me.txtPONo.Name = "txtPONo"
-        Me.txtPONo.Size = New System.Drawing.Size(132, 22)
+        Me.txtPONo.Size = New System.Drawing.Size(100, 22)
         Me.txtPONo.TabIndex = 10
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(547, 5)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Location = New System.Drawing.Point(410, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(131, 28)
+        Me.Button1.Size = New System.Drawing.Size(98, 21)
         Me.Button1.TabIndex = 17
         Me.Button1.Text = "&Show QC Report"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'frmPOQCRpt
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1043, 498)
+        Me.ClientSize = New System.Drawing.Size(784, 379)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.txtPONo)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cmdClear)
         Me.Controls.Add(Me.cmdOK)
         Me.Controls.Add(Me.dgQCRpt)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.MaximumSize = New System.Drawing.Size(1061, 543)
-        Me.MinimumSize = New System.Drawing.Size(1061, 543)
+        Me.MaximumSize = New System.Drawing.Size(800, 417)
+        Me.MinimumSize = New System.Drawing.Size(800, 417)
         Me.Name = "frmPOQCRpt"
         Me.Text = "PO - QC Report History"
         CType(Me.dgQCRpt, System.ComponentModel.ISupportInitialize).EndInit()

@@ -52,19 +52,7 @@ Partial Class SCM00001
         Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Me.cmdInsRow = New System.Windows.Forms.Button
-        Me.cmdDelete = New System.Windows.Forms.Button
-        Me.cmdSave = New System.Windows.Forms.Button
-        Me.cmdLast = New System.Windows.Forms.Button
-        Me.cmdPrevious = New System.Windows.Forms.Button
-        Me.cmdAdd = New System.Windows.Forms.Button
-        Me.cmdNext = New System.Windows.Forms.Button
-        Me.cmdFind = New System.Windows.Forms.Button
-        Me.cmdCopy = New System.Windows.Forms.Button
-        Me.cmdClear = New System.Windows.Forms.Button
-        Me.cmdDelRow = New System.Windows.Forms.Button
-        Me.cmdFirst = New System.Windows.Forms.Button
-        Me.cmdSearch = New System.Windows.Forms.Button
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SCM00001))
         Me.Label1 = New System.Windows.Forms.Label
         Me.cboCoCde = New System.Windows.Forms.ComboBox
         Me.Label2 = New System.Windows.Forms.Label
@@ -266,7 +254,6 @@ Partial Class SCM00001
         Me.Label72 = New System.Windows.Forms.Label
         Me.cboHSTU = New System.Windows.Forms.ComboBox
         Me.Label70 = New System.Windows.Forms.Label
-        Me.chkPC = New System.Windows.Forms.CheckBox
         Me.txtMOA = New System.Windows.Forms.TextBox
         Me.Label69 = New System.Windows.Forms.Label
         Me.txtMOQUnttyp = New System.Windows.Forms.TextBox
@@ -354,6 +341,7 @@ Partial Class SCM00001
         Me.chkChgFty = New System.Windows.Forms.CheckBox
         Me.chkUpdatePO = New System.Windows.Forms.CheckBox
         Me.lblDtlSeq = New System.Windows.Forms.Label
+        Me.chkPC = New System.Windows.Forms.CheckBox
         Me.frmShpDoc = New System.Windows.Forms.TabPage
         Me.grpShpmrk = New System.Windows.Forms.GroupBox
         Me.cmdTransportShipmark = New System.Windows.Forms.Button
@@ -374,21 +362,6 @@ Partial Class SCM00001
         Me.optMain = New System.Windows.Forms.RadioButton
         Me.Label110 = New System.Windows.Forms.Label
         Me.frmSum = New System.Windows.Forms.TabPage
-        Me.panSumPODates = New System.Windows.Forms.Panel
-        Me.cmdPanSumPODatesUpdate = New System.Windows.Forms.Button
-        Me.cmdPanSumPODatesCancel = New System.Windows.Forms.Button
-        Me.GroupBox9 = New System.Windows.Forms.GroupBox
-        Me.txtPanSumPODatesCancel = New System.Windows.Forms.MaskedTextBox
-        Me.Label137 = New System.Windows.Forms.Label
-        Me.txtPanSumPODatesEnd = New System.Windows.Forms.MaskedTextBox
-        Me.Label131 = New System.Windows.Forms.Label
-        Me.txtPanSumPODatesStart = New System.Windows.Forms.MaskedTextBox
-        Me.Label127 = New System.Windows.Forms.Label
-        Me.GroupBox8 = New System.Windows.Forms.GroupBox
-        Me.txtPanSumPODatesSeqTo = New System.Windows.Forms.TextBox
-        Me.Label126 = New System.Windows.Forms.Label
-        Me.txtPanSumPODatesSeqFrom = New System.Windows.Forms.TextBox
-        Me.Label86 = New System.Windows.Forms.Label
         Me.grpSummary = New System.Windows.Forms.GroupBox
         Me.chkSCSeqReOrd = New System.Windows.Forms.CheckBox
         Me.cmdSumPODates = New System.Windows.Forms.Button
@@ -397,16 +370,6 @@ Partial Class SCM00001
         Me.TabPage1 = New System.Windows.Forms.TabPage
         Me.grpUpdatePO = New System.Windows.Forms.GroupBox
         Me.txtPOStatus = New System.Windows.Forms.TextBox
-        Me.panPODisPrm = New System.Windows.Forms.Panel
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox
-        Me.lstPOPre = New System.Windows.Forms.ListBox
-        Me.grdPOPre = New System.Windows.Forms.DataGridView
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox
-        Me.lstPODis = New System.Windows.Forms.ListBox
-        Me.grdPODis = New System.Windows.Forms.DataGridView
-        Me.cmdPODelRow = New System.Windows.Forms.Button
-        Me.cmdPODPQuit = New System.Windows.Forms.Button
-        Me.cmdPOInsRow = New System.Windows.Forms.Button
         Me.cmdPODisPrm = New System.Windows.Forms.Button
         Me.cmdSavePO = New System.Windows.Forms.Button
         Me.grpUpdPO_Shpmrk = New System.Windows.Forms.GroupBox
@@ -466,7 +429,31 @@ Partial Class SCM00001
         Me.Label119 = New System.Windows.Forms.Label
         Me.txtPOSeq = New System.Windows.Forms.TextBox
         Me.Label118 = New System.Windows.Forms.Label
-        Me.lblDVName = New System.Windows.Forms.Label
+        Me.panSumPODates = New System.Windows.Forms.Panel
+        Me.cmdPanSumPODatesUpdate = New System.Windows.Forms.Button
+        Me.cmdPanSumPODatesCancel = New System.Windows.Forms.Button
+        Me.GroupBox9 = New System.Windows.Forms.GroupBox
+        Me.txtPanSumPODatesCancel = New System.Windows.Forms.MaskedTextBox
+        Me.Label137 = New System.Windows.Forms.Label
+        Me.txtPanSumPODatesEnd = New System.Windows.Forms.MaskedTextBox
+        Me.Label131 = New System.Windows.Forms.Label
+        Me.txtPanSumPODatesStart = New System.Windows.Forms.MaskedTextBox
+        Me.Label127 = New System.Windows.Forms.Label
+        Me.GroupBox8 = New System.Windows.Forms.GroupBox
+        Me.txtPanSumPODatesSeqTo = New System.Windows.Forms.TextBox
+        Me.Label126 = New System.Windows.Forms.Label
+        Me.txtPanSumPODatesSeqFrom = New System.Windows.Forms.TextBox
+        Me.Label86 = New System.Windows.Forms.Label
+        Me.panPODisPrm = New System.Windows.Forms.Panel
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox
+        Me.lstPOPre = New System.Windows.Forms.ListBox
+        Me.grdPOPre = New System.Windows.Forms.DataGridView
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox
+        Me.lstPODis = New System.Windows.Forms.ListBox
+        Me.grdPODis = New System.Windows.Forms.DataGridView
+        Me.cmdPODelRow = New System.Windows.Forms.Button
+        Me.cmdPODPQuit = New System.Windows.Forms.Button
+        Me.cmdPOInsRow = New System.Windows.Forms.Button
         Me.panHdrSCRmk = New System.Windows.Forms.Panel
         Me.cmdPanHdrSCRmkCancel = New System.Windows.Forms.Button
         Me.cmdPanHdrSCRmkIns = New System.Windows.Forms.Button
@@ -480,6 +467,7 @@ Partial Class SCM00001
         Me.chkHdrSCRmk3 = New System.Windows.Forms.CheckBox
         Me.chkHdrSCRmk2 = New System.Windows.Forms.CheckBox
         Me.chkHdrSCRmk1 = New System.Windows.Forms.CheckBox
+        Me.lblDVName = New System.Windows.Forms.Label
         Me.panDtlSCRmk = New System.Windows.Forms.Panel
         Me.cmdPanDtlSCRmkCancel = New System.Windows.Forms.Button
         Me.cmdPanDtlSCRmkIns = New System.Windows.Forms.Button
@@ -519,6 +507,7 @@ Partial Class SCM00001
         Me.cmdPanDtlASSCancel = New System.Windows.Forms.Button
         Me.dgAssort = New System.Windows.Forms.DataGridView
         Me.panDtlShpDat = New System.Windows.Forms.Panel
+        Me.cmdPanDtlShpDatGenCTNNo = New System.Windows.Forms.Button
         Me.cmdPanDtl0ShpDatCalcPODat = New System.Windows.Forms.Button
         Me.txtPanDtlShpDatTtlCtn = New System.Windows.Forms.TextBox
         Me.Label33 = New System.Windows.Forms.Label
@@ -532,7 +521,6 @@ Partial Class SCM00001
         Me.cmdPanMatBrkdwnCancel = New System.Windows.Forms.Button
         Me.dgMatBrkdwn = New System.Windows.Forms.DataGridView
         Me.chkApprove = New System.Windows.Forms.CheckBox
-        Me.cmdExit = New System.Windows.Forms.Button
         Me.panUnusedObjects = New System.Windows.Forms.Panel
         Me.txtItmBasPrc = New System.Windows.Forms.TextBox
         Me.txtYear = New System.Windows.Forms.TextBox
@@ -634,6 +622,29 @@ Partial Class SCM00001
         Me.Label155 = New System.Windows.Forms.Label
         Me.Label156 = New System.Windows.Forms.Label
         Me.txt_name_f1 = New System.Windows.Forms.TextBox
+        Me.menuStrip = New System.Windows.Forms.MenuStrip
+        Me.mmdAdd = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdSave = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdDelete = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdCopy = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdFind = New System.Windows.Forms.ToolStripMenuItem
+        Me.t1 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdClear = New System.Windows.Forms.ToolStripMenuItem
+        Me.t2 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdSearch = New System.Windows.Forms.ToolStripMenuItem
+        Me.t3 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdInsRow = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdDelRow = New System.Windows.Forms.ToolStripMenuItem
+        Me.t4 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdPrint = New System.Windows.Forms.ToolStripMenuItem
+        Me.t5 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdAttach = New System.Windows.Forms.ToolStripMenuItem
+        Me.t6 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdFunction = New System.Windows.Forms.ToolStripMenuItem
+        Me.t7 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdLink = New System.Windows.Forms.ToolStripMenuItem
+        Me.t8 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdExit = New System.Windows.Forms.ToolStripMenuItem
         Me.CachedIMR00004Rpt1 = New ERPSystem.CachedIMR00004Rpt
         Me.StatusBar.SuspendLayout()
         Me.tabFrame.SuspendLayout()
@@ -652,21 +663,21 @@ Partial Class SCM00001
         Me.frmShpDoc.SuspendLayout()
         Me.grpShpmrk.SuspendLayout()
         Me.frmSum.SuspendLayout()
-        Me.panSumPODates.SuspendLayout()
-        Me.GroupBox9.SuspendLayout()
-        Me.GroupBox8.SuspendLayout()
         Me.grpSummary.SuspendLayout()
         CType(Me.dgSummary, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         Me.grpUpdatePO.SuspendLayout()
+        Me.grpUpdPO_Shpmrk.SuspendLayout()
+        Me.grpUpdPO_Header.SuspendLayout()
+        Me.grpUpdPO_Detail.SuspendLayout()
+        Me.panSumPODates.SuspendLayout()
+        Me.GroupBox9.SuspendLayout()
+        Me.GroupBox8.SuspendLayout()
         Me.panPODisPrm.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         CType(Me.grdPOPre, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
         CType(Me.grdPODis, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.grpUpdPO_Shpmrk.SuspendLayout()
-        Me.grpUpdPO_Header.SuspendLayout()
-        Me.grpUpdPO_Detail.SuspendLayout()
         Me.panHdrSCRmk.SuspendLayout()
         Me.grpPanHdrRmk.SuspendLayout()
         Me.panDtlSCRmk.SuspendLayout()
@@ -694,147 +705,16 @@ Partial Class SCM00001
         CType(Me.dgCustPOChgValid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panMoreFields.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        Me.menuStrip.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'cmdInsRow
-        '
-        Me.cmdInsRow.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdInsRow.Location = New System.Drawing.Point(520, 0)
-        Me.cmdInsRow.Name = "cmdInsRow"
-        Me.cmdInsRow.Size = New System.Drawing.Size(65, 25)
-        Me.cmdInsRow.TabIndex = 42
-        Me.cmdInsRow.TabStop = False
-        Me.cmdInsRow.Text = "I&ns Row"
-        Me.cmdInsRow.UseVisualStyleBackColor = True
-        '
-        'cmdDelete
-        '
-        Me.cmdDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdDelete.Location = New System.Drawing.Point(130, 0)
-        Me.cmdDelete.Name = "cmdDelete"
-        Me.cmdDelete.Size = New System.Drawing.Size(65, 25)
-        Me.cmdDelete.TabIndex = 30
-        Me.cmdDelete.TabStop = False
-        Me.cmdDelete.Text = "&Delete"
-        '
-        'cmdSave
-        '
-        Me.cmdSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdSave.Location = New System.Drawing.Point(65, 0)
-        Me.cmdSave.Name = "cmdSave"
-        Me.cmdSave.Size = New System.Drawing.Size(65, 25)
-        Me.cmdSave.TabIndex = 28
-        Me.cmdSave.TabStop = False
-        Me.cmdSave.Text = "&Save"
-        '
-        'cmdLast
-        '
-        Me.cmdLast.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdLast.Location = New System.Drawing.Point(820, 0)
-        Me.cmdLast.Name = "cmdLast"
-        Me.cmdLast.Size = New System.Drawing.Size(50, 25)
-        Me.cmdLast.TabIndex = 52
-        Me.cmdLast.TabStop = False
-        Me.cmdLast.Text = ">>|"
-        '
-        'cmdPrevious
-        '
-        Me.cmdPrevious.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdPrevious.Location = New System.Drawing.Point(720, 0)
-        Me.cmdPrevious.Name = "cmdPrevious"
-        Me.cmdPrevious.Size = New System.Drawing.Size(50, 25)
-        Me.cmdPrevious.TabIndex = 48
-        Me.cmdPrevious.TabStop = False
-        Me.cmdPrevious.Text = "<"
-        '
-        'cmdAdd
-        '
-        Me.cmdAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdAdd.Location = New System.Drawing.Point(0, 0)
-        Me.cmdAdd.Name = "cmdAdd"
-        Me.cmdAdd.Size = New System.Drawing.Size(65, 25)
-        Me.cmdAdd.TabIndex = 26
-        Me.cmdAdd.TabStop = False
-        Me.cmdAdd.Text = "&Add"
-        '
-        'cmdNext
-        '
-        Me.cmdNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdNext.Location = New System.Drawing.Point(770, 0)
-        Me.cmdNext.Name = "cmdNext"
-        Me.cmdNext.Size = New System.Drawing.Size(50, 25)
-        Me.cmdNext.TabIndex = 50
-        Me.cmdNext.TabStop = False
-        Me.cmdNext.Text = ">"
-        '
-        'cmdFind
-        '
-        Me.cmdFind.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdFind.Location = New System.Drawing.Point(260, 0)
-        Me.cmdFind.Name = "cmdFind"
-        Me.cmdFind.Size = New System.Drawing.Size(65, 25)
-        Me.cmdFind.TabIndex = 36
-        Me.cmdFind.TabStop = False
-        Me.cmdFind.Text = "&Find"
-        '
-        'cmdCopy
-        '
-        Me.cmdCopy.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdCopy.Location = New System.Drawing.Point(195, 0)
-        Me.cmdCopy.Name = "cmdCopy"
-        Me.cmdCopy.Size = New System.Drawing.Size(65, 25)
-        Me.cmdCopy.TabIndex = 34
-        Me.cmdCopy.TabStop = False
-        Me.cmdCopy.Text = "&Copy"
-        '
-        'cmdClear
-        '
-        Me.cmdClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdClear.Location = New System.Drawing.Point(325, 0)
-        Me.cmdClear.Name = "cmdClear"
-        Me.cmdClear.Size = New System.Drawing.Size(65, 25)
-        Me.cmdClear.TabIndex = 38
-        Me.cmdClear.TabStop = False
-        Me.cmdClear.Text = "Cl&ear"
-        '
-        'cmdDelRow
-        '
-        Me.cmdDelRow.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdDelRow.Location = New System.Drawing.Point(585, 0)
-        Me.cmdDelRow.Name = "cmdDelRow"
-        Me.cmdDelRow.Size = New System.Drawing.Size(65, 25)
-        Me.cmdDelRow.TabIndex = 44
-        Me.cmdDelRow.TabStop = False
-        Me.cmdDelRow.Text = "Del Ro&w"
-        '
-        'cmdFirst
-        '
-        Me.cmdFirst.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdFirst.Location = New System.Drawing.Point(670, 0)
-        Me.cmdFirst.Name = "cmdFirst"
-        Me.cmdFirst.Size = New System.Drawing.Size(50, 25)
-        Me.cmdFirst.TabIndex = 46
-        Me.cmdFirst.TabStop = False
-        Me.cmdFirst.Text = "|<<"
-        '
-        'cmdSearch
-        '
-        Me.cmdSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdSearch.Location = New System.Drawing.Point(420, 0)
-        Me.cmdSearch.Name = "cmdSearch"
-        Me.cmdSearch.Size = New System.Drawing.Size(65, 25)
-        Me.cmdSearch.TabIndex = 40
-        Me.cmdSearch.TabStop = False
-        Me.cmdSearch.Text = "Searc&h"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Blue
         Me.Label1.Location = New System.Drawing.Point(5, 32)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 13)
+        Me.Label1.Size = New System.Drawing.Size(79, 12)
         Me.Label1.TabIndex = 258
         Me.Label1.Text = "Company Code"
         '
@@ -870,11 +750,10 @@ Partial Class SCM00001
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Green
-        Me.Label3.Location = New System.Drawing.Point(733, 32)
+        Me.Label3.Location = New System.Drawing.Point(733, 33)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 13)
+        Me.Label3.Size = New System.Drawing.Size(52, 12)
         Me.Label3.TabIndex = 262
         Me.Label3.Text = "S/C Status"
         '
@@ -928,10 +807,9 @@ Partial Class SCM00001
         'chkhdrpo
         '
         Me.chkhdrpo.AutoSize = True
-        Me.chkhdrpo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkhdrpo.Location = New System.Drawing.Point(654, 55)
         Me.chkhdrpo.Name = "chkhdrpo"
-        Me.chkhdrpo.Size = New System.Drawing.Size(84, 17)
+        Me.chkhdrpo.Size = New System.Drawing.Size(87, 16)
         Me.chkhdrpo.TabIndex = 18
         Me.chkhdrpo.Text = "Apply All PO"
         Me.chkhdrpo.UseVisualStyleBackColor = True
@@ -939,10 +817,9 @@ Partial Class SCM00001
         'chkCloseOut
         '
         Me.chkCloseOut.AutoSize = True
-        Me.chkCloseOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkCloseOut.Location = New System.Drawing.Point(737, 55)
         Me.chkCloseOut.Name = "chkCloseOut"
-        Me.chkCloseOut.Size = New System.Drawing.Size(72, 17)
+        Me.chkCloseOut.Size = New System.Drawing.Size(70, 16)
         Me.chkCloseOut.TabIndex = 20
         Me.chkCloseOut.Text = "Close Out"
         Me.chkCloseOut.UseVisualStyleBackColor = True
@@ -950,10 +827,9 @@ Partial Class SCM00001
         'chkReplacement
         '
         Me.chkReplacement.AutoSize = True
-        Me.chkReplacement.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkReplacement.Location = New System.Drawing.Point(808, 55)
         Me.chkReplacement.Name = "chkReplacement"
-        Me.chkReplacement.Size = New System.Drawing.Size(87, 17)
+        Me.chkReplacement.Size = New System.Drawing.Size(84, 16)
         Me.chkReplacement.TabIndex = 22
         Me.chkReplacement.Text = "Replacement"
         Me.chkReplacement.UseVisualStyleBackColor = True
@@ -961,10 +837,9 @@ Partial Class SCM00001
         'chkCancel
         '
         Me.chkCancel.AutoSize = True
-        Me.chkCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkCancel.Location = New System.Drawing.Point(894, 55)
         Me.chkCancel.Name = "chkCancel"
-        Me.chkCancel.Size = New System.Drawing.Size(58, 17)
+        Me.chkCancel.Size = New System.Drawing.Size(56, 16)
         Me.chkCancel.TabIndex = 24
         Me.chkCancel.Text = "Cancel"
         Me.chkCancel.UseVisualStyleBackColor = True
@@ -973,7 +848,7 @@ Partial Class SCM00001
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.Green
-        Me.Label6.Location = New System.Drawing.Point(511, 32)
+        Me.Label6.Location = New System.Drawing.Point(511, 33)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(44, 12)
         Me.Label6.TabIndex = 272
@@ -1008,26 +883,30 @@ Partial Class SCM00001
         'StatusBar
         '
         Me.StatusBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblLeft, Me.lblRight})
-        Me.StatusBar.Location = New System.Drawing.Point(0, 606)
+        Me.StatusBar.Location = New System.Drawing.Point(0, 608)
         Me.StatusBar.Name = "StatusBar"
-        Me.StatusBar.Size = New System.Drawing.Size(954, 22)
+        Me.StatusBar.Size = New System.Drawing.Size(954, 24)
         Me.StatusBar.TabIndex = 277
         Me.StatusBar.Text = "StatusStrip1"
         '
         'lblLeft
         '
         Me.lblLeft.AutoSize = False
+        Me.lblLeft.Font = New System.Drawing.Font("PMingLiU", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.lblLeft.Name = "lblLeft"
-        Me.lblLeft.Size = New System.Drawing.Size(939, 17)
+        Me.lblLeft.Size = New System.Drawing.Size(469, 19)
         Me.lblLeft.Spring = True
         Me.lblLeft.Text = "1900"
         Me.lblLeft.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblRight
         '
+        Me.lblRight.AutoSize = False
+        Me.lblRight.Font = New System.Drawing.Font("PMingLiU", 9.0!)
         Me.lblRight.Name = "lblRight"
-        Me.lblRight.Size = New System.Drawing.Size(131, 15)
-        Me.lblRight.Text = "ToolStripStatusLabel1"
+        Me.lblRight.Size = New System.Drawing.Size(469, 19)
+        Me.lblRight.Spring = True
+        Me.lblRight.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'tabFrame
         '
@@ -1041,7 +920,7 @@ Partial Class SCM00001
         Me.tabFrame.Location = New System.Drawing.Point(0, 75)
         Me.tabFrame.Name = "tabFrame"
         Me.tabFrame.SelectedIndex = 0
-        Me.tabFrame.Size = New System.Drawing.Size(954, 528)
+        Me.tabFrame.Size = New System.Drawing.Size(954, 532)
         Me.tabFrame.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.tabFrame.TabIndex = 16
         '
@@ -1051,7 +930,7 @@ Partial Class SCM00001
         Me.frmHdr.Location = New System.Drawing.Point(4, 22)
         Me.frmHdr.Name = "frmHdr"
         Me.frmHdr.Padding = New System.Windows.Forms.Padding(3)
-        Me.frmHdr.Size = New System.Drawing.Size(946, 502)
+        Me.frmHdr.Size = New System.Drawing.Size(946, 506)
         Me.frmHdr.TabIndex = 0
         Me.frmHdr.Text = "(1) Header"
         Me.frmHdr.UseVisualStyleBackColor = True
@@ -1129,14 +1008,14 @@ Partial Class SCM00001
         Me.grpHeader.Controls.Add(Me.Label10)
         Me.grpHeader.Location = New System.Drawing.Point(1, -2)
         Me.grpHeader.Name = "grpHeader"
-        Me.grpHeader.Size = New System.Drawing.Size(942, 501)
+        Me.grpHeader.Size = New System.Drawing.Size(942, 505)
         Me.grpHeader.TabIndex = 0
         Me.grpHeader.TabStop = False
         '
         'Label158
         '
         Me.Label158.AutoSize = True
-        Me.Label158.Location = New System.Drawing.Point(485, 439)
+        Me.Label158.Location = New System.Drawing.Point(494, 439)
         Me.Label158.Name = "Label158"
         Me.Label158.Size = New System.Drawing.Size(93, 12)
         Me.Label158.TabIndex = 72
@@ -1145,7 +1024,7 @@ Partial Class SCM00001
         'txtSCRemark
         '
         Me.txtSCRemark.BackColor = System.Drawing.Color.White
-        Me.txtSCRemark.Location = New System.Drawing.Point(487, 454)
+        Me.txtSCRemark.Location = New System.Drawing.Point(496, 454)
         Me.txtSCRemark.MaxLength = 1600
         Me.txtSCRemark.Multiline = True
         Me.txtSCRemark.Name = "txtSCRemark"
@@ -1155,7 +1034,7 @@ Partial Class SCM00001
         '
         'cmdCustPOChg
         '
-        Me.cmdCustPOChg.Location = New System.Drawing.Point(676, 237)
+        Me.cmdCustPOChg.Location = New System.Drawing.Point(685, 237)
         Me.cmdCustPOChg.Name = "cmdCustPOChg"
         Me.cmdCustPOChg.Size = New System.Drawing.Size(57, 23)
         Me.cmdCustPOChg.TabIndex = 41
@@ -1166,7 +1045,7 @@ Partial Class SCM00001
         '
         Me.Label132.AutoSize = True
         Me.Label132.ForeColor = System.Drawing.Color.Green
-        Me.Label132.Location = New System.Drawing.Point(484, 268)
+        Me.Label132.Location = New System.Drawing.Point(493, 268)
         Me.Label132.Name = "Label132"
         Me.Label132.Size = New System.Drawing.Size(74, 12)
         Me.Label132.TabIndex = 70
@@ -1175,7 +1054,7 @@ Partial Class SCM00001
         'txtCusTtlCtn
         '
         Me.txtCusTtlCtn.BackColor = System.Drawing.Color.White
-        Me.txtCusTtlCtn.Location = New System.Drawing.Point(590, 301)
+        Me.txtCusTtlCtn.Location = New System.Drawing.Point(599, 301)
         Me.txtCusTtlCtn.Name = "txtCusTtlCtn"
         Me.txtCusTtlCtn.Size = New System.Drawing.Size(99, 22)
         Me.txtCusTtlCtn.TabIndex = 48
@@ -1183,7 +1062,7 @@ Partial Class SCM00001
         'Label59
         '
         Me.Label59.AutoSize = True
-        Me.Label59.Location = New System.Drawing.Point(484, 304)
+        Me.Label59.Location = New System.Drawing.Point(493, 304)
         Me.Label59.Name = "Label59"
         Me.Label59.Size = New System.Drawing.Size(77, 12)
         Me.Label59.TabIndex = 66
@@ -1192,7 +1071,7 @@ Partial Class SCM00001
         'txtDestination
         '
         Me.txtDestination.BackColor = System.Drawing.Color.White
-        Me.txtDestination.Location = New System.Drawing.Point(590, 328)
+        Me.txtDestination.Location = New System.Drawing.Point(599, 328)
         Me.txtDestination.MaxLength = 30
         Me.txtDestination.Name = "txtDestination"
         Me.txtDestination.Size = New System.Drawing.Size(337, 22)
@@ -1202,7 +1081,7 @@ Partial Class SCM00001
         '
         Me.Label60.AutoSize = True
         Me.Label60.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label60.Location = New System.Drawing.Point(484, 331)
+        Me.Label60.Location = New System.Drawing.Point(493, 331)
         Me.Label60.Name = "Label60"
         Me.Label60.Size = New System.Drawing.Size(57, 12)
         Me.Label60.TabIndex = 68
@@ -1210,7 +1089,7 @@ Partial Class SCM00001
         '
         'cmdHdrSCRmk
         '
-        Me.cmdHdrSCRmk.Location = New System.Drawing.Point(643, 360)
+        Me.cmdHdrSCRmk.Location = New System.Drawing.Point(652, 360)
         Me.cmdHdrSCRmk.Name = "cmdHdrSCRmk"
         Me.cmdHdrSCRmk.Size = New System.Drawing.Size(50, 23)
         Me.cmdHdrSCRmk.TabIndex = 52
@@ -1220,15 +1099,15 @@ Partial Class SCM00001
         'txtSalDivTem
         '
         Me.txtSalDivTem.BackColor = System.Drawing.Color.White
-        Me.txtSalDivTem.Location = New System.Drawing.Point(115, 239)
+        Me.txtSalDivTem.Location = New System.Drawing.Point(97, 239)
         Me.txtSalDivTem.Name = "txtSalDivTem"
-        Me.txtSalDivTem.Size = New System.Drawing.Size(337, 22)
+        Me.txtSalDivTem.Size = New System.Drawing.Size(390, 22)
         Me.txtSalDivTem.TabIndex = 26
         '
         'Label35
         '
         Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(9, 242)
+        Me.Label35.Location = New System.Drawing.Point(2, 241)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(83, 12)
         Me.Label35.TabIndex = 62
@@ -1238,7 +1117,7 @@ Partial Class SCM00001
         '
         Me.lblNetAmtCur.AutoSize = True
         Me.lblNetAmtCur.ForeColor = System.Drawing.Color.Green
-        Me.lblNetAmtCur.Location = New System.Drawing.Point(84, 457)
+        Me.lblNetAmtCur.Location = New System.Drawing.Point(61, 457)
         Me.lblNetAmtCur.MaximumSize = New System.Drawing.Size(30, 13)
         Me.lblNetAmtCur.Name = "lblNetAmtCur"
         Me.lblNetAmtCur.Size = New System.Drawing.Size(27, 12)
@@ -1249,7 +1128,7 @@ Partial Class SCM00001
         '
         Me.lblTtlAmtCur.AutoSize = True
         Me.lblTtlAmtCur.ForeColor = System.Drawing.Color.Green
-        Me.lblTtlAmtCur.Location = New System.Drawing.Point(84, 434)
+        Me.lblTtlAmtCur.Location = New System.Drawing.Point(70, 434)
         Me.lblTtlAmtCur.MaximumSize = New System.Drawing.Size(30, 13)
         Me.lblTtlAmtCur.Name = "lblTtlAmtCur"
         Me.lblTtlAmtCur.Size = New System.Drawing.Size(27, 12)
@@ -1259,15 +1138,15 @@ Partial Class SCM00001
         'txtEmail
         '
         Me.txtEmail.BackColor = System.Drawing.Color.White
-        Me.txtEmail.Location = New System.Drawing.Point(115, 176)
+        Me.txtEmail.Location = New System.Drawing.Point(97, 176)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(337, 22)
+        Me.txtEmail.Size = New System.Drawing.Size(390, 22)
         Me.txtEmail.TabIndex = 22
         '
         'Label117
         '
         Me.Label117.AutoSize = True
-        Me.Label117.Location = New System.Drawing.Point(10, 179)
+        Me.Label117.Location = New System.Drawing.Point(2, 176)
         Me.Label117.Name = "Label117"
         Me.Label117.Size = New System.Drawing.Size(32, 12)
         Me.Label117.TabIndex = 24
@@ -1278,7 +1157,7 @@ Partial Class SCM00001
         Me.cboShipAdd.BackColor = System.Drawing.Color.White
         Me.cboShipAdd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboShipAdd.FormattingEnabled = True
-        Me.cboShipAdd.Location = New System.Drawing.Point(590, 13)
+        Me.cboShipAdd.Location = New System.Drawing.Point(599, 13)
         Me.cboShipAdd.Name = "cboShipAdd"
         Me.cboShipAdd.Size = New System.Drawing.Size(337, 20)
         Me.cboShipAdd.TabIndex = 10
@@ -1288,15 +1167,15 @@ Partial Class SCM00001
         Me.cboBillAdd.BackColor = System.Drawing.Color.White
         Me.cboBillAdd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboBillAdd.FormattingEnabled = True
-        Me.cboBillAdd.Location = New System.Drawing.Point(115, 13)
+        Me.cboBillAdd.Location = New System.Drawing.Point(97, 13)
         Me.cboBillAdd.Name = "cboBillAdd"
-        Me.cboBillAdd.Size = New System.Drawing.Size(337, 20)
+        Me.cboBillAdd.Size = New System.Drawing.Size(390, 20)
         Me.cboBillAdd.TabIndex = 0
         '
         'txtMOQSC
         '
         Me.txtMOQSC.BackColor = System.Drawing.Color.White
-        Me.txtMOQSC.Location = New System.Drawing.Point(590, 149)
+        Me.txtMOQSC.Location = New System.Drawing.Point(599, 149)
         Me.txtMOQSC.Name = "txtMOQSC"
         Me.txtMOQSC.Size = New System.Drawing.Size(337, 22)
         Me.txtMOQSC.TabIndex = 34
@@ -1304,7 +1183,7 @@ Partial Class SCM00001
         'Label37
         '
         Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(484, 152)
+        Me.Label37.Location = New System.Drawing.Point(493, 152)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(57, 12)
         Me.Label37.TabIndex = 28
@@ -1313,9 +1192,9 @@ Partial Class SCM00001
         'txtNetAmt
         '
         Me.txtNetAmt.BackColor = System.Drawing.Color.White
-        Me.txtNetAmt.Location = New System.Drawing.Point(115, 454)
+        Me.txtNetAmt.Location = New System.Drawing.Point(97, 454)
         Me.txtNetAmt.Name = "txtNetAmt"
-        Me.txtNetAmt.Size = New System.Drawing.Size(102, 22)
+        Me.txtNetAmt.Size = New System.Drawing.Size(115, 22)
         Me.txtNetAmt.TabIndex = 64
         Me.txtNetAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1323,7 +1202,7 @@ Partial Class SCM00001
         '
         Me.lblNetAmt.AutoSize = True
         Me.lblNetAmt.ForeColor = System.Drawing.Color.Green
-        Me.lblNetAmt.Location = New System.Drawing.Point(14, 457)
+        Me.lblNetAmt.Location = New System.Drawing.Point(2, 457)
         Me.lblNetAmt.Name = "lblNetAmt"
         Me.lblNetAmt.Size = New System.Drawing.Size(62, 12)
         Me.lblNetAmt.TabIndex = 59
@@ -1332,9 +1211,9 @@ Partial Class SCM00001
         'txtAmt
         '
         Me.txtAmt.BackColor = System.Drawing.Color.White
-        Me.txtAmt.Location = New System.Drawing.Point(115, 431)
+        Me.txtAmt.Location = New System.Drawing.Point(97, 431)
         Me.txtAmt.Name = "txtAmt"
-        Me.txtAmt.Size = New System.Drawing.Size(102, 22)
+        Me.txtAmt.Size = New System.Drawing.Size(115, 22)
         Me.txtAmt.TabIndex = 62
         Me.txtAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1342,7 +1221,7 @@ Partial Class SCM00001
         '
         Me.lblTtlAmt.AutoSize = True
         Me.lblTtlAmt.ForeColor = System.Drawing.Color.Green
-        Me.lblTtlAmt.Location = New System.Drawing.Point(14, 434)
+        Me.lblTtlAmt.Location = New System.Drawing.Point(2, 434)
         Me.lblTtlAmt.Name = "lblTtlAmt"
         Me.lblTtlAmt.Size = New System.Drawing.Size(70, 12)
         Me.lblTtlAmt.TabIndex = 56
@@ -1351,16 +1230,16 @@ Partial Class SCM00001
         'txtTotalCtn
         '
         Me.txtTotalCtn.BackColor = System.Drawing.Color.White
-        Me.txtTotalCtn.Location = New System.Drawing.Point(115, 408)
+        Me.txtTotalCtn.Location = New System.Drawing.Point(97, 408)
         Me.txtTotalCtn.Name = "txtTotalCtn"
-        Me.txtTotalCtn.Size = New System.Drawing.Size(102, 22)
+        Me.txtTotalCtn.Size = New System.Drawing.Size(115, 22)
         Me.txtTotalCtn.TabIndex = 60
         '
         'Label32
         '
         Me.Label32.AutoSize = True
         Me.Label32.ForeColor = System.Drawing.Color.Green
-        Me.Label32.Location = New System.Drawing.Point(14, 412)
+        Me.Label32.Location = New System.Drawing.Point(0, 411)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(97, 12)
         Me.Label32.TabIndex = 54
@@ -1369,16 +1248,16 @@ Partial Class SCM00001
         'txtTotalCFT
         '
         Me.txtTotalCFT.BackColor = System.Drawing.Color.White
-        Me.txtTotalCFT.Location = New System.Drawing.Point(115, 385)
+        Me.txtTotalCFT.Location = New System.Drawing.Point(97, 385)
         Me.txtTotalCFT.Name = "txtTotalCFT"
-        Me.txtTotalCFT.Size = New System.Drawing.Size(102, 22)
+        Me.txtTotalCFT.Size = New System.Drawing.Size(115, 22)
         Me.txtTotalCFT.TabIndex = 58
         '
         'Label31
         '
         Me.Label31.AutoSize = True
         Me.Label31.ForeColor = System.Drawing.Color.Green
-        Me.Label31.Location = New System.Drawing.Point(70, 388)
+        Me.Label31.Location = New System.Drawing.Point(2, 388)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(34, 12)
         Me.Label31.TabIndex = 52
@@ -1387,16 +1266,16 @@ Partial Class SCM00001
         'txtTotalCube
         '
         Me.txtTotalCube.BackColor = System.Drawing.Color.White
-        Me.txtTotalCube.Location = New System.Drawing.Point(115, 362)
+        Me.txtTotalCube.Location = New System.Drawing.Point(97, 362)
         Me.txtTotalCube.Name = "txtTotalCube"
-        Me.txtTotalCube.Size = New System.Drawing.Size(102, 22)
+        Me.txtTotalCube.Size = New System.Drawing.Size(115, 22)
         Me.txtTotalCube.TabIndex = 56
         '
         'Label30
         '
         Me.Label30.AutoSize = True
         Me.Label30.ForeColor = System.Drawing.Color.Green
-        Me.Label30.Location = New System.Drawing.Point(14, 365)
+        Me.Label30.Location = New System.Drawing.Point(2, 365)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(94, 12)
         Me.Label30.TabIndex = 50
@@ -1406,16 +1285,16 @@ Partial Class SCM00001
         '
         Me.cboPayTrm.BackColor = System.Drawing.Color.White
         Me.cboPayTrm.FormattingEnabled = True
-        Me.cboPayTrm.Location = New System.Drawing.Point(115, 328)
+        Me.cboPayTrm.Location = New System.Drawing.Point(97, 328)
         Me.cboPayTrm.Name = "cboPayTrm"
-        Me.cboPayTrm.Size = New System.Drawing.Size(337, 20)
+        Me.cboPayTrm.Size = New System.Drawing.Size(390, 20)
         Me.cboPayTrm.TabIndex = 32
         '
         'Label29
         '
         Me.Label29.AutoSize = True
         Me.Label29.ForeColor = System.Drawing.Color.Green
-        Me.Label29.Location = New System.Drawing.Point(9, 331)
+        Me.Label29.Location = New System.Drawing.Point(2, 331)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(73, 12)
         Me.Label29.TabIndex = 48
@@ -1425,16 +1304,16 @@ Partial Class SCM00001
         '
         Me.cboPrcTrm.BackColor = System.Drawing.Color.White
         Me.cboPrcTrm.FormattingEnabled = True
-        Me.cboPrcTrm.Location = New System.Drawing.Point(115, 301)
+        Me.cboPrcTrm.Location = New System.Drawing.Point(97, 301)
         Me.cboPrcTrm.Name = "cboPrcTrm"
-        Me.cboPrcTrm.Size = New System.Drawing.Size(337, 20)
+        Me.cboPrcTrm.Size = New System.Drawing.Size(390, 20)
         Me.cboPrcTrm.TabIndex = 30
         '
         'Label28
         '
         Me.Label28.AutoSize = True
         Me.Label28.ForeColor = System.Drawing.Color.Green
-        Me.Label28.Location = New System.Drawing.Point(9, 304)
+        Me.Label28.Location = New System.Drawing.Point(2, 304)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(56, 12)
         Me.Label28.TabIndex = 46
@@ -1443,7 +1322,7 @@ Partial Class SCM00001
         'txtEndShipDat
         '
         Me.txtEndShipDat.BackColor = System.Drawing.Color.White
-        Me.txtEndShipDat.Location = New System.Drawing.Point(826, 264)
+        Me.txtEndShipDat.Location = New System.Drawing.Point(835, 264)
         Me.txtEndShipDat.Mask = "00/00/0000"
         Me.txtEndShipDat.Name = "txtEndShipDat"
         Me.txtEndShipDat.Size = New System.Drawing.Size(80, 22)
@@ -1453,7 +1332,7 @@ Partial Class SCM00001
         '
         Me.Label26.AutoSize = True
         Me.Label26.ForeColor = System.Drawing.Color.Green
-        Me.Label26.Location = New System.Drawing.Point(768, 267)
+        Me.Label26.Location = New System.Drawing.Point(763, 268)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(48, 12)
         Me.Label26.TabIndex = 44
@@ -1462,7 +1341,7 @@ Partial Class SCM00001
         'txtStartShipDat
         '
         Me.txtStartShipDat.BackColor = System.Drawing.Color.White
-        Me.txtStartShipDat.Location = New System.Drawing.Point(590, 264)
+        Me.txtStartShipDat.Location = New System.Drawing.Point(599, 264)
         Me.txtStartShipDat.Mask = "00/00/0000"
         Me.txtStartShipDat.Name = "txtStartShipDat"
         Me.txtStartShipDat.Size = New System.Drawing.Size(80, 22)
@@ -1481,7 +1360,7 @@ Partial Class SCM00001
         'txtRespPO
         '
         Me.txtRespPO.BackColor = System.Drawing.Color.White
-        Me.txtRespPO.Location = New System.Drawing.Point(590, 202)
+        Me.txtRespPO.Location = New System.Drawing.Point(599, 202)
         Me.txtRespPO.MaxLength = 20
         Me.txtRespPO.Name = "txtRespPO"
         Me.txtRespPO.Size = New System.Drawing.Size(337, 22)
@@ -1490,7 +1369,7 @@ Partial Class SCM00001
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(484, 205)
+        Me.Label25.Location = New System.Drawing.Point(493, 205)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(81, 12)
         Me.Label25.TabIndex = 40
@@ -1499,7 +1378,7 @@ Partial Class SCM00001
         'txtCancelDat
         '
         Me.txtCancelDat.BackColor = System.Drawing.Color.White
-        Me.txtCancelDat.Location = New System.Drawing.Point(826, 238)
+        Me.txtCancelDat.Location = New System.Drawing.Point(835, 238)
         Me.txtCancelDat.Mask = "00/00/0000"
         Me.txtCancelDat.Name = "txtCancelDat"
         Me.txtCancelDat.Size = New System.Drawing.Size(80, 22)
@@ -1508,7 +1387,7 @@ Partial Class SCM00001
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(754, 241)
+        Me.Label24.Location = New System.Drawing.Point(763, 241)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(61, 12)
         Me.Label24.TabIndex = 38
@@ -1517,7 +1396,7 @@ Partial Class SCM00001
         'txtCustPoDat
         '
         Me.txtCustPoDat.BackColor = System.Drawing.Color.White
-        Me.txtCustPoDat.Location = New System.Drawing.Point(590, 238)
+        Me.txtCustPoDat.Location = New System.Drawing.Point(599, 238)
         Me.txtCustPoDat.Mask = "00/00/0000"
         Me.txtCustPoDat.Name = "txtCustPoDat"
         Me.txtCustPoDat.Size = New System.Drawing.Size(80, 22)
@@ -1527,7 +1406,7 @@ Partial Class SCM00001
         '
         Me.Label23.AutoSize = True
         Me.Label23.ForeColor = System.Drawing.Color.Green
-        Me.Label23.Location = New System.Drawing.Point(484, 242)
+        Me.Label23.Location = New System.Drawing.Point(493, 242)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(91, 12)
         Me.Label23.TabIndex = 36
@@ -1536,7 +1415,7 @@ Partial Class SCM00001
         'txtCustPO
         '
         Me.txtCustPO.BackColor = System.Drawing.Color.White
-        Me.txtCustPO.Location = New System.Drawing.Point(590, 176)
+        Me.txtCustPO.Location = New System.Drawing.Point(599, 176)
         Me.txtCustPO.MaxLength = 20
         Me.txtCustPO.Name = "txtCustPO"
         Me.txtCustPO.Size = New System.Drawing.Size(337, 22)
@@ -1546,7 +1425,7 @@ Partial Class SCM00001
         '
         Me.Label22.AutoSize = True
         Me.Label22.ForeColor = System.Drawing.Color.Green
-        Me.Label22.Location = New System.Drawing.Point(484, 179)
+        Me.Label22.Location = New System.Drawing.Point(493, 179)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(76, 12)
         Me.Label22.TabIndex = 34
@@ -1556,15 +1435,15 @@ Partial Class SCM00001
         '
         Me.cboSalesRep.BackColor = System.Drawing.Color.White
         Me.cboSalesRep.FormattingEnabled = True
-        Me.cboSalesRep.Location = New System.Drawing.Point(115, 265)
+        Me.cboSalesRep.Location = New System.Drawing.Point(97, 265)
         Me.cboSalesRep.Name = "cboSalesRep"
-        Me.cboSalesRep.Size = New System.Drawing.Size(337, 20)
+        Me.cboSalesRep.Size = New System.Drawing.Size(390, 20)
         Me.cboSalesRep.TabIndex = 28
         '
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(9, 268)
+        Me.Label21.Location = New System.Drawing.Point(2, 268)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(50, 12)
         Me.Label21.TabIndex = 32
@@ -1575,15 +1454,15 @@ Partial Class SCM00001
         Me.cboAgent.BackColor = System.Drawing.Color.White
         Me.cboAgent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboAgent.FormattingEnabled = True
-        Me.cboAgent.Location = New System.Drawing.Point(115, 202)
+        Me.cboAgent.Location = New System.Drawing.Point(97, 202)
         Me.cboAgent.Name = "cboAgent"
-        Me.cboAgent.Size = New System.Drawing.Size(337, 20)
+        Me.cboAgent.Size = New System.Drawing.Size(390, 20)
         Me.cboAgent.TabIndex = 24
         '
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(10, 205)
+        Me.Label20.Location = New System.Drawing.Point(2, 206)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(33, 12)
         Me.Label20.TabIndex = 30
@@ -1592,7 +1471,7 @@ Partial Class SCM00001
         'txtRemark
         '
         Me.txtRemark.BackColor = System.Drawing.Color.White
-        Me.txtRemark.Location = New System.Drawing.Point(487, 385)
+        Me.txtRemark.Location = New System.Drawing.Point(496, 385)
         Me.txtRemark.MaxLength = 400
         Me.txtRemark.Multiline = True
         Me.txtRemark.Name = "txtRemark"
@@ -1603,7 +1482,7 @@ Partial Class SCM00001
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(484, 365)
+        Me.Label19.Location = New System.Drawing.Point(493, 365)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(157, 12)
         Me.Label19.TabIndex = 26
@@ -1612,7 +1491,7 @@ Partial Class SCM00001
         'txtShipZIP
         '
         Me.txtShipZIP.BackColor = System.Drawing.Color.White
-        Me.txtShipZIP.Location = New System.Drawing.Point(590, 113)
+        Me.txtShipZIP.Location = New System.Drawing.Point(599, 113)
         Me.txtShipZIP.MaxLength = 20
         Me.txtShipZIP.Name = "txtShipZIP"
         Me.txtShipZIP.Size = New System.Drawing.Size(130, 22)
@@ -1621,7 +1500,7 @@ Partial Class SCM00001
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(484, 116)
+        Me.Label15.Location = New System.Drawing.Point(493, 116)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(86, 12)
         Me.Label15.TabIndex = 20
@@ -1632,7 +1511,7 @@ Partial Class SCM00001
         Me.cboShipCountry.BackColor = System.Drawing.Color.White
         Me.cboShipCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboShipCountry.FormattingEnabled = True
-        Me.cboShipCountry.Location = New System.Drawing.Point(784, 88)
+        Me.cboShipCountry.Location = New System.Drawing.Point(793, 88)
         Me.cboShipCountry.Name = "cboShipCountry"
         Me.cboShipCountry.Size = New System.Drawing.Size(143, 20)
         Me.cboShipCountry.TabIndex = 16
@@ -1640,7 +1519,7 @@ Partial Class SCM00001
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(735, 91)
+        Me.Label16.Location = New System.Drawing.Point(744, 91)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(44, 12)
         Me.Label16.TabIndex = 18
@@ -1649,7 +1528,7 @@ Partial Class SCM00001
         'txtShipSP
         '
         Me.txtShipSP.BackColor = System.Drawing.Color.White
-        Me.txtShipSP.Location = New System.Drawing.Point(590, 88)
+        Me.txtShipSP.Location = New System.Drawing.Point(599, 88)
         Me.txtShipSP.MaxLength = 20
         Me.txtShipSP.Name = "txtShipSP"
         Me.txtShipSP.Size = New System.Drawing.Size(130, 22)
@@ -1658,7 +1537,7 @@ Partial Class SCM00001
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(484, 91)
+        Me.Label17.Location = New System.Drawing.Point(493, 91)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(77, 12)
         Me.Label17.TabIndex = 16
@@ -1667,7 +1546,7 @@ Partial Class SCM00001
         'txtShipAdd
         '
         Me.txtShipAdd.BackColor = System.Drawing.Color.White
-        Me.txtShipAdd.Location = New System.Drawing.Point(590, 38)
+        Me.txtShipAdd.Location = New System.Drawing.Point(599, 38)
         Me.txtShipAdd.MaxLength = 200
         Me.txtShipAdd.Multiline = True
         Me.txtShipAdd.Name = "txtShipAdd"
@@ -1678,7 +1557,7 @@ Partial Class SCM00001
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(484, 16)
+        Me.Label18.Location = New System.Drawing.Point(493, 16)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(87, 12)
         Me.Label18.TabIndex = 13
@@ -1688,15 +1567,15 @@ Partial Class SCM00001
         '
         Me.cboContactPerson.BackColor = System.Drawing.Color.White
         Me.cboContactPerson.FormattingEnabled = True
-        Me.cboContactPerson.Location = New System.Drawing.Point(115, 149)
+        Me.cboContactPerson.Location = New System.Drawing.Point(97, 149)
         Me.cboContactPerson.Name = "cboContactPerson"
-        Me.cboContactPerson.Size = New System.Drawing.Size(337, 20)
+        Me.cboContactPerson.Size = New System.Drawing.Size(390, 20)
         Me.cboContactPerson.TabIndex = 20
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(9, 152)
+        Me.Label14.Location = New System.Drawing.Point(2, 153)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(75, 12)
         Me.Label14.TabIndex = 22
@@ -1705,7 +1584,7 @@ Partial Class SCM00001
         'txtBillZIP
         '
         Me.txtBillZIP.BackColor = System.Drawing.Color.White
-        Me.txtBillZIP.Location = New System.Drawing.Point(115, 113)
+        Me.txtBillZIP.Location = New System.Drawing.Point(97, 113)
         Me.txtBillZIP.MaxLength = 20
         Me.txtBillZIP.Name = "txtBillZIP"
         Me.txtBillZIP.Size = New System.Drawing.Size(130, 22)
@@ -1714,7 +1593,7 @@ Partial Class SCM00001
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(10, 116)
+        Me.Label13.Location = New System.Drawing.Point(2, 116)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(86, 12)
         Me.Label13.TabIndex = 11
@@ -1725,15 +1604,15 @@ Partial Class SCM00001
         Me.cboBillCountry.BackColor = System.Drawing.Color.White
         Me.cboBillCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboBillCountry.FormattingEnabled = True
-        Me.cboBillCountry.Location = New System.Drawing.Point(309, 88)
+        Me.cboBillCountry.Location = New System.Drawing.Point(291, 88)
         Me.cboBillCountry.Name = "cboBillCountry"
-        Me.cboBillCountry.Size = New System.Drawing.Size(143, 20)
+        Me.cboBillCountry.Size = New System.Drawing.Size(196, 20)
         Me.cboBillCountry.TabIndex = 6
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(260, 91)
+        Me.Label12.Location = New System.Drawing.Point(242, 91)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(44, 12)
         Me.Label12.TabIndex = 9
@@ -1742,7 +1621,7 @@ Partial Class SCM00001
         'txtBillSP
         '
         Me.txtBillSP.BackColor = System.Drawing.Color.White
-        Me.txtBillSP.Location = New System.Drawing.Point(115, 88)
+        Me.txtBillSP.Location = New System.Drawing.Point(97, 88)
         Me.txtBillSP.MaxLength = 20
         Me.txtBillSP.Name = "txtBillSP"
         Me.txtBillSP.Size = New System.Drawing.Size(130, 22)
@@ -1751,7 +1630,7 @@ Partial Class SCM00001
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(9, 91)
+        Me.Label11.Location = New System.Drawing.Point(2, 91)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(77, 12)
         Me.Label11.TabIndex = 7
@@ -1760,19 +1639,19 @@ Partial Class SCM00001
         'txtBillAdd
         '
         Me.txtBillAdd.BackColor = System.Drawing.Color.White
-        Me.txtBillAdd.Location = New System.Drawing.Point(115, 38)
+        Me.txtBillAdd.Location = New System.Drawing.Point(97, 38)
         Me.txtBillAdd.MaxLength = 200
         Me.txtBillAdd.Multiline = True
         Me.txtBillAdd.Name = "txtBillAdd"
         Me.txtBillAdd.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtBillAdd.Size = New System.Drawing.Size(337, 45)
+        Me.txtBillAdd.Size = New System.Drawing.Size(390, 45)
         Me.txtBillAdd.TabIndex = 2
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.ForeColor = System.Drawing.Color.Green
-        Me.Label10.Location = New System.Drawing.Point(9, 18)
+        Me.Label10.Location = New System.Drawing.Point(2, 18)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(77, 12)
         Me.Label10.TabIndex = 4
@@ -1784,7 +1663,7 @@ Partial Class SCM00001
         Me.frmDisPre.Location = New System.Drawing.Point(4, 22)
         Me.frmDisPre.Name = "frmDisPre"
         Me.frmDisPre.Padding = New System.Windows.Forms.Padding(3)
-        Me.frmDisPre.Size = New System.Drawing.Size(946, 502)
+        Me.frmDisPre.Size = New System.Drawing.Size(946, 506)
         Me.frmDisPre.TabIndex = 1
         Me.frmDisPre.Text = "(2) Discounts / Premiums"
         Me.frmDisPre.UseVisualStyleBackColor = True
@@ -1797,7 +1676,7 @@ Partial Class SCM00001
         Me.grpDisPrm.Controls.Add(Me.grdDis)
         Me.grpDisPrm.Location = New System.Drawing.Point(1, -2)
         Me.grpDisPrm.Name = "grpDisPrm"
-        Me.grpDisPrm.Size = New System.Drawing.Size(942, 501)
+        Me.grpDisPrm.Size = New System.Drawing.Size(942, 505)
         Me.grpDisPrm.TabIndex = 1
         Me.grpDisPrm.TabStop = False
         '
@@ -1894,7 +1773,7 @@ Partial Class SCM00001
         Me.frmDtl.Controls.Add(Me.grpDetail)
         Me.frmDtl.Location = New System.Drawing.Point(4, 22)
         Me.frmDtl.Name = "frmDtl"
-        Me.frmDtl.Size = New System.Drawing.Size(946, 502)
+        Me.frmDtl.Size = New System.Drawing.Size(946, 506)
         Me.frmDtl.TabIndex = 2
         Me.frmDtl.Text = "(3) Details"
         Me.frmDtl.UseVisualStyleBackColor = True
@@ -1985,7 +1864,6 @@ Partial Class SCM00001
         Me.grpDetail.Controls.Add(Me.Label72)
         Me.grpDetail.Controls.Add(Me.cboHSTU)
         Me.grpDetail.Controls.Add(Me.Label70)
-        Me.grpDetail.Controls.Add(Me.chkPC)
         Me.grpDetail.Controls.Add(Me.txtMOA)
         Me.grpDetail.Controls.Add(Me.Label69)
         Me.grpDetail.Controls.Add(Me.txtMOQUnttyp)
@@ -2041,16 +1919,17 @@ Partial Class SCM00001
         Me.grpDetail.Controls.Add(Me.lblPC)
         Me.grpDetail.Controls.Add(Me.GroupBox7)
         Me.grpDetail.Controls.Add(Me.lblDtlSeq)
+        Me.grpDetail.Controls.Add(Me.chkPC)
         Me.grpDetail.Location = New System.Drawing.Point(1, -2)
         Me.grpDetail.Name = "grpDetail"
-        Me.grpDetail.Size = New System.Drawing.Size(942, 501)
+        Me.grpDetail.Size = New System.Drawing.Size(942, 505)
         Me.grpDetail.TabIndex = 1
         Me.grpDetail.TabStop = False
         '
         'txtDtlTotalCTN
         '
         Me.txtDtlTotalCTN.BackColor = System.Drawing.Color.White
-        Me.txtDtlTotalCTN.Location = New System.Drawing.Point(391, 384)
+        Me.txtDtlTotalCTN.Location = New System.Drawing.Point(392, 385)
         Me.txtDtlTotalCTN.Name = "txtDtlTotalCTN"
         Me.txtDtlTotalCTN.Size = New System.Drawing.Size(52, 22)
         Me.txtDtlTotalCTN.TabIndex = 177
@@ -2060,7 +1939,7 @@ Partial Class SCM00001
         '
         Me.Label160.AutoSize = True
         Me.Label160.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label160.Location = New System.Drawing.Point(339, 388)
+        Me.Label160.Location = New System.Drawing.Point(339, 389)
         Me.Label160.Name = "Label160"
         Me.Label160.Size = New System.Drawing.Size(55, 12)
         Me.Label160.TabIndex = 176
@@ -2070,19 +1949,19 @@ Partial Class SCM00001
         'txtItmChiDsc
         '
         Me.txtItmChiDsc.BackColor = System.Drawing.Color.White
-        Me.txtItmChiDsc.Location = New System.Drawing.Point(63, 92)
+        Me.txtItmChiDsc.Location = New System.Drawing.Point(58, 93)
         Me.txtItmChiDsc.MaxLength = 800
         Me.txtItmChiDsc.Multiline = True
         Me.txtItmChiDsc.Name = "txtItmChiDsc"
         Me.txtItmChiDsc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtItmChiDsc.Size = New System.Drawing.Size(381, 34)
+        Me.txtItmChiDsc.Size = New System.Drawing.Size(386, 34)
         Me.txtItmChiDsc.TabIndex = 15
         '
         'Label159
         '
         Me.Label159.AutoSize = True
         Me.Label159.ForeColor = System.Drawing.Color.Green
-        Me.Label159.Location = New System.Drawing.Point(7, 95)
+        Me.Label159.Location = New System.Drawing.Point(2, 97)
         Me.Label159.Name = "Label159"
         Me.Label159.Size = New System.Drawing.Size(50, 12)
         Me.Label159.TabIndex = 174
@@ -2091,7 +1970,7 @@ Partial Class SCM00001
         'Label157
         '
         Me.Label157.AutoSize = True
-        Me.Label157.Location = New System.Drawing.Point(372, 298)
+        Me.Label157.Location = New System.Drawing.Point(372, 299)
         Me.Label157.Name = "Label157"
         Me.Label157.Size = New System.Drawing.Size(25, 12)
         Me.Label157.TabIndex = 173
@@ -2101,7 +1980,7 @@ Partial Class SCM00001
         '
         Me.txtcovqty.BackColor = System.Drawing.Color.White
         Me.txtcovqty.Enabled = False
-        Me.txtcovqty.Location = New System.Drawing.Point(398, 297)
+        Me.txtcovqty.Location = New System.Drawing.Point(398, 298)
         Me.txtcovqty.Name = "txtcovqty"
         Me.txtcovqty.ReadOnly = True
         Me.txtcovqty.Size = New System.Drawing.Size(46, 22)
@@ -2110,7 +1989,7 @@ Partial Class SCM00001
         '
         'cmdMoreFields
         '
-        Me.cmdMoreFields.Location = New System.Drawing.Point(522, 318)
+        Me.cmdMoreFields.Location = New System.Drawing.Point(522, 322)
         Me.cmdMoreFields.Name = "cmdMoreFields"
         Me.cmdMoreFields.Size = New System.Drawing.Size(58, 23)
         Me.cmdMoreFields.TabIndex = 170
@@ -2120,7 +1999,7 @@ Partial Class SCM00001
         'Label150
         '
         Me.Label150.AutoSize = True
-        Me.Label150.Location = New System.Drawing.Point(455, 323)
+        Me.Label150.Location = New System.Drawing.Point(455, 327)
         Me.Label150.Name = "Label150"
         Me.Label150.Size = New System.Drawing.Size(60, 12)
         Me.Label150.TabIndex = 171
@@ -2128,7 +2007,7 @@ Partial Class SCM00001
         '
         'txtEffectiveCPO
         '
-        Me.txtEffectiveCPO.Location = New System.Drawing.Point(418, 384)
+        Me.txtEffectiveCPO.Location = New System.Drawing.Point(418, 385)
         Me.txtEffectiveCPO.Name = "txtEffectiveCPO"
         Me.txtEffectiveCPO.Size = New System.Drawing.Size(27, 22)
         Me.txtEffectiveCPO.TabIndex = 167
@@ -2139,7 +2018,7 @@ Partial Class SCM00001
         Me.cboSeason.BackColor = System.Drawing.Color.White
         Me.cboSeason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboSeason.FormattingEnabled = True
-        Me.cboSeason.Location = New System.Drawing.Point(89, 188)
+        Me.cboSeason.Location = New System.Drawing.Point(84, 190)
         Me.cboSeason.Name = "cboSeason"
         Me.cboSeason.Size = New System.Drawing.Size(130, 20)
         Me.cboSeason.TabIndex = 22
@@ -2147,7 +2026,7 @@ Partial Class SCM00001
         'txtTentOrdSeq
         '
         Me.txtTentOrdSeq.BackColor = System.Drawing.Color.White
-        Me.txtTentOrdSeq.Location = New System.Drawing.Point(407, 272)
+        Me.txtTentOrdSeq.Location = New System.Drawing.Point(407, 273)
         Me.txtTentOrdSeq.Name = "txtTentOrdSeq"
         Me.txtTentOrdSeq.Size = New System.Drawing.Size(37, 22)
         Me.txtTentOrdSeq.TabIndex = 42
@@ -2155,14 +2034,14 @@ Partial Class SCM00001
         'txtTentOrdno
         '
         Me.txtTentOrdno.BackColor = System.Drawing.Color.White
-        Me.txtTentOrdno.Location = New System.Drawing.Point(314, 272)
+        Me.txtTentOrdno.Location = New System.Drawing.Point(314, 273)
         Me.txtTentOrdno.Name = "txtTentOrdno"
         Me.txtTentOrdno.Size = New System.Drawing.Size(92, 22)
         Me.txtTentOrdno.TabIndex = 40
         '
         'cmdDtlPORmk
         '
-        Me.cmdDtlPORmk.Location = New System.Drawing.Point(456, 431)
+        Me.cmdDtlPORmk.Location = New System.Drawing.Point(456, 435)
         Me.cmdDtlPORmk.Name = "cmdDtlPORmk"
         Me.cmdDtlPORmk.Size = New System.Drawing.Size(58, 23)
         Me.cmdDtlPORmk.TabIndex = 122
@@ -2171,7 +2050,7 @@ Partial Class SCM00001
         '
         'cmdDtlSCRmk
         '
-        Me.cmdDtlSCRmk.Location = New System.Drawing.Point(456, 372)
+        Me.cmdDtlSCRmk.Location = New System.Drawing.Point(456, 376)
         Me.cmdDtlSCRmk.Name = "cmdDtlSCRmk"
         Me.cmdDtlSCRmk.Size = New System.Drawing.Size(58, 23)
         Me.cmdDtlSCRmk.TabIndex = 118
@@ -2181,7 +2060,7 @@ Partial Class SCM00001
         'Label97
         '
         Me.Label97.AutoSize = True
-        Me.Label97.Location = New System.Drawing.Point(186, 387)
+        Me.Label97.Location = New System.Drawing.Point(186, 388)
         Me.Label97.Name = "Label97"
         Me.Label97.Size = New System.Drawing.Size(61, 12)
         Me.Label97.TabIndex = 165
@@ -2190,7 +2069,7 @@ Partial Class SCM00001
         'Label95
         '
         Me.Label95.AutoSize = True
-        Me.Label95.Location = New System.Drawing.Point(186, 365)
+        Me.Label95.Location = New System.Drawing.Point(186, 366)
         Me.Label95.Name = "Label95"
         Me.Label95.Size = New System.Drawing.Size(58, 12)
         Me.Label95.TabIndex = 164
@@ -2199,7 +2078,7 @@ Partial Class SCM00001
         'Label78
         '
         Me.Label78.AutoSize = True
-        Me.Label78.Location = New System.Drawing.Point(186, 343)
+        Me.Label78.Location = New System.Drawing.Point(186, 344)
         Me.Label78.Name = "Label78"
         Me.Label78.Size = New System.Drawing.Size(61, 12)
         Me.Label78.TabIndex = 163
@@ -2208,7 +2087,7 @@ Partial Class SCM00001
         'Label61
         '
         Me.Label61.AutoSize = True
-        Me.Label61.Location = New System.Drawing.Point(186, 321)
+        Me.Label61.Location = New System.Drawing.Point(186, 322)
         Me.Label61.Name = "Label61"
         Me.Label61.Size = New System.Drawing.Size(71, 12)
         Me.Label61.TabIndex = 162
@@ -2219,7 +2098,7 @@ Partial Class SCM00001
         Me.cboCustUM.BackColor = System.Drawing.Color.White
         Me.cboCustUM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCustUM.FormattingEnabled = True
-        Me.cboCustUM.Location = New System.Drawing.Point(364, 453)
+        Me.cboCustUM.Location = New System.Drawing.Point(364, 456)
         Me.cboCustUM.Name = "cboCustUM"
         Me.cboCustUM.Size = New System.Drawing.Size(80, 20)
         Me.cboCustUM.TabIndex = 96
@@ -2227,7 +2106,7 @@ Partial Class SCM00001
         'Label48
         '
         Me.Label48.AutoSize = True
-        Me.Label48.Location = New System.Drawing.Point(313, 456)
+        Me.Label48.Location = New System.Drawing.Point(313, 459)
         Me.Label48.Name = "Label48"
         Me.Label48.Size = New System.Drawing.Size(47, 12)
         Me.Label48.TabIndex = 21
@@ -2236,7 +2115,7 @@ Partial Class SCM00001
         'txtPrcGrp
         '
         Me.txtPrcGrp.BackColor = System.Drawing.Color.White
-        Me.txtPrcGrp.Location = New System.Drawing.Point(267, 384)
+        Me.txtPrcGrp.Location = New System.Drawing.Point(267, 385)
         Me.txtPrcGrp.Name = "txtPrcGrp"
         Me.txtPrcGrp.ReadOnly = True
         Me.txtPrcGrp.Size = New System.Drawing.Size(72, 22)
@@ -2246,7 +2125,7 @@ Partial Class SCM00001
         'txtCIHPrd
         '
         Me.txtCIHPrd.BackColor = System.Drawing.Color.White
-        Me.txtCIHPrd.Location = New System.Drawing.Point(267, 362)
+        Me.txtCIHPrd.Location = New System.Drawing.Point(267, 363)
         Me.txtCIHPrd.Name = "txtCIHPrd"
         Me.txtCIHPrd.ReadOnly = True
         Me.txtCIHPrd.Size = New System.Drawing.Size(72, 22)
@@ -2256,7 +2135,7 @@ Partial Class SCM00001
         'txtExpDat
         '
         Me.txtExpDat.BackColor = System.Drawing.Color.White
-        Me.txtExpDat.Location = New System.Drawing.Point(267, 340)
+        Me.txtExpDat.Location = New System.Drawing.Point(267, 341)
         Me.txtExpDat.Name = "txtExpDat"
         Me.txtExpDat.ReadOnly = True
         Me.txtExpDat.Size = New System.Drawing.Size(72, 22)
@@ -2266,7 +2145,7 @@ Partial Class SCM00001
         'txtEffDat
         '
         Me.txtEffDat.BackColor = System.Drawing.Color.White
-        Me.txtEffDat.Location = New System.Drawing.Point(267, 318)
+        Me.txtEffDat.Location = New System.Drawing.Point(267, 319)
         Me.txtEffDat.Name = "txtEffDat"
         Me.txtEffDat.ReadOnly = True
         Me.txtEffDat.Size = New System.Drawing.Size(72, 22)
@@ -2277,7 +2156,7 @@ Partial Class SCM00001
         '
         Me.lblTotalCtn.AutoSize = True
         Me.lblTotalCtn.ForeColor = System.Drawing.Color.Green
-        Me.lblTotalCtn.Location = New System.Drawing.Point(890, 322)
+        Me.lblTotalCtn.Location = New System.Drawing.Point(890, 326)
         Me.lblTotalCtn.Name = "lblTotalCtn"
         Me.lblTotalCtn.Size = New System.Drawing.Size(41, 12)
         Me.lblTotalCtn.TabIndex = 111
@@ -2287,7 +2166,7 @@ Partial Class SCM00001
         '
         Me.lblPCPrcCur.AutoSize = True
         Me.lblPCPrcCur.ForeColor = System.Drawing.Color.Green
-        Me.lblPCPrcCur.Location = New System.Drawing.Point(71, 365)
+        Me.lblPCPrcCur.Location = New System.Drawing.Point(66, 366)
         Me.lblPCPrcCur.MaximumSize = New System.Drawing.Size(30, 13)
         Me.lblPCPrcCur.Name = "lblPCPrcCur"
         Me.lblPCPrcCur.Size = New System.Drawing.Size(29, 12)
@@ -2298,7 +2177,7 @@ Partial Class SCM00001
         '
         Me.Label105.AutoSize = True
         Me.Label105.ForeColor = System.Drawing.Color.Green
-        Me.Label105.Location = New System.Drawing.Point(823, 322)
+        Me.Label105.Location = New System.Drawing.Point(823, 326)
         Me.Label105.Name = "Label105"
         Me.Label105.Size = New System.Drawing.Size(67, 12)
         Me.Label105.TabIndex = 110
@@ -2308,7 +2187,7 @@ Partial Class SCM00001
         '
         Me.lblPCPrc.AutoSize = True
         Me.lblPCPrc.ForeColor = System.Drawing.Color.Green
-        Me.lblPCPrc.Location = New System.Drawing.Point(7, 365)
+        Me.lblPCPrc.Location = New System.Drawing.Point(2, 366)
         Me.lblPCPrc.Name = "lblPCPrc"
         Me.lblPCPrc.Size = New System.Drawing.Size(62, 12)
         Me.lblPCPrc.TabIndex = 156
@@ -2317,7 +2196,7 @@ Partial Class SCM00001
         'txtZTNVBELN
         '
         Me.txtZTNVBELN.BackColor = System.Drawing.Color.White
-        Me.txtZTNVBELN.Location = New System.Drawing.Point(314, 272)
+        Me.txtZTNVBELN.Location = New System.Drawing.Point(314, 273)
         Me.txtZTNVBELN.Name = "txtZTNVBELN"
         Me.txtZTNVBELN.Size = New System.Drawing.Size(92, 22)
         Me.txtZTNVBELN.TabIndex = 40
@@ -2325,7 +2204,7 @@ Partial Class SCM00001
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(7, 193)
+        Me.Label34.Location = New System.Drawing.Point(2, 191)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(37, 12)
         Me.Label34.TabIndex = 154
@@ -2334,14 +2213,14 @@ Partial Class SCM00001
         'txtZTNPOSNR
         '
         Me.txtZTNPOSNR.BackColor = System.Drawing.Color.White
-        Me.txtZTNPOSNR.Location = New System.Drawing.Point(407, 272)
+        Me.txtZTNPOSNR.Location = New System.Drawing.Point(407, 273)
         Me.txtZTNPOSNR.Name = "txtZTNPOSNR"
         Me.txtZTNPOSNR.Size = New System.Drawing.Size(37, 22)
         Me.txtZTNPOSNR.TabIndex = 41
         '
         'cmdRplSeq
         '
-        Me.cmdRplSeq.Location = New System.Drawing.Point(522, 475)
+        Me.cmdRplSeq.Location = New System.Drawing.Point(522, 479)
         Me.cmdRplSeq.Name = "cmdRplSeq"
         Me.cmdRplSeq.Size = New System.Drawing.Size(89, 20)
         Me.cmdRplSeq.TabIndex = 126
@@ -2353,7 +2232,7 @@ Partial Class SCM00001
         Me.cboRetailCADCur.BackColor = System.Drawing.Color.White
         Me.cboRetailCADCur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboRetailCADCur.FormattingEnabled = True
-        Me.cboRetailCADCur.Location = New System.Drawing.Point(195, 453)
+        Me.cboRetailCADCur.Location = New System.Drawing.Point(195, 456)
         Me.cboRetailCADCur.Name = "cboRetailCADCur"
         Me.cboRetailCADCur.Size = New System.Drawing.Size(52, 20)
         Me.cboRetailCADCur.TabIndex = 92
@@ -2363,7 +2242,7 @@ Partial Class SCM00001
         Me.cboRetailUSDCur.BackColor = System.Drawing.Color.White
         Me.cboRetailUSDCur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboRetailUSDCur.FormattingEnabled = True
-        Me.cboRetailUSDCur.Location = New System.Drawing.Point(74, 453)
+        Me.cboRetailUSDCur.Location = New System.Drawing.Point(74, 456)
         Me.cboRetailUSDCur.Name = "cboRetailUSDCur"
         Me.cboRetailUSDCur.Size = New System.Drawing.Size(52, 20)
         Me.cboRetailUSDCur.TabIndex = 88
@@ -2372,7 +2251,7 @@ Partial Class SCM00001
         '
         Me.Label102.AutoSize = True
         Me.Label102.ForeColor = System.Drawing.Color.Green
-        Me.Label102.Location = New System.Drawing.Point(605, 322)
+        Me.Label102.Location = New System.Drawing.Point(605, 326)
         Me.Label102.Name = "Label102"
         Me.Label102.Size = New System.Drawing.Size(57, 12)
         Me.Label102.TabIndex = 104
@@ -2387,7 +2266,7 @@ Partial Class SCM00001
         Me.grpDtlSCShpDat.Controls.Add(Me.txtCanDat)
         Me.grpDtlSCShpDat.Controls.Add(Me.Label125)
         Me.grpDtlSCShpDat.Controls.Add(Me.txtStartShip)
-        Me.grpDtlSCShpDat.Location = New System.Drawing.Point(450, 213)
+        Me.grpDtlSCShpDat.Location = New System.Drawing.Point(450, 217)
         Me.grpDtlSCShpDat.Name = "grpDtlSCShpDat"
         Me.grpDtlSCShpDat.Size = New System.Drawing.Size(486, 50)
         Me.grpDtlSCShpDat.TabIndex = 110
@@ -2415,10 +2294,9 @@ Partial Class SCM00001
         '
         'cmdMoreShp
         '
-        Me.cmdMoreShp.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdMoreShp.Location = New System.Drawing.Point(380, 11)
+        Me.cmdMoreShp.Location = New System.Drawing.Point(372, 11)
         Me.cmdMoreShp.Name = "cmdMoreShp"
-        Me.cmdMoreShp.Size = New System.Drawing.Size(90, 35)
+        Me.cmdMoreShp.Size = New System.Drawing.Size(101, 35)
         Me.cmdMoreShp.TabIndex = 6
         Me.cmdMoreShp.Text = "Multiple" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ship Date / Carton"
         Me.cmdMoreShp.UseVisualStyleBackColor = True
@@ -2465,7 +2343,7 @@ Partial Class SCM00001
         '
         Me.Label103.AutoSize = True
         Me.Label103.ForeColor = System.Drawing.Color.Green
-        Me.Label103.Location = New System.Drawing.Point(662, 322)
+        Me.Label103.Location = New System.Drawing.Point(662, 326)
         Me.Label103.Name = "Label103"
         Me.Label103.Size = New System.Drawing.Size(26, 12)
         Me.Label103.TabIndex = 105
@@ -2480,7 +2358,7 @@ Partial Class SCM00001
         Me.grpDtlPOShpDat.Controls.Add(Me.Label77)
         Me.grpDtlPOShpDat.Controls.Add(Me.txtPOEndShip)
         Me.grpDtlPOShpDat.Controls.Add(Me.Label128)
-        Me.grpDtlPOShpDat.Location = New System.Drawing.Point(450, 264)
+        Me.grpDtlPOShpDat.Location = New System.Drawing.Point(450, 268)
         Me.grpDtlPOShpDat.Name = "grpDtlPOShpDat"
         Me.grpDtlPOShpDat.Size = New System.Drawing.Size(486, 50)
         Me.grpDtlPOShpDat.TabIndex = 112
@@ -2489,9 +2367,9 @@ Partial Class SCM00001
         '
         'cmdPOCalDat
         '
-        Me.cmdPOCalDat.Location = New System.Drawing.Point(380, 11)
+        Me.cmdPOCalDat.Location = New System.Drawing.Point(374, 11)
         Me.cmdPOCalDat.Name = "cmdPOCalDat"
-        Me.cmdPOCalDat.Size = New System.Drawing.Size(90, 35)
+        Me.cmdPOCalDat.Size = New System.Drawing.Size(99, 35)
         Me.cmdPOCalDat.TabIndex = 6
         Me.cmdPOCalDat.Text = "Calculate" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "PO Dates"
         Me.cmdPOCalDat.UseVisualStyleBackColor = True
@@ -2555,7 +2433,7 @@ Partial Class SCM00001
         'txtStartCarton
         '
         Me.txtStartCarton.BackColor = System.Drawing.Color.White
-        Me.txtStartCarton.Location = New System.Drawing.Point(693, 319)
+        Me.txtStartCarton.Location = New System.Drawing.Point(693, 323)
         Me.txtStartCarton.Name = "txtStartCarton"
         Me.txtStartCarton.Size = New System.Drawing.Size(45, 22)
         Me.txtStartCarton.TabIndex = 114
@@ -2564,7 +2442,7 @@ Partial Class SCM00001
         '
         Me.Label104.AutoSize = True
         Me.Label104.ForeColor = System.Drawing.Color.Green
-        Me.Label104.Location = New System.Drawing.Point(742, 322)
+        Me.Label104.Location = New System.Drawing.Point(742, 326)
         Me.Label104.Name = "Label104"
         Me.Label104.Size = New System.Drawing.Size(24, 12)
         Me.Label104.TabIndex = 107
@@ -2573,7 +2451,7 @@ Partial Class SCM00001
         'Label96
         '
         Me.Label96.AutoSize = True
-        Me.Label96.Location = New System.Drawing.Point(184, 37)
+        Me.Label96.Location = New System.Drawing.Point(184, 38)
         Me.Label96.Name = "Label96"
         Me.Label96.Size = New System.Drawing.Size(82, 12)
         Me.Label96.TabIndex = 91
@@ -2582,7 +2460,7 @@ Partial Class SCM00001
         'txtEndCarton
         '
         Me.txtEndCarton.BackColor = System.Drawing.Color.White
-        Me.txtEndCarton.Location = New System.Drawing.Point(770, 319)
+        Me.txtEndCarton.Location = New System.Drawing.Point(770, 323)
         Me.txtEndCarton.Name = "txtEndCarton"
         Me.txtEndCarton.Size = New System.Drawing.Size(45, 22)
         Me.txtEndCarton.TabIndex = 116
@@ -2590,7 +2468,7 @@ Partial Class SCM00001
         'txtOldColor
         '
         Me.txtOldColor.BackColor = System.Drawing.Color.White
-        Me.txtOldColor.Location = New System.Drawing.Point(384, 34)
+        Me.txtOldColor.Location = New System.Drawing.Point(384, 35)
         Me.txtOldColor.Name = "txtOldColor"
         Me.txtOldColor.Size = New System.Drawing.Size(60, 22)
         Me.txtOldColor.TabIndex = 94
@@ -2599,7 +2477,7 @@ Partial Class SCM00001
         'txtOldItem
         '
         Me.txtOldItem.BackColor = System.Drawing.Color.White
-        Me.txtOldItem.Location = New System.Drawing.Point(267, 34)
+        Me.txtOldItem.Location = New System.Drawing.Point(267, 35)
         Me.txtOldItem.Name = "txtOldItem"
         Me.txtOldItem.Size = New System.Drawing.Size(115, 22)
         Me.txtOldItem.TabIndex = 92
@@ -2607,7 +2485,7 @@ Partial Class SCM00001
         'txtDtlPORmk
         '
         Me.txtDtlPORmk.BackColor = System.Drawing.Color.White
-        Me.txtDtlPORmk.Location = New System.Drawing.Point(522, 408)
+        Me.txtDtlPORmk.Location = New System.Drawing.Point(522, 412)
         Me.txtDtlPORmk.MaxLength = 300
         Me.txtDtlPORmk.Multiline = True
         Me.txtDtlPORmk.Name = "txtDtlPORmk"
@@ -2618,7 +2496,7 @@ Partial Class SCM00001
         'lblDtlPORmk
         '
         Me.lblDtlPORmk.AutoSize = True
-        Me.lblDtlPORmk.Location = New System.Drawing.Point(454, 412)
+        Me.lblDtlPORmk.Location = New System.Drawing.Point(454, 416)
         Me.lblDtlPORmk.Name = "lblDtlPORmk"
         Me.lblDtlPORmk.Size = New System.Drawing.Size(59, 12)
         Me.lblDtlPORmk.TabIndex = 145
@@ -2626,7 +2504,7 @@ Partial Class SCM00001
         '
         'cmdMatBrkdwn
         '
-        Me.cmdMatBrkdwn.Location = New System.Drawing.Point(304, 167)
+        Me.cmdMatBrkdwn.Location = New System.Drawing.Point(304, 168)
         Me.cmdMatBrkdwn.Name = "cmdMatBrkdwn"
         Me.cmdMatBrkdwn.Size = New System.Drawing.Size(140, 23)
         Me.cmdMatBrkdwn.TabIndex = 21
@@ -2639,26 +2517,26 @@ Partial Class SCM00001
         Me.cboColPckInfo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboColPckInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.cboColPckInfo.FormattingEnabled = True
-        Me.cboColPckInfo.Location = New System.Drawing.Point(63, 146)
+        Me.cboColPckInfo.Location = New System.Drawing.Point(58, 147)
         Me.cboColPckInfo.Name = "cboColPckInfo"
-        Me.cboColPckInfo.Size = New System.Drawing.Size(313, 21)
+        Me.cboColPckInfo.Size = New System.Drawing.Size(318, 21)
         Me.cboColPckInfo.TabIndex = 13
         '
         'txtItmDsc
         '
         Me.txtItmDsc.BackColor = System.Drawing.Color.White
-        Me.txtItmDsc.Location = New System.Drawing.Point(63, 57)
+        Me.txtItmDsc.Location = New System.Drawing.Point(58, 58)
         Me.txtItmDsc.MaxLength = 800
         Me.txtItmDsc.Multiline = True
         Me.txtItmDsc.Name = "txtItmDsc"
         Me.txtItmDsc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtItmDsc.Size = New System.Drawing.Size(381, 34)
+        Me.txtItmDsc.Size = New System.Drawing.Size(386, 34)
         Me.txtItmDsc.TabIndex = 14
         '
         'txtPckItr
         '
         Me.txtPckItr.BackColor = System.Drawing.Color.White
-        Me.txtPckItr.Location = New System.Drawing.Point(63, 169)
+        Me.txtPckItr.Location = New System.Drawing.Point(58, 171)
         Me.txtPckItr.MaxLength = 300
         Me.txtPckItr.Multiline = True
         Me.txtPckItr.Name = "txtPckItr"
@@ -2669,7 +2547,7 @@ Partial Class SCM00001
         'txtDtlSCRmk
         '
         Me.txtDtlSCRmk.BackColor = System.Drawing.Color.White
-        Me.txtDtlSCRmk.Location = New System.Drawing.Point(522, 345)
+        Me.txtDtlSCRmk.Location = New System.Drawing.Point(522, 349)
         Me.txtDtlSCRmk.MaxLength = 300
         Me.txtDtlSCRmk.Multiline = True
         Me.txtDtlSCRmk.Name = "txtDtlSCRmk"
@@ -2682,7 +2560,7 @@ Partial Class SCM00001
         Me.cboCusStyNo.BackColor = System.Drawing.Color.White
         Me.cboCusStyNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCusStyNo.FormattingEnabled = True
-        Me.cboCusStyNo.Location = New System.Drawing.Point(314, 210)
+        Me.cboCusStyNo.Location = New System.Drawing.Point(314, 211)
         Me.cboCusStyNo.Name = "cboCusStyNo"
         Me.cboCusStyNo.Size = New System.Drawing.Size(130, 20)
         Me.cboCusStyNo.TabIndex = 28
@@ -2691,7 +2569,7 @@ Partial Class SCM00001
         '
         Me.lblSubttlCur.AutoSize = True
         Me.lblSubttlCur.ForeColor = System.Drawing.Color.Green
-        Me.lblSubttlCur.Location = New System.Drawing.Point(71, 387)
+        Me.lblSubttlCur.Location = New System.Drawing.Point(66, 388)
         Me.lblSubttlCur.MaximumSize = New System.Drawing.Size(30, 13)
         Me.lblSubttlCur.Name = "lblSubttlCur"
         Me.lblSubttlCur.Size = New System.Drawing.Size(29, 12)
@@ -2702,7 +2580,7 @@ Partial Class SCM00001
         '
         Me.lblSelprcCur.AutoSize = True
         Me.lblSelprcCur.ForeColor = System.Drawing.Color.Green
-        Me.lblSelprcCur.Location = New System.Drawing.Point(71, 343)
+        Me.lblSelprcCur.Location = New System.Drawing.Point(66, 344)
         Me.lblSelprcCur.MaximumSize = New System.Drawing.Size(30, 13)
         Me.lblSelprcCur.Name = "lblSelprcCur"
         Me.lblSelprcCur.Size = New System.Drawing.Size(29, 12)
@@ -2713,7 +2591,7 @@ Partial Class SCM00001
         '
         Me.lblBasprcCur.AutoSize = True
         Me.lblBasprcCur.ForeColor = System.Drawing.Color.Green
-        Me.lblBasprcCur.Location = New System.Drawing.Point(71, 321)
+        Me.lblBasprcCur.Location = New System.Drawing.Point(66, 322)
         Me.lblBasprcCur.MaximumSize = New System.Drawing.Size(30, 13)
         Me.lblBasprcCur.Name = "lblBasprcCur"
         Me.lblBasprcCur.Size = New System.Drawing.Size(29, 12)
@@ -2724,11 +2602,10 @@ Partial Class SCM00001
         '
         Me.grpOnePrc.Controls.Add(Me.OptOnePrcN)
         Me.grpOnePrc.Controls.Add(Me.OptOnePrcY)
-        Me.grpOnePrc.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpOnePrc.ForeColor = System.Drawing.Color.Green
-        Me.grpOnePrc.Location = New System.Drawing.Point(348, 318)
+        Me.grpOnePrc.Location = New System.Drawing.Point(342, 322)
         Me.grpOnePrc.Name = "grpOnePrc"
-        Me.grpOnePrc.Size = New System.Drawing.Size(95, 35)
+        Me.grpOnePrc.Size = New System.Drawing.Size(101, 35)
         Me.grpOnePrc.TabIndex = 54
         Me.grpOnePrc.TabStop = False
         Me.grpOnePrc.Text = "One Time Pricing"
@@ -2763,7 +2640,7 @@ Partial Class SCM00001
         '
         Me.chkDelDtl.AutoSize = True
         Me.chkDelDtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkDelDtl.Location = New System.Drawing.Point(843, 479)
+        Me.chkDelDtl.Location = New System.Drawing.Point(843, 483)
         Me.chkDelDtl.Name = "chkDelDtl"
         Me.chkDelDtl.Size = New System.Drawing.Size(97, 16)
         Me.chkDelDtl.TabIndex = 136
@@ -2772,7 +2649,7 @@ Partial Class SCM00001
         '
         'cmdDtlNext
         '
-        Me.cmdDtlNext.Location = New System.Drawing.Point(785, 475)
+        Me.cmdDtlNext.Location = New System.Drawing.Point(785, 479)
         Me.cmdDtlNext.Name = "cmdDtlNext"
         Me.cmdDtlNext.Size = New System.Drawing.Size(52, 20)
         Me.cmdDtlNext.TabIndex = 134
@@ -2781,7 +2658,7 @@ Partial Class SCM00001
         '
         'cmdDtlBack
         '
-        Me.cmdDtlBack.Location = New System.Drawing.Point(732, 475)
+        Me.cmdDtlBack.Location = New System.Drawing.Point(732, 479)
         Me.cmdDtlBack.Name = "cmdDtlBack"
         Me.cmdDtlBack.Size = New System.Drawing.Size(54, 20)
         Me.cmdDtlBack.TabIndex = 132
@@ -2790,7 +2667,7 @@ Partial Class SCM00001
         '
         'cmdBOM
         '
-        Me.cmdBOM.Location = New System.Drawing.Point(686, 475)
+        Me.cmdBOM.Location = New System.Drawing.Point(686, 479)
         Me.cmdBOM.Name = "cmdBOM"
         Me.cmdBOM.Size = New System.Drawing.Size(40, 20)
         Me.cmdBOM.TabIndex = 130
@@ -2799,7 +2676,7 @@ Partial Class SCM00001
         '
         'cmdAss
         '
-        Me.cmdAss.Location = New System.Drawing.Point(617, 475)
+        Me.cmdAss.Location = New System.Drawing.Point(617, 479)
         Me.cmdAss.Name = "cmdAss"
         Me.cmdAss.Size = New System.Drawing.Size(70, 20)
         Me.cmdAss.TabIndex = 128
@@ -2809,7 +2686,7 @@ Partial Class SCM00001
         'txtRefdat
         '
         Me.txtRefdat.BackColor = System.Drawing.Color.White
-        Me.txtRefdat.Location = New System.Drawing.Point(449, 476)
+        Me.txtRefdat.Location = New System.Drawing.Point(449, 480)
         Me.txtRefdat.Mask = "00/00/0000"
         Me.txtRefdat.Name = "txtRefdat"
         Me.txtRefdat.Size = New System.Drawing.Size(65, 22)
@@ -2818,7 +2695,7 @@ Partial Class SCM00001
         'Label109
         '
         Me.Label109.AutoSize = True
-        Me.Label109.Location = New System.Drawing.Point(397, 479)
+        Me.Label109.Location = New System.Drawing.Point(397, 483)
         Me.Label109.Name = "Label109"
         Me.Label109.Size = New System.Drawing.Size(46, 12)
         Me.Label109.TabIndex = 116
@@ -2827,7 +2704,7 @@ Partial Class SCM00001
         'txtRefDoc
         '
         Me.txtRefDoc.BackColor = System.Drawing.Color.White
-        Me.txtRefDoc.Location = New System.Drawing.Point(316, 476)
+        Me.txtRefDoc.Location = New System.Drawing.Point(316, 480)
         Me.txtRefDoc.MaxLength = 20
         Me.txtRefDoc.Name = "txtRefDoc"
         Me.txtRefDoc.Size = New System.Drawing.Size(75, 22)
@@ -2836,7 +2713,7 @@ Partial Class SCM00001
         'Label108
         '
         Me.Label108.AutoSize = True
-        Me.Label108.Location = New System.Drawing.Point(257, 479)
+        Me.Label108.Location = New System.Drawing.Point(257, 483)
         Me.Label108.Name = "Label108"
         Me.Label108.Size = New System.Drawing.Size(53, 12)
         Me.Label108.TabIndex = 114
@@ -2845,7 +2722,7 @@ Partial Class SCM00001
         'Label107
         '
         Me.Label107.AutoSize = True
-        Me.Label107.Location = New System.Drawing.Point(455, 354)
+        Me.Label107.Location = New System.Drawing.Point(455, 358)
         Me.Label107.Name = "Label107"
         Me.Label107.Size = New System.Drawing.Size(59, 12)
         Me.Label107.TabIndex = 112
@@ -2854,18 +2731,17 @@ Partial Class SCM00001
         'lblApproved
         '
         Me.lblApproved.AutoSize = True
-        Me.lblApproved.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblApproved.ForeColor = System.Drawing.Color.Red
         Me.lblApproved.Location = New System.Drawing.Point(851, 14)
         Me.lblApproved.Name = "lblApproved"
-        Me.lblApproved.Size = New System.Drawing.Size(74, 13)
+        Me.lblApproved.Size = New System.Drawing.Size(64, 12)
         Me.lblApproved.TabIndex = 89
         Me.lblApproved.Text = "APPROVED"
         '
         'txtRetailCAD
         '
         Me.txtRetailCAD.BackColor = System.Drawing.Color.White
-        Me.txtRetailCAD.Location = New System.Drawing.Point(250, 453)
+        Me.txtRetailCAD.Location = New System.Drawing.Point(250, 456)
         Me.txtRetailCAD.Name = "txtRetailCAD"
         Me.txtRetailCAD.Size = New System.Drawing.Size(50, 22)
         Me.txtRetailCAD.TabIndex = 94
@@ -2873,7 +2749,7 @@ Partial Class SCM00001
         'txtRetailUSD
         '
         Me.txtRetailUSD.BackColor = System.Drawing.Color.White
-        Me.txtRetailUSD.Location = New System.Drawing.Point(129, 453)
+        Me.txtRetailUSD.Location = New System.Drawing.Point(129, 456)
         Me.txtRetailUSD.Name = "txtRetailUSD"
         Me.txtRetailUSD.Size = New System.Drawing.Size(50, 22)
         Me.txtRetailUSD.TabIndex = 90
@@ -2882,7 +2758,7 @@ Partial Class SCM00001
         'Label76
         '
         Me.Label76.AutoSize = True
-        Me.Label76.Location = New System.Drawing.Point(7, 456)
+        Me.Label76.Location = New System.Drawing.Point(2, 458)
         Me.Label76.Name = "Label76"
         Me.Label76.Size = New System.Drawing.Size(65, 12)
         Me.Label76.TabIndex = 84
@@ -2891,7 +2767,7 @@ Partial Class SCM00001
         'txtCdeCtn
         '
         Me.txtCdeCtn.BackColor = System.Drawing.Color.White
-        Me.txtCdeCtn.Location = New System.Drawing.Point(359, 430)
+        Me.txtCdeCtn.Location = New System.Drawing.Point(359, 432)
         Me.txtCdeCtn.MaxLength = 25
         Me.txtCdeCtn.Name = "txtCdeCtn"
         Me.txtCdeCtn.Size = New System.Drawing.Size(85, 22)
@@ -2900,7 +2776,7 @@ Partial Class SCM00001
         'Label75
         '
         Me.Label75.AutoSize = True
-        Me.Label75.Location = New System.Drawing.Point(344, 433)
+        Me.Label75.Location = New System.Drawing.Point(344, 435)
         Me.Label75.Name = "Label75"
         Me.Label75.Size = New System.Drawing.Size(13, 12)
         Me.Label75.TabIndex = 82
@@ -2909,7 +2785,7 @@ Partial Class SCM00001
         'txtCdeInr
         '
         Me.txtCdeInr.BackColor = System.Drawing.Color.White
-        Me.txtCdeInr.Location = New System.Drawing.Point(250, 430)
+        Me.txtCdeInr.Location = New System.Drawing.Point(250, 432)
         Me.txtCdeInr.MaxLength = 25
         Me.txtCdeInr.Name = "txtCdeInr"
         Me.txtCdeInr.Size = New System.Drawing.Size(89, 22)
@@ -2918,7 +2794,7 @@ Partial Class SCM00001
         'Label74
         '
         Me.Label74.AutoSize = True
-        Me.Label74.Location = New System.Drawing.Point(237, 433)
+        Me.Label74.Location = New System.Drawing.Point(237, 435)
         Me.Label74.Name = "Label74"
         Me.Label74.Size = New System.Drawing.Size(9, 12)
         Me.Label74.TabIndex = 80
@@ -2927,7 +2803,7 @@ Partial Class SCM00001
         'txtCdeMer
         '
         Me.txtCdeMer.BackColor = System.Drawing.Color.White
-        Me.txtCdeMer.Location = New System.Drawing.Point(127, 430)
+        Me.txtCdeMer.Location = New System.Drawing.Point(127, 432)
         Me.txtCdeMer.MaxLength = 25
         Me.txtCdeMer.Name = "txtCdeMer"
         Me.txtCdeMer.Size = New System.Drawing.Size(102, 22)
@@ -2936,7 +2812,7 @@ Partial Class SCM00001
         'Label73
         '
         Me.Label73.AutoSize = True
-        Me.Label73.Location = New System.Drawing.Point(111, 433)
+        Me.Label73.Location = New System.Drawing.Point(111, 435)
         Me.Label73.Name = "Label73"
         Me.Label73.Size = New System.Drawing.Size(15, 12)
         Me.Label73.TabIndex = 78
@@ -2945,7 +2821,7 @@ Partial Class SCM00001
         'optEAN
         '
         Me.optEAN.AutoSize = True
-        Me.optEAN.Location = New System.Drawing.Point(54, 431)
+        Me.optEAN.Location = New System.Drawing.Point(54, 433)
         Me.optEAN.Name = "optEAN"
         Me.optEAN.Size = New System.Drawing.Size(46, 16)
         Me.optEAN.TabIndex = 80
@@ -2956,7 +2832,7 @@ Partial Class SCM00001
         'optUPC
         '
         Me.optUPC.AutoSize = True
-        Me.optUPC.Location = New System.Drawing.Point(7, 431)
+        Me.optUPC.Location = New System.Drawing.Point(7, 433)
         Me.optUPC.Name = "optUPC"
         Me.optUPC.Size = New System.Drawing.Size(45, 16)
         Me.optUPC.TabIndex = 78
@@ -2967,7 +2843,7 @@ Partial Class SCM00001
         'txtDept
         '
         Me.txtDept.BackColor = System.Drawing.Color.White
-        Me.txtDept.Location = New System.Drawing.Point(392, 407)
+        Me.txtDept.Location = New System.Drawing.Point(392, 408)
         Me.txtDept.MaxLength = 15
         Me.txtDept.Name = "txtDept"
         Me.txtDept.Size = New System.Drawing.Size(52, 22)
@@ -2976,7 +2852,7 @@ Partial Class SCM00001
         'Label71
         '
         Me.Label71.AutoSize = True
-        Me.Label71.Location = New System.Drawing.Point(359, 410)
+        Me.Label71.Location = New System.Drawing.Point(359, 411)
         Me.Label71.Name = "Label71"
         Me.Label71.Size = New System.Drawing.Size(27, 12)
         Me.Label71.TabIndex = 74
@@ -2985,7 +2861,7 @@ Partial Class SCM00001
         'txtDuty
         '
         Me.txtDuty.BackColor = System.Drawing.Color.White
-        Me.txtDuty.Location = New System.Drawing.Point(279, 407)
+        Me.txtDuty.Location = New System.Drawing.Point(279, 408)
         Me.txtDuty.Name = "txtDuty"
         Me.txtDuty.Size = New System.Drawing.Size(60, 22)
         Me.txtDuty.TabIndex = 74
@@ -2993,7 +2869,7 @@ Partial Class SCM00001
         'Label72
         '
         Me.Label72.AutoSize = True
-        Me.Label72.Location = New System.Drawing.Point(248, 410)
+        Me.Label72.Location = New System.Drawing.Point(248, 411)
         Me.Label72.Name = "Label72"
         Me.Label72.Size = New System.Drawing.Size(28, 12)
         Me.Label72.TabIndex = 72
@@ -3003,7 +2879,7 @@ Partial Class SCM00001
         '
         Me.cboHSTU.BackColor = System.Drawing.Color.White
         Me.cboHSTU.FormattingEnabled = True
-        Me.cboHSTU.Location = New System.Drawing.Point(85, 407)
+        Me.cboHSTU.Location = New System.Drawing.Point(85, 408)
         Me.cboHSTU.Name = "cboHSTU"
         Me.cboHSTU.Size = New System.Drawing.Size(146, 20)
         Me.cboHSTU.TabIndex = 72
@@ -3012,27 +2888,16 @@ Partial Class SCM00001
         '
         Me.Label70.AutoSize = True
         Me.Label70.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label70.Location = New System.Drawing.Point(2, 410)
+        Me.Label70.Location = New System.Drawing.Point(2, 411)
         Me.Label70.Name = "Label70"
         Me.Label70.Size = New System.Drawing.Size(73, 12)
         Me.Label70.TabIndex = 70
         Me.Label70.Text = "HSTU #/Tariff"
         '
-        'chkPC
-        '
-        Me.chkPC.AutoSize = True
-        Me.chkPC.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkPC.Location = New System.Drawing.Point(383, 149)
-        Me.chkPC.Name = "chkPC"
-        Me.chkPC.Size = New System.Drawing.Size(65, 16)
-        Me.chkPC.TabIndex = 18
-        Me.chkPC.Text = "Conv. PC"
-        Me.chkPC.UseVisualStyleBackColor = True
-        '
         'txtMOA
         '
         Me.txtMOA.BackColor = System.Drawing.Color.White
-        Me.txtMOA.Location = New System.Drawing.Point(180, 476)
+        Me.txtMOA.Location = New System.Drawing.Point(180, 480)
         Me.txtMOA.Name = "txtMOA"
         Me.txtMOA.Size = New System.Drawing.Size(74, 22)
         Me.txtMOA.TabIndex = 102
@@ -3041,7 +2906,7 @@ Partial Class SCM00001
         '
         Me.Label69.AutoSize = True
         Me.Label69.ForeColor = System.Drawing.Color.Green
-        Me.Label69.Location = New System.Drawing.Point(146, 479)
+        Me.Label69.Location = New System.Drawing.Point(146, 483)
         Me.Label69.Name = "Label69"
         Me.Label69.Size = New System.Drawing.Size(31, 12)
         Me.Label69.TabIndex = 68
@@ -3050,7 +2915,7 @@ Partial Class SCM00001
         'txtMOQUnttyp
         '
         Me.txtMOQUnttyp.BackColor = System.Drawing.Color.White
-        Me.txtMOQUnttyp.Location = New System.Drawing.Point(89, 476)
+        Me.txtMOQUnttyp.Location = New System.Drawing.Point(89, 480)
         Me.txtMOQUnttyp.Name = "txtMOQUnttyp"
         Me.txtMOQUnttyp.Size = New System.Drawing.Size(52, 22)
         Me.txtMOQUnttyp.TabIndex = 100
@@ -3058,7 +2923,7 @@ Partial Class SCM00001
         'txtMOQ
         '
         Me.txtMOQ.BackColor = System.Drawing.Color.White
-        Me.txtMOQ.Location = New System.Drawing.Point(36, 476)
+        Me.txtMOQ.Location = New System.Drawing.Point(36, 480)
         Me.txtMOQ.Name = "txtMOQ"
         Me.txtMOQ.Size = New System.Drawing.Size(52, 22)
         Me.txtMOQ.TabIndex = 98
@@ -3067,7 +2932,7 @@ Partial Class SCM00001
         '
         Me.Label68.AutoSize = True
         Me.Label68.ForeColor = System.Drawing.Color.Green
-        Me.Label68.Location = New System.Drawing.Point(2, 479)
+        Me.Label68.Location = New System.Drawing.Point(2, 483)
         Me.Label68.Name = "Label68"
         Me.Label68.Size = New System.Drawing.Size(31, 12)
         Me.Label68.TabIndex = 65
@@ -3076,7 +2941,7 @@ Partial Class SCM00001
         'txtSelprc
         '
         Me.txtSelprc.BackColor = System.Drawing.Color.White
-        Me.txtSelprc.Location = New System.Drawing.Point(103, 384)
+        Me.txtSelprc.Location = New System.Drawing.Point(98, 385)
         Me.txtSelprc.Name = "txtSelprc"
         Me.txtSelprc.Size = New System.Drawing.Size(77, 22)
         Me.txtSelprc.TabIndex = 62
@@ -3086,7 +2951,7 @@ Partial Class SCM00001
         '
         Me.lblSubttl.AutoSize = True
         Me.lblSubttl.ForeColor = System.Drawing.Color.Green
-        Me.lblSubttl.Location = New System.Drawing.Point(7, 387)
+        Me.lblSubttl.Location = New System.Drawing.Point(2, 388)
         Me.lblSubttl.Name = "lblSubttl"
         Me.lblSubttl.Size = New System.Drawing.Size(50, 12)
         Me.lblSubttl.TabIndex = 63
@@ -3095,7 +2960,7 @@ Partial Class SCM00001
         'txtPCPrc
         '
         Me.txtPCPrc.BackColor = System.Drawing.Color.White
-        Me.txtPCPrc.Location = New System.Drawing.Point(103, 362)
+        Me.txtPCPrc.Location = New System.Drawing.Point(98, 363)
         Me.txtPCPrc.Name = "txtPCPrc"
         Me.txtPCPrc.Size = New System.Drawing.Size(77, 22)
         Me.txtPCPrc.TabIndex = 60
@@ -3104,7 +2969,7 @@ Partial Class SCM00001
         'txtPC
         '
         Me.txtPC.BackColor = System.Drawing.Color.White
-        Me.txtPC.Location = New System.Drawing.Point(293, 295)
+        Me.txtPC.Location = New System.Drawing.Point(293, 296)
         Me.txtPC.Name = "txtPC"
         Me.txtPC.Size = New System.Drawing.Size(42, 22)
         Me.txtPC.TabIndex = 52
@@ -3112,7 +2977,7 @@ Partial Class SCM00001
         'txtShipped
         '
         Me.txtShipped.BackColor = System.Drawing.Color.White
-        Me.txtShipped.Location = New System.Drawing.Point(250, 295)
+        Me.txtShipped.Location = New System.Drawing.Point(250, 296)
         Me.txtShipped.Name = "txtShipped"
         Me.txtShipped.Size = New System.Drawing.Size(42, 22)
         Me.txtShipped.TabIndex = 50
@@ -3121,7 +2986,7 @@ Partial Class SCM00001
         '
         Me.Label63.AutoSize = True
         Me.Label63.ForeColor = System.Drawing.Color.Green
-        Me.Label63.Location = New System.Drawing.Point(220, 296)
+        Me.Label63.Location = New System.Drawing.Point(220, 297)
         Me.Label63.Name = "Label63"
         Me.Label63.Size = New System.Drawing.Size(26, 12)
         Me.Label63.TabIndex = 46
@@ -3130,7 +2995,7 @@ Partial Class SCM00001
         'txtConftr
         '
         Me.txtConftr.BackColor = System.Drawing.Color.White
-        Me.txtConftr.Location = New System.Drawing.Point(187, 295)
+        Me.txtConftr.Location = New System.Drawing.Point(182, 296)
         Me.txtConftr.Name = "txtConftr"
         Me.txtConftr.Size = New System.Drawing.Size(30, 22)
         Me.txtConftr.TabIndex = 48
@@ -3138,7 +3003,7 @@ Partial Class SCM00001
         'txtUM
         '
         Me.txtUM.BackColor = System.Drawing.Color.White
-        Me.txtUM.Location = New System.Drawing.Point(133, 295)
+        Me.txtUM.Location = New System.Drawing.Point(128, 296)
         Me.txtUM.Name = "txtUM"
         Me.txtUM.Size = New System.Drawing.Size(52, 22)
         Me.txtUM.TabIndex = 46
@@ -3147,7 +3012,7 @@ Partial Class SCM00001
         '
         Me.Label62.AutoSize = True
         Me.Label62.ForeColor = System.Drawing.Color.Green
-        Me.Label62.Location = New System.Drawing.Point(107, 298)
+        Me.Label62.Location = New System.Drawing.Point(102, 299)
         Me.Label62.Name = "Label62"
         Me.Label62.Size = New System.Drawing.Size(23, 12)
         Me.Label62.TabIndex = 43
@@ -3156,7 +3021,7 @@ Partial Class SCM00001
         'txtUntPrc
         '
         Me.txtUntPrc.BackColor = System.Drawing.Color.White
-        Me.txtUntPrc.Location = New System.Drawing.Point(103, 340)
+        Me.txtUntPrc.Location = New System.Drawing.Point(98, 341)
         Me.txtUntPrc.Name = "txtUntPrc"
         Me.txtUntPrc.Size = New System.Drawing.Size(77, 22)
         Me.txtUntPrc.TabIndex = 58
@@ -3166,7 +3031,7 @@ Partial Class SCM00001
         '
         Me.lblSelprc.AutoSize = True
         Me.lblSelprc.ForeColor = System.Drawing.Color.Green
-        Me.lblSelprc.Location = New System.Drawing.Point(7, 343)
+        Me.lblSelprc.Location = New System.Drawing.Point(2, 344)
         Me.lblSelprc.Name = "lblSelprc"
         Me.lblSelprc.Size = New System.Drawing.Size(63, 12)
         Me.lblSelprc.TabIndex = 56
@@ -3175,7 +3040,7 @@ Partial Class SCM00001
         'txtItmPrc
         '
         Me.txtItmPrc.BackColor = System.Drawing.Color.White
-        Me.txtItmPrc.Location = New System.Drawing.Point(103, 318)
+        Me.txtItmPrc.Location = New System.Drawing.Point(98, 319)
         Me.txtItmPrc.Name = "txtItmPrc"
         Me.txtItmPrc.Size = New System.Drawing.Size(77, 22)
         Me.txtItmPrc.TabIndex = 56
@@ -3185,7 +3050,7 @@ Partial Class SCM00001
         '
         Me.lblBasprc.AutoSize = True
         Me.lblBasprc.ForeColor = System.Drawing.Color.Green
-        Me.lblBasprc.Location = New System.Drawing.Point(7, 321)
+        Me.lblBasprc.Location = New System.Drawing.Point(2, 322)
         Me.lblBasprc.Name = "lblBasprc"
         Me.lblBasprc.Size = New System.Drawing.Size(56, 12)
         Me.lblBasprc.TabIndex = 50
@@ -3194,7 +3059,7 @@ Partial Class SCM00001
         'txtOrdQty
         '
         Me.txtOrdQty.BackColor = System.Drawing.Color.White
-        Me.txtOrdQty.Location = New System.Drawing.Point(53, 295)
+        Me.txtOrdQty.Location = New System.Drawing.Point(48, 296)
         Me.txtOrdQty.Name = "txtOrdQty"
         Me.txtOrdQty.Size = New System.Drawing.Size(52, 22)
         Me.txtOrdQty.TabIndex = 44
@@ -3203,7 +3068,7 @@ Partial Class SCM00001
         '
         Me.Label58.AutoSize = True
         Me.Label58.ForeColor = System.Drawing.Color.Green
-        Me.Label58.Location = New System.Drawing.Point(7, 298)
+        Me.Label58.Location = New System.Drawing.Point(2, 299)
         Me.Label58.Name = "Label58"
         Me.Label58.Size = New System.Drawing.Size(43, 12)
         Me.Label58.TabIndex = 41
@@ -3212,7 +3077,7 @@ Partial Class SCM00001
         'Label56
         '
         Me.Label56.AutoSize = True
-        Me.Label56.Location = New System.Drawing.Point(246, 275)
+        Me.Label56.Location = New System.Drawing.Point(246, 276)
         Me.Label56.Name = "Label56"
         Me.Label56.Size = New System.Drawing.Size(57, 12)
         Me.Label56.TabIndex = 39
@@ -3221,7 +3086,7 @@ Partial Class SCM00001
         'txtSecCusItm
         '
         Me.txtSecCusItm.BackColor = System.Drawing.Color.White
-        Me.txtSecCusItm.Location = New System.Drawing.Point(89, 272)
+        Me.txtSecCusItm.Location = New System.Drawing.Point(84, 273)
         Me.txtSecCusItm.Name = "txtSecCusItm"
         Me.txtSecCusItm.Size = New System.Drawing.Size(130, 22)
         Me.txtSecCusItm.TabIndex = 38
@@ -3229,7 +3094,7 @@ Partial Class SCM00001
         'Label57
         '
         Me.Label57.AutoSize = True
-        Me.Label57.Location = New System.Drawing.Point(7, 275)
+        Me.Label57.Location = New System.Drawing.Point(2, 276)
         Me.Label57.Name = "Label57"
         Me.Label57.Size = New System.Drawing.Size(63, 12)
         Me.Label57.TabIndex = 37
@@ -3238,7 +3103,7 @@ Partial Class SCM00001
         'txtRespPODtl
         '
         Me.txtRespPODtl.BackColor = System.Drawing.Color.White
-        Me.txtRespPODtl.Location = New System.Drawing.Point(314, 251)
+        Me.txtRespPODtl.Location = New System.Drawing.Point(314, 252)
         Me.txtRespPODtl.MaxLength = 20
         Me.txtRespPODtl.Name = "txtRespPODtl"
         Me.txtRespPODtl.Size = New System.Drawing.Size(130, 22)
@@ -3247,7 +3112,7 @@ Partial Class SCM00001
         'Label54
         '
         Me.Label54.AutoSize = True
-        Me.Label54.Location = New System.Drawing.Point(246, 254)
+        Me.Label54.Location = New System.Drawing.Point(246, 255)
         Me.Label54.Name = "Label54"
         Me.Label54.Size = New System.Drawing.Size(57, 12)
         Me.Label54.TabIndex = 35
@@ -3256,7 +3121,7 @@ Partial Class SCM00001
         'txtSKUNo
         '
         Me.txtSKUNo.BackColor = System.Drawing.Color.White
-        Me.txtSKUNo.Location = New System.Drawing.Point(89, 251)
+        Me.txtSKUNo.Location = New System.Drawing.Point(84, 252)
         Me.txtSKUNo.MaxLength = 20
         Me.txtSKUNo.Name = "txtSKUNo"
         Me.txtSKUNo.Size = New System.Drawing.Size(130, 22)
@@ -3265,7 +3130,7 @@ Partial Class SCM00001
         'Label55
         '
         Me.Label55.AutoSize = True
-        Me.Label55.Location = New System.Drawing.Point(7, 254)
+        Me.Label55.Location = New System.Drawing.Point(2, 255)
         Me.Label55.Name = "Label55"
         Me.Label55.Size = New System.Drawing.Size(63, 12)
         Me.Label55.TabIndex = 33
@@ -3274,7 +3139,7 @@ Partial Class SCM00001
         'txtCustPODtl
         '
         Me.txtCustPODtl.BackColor = System.Drawing.Color.White
-        Me.txtCustPODtl.Location = New System.Drawing.Point(314, 230)
+        Me.txtCustPODtl.Location = New System.Drawing.Point(314, 231)
         Me.txtCustPODtl.MaxLength = 20
         Me.txtCustPODtl.Name = "txtCustPODtl"
         Me.txtCustPODtl.Size = New System.Drawing.Size(130, 22)
@@ -3283,7 +3148,7 @@ Partial Class SCM00001
         'Label52
         '
         Me.Label52.AutoSize = True
-        Me.Label52.Location = New System.Drawing.Point(246, 233)
+        Me.Label52.Location = New System.Drawing.Point(246, 234)
         Me.Label52.Name = "Label52"
         Me.Label52.Size = New System.Drawing.Size(52, 12)
         Me.Label52.TabIndex = 31
@@ -3292,7 +3157,7 @@ Partial Class SCM00001
         'txtCustItmno
         '
         Me.txtCustItmno.BackColor = System.Drawing.Color.White
-        Me.txtCustItmno.Location = New System.Drawing.Point(89, 230)
+        Me.txtCustItmno.Location = New System.Drawing.Point(84, 231)
         Me.txtCustItmno.MaxLength = 20
         Me.txtCustItmno.Name = "txtCustItmno"
         Me.txtCustItmno.Size = New System.Drawing.Size(130, 22)
@@ -3301,7 +3166,7 @@ Partial Class SCM00001
         'Label53
         '
         Me.Label53.AutoSize = True
-        Me.Label53.Location = New System.Drawing.Point(7, 233)
+        Me.Label53.Location = New System.Drawing.Point(2, 234)
         Me.Label53.Name = "Label53"
         Me.Label53.Size = New System.Drawing.Size(57, 12)
         Me.Label53.TabIndex = 29
@@ -3310,7 +3175,7 @@ Partial Class SCM00001
         'Label51
         '
         Me.Label51.AutoSize = True
-        Me.Label51.Location = New System.Drawing.Point(246, 213)
+        Me.Label51.Location = New System.Drawing.Point(246, 212)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(61, 12)
         Me.Label51.TabIndex = 27
@@ -3319,7 +3184,7 @@ Partial Class SCM00001
         'txtColDsc
         '
         Me.txtColDsc.BackColor = System.Drawing.Color.White
-        Me.txtColDsc.Location = New System.Drawing.Point(314, 190)
+        Me.txtColDsc.Location = New System.Drawing.Point(314, 191)
         Me.txtColDsc.MaxLength = 300
         Me.txtColDsc.Multiline = True
         Me.txtColDsc.Name = "txtColDsc"
@@ -3330,7 +3195,7 @@ Partial Class SCM00001
         'Label50
         '
         Me.Label50.AutoSize = True
-        Me.Label50.Location = New System.Drawing.Point(246, 193)
+        Me.Label50.Location = New System.Drawing.Point(246, 191)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(60, 12)
         Me.Label50.TabIndex = 25
@@ -3339,7 +3204,7 @@ Partial Class SCM00001
         'txtCustColCde
         '
         Me.txtCustColCde.BackColor = System.Drawing.Color.White
-        Me.txtCustColCde.Location = New System.Drawing.Point(89, 208)
+        Me.txtCustColCde.Location = New System.Drawing.Point(84, 210)
         Me.txtCustColCde.MaxLength = 30
         Me.txtCustColCde.Name = "txtCustColCde"
         Me.txtCustColCde.Size = New System.Drawing.Size(130, 22)
@@ -3348,7 +3213,7 @@ Partial Class SCM00001
         'Label49
         '
         Me.Label49.AutoSize = True
-        Me.Label49.Location = New System.Drawing.Point(7, 211)
+        Me.Label49.Location = New System.Drawing.Point(2, 212)
         Me.Label49.Name = "Label49"
         Me.Label49.Size = New System.Drawing.Size(77, 12)
         Me.Label49.TabIndex = 23
@@ -3357,7 +3222,7 @@ Partial Class SCM00001
         'Label47
         '
         Me.Label47.AutoSize = True
-        Me.Label47.Location = New System.Drawing.Point(7, 171)
+        Me.Label47.Location = New System.Drawing.Point(2, 171)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(45, 12)
         Me.Label47.TabIndex = 19
@@ -3367,7 +3232,7 @@ Partial Class SCM00001
         '
         Me.Label46.AutoSize = True
         Me.Label46.ForeColor = System.Drawing.Color.Green
-        Me.Label46.Location = New System.Drawing.Point(7, 149)
+        Me.Label46.Location = New System.Drawing.Point(2, 149)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(54, 12)
         Me.Label46.TabIndex = 16
@@ -3375,7 +3240,7 @@ Partial Class SCM00001
         '
         'cmdUpdItmPckInfo
         '
-        Me.cmdUpdItmPckInfo.Location = New System.Drawing.Point(358, 126)
+        Me.cmdUpdItmPckInfo.Location = New System.Drawing.Point(359, 127)
         Me.cmdUpdItmPckInfo.Name = "cmdUpdItmPckInfo"
         Me.cmdUpdItmPckInfo.Size = New System.Drawing.Size(86, 20)
         Me.cmdUpdItmPckInfo.TabIndex = 15
@@ -3385,11 +3250,11 @@ Partial Class SCM00001
         'lblColPckType
         '
         Me.lblColPckType.AutoSize = True
-        Me.lblColPckType.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblColPckType.Font = New System.Drawing.Font("PMingLiU", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.lblColPckType.ForeColor = System.Drawing.Color.Green
-        Me.lblColPckType.Location = New System.Drawing.Point(4, 132)
+        Me.lblColPckType.Location = New System.Drawing.Point(2, 131)
         Me.lblColPckType.Name = "lblColPckType"
-        Me.lblColPckType.Size = New System.Drawing.Size(327, 12)
+        Me.lblColPckType.Size = New System.Drawing.Size(345, 11)
         Me.lblColPckType.TabIndex = 14
         Me.lblColPckType.Text = "(Color/UM/Inner/Master/CFT/CBM/FTY PrcTrm/HK PrcTrm/Tran Trm) - Type : "
         '
@@ -3397,7 +3262,7 @@ Partial Class SCM00001
         '
         Me.Label44.AutoSize = True
         Me.Label44.ForeColor = System.Drawing.Color.Green
-        Me.Label44.Location = New System.Drawing.Point(7, 60)
+        Me.Label44.Location = New System.Drawing.Point(2, 62)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(52, 12)
         Me.Label44.TabIndex = 12
@@ -3423,17 +3288,17 @@ Partial Class SCM00001
         'txtItmno
         '
         Me.txtItmno.BackColor = System.Drawing.Color.White
-        Me.txtItmno.Location = New System.Drawing.Point(63, 34)
+        Me.txtItmno.Location = New System.Drawing.Point(58, 35)
         Me.txtItmno.MaxLength = 20
         Me.txtItmno.Name = "txtItmno"
-        Me.txtItmno.Size = New System.Drawing.Size(115, 22)
+        Me.txtItmno.Size = New System.Drawing.Size(120, 22)
         Me.txtItmno.TabIndex = 11
         '
         'Label43
         '
         Me.Label43.AutoSize = True
         Me.Label43.ForeColor = System.Drawing.Color.Green
-        Me.Label43.Location = New System.Drawing.Point(7, 37)
+        Me.Label43.Location = New System.Drawing.Point(2, 39)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(41, 12)
         Me.Label43.TabIndex = 8
@@ -3503,7 +3368,7 @@ Partial Class SCM00001
         'lblPC
         '
         Me.lblPC.AutoSize = True
-        Me.lblPC.Location = New System.Drawing.Point(337, 298)
+        Me.lblPC.Location = New System.Drawing.Point(337, 299)
         Me.lblPC.Name = "lblPC"
         Me.lblPC.Size = New System.Drawing.Size(19, 12)
         Me.lblPC.TabIndex = 49
@@ -3543,16 +3408,16 @@ Partial Class SCM00001
         Me.GroupBox7.Controls.Add(Me.Label80)
         Me.GroupBox7.Controls.Add(Me.chkChgFty)
         Me.GroupBox7.Controls.Add(Me.chkUpdatePO)
-        Me.GroupBox7.Location = New System.Drawing.Point(450, 29)
+        Me.GroupBox7.Location = New System.Drawing.Point(450, 28)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(486, 183)
+        Me.GroupBox7.Size = New System.Drawing.Size(486, 187)
         Me.GroupBox7.TabIndex = 108
         Me.GroupBox7.TabStop = False
         '
         'lblFtyCstCur
         '
         Me.lblFtyCstCur.AutoSize = True
-        Me.lblFtyCstCur.Location = New System.Drawing.Point(125, 39)
+        Me.lblFtyCstCur.Location = New System.Drawing.Point(125, 37)
         Me.lblFtyCstCur.Name = "lblFtyCstCur"
         Me.lblFtyCstCur.Size = New System.Drawing.Size(27, 12)
         Me.lblFtyCstCur.TabIndex = 36
@@ -3562,7 +3427,7 @@ Partial Class SCM00001
         'txtFtyCst
         '
         Me.txtFtyCst.BackColor = System.Drawing.Color.White
-        Me.txtFtyCst.Location = New System.Drawing.Point(158, 36)
+        Me.txtFtyCst.Location = New System.Drawing.Point(158, 34)
         Me.txtFtyCst.Name = "txtFtyCst"
         Me.txtFtyCst.Size = New System.Drawing.Size(60, 22)
         Me.txtFtyCst.TabIndex = 35
@@ -3574,7 +3439,7 @@ Partial Class SCM00001
         Me.cboExamVen.BackColor = System.Drawing.Color.White
         Me.cboExamVen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboExamVen.FormattingEnabled = True
-        Me.cboExamVen.Location = New System.Drawing.Point(30, 156)
+        Me.cboExamVen.Location = New System.Drawing.Point(30, 160)
         Me.cboExamVen.Name = "cboExamVen"
         Me.cboExamVen.Size = New System.Drawing.Size(188, 20)
         Me.cboExamVen.TabIndex = 28
@@ -3583,7 +3448,7 @@ Partial Class SCM00001
         '
         Me.Label124.AutoSize = True
         Me.Label124.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label124.Location = New System.Drawing.Point(5, 159)
+        Me.Label124.Location = New System.Drawing.Point(5, 163)
         Me.Label124.Name = "Label124"
         Me.Label124.Size = New System.Drawing.Size(19, 12)
         Me.Label124.TabIndex = 34
@@ -3594,7 +3459,7 @@ Partial Class SCM00001
         Me.cboTradeVen.BackColor = System.Drawing.Color.White
         Me.cboTradeVen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTradeVen.FormattingEnabled = True
-        Me.cboTradeVen.Location = New System.Drawing.Point(30, 131)
+        Me.cboTradeVen.Location = New System.Drawing.Point(30, 135)
         Me.cboTradeVen.Name = "cboTradeVen"
         Me.cboTradeVen.Size = New System.Drawing.Size(188, 20)
         Me.cboTradeVen.TabIndex = 26
@@ -3603,7 +3468,7 @@ Partial Class SCM00001
         '
         Me.Label129.AutoSize = True
         Me.Label129.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label129.Location = New System.Drawing.Point(5, 133)
+        Me.Label129.Location = New System.Drawing.Point(5, 137)
         Me.Label129.Name = "Label129"
         Me.Label129.Size = New System.Drawing.Size(20, 12)
         Me.Label129.TabIndex = 32
@@ -3612,7 +3477,7 @@ Partial Class SCM00001
         'txtVenno
         '
         Me.txtVenno.BackColor = System.Drawing.Color.White
-        Me.txtVenno.Location = New System.Drawing.Point(30, 57)
+        Me.txtVenno.Location = New System.Drawing.Point(30, 59)
         Me.txtVenno.Name = "txtVenno"
         Me.txtVenno.Size = New System.Drawing.Size(188, 22)
         Me.txtVenno.TabIndex = 8
@@ -3620,7 +3485,7 @@ Partial Class SCM00001
         'lblDVItmCstCur
         '
         Me.lblDVItmCstCur.AutoSize = True
-        Me.lblDVItmCstCur.Location = New System.Drawing.Point(220, 60)
+        Me.lblDVItmCstCur.Location = New System.Drawing.Point(220, 62)
         Me.lblDVItmCstCur.Name = "lblDVItmCstCur"
         Me.lblDVItmCstCur.Size = New System.Drawing.Size(27, 12)
         Me.lblDVItmCstCur.TabIndex = 17
@@ -3628,7 +3493,7 @@ Partial Class SCM00001
         '
         'lblItmCst
         '
-        Me.lblItmCst.Location = New System.Drawing.Point(248, 39)
+        Me.lblItmCst.Location = New System.Drawing.Point(248, 41)
         Me.lblItmCst.Name = "lblItmCst"
         Me.lblItmCst.Size = New System.Drawing.Size(63, 13)
         Me.lblItmCst.TabIndex = 15
@@ -3638,7 +3503,7 @@ Partial Class SCM00001
         'lblItmCstCur
         '
         Me.lblItmCstCur.AutoSize = True
-        Me.lblItmCstCur.Location = New System.Drawing.Point(220, 109)
+        Me.lblItmCstCur.Location = New System.Drawing.Point(220, 113)
         Me.lblItmCstCur.Name = "lblItmCstCur"
         Me.lblItmCstCur.Size = New System.Drawing.Size(27, 12)
         Me.lblItmCstCur.TabIndex = 15
@@ -3646,7 +3511,7 @@ Partial Class SCM00001
         '
         'lblTtlCst
         '
-        Me.lblTtlCst.Location = New System.Drawing.Point(372, 39)
+        Me.lblTtlCst.Location = New System.Drawing.Point(372, 41)
         Me.lblTtlCst.Name = "lblTtlCst"
         Me.lblTtlCst.Size = New System.Drawing.Size(63, 13)
         Me.lblTtlCst.TabIndex = 24
@@ -3655,7 +3520,7 @@ Partial Class SCM00001
         '
         'lblBOMCst
         '
-        Me.lblBOMCst.Location = New System.Drawing.Point(310, 39)
+        Me.lblBOMCst.Location = New System.Drawing.Point(310, 41)
         Me.lblBOMCst.Name = "lblBOMCst"
         Me.lblBOMCst.Size = New System.Drawing.Size(63, 13)
         Me.lblBOMCst.TabIndex = 19
@@ -3664,8 +3529,7 @@ Partial Class SCM00001
         '
         'cmdItmCstEn
         '
-        Me.cmdItmCstEn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdItmCstEn.Location = New System.Drawing.Point(310, 153)
+        Me.cmdItmCstEn.Location = New System.Drawing.Point(310, 157)
         Me.cmdItmCstEn.Name = "cmdItmCstEn"
         Me.cmdItmCstEn.Size = New System.Drawing.Size(80, 23)
         Me.cmdItmCstEn.TabIndex = 30
@@ -3675,27 +3539,25 @@ Partial Class SCM00001
         'lblDVFtyUnt
         '
         Me.lblDVFtyUnt.AutoSize = True
-        Me.lblDVFtyUnt.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDVFtyUnt.Location = New System.Drawing.Point(436, 61)
+        Me.lblDVFtyUnt.Location = New System.Drawing.Point(436, 63)
         Me.lblDVFtyUnt.Name = "lblDVFtyUnt"
-        Me.lblDVFtyUnt.Size = New System.Drawing.Size(23, 13)
+        Me.lblDVFtyUnt.Size = New System.Drawing.Size(19, 12)
         Me.lblDVFtyUnt.TabIndex = 29
         Me.lblDVFtyUnt.Text = "PC"
         '
         'lblFtyUnt
         '
         Me.lblFtyUnt.AutoSize = True
-        Me.lblFtyUnt.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFtyUnt.Location = New System.Drawing.Point(436, 109)
+        Me.lblFtyUnt.Location = New System.Drawing.Point(436, 113)
         Me.lblFtyUnt.Name = "lblFtyUnt"
-        Me.lblFtyUnt.Size = New System.Drawing.Size(23, 13)
+        Me.lblFtyUnt.Size = New System.Drawing.Size(19, 12)
         Me.lblFtyUnt.TabIndex = 26
         Me.lblFtyUnt.Text = "PC"
         '
         'txtDVTtlCst
         '
         Me.txtDVTtlCst.BackColor = System.Drawing.Color.White
-        Me.txtDVTtlCst.Location = New System.Drawing.Point(375, 57)
+        Me.txtDVTtlCst.Location = New System.Drawing.Point(375, 59)
         Me.txtDVTtlCst.Name = "txtDVTtlCst"
         Me.txtDVTtlCst.Size = New System.Drawing.Size(60, 22)
         Me.txtDVTtlCst.TabIndex = 14
@@ -3704,7 +3566,7 @@ Partial Class SCM00001
         'txtTtlCst
         '
         Me.txtTtlCst.BackColor = System.Drawing.Color.White
-        Me.txtTtlCst.Location = New System.Drawing.Point(375, 106)
+        Me.txtTtlCst.Location = New System.Drawing.Point(375, 110)
         Me.txtTtlCst.Name = "txtTtlCst"
         Me.txtTtlCst.Size = New System.Drawing.Size(60, 22)
         Me.txtTtlCst.TabIndex = 24
@@ -3713,7 +3575,7 @@ Partial Class SCM00001
         'txtDVBOMCst
         '
         Me.txtDVBOMCst.BackColor = System.Drawing.Color.White
-        Me.txtDVBOMCst.Location = New System.Drawing.Point(313, 57)
+        Me.txtDVBOMCst.Location = New System.Drawing.Point(313, 59)
         Me.txtDVBOMCst.Name = "txtDVBOMCst"
         Me.txtDVBOMCst.Size = New System.Drawing.Size(60, 22)
         Me.txtDVBOMCst.TabIndex = 12
@@ -3721,7 +3583,7 @@ Partial Class SCM00001
         '
         'cmdOrgScCst
         '
-        Me.cmdOrgScCst.Location = New System.Drawing.Point(396, 153)
+        Me.cmdOrgScCst.Location = New System.Drawing.Point(396, 157)
         Me.cmdOrgScCst.Name = "cmdOrgScCst"
         Me.cmdOrgScCst.Size = New System.Drawing.Size(80, 23)
         Me.cmdOrgScCst.TabIndex = 32
@@ -3731,7 +3593,7 @@ Partial Class SCM00001
         'txtBOMCst
         '
         Me.txtBOMCst.BackColor = System.Drawing.Color.White
-        Me.txtBOMCst.Location = New System.Drawing.Point(313, 106)
+        Me.txtBOMCst.Location = New System.Drawing.Point(313, 110)
         Me.txtBOMCst.Name = "txtBOMCst"
         Me.txtBOMCst.Size = New System.Drawing.Size(60, 22)
         Me.txtBOMCst.TabIndex = 22
@@ -3740,7 +3602,7 @@ Partial Class SCM00001
         'txtDVItmCst
         '
         Me.txtDVItmCst.BackColor = System.Drawing.Color.White
-        Me.txtDVItmCst.Location = New System.Drawing.Point(251, 57)
+        Me.txtDVItmCst.Location = New System.Drawing.Point(251, 59)
         Me.txtDVItmCst.Name = "txtDVItmCst"
         Me.txtDVItmCst.Size = New System.Drawing.Size(60, 22)
         Me.txtDVItmCst.TabIndex = 10
@@ -3749,7 +3611,7 @@ Partial Class SCM00001
         'txtItmCst
         '
         Me.txtItmCst.BackColor = System.Drawing.Color.White
-        Me.txtItmCst.Location = New System.Drawing.Point(251, 106)
+        Me.txtItmCst.Location = New System.Drawing.Point(251, 110)
         Me.txtItmCst.Name = "txtItmCst"
         Me.txtItmCst.Size = New System.Drawing.Size(60, 22)
         Me.txtItmCst.TabIndex = 20
@@ -3758,7 +3620,7 @@ Partial Class SCM00001
         'lblDVCap
         '
         Me.lblDVCap.AutoSize = True
-        Me.lblDVCap.Location = New System.Drawing.Point(5, 60)
+        Me.lblDVCap.Location = New System.Drawing.Point(5, 62)
         Me.lblDVCap.Name = "lblDVCap"
         Me.lblDVCap.Size = New System.Drawing.Size(21, 12)
         Me.lblDVCap.TabIndex = 14
@@ -3769,7 +3631,7 @@ Partial Class SCM00001
         Me.cboPrdVen.BackColor = System.Drawing.Color.White
         Me.cboPrdVen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboPrdVen.FormattingEnabled = True
-        Me.cboPrdVen.Location = New System.Drawing.Point(30, 106)
+        Me.cboPrdVen.Location = New System.Drawing.Point(30, 110)
         Me.cboPrdVen.Name = "cboPrdVen"
         Me.cboPrdVen.Size = New System.Drawing.Size(188, 20)
         Me.cboPrdVen.TabIndex = 18
@@ -3778,7 +3640,7 @@ Partial Class SCM00001
         '
         Me.Label82.AutoSize = True
         Me.Label82.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label82.Location = New System.Drawing.Point(5, 109)
+        Me.Label82.Location = New System.Drawing.Point(5, 113)
         Me.Label82.Name = "Label82"
         Me.Label82.Size = New System.Drawing.Size(19, 12)
         Me.Label82.TabIndex = 8
@@ -3789,7 +3651,7 @@ Partial Class SCM00001
         Me.cboCusVen.BackColor = System.Drawing.Color.White
         Me.cboCusVen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCusVen.FormattingEnabled = True
-        Me.cboCusVen.Location = New System.Drawing.Point(30, 81)
+        Me.cboCusVen.Location = New System.Drawing.Point(30, 85)
         Me.cboCusVen.Name = "cboCusVen"
         Me.cboCusVen.Size = New System.Drawing.Size(188, 20)
         Me.cboCusVen.TabIndex = 16
@@ -3798,7 +3660,7 @@ Partial Class SCM00001
         '
         Me.Label81.AutoSize = True
         Me.Label81.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label81.Location = New System.Drawing.Point(5, 83)
+        Me.Label81.Location = New System.Drawing.Point(5, 87)
         Me.Label81.Name = "Label81"
         Me.Label81.Size = New System.Drawing.Size(21, 12)
         Me.Label81.TabIndex = 5
@@ -3832,10 +3694,9 @@ Partial Class SCM00001
         'chkChgFty
         '
         Me.chkChgFty.AutoSize = True
-        Me.chkChgFty.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkChgFty.Location = New System.Drawing.Point(99, 13)
         Me.chkChgFty.Name = "chkChgFty"
-        Me.chkChgFty.Size = New System.Drawing.Size(101, 17)
+        Me.chkChgFty.Size = New System.Drawing.Size(98, 16)
         Me.chkChgFty.TabIndex = 2
         Me.chkChgFty.Text = "Change Factory"
         Me.chkChgFty.UseVisualStyleBackColor = True
@@ -3843,10 +3704,9 @@ Partial Class SCM00001
         'chkUpdatePO
         '
         Me.chkUpdatePO.AutoSize = True
-        Me.chkUpdatePO.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkUpdatePO.Location = New System.Drawing.Point(12, 13)
         Me.chkUpdatePO.Name = "chkUpdatePO"
-        Me.chkUpdatePO.Size = New System.Drawing.Size(79, 17)
+        Me.chkUpdatePO.Size = New System.Drawing.Size(74, 16)
         Me.chkUpdatePO.TabIndex = 0
         Me.chkUpdatePO.Text = "Update PO"
         Me.chkUpdatePO.UseVisualStyleBackColor = True
@@ -3861,12 +3721,22 @@ Partial Class SCM00001
         Me.lblDtlSeq.TabIndex = 1
         Me.lblDtlSeq.Text = "00"
         '
+        'chkPC
+        '
+        Me.chkPC.AutoSize = True
+        Me.chkPC.Location = New System.Drawing.Point(381, 150)
+        Me.chkPC.Name = "chkPC"
+        Me.chkPC.Size = New System.Drawing.Size(70, 16)
+        Me.chkPC.TabIndex = 18
+        Me.chkPC.Text = "Conv. PC"
+        Me.chkPC.UseVisualStyleBackColor = True
+        '
         'frmShpDoc
         '
         Me.frmShpDoc.Controls.Add(Me.grpShpmrk)
         Me.frmShpDoc.Location = New System.Drawing.Point(4, 22)
         Me.frmShpDoc.Name = "frmShpDoc"
-        Me.frmShpDoc.Size = New System.Drawing.Size(946, 502)
+        Me.frmShpDoc.Size = New System.Drawing.Size(946, 506)
         Me.frmShpDoc.TabIndex = 3
         Me.frmShpDoc.Text = "(4) Ship Mark / Doc"
         Me.frmShpDoc.UseVisualStyleBackColor = True
@@ -3892,13 +3762,13 @@ Partial Class SCM00001
         Me.grpShpmrk.Controls.Add(Me.Label110)
         Me.grpShpmrk.Location = New System.Drawing.Point(1, -2)
         Me.grpShpmrk.Name = "grpShpmrk"
-        Me.grpShpmrk.Size = New System.Drawing.Size(942, 501)
+        Me.grpShpmrk.Size = New System.Drawing.Size(942, 505)
         Me.grpShpmrk.TabIndex = 1
         Me.grpShpmrk.TabStop = False
         '
         'cmdTransportShipmark
         '
-        Me.cmdTransportShipmark.Location = New System.Drawing.Point(712, 24)
+        Me.cmdTransportShipmark.Location = New System.Drawing.Point(703, 25)
         Me.cmdTransportShipmark.Name = "cmdTransportShipmark"
         Me.cmdTransportShipmark.Size = New System.Drawing.Size(153, 27)
         Me.cmdTransportShipmark.TabIndex = 16
@@ -3907,7 +3777,7 @@ Partial Class SCM00001
         '
         'cmdShpmrkAttchmnt
         '
-        Me.cmdShpmrkAttchmnt.Location = New System.Drawing.Point(548, 24)
+        Me.cmdShpmrkAttchmnt.Location = New System.Drawing.Point(539, 25)
         Me.cmdShpmrkAttchmnt.Name = "cmdShpmrkAttchmnt"
         Me.cmdShpmrkAttchmnt.Size = New System.Drawing.Size(153, 27)
         Me.cmdShpmrkAttchmnt.TabIndex = 15
@@ -3917,7 +3787,7 @@ Partial Class SCM00001
         'Label115
         '
         Me.Label115.AutoSize = True
-        Me.Label115.Location = New System.Drawing.Point(11, 394)
+        Me.Label115.Location = New System.Drawing.Point(2, 395)
         Me.Label115.Name = "Label115"
         Me.Label115.Size = New System.Drawing.Size(98, 12)
         Me.Label115.TabIndex = 13
@@ -3927,18 +3797,18 @@ Partial Class SCM00001
         '
         Me.txtChiRmk.BackColor = System.Drawing.Color.White
         Me.txtChiRmk.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtChiRmk.Location = New System.Drawing.Point(118, 391)
+        Me.txtChiRmk.Location = New System.Drawing.Point(109, 392)
         Me.txtChiRmk.MaxLength = 800
         Me.txtChiRmk.Multiline = True
         Me.txtChiRmk.Name = "txtChiRmk"
         Me.txtChiRmk.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtChiRmk.Size = New System.Drawing.Size(819, 104)
+        Me.txtChiRmk.Size = New System.Drawing.Size(827, 104)
         Me.txtChiRmk.TabIndex = 14
         '
         'Label114
         '
         Me.Label114.AutoSize = True
-        Me.Label114.Location = New System.Drawing.Point(11, 287)
+        Me.Label114.Location = New System.Drawing.Point(2, 288)
         Me.Label114.Name = "Label114"
         Me.Label114.Size = New System.Drawing.Size(96, 12)
         Me.Label114.TabIndex = 11
@@ -3948,18 +3818,18 @@ Partial Class SCM00001
         '
         Me.txtEngRmk.BackColor = System.Drawing.Color.White
         Me.txtEngRmk.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEngRmk.Location = New System.Drawing.Point(118, 284)
+        Me.txtEngRmk.Location = New System.Drawing.Point(109, 285)
         Me.txtEngRmk.MaxLength = 1600
         Me.txtEngRmk.Multiline = True
         Me.txtEngRmk.Name = "txtEngRmk"
         Me.txtEngRmk.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtEngRmk.Size = New System.Drawing.Size(819, 101)
+        Me.txtEngRmk.Size = New System.Drawing.Size(827, 101)
         Me.txtEngRmk.TabIndex = 12
         '
         'Label113
         '
         Me.Label113.AutoSize = True
-        Me.Label113.Location = New System.Drawing.Point(11, 175)
+        Me.Label113.Location = New System.Drawing.Point(2, 176)
         Me.Label113.Name = "Label113"
         Me.Label113.Size = New System.Drawing.Size(98, 12)
         Me.Label113.TabIndex = 9
@@ -3969,18 +3839,18 @@ Partial Class SCM00001
         '
         Me.txtChiDsc.BackColor = System.Drawing.Color.White
         Me.txtChiDsc.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtChiDsc.Location = New System.Drawing.Point(117, 172)
+        Me.txtChiDsc.Location = New System.Drawing.Point(108, 173)
         Me.txtChiDsc.MaxLength = 800
         Me.txtChiDsc.Multiline = True
         Me.txtChiDsc.Name = "txtChiDsc"
         Me.txtChiDsc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtChiDsc.Size = New System.Drawing.Size(819, 106)
+        Me.txtChiDsc.Size = New System.Drawing.Size(827, 106)
         Me.txtChiDsc.TabIndex = 10
         '
         'Label112
         '
         Me.Label112.AutoSize = True
-        Me.Label112.Location = New System.Drawing.Point(11, 73)
+        Me.Label112.Location = New System.Drawing.Point(2, 74)
         Me.Label112.Name = "Label112"
         Me.Label112.Size = New System.Drawing.Size(96, 12)
         Me.Label112.TabIndex = 7
@@ -3990,19 +3860,19 @@ Partial Class SCM00001
         '
         Me.txtEngDsc.BackColor = System.Drawing.Color.White
         Me.txtEngDsc.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEngDsc.Location = New System.Drawing.Point(118, 70)
+        Me.txtEngDsc.Location = New System.Drawing.Point(109, 71)
         Me.txtEngDsc.MaxLength = 1600
         Me.txtEngDsc.Multiline = True
         Me.txtEngDsc.Name = "txtEngDsc"
         Me.txtEngDsc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtEngDsc.Size = New System.Drawing.Size(819, 96)
+        Me.txtEngDsc.Size = New System.Drawing.Size(827, 96)
         Me.txtEngDsc.TabIndex = 8
         '
         'cboShipMark
         '
         Me.cboShipMark.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboShipMark.FormattingEnabled = True
-        Me.cboShipMark.Location = New System.Drawing.Point(118, 43)
+        Me.cboShipMark.Location = New System.Drawing.Point(109, 44)
         Me.cboShipMark.Name = "cboShipMark"
         Me.cboShipMark.Size = New System.Drawing.Size(401, 20)
         Me.cboShipMark.TabIndex = 6
@@ -4010,7 +3880,7 @@ Partial Class SCM00001
         'Label111
         '
         Me.Label111.AutoSize = True
-        Me.Label111.Location = New System.Drawing.Point(11, 46)
+        Me.Label111.Location = New System.Drawing.Point(2, 47)
         Me.Label111.Name = "Label111"
         Me.Label111.Size = New System.Drawing.Size(74, 12)
         Me.Label111.TabIndex = 5
@@ -4019,7 +3889,7 @@ Partial Class SCM00001
         'chkDelShp
         '
         Me.chkDelShp.AutoSize = True
-        Me.chkDelShp.Location = New System.Drawing.Point(408, 21)
+        Me.chkDelShp.Location = New System.Drawing.Point(399, 22)
         Me.chkDelShp.Name = "chkDelShp"
         Me.chkDelShp.Size = New System.Drawing.Size(107, 16)
         Me.chkDelShp.TabIndex = 4
@@ -4029,7 +3899,7 @@ Partial Class SCM00001
         'optInner
         '
         Me.optInner.AutoSize = True
-        Me.optInner.Location = New System.Drawing.Point(306, 20)
+        Me.optInner.Location = New System.Drawing.Point(297, 21)
         Me.optInner.Name = "optInner"
         Me.optInner.Size = New System.Drawing.Size(48, 16)
         Me.optInner.TabIndex = 3
@@ -4039,7 +3909,7 @@ Partial Class SCM00001
         'optSide
         '
         Me.optSide.AutoSize = True
-        Me.optSide.Location = New System.Drawing.Point(234, 20)
+        Me.optSide.Location = New System.Drawing.Point(225, 21)
         Me.optSide.Name = "optSide"
         Me.optSide.Size = New System.Drawing.Size(43, 16)
         Me.optSide.TabIndex = 2
@@ -4049,7 +3919,7 @@ Partial Class SCM00001
         'optMain
         '
         Me.optMain.AutoSize = True
-        Me.optMain.Location = New System.Drawing.Point(162, 20)
+        Me.optMain.Location = New System.Drawing.Point(153, 21)
         Me.optMain.Name = "optMain"
         Me.optMain.Size = New System.Drawing.Size(47, 16)
         Me.optMain.TabIndex = 1
@@ -4059,7 +3929,7 @@ Partial Class SCM00001
         'Label110
         '
         Me.Label110.AutoSize = True
-        Me.Label110.Location = New System.Drawing.Point(11, 22)
+        Me.Label110.Location = New System.Drawing.Point(2, 23)
         Me.Label110.Name = "Label110"
         Me.Label110.Size = New System.Drawing.Size(81, 12)
         Me.Label110.TabIndex = 0
@@ -4067,158 +3937,13 @@ Partial Class SCM00001
         '
         'frmSum
         '
-        Me.frmSum.Controls.Add(Me.panSumPODates)
         Me.frmSum.Controls.Add(Me.grpSummary)
         Me.frmSum.Location = New System.Drawing.Point(4, 22)
         Me.frmSum.Name = "frmSum"
-        Me.frmSum.Size = New System.Drawing.Size(946, 502)
+        Me.frmSum.Size = New System.Drawing.Size(946, 506)
         Me.frmSum.TabIndex = 4
         Me.frmSum.Text = "(5) Summary"
         Me.frmSum.UseVisualStyleBackColor = True
-        '
-        'panSumPODates
-        '
-        Me.panSumPODates.BackColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.panSumPODates.Controls.Add(Me.cmdPanSumPODatesUpdate)
-        Me.panSumPODates.Controls.Add(Me.cmdPanSumPODatesCancel)
-        Me.panSumPODates.Controls.Add(Me.GroupBox9)
-        Me.panSumPODates.Controls.Add(Me.GroupBox8)
-        Me.panSumPODates.Location = New System.Drawing.Point(7, 12)
-        Me.panSumPODates.Name = "panSumPODates"
-        Me.panSumPODates.Size = New System.Drawing.Size(310, 180)
-        Me.panSumPODates.TabIndex = 4
-        Me.panSumPODates.Visible = False
-        '
-        'cmdPanSumPODatesUpdate
-        '
-        Me.cmdPanSumPODatesUpdate.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdPanSumPODatesUpdate.Location = New System.Drawing.Point(102, 145)
-        Me.cmdPanSumPODatesUpdate.Name = "cmdPanSumPODatesUpdate"
-        Me.cmdPanSumPODatesUpdate.Size = New System.Drawing.Size(105, 23)
-        Me.cmdPanSumPODatesUpdate.TabIndex = 3
-        Me.cmdPanSumPODatesUpdate.Text = "Update PO Dates"
-        Me.cmdPanSumPODatesUpdate.UseVisualStyleBackColor = False
-        '
-        'cmdPanSumPODatesCancel
-        '
-        Me.cmdPanSumPODatesCancel.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdPanSumPODatesCancel.Location = New System.Drawing.Point(224, 145)
-        Me.cmdPanSumPODatesCancel.Name = "cmdPanSumPODatesCancel"
-        Me.cmdPanSumPODatesCancel.Size = New System.Drawing.Size(75, 23)
-        Me.cmdPanSumPODatesCancel.TabIndex = 4
-        Me.cmdPanSumPODatesCancel.Text = "Cancel"
-        Me.cmdPanSumPODatesCancel.UseVisualStyleBackColor = False
-        '
-        'GroupBox9
-        '
-        Me.GroupBox9.Controls.Add(Me.txtPanSumPODatesCancel)
-        Me.GroupBox9.Controls.Add(Me.Label137)
-        Me.GroupBox9.Controls.Add(Me.txtPanSumPODatesEnd)
-        Me.GroupBox9.Controls.Add(Me.Label131)
-        Me.GroupBox9.Controls.Add(Me.txtPanSumPODatesStart)
-        Me.GroupBox9.Controls.Add(Me.Label127)
-        Me.GroupBox9.Location = New System.Drawing.Point(14, 62)
-        Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(285, 75)
-        Me.GroupBox9.TabIndex = 2
-        Me.GroupBox9.TabStop = False
-        Me.GroupBox9.Text = "PO Shipment Date"
-        '
-        'txtPanSumPODatesCancel
-        '
-        Me.txtPanSumPODatesCancel.Location = New System.Drawing.Point(60, 45)
-        Me.txtPanSumPODatesCancel.Mask = "00/00/0000"
-        Me.txtPanSumPODatesCancel.Name = "txtPanSumPODatesCancel"
-        Me.txtPanSumPODatesCancel.Size = New System.Drawing.Size(75, 22)
-        Me.txtPanSumPODatesCancel.TabIndex = 6
-        '
-        'Label137
-        '
-        Me.Label137.AutoSize = True
-        Me.Label137.Location = New System.Drawing.Point(15, 48)
-        Me.Label137.Name = "Label137"
-        Me.Label137.Size = New System.Drawing.Size(37, 12)
-        Me.Label137.TabIndex = 5
-        Me.Label137.Text = "Cancel"
-        '
-        'txtPanSumPODatesEnd
-        '
-        Me.txtPanSumPODatesEnd.Location = New System.Drawing.Point(195, 19)
-        Me.txtPanSumPODatesEnd.Mask = "00/00/0000"
-        Me.txtPanSumPODatesEnd.Name = "txtPanSumPODatesEnd"
-        Me.txtPanSumPODatesEnd.Size = New System.Drawing.Size(75, 22)
-        Me.txtPanSumPODatesEnd.TabIndex = 4
-        '
-        'Label131
-        '
-        Me.Label131.AutoSize = True
-        Me.Label131.Location = New System.Drawing.Point(156, 22)
-        Me.Label131.Name = "Label131"
-        Me.Label131.Size = New System.Drawing.Size(24, 12)
-        Me.Label131.TabIndex = 3
-        Me.Label131.Text = "End"
-        '
-        'txtPanSumPODatesStart
-        '
-        Me.txtPanSumPODatesStart.Location = New System.Drawing.Point(60, 19)
-        Me.txtPanSumPODatesStart.Mask = "00/00/0000"
-        Me.txtPanSumPODatesStart.Name = "txtPanSumPODatesStart"
-        Me.txtPanSumPODatesStart.Size = New System.Drawing.Size(75, 22)
-        Me.txtPanSumPODatesStart.TabIndex = 2
-        '
-        'Label127
-        '
-        Me.Label127.AutoSize = True
-        Me.Label127.Location = New System.Drawing.Point(21, 22)
-        Me.Label127.Name = "Label127"
-        Me.Label127.Size = New System.Drawing.Size(26, 12)
-        Me.Label127.TabIndex = 1
-        Me.Label127.Text = "Start"
-        '
-        'GroupBox8
-        '
-        Me.GroupBox8.Controls.Add(Me.txtPanSumPODatesSeqTo)
-        Me.GroupBox8.Controls.Add(Me.Label126)
-        Me.GroupBox8.Controls.Add(Me.txtPanSumPODatesSeqFrom)
-        Me.GroupBox8.Controls.Add(Me.Label86)
-        Me.GroupBox8.Location = New System.Drawing.Point(14, 8)
-        Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(285, 50)
-        Me.GroupBox8.TabIndex = 1
-        Me.GroupBox8.TabStop = False
-        Me.GroupBox8.Text = "Custom Vender Range"
-        '
-        'txtPanSumPODatesSeqTo
-        '
-        Me.txtPanSumPODatesSeqTo.Location = New System.Drawing.Point(195, 19)
-        Me.txtPanSumPODatesSeqTo.Name = "txtPanSumPODatesSeqTo"
-        Me.txtPanSumPODatesSeqTo.Size = New System.Drawing.Size(75, 22)
-        Me.txtPanSumPODatesSeqTo.TabIndex = 3
-        '
-        'Label126
-        '
-        Me.Label126.AutoSize = True
-        Me.Label126.Location = New System.Drawing.Point(156, 22)
-        Me.Label126.Name = "Label126"
-        Me.Label126.Size = New System.Drawing.Size(18, 12)
-        Me.Label126.TabIndex = 2
-        Me.Label126.Text = "To"
-        '
-        'txtPanSumPODatesSeqFrom
-        '
-        Me.txtPanSumPODatesSeqFrom.Location = New System.Drawing.Point(60, 19)
-        Me.txtPanSumPODatesSeqFrom.Name = "txtPanSumPODatesSeqFrom"
-        Me.txtPanSumPODatesSeqFrom.Size = New System.Drawing.Size(75, 22)
-        Me.txtPanSumPODatesSeqFrom.TabIndex = 1
-        '
-        'Label86
-        '
-        Me.Label86.AutoSize = True
-        Me.Label86.Location = New System.Drawing.Point(21, 22)
-        Me.Label86.Name = "Label86"
-        Me.Label86.Size = New System.Drawing.Size(30, 12)
-        Me.Label86.TabIndex = 0
-        Me.Label86.Text = "From"
         '
         'grpSummary
         '
@@ -4228,7 +3953,7 @@ Partial Class SCM00001
         Me.grpSummary.Controls.Add(Me.cmdCtnSeq)
         Me.grpSummary.Location = New System.Drawing.Point(1, -2)
         Me.grpSummary.Name = "grpSummary"
-        Me.grpSummary.Size = New System.Drawing.Size(942, 501)
+        Me.grpSummary.Size = New System.Drawing.Size(942, 505)
         Me.grpSummary.TabIndex = 1
         Me.grpSummary.TabStop = False
         '
@@ -4283,7 +4008,7 @@ Partial Class SCM00001
         DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgSummary.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgSummary.RowTemplate.Height = 18
-        Me.dgSummary.Size = New System.Drawing.Size(928, 450)
+        Me.dgSummary.Size = New System.Drawing.Size(928, 452)
         Me.dgSummary.TabIndex = 1
         '
         'cmdCtnSeq
@@ -4301,7 +4026,7 @@ Partial Class SCM00001
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(946, 502)
+        Me.TabPage1.Size = New System.Drawing.Size(946, 506)
         Me.TabPage1.TabIndex = 5
         Me.TabPage1.Text = "(6) Update PO"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -4309,7 +4034,6 @@ Partial Class SCM00001
         'grpUpdatePO
         '
         Me.grpUpdatePO.Controls.Add(Me.txtPOStatus)
-        Me.grpUpdatePO.Controls.Add(Me.panPODisPrm)
         Me.grpUpdatePO.Controls.Add(Me.cmdPODisPrm)
         Me.grpUpdatePO.Controls.Add(Me.cmdSavePO)
         Me.grpUpdatePO.Controls.Add(Me.grpUpdPO_Shpmrk)
@@ -4324,7 +4048,7 @@ Partial Class SCM00001
         Me.grpUpdatePO.Controls.Add(Me.grpUpdPO_Detail)
         Me.grpUpdatePO.Location = New System.Drawing.Point(1, -2)
         Me.grpUpdatePO.Name = "grpUpdatePO"
-        Me.grpUpdatePO.Size = New System.Drawing.Size(942, 501)
+        Me.grpUpdatePO.Size = New System.Drawing.Size(942, 505)
         Me.grpUpdatePO.TabIndex = 0
         Me.grpUpdatePO.TabStop = False
         '
@@ -4337,113 +4061,6 @@ Partial Class SCM00001
         Me.txtPOStatus.Name = "txtPOStatus"
         Me.txtPOStatus.Size = New System.Drawing.Size(109, 22)
         Me.txtPOStatus.TabIndex = 396
-        '
-        'panPODisPrm
-        '
-        Me.panPODisPrm.BackColor = System.Drawing.Color.Transparent
-        Me.panPODisPrm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.panPODisPrm.Controls.Add(Me.GroupBox6)
-        Me.panPODisPrm.Controls.Add(Me.GroupBox5)
-        Me.panPODisPrm.Controls.Add(Me.cmdPODelRow)
-        Me.panPODisPrm.Controls.Add(Me.cmdPODPQuit)
-        Me.panPODisPrm.Controls.Add(Me.cmdPOInsRow)
-        Me.panPODisPrm.Location = New System.Drawing.Point(123, 71)
-        Me.panPODisPrm.Name = "panPODisPrm"
-        Me.panPODisPrm.Size = New System.Drawing.Size(700, 396)
-        Me.panPODisPrm.TabIndex = 395
-        Me.panPODisPrm.Visible = False
-        '
-        'GroupBox6
-        '
-        Me.GroupBox6.Controls.Add(Me.lstPOPre)
-        Me.GroupBox6.Controls.Add(Me.grdPOPre)
-        Me.GroupBox6.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox6.Location = New System.Drawing.Point(6, 184)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(682, 169)
-        Me.GroupBox6.TabIndex = 397
-        Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Premuims Information"
-        '
-        'lstPOPre
-        '
-        Me.lstPOPre.FormattingEnabled = True
-        Me.lstPOPre.ItemHeight = 12
-        Me.lstPOPre.Location = New System.Drawing.Point(206, 59)
-        Me.lstPOPre.Name = "lstPOPre"
-        Me.lstPOPre.Size = New System.Drawing.Size(120, 88)
-        Me.lstPOPre.TabIndex = 6
-        Me.lstPOPre.Visible = False
-        '
-        'grdPOPre
-        '
-        Me.grdPOPre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grdPOPre.Location = New System.Drawing.Point(9, 18)
-        Me.grdPOPre.Name = "grdPOPre"
-        Me.grdPOPre.RowTemplate.Height = 15
-        Me.grdPOPre.Size = New System.Drawing.Size(664, 145)
-        Me.grdPOPre.TabIndex = 5
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.lstPODis)
-        Me.GroupBox5.Controls.Add(Me.grdPODis)
-        Me.GroupBox5.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox5.Location = New System.Drawing.Point(6, 7)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(682, 169)
-        Me.GroupBox5.TabIndex = 396
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Discounts Information"
-        '
-        'lstPODis
-        '
-        Me.lstPODis.FormattingEnabled = True
-        Me.lstPODis.ItemHeight = 12
-        Me.lstPODis.Location = New System.Drawing.Point(206, 59)
-        Me.lstPODis.Name = "lstPODis"
-        Me.lstPODis.Size = New System.Drawing.Size(120, 88)
-        Me.lstPODis.TabIndex = 3
-        Me.lstPODis.Visible = False
-        '
-        'grdPODis
-        '
-        Me.grdPODis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grdPODis.Location = New System.Drawing.Point(9, 18)
-        Me.grdPODis.Name = "grdPODis"
-        Me.grdPODis.RowTemplate.Height = 15
-        Me.grdPODis.Size = New System.Drawing.Size(664, 143)
-        Me.grdPODis.TabIndex = 2
-        '
-        'cmdPODelRow
-        '
-        Me.cmdPODelRow.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdPODelRow.Location = New System.Drawing.Point(528, 359)
-        Me.cmdPODelRow.Name = "cmdPODelRow"
-        Me.cmdPODelRow.Size = New System.Drawing.Size(75, 23)
-        Me.cmdPODelRow.TabIndex = 395
-        Me.cmdPODelRow.Text = "Delete"
-        Me.cmdPODelRow.UseVisualStyleBackColor = False
-        '
-        'cmdPODPQuit
-        '
-        Me.cmdPODPQuit.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdPODPQuit.Location = New System.Drawing.Point(609, 359)
-        Me.cmdPODPQuit.Name = "cmdPODPQuit"
-        Me.cmdPODPQuit.Size = New System.Drawing.Size(75, 23)
-        Me.cmdPODPQuit.TabIndex = 394
-        Me.cmdPODPQuit.Text = "Quit"
-        Me.cmdPODPQuit.UseVisualStyleBackColor = False
-        '
-        'cmdPOInsRow
-        '
-        Me.cmdPOInsRow.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdPOInsRow.Location = New System.Drawing.Point(447, 359)
-        Me.cmdPOInsRow.Name = "cmdPOInsRow"
-        Me.cmdPOInsRow.Size = New System.Drawing.Size(75, 23)
-        Me.cmdPOInsRow.TabIndex = 392
-        Me.cmdPOInsRow.Text = "Insert"
-        Me.cmdPOInsRow.UseVisualStyleBackColor = False
         '
         'cmdPODisPrm
         '
@@ -4481,7 +4098,7 @@ Partial Class SCM00001
         Me.grpUpdPO_Shpmrk.Controls.Add(Me.Label94)
         Me.grpUpdPO_Shpmrk.Location = New System.Drawing.Point(8, 158)
         Me.grpUpdPO_Shpmrk.Name = "grpUpdPO_Shpmrk"
-        Me.grpUpdPO_Shpmrk.Size = New System.Drawing.Size(925, 338)
+        Me.grpUpdPO_Shpmrk.Size = New System.Drawing.Size(925, 339)
         Me.grpUpdPO_Shpmrk.TabIndex = 119
         Me.grpUpdPO_Shpmrk.TabStop = False
         Me.grpUpdPO_Shpmrk.Text = "PO Shipmark"
@@ -5050,23 +4667,266 @@ Partial Class SCM00001
         Me.Label118.TabIndex = 116
         Me.Label118.Text = "PO Seq"
         '
-        'lblDVName
+        'panSumPODates
         '
-        Me.lblDVName.Location = New System.Drawing.Point(12, 225)
-        Me.lblDVName.Name = "lblDVName"
-        Me.lblDVName.Size = New System.Drawing.Size(185, 13)
-        Me.lblDVName.TabIndex = 30
-        Me.lblDVName.Text = "1987"
+        Me.panSumPODates.BackColor = System.Drawing.Color.SkyBlue
+        Me.panSumPODates.Controls.Add(Me.cmdPanSumPODatesUpdate)
+        Me.panSumPODates.Controls.Add(Me.cmdPanSumPODatesCancel)
+        Me.panSumPODates.Controls.Add(Me.GroupBox9)
+        Me.panSumPODates.Controls.Add(Me.GroupBox8)
+        Me.panSumPODates.Location = New System.Drawing.Point(265, 56)
+        Me.panSumPODates.Name = "panSumPODates"
+        Me.panSumPODates.Size = New System.Drawing.Size(26, 22)
+        Me.panSumPODates.TabIndex = 4
+        Me.panSumPODates.Visible = False
+        '
+        'cmdPanSumPODatesUpdate
+        '
+        Me.cmdPanSumPODatesUpdate.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdPanSumPODatesUpdate.Location = New System.Drawing.Point(102, 145)
+        Me.cmdPanSumPODatesUpdate.Name = "cmdPanSumPODatesUpdate"
+        Me.cmdPanSumPODatesUpdate.Size = New System.Drawing.Size(105, 23)
+        Me.cmdPanSumPODatesUpdate.TabIndex = 3
+        Me.cmdPanSumPODatesUpdate.Text = "Update PO Dates"
+        Me.cmdPanSumPODatesUpdate.UseVisualStyleBackColor = False
+        '
+        'cmdPanSumPODatesCancel
+        '
+        Me.cmdPanSumPODatesCancel.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdPanSumPODatesCancel.Location = New System.Drawing.Point(224, 145)
+        Me.cmdPanSumPODatesCancel.Name = "cmdPanSumPODatesCancel"
+        Me.cmdPanSumPODatesCancel.Size = New System.Drawing.Size(75, 23)
+        Me.cmdPanSumPODatesCancel.TabIndex = 4
+        Me.cmdPanSumPODatesCancel.Text = "Cancel"
+        Me.cmdPanSumPODatesCancel.UseVisualStyleBackColor = False
+        '
+        'GroupBox9
+        '
+        Me.GroupBox9.Controls.Add(Me.txtPanSumPODatesCancel)
+        Me.GroupBox9.Controls.Add(Me.Label137)
+        Me.GroupBox9.Controls.Add(Me.txtPanSumPODatesEnd)
+        Me.GroupBox9.Controls.Add(Me.Label131)
+        Me.GroupBox9.Controls.Add(Me.txtPanSumPODatesStart)
+        Me.GroupBox9.Controls.Add(Me.Label127)
+        Me.GroupBox9.Location = New System.Drawing.Point(14, 62)
+        Me.GroupBox9.Name = "GroupBox9"
+        Me.GroupBox9.Size = New System.Drawing.Size(285, 75)
+        Me.GroupBox9.TabIndex = 2
+        Me.GroupBox9.TabStop = False
+        Me.GroupBox9.Text = "PO Shipment Date"
+        '
+        'txtPanSumPODatesCancel
+        '
+        Me.txtPanSumPODatesCancel.Location = New System.Drawing.Point(60, 45)
+        Me.txtPanSumPODatesCancel.Mask = "00/00/0000"
+        Me.txtPanSumPODatesCancel.Name = "txtPanSumPODatesCancel"
+        Me.txtPanSumPODatesCancel.Size = New System.Drawing.Size(75, 22)
+        Me.txtPanSumPODatesCancel.TabIndex = 6
+        '
+        'Label137
+        '
+        Me.Label137.AutoSize = True
+        Me.Label137.Location = New System.Drawing.Point(15, 48)
+        Me.Label137.Name = "Label137"
+        Me.Label137.Size = New System.Drawing.Size(37, 12)
+        Me.Label137.TabIndex = 5
+        Me.Label137.Text = "Cancel"
+        '
+        'txtPanSumPODatesEnd
+        '
+        Me.txtPanSumPODatesEnd.Location = New System.Drawing.Point(195, 19)
+        Me.txtPanSumPODatesEnd.Mask = "00/00/0000"
+        Me.txtPanSumPODatesEnd.Name = "txtPanSumPODatesEnd"
+        Me.txtPanSumPODatesEnd.Size = New System.Drawing.Size(75, 22)
+        Me.txtPanSumPODatesEnd.TabIndex = 4
+        '
+        'Label131
+        '
+        Me.Label131.AutoSize = True
+        Me.Label131.Location = New System.Drawing.Point(156, 22)
+        Me.Label131.Name = "Label131"
+        Me.Label131.Size = New System.Drawing.Size(24, 12)
+        Me.Label131.TabIndex = 3
+        Me.Label131.Text = "End"
+        '
+        'txtPanSumPODatesStart
+        '
+        Me.txtPanSumPODatesStart.Location = New System.Drawing.Point(60, 19)
+        Me.txtPanSumPODatesStart.Mask = "00/00/0000"
+        Me.txtPanSumPODatesStart.Name = "txtPanSumPODatesStart"
+        Me.txtPanSumPODatesStart.Size = New System.Drawing.Size(75, 22)
+        Me.txtPanSumPODatesStart.TabIndex = 2
+        '
+        'Label127
+        '
+        Me.Label127.AutoSize = True
+        Me.Label127.Location = New System.Drawing.Point(15, 21)
+        Me.Label127.Name = "Label127"
+        Me.Label127.Size = New System.Drawing.Size(26, 12)
+        Me.Label127.TabIndex = 1
+        Me.Label127.Text = "Start"
+        '
+        'GroupBox8
+        '
+        Me.GroupBox8.Controls.Add(Me.txtPanSumPODatesSeqTo)
+        Me.GroupBox8.Controls.Add(Me.Label126)
+        Me.GroupBox8.Controls.Add(Me.txtPanSumPODatesSeqFrom)
+        Me.GroupBox8.Controls.Add(Me.Label86)
+        Me.GroupBox8.Location = New System.Drawing.Point(14, 8)
+        Me.GroupBox8.Name = "GroupBox8"
+        Me.GroupBox8.Size = New System.Drawing.Size(285, 50)
+        Me.GroupBox8.TabIndex = 1
+        Me.GroupBox8.TabStop = False
+        Me.GroupBox8.Text = "Custom Vender Range"
+        '
+        'txtPanSumPODatesSeqTo
+        '
+        Me.txtPanSumPODatesSeqTo.Location = New System.Drawing.Point(195, 19)
+        Me.txtPanSumPODatesSeqTo.Name = "txtPanSumPODatesSeqTo"
+        Me.txtPanSumPODatesSeqTo.Size = New System.Drawing.Size(75, 22)
+        Me.txtPanSumPODatesSeqTo.TabIndex = 3
+        '
+        'Label126
+        '
+        Me.Label126.AutoSize = True
+        Me.Label126.Location = New System.Drawing.Point(156, 22)
+        Me.Label126.Name = "Label126"
+        Me.Label126.Size = New System.Drawing.Size(18, 12)
+        Me.Label126.TabIndex = 2
+        Me.Label126.Text = "To"
+        '
+        'txtPanSumPODatesSeqFrom
+        '
+        Me.txtPanSumPODatesSeqFrom.Location = New System.Drawing.Point(60, 19)
+        Me.txtPanSumPODatesSeqFrom.Name = "txtPanSumPODatesSeqFrom"
+        Me.txtPanSumPODatesSeqFrom.Size = New System.Drawing.Size(75, 22)
+        Me.txtPanSumPODatesSeqFrom.TabIndex = 1
+        '
+        'Label86
+        '
+        Me.Label86.AutoSize = True
+        Me.Label86.Location = New System.Drawing.Point(15, 22)
+        Me.Label86.Name = "Label86"
+        Me.Label86.Size = New System.Drawing.Size(30, 12)
+        Me.Label86.TabIndex = 0
+        Me.Label86.Text = "From"
+        '
+        'panPODisPrm
+        '
+        Me.panPODisPrm.BackColor = System.Drawing.Color.SkyBlue
+        Me.panPODisPrm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panPODisPrm.Controls.Add(Me.GroupBox6)
+        Me.panPODisPrm.Controls.Add(Me.GroupBox5)
+        Me.panPODisPrm.Controls.Add(Me.cmdPODelRow)
+        Me.panPODisPrm.Controls.Add(Me.cmdPODPQuit)
+        Me.panPODisPrm.Controls.Add(Me.cmdPOInsRow)
+        Me.panPODisPrm.Location = New System.Drawing.Point(304, 26)
+        Me.panPODisPrm.Name = "panPODisPrm"
+        Me.panPODisPrm.Size = New System.Drawing.Size(27, 30)
+        Me.panPODisPrm.TabIndex = 395
+        Me.panPODisPrm.Visible = False
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.lstPOPre)
+        Me.GroupBox6.Controls.Add(Me.grdPOPre)
+        Me.GroupBox6.ForeColor = System.Drawing.Color.Black
+        Me.GroupBox6.Location = New System.Drawing.Point(6, 184)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(682, 169)
+        Me.GroupBox6.TabIndex = 397
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Premuims Information"
+        '
+        'lstPOPre
+        '
+        Me.lstPOPre.FormattingEnabled = True
+        Me.lstPOPre.ItemHeight = 12
+        Me.lstPOPre.Location = New System.Drawing.Point(206, 59)
+        Me.lstPOPre.Name = "lstPOPre"
+        Me.lstPOPre.Size = New System.Drawing.Size(120, 88)
+        Me.lstPOPre.TabIndex = 6
+        Me.lstPOPre.Visible = False
+        '
+        'grdPOPre
+        '
+        Me.grdPOPre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grdPOPre.Location = New System.Drawing.Point(9, 18)
+        Me.grdPOPre.Name = "grdPOPre"
+        Me.grdPOPre.RowTemplate.Height = 15
+        Me.grdPOPre.Size = New System.Drawing.Size(664, 145)
+        Me.grdPOPre.TabIndex = 5
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.lstPODis)
+        Me.GroupBox5.Controls.Add(Me.grdPODis)
+        Me.GroupBox5.ForeColor = System.Drawing.Color.Black
+        Me.GroupBox5.Location = New System.Drawing.Point(6, 7)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(682, 169)
+        Me.GroupBox5.TabIndex = 396
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Discounts Information"
+        '
+        'lstPODis
+        '
+        Me.lstPODis.FormattingEnabled = True
+        Me.lstPODis.ItemHeight = 12
+        Me.lstPODis.Location = New System.Drawing.Point(206, 59)
+        Me.lstPODis.Name = "lstPODis"
+        Me.lstPODis.Size = New System.Drawing.Size(120, 88)
+        Me.lstPODis.TabIndex = 3
+        Me.lstPODis.Visible = False
+        '
+        'grdPODis
+        '
+        Me.grdPODis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grdPODis.Location = New System.Drawing.Point(9, 18)
+        Me.grdPODis.Name = "grdPODis"
+        Me.grdPODis.RowTemplate.Height = 15
+        Me.grdPODis.Size = New System.Drawing.Size(664, 143)
+        Me.grdPODis.TabIndex = 2
+        '
+        'cmdPODelRow
+        '
+        Me.cmdPODelRow.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdPODelRow.Location = New System.Drawing.Point(528, 359)
+        Me.cmdPODelRow.Name = "cmdPODelRow"
+        Me.cmdPODelRow.Size = New System.Drawing.Size(75, 23)
+        Me.cmdPODelRow.TabIndex = 395
+        Me.cmdPODelRow.Text = "Delete"
+        Me.cmdPODelRow.UseVisualStyleBackColor = False
+        '
+        'cmdPODPQuit
+        '
+        Me.cmdPODPQuit.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdPODPQuit.Location = New System.Drawing.Point(609, 359)
+        Me.cmdPODPQuit.Name = "cmdPODPQuit"
+        Me.cmdPODPQuit.Size = New System.Drawing.Size(75, 23)
+        Me.cmdPODPQuit.TabIndex = 394
+        Me.cmdPODPQuit.Text = "Quit"
+        Me.cmdPODPQuit.UseVisualStyleBackColor = False
+        '
+        'cmdPOInsRow
+        '
+        Me.cmdPOInsRow.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdPOInsRow.Location = New System.Drawing.Point(447, 359)
+        Me.cmdPOInsRow.Name = "cmdPOInsRow"
+        Me.cmdPOInsRow.Size = New System.Drawing.Size(75, 23)
+        Me.cmdPOInsRow.TabIndex = 392
+        Me.cmdPOInsRow.Text = "Insert"
+        Me.cmdPOInsRow.UseVisualStyleBackColor = False
         '
         'panHdrSCRmk
         '
-        Me.panHdrSCRmk.BackColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.panHdrSCRmk.BackColor = System.Drawing.Color.SkyBlue
         Me.panHdrSCRmk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panHdrSCRmk.Controls.Add(Me.cmdPanHdrSCRmkCancel)
         Me.panHdrSCRmk.Controls.Add(Me.cmdPanHdrSCRmkIns)
         Me.panHdrSCRmk.Controls.Add(Me.cmdPanHdrSCRmkClrAll)
         Me.panHdrSCRmk.Controls.Add(Me.grpPanHdrRmk)
-        Me.panHdrSCRmk.Location = New System.Drawing.Point(82, 31)
+        Me.panHdrSCRmk.Location = New System.Drawing.Point(82, 28)
         Me.panHdrSCRmk.Name = "panHdrSCRmk"
         Me.panHdrSCRmk.Size = New System.Drawing.Size(23, 21)
         Me.panHdrSCRmk.TabIndex = 65
@@ -5075,7 +4935,7 @@ Partial Class SCM00001
         'cmdPanHdrSCRmkCancel
         '
         Me.cmdPanHdrSCRmkCancel.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdPanHdrSCRmkCancel.Location = New System.Drawing.Point(232, 171)
+        Me.cmdPanHdrSCRmkCancel.Location = New System.Drawing.Point(235, 172)
         Me.cmdPanHdrSCRmkCancel.Name = "cmdPanHdrSCRmkCancel"
         Me.cmdPanHdrSCRmkCancel.Size = New System.Drawing.Size(75, 23)
         Me.cmdPanHdrSCRmkCancel.TabIndex = 6
@@ -5085,7 +4945,7 @@ Partial Class SCM00001
         'cmdPanHdrSCRmkIns
         '
         Me.cmdPanHdrSCRmkIns.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdPanHdrSCRmkIns.Location = New System.Drawing.Point(151, 171)
+        Me.cmdPanHdrSCRmkIns.Location = New System.Drawing.Point(154, 172)
         Me.cmdPanHdrSCRmkIns.Name = "cmdPanHdrSCRmkIns"
         Me.cmdPanHdrSCRmkIns.Size = New System.Drawing.Size(75, 23)
         Me.cmdPanHdrSCRmkIns.TabIndex = 4
@@ -5095,7 +4955,7 @@ Partial Class SCM00001
         'cmdPanHdrSCRmkClrAll
         '
         Me.cmdPanHdrSCRmkClrAll.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdPanHdrSCRmkClrAll.Location = New System.Drawing.Point(42, 171)
+        Me.cmdPanHdrSCRmkClrAll.Location = New System.Drawing.Point(45, 172)
         Me.cmdPanHdrSCRmkClrAll.Name = "cmdPanHdrSCRmkClrAll"
         Me.cmdPanHdrSCRmkClrAll.Size = New System.Drawing.Size(75, 23)
         Me.cmdPanHdrSCRmkClrAll.TabIndex = 5
@@ -5112,7 +4972,7 @@ Partial Class SCM00001
         Me.grpPanHdrRmk.Controls.Add(Me.chkHdrSCRmk3)
         Me.grpPanHdrRmk.Controls.Add(Me.chkHdrSCRmk2)
         Me.grpPanHdrRmk.Controls.Add(Me.chkHdrSCRmk1)
-        Me.grpPanHdrRmk.Location = New System.Drawing.Point(7, 5)
+        Me.grpPanHdrRmk.Location = New System.Drawing.Point(10, 6)
         Me.grpPanHdrRmk.Name = "grpPanHdrRmk"
         Me.grpPanHdrRmk.Size = New System.Drawing.Size(297, 159)
         Me.grpPanHdrRmk.TabIndex = 0
@@ -5201,9 +5061,17 @@ Partial Class SCM00001
         Me.chkHdrSCRmk1.Text = "USE TSSA LABEL"
         Me.chkHdrSCRmk1.UseVisualStyleBackColor = True
         '
+        'lblDVName
+        '
+        Me.lblDVName.Location = New System.Drawing.Point(12, 225)
+        Me.lblDVName.Name = "lblDVName"
+        Me.lblDVName.Size = New System.Drawing.Size(185, 13)
+        Me.lblDVName.TabIndex = 30
+        Me.lblDVName.Text = "1987"
+        '
         'panDtlSCRmk
         '
-        Me.panDtlSCRmk.BackColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.panDtlSCRmk.BackColor = System.Drawing.Color.SkyBlue
         Me.panDtlSCRmk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panDtlSCRmk.Controls.Add(Me.cmdPanDtlSCRmkCancel)
         Me.panDtlSCRmk.Controls.Add(Me.cmdPanDtlSCRmkIns)
@@ -5526,7 +5394,7 @@ Partial Class SCM00001
         '
         'panDtlASS
         '
-        Me.panDtlASS.BackColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.panDtlASS.BackColor = System.Drawing.Color.SkyBlue
         Me.panDtlASS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panDtlASS.Controls.Add(Me.cmdPanDtlASSUpdate)
         Me.panDtlASS.Controls.Add(Me.cmdPanDtlASSOK)
@@ -5534,7 +5402,7 @@ Partial Class SCM00001
         Me.panDtlASS.Controls.Add(Me.dgAssort)
         Me.panDtlASS.Location = New System.Drawing.Point(15, 54)
         Me.panDtlASS.Name = "panDtlASS"
-        Me.panDtlASS.Size = New System.Drawing.Size(23, 19)
+        Me.panDtlASS.Size = New System.Drawing.Size(24, 23)
         Me.panDtlASS.TabIndex = 154
         Me.panDtlASS.Visible = False
         '
@@ -5607,8 +5475,9 @@ Partial Class SCM00001
         '
         'panDtlShpDat
         '
-        Me.panDtlShpDat.BackColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.panDtlShpDat.BackColor = System.Drawing.Color.SkyBlue
         Me.panDtlShpDat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panDtlShpDat.Controls.Add(Me.cmdPanDtlShpDatGenCTNNo)
         Me.panDtlShpDat.Controls.Add(Me.cmdPanDtl0ShpDatCalcPODat)
         Me.panDtlShpDat.Controls.Add(Me.txtPanDtlShpDatTtlCtn)
         Me.panDtlShpDat.Controls.Add(Me.Label33)
@@ -5618,9 +5487,19 @@ Partial Class SCM00001
         Me.panDtlShpDat.Controls.Add(Me.dgSCShpDat)
         Me.panDtlShpDat.Location = New System.Drawing.Point(47, 31)
         Me.panDtlShpDat.Name = "panDtlShpDat"
-        Me.panDtlShpDat.Size = New System.Drawing.Size(23, 21)
+        Me.panDtlShpDat.Size = New System.Drawing.Size(29, 27)
         Me.panDtlShpDat.TabIndex = 152
         Me.panDtlShpDat.Visible = False
+        '
+        'cmdPanDtlShpDatGenCTNNo
+        '
+        Me.cmdPanDtlShpDatGenCTNNo.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdPanDtlShpDatGenCTNNo.Location = New System.Drawing.Point(334, 253)
+        Me.cmdPanDtlShpDatGenCTNNo.Name = "cmdPanDtlShpDatGenCTNNo"
+        Me.cmdPanDtlShpDatGenCTNNo.Size = New System.Drawing.Size(117, 23)
+        Me.cmdPanDtlShpDatGenCTNNo.TabIndex = 10
+        Me.cmdPanDtlShpDatGenCTNNo.Text = "Generate CTN No"
+        Me.cmdPanDtlShpDatGenCTNNo.UseVisualStyleBackColor = False
         '
         'cmdPanDtl0ShpDatCalcPODat
         '
@@ -5718,7 +5597,7 @@ Partial Class SCM00001
         '
         'panMatBrkdwn
         '
-        Me.panMatBrkdwn.BackColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.panMatBrkdwn.BackColor = System.Drawing.Color.SkyBlue
         Me.panMatBrkdwn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panMatBrkdwn.Controls.Add(Me.cmdPanMatBrkdwnInsRow)
         Me.panMatBrkdwn.Controls.Add(Me.cmdPanMatBrkdwnOK)
@@ -5726,7 +5605,7 @@ Partial Class SCM00001
         Me.panMatBrkdwn.Controls.Add(Me.dgMatBrkdwn)
         Me.panMatBrkdwn.Location = New System.Drawing.Point(15, 31)
         Me.panMatBrkdwn.Name = "panMatBrkdwn"
-        Me.panMatBrkdwn.Size = New System.Drawing.Size(24, 18)
+        Me.panMatBrkdwn.Size = New System.Drawing.Size(24, 20)
         Me.panMatBrkdwn.TabIndex = 151
         Me.panMatBrkdwn.Visible = False
         '
@@ -5800,22 +5679,13 @@ Partial Class SCM00001
         'chkApprove
         '
         Me.chkApprove.AutoSize = True
-        Me.chkApprove.Location = New System.Drawing.Point(814, 76)
+        Me.chkApprove.Location = New System.Drawing.Point(808, 76)
         Me.chkApprove.Name = "chkApprove"
         Me.chkApprove.Size = New System.Drawing.Size(65, 16)
         Me.chkApprove.TabIndex = 54
         Me.chkApprove.Text = "Approve"
         Me.chkApprove.UseVisualStyleBackColor = True
         Me.chkApprove.Visible = False
-        '
-        'cmdExit
-        '
-        Me.cmdExit.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdExit.Location = New System.Drawing.Point(894, 0)
-        Me.cmdExit.Name = "cmdExit"
-        Me.cmdExit.Size = New System.Drawing.Size(60, 25)
-        Me.cmdExit.TabIndex = 54
-        Me.cmdExit.Text = "E&xit"
         '
         'panUnusedObjects
         '
@@ -5841,7 +5711,7 @@ Partial Class SCM00001
         Me.panUnusedObjects.Controls.Add(Me.Label83)
         Me.panUnusedObjects.Controls.Add(Me.txtIMPeriod)
         Me.panUnusedObjects.Controls.Add(Me.imu_key)
-        Me.panUnusedObjects.Location = New System.Drawing.Point(392, 4)
+        Me.panUnusedObjects.Location = New System.Drawing.Point(392, 26)
         Me.panUnusedObjects.Name = "panUnusedObjects"
         Me.panUnusedObjects.Size = New System.Drawing.Size(22, 21)
         Me.panUnusedObjects.TabIndex = 280
@@ -5865,7 +5735,7 @@ Partial Class SCM00001
         '
         'panDtlPORmk
         '
-        Me.panDtlPORmk.BackColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.panDtlPORmk.BackColor = System.Drawing.Color.SkyBlue
         Me.panDtlPORmk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panDtlPORmk.Controls.Add(Me.cmdPanDtlPORmkCancel)
         Me.panDtlPORmk.Controls.Add(Me.cmdPanDtlPORmkIns)
@@ -5984,7 +5854,7 @@ Partial Class SCM00001
         '
         'panHdrPORmk
         '
-        Me.panHdrPORmk.BackColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.panHdrPORmk.BackColor = System.Drawing.Color.SkyBlue
         Me.panHdrPORmk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panHdrPORmk.Controls.Add(Me.cmdPanHdrPORmkCancel)
         Me.panHdrPORmk.Controls.Add(Me.cmdPanHdrPORmkIns)
@@ -6180,7 +6050,7 @@ Partial Class SCM00001
         '
         'panSCCopyCust
         '
-        Me.panSCCopyCust.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.panSCCopyCust.BackColor = System.Drawing.Color.SkyBlue
         Me.panSCCopyCust.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panSCCopyCust.Controls.Add(Me.txtPanCopyCustCancelDat)
         Me.panSCCopyCust.Controls.Add(Me.Label148)
@@ -6353,7 +6223,7 @@ Partial Class SCM00001
         '
         'panSCCopy
         '
-        Me.panSCCopy.BackColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.panSCCopy.BackColor = System.Drawing.Color.SkyBlue
         Me.panSCCopy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panSCCopy.Controls.Add(Me.Label136)
         Me.panSCCopy.Controls.Add(Me.dgCopyInvalid)
@@ -6366,7 +6236,7 @@ Partial Class SCM00001
         Me.panSCCopy.Controls.Add(Me.cmdPanSCCopyCancel)
         Me.panSCCopy.Location = New System.Drawing.Point(200, 30)
         Me.panSCCopy.Name = "panSCCopy"
-        Me.panSCCopy.Size = New System.Drawing.Size(22, 22)
+        Me.panSCCopy.Size = New System.Drawing.Size(22, 23)
         Me.panSCCopy.TabIndex = 283
         Me.panSCCopy.Visible = False
         '
@@ -6510,7 +6380,7 @@ Partial Class SCM00001
         '
         'panTent
         '
-        Me.panTent.BackColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.panTent.BackColor = System.Drawing.Color.SkyBlue
         Me.panTent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panTent.Controls.Add(Me.lblPanTentColCde)
         Me.panTent.Controls.Add(Me.lblPanTentMode)
@@ -6523,7 +6393,7 @@ Partial Class SCM00001
         Me.panTent.Controls.Add(Me.Label141)
         Me.panTent.Location = New System.Drawing.Point(228, 31)
         Me.panTent.Name = "panTent"
-        Me.panTent.Size = New System.Drawing.Size(22, 19)
+        Me.panTent.Size = New System.Drawing.Size(21, 22)
         Me.panTent.TabIndex = 284
         Me.panTent.Visible = False
         '
@@ -6587,10 +6457,9 @@ Partial Class SCM00001
         'Label143
         '
         Me.Label143.AutoSize = True
-        Me.Label143.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label143.Location = New System.Drawing.Point(266, 14)
         Me.Label143.Name = "Label143"
-        Me.Label143.Size = New System.Drawing.Size(63, 13)
+        Me.Label143.Size = New System.Drawing.Size(52, 12)
         Me.Label143.TabIndex = 2
         Me.Label143.Text = "Item No. :"
         '
@@ -6606,16 +6475,15 @@ Partial Class SCM00001
         'Label141
         '
         Me.Label141.AutoSize = True
-        Me.Label141.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label141.Location = New System.Drawing.Point(15, 14)
         Me.Label141.Name = "Label141"
-        Me.Label141.Size = New System.Drawing.Size(128, 13)
+        Me.Label141.Size = New System.Drawing.Size(104, 12)
         Me.Label141.TabIndex = 0
         Me.Label141.Text = "Tentative Order No. :"
         '
         'panCustPO
         '
-        Me.panCustPO.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.panCustPO.BackColor = System.Drawing.Color.SkyBlue
         Me.panCustPO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panCustPO.Controls.Add(Me.txtPanCustPO_NewDat)
         Me.panCustPO.Controls.Add(Me.Label142)
@@ -6667,7 +6535,7 @@ Partial Class SCM00001
         '
         'panCustPOChg
         '
-        Me.panCustPOChg.BackColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.panCustPOChg.BackColor = System.Drawing.Color.SkyBlue
         Me.panCustPOChg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panCustPOChg.Controls.Add(Me.Label144)
         Me.panCustPOChg.Controls.Add(Me.dgCustPOChgInvalid)
@@ -6824,22 +6692,22 @@ Partial Class SCM00001
         '
         'panMoreFields
         '
-        Me.panMoreFields.BackColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.panMoreFields.BackColor = System.Drawing.Color.SkyBlue
         Me.panMoreFields.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panMoreFields.Controls.Add(Me.cmdMoreFieldsCancel)
         Me.panMoreFields.Controls.Add(Me.cmdMoreFieldsIns)
         Me.panMoreFields.Controls.Add(Me.cmdMoreFieldsClrAll)
         Me.panMoreFields.Controls.Add(Me.GroupBox4)
-        Me.panMoreFields.Location = New System.Drawing.Point(325, 26)
+        Me.panMoreFields.Location = New System.Drawing.Point(264, 26)
         Me.panMoreFields.Name = "panMoreFields"
-        Me.panMoreFields.Size = New System.Drawing.Size(35, 21)
+        Me.panMoreFields.Size = New System.Drawing.Size(27, 27)
         Me.panMoreFields.TabIndex = 287
         Me.panMoreFields.Visible = False
         '
         'cmdMoreFieldsCancel
         '
         Me.cmdMoreFieldsCancel.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdMoreFieldsCancel.Location = New System.Drawing.Point(280, 221)
+        Me.cmdMoreFieldsCancel.Location = New System.Drawing.Point(584, 221)
         Me.cmdMoreFieldsCancel.Name = "cmdMoreFieldsCancel"
         Me.cmdMoreFieldsCancel.Size = New System.Drawing.Size(75, 23)
         Me.cmdMoreFieldsCancel.TabIndex = 394
@@ -6849,7 +6717,7 @@ Partial Class SCM00001
         'cmdMoreFieldsIns
         '
         Me.cmdMoreFieldsIns.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdMoreFieldsIns.Location = New System.Drawing.Point(199, 221)
+        Me.cmdMoreFieldsIns.Location = New System.Drawing.Point(503, 221)
         Me.cmdMoreFieldsIns.Name = "cmdMoreFieldsIns"
         Me.cmdMoreFieldsIns.Size = New System.Drawing.Size(75, 23)
         Me.cmdMoreFieldsIns.TabIndex = 393
@@ -6859,7 +6727,7 @@ Partial Class SCM00001
         'cmdMoreFieldsClrAll
         '
         Me.cmdMoreFieldsClrAll.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdMoreFieldsClrAll.Location = New System.Drawing.Point(90, 221)
+        Me.cmdMoreFieldsClrAll.Location = New System.Drawing.Point(394, 221)
         Me.cmdMoreFieldsClrAll.Name = "cmdMoreFieldsClrAll"
         Me.cmdMoreFieldsClrAll.Size = New System.Drawing.Size(75, 23)
         Me.cmdMoreFieldsClrAll.TabIndex = 392
@@ -7001,10 +6869,178 @@ Partial Class SCM00001
         Me.txt_name_f1.Size = New System.Drawing.Size(238, 50)
         Me.txt_name_f1.TabIndex = 386
         '
+        'menuStrip
+        '
+        Me.menuStrip.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.menuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mmdAdd, Me.mmdSave, Me.mmdDelete, Me.mmdCopy, Me.mmdFind, Me.t1, Me.mmdClear, Me.t2, Me.mmdSearch, Me.t3, Me.mmdInsRow, Me.mmdDelRow, Me.t4, Me.mmdPrint, Me.t5, Me.mmdAttach, Me.t6, Me.mmdFunction, Me.t7, Me.mmdLink, Me.t8, Me.mmdExit})
+        Me.menuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.menuStrip.Name = "menuStrip"
+        Me.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.menuStrip.Size = New System.Drawing.Size(954, 24)
+        Me.menuStrip.TabIndex = 288
+        Me.menuStrip.Text = "MenuStrip1"
+        '
+        'mmdAdd
+        '
+        Me.mmdAdd.BackColor = System.Drawing.SystemColors.Control
+        Me.mmdAdd.Name = "mmdAdd"
+        Me.mmdAdd.Size = New System.Drawing.Size(40, 20)
+        Me.mmdAdd.Tag = "Add"
+        Me.mmdAdd.Text = "&Add"
+        '
+        'mmdSave
+        '
+        Me.mmdSave.Name = "mmdSave"
+        Me.mmdSave.Size = New System.Drawing.Size(46, 20)
+        Me.mmdSave.Text = "&Save"
+        '
+        'mmdDelete
+        '
+        Me.mmdDelete.Name = "mmdDelete"
+        Me.mmdDelete.Size = New System.Drawing.Size(55, 20)
+        Me.mmdDelete.Text = "&Delete"
+        '
+        'mmdCopy
+        '
+        Me.mmdCopy.Name = "mmdCopy"
+        Me.mmdCopy.Size = New System.Drawing.Size(47, 20)
+        Me.mmdCopy.Text = "&Copy"
+        '
+        'mmdFind
+        '
+        Me.mmdFind.Name = "mmdFind"
+        Me.mmdFind.Size = New System.Drawing.Size(43, 20)
+        Me.mmdFind.Text = "&Find"
+        '
+        't1
+        '
+        Me.t1.AutoSize = False
+        Me.t1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.t1.Enabled = False
+        Me.t1.Name = "t1"
+        Me.t1.Size = New System.Drawing.Size(8, 20)
+        Me.t1.Text = "|"
+        '
+        'mmdClear
+        '
+        Me.mmdClear.Name = "mmdClear"
+        Me.mmdClear.Size = New System.Drawing.Size(49, 20)
+        Me.mmdClear.Text = "Cl&ear"
+        '
+        't2
+        '
+        Me.t2.AutoSize = False
+        Me.t2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.t2.Enabled = False
+        Me.t2.Name = "t2"
+        Me.t2.Size = New System.Drawing.Size(8, 20)
+        Me.t2.Text = "|"
+        '
+        'mmdSearch
+        '
+        Me.mmdSearch.Name = "mmdSearch"
+        Me.mmdSearch.Size = New System.Drawing.Size(58, 20)
+        Me.mmdSearch.Text = "Searc&h"
+        '
+        't3
+        '
+        Me.t3.AutoSize = False
+        Me.t3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.t3.Enabled = False
+        Me.t3.Name = "t3"
+        Me.t3.Size = New System.Drawing.Size(8, 20)
+        Me.t3.Text = "|"
+        '
+        'mmdInsRow
+        '
+        Me.mmdInsRow.Name = "mmdInsRow"
+        Me.mmdInsRow.Size = New System.Drawing.Size(64, 20)
+        Me.mmdInsRow.Text = "In&s Row"
+        '
+        'mmdDelRow
+        '
+        Me.mmdDelRow.Name = "mmdDelRow"
+        Me.mmdDelRow.Size = New System.Drawing.Size(66, 20)
+        Me.mmdDelRow.Text = "Del Ro&w"
+        '
+        't4
+        '
+        Me.t4.AutoSize = False
+        Me.t4.Enabled = False
+        Me.t4.Name = "t4"
+        Me.t4.Size = New System.Drawing.Size(8, 20)
+        Me.t4.Text = "|"
+        '
+        'mmdPrint
+        '
+        Me.mmdPrint.Name = "mmdPrint"
+        Me.mmdPrint.Size = New System.Drawing.Size(44, 20)
+        Me.mmdPrint.Text = "&Print"
+        '
+        't5
+        '
+        Me.t5.AutoSize = False
+        Me.t5.Enabled = False
+        Me.t5.Name = "t5"
+        Me.t5.Size = New System.Drawing.Size(8, 20)
+        Me.t5.Text = "|"
+        '
+        'mmdAttach
+        '
+        Me.mmdAttach.Name = "mmdAttach"
+        Me.mmdAttach.Size = New System.Drawing.Size(52, 20)
+        Me.mmdAttach.Text = "Attach"
+        '
+        't6
+        '
+        Me.t6.AutoSize = False
+        Me.t6.Enabled = False
+        Me.t6.Name = "t6"
+        Me.t6.Size = New System.Drawing.Size(8, 20)
+        Me.t6.Text = "|"
+        '
+        'mmdFunction
+        '
+        Me.mmdFunction.Name = "mmdFunction"
+        Me.mmdFunction.Size = New System.Drawing.Size(66, 20)
+        Me.mmdFunction.Text = "Function"
+        '
+        't7
+        '
+        Me.t7.AutoSize = False
+        Me.t7.Enabled = False
+        Me.t7.Name = "t7"
+        Me.t7.Size = New System.Drawing.Size(8, 20)
+        Me.t7.Text = "|"
+        '
+        'mmdLink
+        '
+        Me.mmdLink.Name = "mmdLink"
+        Me.mmdLink.Size = New System.Drawing.Size(42, 20)
+        Me.mmdLink.Text = "Link"
+        '
+        't8
+        '
+        Me.t8.AutoSize = False
+        Me.t8.Enabled = False
+        Me.t8.Name = "t8"
+        Me.t8.Size = New System.Drawing.Size(8, 20)
+        Me.t8.Text = "|"
+        '
+        'mmdExit
+        '
+        Me.mmdExit.Name = "mmdExit"
+        Me.mmdExit.Size = New System.Drawing.Size(38, 20)
+        Me.mmdExit.Text = "E&xit"
+        '
         'SCM00001
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
-        Me.ClientSize = New System.Drawing.Size(954, 628)
+        Me.ClientSize = New System.Drawing.Size(954, 632)
+        Me.Controls.Add(Me.panSumPODates)
+        Me.Controls.Add(Me.panHdrSCRmk)
+        Me.Controls.Add(Me.panPODisPrm)
+        Me.Controls.Add(Me.menuStrip)
         Me.Controls.Add(Me.panMoreFields)
         Me.Controls.Add(Me.panCustPOChg)
         Me.Controls.Add(Me.panCustPO)
@@ -7016,11 +7052,9 @@ Partial Class SCM00001
         Me.Controls.Add(Me.cboPriCust)
         Me.Controls.Add(Me.cboSecCust)
         Me.Controls.Add(Me.panDtlPORmk)
-        Me.Controls.Add(Me.panHdrSCRmk)
         Me.Controls.Add(Me.panDtlSCRmk)
         Me.Controls.Add(Me.panDtlASS)
         Me.Controls.Add(Me.panDtlShpDat)
-        Me.Controls.Add(Me.cmdExit)
         Me.Controls.Add(Me.panMatBrkdwn)
         Me.Controls.Add(Me.chkApprove)
         Me.Controls.Add(Me.tabFrame)
@@ -7041,25 +7075,13 @@ Partial Class SCM00001
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cboCoCde)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.cmdInsRow)
-        Me.Controls.Add(Me.cmdDelete)
-        Me.Controls.Add(Me.cmdSave)
-        Me.Controls.Add(Me.cmdLast)
-        Me.Controls.Add(Me.cmdPrevious)
-        Me.Controls.Add(Me.cmdAdd)
-        Me.Controls.Add(Me.cmdNext)
-        Me.Controls.Add(Me.cmdFind)
-        Me.Controls.Add(Me.cmdCopy)
-        Me.Controls.Add(Me.cmdClear)
-        Me.Controls.Add(Me.cmdDelRow)
-        Me.Controls.Add(Me.cmdFirst)
-        Me.Controls.Add(Me.cmdSearch)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label9)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "SCM00001"
-        Me.Text = "SCM00001 - Sales Confirmation Maintenance"
+        Me.Text = "SCM00001 - Sales Confirmation Maintenance (SCM01)"
         Me.StatusBar.ResumeLayout(False)
         Me.StatusBar.PerformLayout()
         Me.tabFrame.ResumeLayout(False)
@@ -7086,28 +7108,28 @@ Partial Class SCM00001
         Me.grpShpmrk.ResumeLayout(False)
         Me.grpShpmrk.PerformLayout()
         Me.frmSum.ResumeLayout(False)
-        Me.panSumPODates.ResumeLayout(False)
-        Me.GroupBox9.ResumeLayout(False)
-        Me.GroupBox9.PerformLayout()
-        Me.GroupBox8.ResumeLayout(False)
-        Me.GroupBox8.PerformLayout()
         Me.grpSummary.ResumeLayout(False)
         Me.grpSummary.PerformLayout()
         CType(Me.dgSummary, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.grpUpdatePO.ResumeLayout(False)
         Me.grpUpdatePO.PerformLayout()
-        Me.panPODisPrm.ResumeLayout(False)
-        Me.GroupBox6.ResumeLayout(False)
-        CType(Me.grdPOPre, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox5.ResumeLayout(False)
-        CType(Me.grdPODis, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpUpdPO_Shpmrk.ResumeLayout(False)
         Me.grpUpdPO_Shpmrk.PerformLayout()
         Me.grpUpdPO_Header.ResumeLayout(False)
         Me.grpUpdPO_Header.PerformLayout()
         Me.grpUpdPO_Detail.ResumeLayout(False)
         Me.grpUpdPO_Detail.PerformLayout()
+        Me.panSumPODates.ResumeLayout(False)
+        Me.GroupBox9.ResumeLayout(False)
+        Me.GroupBox9.PerformLayout()
+        Me.GroupBox8.ResumeLayout(False)
+        Me.GroupBox8.PerformLayout()
+        Me.panPODisPrm.ResumeLayout(False)
+        Me.GroupBox6.ResumeLayout(False)
+        CType(Me.grdPOPre, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox5.ResumeLayout(False)
+        CType(Me.grdPODis, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panHdrSCRmk.ResumeLayout(False)
         Me.grpPanHdrRmk.ResumeLayout(False)
         Me.grpPanHdrRmk.PerformLayout()
@@ -7147,23 +7169,12 @@ Partial Class SCM00001
         Me.panMoreFields.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        Me.menuStrip.ResumeLayout(False)
+        Me.menuStrip.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents cmdInsRow As System.Windows.Forms.Button
-    Friend WithEvents cmdDelete As System.Windows.Forms.Button
-    Friend WithEvents cmdSave As System.Windows.Forms.Button
-    Friend WithEvents cmdLast As System.Windows.Forms.Button
-    Friend WithEvents cmdPrevious As System.Windows.Forms.Button
-    Friend WithEvents cmdAdd As System.Windows.Forms.Button
-    Friend WithEvents cmdNext As System.Windows.Forms.Button
-    Friend WithEvents cmdFind As System.Windows.Forms.Button
-    Friend WithEvents cmdCopy As System.Windows.Forms.Button
-    Friend WithEvents cmdClear As System.Windows.Forms.Button
-    Friend WithEvents cmdDelRow As System.Windows.Forms.Button
-    Friend WithEvents cmdFirst As System.Windows.Forms.Button
-    Friend WithEvents cmdSearch As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents cboCoCde As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
@@ -7184,7 +7195,6 @@ Partial Class SCM00001
     Friend WithEvents txtRvsDat As System.Windows.Forms.TextBox
     Friend WithEvents StatusBar As System.Windows.Forms.StatusStrip
     Friend WithEvents lblLeft As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents lblRight As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents tabFrame As System.Windows.Forms.TabControl
     Friend WithEvents frmHdr As System.Windows.Forms.TabPage
     Friend WithEvents frmDtl As System.Windows.Forms.TabPage
@@ -7298,7 +7308,6 @@ Partial Class SCM00001
     Friend WithEvents lblNetAmtCur As System.Windows.Forms.Label
     Friend WithEvents lblDVName As System.Windows.Forms.Label
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents cmdExit As System.Windows.Forms.Button
     Friend WithEvents txtSalDivTem As System.Windows.Forms.TextBox
     Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents grpUpdatePO As System.Windows.Forms.GroupBox
@@ -7734,4 +7743,29 @@ Partial Class SCM00001
     Friend WithEvents lstPODis As System.Windows.Forms.ListBox
     Friend WithEvents cmdPODisPrm As System.Windows.Forms.Button
     Friend WithEvents txtPOStatus As System.Windows.Forms.TextBox
+    Friend WithEvents menuStrip As System.Windows.Forms.MenuStrip
+    Friend WithEvents mmdAdd As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdSave As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdDelete As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdCopy As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdFind As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdClear As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdSearch As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdInsRow As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdDelRow As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t4 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdPrint As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t5 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdAttach As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t6 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdFunction As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t7 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdLink As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t8 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdExit As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents lblRight As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents cmdPanDtlShpDatGenCTNNo As System.Windows.Forms.Button
 End Class

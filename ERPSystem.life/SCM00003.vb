@@ -53,7 +53,8 @@ Public Class SCM00003
         cmdExportLog.Visible = False
     End Sub
 
-    Private Sub cmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSave.Click
+    Private Sub mmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click, Button28.Click
+        If checkFocus(Me) Then Exit Sub
         If Not r Is Nothing Then
             If r.Tables("RESULT").Rows.Count > 0 Then
                 Dim dr() As DataRow = r.Tables("RESULT").Select("sbe_apprv = 'Y'")
@@ -86,7 +87,8 @@ Public Class SCM00003
         End If
     End Sub
 
-    Private Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFind.Click
+    Private Sub mmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFind.Click, Button23.Click
+        'If checkFocus(Me) Then Exit Sub
         gspStr = "sp_select_SCFDBEXP '" & gsCompany & "','','N','" & gsUsrID & "','" & strModule & "'"
 
         Me.Cursor = Windows.Forms.Cursors.WaitCursor
@@ -116,7 +118,8 @@ Public Class SCM00003
         End If
     End Sub
 
-    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
+    Private Sub mmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click, Button21.Click
+        If checkFocus(Me) Then Exit Sub
         grdSummary.DataSource = Nothing
         lblLeft.Text = ""
         lblRight.Text = ""
@@ -124,7 +127,8 @@ Public Class SCM00003
         setStatus("Init")
     End Sub
 
-    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdExit.Click
+    Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click, Button20.Click
+        If checkFocus(Me) Then Exit Sub
         Close()
     End Sub
 
@@ -138,20 +142,24 @@ Public Class SCM00003
 
     Private Sub setStatus(ByVal Mode As String)
         If Mode = "Init" Then
-            cmdAdd.Enabled = False
-            cmdSave.Enabled = False
-            cmdDelete.Enabled = False
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = True
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
-            cmdExit.Enabled = True
-            cmdClear.Enabled = True
-            cmdSearch.Enabled = False
-            cmdFirst.Enabled = False
-            cmdLast.Enabled = False
-            cmdNext.Enabled = False
-            cmdPrevious.Enabled = False
+            mmdAdd.Enabled = False
+            mmdSave.Enabled = False
+            mmdDelete.Enabled = False
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = True
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
+            mmdExit.Enabled = True
+            mmdClear.Enabled = True
+            mmdSearch.Enabled = False
+            'cmdFirst.Enabled = False
+            'cmdLast.Enabled = False
+            'cmdNext.Enabled = False
+            'cmdPrevious.Enabled = False
+            mmdPrint.Enabled = False
+            mmdAttach.Enabled = False
+            mmdFunction.Enabled = False
+            mmdLink.Enabled = False
             tabFrame.TabPages(1).Enabled = False
             tabFrame.TabPages(0).Enabled = True
             tabFrame.SelectTab(0)
@@ -164,20 +172,24 @@ Public Class SCM00003
             lblLeft.Text = ""
             lblRight.Text = ""
         ElseIf Mode = "Updating" Then
-            cmdAdd.Enabled = False
-            cmdSave.Enabled = Enq_right_local
-            cmdDelete.Enabled = False
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = True
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
-            cmdExit.Enabled = True
-            cmdClear.Enabled = True
-            cmdSearch.Enabled = False
-            cmdFirst.Enabled = False
-            cmdLast.Enabled = False
-            cmdNext.Enabled = False
-            cmdPrevious.Enabled = False
+            mmdAdd.Enabled = False
+            mmdSave.Enabled = Enq_right_local
+            mmdDelete.Enabled = False
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = True
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
+            mmdExit.Enabled = True
+            mmdClear.Enabled = True
+            mmdSearch.Enabled = False
+            'cmdFirst.Enabled = False
+            'cmdLast.Enabled = False
+            'cmdNext.Enabled = False
+            'cmdPrevious.Enabled = False
+            mmdPrint.Enabled = False
+            mmdAttach.Enabled = False
+            mmdFunction.Enabled = False
+            mmdLink.Enabled = False
             tabFrame.TabPages(1).Enabled = False
             tabFrame.TabPages(0).Enabled = True
             tabFrame.SelectTab(0)
@@ -187,8 +199,8 @@ Public Class SCM00003
             grpJobOrd.Enabled = True
         ElseIf Mode = "Save" Then
             setStatus("Init")
-            cmdClear.Enabled = True
-            cmdFind.Enabled = False
+            mmdClear.Enabled = True
+            mmdFind.Enabled = False
         ElseIf Mode = "Delete" Then
 
         ElseIf Mode = "Clear" Then
@@ -562,10 +574,10 @@ Public Class SCM00003
                 End With
                 lblLeft.Text = CStr(rs_ErrLog.Tables("RESULT").Rows.Count) & " log(s) found."
             Else
-                cmdClear.PerformClick()
+                mmdClear.PerformClick()
             End If
         Else
-            cmdClear.PerformClick()
+            mmdClear.PerformClick()
         End If
 
         grdErrLog.ClearSelection()
@@ -856,7 +868,7 @@ Public Class SCM00003
         End If
     End Sub
 
-    Private Sub cmdJobOrd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdJobOrd.Click
+    Private Sub cmdJobOrd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdJobOrd.Click, Button32.Click
         itmLst = New frmItemList
         itmLst.myOwner = Me
         itmLst.txtSelitm.MaxLength = 9999
@@ -1085,5 +1097,45 @@ Public Class SCM00003
         xlsApp = Nothing
 
         Me.Cursor = Windows.Forms.Cursors.Default
+    End Sub
+
+    Private Sub mmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdAdd.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdDelete.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdCopy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdCopy.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSearch.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdInsRow.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdDelRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdDelRow.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdPrint.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdAttach_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdAttach.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdFunction_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFunction.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdLink_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdLink.Click
+        If checkFocus(Me) Then Exit Sub
     End Sub
 End Class

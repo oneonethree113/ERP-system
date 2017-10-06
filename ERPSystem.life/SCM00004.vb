@@ -729,7 +729,7 @@ Public Class SCM00004
                         .Columns(i).ReadOnly = True
                     Case 1
                         .Columns(i).HeaderText = "SC #"
-                        .Columns(i).Width = 80
+                        .Columns(i).Width = 100
                         .Columns(i).ReadOnly = True
                     Case 2
                         .Columns(i).HeaderText = "Seq#"
@@ -737,11 +737,11 @@ Public Class SCM00004
                         .Columns(i).ReadOnly = True
                     Case 3
                         .Columns(i).HeaderText = "Job #"
-                        .Columns(i).Width = 100
+                        .Columns(i).Width = 120
                         .Columns(i).ReadOnly = True
                     Case 4
                         .Columns(i).HeaderText = "Item #"
-                        .Columns(i).Width = 100
+                        .Columns(i).Width = 155
                         .Columns(i).ReadOnly = True
                     Case 5
                         .Columns(i).HeaderText = "Uploaded"
@@ -872,15 +872,15 @@ Public Class SCM00004
                 Select Case i
                     Case 3
                         .Columns(i).HeaderText = "SC # with Seq."
-                        .Columns(i).Width = 200
+                        .Columns(i).Width = 300
                         .Columns(i).ReadOnly = True
                     Case 5
                         .Columns(i).HeaderText = "Transport Ship Mark"
-                        .Columns(i).Width = 200
+                        .Columns(i).Width = 300
                         .Columns(i).ReadOnly = True
                     Case 6
                         .Columns(i).HeaderText = "Update Flag"
-                        .Columns(i).Width = 100
+                        .Columns(i).Width = 243
                         .Columns(i).ReadOnly = True
                     Case Else
                         .Columns(i).Visible = False

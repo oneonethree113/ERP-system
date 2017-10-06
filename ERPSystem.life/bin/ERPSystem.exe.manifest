@@ -110,14 +110,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ERPSystem.exe" size="25370624">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ERPSystem.exe" size="26171904">
       <assemblyIdentity name="ERPSystem" version="1.0.6381.19278" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>KFPy7hic5Eq1irwSxpDr1yYNGzc=</dsig:DigestValue>
+        <dsig:DigestValue>PoeOXl2udDFhqnhBeX1tsJPBiCY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -129,7 +129,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>a3GR+8wL0g/HDgc0knasiFtUNj0=</dsig:DigestValue>
+        <dsig:DigestValue>ya87WSw7vGZ6TEgI7t/CW2QCjR4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

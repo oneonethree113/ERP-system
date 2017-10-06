@@ -22,7 +22,7 @@ Partial Class IMR00029
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.grpDate = New System.Windows.Forms.GroupBox
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IMR00029))
         Me.Label4 = New System.Windows.Forms.Label
         Me.dtpTo = New System.Windows.Forms.DateTimePicker
         Me.Label5 = New System.Windows.Forms.Label
@@ -33,8 +33,6 @@ Partial Class IMR00029
         Me.Label6 = New System.Windows.Forms.Label
         Me.optLatest = New System.Windows.Forms.RadioButton
         Me.optHistory = New System.Windows.Forms.RadioButton
-        Me.grpStatus = New System.Windows.Forms.GroupBox
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.optE_SAPSONo = New System.Windows.Forms.RadioButton
         Me.optE_Pck = New System.Windows.Forms.RadioButton
         Me.optE_FtyCst = New System.Windows.Forms.RadioButton
@@ -42,96 +40,84 @@ Partial Class IMR00029
         Me.optE_All = New System.Windows.Forms.RadioButton
         Me.Label7 = New System.Windows.Forms.Label
         Me.cmdShow = New System.Windows.Forms.Button
-        Me.grpDate.SuspendLayout()
-        Me.grpStatus.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.Label8 = New System.Windows.Forms.Label
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'grpDate
-        '
-        Me.grpDate.Controls.Add(Me.Label4)
-        Me.grpDate.Controls.Add(Me.dtpTo)
-        Me.grpDate.Controls.Add(Me.Label5)
-        Me.grpDate.Controls.Add(Me.dtpFrom)
-        Me.grpDate.Controls.Add(Me.Label3)
-        Me.grpDate.Controls.Add(Me.Label2)
-        Me.grpDate.Controls.Add(Me.Label1)
-        Me.grpDate.Enabled = False
-        Me.grpDate.Location = New System.Drawing.Point(12, 12)
-        Me.grpDate.Name = "grpDate"
-        Me.grpDate.Size = New System.Drawing.Size(500, 57)
-        Me.grpDate.TabIndex = 0
-        Me.grpDate.TabStop = False
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(325, 36)
+        Me.Label4.Location = New System.Drawing.Point(376, 72)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(79, 13)
+        Me.Label4.Size = New System.Drawing.Size(79, 12)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "MM/DD/YYYY"
         '
         'dtpTo
         '
+        Me.dtpTo.Enabled = False
         Me.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpTo.Location = New System.Drawing.Point(324, 14)
+        Me.dtpTo.Location = New System.Drawing.Point(375, 49)
         Me.dtpTo.Name = "dtpTo"
-        Me.dtpTo.Size = New System.Drawing.Size(124, 20)
+        Me.dtpTo.Size = New System.Drawing.Size(131, 22)
         Me.dtpTo.TabIndex = 7
         Me.dtpTo.Value = New Date(2012, 5, 29, 0, 0, 0, 0)
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(142, 36)
+        Me.Label5.Location = New System.Drawing.Point(150, 72)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(79, 13)
+        Me.Label5.Size = New System.Drawing.Size(79, 12)
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "MM/DD/YYYY"
         '
         'dtpFrom
         '
+        Me.dtpFrom.Enabled = False
         Me.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpFrom.Location = New System.Drawing.Point(141, 14)
+        Me.dtpFrom.Location = New System.Drawing.Point(149, 49)
         Me.dtpFrom.Name = "dtpFrom"
-        Me.dtpFrom.Size = New System.Drawing.Size(124, 20)
+        Me.dtpFrom.Size = New System.Drawing.Size(131, 22)
         Me.dtpFrom.TabIndex = 5
         Me.dtpFrom.Value = New Date(2012, 5, 29, 0, 0, 0, 0)
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(298, 18)
+        Me.Label3.Location = New System.Drawing.Point(349, 53)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(20, 13)
+        Me.Label3.Size = New System.Drawing.Size(18, 12)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "To"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(104, 18)
+        Me.Label2.Location = New System.Drawing.Point(112, 53)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(30, 13)
+        Me.Label2.Size = New System.Drawing.Size(30, 12)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "From"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(20, 18)
+        Me.Label1.Location = New System.Drawing.Point(28, 53)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(30, 13)
+        Me.Label1.Size = New System.Drawing.Size(26, 12)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Date"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(20, 18)
+        Me.Label6.Location = New System.Drawing.Point(28, 122)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(37, 13)
+        Me.Label6.Size = New System.Drawing.Size(32, 12)
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Status"
         '
@@ -139,9 +125,9 @@ Partial Class IMR00029
         '
         Me.optLatest.AutoSize = True
         Me.optLatest.Checked = True
-        Me.optLatest.Location = New System.Drawing.Point(141, 16)
+        Me.optLatest.Location = New System.Drawing.Point(3, 3)
         Me.optLatest.Name = "optLatest"
-        Me.optLatest.Size = New System.Drawing.Size(54, 17)
+        Me.optLatest.Size = New System.Drawing.Size(50, 16)
         Me.optLatest.TabIndex = 1
         Me.optLatest.TabStop = True
         Me.optLatest.Text = "Latest"
@@ -150,46 +136,19 @@ Partial Class IMR00029
         'optHistory
         '
         Me.optHistory.AutoSize = True
-        Me.optHistory.Location = New System.Drawing.Point(325, 16)
+        Me.optHistory.Location = New System.Drawing.Point(229, 3)
         Me.optHistory.Name = "optHistory"
-        Me.optHistory.Size = New System.Drawing.Size(57, 17)
+        Me.optHistory.Size = New System.Drawing.Size(57, 16)
         Me.optHistory.TabIndex = 2
         Me.optHistory.Text = "History"
         Me.optHistory.UseVisualStyleBackColor = True
         '
-        'grpStatus
-        '
-        Me.grpStatus.Controls.Add(Me.optHistory)
-        Me.grpStatus.Controls.Add(Me.optLatest)
-        Me.grpStatus.Controls.Add(Me.Label6)
-        Me.grpStatus.Enabled = False
-        Me.grpStatus.Location = New System.Drawing.Point(12, 75)
-        Me.grpStatus.Name = "grpStatus"
-        Me.grpStatus.Size = New System.Drawing.Size(500, 45)
-        Me.grpStatus.TabIndex = 1
-        Me.grpStatus.TabStop = False
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.optE_SAPSONo)
-        Me.GroupBox1.Controls.Add(Me.optE_Pck)
-        Me.GroupBox1.Controls.Add(Me.optE_FtyCst)
-        Me.GroupBox1.Controls.Add(Me.optE_CVPV)
-        Me.GroupBox1.Controls.Add(Me.optE_All)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Enabled = False
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 126)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(500, 45)
-        Me.GroupBox1.TabIndex = 2
-        Me.GroupBox1.TabStop = False
-        '
         'optE_SAPSONo
         '
         Me.optE_SAPSONo.AutoSize = True
-        Me.optE_SAPSONo.Location = New System.Drawing.Point(422, 16)
+        Me.optE_SAPSONo.Location = New System.Drawing.Point(304, 2)
         Me.optE_SAPSONo.Name = "optE_SAPSONo"
-        Me.optE_SAPSONo.Size = New System.Drawing.Size(74, 17)
+        Me.optE_SAPSONo.Size = New System.Drawing.Size(69, 16)
         Me.optE_SAPSONo.TabIndex = 6
         Me.optE_SAPSONo.Text = "SAP PO #"
         Me.optE_SAPSONo.UseVisualStyleBackColor = True
@@ -197,9 +156,9 @@ Partial Class IMR00029
         'optE_Pck
         '
         Me.optE_Pck.AutoSize = True
-        Me.optE_Pck.Location = New System.Drawing.Point(352, 16)
+        Me.optE_Pck.Location = New System.Drawing.Point(229, 2)
         Me.optE_Pck.Name = "optE_Pck"
-        Me.optE_Pck.Size = New System.Drawing.Size(64, 17)
+        Me.optE_Pck.Size = New System.Drawing.Size(60, 16)
         Me.optE_Pck.TabIndex = 5
         Me.optE_Pck.Text = "Packing"
         Me.optE_Pck.UseVisualStyleBackColor = True
@@ -207,9 +166,9 @@ Partial Class IMR00029
         'optE_FtyCst
         '
         Me.optE_FtyCst.AutoSize = True
-        Me.optE_FtyCst.Location = New System.Drawing.Point(262, 16)
+        Me.optE_FtyCst.Location = New System.Drawing.Point(134, 2)
         Me.optE_FtyCst.Name = "optE_FtyCst"
-        Me.optE_FtyCst.Size = New System.Drawing.Size(84, 17)
+        Me.optE_FtyCst.Size = New System.Drawing.Size(82, 16)
         Me.optE_FtyCst.TabIndex = 4
         Me.optE_FtyCst.Text = "Factory Cost"
         Me.optE_FtyCst.UseVisualStyleBackColor = True
@@ -217,9 +176,9 @@ Partial Class IMR00029
         'optE_CVPV
         '
         Me.optE_CVPV.AutoSize = True
-        Me.optE_CVPV.Location = New System.Drawing.Point(191, 16)
+        Me.optE_CVPV.Location = New System.Drawing.Point(58, 2)
         Me.optE_CVPV.Name = "optE_CVPV"
-        Me.optE_CVPV.Size = New System.Drawing.Size(65, 17)
+        Me.optE_CVPV.Size = New System.Drawing.Size(68, 16)
         Me.optE_CVPV.TabIndex = 3
         Me.optE_CVPV.Text = "CV && PV"
         Me.optE_CVPV.UseVisualStyleBackColor = True
@@ -228,9 +187,9 @@ Partial Class IMR00029
         '
         Me.optE_All.AutoSize = True
         Me.optE_All.Checked = True
-        Me.optE_All.Location = New System.Drawing.Point(141, 16)
+        Me.optE_All.Location = New System.Drawing.Point(3, 2)
         Me.optE_All.Name = "optE_All"
-        Me.optE_All.Size = New System.Drawing.Size(44, 17)
+        Me.optE_All.Size = New System.Drawing.Size(45, 16)
         Me.optE_All.TabIndex = 1
         Me.optE_All.TabStop = True
         Me.optE_All.Text = "ALL"
@@ -239,42 +198,86 @@ Partial Class IMR00029
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(20, 18)
+        Me.Label7.Location = New System.Drawing.Point(28, 187)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(81, 13)
+        Me.Label7.Size = New System.Drawing.Size(79, 12)
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "Exception Type"
         '
         'cmdShow
         '
-        Me.cmdShow.Location = New System.Drawing.Point(207, 179)
+        Me.cmdShow.Location = New System.Drawing.Point(255, 269)
         Me.cmdShow.Name = "cmdShow"
-        Me.cmdShow.Size = New System.Drawing.Size(111, 32)
-        Me.cmdShow.TabIndex = 20
+        Me.cmdShow.Size = New System.Drawing.Size(116, 40)
+        Me.cmdShow.TabIndex = 10
         Me.cmdShow.Text = "E&xport to Excel"
         Me.cmdShow.UseVisualStyleBackColor = True
         '
+        'Label8
+        '
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Blue
+        Me.Label8.Location = New System.Drawing.Point(62, 9)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(511, 23)
+        Me.Label8.TabIndex = 21
+        Me.Label8.Text = " Factory Approve Data Comparison Report"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.optLatest)
+        Me.Panel1.Controls.Add(Me.optHistory)
+        Me.Panel1.Enabled = False
+        Me.Panel1.Location = New System.Drawing.Point(149, 117)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(432, 21)
+        Me.Panel1.TabIndex = 8
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.optE_All)
+        Me.Panel2.Controls.Add(Me.optE_CVPV)
+        Me.Panel2.Controls.Add(Me.optE_SAPSONo)
+        Me.Panel2.Controls.Add(Me.optE_FtyCst)
+        Me.Panel2.Controls.Add(Me.optE_Pck)
+        Me.Panel2.Enabled = False
+        Me.Panel2.Location = New System.Drawing.Point(149, 183)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(432, 21)
+        Me.Panel2.TabIndex = 9
+        '
         'IMR00029
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(525, 222)
+        Me.ClientSize = New System.Drawing.Size(634, 412)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.dtpTo)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.cmdShow)
-        Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.grpStatus)
-        Me.Controls.Add(Me.grpDate)
+        Me.Controls.Add(Me.dtpFrom)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "IMR00029"
-        Me.Text = "IMR00029 - Factory Approve Data Comparison Report"
-        Me.grpDate.ResumeLayout(False)
-        Me.grpDate.PerformLayout()
-        Me.grpStatus.ResumeLayout(False)
-        Me.grpStatus.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.Text = "IMR00029 - Factory Approve Data Comparison Report (IMR29)"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents grpDate As System.Windows.Forms.GroupBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -285,8 +288,6 @@ Partial Class IMR00029
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents optLatest As System.Windows.Forms.RadioButton
     Friend WithEvents optHistory As System.Windows.Forms.RadioButton
-    Friend WithEvents grpStatus As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents optE_Pck As System.Windows.Forms.RadioButton
     Friend WithEvents optE_FtyCst As System.Windows.Forms.RadioButton
     Friend WithEvents optE_CVPV As System.Windows.Forms.RadioButton
@@ -294,4 +295,7 @@ Partial Class IMR00029
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents optE_SAPSONo As System.Windows.Forms.RadioButton
     Friend WithEvents cmdShow As System.Windows.Forms.Button
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
 End Class

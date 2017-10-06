@@ -76,8 +76,8 @@
         'If checkChangesMade() = True Then
         '    response = MsgBox("Do you want to save the changes made?", MsgBoxStyle.YesNoCancel, "SCM00006 - Closing")
         '    If response = MsgBoxResult.Yes Then
-        '        If cmdSave.Enabled = True Then
-        '            cmdSave.PerformClick()
+        '        If mmdSave.Enabled = True Then
+        '            mmdSave.PerformClick()
         '        Else
         '            MsgBox("You do not have authority to save changes", MsgBoxStyle.Critical, "SCM00006 - Saving")
         '            e.Cancel = True
@@ -88,7 +88,8 @@
         'End If
     End Sub
 
-    Private Sub cmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSave.Click
+    Private Sub mmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
+        If checkFocus(Me) Then Exit Sub
         Dim before() As DataRow
         Dim rs_sql As DataSet
 
@@ -163,7 +164,8 @@
         setStatus("INIT")
     End Sub
 
-    Private Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFind.Click
+    Private Sub mmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFind.Click
+        'If checkFocus(Me) Then Exit Sub
         Dim cocde As String
         Dim cus1no As String
         Dim cus2no As String
@@ -316,14 +318,15 @@
         Me.Cursor = Windows.Forms.Cursors.Default
     End Sub
 
-    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
+    Private Sub mmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
+        If checkFocus(Me) Then Exit Sub
         If checkChangesMade() = True Then
             Dim response As Integer
             response = MsgBox("Changes have been made. Would you like to save changes before clearing?", MsgBoxStyle.YesNoCancel)
 
             If response = MsgBoxResult.Yes Then
-                If cmdSave.Enabled = True Then
-                    cmdSave.PerformClick()
+                If mmdSave.Enabled = True Then
+                    mmdSave.PerformClick()
                     Exit Sub
                 Else
                     MsgBox("You do not have authority to save changes", MsgBoxStyle.Critical, "SCM00006 - Saving")
@@ -339,7 +342,8 @@
         setStatus("INIT")
     End Sub
 
-    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdExit.Click
+    Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
+        If checkFocus(Me) Then Exit Sub
         Close()
     End Sub
 
@@ -1077,7 +1081,7 @@
             For i = 0 To dgHeader.SelectedRows.Count - 1
                 dgHeader.SelectedRows(i).Cells(HdrKeepSelectSeq).Value = "Y"
                 If dgHeader.SelectedRows(i).Cells(HdrApvCheckSeq).Value = "Pass" Then
-                    Select applyType
+                    Select Case applyType
                         Case "ALL"
                             If s = "Y" And dgHeader.SelectedRows(i).Cells(HdrApvSeq).Value = "W" Then
 
@@ -1131,7 +1135,7 @@
                                 dgHeader.SelectedRows(i).Cells(HdrPrcTrmApvSelAllSeq).Value = "W"
                                 ApprovalActionSelAll("CHECK_WIP_HDR", dgHeader.SelectedRows(i).Cells(0).RowIndex, HdrPrcTrmApvSelAllSeq)
                             End If
-                    Case "PAYMENTTERM"
+                        Case "PAYMENTTERM"
                             If s = "Y" And dgHeader.SelectedRows(i).Cells(HdrPayTrmApvSeq).Value = "W" Then
                                 dgHeader.SelectedRows(i).Cells(HdrPayTrmApvSelAllSeq).Value = "Y"
                                 ApprovalActionSelAll("CHECK_APV_HDR", dgHeader.SelectedRows(i).Cells(0).RowIndex, HdrPayTrmApvSelAllSeq)
@@ -1139,7 +1143,7 @@
                                 dgHeader.SelectedRows(i).Cells(HdrPayTrmApvSelAllSeq).Value = "W"
                                 ApprovalActionSelAll("CHECK_WIP_HDR", dgHeader.SelectedRows(i).Cells(0).RowIndex, HdrPayTrmApvSelAllSeq)
                             End If
-                    Case "REPLACEMENT"
+                        Case "REPLACEMENT"
                             If s = "Y" And dgHeader.SelectedRows(i).Cells(HdrRepOrdApvSeq).Value = "W" Then
                                 dgHeader.SelectedRows(i).Cells(HdrRepOrdApvSelAllSeq).Value = "Y"
                                 ApprovalActionSelAll("CHECK_APV_HDR", dgHeader.SelectedRows(i).Cells(0).RowIndex, HdrRepOrdApvSelAllSeq)
@@ -1147,7 +1151,7 @@
                                 dgHeader.SelectedRows(i).Cells(HdrRepOrdApvSelAllSeq).Value = "W"
                                 ApprovalActionSelAll("CHECK_WIP_HDR", dgHeader.SelectedRows(i).Cells(0).RowIndex, HdrRepOrdApvSelAllSeq)
                             End If
-                    Case "CLOSEOUT"
+                        Case "CLOSEOUT"
                             If s = "Y" And dgHeader.SelectedRows(i).Cells(HdrCloOrdApvSeq).Value = "W" Then
                                 dgHeader.SelectedRows(i).Cells(HdrCloOrdApvSelAllSeq).Value = "Y"
                                 ApprovalActionSelAll("CHECK_APV_HDR", dgHeader.SelectedRows(i).Cells(0).RowIndex, HdrCloOrdApvSelAllSeq)
@@ -2062,24 +2066,28 @@
 
     Private Sub setStatus(ByVal mode As String)
         If mode = "INIT" Then
-            cmdAdd.Enabled = False
-            cmdSave.Enabled = False
-            cmdDelete.Enabled = False
-            cmdCopy.Enabled = False
+            mmdAdd.Enabled = False
+            mmdSave.Enabled = False
+            mmdDelete.Enabled = False
+            mmdCopy.Enabled = False
             If gsUsrRank <= 4 Or gsUsrGrp = "MGT-S" Then
-                cmdFind.Enabled = True
+                mmdFind.Enabled = True
             Else
-                cmdFind.Enabled = False
+                mmdFind.Enabled = False
             End If
-            cmdClear.Enabled = True
-            cmdSearch.Enabled = False
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
-            cmdFirst.Enabled = False
-            cmdPrevious.Enabled = False
-            cmdNext.Enabled = False
-            cmdLast.Enabled = False
-            cmdExit.Enabled = True
+            mmdClear.Enabled = True
+            mmdSearch.Enabled = False
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
+            'cmdFirst.Enabled = False
+            'cmdPrevious.Enabled = False
+            'cmdNext.Enabled = False
+            'cmdLast.Enabled = False
+            mmdPrint.Enabled = False
+            mmdAttach.Enabled = False
+            mmdFunction.Enabled = False
+            mmdLink.Enabled = False
+            mmdExit.Enabled = True
 
             rs_SCM00006DTL = Nothing
             rs_SCM00006DTL_ori = Nothing
@@ -2164,20 +2172,24 @@
             rbDtlApvFilter_All.Checked = True
 
         ElseIf mode = "UPDATE" Then
-            cmdAdd.Enabled = False
-            cmdSave.Enabled = Enq_right_local
-            cmdDelete.Enabled = False
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = False
-            cmdClear.Enabled = True
-            cmdSearch.Enabled = False
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
-            cmdFirst.Enabled = False
-            cmdPrevious.Enabled = False
-            cmdNext.Enabled = False
-            cmdLast.Enabled = False
-            cmdExit.Enabled = True
+            mmdAdd.Enabled = False
+            mmdSave.Enabled = Enq_right_local
+            mmdDelete.Enabled = False
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = False
+            mmdClear.Enabled = True
+            mmdSearch.Enabled = False
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
+            'cmdFirst.Enabled = False
+            'cmdPrevious.Enabled = False
+            'cmdNext.Enabled = False
+            'cmdLast.Enabled = False
+            mmdPrint.Enabled = False
+            mmdAttach.Enabled = False
+            mmdFunction.Enabled = False
+            mmdLink.Enabled = False
+            mmdExit.Enabled = True
 
             tabFrame_Search.Enabled = False
             tabFrame_Header.Enabled = True
@@ -2267,4 +2279,47 @@
 
 
 
+    Private Sub mmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdAdd.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdDelete.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub menuStrip_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles menuStrip.ItemClicked
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSearch.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdInsRow.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdDelRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdDelRow.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdPrint.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdAttach_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdAttach.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdFunction_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFunction.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdLink_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdLink.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdCopy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdCopy.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
 End Class

@@ -5894,3 +5894,5 @@ C:\MIS - Development Source\ERP Dot Net\Developer\ERPSystem.life\obj\Release\ERP
 \\192.168.1.219\MIS - Development Source\ERP Dot Net\Developer\ERPSystem.life\obj\Release\ERPSystem.QCM00007.resources
 \\192.168.1.219\MIS - Development Source\ERP Dot Net\Developer\ERPSystem.life\obj\Release\ERPSystem.MSR00027.resources
 \\192.168.1.219\MIS - Development Source\ERP Dot Net\Developer\ERPSystem.life\obj\Release\ERPSystem.MSR00036.resources
+\\192.168.1.219\MIS - Development Source\ERP Dot Net\Developer\ERPSystem.life\obj\Release\ERPSystem.POR00001.resources
+\\192.168.1.219\MIS - Development Source\ERP Dot Net\Developer\ERPSystem.life\obj\Release\ERPSystem.POR00003.resources

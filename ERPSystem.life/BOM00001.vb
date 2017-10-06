@@ -1,4 +1,6 @@
 ﻿Public Class BOM00001
+    Dim BOMReport As POR00003
+
     Public rs_POBOMHDR As DataSet
     Public rs_POBOMDTL As DataSet
     Public rs_SYSETINF As DataSet
@@ -24,7 +26,8 @@
     Dim PreviousTab As Integer
     Dim default_date As Date = Format(DateTime.Parse("01/01/1900"), "MM/dd/yyyy")
 
-    Public Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFind.Click
+    Public Sub mmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFind.Click
+        'If checkFocus(Me) Then Exit Sub
         gsCompany = Trim(cboCoCde.Text)
         Call Update_gs_Value(gsCompany)
 
@@ -41,7 +44,7 @@
         gspStr = "sp_list_POBOMDTL '" & gsCompany & "','" & txtBOMNo.Text & "'"
         rtnLong = execute_SQLStatement(gspStr, rs_POBOMDTL, rtnStr)
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading BOM00001 cmdFind_Click sp_list_POBOMDTL : " & rtnStr)
+            MsgBox("Error on loading BOM00001 mmdFind_Click sp_list_POBOMDTL : " & rtnStr)
             Me.Cursor = Windows.Forms.Cursors.Default
             Exit Sub
         Else
@@ -53,7 +56,7 @@
         rtnLong = execute_SQLStatement(gspStr, rs_POBOMHDR, rtnStr)
         Me.Cursor = Windows.Forms.Cursors.Default
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading BOM00001 cmdFind_Click sp_select_POBOMHDR : " & rtnStr)
+            MsgBox("Error on loading BOM00001 mmdFind_Click sp_select_POBOMHDR : " & rtnStr)
             Me.Cursor = Windows.Forms.Cursors.Default
             Exit Sub
         Else
@@ -70,7 +73,7 @@
             rtnLong = execute_SQLStatement(gspStr, rs_SYUSRRIGHT, rtnStr)
             Me.Cursor = Windows.Forms.Cursors.Default
             If rtnLong <> RC_SUCCESS Then
-                MsgBox("Error on loading BOM00001 cmdFind_Click sp_select_SYUSRRIGHT_Check : " & rtnStr)
+                MsgBox("Error on loading BOM00001 mmdFind_Click sp_select_SYUSRRIGHT_Check : " & rtnStr)
                 Exit Sub
             Else
                 If rs_SYUSRRIGHT.Tables("RESULT").Rows.Count = 0 Then
@@ -163,30 +166,34 @@
             freeze_TabControl(-1) 'SSTab1.Enabled = False
             'Call SetStatusBar(Mode)
             cboCoCde.Enabled = True
-            cmdAdd.Enabled = False
-            cmdSave.Enabled = False
-            cmdCopy.Enabled = False
-            cmdInsRow.Enabled = False
+            mmdAdd.Enabled = False
+            mmdSave.Enabled = False
+            mmdCopy.Enabled = False
+            mmdInsRow.Enabled = False
 
-            cmdDelete.Enabled = False
-            cmdDelRow.Enabled = False
+            mmdDelete.Enabled = False
+            mmdDelRow.Enabled = False
 
 
-            'CmdAdd.Enabled = True
-            'CmdCopy.Enabled = True
-            cmdFind.Enabled = True
+            'mmdAdd.Enabled = True
+            'mmdCopy.Enabled = True
+            mmdFind.Enabled = True
             'CmdLookup.Enabled = False
 
-            cmdExit.Enabled = True
-            cmdClear.Enabled = True
-            cmdSearch.Enabled = True
+            mmdExit.Enabled = True
+            mmdClear.Enabled = True
+            mmdSearch.Enabled = True
             'cmdspecial.Enabled = False
             'cmdbrowlist.Enabled = False
 
-            cmdfirst.Enabled = False
-            cmdlast.Enabled = False
-            cmdNext.Enabled = False
-            cmdPrv.Enabled = False
+            'cmdfirst.Enabled = False
+            'cmdlast.Enabled = False
+            'cmdNext.Enabled = False
+            'cmdPrv.Enabled = False
+            mmdPrint.Enabled = False
+            mmdAttach.Enabled = False
+            mmdFunction.Enabled = False
+            mmdLink.Enabled = False
             txtDisPrc.Enabled = False
             cboCtp1.Text = ""
             cboCtp1.Items.Clear()
@@ -201,15 +208,20 @@
                 txtDisPrc.Enabled = True
             End If
 
-            cmdFind.Enabled = False
-            cmdSearch.Enabled = False
+            mmdFind.Enabled = False
+            mmdSearch.Enabled = False
             cboCoCde.Enabled = False
 
             txtBOMNo.Enabled = False
-
+            Dim drAccess() As DataRow = rs_SYUSRGRP_right.Tables("RESULT").Select("yug_usrfun = 'POR00003' and yug_usrgrp = '" & gsUsrGrp & "'")
+            If drAccess.Length = 0 Then
+                mmdPrint.Enabled = False
+            Else
+                mmdPrint.Enabled = True
+            End If
             release_TabControl() 'SSTab1.Enabled = True
 
-            cmdSave.Enabled = Enq_right
+            mmdSave.Enabled = Enq_right_local
 
         ElseIf Mode = "Save" Then
 
@@ -269,7 +281,7 @@
         Call display_combo("", cboPayTrm)
 
         txtCpoDat.Text = Format(Now, "MM/dd/yyyy")
-        txtRefNo.Text = ""
+        txtRefno.Text = ""
         txtCusPo.Text = ""
 
         txtCanDat.Text = Format(Now, "MM/dd/yyyy")
@@ -485,7 +497,7 @@
             Next
 
             '.Columns(0).width = 0
-            
+
             .Columns(2).Visible = True
             .Columns(2).Width = 40 '.Columns(2).width = 500
             .Columns(2).HeaderCell.Value = "SEQ"
@@ -703,12 +715,13 @@
     End Sub
 
 
-    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdExit.Click
+    Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
+        If checkFocus(Me) Then Exit Sub
         Me.Close()
     End Sub
 
-    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
-
+    Private Sub mmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
+        If checkFocus(Me) Then Exit Sub
         'Dim YesNoCancel As Integer
         If Recordstatus = True Then
 
@@ -718,7 +731,7 @@
             If YesNoCancel = MsgBoxResult.Cancel Then
                 Exit Sub
             ElseIf YesNoCancel = MsgBoxResult.Yes Then
-                Call cmdSave_Click(sender, e)
+                Call mmdSave_Click(sender, e)
                 If save_ok = False Then Exit Sub
             End If
         End If
@@ -726,7 +739,8 @@
         If txtBOMNo.Visible = True And txtBOMNo.Enabled = True Then txtBOMNo.Focus()
     End Sub
 
-    Private Sub cmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSave.Click
+    Private Sub mmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
+        If checkFocus(Me) Then Exit Sub
         gsCompany = Trim(cboCoCde.Text)
         Call Update_gs_Value(gsCompany)
         Me.Cursor = Windows.Forms.Cursors.WaitCursor
@@ -741,13 +755,13 @@
         End If
 
 
-        If Not ChkDate Then
+        If Not ChkDate() Then
             Me.Cursor = Windows.Forms.Cursors.Default
             save_ok = False
             Exit Sub
         End If
 
-        If Not ChecktimeStamp Then
+        If Not ChecktimeStamp() Then
             MsgBox("The record has been modified by other users, please clear and try again.") 'msg("M00064")
             Me.Cursor = Windows.Forms.Cursors.Default
             save_ok = False
@@ -838,7 +852,7 @@
 
                 rtnLong = execute_SQLStatement(S, rs, rtnStr)
                 If rtnLong <> RC_SUCCESS Then
-                    MsgBox("Error on loading BOM00001 cmdSave_Click sp_Update_POBOMDTL : " & rtnStr)
+                    MsgBox("Error on loading BOM00001 mmdSave_Click sp_Update_POBOMDTL : " & rtnStr)
                     IsUpdated = False
                 Else
                     IsUpdated = True
@@ -875,7 +889,7 @@
 
         If rtnLong <> RC_SUCCESS Then  '*** An error has occured
             Me.Cursor = Windows.Forms.Cursors.Default
-            MsgBox("Error on loading BOM00001 cmdSave_Click sp_Update_POBOMHDR : " & rtnStr)
+            MsgBox("Error on loading BOM00001 mmdSave_Click sp_Update_POBOMHDR : " & rtnStr)
             IsUpdated = False
             Exit Sub
         Else
@@ -902,7 +916,7 @@
             Exit Function
         End If
         If IsDate(txtDCanDat.Text) Then 'If txtDCanDat.Text <> "__/__/____" Then
-            
+
             If CDate(txtDCanDat.Text) < CDate(txtDShpEnd.Text) Or CDate(txtDCanDat.Text) < CDate(txtDShpStr.Text) Then
                 If TabPageMain.TabPages(1).Visible = True And TabPageMain.TabPages(1).Enabled = True Then Me.TabPageMain.SelectedIndex = 1 'If SSTab1.Visible = True And SSTab1.Enabled = True Then SSTab1.Tab = 1
                 MsgBox("BOM PO Cancel Date must be later than Ship Date")
@@ -1170,7 +1184,7 @@
 
     Private Sub txtBOMNo_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtBOMNo.KeyPress
         If e.KeyChar = Microsoft.VisualBasic.Chr(13) Then
-            cmdFind_Click(sender, e)
+            mmdFind_Click(sender, e)
         End If
     End Sub
 
@@ -1182,13 +1196,13 @@
         Recordstatus = True
     End Sub
 
-    
+
 
     Private Sub txtCanDat_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCanDat.Enter
         Call HighlightMask(txtCanDat)
     End Sub
     Public Sub HighlightMask(ByVal t As MaskedTextBox)
-        t.selectionStart = 0
+        t.SelectionStart = 0
         t.SelectionLength = Len(t.Text)
     End Sub
 
@@ -1366,12 +1380,53 @@
         End If
     End Sub
 
-    Private Sub cmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSearch.Click
+    Private Sub mmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSearch.Click
+        If checkFocus(Me) Then Exit Sub
         Dim frmSYM00018 As New SYM00018
 
         frmSYM00018.keyName = txtBOMNo.Name
         frmSYM00018.strModule = "BM"
 
         frmSYM00018.show_frmSYM00018(Me)
+    End Sub
+
+    Private Sub mmdPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdPrint.Click
+        If checkFocus(Me) Then Exit Sub
+        BOMReport = New POR00003
+        BOMReport.init_PONo = txtBOMNo.Text
+        BOMReport.init_cocde = cboCoCde.Text
+        BOMReport.ShowDialog()
+    End Sub
+
+    Private Sub mmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdAdd.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdDelete.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdCopy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdCopy.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdInsRow.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdDelRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdDelRow.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdAttach_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdAttach.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdFunction_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFunction.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdLink_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdLink.Click
+        If checkFocus(Me) Then Exit Sub
     End Sub
 End Class

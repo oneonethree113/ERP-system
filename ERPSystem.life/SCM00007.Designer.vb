@@ -22,6 +22,7 @@ Partial Class SCM00007
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SCM00007))
         Me.Label1 = New System.Windows.Forms.Label
         Me.txtCoNam = New System.Windows.Forms.TextBox
         Me.Label2 = New System.Windows.Forms.Label
@@ -43,9 +44,9 @@ Partial Class SCM00007
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
         Me.Label1.ForeColor = System.Drawing.Color.Blue
-        Me.Label1.Location = New System.Drawing.Point(215, 9)
+        Me.Label1.Location = New System.Drawing.Point(122, 4)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(382, 25)
         Me.Label1.TabIndex = 0
@@ -55,7 +56,7 @@ Partial Class SCM00007
         '
         Me.txtCoNam.BackColor = System.Drawing.Color.White
         Me.txtCoNam.Enabled = False
-        Me.txtCoNam.Location = New System.Drawing.Point(384, 41)
+        Me.txtCoNam.Location = New System.Drawing.Point(309, 39)
         Me.txtCoNam.Name = "txtCoNam"
         Me.txtCoNam.Size = New System.Drawing.Size(298, 22)
         Me.txtCoNam.TabIndex = 4
@@ -63,19 +64,18 @@ Partial Class SCM00007
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(299, 43)
+        Me.Label2.Location = New System.Drawing.Point(215, 41)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(85, 13)
+        Me.Label2.Size = New System.Drawing.Size(81, 12)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Company Name:"
+        Me.Label2.Text = "Company Name"
         '
         'cboCoCde
         '
         Me.cboCoCde.BackColor = System.Drawing.Color.White
         Me.cboCoCde.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCoCde.FormattingEnabled = True
-        Me.cboCoCde.Location = New System.Drawing.Point(224, 40)
+        Me.cboCoCde.Location = New System.Drawing.Point(122, 38)
         Me.cboCoCde.Name = "cboCoCde"
         Me.cboCoCde.Size = New System.Drawing.Size(72, 20)
         Me.cboCoCde.TabIndex = 2
@@ -83,11 +83,10 @@ Partial Class SCM00007
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Blue
-        Me.Label3.Location = New System.Drawing.Point(142, 44)
+        Me.Label3.Location = New System.Drawing.Point(30, 41)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(79, 13)
+        Me.Label3.Size = New System.Drawing.Size(79, 12)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Company Code"
         '
@@ -100,9 +99,9 @@ Partial Class SCM00007
         Me.grpDocNo.Controls.Add(Me.Label5)
         Me.grpDocNo.Controls.Add(Me.txtFromFactory)
         Me.grpDocNo.Controls.Add(Me.Label4)
-        Me.grpDocNo.Location = New System.Drawing.Point(206, 69)
+        Me.grpDocNo.Location = New System.Drawing.Point(117, 70)
         Me.grpDocNo.Name = "grpDocNo"
-        Me.grpDocNo.Size = New System.Drawing.Size(400, 87)
+        Me.grpDocNo.Size = New System.Drawing.Size(400, 80)
         Me.grpDocNo.TabIndex = 5
         Me.grpDocNo.TabStop = False
         Me.grpDocNo.Text = "Document No."
@@ -173,19 +172,18 @@ Partial Class SCM00007
         'txtResult
         '
         Me.txtResult.BackColor = System.Drawing.Color.White
-        Me.txtResult.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtResult.ForeColor = System.Drawing.Color.Black
-        Me.txtResult.Location = New System.Drawing.Point(2, 195)
+        Me.txtResult.Location = New System.Drawing.Point(2, 204)
         Me.txtResult.Multiline = True
         Me.txtResult.Name = "txtResult"
         Me.txtResult.ReadOnly = True
         Me.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtResult.Size = New System.Drawing.Size(790, 248)
+        Me.txtResult.Size = New System.Drawing.Size(629, 207)
         Me.txtResult.TabIndex = 6
         '
         'cmdShow
         '
-        Me.cmdShow.Location = New System.Drawing.Point(373, 164)
+        Me.cmdShow.Location = New System.Drawing.Point(279, 162)
         Me.cmdShow.Name = "cmdShow"
         Me.cmdShow.Size = New System.Drawing.Size(75, 25)
         Me.cmdShow.TabIndex = 7
@@ -194,8 +192,9 @@ Partial Class SCM00007
         '
         'SCM00007
         '
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
-        Me.ClientSize = New System.Drawing.Size(794, 445)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(634, 412)
         Me.Controls.Add(Me.cmdShow)
         Me.Controls.Add(Me.txtResult)
         Me.Controls.Add(Me.grpDocNo)
@@ -205,9 +204,10 @@ Partial Class SCM00007
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "SCM00007"
-        Me.Text = "SCM00007 - Release/Unrelease Sales Confirmation"
+        Me.Text = "SCM00007 - Release/Unrelease Sales Confirmation (SCM07)"
         Me.grpDocNo.ResumeLayout(False)
         Me.grpDocNo.PerformLayout()
         Me.ResumeLayout(False)

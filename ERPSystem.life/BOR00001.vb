@@ -58,7 +58,6 @@ Public Class BOR00001
 
     Private Sub optShow_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optShow.CheckedChanged
         Me.cmdShow.Text = "&Show Report"
-        Me.Frame3.Enabled = True
         Me.optHdr.Enabled = True
         Me.optDtl.Enabled = True
     End Sub

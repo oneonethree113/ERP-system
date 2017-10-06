@@ -17,6 +17,9 @@ Public Class POR00001
     Private Enq_right_local As Boolean
     Private Del_right_local As Boolean
 
+    Public init_PONo As String = ""
+    Public init_cocde As String = ""
+
     Private Sub POR00001_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Formstartup(Me.Name)
         AccessRight(Me.Name)
@@ -44,7 +47,16 @@ Public Class POR00001
         End If
 
         cboReportFormat.SelectedIndex = 0
-
+        If init_cocde <> "" Then
+            cboCoCde.Text = init_cocde
+            cboCoCde.Enabled = False
+        End If
+        If init_PONo <> "" Then
+            txtFm.Text = init_PONo
+            txtFm.ReadOnly = True
+            txtTo.Text = init_PONo
+            txtTo.ReadOnly = True
+        End If
     End Sub
 
     Private Sub cboCoCde_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboCoCde.SelectedIndexChanged

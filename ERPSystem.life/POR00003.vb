@@ -8,6 +8,9 @@ Public Class POR00003
     Dim Enq_right_local As Boolean
     Dim Del_right_local As Boolean
 
+    Public init_PONo As String = ""
+    Public init_cocde As String = ""
+
 
     Private Sub cmdShow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdShow.Click
         '--- Update Company Code before execute ---
@@ -117,7 +120,16 @@ Public Class POR00003
         cboReportFormat.Items.Add("PDF Format")
         cboReportFormat.SelectedIndex = 0
 
-
+        If init_cocde <> "" Then
+            cboCoCde.Text = init_cocde
+            cboCoCde.Enabled = False
+        End If
+        If init_PONo <> "" Then
+            txtFm.Text = init_PONo
+            txtFm.ReadOnly = True
+            txtTo.Text = init_PONo
+            txtTo.ReadOnly = True
+        End If
 
         Call Formstartup(Me.Name)
     End Sub
@@ -131,7 +143,5 @@ Public Class POR00003
         Enq_right_local = Enq_right
         Del_right_local = Del_right
     End Sub
-
-
 
 End Class

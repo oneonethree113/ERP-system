@@ -27,6 +27,7 @@ Public Class SCM00001
     Dim ShipmrkAttchmnt As SCM00001_ShpmrkAtchmt
     Dim PO_Release As POM00002
     Dim TransportShipmark As SCM00004
+    Dim SCReport As SCR00001
 
     Dim authUsr As Boolean
     Dim Cust_InActive As Boolean
@@ -317,6 +318,10 @@ Public Class SCM00001
     Dim dispCanFlag As Boolean
     Dim dispDelFlag As Boolean
     Dim dispInsFlag As Boolean
+    Dim dispPrintFlag As Boolean
+    Dim dispAttachFlag As Boolean
+    Dim dispFuncFlag As Boolean
+    Dim dispLinkFlag As Boolean
     Dim dispPOFlag As Boolean
     Dim dispPriCusFlag As Boolean
     Dim dispRplmntFlag As Boolean
@@ -340,6 +345,7 @@ Public Class SCM00001
     Dim reUpdateFlag As Boolean
     Dim save_ok As Boolean
     Dim skipFlag As Boolean
+    Dim skipFlagGenCtnSeq As Boolean
     Dim Tier_typ As Boolean
     Dim VENMOQChgFlag As Boolean
 
@@ -427,6 +433,11 @@ Public Class SCM00001
     Dim selectedRow As Integer
 
 
+    Dim mmdClearClicked As Boolean = False
+    Dim mmdExitClicked As Boolean = False
+
+
+
 
 
 
@@ -439,7 +450,7 @@ Public Class SCM00001
         Else
             status = Split(cboSCStatus.Text, " - ")(0)
         End If
-        If cmdSave.Enabled = False Then
+        If mmdSave.Enabled = False Then
             recordStatus = False
         End If
 
@@ -451,9 +462,9 @@ Public Class SCM00001
             End If
 
             If YesNoCancel = MsgBoxResult.Yes Then
-                If cmdSave.Enabled Then
+                If mmdSave.Enabled Then
                     exitFlag = True
-                    cmdSave.PerformClick()
+                    mmdSave.PerformClick()
                     If save_ok = True Then
                         Exit Sub
                     Else
@@ -537,11 +548,27 @@ Public Class SCM00001
         setStatus("Init")
         initFlag = False
 
+        panelMoveTimer = New Timer()
+        panelMoveTimer.Interval = 2
+        panelMoveTimer.Enabled = True
 
-
+        AddHandler panelMoveTimer.Tick, AddressOf panelMoveTimer_Tick
+        setupMovablePanel(panHdrSCRmk, "SC Remark", Nothing)
+        setupMovablePanel(panDtlSCRmk, "SC Remark", Nothing)
+        setupMovablePanel(panDtlPORmk, "PO Remark", Nothing)
+        setupMovablePanel(panMoreFields, "More Fields", Nothing)
+        setupMovablePanel(panMatBrkdwn, "Material Breakdown", Nothing)
+        setupMovablePanel(panDtlASS, "Assortment", Nothing)
+        setupMovablePanel(panDtlShpDat, "Multiple Ship Date / Carton", Nothing)
+        setupMovablePanel(panTent, "Tentative Item Information", Nothing)
+        setupMovablePanel(panSCCopy, "SC Copy", Nothing)
+        setupMovablePanel(panSCCopyCust, "SC Copy", Nothing)
+        setupMovablePanel(panSumPODates, "Update PO Dates", Nothing)
+        setupMovablePanel(panPODisPrm, "Dis / Prm", Nothing)
     End Sub
 
-    Private Sub cmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAdd.Click
+    Private Sub mmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdAdd.Click
+        If checkFocus(Me) Then Exit Sub
         addFlag = True
 
         Dim rs As New DataSet
@@ -568,7 +595,8 @@ Public Class SCM00001
         If cboPriCust.Enabled And cboPriCust.Visible Then cboPriCust.Focus()
     End Sub
 
-    Private Sub cmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSave.Click
+    Private Sub mmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
+        If checkFocus(Me) Then Exit Sub
         If DtlInputisVaild() Then
             Dim po_from As String
             Dim po_to As String
@@ -739,9 +767,9 @@ Public Class SCM00001
                             Exit Sub
                         End If
                     End If
-                        checkPaymentTermChange = False
-                        strPaymentTermChange = "W"
-                    End If
+                    checkPaymentTermChange = False
+                    strPaymentTermChange = "W"
+                End If
             End If
 
             For i As Integer = 0 To rs_SCORDDTL.Tables("RESULT").Rows.Count - 1
@@ -1797,7 +1825,7 @@ Public Class SCM00001
                             ''******************************************************************************
                             ''*****************ADD Dtl Shipement Date*******************************************
                             'Dim drSCDTLSHP_dtl() As DataRow = rs_SCDTLSHP.Tables("RESULT").Select("sds_creusr ='~*ADD*~' and sds_seq = ' " & drSCORDDTL(i).Item("sod_ordseq") & "'")
-                            Dim drSCDTLSHP_dtl() As DataRow = rs_SCDTLSHP.Tables("RESULT").Select("sds_creusr <>'~*DEL*~' and sds_seq = ' " & drSCORDDTL(i).Item("sod_ordseq") & "'")
+                            Dim drSCDTLSHP_dtl() As DataRow = rs_SCDTLSHP.Tables("RESULT").Select("sds_creusr <>'~*DEL*~' and sds_seq = ' " & drSCORDDTL(i).Item("sod_ordseq") & "' and sds_status <> 'Y'")
 
 
                             If drSCDTLSHP_dtl.Length > 0 Then
@@ -1925,10 +1953,10 @@ Public Class SCM00001
                                  UCaseNotNull(drSCORDDTL(i).Item("sod_venno")) & "','" & UCaseNotNull(drSCORDDTL(i).Item("sod_fcurcde")) & "','" & UCaseNotNull(drSCORDDTL(i).Item("sod_ftycst")) & _
                                  "','" & UCaseNotNull(drSCORDDTL(i).Item("sod_ftyprc")) & "','" & UCaseNotNull(drSCORDDTL(i).Item("sod_updpo")) & "','" & UCaseNotNull(drSCORDDTL(i).Item("sod_chgfty")) & _
                                  "','" & UCaseNotNull(UCaseNotNull(drSCORDDTL(i).Item("sod_itmno").ToString) & "','" & UCaseNotNull(drSCORDDTL(i).Item("sod_itmtyp")) & "','" & _
-                                 Replace(UCaseNotNull(drSCORDDTL(i).Item("sod_itmdsc")), "'", "''") & "','" & UCaseNotNull( Replace(drSCORDDTL(i).Item("sod_colcde"), "'", "''")) & "','" & _
-                                 UCaseNotNull(Replace(drSCORDDTL(i).Item("sod_cuscol"), "'", "''")) & "','" & UCaseNotNull( Replace(drSCORDDTL(i).Item("sod_coldsc"), "'", "''")) & "','" & UCaseNotNull(drSCORDDTL(i).Item("sod_qutno")) & _
+                                 Replace(UCaseNotNull(drSCORDDTL(i).Item("sod_itmdsc")), "'", "''") & "','" & UCaseNotNull(Replace(drSCORDDTL(i).Item("sod_colcde"), "'", "''")) & "','" & _
+                                 UCaseNotNull(Replace(drSCORDDTL(i).Item("sod_cuscol"), "'", "''")) & "','" & UCaseNotNull(Replace(drSCORDDTL(i).Item("sod_coldsc"), "'", "''")) & "','" & UCaseNotNull(drSCORDDTL(i).Item("sod_qutno")) & _
                                  "','" & Format(CDate(drSCORDDTL(i).Item("sod_refdat")), "MM/dd/yyyy")) & "','" & UCaseNotNull(Replace(drSCORDDTL(i).Item("sod_cusitm"), "'", "''")) & "','" & _
-                                 UCaseNotNull( Replace(drSCORDDTL(i).Item("sod_cussku"), "'", "''")) & "','" & UCaseNotNull(Replace(drSCORDDTL(i).Item("sod_resppo"), "'", "''")) & "','" & UCaseNotNull(Replace(drSCORDDTL(i).Item("sod_cuspo"), "'", "''")) & _
+                                 UCaseNotNull(Replace(drSCORDDTL(i).Item("sod_cussku"), "'", "''")) & "','" & UCaseNotNull(Replace(drSCORDDTL(i).Item("sod_resppo"), "'", "''")) & "','" & UCaseNotNull(Replace(drSCORDDTL(i).Item("sod_cuspo"), "'", "''")) & _
                                  "','" & UCaseNotNull(drSCORDDTL(i).Item("sod_ordqty")) & "','" & UCaseNotNull(drSCORDDTL(i).Item("sod_discnt")) & "','" & UCaseNotNull(drSCORDDTL(i).Item("sod_oneprc")) & _
                                  "','" & UCaseNotNull(drSCORDDTL(i).Item("sod_untprc")) & "','" & UCaseNotNull(drSCORDDTL(i).Item("sod_selprc")) & "','" & UCaseNotNull(Replace(drSCORDDTL(i).Item("sod_hrmcde"), "'", "''")) & _
                                  "','" & UCaseNotNull(Replace(drSCORDDTL(i).Item("sod_dtyrat"), "'", "''")) & "','" & UCaseNotNull(Replace(drSCORDDTL(i).Item("sod_dept"), "'", "''")) & "','" & UCaseNotNull(Replace(drSCORDDTL(i).Item("sod_typcode"), "'", "''")) & _
@@ -2286,7 +2314,7 @@ Public Class SCM00001
             '****************************
             '*** Delete Details Record***
             '****************************
-            drSCDTLSHP = rs_SCDTLSHP.Tables("RESULT").Select("sds_creusr ='~*DEL*~' or sds_status = 'Y'")
+            drSCDTLSHP = rs_SCDTLSHP.Tables("RESULT").Select("sds_creusr ='~*DEL*~' or (sds_status = 'Y' and sds_creusr <>'~*ADD*~')")
 
             For i As Integer = 0 To drSCDTLSHP.Length - 1
 
@@ -2311,24 +2339,27 @@ Public Class SCM00001
             '*** Add Details Record***
             '****************************
             drSCDTLSHP = Nothing
-            drSCDTLSHP = rs_SCDTLSHP.Tables("RESULT").Select("sds_creusr ='~*ADD*~' ")
+            drSCDTLSHP = rs_SCDTLSHP.Tables("RESULT").Select("sds_creusr ='~*ADD*~' and sds_status <> 'Y'")
 
             For i As Integer = 0 To drSCDTLSHP.Length - 1
-                gspStr = "sp_insert_SCDTLSHP '" & cboCoCde.Text & "','" & UCaseNotNull(txtSCNo.Text) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_seq")) & "','" & _
-                          UCaseNotNull(drSCDTLSHP(i).Item("sds_scfrom")) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_scto")) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_pofrom")) & _
-                          "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_poto")) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_ordqty")) & "','" & _
-                          UCaseNotNull(drSCDTLSHP(i).Item("sds_ctnstr")) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_ctnend")) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_ttlctn")) & _
-                          "','" & Replace(UCaseNotNull(drSCDTLSHP(i).Item("sds_dest")), "'", "''") & "','" & Replace(UCaseNotNull(drSCDTLSHP(i).Item("sds_rmk")), "'", "''") & _
-                          "','" & LCase(gsUsrID) & "'"
+                Dim checkSCDTLNotDel() As DataRow = rs_SCORDDTL.Tables("RESULT").Select("sod_creusr <> '~*DEL*~' and sod_creusr <> '~*NEW*~' and sod_ordseq = '" & Str(drSCDTLSHP(i).Item("sds_seq")) & "' ")
+                If checkSCDTLNotDel.Length > 0 Then
+                    gspStr = "sp_insert_SCDTLSHP '" & cboCoCde.Text & "','" & UCaseNotNull(txtSCNo.Text) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_seq")) & "','" & _
+                              UCaseNotNull(drSCDTLSHP(i).Item("sds_scfrom")) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_scto")) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_pofrom")) & _
+                              "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_poto")) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_ordqty")) & "','" & _
+                              UCaseNotNull(drSCDTLSHP(i).Item("sds_ctnstr")) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_ctnend")) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_ttlctn")) & _
+                              "','" & Replace(UCaseNotNull(drSCDTLSHP(i).Item("sds_dest")), "'", "''") & "','" & Replace(UCaseNotNull(drSCDTLSHP(i).Item("sds_rmk")), "'", "''") & _
+                              "','" & LCase(gsUsrID) & "'"
 
-                If gspStr <> "" Then  '*** if there is something to do with s ...
-                    rtnLong = execute_SQLStatement(gspStr, rs, rtnStr)
+                    If gspStr <> "" Then  '*** if there is something to do with s ...
+                        rtnLong = execute_SQLStatement(gspStr, rs, rtnStr)
 
-                    If rtnLong <> RC_SUCCESS Then  '*** An error has occured
-                        MsgBox("Error on saving SCM00001 #096 sp_insert_SCDTLSHP : " & rtnStr)
-                        isUpdated = False
-                    Else
-                        isUpdated = True
+                        If rtnLong <> RC_SUCCESS Then  '*** An error has occured
+                            MsgBox("Error on saving SCM00001 #096 sp_insert_SCDTLSHP : " & rtnStr)
+                            isUpdated = False
+                        Else
+                            isUpdated = True
+                        End If
                     End If
                 End If
             Next
@@ -2360,20 +2391,22 @@ Public Class SCM00001
                             po_to = "01/01/1900"
                         End If
                     End If
+                    Dim checkSCDTLNotDel() As DataRow = rs_SCORDDTL.Tables("RESULT").Select("sod_creusr <> '~*DEL*~' and sod_creusr <> '~*NEW*~' and sod_ordseq = '" & Str(drSCDTLSHP(i).Item("sds_seq")) & "' ")
+                    If checkSCDTLNotDel.Length > 0 Then
+                        gspStr = "sp_update_SCDTLSHP '" & cboCoCde.Text & "','" & UCaseNotNull(txtSCNo.Text) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_seq")) & "','" & _
+                            UCaseNotNull(drSCDTLSHP(i).Item("sds_shpseq")) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_scfrom")) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_scto")) & _
+                            "','" & po_from & "','" & po_to & "','" & _
+                            UCaseNotNull(drSCDTLSHP(i).Item("sds_ordqty")) & "','" & UCaseNotNull(Trim(drSCDTLSHP(i).Item("sds_ctnstr"))) & "','" & Trim(UCaseNotNull(drSCDTLSHP(i).Item("sds_ctnend"))) & _
+                            "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_ttlctn")) & "','" & Replace(UCaseNotNull(drSCDTLSHP(i).Item("sds_dest")), "'", "''") & "','" & _
+                            Replace(UCaseNotNull(drSCDTLSHP(i).Item("sds_rmk")), "'", "''") & "','" & LCase(gsUsrID) & "'"
 
-                    gspStr = "sp_update_SCDTLSHP '" & cboCoCde.Text & "','" & UCaseNotNull(txtSCNo.Text) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_seq")) & "','" & _
-                        UCaseNotNull(drSCDTLSHP(i).Item("sds_shpseq")) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_scfrom")) & "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_scto")) & _
-                        "','" & po_from & "','" & po_to & "','" & _
-                        UCaseNotNull(drSCDTLSHP(i).Item("sds_ordqty")) & "','" & UCaseNotNull(Trim(drSCDTLSHP(i).Item("sds_ctnstr"))) & "','" & Trim(UCaseNotNull(drSCDTLSHP(i).Item("sds_ctnend"))) & _
-                        "','" & UCaseNotNull(drSCDTLSHP(i).Item("sds_ttlctn")) & "','" & Replace(UCaseNotNull(drSCDTLSHP(i).Item("sds_dest")), "'", "''") & "','" & _
-                        Replace(UCaseNotNull(drSCDTLSHP(i).Item("sds_rmk")), "'", "''") & "','" & LCase(gsUsrID) & "'"
-
-                    rtnLong = execute_SQLStatement(gspStr, rs, rtnStr)
-                    If rtnLong <> RC_SUCCESS Then  '*** An error has occured
-                        MsgBox("Error on saving SCM00001 #097 sp_update_SCDTLSHP : " & rtnStr)
-                        isUpdated = False
-                    Else
-                        isUpdated = True
+                        rtnLong = execute_SQLStatement(gspStr, rs, rtnStr)
+                        If rtnLong <> RC_SUCCESS Then  '*** An error has occured
+                            MsgBox("Error on saving SCM00001 #097 sp_update_SCDTLSHP : " & rtnStr)
+                            isUpdated = False
+                        Else
+                            isUpdated = True
+                        End If
                     End If
                 End If
             Next
@@ -2627,11 +2660,12 @@ Public Class SCM00001
             End If
 
             setStatus("Save")
-            cmdClear.PerformClick()
+            mmdClear.PerformClick()
         End If
     End Sub
 
-    Private Sub cmdCopy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCopy.Click
+    Private Sub mmdCopy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdCopy.Click
+        If checkFocus(Me) Then Exit Sub
         If Cust_InActive = True And Not rs_CUBASINF_P.Tables.Count = 0 Then
             MsgBox("This SC's Customer is Inactive Status or Deleted from Customer Master", MsgBoxStyle.Information, "Message")
             Exit Sub
@@ -2652,7 +2686,7 @@ Public Class SCM00001
         panSCCopyCust.Visible = True
         loadPanSCCopyCust()
     End Sub
-    'Private Sub cmdCopy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCopy.Click
+    'Private Sub mmdCopy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdCopy.Click
     '    gsCompany = Trim(cboCoCde.Text)
 
     '    If Cust_InActive = True And Not rs_CUBASINF_P.Tables.Count = 0 Then
@@ -3130,7 +3164,8 @@ Public Class SCM00001
     '    End If
     'End Sub
 
-    Public Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFind.Click
+    Public Sub mmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFind.Click
+        'If checkFocus(Me) Then Exit Sub
         '*** perform query on database after user input an item number
         If (Trim(txtSCNo.Text) = "") Then
             If txtSCNo.Enabled And txtSCNo.Visible Then
@@ -3290,7 +3325,7 @@ Public Class SCM00001
 
         If rtnLong <> RC_SUCCESS Then
             Me.Cursor = Windows.Forms.Cursors.Default
-            MsgBox("Error on loading SCM00001 #018 sp_select_SCDTLSHP : " & rtnStr)
+            MsgBox("Error on loading SCMm00001 #018 sp_select_SCDTLSHP : " & rtnStr)
             Exit Sub
         Else
             For i As Integer = 0 To rs_SCDTLSHP.Tables("RESULT").Columns.Count - 1
@@ -3417,7 +3452,12 @@ Public Class SCM00001
         Next
     End Sub
 
-    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
+    Private Sub mmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
+        mmdClearClicked = True
+        If checkFocus(Me) Then
+            mmdClearClicked = False
+            Exit Sub
+        End If
         Dim YesNoCancel As Integer
         Dim status As String
 
@@ -3427,7 +3467,7 @@ Public Class SCM00001
             status = Split(cboSCStatus.Text, " - ")(0)
         End If
 
-        If cmdSave.Enabled = False Then
+        If mmdSave.Enabled = False Then
             recordStatus = False
         End If
 
@@ -3439,9 +3479,9 @@ Public Class SCM00001
             End If
 
             If YesNoCancel = MsgBoxResult.Yes Then
-                If cmdSave.Enabled Then
+                If mmdSave.Enabled Then
                     exitFlag = True
-                    cmdSave.PerformClick()
+                    mmdSave.PerformClick()
                     If save_ok = True Then
                         Temp_SCno = txtSCNo.Text
                         initFlag = True
@@ -3469,9 +3509,11 @@ Public Class SCM00001
         End If
 
         Call fillcboPriCust()
+        mmdClearClicked = False
     End Sub
 
-    Private Sub cmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSearch.Click
+    Private Sub mmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSearch.Click
+        If checkFocus(Me) Then Exit Sub
         Dim frmSYM00018 As New SYM00018
 
         frmSYM00018.keyName = txtSCNo.Name
@@ -3480,7 +3522,8 @@ Public Class SCM00001
         frmSYM00018.show_frmSYM00018(Me)
     End Sub
 
-    Private Sub cmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdInsRow.Click
+    Private Sub mmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdInsRow.Click
+        If checkFocus(Me) Then Exit Sub
         recordStatus = True
         If tabFrame.SelectedIndex = tabFrame_DisPrm Then
             Dim dr() As DataRow
@@ -3586,7 +3629,8 @@ Public Class SCM00001
         End If
     End Sub
 
-    Private Sub cmdDelRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdDelRow.Click
+    Private Sub mmdDelRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdDelRow.Click
+        If checkFocus(Me) Then Exit Sub
         recordStatus = True
         If tabFrame.SelectedIndex = tabFrame_DisPrm Then
             If focusedObject = "grdDis" Then
@@ -3649,15 +3693,23 @@ Public Class SCM00001
         End If
     End Sub
 
-    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdExit.Click
+    Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
+        mmdExitClicked = True
+        If checkFocus(Me) Then
+            mmdExitClicked = False
+            Exit Sub
+        End If
+
+
         Close()
+        mmdExitClicked = False
     End Sub
 
     Private Sub disableUnusedButtons()
-        cmdFirst.Enabled = False
-        cmdPrevious.Enabled = False
-        cmdNext.Enabled = False
-        cmdLast.Enabled = False
+        'cmdFirst.Enabled = False
+        'cmdPrevious.Enabled = False
+        'cmdNext.Enabled = False
+        'cmdLast.Enabled = False
     End Sub
 
     Private Sub loadSCItemStatus()
@@ -3771,12 +3823,15 @@ Public Class SCM00001
             SetStatusBar(Mode)
             tabFrame.SelectedTab = frmHdr
             MaxSeq = 0
-            cmdAdd.Enabled = Enq_right_local
-            cmdSave.Enabled = False
-            cmdInsRow.Enabled = False
-            cmdDelete.Enabled = False
-            cmdDelRow.Enabled = False
-
+            mmdAdd.Enabled = Enq_right_local
+            mmdSave.Enabled = False
+            mmdInsRow.Enabled = False
+            mmdDelete.Enabled = False
+            mmdDelRow.Enabled = False
+            mmdPrint.Enabled = False
+            mmdAttach.Enabled = False
+            mmdFunction.Enabled = False
+            mmdLink.Enabled = False
             cboCoCde.Enabled = True
             txtConftr.Text = ""
             chkPC.Checked = False
@@ -3784,16 +3839,16 @@ Public Class SCM00001
 
             cboCustUM.Enabled = False
 
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = True
-            cmdExit.Enabled = True
-            cmdClear.Enabled = True
-            cmdSearch.Enabled = True
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = True
+            mmdExit.Enabled = True
+            mmdClear.Enabled = True
+            mmdSearch.Enabled = True
 
-            cmdFirst.Enabled = False
-            cmdLast.Enabled = False
-            cmdNext.Enabled = False
-            cmdPrevious.Enabled = False
+            'cmdFirst.Enabled = False
+            'cmdLast.Enabled = False
+            'cmdNext.Enabled = False
+            'cmdPrevious.Enabled = False
             cmdCtnSeq.Enabled = False
 
             '***Fill Default Date******
@@ -3844,20 +3899,20 @@ Public Class SCM00001
             imu_key.Text = ""
 
             If formError = True Then
-                cmdAdd.Enabled = False
-                cmdSave.Enabled = False
-                cmdCopy.Enabled = False
-                cmdInsRow.Enabled = False
-                cmdDelete.Enabled = False
-                cmdDelRow.Enabled = False
-                cmdFind.Enabled = False
-                cmdExit.Enabled = True
-                cmdClear.Enabled = False
-                cmdSearch.Enabled = False
-                cmdFirst.Enabled = False
-                cmdLast.Enabled = False
-                cmdNext.Enabled = False
-                cmdPrevious.Enabled = False
+                mmdAdd.Enabled = False
+                mmdSave.Enabled = False
+                mmdCopy.Enabled = False
+                mmdInsRow.Enabled = False
+                mmdDelete.Enabled = False
+                mmdDelRow.Enabled = False
+                mmdFind.Enabled = False
+                mmdExit.Enabled = True
+                mmdClear.Enabled = False
+                mmdSearch.Enabled = False
+                'cmdFirst.Enabled = False
+                'cmdLast.Enabled = False
+                'cmdNext.Enabled = False
+                'cmdPrevious.Enabled = False
                 txtSCNo.Enabled = False
             End If
 
@@ -3915,15 +3970,25 @@ Public Class SCM00001
         ElseIf Mode = "ADD" Then
             SetInputBoxesStatus("EnableAll")
             disableUnusedButtons()
+            mmdExit.Enabled = True
+            mmdClear.Enabled = True
+            mmdSave.Enabled = True
             SetStatusBar(Mode)
             reUpdateFlag = False
-            cmdDelete.Enabled = False
-            cmdInsRow.Enabled = True
-            cmdDelRow.Enabled = True
-            cmdAdd.Enabled = False
-            cmdFind.Enabled = False
-            cmdSearch.Enabled = False
-            cmdCopy.Enabled = False
+
+            mmdDelete.Enabled = False
+            mmdInsRow.Enabled = True
+            mmdDelRow.Enabled = True
+            mmdAdd.Enabled = False
+            mmdFind.Enabled = False
+            mmdSearch.Enabled = False
+            mmdCopy.Enabled = False
+            mmdPrint.Enabled = False
+            mmdAttach.Enabled = False
+            mmdFunction.Enabled = False
+            mmdLink.Enabled = False
+
+
             txtSCVerNo.Text = 1
             txtSCVerNo.Enabled = False
             txtSCVerNo.BackColor = Color.White
@@ -4263,13 +4328,23 @@ Public Class SCM00001
             txtEmail.Enabled = True
             '
 
-            cmdAdd.Enabled = False
-            cmdSave.Enabled = Enq_right_local
-            cmdCopy.Enabled = Enq_right_local
-            cmdInsRow.Enabled = Enq_right_local
-            cmdDelRow.Enabled = Enq_right_local
-            'cmdDelete.Enabled = Del_right_local
-            cmdDelete.Enabled = False
+            mmdAdd.Enabled = False
+            mmdSave.Enabled = Enq_right_local
+            mmdCopy.Enabled = Enq_right_local
+            mmdInsRow.Enabled = Enq_right_local
+            mmdDelRow.Enabled = Enq_right_local
+            Dim drAccess() As DataRow = rs_SYUSRGRP_right.Tables("RESULT").Select("yug_usrfun = 'SCR00001' and yug_usrgrp = '" & gsUsrGrp & "'")
+            If drAccess.Length = 0 Then
+                mmdPrint.Enabled = False
+            Else
+                mmdPrint.Enabled = True
+            End If
+            mmdAttach.Enabled = False
+            mmdFunction.Enabled = False
+            mmdLink.Enabled = False
+            'mmdDelete.Enabled = Del_right_local
+            mmdDelete.Enabled = False
+
 
             'If gsUsrGrp = "CED-S" Or gsUsrGrp = "SAL-ZS" Then
             '    cmdItmCstEn.Enabled = True
@@ -4287,10 +4362,10 @@ Public Class SCM00001
             txtDVTtlCst.Enabled = False
 
 
-            cmdFind.Enabled = False
-            cmdSearch.Enabled = False
-            cmdExit.Enabled = True
-            cmdClear.Enabled = True
+            mmdFind.Enabled = False
+            mmdSearch.Enabled = False
+            mmdExit.Enabled = True
+            mmdClear.Enabled = True
 
             '****Header********
             cboCoCde.Enabled = False
@@ -4396,13 +4471,27 @@ Public Class SCM00001
             '*********Check SC Status***************************
             If rs_SCORDHDR.Tables("RESULT").Rows(0)("soh_ordsts") <> "ACT" And rs_SCORDHDR.Tables("RESULT").Rows(0)("soh_ordsts") <> "HLD" Then
                 SetInputBoxesStatus("DisableAll")
+                mmdAdd.Enabled = False
+                mmdSave.Enabled = False
+                mmdInsRow.Enabled = False
+                mmdDelete.Enabled = False
+                mmdDelRow.Enabled = False
+                mmdPrint.Enabled = False
+                mmdAttach.Enabled = False
+                mmdFunction.Enabled = False
+                mmdLink.Enabled = False
+                mmdCopy.Enabled = False
+                mmdFind.Enabled = False
+                mmdClear.Enabled = False
+                mmdSearch.Enabled = False
+
                 'SSTab1.Enabled = True
                 dgSummary.Enabled = True
-                cmdExit.Enabled = True
-                cmdClear.Enabled = True
+                mmdExit.Enabled = True
+                mmdClear.Enabled = True
 
-                '                cmdCopy.Enabled = True
-                cmdCopy.Enabled = Enq_right_local
+                '                mmdCopy.Enabled = True
+                mmdCopy.Enabled = Enq_right_local
 
                 chkApprove.Enabled = False
                 optMain.Enabled = True
@@ -4434,7 +4523,12 @@ Public Class SCM00001
                 frmDtl.Enabled = True
                 frmShpDoc.Enabled = True
                 frmSum.Enabled = True
-
+                drAccess = rs_SYUSRGRP_right.Tables("RESULT").Select("yug_usrfun = 'SCR00001' and yug_usrgrp = '" & gsUsrGrp & "'")
+                If drAccess.Length = 0 Then
+                    mmdPrint.Enabled = False
+                Else
+                    mmdPrint.Enabled = True
+                End If
             Else
                 '***************************************************
                 'If rs_SCORDHDR.Tables("RESULT").Rows(0)("soh_smpsc") = "Y" Then
@@ -5675,7 +5769,7 @@ Public Class SCM00001
             txtEndCarton.Enabled = False
             chkDelDtl.Enabled = False
             chkUpdatePO.Enabled = False
-            chkChgFty.Enabled = False
+            chkChgFtyEnableCtrl(False)
             txtVenno.Enabled = False
             cboPrdVen.Enabled = False
             cboCusVen.Enabled = False
@@ -5853,7 +5947,7 @@ Public Class SCM00001
             txtDtlTotalCTN.Enabled = False
             txtEndCarton.Enabled = False
             chkUpdatePO.Enabled = False
-            chkChgFty.Enabled = False
+            chkChgFtyEnableCtrl(False)
             txtVenno.Enabled = False
             cboPrdVen.Enabled = False
             cboCusVen.Enabled = False
@@ -6013,7 +6107,7 @@ Public Class SCM00001
             txtEndCarton.Enabled = True
             chkDelDtl.Enabled = True
             chkUpdatePO.Enabled = False
-            chkChgFty.Enabled = False
+            chkChgFtyEnableCtrl(False)
             txtVenno.Enabled = False
             cboPrdVen.Enabled = True
             cboCusVen.Enabled = True
@@ -6031,7 +6125,7 @@ Public Class SCM00001
             cmdUpdItmPckInfo.Enabled = False
             cmdRplSeq.Enabled = True
             txtDept.ReadOnly = False
-
+            cmdCtnSeq.Enabled = True
             ' Added by Mark Lau 20080611
             cboCustUM.Enabled = True
 
@@ -6047,7 +6141,7 @@ Public Class SCM00001
             cmdMoreFieldsClrAll.Enabled = True
             cmdMoreFieldsIns.Enabled = True
             cmdMoreFieldsCancel.Enabled = True
-
+            cmdCtnSeq.Enabled = True
             '***********************************************************************************************
             '***************************************UPDATE RECORD*******************************************
             '***********************************************************************************************
@@ -6177,11 +6271,11 @@ Public Class SCM00001
             chkDelDtl.Enabled = True
             If Me.txtSCVerNo.Text <> "1" Then
                 chkUpdatePO.Enabled = True
-                chkChgFty.Enabled = True
+                chkChgFtyEnableCtrl(True)
             Else
                 'txtMOQChg.Enabled = True
                 chkUpdatePO.Enabled = False
-                chkChgFty.Enabled = False
+                chkChgFtyEnableCtrl(False)
             End If
             txtVenno.Enabled = False
             cboPrdVen.Enabled = True
@@ -6204,7 +6298,7 @@ Public Class SCM00001
             txtDtlPORmk.Enabled = True
             txtDtlPORmk.ReadOnly = False
             cmdRplSeq.Enabled = True
-
+            cmdCtnSeq.Enabled = True
             '**************Disable BOM Button*********************
             If rs_SCBOMINF.Tables("RESULT").Rows.Count > 0 Then
                 Dim drBOM() As DataRow = rs_SCBOMINF.Tables("RESULT").Select("sbi_ordseq = '" & currentOrdSeq & "'")
@@ -6406,7 +6500,7 @@ Public Class SCM00001
                 txtEndCarton.Enabled = False
                 chkDelDtl.Enabled = False
                 chkUpdatePO.Enabled = False
-                chkChgFty.Enabled = False
+            	chkChgFtyEnableCtrl(False)
                 txtVenno.Enabled = False
                 cboPrdVen.Enabled = False
                 cboCusVen.Enabled = False
@@ -6420,7 +6514,7 @@ Public Class SCM00001
                 txtDtlPORmk.Enabled = True
                 txtDtlPORmk.ReadOnly = True
                 cmdRplSeq.Enabled = False
-
+            cmdCtnSeq.Enabled = False
                 cboSeason.Enabled = False
 
                 cboCusStyNo.Enabled = False
@@ -6456,7 +6550,7 @@ Public Class SCM00001
                 chkPC.Enabled = True
                 txtDtlTotalCTN.Enabled = True
             ElseIf Mode = "Auth" Then
-                cmdSave.Enabled = True
+                mmdSave.Enabled = True
                 txtUntPrc.Enabled = True
                 txtPCPrc.Enabled = True
                 txtDtlTotalCTN.Enabled = True
@@ -6653,7 +6747,17 @@ Public Class SCM00001
 
             If typ <> "INIT" And typ <> "DEL" Then
                 setDtlStatus("INIT")
-                Display_Dtl("SCORDDTL")
+                If rs_SCORDDTL.Tables("RESULT").Rows(currentRow)("sod_itmno").ToString = "" And rs_SCORDDTL.Tables("RESULT").Rows(currentRow)("sod_creusr").ToString = "~*NEW*~" Then
+                    setDtlStatus("FIND")
+                    recordMove("INIT")
+                    Display_Dtl("ADD")
+                    lblDtlSeq.Text = rs_SCORDDTL.Tables("RESULT").Rows(currentRow)("sod_ordseq").ToString
+                    chkDelDtl.Checked = True
+                    setDtlStatus("INIT")
+                Else
+                    Display_Dtl("SCORDDTL")
+                End If
+
                 'bbccdd
                 If historyFlag = True Or (Split(cboSCStatus.Text, " - ")(0) <> "ACT" And Split(cboSCStatus.Text, " - ")(0) <> "HLD") Then
                     setDtlStatus("HIST")
@@ -9975,7 +10079,7 @@ Public Class SCM00001
 
     Private Sub EnterKeyPressed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtSCNo.KeyPress
         If Asc(e.KeyChar) = 13 Then
-            cmdFind.PerformClick()
+            mmdFind.PerformClick()
         End If
     End Sub
 
@@ -10247,22 +10351,22 @@ Public Class SCM00001
                     Case 17
                         dgSummary_CusItm = i
                         .Columns(i).HeaderText = "Cust Item #"
-                        .Columns(i).Width = 80
+                        .Columns(i).Width = 150
                         .Columns(i).ReadOnly = True
                     Case 18
                         dgSummary_CusSKU = i
                         .Columns(i).HeaderText = "Cust SKU #"
-                        .Columns(i).Width = 80
+                        .Columns(i).Width = 150
                         .Columns(i).ReadOnly = True
                     Case 19
                         dgSummary_SecCusItm = i
                         .Columns(i).HeaderText = "Sec Cust Item #"
-                        .Columns(i).Width = 100
+                        .Columns(i).Width = 170
                         .Columns(i).ReadOnly = True
                     Case 25
                         dgSummary_ColPck = i
                         .Columns(i).HeaderText = "(Color/UM/Inner/Master/CFT/CBM/FTY PrcTrm/HK PrcTrm/TranTrm)"
-                        .Columns(i).Width = 210
+                        .Columns(i).Width = 400
                         .Columns(i).ReadOnly = True
                     Case 37
                         dgSummary_PrcGrp = i
@@ -10772,7 +10876,6 @@ Public Class SCM00001
             'Else
             '    prev_tab = tabFrame.SelectedIndex
         End If
-
         prev_tab = tabFrame.SelectedIndex
     End Sub
 
@@ -11623,10 +11726,21 @@ inputx:
             For i As Integer = 0 To rs_SCORDDTL.Tables("RESULT").Rows.Count - 1
                 rs_SCORDDTL.Tables("RESULT").Rows(i)("sod_ctnstr") = CtnStart
                 rs_SCORDDTL.Tables("RESULT").Rows(i)("sod_ctnend") = CtnStart + rs_SCORDDTL.Tables("RESULT").Rows(i)("sod_ttlctn") - 1
+                Dim CtnShpStart As Integer = CLng(X)
+                Dim drShp() As DataRow = rs_SCDTLSHP.Tables("RESULT").Select("sds_seq = " + rs_SCORDDTL.Tables("RESULT").Rows(i)("sod_ordseq").ToString())
+                For shpIndex As Integer = 0 To drShp.Length - 1
+                    If drShp(shpIndex).Item("sds_status") <> "Y" Then
+                        drShp(shpIndex).Item("sds_ctnstr") = CtnShpStart
+                        CtnShpStart = CtnShpStart + drShp(shpIndex).Item("sds_ttlctn") - 1
+                        drShp(shpIndex).Item("sds_ctnend") = CtnShpStart
+                        CtnShpStart = CtnShpStart + 1
+                    End If
+                Next
             Next
         End If
 
         rs_SCORDDTL.AcceptChanges()
+        rs_SCDTLSHP.AcceptChanges()
         rs_SCORDDTL_Summary = rs_SCORDDTL.Copy
         initFlag = True
         dgSummary.DataSource = rs_SCORDDTL_Summary.Tables("RESULT").DefaultView
@@ -11634,7 +11748,9 @@ inputx:
         'rs_SCORDDTL_Summary.Tables("RESULT").DefaultView.Sort = sort_seq
         chkSCSeqReOrd.Checked = False
         Display_Summary()
+        skipFlagGenCtnSeq = True
         Display_Dtl("SCORDDTL")
+        skipFlagGenCtnSeq = False
         skipDVErrorFlag = True
         recordMove("LOAD")
         skipDVErrorFlag = False
@@ -11643,6 +11759,8 @@ inputx:
     Private Sub Auto_gen_Carton(ByVal X As Long)
         Dim LastCarton As Long
         LastCarton = X
+        Dim LastShpCtn As Long
+        LastShpCtn = X
         If rs_SCORDDTL.Tables("RESULT").Rows.Count > 0 Then
             'rs_SCORDDTL.Filter = "sod_cusitm = '' and sod_creusr <> '~*DEL*~' and sod_creusr <> '~*NEW*~' and sod_ordqty > 0"
             Dim dr() As DataRow = rs_SCORDDTL.Tables("RESULT").Select("sod_cusitm = '' and sod_creusr <> '~*DEL*~' and sod_creusr <> '~*NEW*~' and sod_ordqty > 0")
@@ -11659,6 +11777,21 @@ inputx:
                         dr(i).Item("sod_ctnstr") = LastCarton
                         dr(i).Item("sod_ctnend") = CInt(dr(i).Item("sod_ctnstr")) + CInt(dr(i).Item("sod_ttlctn")) - 1
                         LastCarton = dr(i).Item("sod_ctnend") + 1
+
+                        Dim drShp() As DataRow = rs_SCDTLSHP.Tables("RESULT").Select("sds_seq = " + dr(i).Item("sod_ordseq").ToString())
+                        If drShp.Length > 0 Then
+                            For shpIndex As Integer = 0 To drShp.Length - 1
+                                If drShp(shpIndex).Item("sds_status") <> "Y" Then
+                                    drShp(shpIndex).Item("sds_ctnstr") = LastShpCtn
+                                    LastShpCtn = LastShpCtn + drShp(shpIndex).Item("sds_ttlctn") - 1
+                                    drShp(shpIndex).Item("sds_ctnend") = LastShpCtn
+                                    LastShpCtn = LastShpCtn + 1
+                                End If
+                            Next
+                        Else
+                            LastShpCtn = LastCarton
+                        End If
+
                         If dr(i).Item("sod_creusr") <> "~*ADD*~" And dr(i).Item("sod_creusr") <> "~*DEL*~" And _
                            dr(i).Item("sod_creusr") <> "~*NEW*~" Then
                             dr(i).Item("sod_creusr") = "~*UPD*~"
@@ -11676,6 +11809,21 @@ inputx:
                         dr(i).Item("sod_ctnstr") = LastCarton
                         dr(i).Item("sod_ctnend") = CInt(dr(i).Item("sod_ctnstr")) + CInt(dr(i).Item("sod_ttlctn")) - 1
                         LastCarton = dr(i).Item("sod_ctnend") + 1
+
+                        Dim drShp() As DataRow = rs_SCDTLSHP.Tables("RESULT").Select("sds_seq = " + dr(i).Item("sod_ordseq").ToString())
+                        If drShp.Length > 0 Then
+                            For shpIndex As Integer = 0 To drShp.Length - 1
+                                If drShp(shpIndex).Item("sds_status") <> "Y" Then
+                                    drShp(shpIndex).Item("sds_ctnstr") = LastShpCtn
+                                    LastShpCtn = LastShpCtn + drShp(shpIndex).Item("sds_ttlctn") - 1
+                                    drShp(shpIndex).Item("sds_ctnend") = LastShpCtn
+                                    LastShpCtn = LastShpCtn + 1
+                                End If
+                            Next
+                        Else
+                            LastShpCtn = LastCarton
+                        End If
+
                         If dr(i).Item("sod_creusr") <> "~*ADD*~" And dr(i).Item("sod_creusr") <> "~*DEL*~" And _
                            dr(i).Item("sod_creusr") <> "~*NEW*~" Then
                             dr(i).Item("sod_creusr") = "~*UPD*~"
@@ -11882,7 +12030,8 @@ inputx:
     End Sub
 
     Private Sub check_numeric_format(ByVal sender As System.Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles txtItmCst.Validating, txtBOMCst.Validating, txtTtlCst.Validating, txtDVItmCst.Validating, txtDVBOMCst.Validating, txtDVTtlCst.Validating, txtTtlCst.Validating, txtItmCst.Validating, txtDVTtlCst.Validating, txtDVItmCst.Validating, txtDVBOMCst.Validating, txtBOMCst.Validating
-        If cmdClear.Focused = True Or cmdExit.Focused = True Then
+        'If cmdClear.Focused = True Or cmdExit.Focused = True Then
+        If mmdClearClicked = True Or mmdExitClicked = True Then
             Exit Sub
         End If
 
@@ -12098,7 +12247,7 @@ inputx:
     End Sub
 
     Private Sub chkDelDtl_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkDelDtl.CheckedChanged
-        If cmdDelRow.Enabled = False Then
+        If mmdDelRow.Enabled = False Then
             Exit Sub
         End If
         If chkDelDtl.Enabled = True Then
@@ -13245,7 +13394,8 @@ inputx:
     End Sub
 
     Private Sub isValidInput(ByVal sender As System.Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles cboPrcTrm.Validating, cboSecCust.Validating, cboSalesRep.Validating, cboPriCust.Validating, cboPayTrm.Validating, cboContactPerson.Validating, cboPanCopyCustSecCust.Validating, cboPanCopyCustPriCust.Validating
-        If cmdClear.Focused = True Or cmdExit.Focused = True Then
+        'If cmdClear.Focused = True Or cmdExit.Focused = True Then
+        If mmdClearClicked = True Or mmdExitClicked = True Then
             Exit Sub
         End If
 
@@ -13428,7 +13578,9 @@ inputx:
                 cboColPckInfo.Enabled = True
                 If cboColPckInfo.Enabled And cboColPckInfo.Visible Then cboColPckInfo.Focus()
                 'CTN_Clear(Trim(lblDtlSeq.Text))
-                SHP_Clear(Trim(lblDtlSeq.Text))
+                If skipFlagGenCtnSeq = False Then
+                    SHP_Clear(Trim(lblDtlSeq.Text))
+                End If
             End If
         End If
     End Sub
@@ -14098,7 +14250,7 @@ err_handle_MOQSC:
     End Sub
 
     Private Sub grdDis_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grdDis.CellClick
-        If cmdSave.Enabled = False Then
+        If mmdSave.Enabled = False Then
             Exit Sub
         End If
 
@@ -14146,7 +14298,7 @@ err_handle_MOQSC:
     End Sub
 
     Private Sub grdPre_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grdPre.CellClick
-        If cmdSave.Enabled = False Then
+        If mmdSave.Enabled = False Then
             Exit Sub
         End If
 
@@ -14355,7 +14507,7 @@ err_handle_MOQSC:
                 Dim intConftr As Integer
 
                 If rs_SCORDDTL.Tables("RESULT").Rows.Count > 0 Then
-                    Dim drMOQ() As DataRow = rs_SCORDDTL.Tables("RESULT").Select("sod_creusr <> '~*DEL*~'", "sod_ordseq")
+                    Dim drMOQ() As DataRow = rs_SCORDDTL.Tables("RESULT").Select("sod_creusr <> '~*DEL*~' and sod_creusr <> '~*NEW*~'", "sod_ordseq")
                     If drMOQ.Length > 0 Then
                         For i As Integer = 0 To drMOQ.Length - 1
 
@@ -14518,7 +14670,7 @@ err_handle_MOQSC:
                 checkDTL_HLD = True
                 '---
                 If rs_SCORDDTL.Tables("RESULT").Rows.Count > 0 Then
-                    Dim drPrice() As DataRow = rs_SCORDDTL.Tables("RESULT").Select("sod_creusr <> '~*DEL*~'")
+                    Dim drPrice() As DataRow = rs_SCORDDTL.Tables("RESULT").Select("sod_creusr <> '~*DEL*~'  and sod_creusr <> '~*NEW*~'")
                     If drPrice.Length > 0 Then
                         For i As Integer = 0 To drPrice.Length - 1
 
@@ -14633,7 +14785,7 @@ err_handle_MOQSC:
                 checkDTL_HLD = True
 
                 If rs_SCORDDTL.Tables("RESULT").Rows.Count > 0 Then
-                    Dim drOneTime() As DataRow = rs_SCORDDTL.Tables("RESULT").Select("sod_creusr <> '~*DEL*~'")
+                    Dim drOneTime() As DataRow = rs_SCORDDTL.Tables("RESULT").Select("sod_creusr <> '~*DEL*~'  and sod_creusr <> '~*NEW*~'")
                     If drOneTime.Length > 0 Then
                         For i As Integer = 0 To drOneTime.Length - 1
                             If drOneTime(i).Item("sod_oneprc") = "Y" Then
@@ -14659,7 +14811,7 @@ err_handle_MOQSC:
                 checkDTL_HLD = True
 
                 If rs_SCORDDTL.Tables("RESULT").Rows.Count > 0 Then
-                    Dim drChgFtyCst() As DataRow = rs_SCORDDTL.Tables("RESULT").Select("sod_creusr <> '~*DEL*~'")
+                    Dim drChgFtyCst() As DataRow = rs_SCORDDTL.Tables("RESULT").Select("sod_creusr <> '~*DEL*~'  and sod_creusr <> '~*NEW*~'")
                     If drChgFtyCst.Length > 0 Then
                         For i As Integer = 0 To drChgFtyCst.Length - 1
                             If drChgFtyCst(i).Item("sod_ftycst").ToString <> drChgFtyCst(i).Item("sod_ftycst_check").ToString Or drChgFtyCst(i).Item("sod_dvftycst").ToString <> drChgFtyCst(i).Item("sod_dvftycst_check").ToString Then
@@ -14708,7 +14860,7 @@ err_handle_MOQSC:
                 checkDTL_HLD = True
 
                 If rs_SCORDDTL.Tables("RESULT").Rows.Count > 0 Then
-                    Dim drChgUntPrc() As DataRow = rs_SCORDDTL.Tables("RESULT").Select("sod_creusr <> '~*DEL*~'")
+                    Dim drChgUntPrc() As DataRow = rs_SCORDDTL.Tables("RESULT").Select("sod_creusr <> '~*DEL*~'  and sod_creusr <> '~*NEW*~'")
                     If drChgUntPrc.Length > 0 Then
                         For i As Integer = 0 To drChgUntPrc.Length - 1
                             If drChgUntPrc(i).Item("sod_untprc").ToString <> drChgUntPrc(i).Item("sod_untprc_check").ToString Then
@@ -14765,7 +14917,7 @@ err_handle_MOQSC:
                 checkDTL_HLD = True
                 '---
                 If rs_SCORDDTL.Tables("RESULT").Rows.Count > 0 Then
-                    Dim drPeriod() As DataRow = rs_SCORDDTL.Tables("RESULT").Select("sod_creusr <> '~*DEL*~'")
+                    Dim drPeriod() As DataRow = rs_SCORDDTL.Tables("RESULT").Select("sod_creusr <> '~*DEL*~'  and sod_creusr <> '~*NEW*~'")
                     If drPeriod.Length > 0 Then
                         Dim drVendor As DataRow()
                         For i As Integer = 0 To drPeriod.Length - 1
@@ -15709,7 +15861,8 @@ err_handle_MOQSC:
     End Function
 
     Private Sub checkDate_Validating(ByVal sender As System.Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles txtStartShipDat.Validating, txtEndShipDat.Validating, txtCancelDat.Validating, txtCustPoDat.Validating, txtPOHdrCanDat.Validating, txtPanCopyCustStartShipDat.Validating, txtPanCopyCustEndShipDat.Validating, txtPanCopyCustCancelDat.Validating, txtPOHdrCanDatTo.Validating
-        If cmdExit.Focused = True Or cmdPanCopy_CustCancel.Focused = True Then
+        'If mmdExit.Focused = True Or cmdPanCopy_CustCancel.Focused = True Then
+        If cmdPanCopy_CustCancel.Focused = True Then
             Exit Sub
         End If
 
@@ -15976,7 +16129,8 @@ err_handle_MOQSC:
     End Sub
 
     Private Sub check_date_dtl(ByVal sender As System.Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles txtCanDat.Validating, txtPOCanDat.Validating
-        If cmdClear.Focused = True Or cmdExit.Focused = True Then
+        'If cmdClear.Focused = True Or cmdExit.Focused = True Then
+        If mmdClearClicked = True Or mmdExitClicked = True Then
             Exit Sub
         End If
 
@@ -16588,10 +16742,14 @@ err_handle_MOQSC:
 
     Private Sub freeze_TabControl(ByVal tabpageno As Integer)
         dispPOFlag = tabFrame.TabPages(tabFrame_UpdatePO).Enabled
-        dispSaveFlag = cmdSave.Enabled
-        dispCopyFlag = cmdCopy.Enabled
-        dispInsFlag = cmdInsRow.Enabled
-        dispDelFlag = cmdDelRow.Enabled
+        dispSaveFlag = mmdSave.Enabled
+        dispCopyFlag = mmdCopy.Enabled
+        dispInsFlag = mmdInsRow.Enabled
+        dispDelFlag = mmdDelRow.Enabled
+        dispPrintFlag = mmdPrint.Enabled
+        dispAttachFlag = mmdAttach.Enabled
+        dispFuncFlag = mmdFunction.Enabled
+        dispLinkFlag = mmdLink.Enabled
         dispPriCusFlag = cboPriCust.Enabled
         dispSecCusFlag = cboSecCust.Enabled
         dispApplyPOFlag = chkhdrpo.Enabled
@@ -16600,12 +16758,16 @@ err_handle_MOQSC:
         dispCanFlag = chkCancel.Enabled
         dispAprvFlag = chkApprove.Enabled
 
-        cmdSave.Enabled = False
-        cmdCopy.Enabled = False
-        cmdClear.Enabled = False
-        cmdInsRow.Enabled = False
-        cmdDelRow.Enabled = False
-        cmdExit.Enabled = False
+        mmdSave.Enabled = False
+        mmdCopy.Enabled = False
+        mmdClear.Enabled = False
+        mmdInsRow.Enabled = False
+        mmdDelRow.Enabled = False
+        mmdPrint.Enabled = False
+        mmdAttach.Enabled = False
+        mmdFunction.Enabled = False
+        mmdLink.Enabled = False
+        mmdExit.Enabled = False
 
         SetComboStatus(cboPriCust, "Disable")
         SetComboStatus(cboSecCust, "Disable")
@@ -16635,32 +16797,32 @@ err_handle_MOQSC:
 
     Private Sub release_TabControl()
         'If dispSaveFlag = True Then
-        '    cmdSave.Enabled = True
+        '    mmdSave.Enabled = True
         'Else
-        '    cmdSave.Enabled = False
+        '    mmdSave.Enabled = False
         'End If
 
         'If dispCopyFlag = True Then
-        '    cmdCopy.Enabled = True
+        '    mmdCopy.Enabled = True
         'Else
-        '    cmdCopy.Enabled = False
+        '    mmdCopy.Enabled = False
         'End If
 
-        'cmdClear.Enabled = True
+        'mmdClear.Enabled = True
 
         'If dispInsFlag = True Then
-        '    cmdInsRow.Enabled = True
+        '    mmdInsRow.Enabled = True
         'Else
-        '    cmdInsRow.Enabled = False
+        '    mmdInsRow.Enabled = False
         'End If
 
         'If dispDelFlag = True Then
-        '    cmdDelRow.Enabled = True
+        '    mmdDelRow.Enabled = True
         'Else
-        '    cmdDelRow.Enabled = False
+        '    mmdDelRow.Enabled = False
         'End If
 
-        'cmdExit.Enabled = True
+        'mmdExit.Enabled = True
 
         'If dispApplyPOFlag = True Then
         '    chkhdrpo.Enabled = True
@@ -16692,12 +16854,16 @@ err_handle_MOQSC:
         '    chkApprove.Enabled = False
         'End If
 
-        cmdSave.Enabled = dispSaveFlag
-        cmdCopy.Enabled = dispCopyFlag
-        cmdClear.Enabled = True
-        cmdInsRow.Enabled = dispInsFlag
-        cmdDelRow.Enabled = dispDelFlag
-        cmdExit.Enabled = True
+        mmdSave.Enabled = dispSaveFlag
+        mmdCopy.Enabled = dispCopyFlag
+        mmdClear.Enabled = True
+        mmdInsRow.Enabled = dispInsFlag
+        mmdDelRow.Enabled = dispDelFlag
+        mmdPrint.Enabled = dispPrintFlag
+        mmdAttach.Enabled = dispAttachFlag
+        mmdFunction.Enabled = dispFuncFlag
+        mmdLink.Enabled = dispLinkFlag
+        mmdExit.Enabled = True
         chkhdrpo.Enabled = dispApplyPOFlag
         chkCloseOut.Enabled = dispClsOutFlag
         chkReplacement.Enabled = dispRplmntFlag
@@ -16963,7 +17129,7 @@ err_handle_MOQSC:
         grpHeader.Enabled = False
         panHdrSCRmk.Width = 315
         panHdrSCRmk.Height = 206
-        panHdrSCRmk.Location = New Point(485, 244)
+        panHdrSCRmk.Location = New Point(496, 244)
         panHdrSCRmk.BringToFront()
         panHdrSCRmk.Visible = True
     End Sub
@@ -17050,7 +17216,7 @@ err_handle_MOQSC:
 
             recordStatus_dtl = True
             rplSeqFlag = True
-            cmdInsRow.PerformClick()
+            mmdInsRow.PerformClick()
             Dim e1 As New System.Windows.Forms.KeyPressEventArgs(Chr(13))
             txtItmno_KeyPress(sender, e1)
         End If
@@ -17816,7 +17982,7 @@ err_handle_MOQSC:
 
         dgAssort.Enabled = True
         display_Assortment()
-        If (Split(cboSCStatus.Text, " - ")(0) = "ACT" Or Split(cboSCStatus.Text, " - ")(0) = "HLD") And cmdSave.Enabled = True Then
+        If (Split(cboSCStatus.Text, " - ")(0) = "ACT" Or Split(cboSCStatus.Text, " - ")(0) = "HLD") And mmdSave.Enabled = True Then
             cmdPanDtlASSOK.Enabled = True
 
             If (gsUsrRank <= 4 And Enq_right_local) Or gsUsrGrp = "MGT-S" Then
@@ -18038,7 +18204,7 @@ err_handle_MOQSC:
         Else
             MsgBox("Not allow over 300 characters")
         End If
-        
+
     End Sub
 
     Private Sub cmdDtlPORmk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdDtlPORmk.Click
@@ -18096,7 +18262,7 @@ err_handle_MOQSC:
         Else
             MsgBox("Not allow over 300 characters")
         End If
-        
+
     End Sub
 
     Private Sub cmdPanDtlPORmkCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdPanDtlPORmkCancel.Click
@@ -18942,7 +19108,8 @@ err_handle_MOQSC:
     End Sub
 
     Private Sub dgSummary_RowValidated(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgSummary.RowValidated
-        If cmdClear.Focused = True Or cmdExit.Focused = True Or rs_SCORDDTL Is Nothing Or initFlag = True Then
+        'If cmdClear.Focused = True Or cmdExit.Focused = True Or rs_SCORDDTL Is Nothing Or initFlag = True Then
+        If mmdClearClicked = True Or mmdExitClicked = True Or rs_SCORDDTL Is Nothing Or initFlag = True Then
             Exit Sub
         End If
 
@@ -20156,7 +20323,7 @@ err_handle_MOQSC:
                 gspStr = "sp_Physical_Delete_PODISPRM '" & gsCompany & "','" & UCase(cboPONo.Items(i)) & "','D','" & drPODISPRM_D(j).Item("pdp_seqno") & "'"
                 rtnLong = execute_SQLStatement(gspStr, rs_PODISPRM_DEL, rtnStr)
                 If rtnLong <> RC_SUCCESS Then
-                    MsgBox("Error on loading POM00001 cmdSave_Click sp_Physical_Delete_PODISPRM : " & rtnStr)
+                    MsgBox("Error on loading POM00001 mmdSave_Click sp_Physical_Delete_PODISPRM : " & rtnStr)
                     Me.Cursor = Windows.Forms.Cursors.Default
                     Exit Sub
                 Else
@@ -20179,7 +20346,7 @@ err_handle_MOQSC:
                         drPODISPRM_D_ADD(j).Item("pdp_paamt") & "','" & gsUsrID & "'"
                 rtnLong = execute_SQLStatement(gspStr, rs_PODISPRM_INS, rtnStr)
                 If rtnLong <> RC_SUCCESS Then
-                    MsgBox("Error on loading POM00001 cmdSave_Click sp_insert_PODISPRM : " & rtnStr)
+                    MsgBox("Error on loading POM00001 mmdSave_Click sp_insert_PODISPRM : " & rtnStr)
                     Me.Cursor = Windows.Forms.Cursors.Default
                     Exit Sub
                 Else
@@ -20201,7 +20368,7 @@ err_handle_MOQSC:
                         drPODISPRM_D_UPT(j).Item("pdp_paamt") & "','" & gsUsrID & "'"
                 rtnLong = execute_SQLStatement(gspStr, rs_PODISPRM_UPT, rtnStr)
                 If rtnLong <> RC_SUCCESS Then
-                    MsgBox("Error on loading POM00001 cmdSave_Click sp_Update_PODISPRM : " & rtnStr)
+                    MsgBox("Error on loading POM00001 mmdSave_Click sp_Update_PODISPRM : " & rtnStr)
                     Me.Cursor = Windows.Forms.Cursors.Default
                     isUpdated = False
                 Else
@@ -20222,7 +20389,7 @@ err_handle_MOQSC:
                 gspStr = "sp_Physical_Delete_PODISPRM '" & gsCompany & "','" & UCase(cboPONo.Items(i)) & "','P','" & drPODISPRM_P_DEL(j).Item("pdp_seqno") & "'"
                 rtnLong = execute_SQLStatement(gspStr, rs_PODISPRM_DEL2, rtnStr)
                 If rtnLong <> RC_SUCCESS Then
-                    MsgBox("Error on loading POM00001 cmdSave_Click SCDISPRMPre sp_Physical_Delete_PODISPRM : " & rtnStr)
+                    MsgBox("Error on loading POM00001 mmdSave_Click SCDISPRMPre sp_Physical_Delete_PODISPRM : " & rtnStr)
                     Me.Cursor = Windows.Forms.Cursors.Default
                     isUpdated = False
                 Else
@@ -20245,7 +20412,7 @@ err_handle_MOQSC:
                         drPODISPRM_P_ADD(j).Item("pdp_paamt") & "','" & gsUsrID & "'"
                 rtnLong = execute_SQLStatement(gspStr, rs_PODISPRM_INS2, rtnStr)
                 If rtnLong <> RC_SUCCESS Then
-                    MsgBox("Error on loading POM00001 cmdSave_Click SCDISPRMPre sp_insert_PODISPRM : " & rtnStr)
+                    MsgBox("Error on loading POM00001 mmdSave_Click SCDISPRMPre sp_insert_PODISPRM : " & rtnStr)
                     Me.Cursor = Windows.Forms.Cursors.Default
                     isUpdated = False
                 Else
@@ -20267,7 +20434,7 @@ err_handle_MOQSC:
                         drPODISPRM_P_UPT(j).Item("pdp_paamt") & "','" & gsUsrID & "'"
                 rtnLong = execute_SQLStatement(gspStr, rs_PODISPRM_UPT2, rtnStr)
                 If rtnLong <> RC_SUCCESS Then
-                    MsgBox("Error on loading POM00001 cmdSave_Click SCDISPRMPre drPODISPRM_P_UPT : " & rtnStr)
+                    MsgBox("Error on loading POM00001 mmdSave_Click SCDISPRMPre drPODISPRM_P_UPT : " & rtnStr)
                     Me.Cursor = Windows.Forms.Cursors.Default
                     isUpdated = False
                 Else
@@ -20292,7 +20459,7 @@ err_handle_MOQSC:
             End If
         End If
 
-        cmdClear.PerformClick()
+        mmdClear.PerformClick()
     End Sub
 
     Private Function checkUpdatePOHeader(ByVal purord As String, ByVal drPOORDHDR As DataRow) As Boolean
@@ -21448,12 +21615,12 @@ err_handle_MOQSC:
     End Function
 
     Private Sub txtItmDsc_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtItmDsc.KeyPress
-        If Asc(e.KeyChar) = 13 Then
-            If txtItmChiDsc.Enabled And txtItmChiDsc.Visible Then
-                txtItmChiDsc.Focus()
-                txtItmChiDsc.Select(txtItmChiDsc.TextLength, 0)
-            End If
-        End If
+        'If Asc(e.KeyChar) = 13 Then
+        '    If txtItmChiDsc.Enabled And txtItmChiDsc.Visible Then
+        '        txtItmChiDsc.Focus()
+        '        txtItmChiDsc.Select(txtItmChiDsc.TextLength, 0)
+        '    End If
+        'End If
     End Sub
 
     Private Sub setComboboxReadOnly(ByRef cbb As ComboBox, ByVal ctrlReadOnly As Boolean)
@@ -21517,6 +21684,12 @@ err_handle_MOQSC:
     End Sub
 
     Private Sub cmdPODisPrm_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdPODisPrm.Click
+        freeze_TabControl(tabFrame_UpdatePO)
+        grpUpdatePO.Enabled = False
+        panPODisPrm.Width = 700
+        panPODisPrm.Height = 396
+        panPODisPrm.Location = New Point(115, 150)
+
         If panPODisPrm.Visible = True Then
             panPODisPrm.Visible = False
         Else
@@ -22227,21 +22400,224 @@ err_handle_MOQSC:
     End Sub
 
     Private Sub cmdPODPQuit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdPODPQuit.Click
+
+        release_TabControl()
+        grpUpdatePO.Enabled = True
         panPODisPrm.Visible = False
         selectedRow = 0
         flag_grdcontrol = ""
     End Sub
 
     Private Sub txtItmChiDsc_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtItmChiDsc.KeyPress
-        If Asc(e.KeyChar) = 13 Then
-            If txtPckItr.Enabled And txtPckItr.Visible Then
-                txtPckItr.Focus()
-                txtPckItr.Select(txtPckItr.TextLength, 0)
-            End If
-        End If
+        'If Asc(e.KeyChar) = 13 Then
+        '    If txtPckItr.Enabled And txtPckItr.Visible Then
+        '        txtPckItr.Focus()
+        '        txtPckItr.Select(txtPckItr.TextLength, 0)
+        '    End If
+        'End If
     End Sub
 
     Private Sub cboPOStatus_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboPOStatus.SelectedIndexChanged
         txtPOStatus.Text = cboPOStatus.Text
+    End Sub
+
+	 Private Sub chkUpdatePOlEnableCtrl()
+        If chkChgFty.Checked = True Then
+            chkUpdatePO.Enabled = False
+        Else
+            chkUpdatePO.Enabled = True
+        End If
+    End Sub
+
+
+    Private Sub chkChgFtyEnableCtrl(ByVal enabled As Boolean)
+        If chkUpdatePO.Checked = True Then
+            chkChgFty.Enabled = False
+        Else
+            chkChgFty.Enabled = enabled
+        End If
+    End Sub
+
+    Private Sub mmdPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdPrint.Click
+        If checkFocus(Me) Then Exit Sub
+        SCReport = New SCR00001
+        SCReport.init_SCNo = txtSCNo.Text
+        SCReport.init_cocde = cboCoCde.Text
+        SCReport.ShowDialog()
+    End Sub
+
+#Region "Movable Panel"
+
+    Dim ProgramPosition, CursorPoint As Point
+    Dim movePanel As Panel = Nothing
+    Dim panelMoveTimer As Timer
+    Private setM
+
+    Private Sub setupMovablePanel(ByRef panel As Panel, ByVal title As String, ByVal custTitle As Label)
+        For Each ctrl As Control In panel.Controls
+            ctrl.Location = New Point(ctrl.Location.X, ctrl.Location.Y + 30)
+        Next
+
+        Dim panelTitle As Label = New Label
+        If custTitle Is Nothing Then
+            panelTitle.AutoSize = False
+            panelTitle.Dock = DockStyle.Top
+            panelTitle.TextAlign = ContentAlignment.MiddleCenter
+            panelTitle.Height = 30
+            panelTitle.BackColor = Color.DeepSkyBlue
+            panelTitle.Text = title
+        Else
+            panelTitle = custTitle
+        End If
+
+        AddHandler panel.VisibleChanged, AddressOf movablePanel_VisibleChanged
+
+        AddHandler panelTitle.MouseUp, AddressOf movablePanelHeader_MouseUp
+        AddHandler panelTitle.MouseDown, AddressOf movablePanelHeader_MouseDown
+        panel.Controls.Add(panelTitle)
+        panel.BringToFront()
+    End Sub
+
+    Private Sub RenewPanel(ByVal panel As Panel)
+        ProgramPosition = panel.Location
+        CursorPoint = Cursor.Position
+    End Sub
+
+    Private Sub SetPanelPosition(ByVal panel As Panel)
+        Dim X As Integer = 0
+        Dim Y As Integer = 0
+
+
+        Dim Xlimit As Integer
+        Dim Ylimit As Integer
+        If Me.FormBorderStyle = FormBorderStyle.FixedDialog Then
+
+            Xlimit = Me.Width - panel.Width - SystemInformation.HorizontalResizeBorderThickness
+            Ylimit = Me.Height - panel.Height - SystemInformation.VerticalResizeBorderThickness - SystemInformation.MenuHeight - SystemInformation.VerticalFocusThickness * 3
+        Else
+            Xlimit = Me.Width - panel.Width - SystemInformation.HorizontalResizeBorderThickness * 2
+            Ylimit = Me.Height - panel.Height - SystemInformation.VerticalResizeBorderThickness * 2 - SystemInformation.MenuHeight - SystemInformation.VerticalFocusThickness * 3
+
+        End If
+
+        'Xlimit = Me.ClientSize.Width - panel.Width
+        'Ylimit = Me.ClientSize.Height - panel.Height
+
+        If (ProgramPosition - CursorPoint + Cursor.Position).X > 0 And (ProgramPosition - CursorPoint + Cursor.Position).X < Xlimit Then
+            X = (ProgramPosition - CursorPoint + Cursor.Position).X
+        ElseIf (ProgramPosition - CursorPoint + Cursor.Position).X <= 0 Then
+            X = 0
+        Else
+            X = Xlimit
+        End If
+
+        If (ProgramPosition - CursorPoint + Cursor.Position).Y > 0 And (ProgramPosition - CursorPoint + Cursor.Position).Y < Ylimit Then
+            Y = (ProgramPosition - CursorPoint + Cursor.Position).Y
+        ElseIf (ProgramPosition - CursorPoint + Cursor.Position).Y <= 0 Then
+            Y = 0
+        Else
+            Y = Ylimit
+        End If
+
+        panel.Location = New Point(X, Y)
+    End Sub
+
+    Private Sub panelMoveTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Dim X As Integer = 0
+        Dim Y As Integer = 0
+        If Not (movePanel Is Nothing) Then
+            SetPanelPosition(movePanel)
+        End If
+
+
+
+    End Sub
+
+    Private Sub movablePanelHeader_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
+        Dim panel As Label = sender
+        movePanel = panel.Parent
+        panelMoveTimer.Enabled = True
+        panelMoveTimer.Start()
+        RenewPanel(movePanel)
+    End Sub
+
+    Private Sub movablePanelHeader_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
+        panelMoveTimer.Stop()
+        RenewPanel(movePanel)
+        movePanel = Nothing
+    End Sub
+
+    Private Sub movablePanel_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Dim panel As Panel = sender
+        panel.Height = panel.Height + 30
+    End Sub
+#End Region 
+
+    Private Sub cmdPanDtlShpDatGenCTNNo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdPanDtlShpDatGenCTNNo.Click
+        rs_SCDTLSHP_tmp.AcceptChanges()
+        dgSCShpDat.ClearSelection()
+
+        Dim dr() As DataRow = rs_SCDTLSHP_tmp.Tables("RESULT").Select("sds_seq = '" & currentOrdSeq & "' and " & "sds_status <> 'Y' and sds_ordqty = '0'")
+        If dr.Length > 0 Then
+            MsgBox("Order Quantity cannot be zero", MsgBoxStyle.Information, "SCM00001 - Detail Multiple Shipment")
+            For i As Integer = 0 To dgSCShpDat.Rows.Count - 1
+                If dgSCShpDat.Rows(i).Cells("sds_shpseq").Value = dr(0)("sds_shpseq") Then
+                    dgSCShpDat.Rows(i).Selected = True
+                End If
+            Next
+            Exit Sub
+        End If
+
+        dr = Nothing
+        dr = rs_SCDTLSHP_tmp.Tables("RESULT").Select("sds_seq = '" & currentOrdSeq & "' and " & "sds_status <> 'Y'")
+        If lblTotalCtn.Text <> txtPanDtlShpDatTtlCtn.Text And dr.Length > 0 Then
+            MsgBox("Total Ship Carton not equal to Total Carton", MsgBoxStyle.Information, "SCM00001 - Detail Multiple Shipment")
+            Exit Sub
+        End If
+
+        If dr.Length > 0 Then
+            Dim total As Integer
+            For i As Integer = 0 To dr.Length - 1
+                total = total + dr(i).Item("sds_ordqty")
+            Next
+
+            If total.ToString <> txtOrdQty.Text Then
+                MsgBox("Total Ship Qty not equal to Total Order Qty", MsgBoxStyle.Information, "SCM00001 - Detail Multiple Shipment")
+                Exit Sub
+            End If
+
+            rs_SCDTLSHP_tmp.AcceptChanges()
+        End If
+
+        'dr = Nothing
+        'dr = rs_SCDTLSHP_tmp.Tables("RESULT").Select("sds_seq = '" & currentOrdSeq & "' and " & "sds_status <> 'Y'")
+        Dim CtnNo As Long = 0
+        For i As Integer = 0 To rs_SCDTLSHP_tmp.Tables("RESULT").Rows.Count - 1
+            If rs_SCDTLSHP_tmp.Tables("RESULT").Rows(i)("sds_seq") = currentOrdSeq And rs_SCDTLSHP_tmp.Tables("RESULT").Rows(i)("sds_status") <> "Y" Then
+                rs_SCDTLSHP_tmp.Tables("RESULT").Rows(i)("sds_ctnstr") = CtnNo + 1
+                CtnNo = CtnNo + rs_SCDTLSHP_tmp.Tables("RESULT").Rows(i)("sds_ttlctn")
+                rs_SCDTLSHP_tmp.Tables("RESULT").Rows(i)("sds_ctnend") = CtnNo
+            End If
+        Next
+    End Sub
+
+    Private Sub mmdDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdDelete.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdAttach_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdAttach.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub menuStrip_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles menuStrip.ItemClicked
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdLink_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdLink.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdFunction_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFunction.Click
+        If checkFocus(Me) Then Exit Sub
     End Sub
 End Class

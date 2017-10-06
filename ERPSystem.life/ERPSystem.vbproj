@@ -3454,9 +3454,16 @@
       <DependentUpon>POM00001.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="POR00001.resx">
+      <DependentUpon>POR00001.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="POR00001Rpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>POR00001Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POR00003.resx">
+      <DependentUpon>POR00003.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="POR00003Rpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

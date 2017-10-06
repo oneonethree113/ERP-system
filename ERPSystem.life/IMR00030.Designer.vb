@@ -22,7 +22,7 @@ Partial Class IMR00030
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.grpProcessDate = New System.Windows.Forms.GroupBox
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IMR00030))
         Me.Label4 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
         Me.txtProcDatTo = New System.Windows.Forms.MaskedTextBox
@@ -31,27 +31,12 @@ Partial Class IMR00030
         Me.txtProcDatFm = New System.Windows.Forms.MaskedTextBox
         Me.Label6 = New System.Windows.Forms.Label
         Me.cmdShow = New System.Windows.Forms.Button
-        Me.grpProcessDate.SuspendLayout()
+        Me.Label8 = New System.Windows.Forms.Label
         Me.SuspendLayout()
-        '
-        'grpProcessDate
-        '
-        Me.grpProcessDate.Controls.Add(Me.Label4)
-        Me.grpProcessDate.Controls.Add(Me.Label3)
-        Me.grpProcessDate.Controls.Add(Me.txtProcDatTo)
-        Me.grpProcessDate.Controls.Add(Me.Label2)
-        Me.grpProcessDate.Controls.Add(Me.Label1)
-        Me.grpProcessDate.Controls.Add(Me.txtProcDatFm)
-        Me.grpProcessDate.Controls.Add(Me.Label6)
-        Me.grpProcessDate.Location = New System.Drawing.Point(12, 12)
-        Me.grpProcessDate.Name = "grpProcessDate"
-        Me.grpProcessDate.Size = New System.Drawing.Size(500, 58)
-        Me.grpProcessDate.TabIndex = 0
-        Me.grpProcessDate.TabStop = False
         '
         'Label4
         '
-        Me.Label4.Location = New System.Drawing.Point(354, 38)
+        Me.Label4.Location = New System.Drawing.Point(384, 100)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(100, 13)
         Me.Label4.TabIndex = 7
@@ -60,7 +45,7 @@ Partial Class IMR00030
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(175, 38)
+        Me.Label3.Location = New System.Drawing.Point(206, 100)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(100, 13)
         Me.Label3.TabIndex = 6
@@ -69,72 +54,89 @@ Partial Class IMR00030
         '
         'txtProcDatTo
         '
-        Me.txtProcDatTo.Location = New System.Drawing.Point(354, 15)
+        Me.txtProcDatTo.Location = New System.Drawing.Point(396, 77)
         Me.txtProcDatTo.Mask = "00/00/0000"
         Me.txtProcDatTo.Name = "txtProcDatTo"
-        Me.txtProcDatTo.Size = New System.Drawing.Size(100, 20)
+        Me.txtProcDatTo.Size = New System.Drawing.Size(127, 22)
         Me.txtProcDatTo.TabIndex = 5
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(328, 18)
+        Me.Label2.Location = New System.Drawing.Point(370, 80)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(20, 13)
+        Me.Label2.Size = New System.Drawing.Size(18, 12)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "To"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(139, 18)
+        Me.Label1.Location = New System.Drawing.Point(181, 80)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(30, 13)
+        Me.Label1.Size = New System.Drawing.Size(30, 12)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "From"
         '
         'txtProcDatFm
         '
-        Me.txtProcDatFm.Location = New System.Drawing.Point(175, 15)
+        Me.txtProcDatFm.Location = New System.Drawing.Point(217, 77)
         Me.txtProcDatFm.Mask = "00/00/0000"
         Me.txtProcDatFm.Name = "txtProcDatFm"
-        Me.txtProcDatFm.Size = New System.Drawing.Size(100, 20)
+        Me.txtProcDatFm.Size = New System.Drawing.Size(127, 22)
         Me.txtProcDatFm.TabIndex = 2
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(20, 18)
+        Me.Label6.Location = New System.Drawing.Point(62, 80)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(71, 13)
+        Me.Label6.Size = New System.Drawing.Size(63, 12)
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "Process Date"
         '
         'cmdShow
         '
-        Me.cmdShow.Location = New System.Drawing.Point(219, 78)
+        Me.cmdShow.Location = New System.Drawing.Point(259, 242)
         Me.cmdShow.Name = "cmdShow"
-        Me.cmdShow.Size = New System.Drawing.Size(92, 30)
+        Me.cmdShow.Size = New System.Drawing.Size(116, 40)
         Me.cmdShow.TabIndex = 1
         Me.cmdShow.Text = "&Show Report"
         Me.cmdShow.UseVisualStyleBackColor = True
         '
+        'Label8
+        '
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Blue
+        Me.Label8.Location = New System.Drawing.Point(62, 9)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(511, 23)
+        Me.Label8.TabIndex = 22
+        Me.Label8.Text = "Factory Approve Data Batch Report"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'IMR00030
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
-        Me.ClientSize = New System.Drawing.Size(525, 120)
+        Me.ClientSize = New System.Drawing.Size(634, 412)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cmdShow)
-        Me.Controls.Add(Me.grpProcessDate)
+        Me.Controls.Add(Me.txtProcDatTo)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.txtProcDatFm)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label6)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "IMR00030"
         Me.Text = "IMR00030 - Factory Approve Data Batch Report"
-        Me.grpProcessDate.ResumeLayout(False)
-        Me.grpProcessDate.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents grpProcessDate As System.Windows.Forms.GroupBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -143,4 +145,5 @@ Partial Class IMR00030
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtProcDatFm As System.Windows.Forms.MaskedTextBox
     Friend WithEvents cmdShow As System.Windows.Forms.Button
+    Friend WithEvents Label8 As System.Windows.Forms.Label
 End Class

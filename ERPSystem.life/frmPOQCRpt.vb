@@ -3,13 +3,16 @@
     Dim reportLoc_global As String
 
 
-    Public Sub New(ByVal pono As String)
+    Public Sub New(ByVal pono As String, ByRef mdiParent As Form)
 
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
         txtPONo.Text = pono
+        If Not (mdiParent Is Nothing) Then
+            Me.MdiParent = mdiParent
+        End If
         Call cmdOK_Click()
 
     End Sub
@@ -32,6 +35,7 @@
                 txtPONo.Enabled = False
                 cmdOK.Enabled = True
                 cmdClear.Enabled = True
+                Me.Show()
             End If
         End If
     End Sub

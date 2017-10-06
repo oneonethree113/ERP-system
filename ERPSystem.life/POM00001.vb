@@ -1,6 +1,7 @@
 ﻿Public Class POM00001
 
     Dim ShipmrkAttchmnt As SCM00001_ShpmrkAtchmt
+    Dim POReport As POR00001
 
     Public rs_POORDHDR As DataSet
     Public rs_SYSETINF As DataSet
@@ -182,30 +183,37 @@
 
             SetStatusBar(Mode)
             'DoEvents()
-            cmdAdd.Enabled = False '*** Access Right used  - added by Tommy on 10 March 2002
-            cmdSave.Enabled = False  '*** Access Right used  - added by Tommy on 10 March 2002
-            cmdCopy.Enabled = False
-            cmdInsRow.Enabled = False
+            mmdAdd.Enabled = False '*** Access Right used  - added by Tommy on 10 March 2002
+            mmdSave.Enabled = False  '*** Access Right used  - added by Tommy on 10 March 2002
+            mmdCopy.Enabled = False
+            mmdInsRow.Enabled = False
             cboCoCde.Enabled = True
 
-            cmdDelete.Enabled = False
-            cmdDelRow.Enabled = False
+            mmdDelete.Enabled = False
+            mmdDelRow.Enabled = False
 
 
-            cmdFind.Enabled = True
+            mmdFind.Enabled = True
             'CmdLookup.Enabled = True
 
-            cmdExit.Enabled = True
-            cmdClear.Enabled = True
-            cmdSearch.Enabled = True
-            CmdQCRpt.Enabled = True
+            mmdExit.Enabled = True
+            mmdClear.Enabled = True
+            mmdSearch.Enabled = True
+            tsmiQCRpt.Enabled = False
+            mmdFunction.Enabled = False
+            mmdPrint.Enabled = False
             'cmdspecial.Enabled = True
             'cmdbrowlist.Enabled = True
 
-            cmdfirst.Enabled = False
-            cmdlast.Enabled = False
-            cmdNext.Enabled = False
-            cmdPrv.Enabled = False
+            'cmdfirst.Enabled = False
+            'cmdlast.Enabled = False
+            'cmdNext.Enabled = False
+            'cmdPrv.Enabled = False
+
+            'mmdPrint.Enabled = False
+            mmdAttach.Enabled = False
+            'mmdFunction.Enabled = False
+            mmdLink.Enabled = False
 
             CmdDtlPre.Enabled = False
 
@@ -248,10 +256,16 @@
             ClearScreen()
         ElseIf Mode = "Updating" Then
             Call SetStatusBar(Mode)
-            cmdFind.Enabled = False
-            cmdSearch.Enabled = False
-            CmdQCRpt.Enabled = False
-
+            mmdFind.Enabled = False
+            mmdSearch.Enabled = False
+            tsmiQCRpt.Enabled = True
+            mmdFunction.Enabled = True
+            Dim drAccess() As DataRow = rs_SYUSRGRP_right.Tables("RESULT").Select("yug_usrfun = 'POR00001' and yug_usrgrp = '" & gsUsrGrp & "'")
+            If drAccess.Length = 0 Then
+                mmdPrint.Enabled = False
+            Else
+                mmdPrint.Enabled = True
+            End If
             txtPONo.Enabled = False
             txtPONo.BackColor = Color.White
             release_TabControl() 'SSTab1.Enabled = True
@@ -262,9 +276,9 @@
                 txtDiscnt.Enabled = True
             End If
 
-            cmdInsRow.Enabled = Enq_right_local 'True '*** Access Right used  - added by Tommy on 10 March 2002
-            cmdDelRow.Enabled = Del_right_local 'True '*** Access Right used  - added by Tommy on 10 March 2002
-            cmdSave.Enabled = Enq_right_local 'True '*** Access Right used  - added by Tommy on 10 March 2002
+            mmdInsRow.Enabled = Enq_right_local 'True '*** Access Right used  - added by Tommy on 10 March 2002
+            mmdDelRow.Enabled = Del_right_local 'True '*** Access Right used  - added by Tommy on 10 March 2002
+            mmdSave.Enabled = Enq_right_local 'True '*** Access Right used  - added by Tommy on 10 March 2002
 
         ElseIf Mode = "Save" Then
             Call setStatus("Init")
@@ -324,7 +338,9 @@
 
             GrdDis.Enabled = False
             GrdPre.Enabled = False
-            cmdSave.Enabled = False
+            mmdSave.Enabled = False
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
 
             '*** Modified by Johnson Lai as at 27-Jun-2002
             'Header
@@ -410,7 +426,8 @@
             '        txtLblCde3.Enabled = True
             '        txtLblCde3.Locked = False
             txtDRmk.Enabled = True
-            txtDRmk.ReadOnly = False
+            'txtDRmk.ReadOnly = False
+            txtDRmk.ReadOnly = True
 
             '*** END Modified by Johnson Lai as at 27-Jun-2002
 
@@ -430,7 +447,9 @@
 
             GrdDis.Enabled = True
             GrdPre.Enabled = True
-            cmdSave.Enabled = Enq_right_local 'True '*** Access Right used  - added by Tommy on 10 March 2002
+            mmdSave.Enabled = Enq_right_local 'True '*** Access Right used  - added by Tommy on 10 March 2002
+            mmdInsRow.Enabled = Enq_right_local
+            mmdDelRow.Enabled = Enq_right_local
         End If
 
         txtCusItm.Enabled = True
@@ -443,7 +462,7 @@
         txtCusCol.ReadOnly = True
         txtColDsc.Enabled = True
         txtColDsc.ReadOnly = True
-        txtPckitr.Enabled = True
+        txtPckItr.Enabled = True
         txtPckItr.ReadOnly = True
         txtDCusPno.Enabled = True
         txtDCusPno.ReadOnly = True
@@ -650,12 +669,13 @@
         End If
     End Sub
 
-    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdExit.Click
+    Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
+        If checkFocus(Me) Then Exit Sub
         Me.Close()
     End Sub
 
-    Public Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFind.Click
-
+    Public Sub mmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFind.Click
+        'If checkFocus(Me) Then Exit Sub
         find_flag = True
 
         If (Trim(txtPONo.Text) = "") Then
@@ -684,7 +704,7 @@
         gspStr = "sp_select_PODTLSHP '" & gsCompany & "','" & txtPONo.Text & "'"
         rtnLong = execute_SQLStatement(gspStr, rs_PODTLSHP, rtnStr)
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading POM00001 cmdFind_Click sp_select_PODTLSHP : " & rtnStr)
+            MsgBox("Error on loading POM00001 mmdFind_Click sp_select_PODTLSHP : " & rtnStr)
             Me.Cursor = Windows.Forms.Cursors.Default
             Exit Sub
         Else
@@ -696,7 +716,7 @@
         gspStr = "sp_select_PODTLASS '" & gsCompany & "','" & txtPONo.Text & "'"
         rtnLong = execute_SQLStatement(gspStr, rs_PODTLASS, rtnStr)
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading POM00001 cmdFind_Click sp_select_PODTLASS : " & rtnStr)
+            MsgBox("Error on loading POM00001 mmdFind_Click sp_select_PODTLASS : " & rtnStr)
             Me.Cursor = Windows.Forms.Cursors.Default
             Exit Sub
         Else
@@ -706,7 +726,7 @@
         gspStr = "sp_select_PODTLBOM '" & gsCompany & "','" & txtPONo.Text & "'"
         rtnLong = execute_SQLStatement(gspStr, rs_PODTLBOM, rtnStr)
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading POM00001 cmdFind_Click sp_select_PODTLBOM : " & rtnStr)
+            MsgBox("Error on loading POM00001 mmdFind_Click sp_select_PODTLBOM : " & rtnStr)
             Me.Cursor = Windows.Forms.Cursors.Default
             Exit Sub
         Else
@@ -718,7 +738,7 @@
         gspStr = "sp_list_VNBASINFC '" & gsCompany & "'"
         rtnLong = execute_SQLStatement(gspStr, rs_VNBASINF, rtnStr)
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading POM00001 cmdFind_Click sp_list_VNBASINFC : " & rtnStr)
+            MsgBox("Error on loading POM00001 mmdFind_Click sp_list_VNBASINFC : " & rtnStr)
             Me.Cursor = Windows.Forms.Cursors.Default
             Exit Sub
         Else
@@ -728,7 +748,7 @@
         gspStr = "sp_select_SYUSRRIGHT_Check '" & gsCompany & "','" & gsUsrID & "','" & txtPONo.Text & "','" & strModule & "'"
         rtnLong = execute_SQLStatement(gspStr, rs_SYUSRRIGHT, rtnStr)
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading POM00001 cmdFind_Click sp_select_SYUSRRIGHT_Check : " & rtnStr)
+            MsgBox("Error on loading POM00001 mmdFind_Click sp_select_SYUSRRIGHT_Check : " & rtnStr)
             Me.Cursor = Windows.Forms.Cursors.Default
             Exit Sub
         Else
@@ -739,7 +759,7 @@
         gspStr = "sp_select_POORDHDR '" & gsCompany & "','" & txtPONo.Text & "'"
         rtnLong = execute_SQLStatement(gspStr, rs_POORDHDR, rtnStr)
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading POM00001 cmdFind_Click sp_select_POORDHDR : " & rtnStr)
+            MsgBox("Error on loading POM00001 mmdFind_Click sp_select_POORDHDR : " & rtnStr)
             Me.Cursor = Windows.Forms.Cursors.Default
             Exit Sub
         Else
@@ -765,7 +785,7 @@
         gspStr = "sp_select_POCNTINF '" & gsCompany & "','" & txtPONo.Text & "'"
         rtnLong = execute_SQLStatement(gspStr, rs_POCNTINF, rtnStr)
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading POM00001 cmdFind_Click sp_select_POCNTINF : " & rtnStr)
+            MsgBox("Error on loading POM00001 mmdFind_Click sp_select_POCNTINF : " & rtnStr)
             Me.Cursor = Windows.Forms.Cursors.Default
             Exit Sub
         Else
@@ -774,7 +794,7 @@
         gspStr = "sp_select_PODISPRM '" & gsCompany & "','" & txtPONo.Text & "','D'"
         rtnLong = execute_SQLStatement(gspStr, rs_PODISPRM_D, rtnStr)
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading POM00001 cmdFind_Click sp_select_PODISPRM : " & rtnStr)
+            MsgBox("Error on loading POM00001 mmdFind_Click sp_select_PODISPRM : " & rtnStr)
             Me.Cursor = Windows.Forms.Cursors.Default
             Exit Sub
         Else
@@ -787,7 +807,7 @@
         gspStr = "sp_select_PODISPRM '" & gsCompany & "','" & txtPONo.Text & "','P'"
         rtnLong = execute_SQLStatement(gspStr, rs_PODISPRM_P, rtnStr)
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading POM00001 cmdFind_Click sp_select_PODISPRM : " & rtnStr)
+            MsgBox("Error on loading POM00001 mmdFind_Click sp_select_PODISPRM : " & rtnStr)
             Me.Cursor = Windows.Forms.Cursors.Default
             Exit Sub
         Else
@@ -800,7 +820,7 @@
         gspStr = "sp_select_POSHPMRK '" & gsCompany & "','" & txtPONo.Text & "'"
         rtnLong = execute_SQLStatement(gspStr, rs_POSHPMRK, rtnStr)
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading POM00001 cmdFind_Click sp_select_POSHPMRK : " & rtnStr)
+            MsgBox("Error on loading POM00001 mmdFind_Click sp_select_POSHPMRK : " & rtnStr)
             Me.Cursor = Windows.Forms.Cursors.Default
             Exit Sub
         Else
@@ -810,7 +830,7 @@
         gspStr = "sp_list_POORDDTL '" & gsCompany & "','" & txtPONo.Text & "'"
         rtnLong = execute_SQLStatement(gspStr, rs_POORDDTL, rtnStr)
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading POM00001 cmdFind_Click sp_list_POORDDTL : " & rtnStr)
+            MsgBox("Error on loading POM00001 mmdFind_Click sp_list_POORDDTL : " & rtnStr)
             Me.Cursor = Windows.Forms.Cursors.Default
             Exit Sub
         Else
@@ -871,7 +891,9 @@
             txtCtnStr.Enabled = False
             txtCtnEnd.Enabled = False
             txtTtlCtn.Enabled = False
-            cmdSave.Enabled = Enq_right_local
+            mmdSave.Enabled = Enq_right_local
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
         End If
 
 
@@ -1274,7 +1296,7 @@
 
     End Sub
     Private Sub DisplayDis()
-        With grdDis
+        With GrdDis
 
 
             .Columns(0).HeaderCell.Value = "Del"
@@ -1338,7 +1360,7 @@
 
     End Sub
     Private Sub DisplayPre()
-        With grdPre
+        With GrdPre
 
             .Columns(0).HeaderCell.Value = "Del"
             .Columns(0).Width = 40 '.Columns(0).width = 420
@@ -1690,8 +1712,8 @@
 
 
 
-    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
-
+    Private Sub mmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
+        If checkFocus(Me) Then Exit Sub
         'Dim YesNoCancel As Integer
         If Recordstatus = True Then
 
@@ -1699,9 +1721,9 @@
             Dim YesNoCancel As Microsoft.VisualBasic.MsgBoxResult = MsgBox("Record has been modified. Do you want to save before clear the screen?", MsgBoxStyle.YesNoCancel)
 
             If YesNoCancel = MsgBoxResult.Yes Then
-                If cmdSave.Enabled Then
+                If mmdSave.Enabled Then
                     flag_exit = True
-                    cmdSave_Click(sender, e)
+                    mmdSave_Click(sender, e)
                     If save_ok = True Then
                         Temp_POno = txtPONo.Text
                         setStatus("Init")
@@ -1735,9 +1757,10 @@
 
     End Sub
 
-    Private Sub cmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSave.Click
+    Private Sub mmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
+        If checkFocus(Me) Then Exit Sub
         txtLblCde1.Focus()
-        cmdClear.Focus()
+        'mmdClear.Focus()
         ''--- Update Company Code before execute ---
         gsCompany = Trim(cboCoCde.Text)
         Call Update_gs_Value(gsCompany)
@@ -1761,12 +1784,12 @@
             Exit Sub
         End If
 
-        If Not ChkDate Then
+        If Not ChkDate() Then
             Me.Cursor = Windows.Forms.Cursors.Default
             Exit Sub
         End If
 
-        If Not ChecktimeStamp Then
+        If Not ChecktimeStamp() Then
             MsgBox("The record has been modified by other users, please clear and try again.") 'msg("M00064")
             Me.Cursor = Windows.Forms.Cursors.Default
             save_ok = False
@@ -1823,7 +1846,7 @@
             gspStr = "sp_Physical_Delete_PODISPRM '" & gsCompany & "','" & UCase(txtPONo.Text) & "','D','" & drPODISPRM_D(i).Item("pdp_seqno") & "'"
             rtnLong = execute_SQLStatement(gspStr, rs_PODISPRM_DEL, rtnStr)
             If rtnLong <> RC_SUCCESS Then
-                MsgBox("Error on loading POM00001 cmdSave_Click sp_Physical_Delete_PODISPRM : " & rtnStr)
+                MsgBox("Error on loading POM00001 mmdSave_Click sp_Physical_Delete_PODISPRM : " & rtnStr)
                 Me.Cursor = Windows.Forms.Cursors.Default
                 IsUpdated = False
             Else
@@ -1846,7 +1869,7 @@
                     drPODISPRM_D_ADD(i).Item("pdp_paamt") & "','" & gsUsrID & "'"
             rtnLong = execute_SQLStatement(gspStr, rs_PODISPRM_INS, rtnStr)
             If rtnLong <> RC_SUCCESS Then
-                MsgBox("Error on loading POM00001 cmdSave_Click sp_insert_PODISPRM : " & rtnStr)
+                MsgBox("Error on loading POM00001 mmdSave_Click sp_insert_PODISPRM : " & rtnStr)
                 Me.Cursor = Windows.Forms.Cursors.Default
                 IsUpdated = False
             Else
@@ -1868,7 +1891,7 @@
                     drPODISPRM_D_UPT(i).Item("pdp_paamt") & "','" & gsUsrID & "'"
             rtnLong = execute_SQLStatement(gspStr, rs_PODISPRM_UPT, rtnStr)
             If rtnLong <> RC_SUCCESS Then
-                MsgBox("Error on loading POM00001 cmdSave_Click sp_Update_PODISPRM : " & rtnStr)
+                MsgBox("Error on loading POM00001 mmdSave_Click sp_Update_PODISPRM : " & rtnStr)
                 Me.Cursor = Windows.Forms.Cursors.Default
                 IsUpdated = False
             Else
@@ -1889,7 +1912,7 @@
             gspStr = "sp_Physical_Delete_PODISPRM '" & gsCompany & "','" & UCase(txtPONo.Text) & "','P','" & drPODISPRM_P_DEL(i).Item("pdp_seqno") & "'"
             rtnLong = execute_SQLStatement(gspStr, rs_PODISPRM_DEL2, rtnStr)
             If rtnLong <> RC_SUCCESS Then
-                MsgBox("Error on loading POM00001 cmdSave_Click SCDISPRMPre sp_Physical_Delete_PODISPRM : " & rtnStr)
+                MsgBox("Error on loading POM00001 mmdSave_Click SCDISPRMPre sp_Physical_Delete_PODISPRM : " & rtnStr)
                 Me.Cursor = Windows.Forms.Cursors.Default
                 IsUpdated = False
             Else
@@ -1912,7 +1935,7 @@
                     drPODISPRM_P_ADD(i).Item("pdp_paamt") & "','" & gsUsrID & "'"
             rtnLong = execute_SQLStatement(gspStr, rs_PODISPRM_INS2, rtnStr)
             If rtnLong <> RC_SUCCESS Then
-                MsgBox("Error on loading POM00001 cmdSave_Click SCDISPRMPre sp_insert_PODISPRM : " & rtnStr)
+                MsgBox("Error on loading POM00001 mmdSave_Click SCDISPRMPre sp_insert_PODISPRM : " & rtnStr)
                 Me.Cursor = Windows.Forms.Cursors.Default
                 IsUpdated = False
             Else
@@ -1934,7 +1957,7 @@
                     drPODISPRM_P_UPT(i).Item("pdp_paamt") & "','" & gsUsrID & "'"
             rtnLong = execute_SQLStatement(gspStr, rs_PODISPRM_UPT2, rtnStr)
             If rtnLong <> RC_SUCCESS Then
-                MsgBox("Error on loading POM00001 cmdSave_Click SCDISPRMPre drPODISPRM_P_UPT : " & rtnStr)
+                MsgBox("Error on loading POM00001 mmdSave_Click SCDISPRMPre drPODISPRM_P_UPT : " & rtnStr)
                 Me.Cursor = Windows.Forms.Cursors.Default
                 IsUpdated = False
             Else
@@ -1954,7 +1977,7 @@
             Replace(rs_POSHPMRK.Tables("RESULT").Rows(i).Item("psm_chnrmk"), "'", "''") & "','" & gsUsrID & "'"
             rtnLong = execute_SQLStatement(gspStr, rs_PODISPRM_UPT2, rtnStr)
             If rtnLong <> RC_SUCCESS Then
-                MsgBox("Error on loading POM00001 cmdSave_Click sp_select_POSHPMRK : " & rtnStr)
+                MsgBox("Error on loading POM00001 mmdSave_Click sp_select_POSHPMRK : " & rtnStr)
                 Me.Cursor = Windows.Forms.Cursors.Default
                 IsUpdated = False
             Else
@@ -2039,7 +2062,7 @@
 
                 rtnLong = execute_SQLStatement(gspStr, rs_POORDDTL_UPT, rtnStr)
                 If rtnLong <> RC_SUCCESS Then
-                    MsgBox("Error on loading POM00001 cmdSave_Click sp_Update_POORDDTL : " & rtnStr)
+                    MsgBox("Error on loading POM00001 mmdSave_Click sp_Update_POORDDTL : " & rtnStr)
                     IsUpdated = False
                 Else
                     IsUpdated = True
@@ -2066,7 +2089,7 @@
                 'If S <> "" Then  '*** if there is something to do with s ...
                 rtnLong = execute_SQLStatement(gspStr, rs_PODTLBOM_UPT, rtnStr)
                 If rtnLong <> RC_SUCCESS Then
-                    MsgBox("Error on loading POM00001 cmdSave_Click sp_Update_PODTLBOM : " & rtnStr)
+                    MsgBox("Error on loading POM00001 mmdSave_Click sp_Update_PODTLBOM : " & rtnStr)
                     IsUpdated = False
                 Else
                     IsUpdated = True
@@ -2085,7 +2108,7 @@
             'if S <> "" Then  '*** if there is something to do with s ...
             rtnLong = execute_SQLStatement(gspStr, rs_PODTLSHP_DEL, rtnStr)
             If rtnLong <> RC_SUCCESS Then
-                MsgBox("Error on loading POM00001 cmdSave_Click sp_Physical_Delete_PODTLSHP : " & rtnStr)
+                MsgBox("Error on loading POM00001 mmdSave_Click sp_Physical_Delete_PODTLSHP : " & rtnStr)
                 IsUpdated = False
             Else
                 IsUpdated = True
@@ -2105,7 +2128,7 @@
                 'if S <> "" Then  '*** if there is something to do with s ...
                 rtnLong = execute_SQLStatement(gspStr, rs_PODTLSHP_DEL, rtnStr)
                 If rtnLong <> RC_SUCCESS Then
-                    MsgBox("Error on loading POM00001 cmdSave_Click sp_Physical_Delete_PODTLSHP : " & rtnStr)
+                    MsgBox("Error on loading POM00001 mmdSave_Click sp_Physical_Delete_PODTLSHP : " & rtnStr)
 
                     IsUpdated = False
                 Else
@@ -2133,7 +2156,7 @@
                 'If S <> "" Then  '*** if there is something to do with s ...
                 rtnLong = execute_SQLStatement(gspStr, rs_PODTLSHP_ADD, rtnStr)
                 If rtnLong <> RC_SUCCESS Then
-                    MsgBox("Error on loading POM00001 cmdSave_Click sp_insert_PODTLSHP : " & rtnStr)
+                    MsgBox("Error on loading POM00001 mmdSave_Click sp_insert_PODTLSHP : " & rtnStr)
                     IsUpdated = False
                 Else
                     IsUpdated = True
@@ -2158,7 +2181,7 @@
                 'If S <> "" Then  '*** if there is something to do with s ...
                 rtnLong = execute_SQLStatement(gspStr, rs_PODTLSHP_UPT, rtnStr)
                 If rtnLong <> RC_SUCCESS Then
-                    MsgBox("Error on loading POM00001 cmdSave_Click sp_insert_PODTLSHP : " & rtnStr)
+                    MsgBox("Error on loading POM00001 mmdSave_Click sp_insert_PODTLSHP : " & rtnStr)
                     IsUpdated = False
                 Else
                     IsUpdated = True
@@ -2237,13 +2260,13 @@
 
         rtnLong = execute_SQLStatement(gspStr, rs_POORDHDR_UPT, rtnStr)
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading POM00001 cmdSave_Click sp_Update_POORDHDR : " & rtnStr)
+            MsgBox("Error on loading POM00001 mmdSave_Click sp_Update_POORDHDR : " & rtnStr)
             IsUpdated = False
         Else
             IsUpdated = True
         End If
 
-        cmdFind_Click(sender, e)
+        mmdFind_Click(sender, e)
 
         Me.Cursor = Windows.Forms.Cursors.Default
 
@@ -2811,7 +2834,8 @@
         End If
     End Sub
 
-    Private Sub cmdDelRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdDelRow.Click
+    Private Sub mmdDelRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdDelRow.Click
+        If checkFocus(Me) Then Exit Sub
         Select Case flag_grdcontrol
             Case "grdDis"
                 If Me.TabPageMain.SelectedIndex <> 2 Then
@@ -2983,7 +3007,8 @@
         End If
     End Sub
 
-    Private Sub cmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdInsRow.Click
+    Private Sub mmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdInsRow.Click
+        If checkFocus(Me) Then Exit Sub
         Recordstatus = True
 
         Select Case flag_grdcontrol
@@ -3438,7 +3463,7 @@
 
     Private Sub txtPONo_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPONo.KeyPress
         If e.KeyChar = Microsoft.VisualBasic.Chr(13) Then
-            cmdFind_Click(sender, e)
+            mmdFind_Click(sender, e)
         End If
 
     End Sub
@@ -3619,7 +3644,8 @@
     End Sub
 
 
-    Private Sub cmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSearch.Click
+    Private Sub mmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSearch.Click
+        If checkFocus(Me) Then Exit Sub
         Dim frmSYM00018 As New SYM00018
 
         frmSYM00018.keyName = txtPONo.Name
@@ -3713,14 +3739,46 @@
         Recordstatus = True
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CmdQCRpt.Click
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiQCRpt.Click
         If Me.txtPONo.Text.Trim = "" Then
             MsgBox("Please Input PO number!")
             Me.txtPONo.Focus()
             Exit Sub
         End If
-        Dim frm_frmPOQCRpt As New frmPOQCRpt(Me.txtPONo.Text.Trim)
-        frm_frmPOQCRpt.MdiParent = Me.MdiParent
-        frm_frmPOQCRpt.Show()
+        Dim frm_frmPOQCRpt = New frmPOQCRpt(Me.txtPONo.Text.Trim, Me.MdiParent)
+        'frm_frmPOQCRpt.MdiParent = Me.MdiParent
+        'frm_frmPOQCRpt.Show()
+    End Sub
+
+    Private Sub mmdPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdPrint.Click
+        If checkFocus(Me) Then Exit Sub
+        POReport = New POR00001
+        POReport.init_PONo = txtPONo.Text
+        POReport.init_cocde = cboCoCde.Text
+        POReport.ShowDialog()
+    End Sub
+
+    Private Sub mmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdAdd.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdDelete.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdCopy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdCopy.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdAttach_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdAttach.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdFunction_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFunction.Click
+        If checkFocus(Me) Then Exit Sub
+    End Sub
+
+    Private Sub mmdLink_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdLink.Click
+        If checkFocus(Me) Then Exit Sub
     End Sub
 End Class

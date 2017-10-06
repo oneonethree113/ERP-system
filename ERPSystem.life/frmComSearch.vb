@@ -1292,7 +1292,7 @@ Public Class frmComSearch
         Select Case callFmCriteria
             Case "txt_S_CoCde"
                 Select Case callFmForm
-                    Case "POM00010"
+                    Case "POM00003"
                         form_POM00010.txt_S_CoCde.Text = tmpStr
                     Case "INR00014"
                         form_INR00014.txt_S_CoCde.Text = tmpStr
@@ -1302,7 +1302,7 @@ Public Class frmComSearch
                 End Select
             Case "txt_S_PriCust"
                 Select Case callFmForm
-                    Case "POM00010"
+                    Case "POM00003"
                         form_POM00010.txt_S_PriCust.Text = tmpStr
                     Case Else
                         Dim ctn() As Control = frmS.Controls.Find("txt_S_PriCust", True)
@@ -1310,7 +1310,7 @@ Public Class frmComSearch
                 End Select
             Case "txt_S_SecCust"
                 Select Case callFmForm
-                    Case "POM00010"
+                    Case "POM00003"
                         form_POM00010.txt_S_SecCust.Text = tmpStr
                     Case Else
                         Dim ctn() As Control = frmS.Controls.Find("txt_S_SecCust", True)
@@ -1330,7 +1330,7 @@ Public Class frmComSearch
                 End Select
             Case "txt_S_CustPONo"
                 Select Case callFmForm
-                    Case "POM00010"
+                    Case "POM00003"
                         form_POM00010.txt_S_CustPONo.Text = tmpStr
                     Case Else
                         Dim ctn() As Control = frmS.Controls.Find("txt_S_CustPONo", True)
@@ -1338,7 +1338,7 @@ Public Class frmComSearch
                 End Select
             Case "txt_S_PONo"
                 Select Case callFmForm
-                    Case "POM00010"
+                    Case "POM00003"
                         form_POM00010.txt_S_PONo.Text = tmpStr
                     Case Else
                         Dim ctn() As Control = frmS.Controls.Find("txt_S_PONo", True)
@@ -1346,7 +1346,7 @@ Public Class frmComSearch
                 End Select
             Case "txt_S_SCNo"
                 Select Case callFmForm
-                    Case "POM00010"
+                    Case "POM00003"
                         form_POM00010.txt_S_SCNo.Text = tmpStr
                     Case Else
                         Dim ctn() As Control = frmS.Controls.Find("txt_S_SCNo", True)
@@ -1354,7 +1354,7 @@ Public Class frmComSearch
                 End Select
             Case "txt_S_ItmNo"
                 Select Case callFmForm
-                    Case "POM00010"
+                    Case "POM00003"
                         form_POM00010.txt_S_ItmNo.Text = tmpStr
                     Case Else
                         Dim ctn() As Control = frmS.Controls.Find("txt_S_ItmNo", True)
@@ -1380,7 +1380,7 @@ Public Class frmComSearch
                 End Select
             Case "txt_S_ShipNo"
                 Select Case callFmForm
-                    'Case "POM00010"
+                    'Case "POM00003"
                     '    form_POM00010.txt_S_ShipNo.Text = tmpStr
                     Case Else
                         Dim ctn() As Control = frmS.Controls.Find("txt_S_ShipNo", True)
@@ -1388,7 +1388,7 @@ Public Class frmComSearch
                 End Select
             Case "txt_S_CV"
                 Select Case callFmForm
-                    Case "POM00010"
+                    Case "POM00003"
                         form_POM00010.txt_S_CV.Text = tmpStr
                     Case Else
                         Dim ctn() As Control = frmS.Controls.Find("txt_S_CV", True)
@@ -1399,7 +1399,7 @@ Public Class frmComSearch
                 ctn(0).Text = tmpStr
             Case "txt_S_PV"
                 Select Case callFmForm
-                    Case "POM00010"
+                    Case "POM00003"
                         form_POM00010.txt_S_PV.Text = tmpStr
                     Case Else
                         Dim ctn() As Control = frmS.Controls.Find("txt_S_PV", True)
@@ -1410,7 +1410,7 @@ Public Class frmComSearch
                 ctn(0).Text = tmpStr
             Case "txt_S_SalTem"
                 Select Case callFmForm
-                    Case "POM00010"
+                    Case "POM00003"
                         form_POM00010.txt_S_SalTem.Text = tmpStr
                     Case Else
                         Dim ctn() As Control = frmS.Controls.Find("txt_S_SalTem", True)
@@ -1418,7 +1418,7 @@ Public Class frmComSearch
                 End Select
             Case "txt_S_SalDiv"
                 Select Case callFmForm
-                    Case "POM00010"
+                    Case "POM00003"
                     Case Else
                         Dim ctn() As Control = frmS.Controls.Find("txt_S_SalDIV", True)
                         ctn(0).Text = tmpStr

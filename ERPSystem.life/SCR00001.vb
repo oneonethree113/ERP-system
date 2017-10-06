@@ -19,6 +19,8 @@ Public Class SCR00001
     Dim psFile As String
     Dim strBatPath As String
     Dim strPrinterName As String
+    Public init_SCNo As String = ""
+    Public init_cocde As String = ""
 
     Private Sub SCR00001_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Formstartup(Me.Name)
@@ -36,6 +38,18 @@ Public Class SCR00001
         cboReportFormat.Items.Add("Sales Confirmation PDF Format")
         cboReportFormat.Items.Add("Sales Confirmation Standard Format (with Photo)")
         cboReportFormat.SelectedIndex = 0
+
+        If init_cocde <> "" Then
+            cboCoCde.Text = init_cocde
+            cboCoCde.Enabled = False
+        End If
+        If init_SCNo <> "" Then
+            txtFromSCNo.Text = init_SCNo
+            txtFromSCNo.ReadOnly = True
+            txtToSCNo.Text = init_SCNo
+            txtToSCNo.ReadOnly = True
+        End If
+
 
         psFile = "" 'App.path & "\Tmp_SC.ps"
         strBatPath = New System.IO.FileInfo(Application.ExecutablePath).DirectoryName & "\Tmp_SC.bat"

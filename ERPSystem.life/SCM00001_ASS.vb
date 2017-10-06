@@ -21,7 +21,7 @@
         Enq_right_local = Enq_right
 
         Display_Ass()
-        If (Split(myOwner.cboSCStatus.Text, " - ")(0) = "ACT" Or Split(myOwner.cboSCStatus.Text, " - ")(0) = "HLD") And myOwner.cmdSave.Enabled = True Then
+        If (Split(myOwner.cboSCStatus.Text, " - ")(0) = "ACT" Or Split(myOwner.cboSCStatus.Text, " - ")(0) = "HLD") And myOwner.mmdSave.Enabled = True Then
             cmdOK.Enabled = True
 
             '            If (gsUsrRank <= 4 And Enq_right_local) Or gsUsrGrp = "MGT-S" Then
