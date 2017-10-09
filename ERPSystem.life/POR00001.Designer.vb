@@ -82,7 +82,7 @@ Partial Class POR00001
         '
         'txtCoNam
         '
-        Me.txtCoNam.BackColor = System.Drawing.Color.SkyBlue
+        Me.txtCoNam.BackColor = System.Drawing.SystemColors.Window
         Me.txtCoNam.Enabled = False
         Me.txtCoNam.Location = New System.Drawing.Point(268, 43)
         Me.txtCoNam.Name = "txtCoNam"

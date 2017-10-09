@@ -38,7 +38,7 @@ Partial Class SCR00003
         '
         'txtCoNam
         '
-        Me.txtCoNam.BackColor = System.Drawing.Color.SkyBlue
+        Me.txtCoNam.BackColor = System.Drawing.SystemColors.Window
         Me.txtCoNam.Enabled = False
         Me.txtCoNam.Location = New System.Drawing.Point(282, 54)
         Me.txtCoNam.Name = "txtCoNam"

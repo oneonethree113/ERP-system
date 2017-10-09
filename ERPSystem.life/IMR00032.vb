@@ -28,6 +28,8 @@ Public Class IMR00032
         cboCustomer.SelectedIndex = 0
         txtDateRange.Text = "SC Ship End"
 
+        Formstartup(Me.Name)
+
         Me.Cursor = Windows.Forms.Cursors.Default
     End Sub
 
