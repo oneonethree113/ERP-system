@@ -423,11 +423,7 @@
     End Sub
 
     Private Sub Enable_IAR00001()
-        If ERP00000.miIAR00001.Enabled = False Then
-            cmdIAR00001.Enabled = False
-        Else
-            cmdIAR00001.Enabled = True
-        End If
+        cmdIAR00001.Enabled = getEnquiryRightByFormName("IAR00001")
     End Sub
 
     Private Sub setStatus(ByVal Mode As String)

@@ -1,6 +1,7 @@
 ﻿Public Class ERP00002
-
+    Dim viladClose As Boolean = False
     Private Sub ERP00002_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        viladClose = False
         txtUsrnam.Text = LCase(gsUsrID)
         txtUsrnam.Enabled = False
     End Sub
@@ -63,17 +64,24 @@
             If tmpERPVer <> gsERPVer Then
                 MsgBox("Your current ERP version was outdated, please upgrade!")
                 Me.Owner.Close()
-                ERP00000.Close()
+                ERP00000new.Close()
                 Me.Close()
             End If
         End If
-
+        viladClose = True
         Close()
     End Sub
 
     Private Sub txtPaswrd_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPaswrd.KeyPress
         If Asc(e.KeyChar) = Keys.Enter Then
             cmdOK.PerformClick()
+        End If
+    End Sub
+
+
+    Private Sub ERP00002_Closing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.Closing
+        If viladClose = False Then
+            e.Cancel = True 'Cancel close event
         End If
     End Sub
 End Class

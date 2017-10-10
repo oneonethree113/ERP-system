@@ -112,6 +112,11 @@ Public Class QUM00001
 
     Dim Enq_right_local As Boolean
     Dim Del_right_local As Boolean
+    Dim Print_right_local As Boolean
+    Dim Export_right_local As Boolean
+    Dim CIH_right_local As Boolean
+    Dim GenSA_right_local As Boolean
+    Dim GenTO_right_local As Boolean
 
     Dim sPckCus1No As String
     Dim sPckCus2No As String
@@ -697,8 +702,10 @@ Public Class QUM00001
             cboSeason.Enabled = True
             txtDesc.Enabled = True
             txtRmk.Enabled = True
+            cboCoCde.Enabled = False
         ElseIf m = cModeRead Then
             release_TabControl()
+            cboCoCde.Enabled = False
             Me.btcQUM00001.SelectedIndex = 0
         End If
 
@@ -730,8 +737,8 @@ Public Class QUM00001
                 v.Enabled = False
             Else
                 If TypeOf v Is TextBox Or TypeOf v Is MaskedTextBox Or TypeOf v Is ComboBox Or TypeOf v Is RichTextBox Then
-                    v.Text = ""
                     v.Enabled = False
+                    v.Text = ""
                 ElseIf TypeOf v Is ListBox Then
                     Dim lb As ListBox
                     lb = v
@@ -746,6 +753,12 @@ Public Class QUM00001
                     Dim dg As DataGridView
                     dg = v
                     dg.DataSource = Nothing
+                ElseIf TypeOf v Is MenuStrip Then
+                    Dim w
+                    w = v
+                    For Each itm As ToolStripMenuItem In w.items
+                        itm.Enabled = False
+                    Next
                 End If
             End If
         Next v
@@ -760,52 +773,58 @@ Public Class QUM00001
     Private Sub resetcmdButton(ByVal m As String)
         If m = cModeInit Then
             If Enq_right_local = True Then
-                Me.cmdAdd.Enabled = True
+                Me.mmdAdd.Enabled = True
             Else
-                Me.cmdAdd.Enabled = False
+                Me.mmdAdd.Enabled = False
             End If
-            Me.cmdSave.Enabled = False
-            Me.cmdDelete.Enabled = False
-            Me.cmdCopy.Enabled = False
-            Me.cmdFind.Enabled = True
-            Me.cmdClear.Enabled = True
+            Me.mmdSave.Enabled = False
+            Me.mmdDelete.Enabled = False
+            Me.mmdCopy.Enabled = False
+            Me.mmdFind.Enabled = True
+            Me.mmdClear.Enabled = True
 
-            Me.cmdSearch.Enabled = True
+            Me.mmdSearch.Enabled = True
 
-            Me.cmdInsRow.Enabled = False
-            Me.cmdDelRow.Enabled = False
+            Me.mmdInsRow.Enabled = False
+            Me.mmdDelRow.Enabled = False
 
+            Me.tsiGenSmp.Enabled = False
             Me.cmdGenSmp.Enabled = False
+            Me.tsiGenTent.Enabled = False
             Me.cmdGenTent.Enabled = False
 
             Me.cmdUpdItm.Enabled = True  '''20130826cmdUpdItm.Enabled = False
             ''''''20130826   cmdReset.Enabled = True
 
-            Me.cmdExit.Enabled = True
+            Me.mmdExit.Enabled = True
+            tsiRenew.Enabled = False
             cmdRenew.Enabled = False
+            tsiUpdate.Enabled = False
             cmdUpdate.Enabled = False
+            tsiRequote.Enabled = False
             cmdRequote.Enabled = False
-
         ElseIf m = cModeAdd Then
-            Me.cmdAdd.Enabled = False
-            Me.cmdSave.Enabled = True
-            Me.cmdDelete.Enabled = False
-            Me.cmdCopy.Enabled = False
-            Me.cmdFind.Enabled = False
-            Me.cmdClear.Enabled = True
+            Me.mmdAdd.Enabled = False
+            Me.mmdSave.Enabled = True
+            Me.mmdDelete.Enabled = False
+            Me.mmdCopy.Enabled = False
+            Me.mmdFind.Enabled = False
+            Me.mmdClear.Enabled = True
 
-            Me.cmdSearch.Enabled = False
+            Me.mmdSearch.Enabled = False
 
-            Me.cmdInsRow.Enabled = True
-            Me.cmdDelRow.Enabled = True
+            Me.mmdInsRow.Enabled = False
+            Me.mmdDelRow.Enabled = False
 
+            Me.tsiGenSmp.Enabled = False
             Me.cmdGenSmp.Enabled = False
+            Me.tsiGenTent.Enabled = False
             Me.cmdGenTent.Enabled = False
 
             Me.cmdUpdItm.Enabled = True  '''20130826cmdUpdItm.Enabled = False
             ''''''20130826   cmdReset.Enabled = True
 
-            Me.cmdExit.Enabled = True
+            Me.mmdExit.Enabled = True
 
             ''' 20130909
             'cmdRenew.Enabled = True
@@ -813,20 +832,22 @@ Public Class QUM00001
 
 
         ElseIf m = cModeUpd Then
-            Me.cmdAdd.Enabled = False
-            Me.cmdSave.Enabled = True
-            Me.cmdDelete.Enabled = False
-            Me.cmdCopy.Enabled = True
-            Me.cmdFind.Enabled = False
-            Me.cmdClear.Enabled = True
+            Me.mmdAdd.Enabled = False
+            Me.mmdSave.Enabled = True
+            Me.mmdDelete.Enabled = False
+            Me.mmdCopy.Enabled = True
+            Me.mmdFind.Enabled = False
+            Me.mmdClear.Enabled = True
 
-            Me.cmdSearch.Enabled = False
+            Me.mmdSearch.Enabled = False
 
-            Me.cmdInsRow.Enabled = True
-            Me.cmdDelRow.Enabled = True
+            Me.mmdInsRow.Enabled = False
+            Me.mmdDelRow.Enabled = False
 
-            Me.cmdGenSmp.Enabled = True
-            Me.cmdGenTent.Enabled = True
+            Me.tsiGenSmp.Enabled = GenSA_right_local
+            Me.cmdGenSmp.Enabled = GenSA_right_local
+            Me.tsiGenTent.Enabled = GenTO_right_local
+            Me.cmdGenTent.Enabled = GenTO_right_local
 
             Me.cmdUpdItm.Enabled = True  '''20130826cmdUpdItm.Enabled = False
             ''''''20130826   cmdReset.Enabled = True
@@ -836,63 +857,76 @@ Public Class QUM00001
             '    cmdReset.Enabled = False
             'End If
 
-            Me.cmdExit.Enabled = True
+            Me.mmdExit.Enabled = True
+            tsiRenew.Enabled = True
             cmdRenew.Enabled = True
+            tsiUpdate.Enabled = True
             cmdUpdate.Enabled = True
+            tsiRequote.Enabled = True
             cmdRequote.Enabled = True
 
         ElseIf m = cModeRead Then
-            Me.cmdAdd.Enabled = False
-            Me.cmdSave.Enabled = False
-            Me.cmdDelete.Enabled = False
+            Me.mmdAdd.Enabled = False
+            Me.mmdSave.Enabled = False
+            Me.mmdDelete.Enabled = False
 
             If Enq_right_local = True Then
-                Me.cmdCopy.Enabled = True
+                Me.mmdCopy.Enabled = True
             Else
-                Me.cmdCopy.Enabled = False
+                Me.mmdCopy.Enabled = False
             End If
 
 
-            Me.cmdFind.Enabled = False
-            Me.cmdClear.Enabled = True
+            Me.mmdFind.Enabled = False
+            Me.mmdClear.Enabled = True
 
-            Me.cmdSearch.Enabled = False
+            Me.mmdSearch.Enabled = False
 
-            Me.cmdInsRow.Enabled = False
-            Me.cmdDelRow.Enabled = False
+            Me.mmdInsRow.Enabled = False
+            Me.mmdDelRow.Enabled = False
 
+            Me.tsiGenSmp.Enabled = False
             Me.cmdGenSmp.Enabled = False
+            Me.tsiGenTent.Enabled = False
             Me.cmdGenTent.Enabled = False
 
             Me.cmdUpdItm.Enabled = True  '''20130826cmdUpdItm.Enabled = False
             ''''''20130826   cmdReset.Enabled = True
+            tsiRenew.Enabled = True
             cmdRenew.Enabled = True
+            tsiUpdate.Enabled = True
             cmdUpdate.Enabled = True
+            tsiRequote.Enabled = True
             cmdRequote.Enabled = True
 
-            Me.cmdExit.Enabled = True
+            Me.mmdExit.Enabled = True
         ElseIf m = "DisableAll" Then
-            Me.cmdAdd.Enabled = False
-            Me.cmdSave.Enabled = False
-            Me.cmdDelete.Enabled = False
-            Me.cmdCopy.Enabled = False
-            Me.cmdFind.Enabled = False
-            Me.cmdClear.Enabled = False
+            Me.mmdAdd.Enabled = False
+            Me.mmdSave.Enabled = False
+            Me.mmdDelete.Enabled = False
+            Me.mmdCopy.Enabled = False
+            Me.mmdFind.Enabled = False
+            Me.mmdClear.Enabled = False
 
-            Me.cmdSearch.Enabled = False
+            Me.mmdSearch.Enabled = False
 
-            Me.cmdInsRow.Enabled = False
-            Me.cmdDelRow.Enabled = False
+            Me.mmdInsRow.Enabled = False
+            Me.mmdDelRow.Enabled = False
 
+            Me.tsiGenSmp.Enabled = False
             Me.cmdGenSmp.Enabled = False
+            Me.tsiGenTent.Enabled = False
             Me.cmdGenTent.Enabled = False
 
             Me.cmdUpdItm.Enabled = True  '''20130826cmdUpdItm.Enabled = False
             cmdReset.Enabled = False
 
-            Me.cmdExit.Enabled = True
+            Me.mmdExit.Enabled = True
+            tsiRenew.Enabled = False
             cmdRenew.Enabled = False
+            tsiUpdate.Enabled = False
             cmdUpdate.Enabled = False
+            tsiRequote.Enabled = False
             cmdRequote.Enabled = False
 
             End If
@@ -1496,10 +1530,15 @@ Public Class QUM00001
                 cmdCptBkd.Enabled = False
                 cmdUpdateMO.Enabled = False
                 cmdUpdItm.Enabled = False
+                tsiGenSmp.Enabled = False
                 cmdGenSmp.Enabled = False
+                tsiGenTent.Enabled = False
                 cmdGenTent.Enabled = False
+                tsiUpdate.Enabled = False
                 cmdUpdate.Enabled = False
+                tsiRenew.Enabled = False
                 cmdRenew.Enabled = False
+                tsiRequote.Enabled = False
                 cmdRequote.Enabled = False
 
 
@@ -2389,7 +2428,7 @@ Public Class QUM00001
 
         If Microsoft.VisualBasic.Left(rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_qutsts").ToString, 1) = "A" Then
             chkCancel.Checked = False
-            chkCancel.Enabled = Del_right_local 'True
+            chkCancel.Enabled = False 'True
             chkApprove.Checked = False
             chkApprove.Enabled = False
             chkPC_hdr.Enabled = True
@@ -3207,8 +3246,9 @@ Public Class QUM00001
                         txtMU.Text = Format(Val(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qpe_mu").ToString), "###,###,##0.0000")
                         txtPckCstAmt.Text = Format(Val(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_pkgper").ToString), "###,###,##0.0000")
                         txtItmCommAmt.Text = Format(Val(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_icmper").ToString), "###,###,##0.0000")
-                        lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%)"
-
+                        'lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%" + _
+                        '                " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
+                        refresh_lblMUMin()
                         Call displayMOQMOA()
 
                         txtIMRmk.Text = IIf(Trim(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_imrmk").ToString) = "", "", Replace(Trim(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_imrmk").ToString), "''", "'"))
@@ -4133,6 +4173,7 @@ Public Class QUM00001
         dgOthDtl.Columns(i).Width = 37
         dgOthDtl.Columns(i).Visible = True
         dgOthDtl.Columns(i).ReadOnly = True
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1 '9
         dgOthDtl_qud_itmsts = i
         dgOthDtl.Columns(i).HeaderText = "ItmSts"
@@ -4173,14 +4214,14 @@ Public Class QUM00001
         dgOthDtl.Columns(i).ReadOnly = True
         i = i + 1 '16
         dgOthDtl_qud_itmnoven = i
-        dgOthDtl.Columns(i).HeaderText = "Vdr Item"
+        dgOthDtl.Columns(i).HeaderText = "Vendor Item"
         dgOthDtl.Columns(i).Width = 65
         dgOthDtl.Columns(i).Visible = True
         dgOthDtl.Columns(i).ReadOnly = True
         i = i + 1 '17
         dgOthDtl_qud_itmnovenno = i
-        dgOthDtl.Columns(i).HeaderText = "Vdr No"
-        dgOthDtl.Columns(i).Width = 45
+        dgOthDtl.Columns(i).HeaderText = "Vendor No."
+        dgOthDtl.Columns(i).Width = 75
         dgOthDtl.Columns(i).Visible = True
         dgOthDtl.Columns(i).ReadOnly = True
         i = i + 1 '18
@@ -4214,7 +4255,7 @@ Public Class QUM00001
         i = i + 1 '21
         dgOthDtl_qud_alsitmno = i
         dgOthDtl.Columns(i).HeaderText = "Alias Item"
-        dgOthDtl.Columns(i).Width = 30
+        dgOthDtl.Columns(i).Width = 60
         Select Case type
             Case "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4236,12 +4277,12 @@ Public Class QUM00001
         i = i + 1 '23
         dgOthDtl_qud_colcde = i
         dgOthDtl.Columns(i).HeaderText = "Color"
-        dgOthDtl.Columns(i).Width = 100
+        dgOthDtl.Columns(i).Width = 50
         dgOthDtl.Columns(i).ReadOnly = True
         i = i + 1 '24
         dgOthDtl_qud_coldsc = i
         dgOthDtl.Columns(i).HeaderText = "Color Dsc"
-        dgOthDtl.Columns(i).Width = 50
+        dgOthDtl.Columns(i).Width = 100
         Select Case type
             Case "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4277,7 +4318,7 @@ Public Class QUM00001
         dgOthDtl.Columns(i).ReadOnly = True
         i = i + 1 '28
         dgOthDtl_qud_packterm = i
-        dgOthDtl.Columns(i).HeaderText = "Pack & Term"
+        dgOthDtl.Columns(i).HeaderText = "Packing & Terms"
         dgOthDtl.Columns(i).Width = 250
         dgOthDtl.Columns(i).ReadOnly = True
         i = i + 1 '29
@@ -4306,8 +4347,9 @@ Public Class QUM00001
         dgOthDtl.Columns(i).ReadOnly = True
         i = i + 1 '35
         dgOthDtl_qud_conftr = i
-        dgOthDtl.Columns(i).HeaderText = "PC Ftr"
+        dgOthDtl.Columns(i).HeaderText = "PC Factor"
         dgOthDtl.Columns(i).Width = 75
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4339,8 +4381,8 @@ Public Class QUM00001
         dgOthDtl.Columns(i).ReadOnly = True
         i = i + 1 '38
         dgOthDtl_qud_cus1no = i
-        dgOthDtl.Columns(i).HeaderText = "Pricing Key 1"
-        dgOthDtl.Columns(i).Width = 90
+        dgOthDtl.Columns(i).HeaderText = "Customer Group 1"
+        dgOthDtl.Columns(i).Width = 105
         Select Case type
             Case "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4350,8 +4392,8 @@ Public Class QUM00001
         dgOthDtl.Columns(i).ReadOnly = True
         i = i + 1 '39
         dgOthDtl_qud_cus2no = i
-        dgOthDtl.Columns(i).HeaderText = "Pricing Key 2"
-        dgOthDtl.Columns(i).Width = 90
+        dgOthDtl.Columns(i).HeaderText = "Customer Group 2"
+        dgOthDtl.Columns(i).Width = 105
         Select Case type
             Case "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4363,6 +4405,7 @@ Public Class QUM00001
         dgOthDtl_qud_cft = i
         dgOthDtl.Columns(i).HeaderText = "CFT"
         dgOthDtl.Columns(i).Width = 50
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4374,6 +4417,7 @@ Public Class QUM00001
         dgOthDtl_qud_cbm = i
         dgOthDtl.Columns(i).HeaderText = "CBM"
         dgOthDtl.Columns(i).Width = 50
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4487,8 +4531,9 @@ Public Class QUM00001
         dgOthDtl.Columns(i).ReadOnly = True
         i = i + 1 '59
         dgOthDtl_qud_grswgt = i
-        dgOthDtl.Columns(i).HeaderText = "GW"
+        dgOthDtl.Columns(i).HeaderText = "G.W."
         dgOthDtl.Columns(i).Width = 60
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4498,8 +4543,9 @@ Public Class QUM00001
         dgOthDtl.Columns(i).ReadOnly = True
         i = i + 1 '60
         dgOthDtl_qud_netwgt = i
-        dgOthDtl.Columns(i).HeaderText = "NW"
+        dgOthDtl.Columns(i).HeaderText = "N.W."
         dgOthDtl.Columns(i).Width = 60
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4509,7 +4555,7 @@ Public Class QUM00001
         dgOthDtl.Columns(i).ReadOnly = True
         i = i + 1 '61
         dgOthDtl_qud_pckitr = i
-        dgOthDtl.Columns(i).HeaderText = "Pack Instr"
+        dgOthDtl.Columns(i).HeaderText = "Packing Instruction"
         dgOthDtl.Columns(i).Width = 150
         Select Case type
             Case "A"
@@ -4537,6 +4583,7 @@ Public Class QUM00001
         dgOthDtl_qud_moq = i
         dgOthDtl.Columns(i).HeaderText = "MOQ"
         dgOthDtl.Columns(i).Width = 60
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "A", "F"
                 dgOthDtl.Columns(i).Visible = True
@@ -4559,6 +4606,7 @@ Public Class QUM00001
         dgOthDtl_qud_moa = i
         dgOthDtl.Columns(i).HeaderText = "MOA"
         dgOthDtl.Columns(i).Width = 70
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "A", "F"
                 dgOthDtl.Columns(i).Visible = True
@@ -4582,6 +4630,7 @@ Public Class QUM00001
         dgOthDtl_qud_grsmgn = i
         dgOthDtl.Columns(i).HeaderText = "GM%"
         dgOthDtl.Columns(i).Width = 70
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "A", "P"
                 dgOthDtl.Columns(i).Visible = True
@@ -4604,6 +4653,7 @@ Public Class QUM00001
         dgOthDtl_qud_cus1sp = i
         dgOthDtl.Columns(i).HeaderText = "Std Price"
         dgOthDtl.Columns(i).Width = 80
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "A", "P"
                 dgOthDtl.Columns(i).Visible = True
@@ -4636,6 +4686,7 @@ Public Class QUM00001
         dgOthDtl_qud_pcprc = i
         dgOthDtl.Columns(i).HeaderText = "Price For PC USD"
         dgOthDtl.Columns(i).Width = 120
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "P", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4660,6 +4711,7 @@ Public Class QUM00001
         dgOthDtl_qud_basprc = i
         dgOthDtl.Columns(i).HeaderText = "Basic Price"
         dgOthDtl.Columns(i).Width = 90
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "P", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4774,6 +4826,7 @@ Public Class QUM00001
         dgOthDtl_qpe_mu = i
         dgOthDtl.Columns(i).HeaderText = "GM/MU%"
         dgOthDtl.Columns(i).Width = 70
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "P", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4800,6 +4853,8 @@ Public Class QUM00001
         i = i + 1 '110
         dgOthDtl_qpe_cus1dp = i
         dgOthDtl.Columns(i).HeaderText = "Adjusted Price"
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        dgOthDtl.Columns(i).Width = 90
         Select Case type
             Case "P", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4807,11 +4862,11 @@ Public Class QUM00001
                 dgOthDtl.Columns(i).Visible = False
         End Select
         dgOthDtl.Columns(i).ReadOnly = True
-        dgOthDtl.Columns(i).Width = 150
         i = i + 1 '111
         dgOthDtl_qpe_cushcstbufper = i
         dgOthDtl.Columns(i).HeaderText = "Cushion /Buffer%"
-        dgOthDtl.Columns(i).Width = 90
+        dgOthDtl.Columns(i).Width = 105
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "P", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4828,6 +4883,7 @@ Public Class QUM00001
         dgOthDtl_qpe_othdisper = i
         dgOthDtl.Columns(i).HeaderText = "Discount %"
         dgOthDtl.Columns(i).Width = 80
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "P", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4848,6 +4904,7 @@ Public Class QUM00001
         dgOthDtl_qpe_spmuper = i
         dgOthDtl.Columns(i).HeaderText = "Sample UM"
         dgOthDtl.Columns(i).Width = 100
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "T", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4880,7 +4937,8 @@ Public Class QUM00001
         i = i + 1 '122
         dgOthDtl_qpe_upsper = i
         dgOthDtl.Columns(i).HeaderText = "UPS / Sampling (%)"
-        dgOthDtl.Columns(i).Width = 70
+        dgOthDtl.Columns(i).Width = 115
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "P", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4891,7 +4949,8 @@ Public Class QUM00001
         i = i + 1 '123
         dgOthDtl_qpe_labper = i
         dgOthDtl.Columns(i).HeaderText = "Lab Test (%)"
-        dgOthDtl.Columns(i).Width = 70
+        dgOthDtl.Columns(i).Width = 80
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "P", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4904,7 +4963,8 @@ Public Class QUM00001
         i = i + 1 '124
         dgOthDtl_qpe_faper = i
         dgOthDtl.Columns(i).HeaderText = "Factory Audit (%)"
-        dgOthDtl.Columns(i).Width = 90
+        dgOthDtl.Columns(i).Width = 100
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "P", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4926,6 +4986,7 @@ Public Class QUM00001
         dgOthDtl_qpe_pliper = i
         dgOthDtl.Columns(i).HeaderText = "PLI %"
         dgOthDtl.Columns(i).Width = 75
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "P", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4938,6 +4999,7 @@ Public Class QUM00001
         dgOthDtl_qpe_dmdper = i
         dgOthDtl.Columns(i).HeaderText = "Defective Markdown %"
         dgOthDtl.Columns(i).Width = 90
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "P", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4950,6 +5012,7 @@ Public Class QUM00001
         dgOthDtl_qpe_rbtper = i
         dgOthDtl.Columns(i).HeaderText = "Rebate %"
         dgOthDtl.Columns(i).Width = 70
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "P", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4965,6 +5028,7 @@ Public Class QUM00001
         i = i + 1 '131
         dgOthDtl.Columns(i).HeaderText = "Packing Cost"
         dgOthDtl_qpe_pkgper = i
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "P", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -4980,11 +5044,13 @@ Public Class QUM00001
         dgOthDtl.Columns(i).Width = 100
         dgOthDtl.Columns(i).Visible = False
         dgOthDtl.Columns(i).ReadOnly = True
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
 
         i = i + 1 '133
         dgOthDtl.Columns(i).HeaderText = "Commission Amt."
         dgOthDtl_qpe_icmper = i
         dgOthDtl.Columns(i).Width = 100
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "P", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -5069,6 +5135,7 @@ Public Class QUM00001
         dgOthDtl_qud_stkqty = i
         dgOthDtl.Columns(i).HeaderText = "Sample Stock Qty"
         dgOthDtl.Columns(i).Width = 70
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "T", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -5081,6 +5148,7 @@ Public Class QUM00001
         dgOthDtl_qud_cusqty = i
         dgOthDtl.Columns(i).HeaderText = "Sample Cust Qty"
         dgOthDtl.Columns(i).Width = 130
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "T", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -5093,6 +5161,7 @@ Public Class QUM00001
         dgOthDtl_qud_smpqty = i
         dgOthDtl.Columns(i).HeaderText = "Sample Total Qty"
         dgOthDtl.Columns(i).Width = 130
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "T", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -5106,6 +5175,7 @@ Public Class QUM00001
         dgOthDtl_qud_smpunt = i
         dgOthDtl.Columns(i).HeaderText = "Sample UM"
         dgOthDtl.Columns(i).Width = 90
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "T", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -5118,6 +5188,7 @@ Public Class QUM00001
         dgOthDtl_qud_smpprc = i
         dgOthDtl.Columns(i).HeaderText = "Sample Price USD"
         dgOthDtl.Columns(i).Width = 130
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "T", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -5147,6 +5218,7 @@ Public Class QUM00001
         dgOthDtl_qud_toqty = i
         dgOthDtl.Columns(i).HeaderText = "Total Qty"
         dgOthDtl.Columns(i).Width = 100
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "T", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -5193,7 +5265,7 @@ Public Class QUM00001
         dgOthDtl.Columns(i).ReadOnly = True
         i = i + 1 '163
         dgOthDtl_qud_cusven = i
-        dgOthDtl.Columns(i).HeaderText = "Custom Vendor"
+        dgOthDtl.Columns(i).HeaderText = "CV"
         dgOthDtl.Columns(i).Width = 130
         Select Case type
             Case "T", "A"
@@ -5294,6 +5366,7 @@ Public Class QUM00001
         dgOthDtl_CIHAMT = i
         dgOthDtl.Columns(i).HeaderText = "CIH Amount"
         dgOthDtl.Columns(i).Width = 75
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -5337,7 +5410,7 @@ Public Class QUM00001
         i = i + 1 '191
         dgOthDtl_qud_moflag = i
         dgOthDtl.Columns(i).HeaderText = "MOQ/MOA"
-        dgOthDtl.Columns(i).Width = 45
+        dgOthDtl.Columns(i).Width = 65
         Select Case type
             Case "F", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -5384,6 +5457,7 @@ Public Class QUM00001
         dgOthDtl_qud_pmu = i
         dgOthDtl.Columns(i).HeaderText = "PMU %"
         dgOthDtl.Columns(i).Width = 70
+        dgOthDtl.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Select Case type
             Case "P", "A"
                 dgOthDtl.Columns(i).Visible = True
@@ -8693,6 +8767,14 @@ Then
 
         Me.KeyPreview = True
 
+        CIH_right_local = getEnquiryRightByFormName(CUM00001.Name.ToString)
+        Print_right_local = getEnquiryRightByFormName(QUR00001.Name.ToString)
+        tsiPrintQuotation.Enabled = Print_right_local
+        Export_right_local = getEnquiryRightByFormName(QUR00003.Name.ToString)
+        tsiExportToExcel.Enabled = Export_right_local
+
+        GenSA_right_local = getEnquiryRightByFormName(SAM00004.Name.ToString)
+        GenTO_right_local = getEnquiryRightByFormName(TOM00002.Name.ToString)
         Call AccessRight(Me.Name)
         Enq_right_local = Enq_right
         Del_right_local = Del_right
@@ -8738,8 +8820,11 @@ Then
         no_need_check_btcindex = False
         gf_packing_miss = False
 
+        tsiUpdate.Enabled = False
         cmdUpdate.Enabled = False
+        tsiRenew.Enabled = False
         cmdRenew.Enabled = False
+        tsiRequote.Enabled = False
         cmdRequote.Enabled = False
 
         '''III
@@ -8754,9 +8839,17 @@ Then
         txtHDRCustShpDateStr.Text = ""
         txtHDRCustShpDateEnd.Text = ""
 
+
+
+
+        panelMoveTimer = New Timer()
+        panelMoveTimer.Interval = 2
+        panelMoveTimer.Enabled = True
+
+        AddHandler panelMoveTimer.Tick, AddressOf panelMoveTimer_Tick
     End Sub
 
-    Private Sub cmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAdd.Click
+    Private Sub mmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdAdd.Click
         Call cmdAddClick()
         sMode = cModeAdd
         Call formInit(cModeAdd)
@@ -8791,7 +8884,9 @@ Then
         Call fillcboCus1No() '
 
         If cboCus1No.Enabled And cboCus1No.Visible Then cboCus1No.Focus()
+        tsiGenSmp.Enabled = False
         cmdGenSmp.Enabled = False
+        tsiGenTent.Enabled = False
         cmdGenTent.Enabled = False
 
         gsCompany = Trim(cboCoCde.Text)
@@ -8815,8 +8910,9 @@ Then
     End Sub
 
 
-    Private Sub cmdSave_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmdSave.Click
+    Private Sub mmdSave_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles mmdSave.Click
 
+        If checkFocus(Me) Then Exit Sub
 
         ''If btcQUM00001.SelectedIndex <> 1 Then
         ''    MsgBox("Please save item in Details Page (2)!")
@@ -8855,6 +8951,19 @@ Then
 
     Public Sub cmdSaveClick()
         '        Cursor = Cursors.WaitCursor
+        '*** Check the unavailable Quotation Status
+        If txtQutSts.Text <> "" Then
+            If Microsoft.VisualBasic.Left(txtQutSts.Text, 1) = "C" Then
+                MsgBox("Quotation Status is Cancel. Cannot be saved.")
+                Exit Sub
+            End If
+            If txtQutSts.Text <> "" Then
+                If Microsoft.VisualBasic.Left(txtQutSts.Text, 1) = "E" Then
+                    MsgBox("Quotation Status is Expired. Cannot be saved.")
+                    Exit Sub
+                End If
+            End If
+        End If
 
         Dim tmpqutno As String
         Dim tmpcocde As String
@@ -8928,13 +9037,13 @@ Then
             End If
         End If
 
-        '*** Check the unavailable Quotation Status
-        If txtQutSts.Text <> "" Then
-            If Microsoft.VisualBasic.Left(txtQutSts.Text, 1) = "E" Or Microsoft.VisualBasic.Left(txtQutSts.Text, 1) = "C" Then
-                MsgBox("Quotation Status is not available, cannot SAVE.")
-                Exit Sub
-            End If
-        End If
+        ''*** Check the unavailable Quotation Status
+        'If txtQutSts.Text <> "" Then
+        '    If Microsoft.VisualBasic.Left(txtQutSts.Text, 1) = "E" Then
+        '        MsgBox("Quotation Status is Expired. Cannot be saved.")
+        '        Exit Sub
+        '    End If
+        'End If
 
         If delete_All() = True Then
             MsgBox("Cannot delete all details line records.")
@@ -9021,14 +9130,17 @@ Then
         txtQutNo.Text = tmpqutno
         cboCoCde.Text = tmpcocde
 
+        tsiRenew.Enabled = False
         cmdRenew.Enabled = False
+        tsiUpdate.Enabled = False
         cmdUpdate.Enabled = False
+        tsiRequote.Enabled = False
         cmdRequote.Enabled = False
 
         Cursor = Cursors.Default
     End Sub
 
-    Private Sub cmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSearch.Click
+    Private Sub mmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSearch.Click
         Dim frmSYM00018 As New SYM00018
 
 
@@ -9043,11 +9155,9 @@ Then
         frmSYM00018.show_frmSYM00018(Me)
     End Sub
 
-    Private Sub cmdInsRow_BackgroundImageChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmdInsRow.BackgroundImageChanged
+ 
 
-    End Sub
-
-    Private Sub cmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdInsRow.Click
+    Private Sub mmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdInsRow.Click
 
         flag_cmdInsRow_Click = True
 
@@ -9332,6 +9442,9 @@ Then
     End Sub
 
     Private Sub btcQUM00001_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles btcQUM00001.SelectedIndexChanged
+
+        Dim tempRecordstatus As Boolean = Recordstatus
+
         Select Case PreviousTab
 
             Case 0 'Header page check - check for Add mode
@@ -9358,6 +9471,7 @@ Then
                     If rs_QUOTNHDR.Tables("RESULT").Rows(0).Item("quh_creusr") = "~*ADD*~" Then
                         rs_QUOTNHDR.Tables("RESULT").Rows(0).Item("quh_creusr") = "~*NEW*~"
                     End If
+                    tsiCIH.Enabled = False
                 ElseIf sMode = cModeUpd Then
                     If Microsoft.VisualBasic.Left(rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_qutsts").ToString, 1) = "R" Then
                         If no_need_check_btcindex = False Then
@@ -9376,29 +9490,33 @@ Then
                 End If
 
             Case 1
-                    If sMode = cModeAdd Or sMode = cModeUpd Then
+                If sMode = cModeAdd Or sMode = cModeUpd Then
 
-                        Call fill_QUOTNDTL()
+                    Call fill_QUOTNDTL()
 
-                        '''0811
-                        If rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_creusr") = "~*ADD*~" Or rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_creusr") = "~*NEW*~" Then
-                            rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_creusr") = "~*NEW*~"
-                        End If
+                    '''0811
+                    If rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_creusr") = "~*ADD*~" Or rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_creusr") = "~*NEW*~" Then
+                        rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_creusr") = "~*NEW*~"
                     End If
+                End If
 
-                    dgOthDtl.DataSource = rs_QUOTNDTL.Tables("RESULT").DefaultView
-                    Call display_dgOthDtl("A")
+                dgOthDtl.DataSource = rs_QUOTNDTL.Tables("RESULT").DefaultView
+                Call display_dgOthDtl("A")
 
             Case 2
-                    If sMode = cModeAdd Or sMode = cModeUpd Then
+                If sMode = cModeAdd Or sMode = cModeUpd Then
 
-                    End If
+                End If
         End Select
 
         Select Case btcQUM00001.SelectedIndex
             Case 0
+                tsiCIH.Enabled = False
+                mmdInsRow.Enabled = False
+                mmdDelRow.Enabled = False
             Case 1
 
+                tsiCIH.Enabled = CIH_right_local
                 cboCus2No.Enabled = False
 
 
@@ -9466,6 +9584,30 @@ Then
                             End If
                         End If
                     End If
+
+                    If copy_flag = False And Add_flag = False Then
+                        If rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_cus2no").ToString() <> "" Then
+                            If Microsoft.VisualBasic.Right(Trim(rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_cus1no").ToString), 8) <> "(Active)" Or _
+                                Microsoft.VisualBasic.Right(Trim(rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_cus2no").ToString), 8) <> "(Active)" Then
+                                mmdInsRow.Enabled = False
+                                mmdDelRow.Enabled = False
+                            Else
+                                mmdInsRow.Enabled = Enq_right_local 'True
+                                mmdDelRow.Enabled = Del_right_local 'True
+                            End If
+                        Else
+                            If Microsoft.VisualBasic.Right(Trim(rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_cus1no").ToString), 8) <> "(Active)" Then
+                                mmdInsRow.Enabled = False
+                                mmdDelRow.Enabled = False
+                            Else
+                                mmdInsRow.Enabled = Enq_right_local 'True
+                                mmdDelRow.Enabled = Del_right_local 'True
+                            End If
+                        End If
+                    Else
+                        mmdInsRow.Enabled = Enq_right_local
+                        mmdDelRow.Enabled = Del_right_local
+                    End If
                     'Disable packing
                     cboPcking.Enabled = False
                 ElseIf sMode = cModeRead Then
@@ -9478,10 +9620,14 @@ Then
                 Call display_dgOthDtl("A")
                 dgOthDtl.Refresh()
 
+                mmdInsRow.Enabled = False
+                mmdDelRow.Enabled = False
+                tsiCIH.Enabled = CIH_right_local
         End Select
 
         PreviousTab = btcQUM00001.SelectedIndex
         flag_cmdInsRow_Click = False
+        Recordstatus = tempRecordstatus
     End Sub
 
     Private Sub btcQUM00001_Selecting(ByVal sender As Object, ByVal e As System.Windows.Forms.TabControlCancelEventArgs) Handles btcQUM00001.Selecting
@@ -10228,8 +10374,9 @@ Then
                 If get_QUPRCEMT_CU(txtSeq.Text, Split(cboCus1No.Text, "-")(0).Trim, Split(cboCus2No.Text, "-")(0).Trim, txtVenTyp.Text.Trim, txtItmCat.Text.Trim, Split(cboVenNo.Text.Trim, "-")(0).Trim, cboDtlPrcTrm.Text, cboTranTrm.Text) = True Then
                     Call calculate_gbPandelCstEmt(txtSeq.Text)
                     txtMU.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mu")
-                    lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%)"
-
+                    'lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%" + _
+                    '                    " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
+                    refresh_lblMUMin()
                     txtPckCstAmt.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_pkgper")
                     txtItmCommAmt.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_icmper")
 
@@ -10546,7 +10693,7 @@ Then
         End If
     End Sub
 
-    Public Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFind.Click
+    Public Sub mmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFind.Click
         txtQutNo.Text = UCase(Trim(txtQutNo.Text))
         Call txtQutNoKeyPress()
         Recordstatus = False
@@ -10616,6 +10763,7 @@ Then
             Call display_Header()
             Call setStatus(cModeUpd)
             sMode = cModeUpd
+
         End If
 
         gsCompany = Trim(cboCoCde.Text)
@@ -10816,14 +10964,18 @@ Then
 
     End Function
 
-    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdExit.Click
+    Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
+
+        If checkFocus(Me) Then Exit Sub
         If Recordstatus = True Then
-            cmdClear_Click(sender, e)
+            mmdClear_Click(sender, e)
         End If
         Me.Close()
     End Sub
 
-    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
+    Private Sub mmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
+
+        If checkFocus(Me) Then Exit Sub
         Dim tmpqutno As String
         Dim tmpcocde As String
 
@@ -10872,7 +11024,7 @@ Then
                     Exit Sub
                 End If
 
-                If cmdSave.Enabled And invalid_Detail() = False Then
+                If mmdSave.Enabled And invalid_Detail() = False Then
                     '*** Check Item Exist ?
                     If txtItmNo.Text <> "" And (txtItmNo.Enabled = True Or txtItmNoTmp.Enabled = True Or txtItmNoVen.Enabled = True) Then
                         If not_exist_ITEM() = True Then
@@ -11172,7 +11324,7 @@ Then
     End Sub
 
     Private Sub txtMU_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtMU.KeyPress
-        If Not (Convert.ToInt32(e.KeyChar)  = Keys.Delete Or e.KeyChar = vbBack Or e.KeyChar.ToString() = "." Or (e.KeyChar.ToString() >= "0" And e.KeyChar.ToString() <= "9")) Then
+        If Not (Convert.ToInt32(e.KeyChar) = Keys.Delete Or e.KeyChar = vbBack Or e.KeyChar.ToString() = "." Or (e.KeyChar.ToString() >= "0" And e.KeyChar.ToString() <= "9")) Then
             e.KeyChar = ""
         Else
             'If txtMU.Text.IndexOf(".") > 0 And e.KeyChar.ToString() = "." Then
@@ -11350,7 +11502,9 @@ Then
             Else
                 rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_creusr") = "~*UPD*~"
             End If
-
+            'lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%" + _
+            '                " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
+            refresh_lblMUMin()
             Recordstatus = True
 
         End If
@@ -11422,7 +11576,9 @@ Then
             Else
                 rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_creusr") = "~*UPD*~"
             End If
-
+            'lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%" + _
+            '                " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
+            refresh_lblMUMin()
             Recordstatus = True
 
         End If
@@ -11738,8 +11894,9 @@ Then
         txtMU.Text = Format(Val(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qpe_mu").ToString), "###,###,##0.0000")
         txtPckCstAmt.Text = Format(Val(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_pkgper").ToString), "###,###,##0.0000")
         txtItmCommAmt.Text = Format(Val(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_icmper").ToString), "###,###,##0.0000")
-        lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%)"
-
+        'lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%" + _
+        '                                " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
+        refresh_lblMUMin()
 
         '''III
         txtCus1DpP.Text = round(txtCus1DpP.Text, cus1_rounding)
@@ -11780,7 +11937,7 @@ Then
             End If
         End If
 
-     
+
         txtPCPrc.Text = either_cus1dp_or_cus2dp / umftr
         txtPCPrcP_Text_round_5 = either_cus1dp_or_cus2dp / umftr
 
@@ -11800,7 +11957,7 @@ Then
             If optGM.Checked = True Then
                 ''
                 txtCus2Dp.Text = Val(txtPCPrcP.Text) * umftr
-                
+
                 txtCus2Dp.Text = round(txtCus2Dp.Text, cus1_rounding)
 
                 rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_cus2dp") = txtCus2Dp.Text.Trim
@@ -11810,7 +11967,7 @@ Then
             ElseIf optMU.Checked = True Then
                 ''
                 txtCus2Dp.Text = txtPCPrcP_Text_round_5 * umftr
-                
+
                 txtCus2Dp.Text = round(txtCus2Dp.Text, cus1_rounding)
 
                 rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_cus2dp") = txtCus2Dp.Text.Trim
@@ -11819,7 +11976,7 @@ Then
                 rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_pcprc") = txtPCPrcP_Text_round_5
             Else
                 txtCus1DpP.Text = txtPCPrcP_Text_round_5 * umftr
-                
+
                 txtCus1DpP.Text = round(txtCus1DpP.Text, cus1_rounding)
                 txtCus1Dp.Text = txtCus1DpP.Text
 
@@ -11830,7 +11987,7 @@ Then
             End If
         Else
             txtCus1DpP.Text = txtPCPrcP_Text_round_5 * umftr
-            
+
             txtCus1DpP.Text = round(txtCus1DpP.Text, cus1_rounding)
             txtCus1Dp.Text = txtCus1DpP.Text
 
@@ -12507,6 +12664,8 @@ Then
 
     Private Sub cmdBackD_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdBackD.Click
 
+        Dim temp_record_status As Boolean
+        temp_record_status = Recordstatus
         ' If sMode = cModeAdd Or sMode = cModeUpd Or Recordstatus = False Then
         '20130908 for anita
         If sMode = cModeAdd Or sMode = cModeUpd Or sMode = cModeRead Then
@@ -12515,6 +12674,7 @@ Then
                 Call fill_QUOTNDTL()
                 ''avoid DBNULL
                 If Not rs_QUOTNDTL.Tables("RESULT").Rows.Count > sReadingIndexQ Then
+                    Recordstatus = temp_record_status
                     Exit Sub
                 End If
 
@@ -12531,6 +12691,7 @@ Then
 
                 ''avoid DBNULL
                 If Not rs_QUOTNDTL.Tables("RESULT").Rows.Count > sReadingIndexQ Then
+                    Recordstatus = temp_record_status
                     Exit Sub
                 End If
 
@@ -12539,6 +12700,7 @@ Then
 
                 Call display_Detail(qutseq)
                 If rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("del") = "Y" Then
+                    Recordstatus = temp_record_status
                     Exit Sub
                 End If
 
@@ -12570,15 +12732,18 @@ Then
             End If
         End If
 
+        Recordstatus = temp_record_status
         Exit Sub
 
 
         '*** Check Combo in list or not ?
         If not_in_Combo_HDR() = True Then
+            Recordstatus = temp_record_status
             Exit Sub
         End If
 
         If not_in_Combo_DTL() = True Then
+            Recordstatus = temp_record_status
             Exit Sub
         End If
 
@@ -12601,6 +12766,7 @@ Then
                             txtItmNoTmp.Focus()
                         End If
                     End If
+                    Recordstatus = temp_record_status
                     Exit Sub
                 End If
             End If
@@ -12693,6 +12859,7 @@ Then
             '    If txtItmNoVen.Enabled And txtItmNoVen.Visible Then txtItmNoVen.Focus()
             '    txtItmNoVen.SelectAll()
             'End If
+            Recordstatus = temp_record_status
             Exit Sub
         End If
 
@@ -12712,6 +12879,7 @@ Then
             '    MsgBox("Please select HSTU / Tariff #.", vbOKOnly, "ELC Duty Rate")
             '    IsEmptyDuty = False
             'End If
+            Recordstatus = temp_record_status
             Exit Sub
         End If
 
@@ -12773,7 +12941,7 @@ Then
             '    End If
             'End If
         End If
-
+        Recordstatus = temp_record_status
         '*** Phase 2 comment it
         'Call SetHeaderBarValue(True)
         flag_cmdInsRow_Click = False
@@ -12781,7 +12949,8 @@ Then
 
     Private Sub cmdNextD_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdNextD.Click
 
-
+        Dim temp_record_status As Boolean
+        temp_record_status = Recordstatus
         ' If sMode = cModeAdd Or sMode = cModeUpd Or Recordstatus = False Then
         '20130908 for anita
         If sMode = cModeAdd Or sMode = cModeUpd Or sMode = cModeRead Then
@@ -12791,6 +12960,7 @@ Then
                 '''0811
                 ''avoid DBNULL
                 If Not rs_QUOTNDTL.Tables("RESULT").Rows.Count > sReadingIndexQ Then
+                    Recordstatus = temp_record_status
                     Exit Sub
                 End If
 
@@ -12841,6 +13011,7 @@ Then
                             End If
                         End If
                     End If
+                    Recordstatus = temp_record_status
                     cboPcking.Enabled = False
                 End If
             End If
@@ -12848,14 +13019,16 @@ Then
 
 
 
-        Exit Sub
+        Exit Sub '<<<<<<<What?!
 
         '*** Check Combo in list or not ?
         If not_in_Combo_HDR() = True Then
+            Recordstatus = temp_record_status
             Exit Sub
         End If
 
         If not_in_Combo_DTL() = True Then
+            Recordstatus = temp_record_status
             Exit Sub
         End If
 
@@ -12879,6 +13052,7 @@ Then
                     '        txtItmNoTmp.Focus()
                     '    End If
                     'End If
+                    Recordstatus = temp_record_status
                     Exit Sub
                 End If
             End If
@@ -12971,6 +13145,7 @@ Then
             '    If txtItmNoVen.Enabled And txtItmNoVen.Visible Then txtItmNoVen.Focus()
             '    txtItmNoVen.SelectAll()
             'End If
+            Recordstatus = temp_record_status
             Exit Sub
         End If
 
@@ -12990,6 +13165,7 @@ Then
             '    MsgBox("Please select HSTU / Tariff #.", vbOKOnly, "ELC Duty Rate")
             '    IsEmptyDuty = False
             'End If
+            Recordstatus = temp_record_status
             Exit Sub
         End If
 
@@ -13055,7 +13231,7 @@ Then
         End If
         flag_cmdInsRow_Click = False
 
-
+        Recordstatus = temp_record_status
         '*** Phase 2 comment it
         'Call SetHeaderBarValue(True)
     End Sub
@@ -13852,7 +14028,7 @@ Then
 
 
 
-    Private Sub cmdCopy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCopy.Click
+    Private Sub mmdCopy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdCopy.Click
         If (Trim(Split(txtQutSts.Text, "-")(0)) = "W") Then
             MsgBox("Quotation in Wait for Approve status is not available for copy", vbInformation, "Information")
             Exit Sub
@@ -14055,7 +14231,7 @@ Then
                 Dim tmpstr As String
                 tmpstr = txtInrdin.Text
                 ''bug
-                If rs_QUOTNDTL.Tables("RESULT").Rows.Count  > sReadingIndexQ Then
+                If rs_QUOTNDTL.Tables("RESULT").Rows.Count > sReadingIndexQ Then
                     If tmpstr <> rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_inrdin") Then
                         Recordstatus = True
                         If rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_creusr") <> "~*ADD*~" And rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_creusr") <> "~*NEW*~" Then
@@ -14075,7 +14251,7 @@ Then
             If sMode = cModeAdd Or sMode = cModeUpd Then
                 Dim tmpstr As String
                 tmpstr = txtInrwin.Text
-                If rs_QUOTNDTL.Tables("RESULT").Rows.Count  > sReadingIndexQ Then
+                If rs_QUOTNDTL.Tables("RESULT").Rows.Count > sReadingIndexQ Then
                     If tmpstr <> rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_inrwin") Then
                         Recordstatus = True
                         If rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_creusr") <> "~*ADD*~" And rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_creusr") <> "~*NEW*~" Then
@@ -14084,7 +14260,7 @@ Then
                         rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_inrwin") = tmpstr
 
                         Call cal_cbm_cft("i_in", txtInrdin.Text, txtInrwin.Text, txtInrhin.Text)
-                    
+
 
                     End If
                 End If
@@ -14357,7 +14533,7 @@ Then
         'End If
     End Sub
 
-    Private Sub txtNote_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)	Handles txtNote.TextChanged
+    Private Sub txtNote_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNote.TextChanged
         'If txtNote.Text <> "" Then
         If sMode = cModeAdd Or sMode = cModeUpd Then
             Dim tmpstr As String
@@ -14705,14 +14881,14 @@ Then
                     tmpstr = "01/01/1900"
                 End If
                 If IsDate(tmpstr) Then
-                    If DateDiff("d", tmpstr, "11/19/2000") =0 Then
+                    If DateDiff("d", tmpstr, "11/19/2000") = 0 Then
                         tmpstr = "01/01/1900"
                     End If
                 End If
 
                 If rs_QUOTNDTL.Tables("RESULT").Rows.Count > sReadingIndexQ Then
                     If Not IsDBNull(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_ftyshpend")) Then
-                        If   isdate(tmpstr) Then
+                        If isdate(tmpstr) Then
                             If tmpstr <> rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_ftyshpend") Then
                                 Recordstatus = True
                                 If rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_creusr") <> "~*ADD*~" And rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_creusr") <> "~*NEW*~" Then
@@ -14941,7 +15117,7 @@ Then
                     Exit Sub
                 End If
 
-                If cmdSave.Enabled And invalid_Detail() = False Then
+                If mmdSave.Enabled And invalid_Detail() = False Then
                     Call fill_QUOTNDTL()
                     Call cmdSaveClick()
 
@@ -15012,7 +15188,7 @@ Then
 
 
 
-    Private Sub cmdDelRow_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmdDelRow.Click
+    Private Sub mmdDelRow_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles mmdDelRow.Click
 
         If rs_QUOTNDTL.Tables("RESULT") Is Nothing Then
             Exit Sub
@@ -15045,18 +15221,28 @@ Then
 
 
 
-    Private Sub cmdGenSmp_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmdGenSmp.Click
-        samGen = New SAM00004
-        samGen.ShowDialog()
+    Private Sub cmdGenSmp_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmdGenSmp.Click, tsiGenSmp.Click
+        'samGen = New SAM00004
+        'samGen.ShowDialog()
+
+
+        If Recordstatus = True Then
+            MessageBox.Show("Quotation has been changed. Please save before generating the Sample Request.")
+            Exit Sub
+        Else
+            Dim SAM00004 As New SAM00004
+            SAM00004.callbyQUM01(txtQutNo.Text, cboCoCde.Text)
+
+        End If
     End Sub
 
 
 
-    Private Sub cmdUpdate_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmdUpdate.Click
+    Private Sub cmdUpdate_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmdUpdate.Click, tsiUpdate.Click
 
 
         If Recordstatus = True Then
-            MsgBox("Please save the quotation, before updating the items!")
+            MsgBox("Quotation has been changed.  Please save before updating the items!")
             Exit Sub
         End If
 
@@ -15200,7 +15386,7 @@ Then
         If cboCus2Cp.Text <> "" And cboCus2Cp.Enabled = True And cboCus2Cp.Items.Count > 0 Then
             For Y = 0 To i - 1
                 If Trim(cboCus2Cp.Text) = Trim(Replace(cboCus2Cp.Items(Y), vbCrLf, "")) Then
-                'If Trim(cboCus2Cp.Text) = Trim(cboCus2Cp.Items(Y).ToString) Then
+                    'If Trim(cboCus2Cp.Text) = Trim(cboCus2Cp.Items(Y).ToString) Then
                     inCombo = True
                 End If
             Next
@@ -15365,7 +15551,7 @@ Then
                     If rs_QUOTNHDR.Tables("RESULT").Rows(0).Item("quh_creusr") <> "~*ADD*~" And rs_QUOTNHDR.Tables("RESULT").Rows(0).Item("quh_creusr") <> "~*NEW*~" Then
                         rs_QUOTNHDR.Tables("RESULT").Rows(0).Item("quh_creusr") = "~*UPD*~"
                     End If
-		 
+
                     '''20140313 for updating CIH of quotndtl
                     ''' 
                     If Not rs_QUOTNDTL.Tables("result") Is Nothing Then
@@ -15478,7 +15664,7 @@ Then
     End Sub
 
     Private Sub chkApproveDtl_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkApproveDtl.CheckedChanged
-    
+
 
 
     End Sub
@@ -16533,9 +16719,9 @@ Then
                 If chkPC.Checked = True Then
                     'txtCus2Dp.Text = Format(round2(CDec(IIf(txtPCPrc.Text = "", 0, txtPCPrc.Text)) / (1 - Val(txtGrsMgn.Text) / 100)) *get_umftr(), "###,###,##0.0000")
                     If txtPCPrc.Text = "" Then
-                        txtCus2Dp.Text = Format(round(CDec(0) / (1 - Val(txtGrsMgn.Text) / 100), txtInvRndP.Text) *get_umftr(), "###,###,##0.0000")
+                        txtCus2Dp.Text = Format(round(CDec(0) / (1 - Val(txtGrsMgn.Text) / 100), txtInvRndP.Text) * get_umftr(), "###,###,##0.0000")
                     Else
-                        txtCus2Dp.Text = Format(round(CDec(IIf(txtPCPrc.Text = "", 0, txtPCPrc.Text)) / (1 - Val(txtGrsMgn.Text) / 100), txtInvRndP.Text) *get_umftr(), "###,###,##0.0000")
+                        txtCus2Dp.Text = Format(round(CDec(IIf(txtPCPrc.Text = "", 0, txtPCPrc.Text)) / (1 - Val(txtGrsMgn.Text) / 100), txtInvRndP.Text) * get_umftr(), "###,###,##0.0000")
                     End If
 
                 Else
@@ -16693,15 +16879,18 @@ Then
 
         'flag_no_update_mu(sReadingIndexQ) = True
 
-        If e.KeyChar = Chr(13) And cmdFind.Enabled = True Then
+        If e.KeyChar = Chr(13) And mmdFind.Enabled = True Then
             'txtQutNo.Text = UCase(Trim(txtQutNo.Text))
             'Call txtQutNoKeyPress()
-            Call cmdFind_Click(sender, e)
+            Call mmdFind_Click(sender, e)
         End If
 
-        cmdUpdate.Enabled = True
-        cmdRenew.Enabled = True
-        cmdRequote.Enabled = True
+        'mmdUpdate.Enabled = True
+        'cmdUpdate.Enabled = True
+        'mmdRenew.Enabled = True
+        'cmdRenew.Enabled = True
+        'mmdRequote.Enabled = True
+        'cmdRequote.Enabled = True
 
         cmdItmNoConv.Enabled = True
         cmdItmNoConvVen.Enabled = True
@@ -18123,7 +18312,9 @@ Then
 
 
             txtMU.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mu")
-            lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%)"
+            'lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%" + _
+            '                            " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
+            refresh_lblMUMin()
 
             txtPckCstAmt.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_pkgper")
             txtItmCommAmt.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_icmper")
@@ -18524,14 +18715,10 @@ Then
         Call CalculateMatBkd()
     End Sub
 
-    Private Sub dgOthDtl_CancelRowEdit(ByVal sender As Object, ByVal e As System.Windows.Forms.QuestionEventArgs) Handles dgOthDtl.CancelRowEdit
-
-    End Sub
 
     Private Sub dgOthDtl_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgOthDtl.CellClick
         Dim qutseq As Integer
-
-        Recordstatus = True
+        Dim tempRecordstatus As Boolean = Recordstatus
         ''))!reset readonly
         Call setStatus_dgOthDtl(sMode)
 
@@ -18659,8 +18846,8 @@ Then
         End If
 
 
-
         Call DeleteClickCheck()
+        Recordstatus = tempRecordstatus
     End Sub
 
 
@@ -21594,8 +21781,9 @@ Then
                 If get_QUPRCEMT_CU(txtSeq.Text, Split(cboCus1No.Text, "-")(0).Trim, Split(cboCus2No.Text, "-")(0).Trim, txtVenTyp.Text.Trim, txtItmCat.Text.Trim, Split(cboVenNo.Text.Trim, "-")(0).Trim, cboDtlPrcTrm.Text, cboTranTrm.Text) = True Then
                     Call calculate_gbPandelCstEmt(txtSeq.Text)
                     txtMU.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mu")
-                    lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%)"
-
+                    'lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%" + _
+                    '                    " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
+                    refresh_lblMUMin()
                     txtPckCstAmt.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_pkgper")
                     txtItmCommAmt.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_icmper")
 
@@ -22360,24 +22548,30 @@ Then
             item_update_list = ""
             flag_no_update_mu(sReadingIndexQ) = True
 
-            cmdAdd.Enabled = Enq_right_local 'True
+            mmdAdd.Enabled = Enq_right_local
             QuotCopyFlag = False
-            cmdSave.Enabled = False
+            mmdSave.Enabled = False
             ''''''20130826   cmdReset.Enabled = True
             '*** Phase 2
+            tsiUpdate.Enabled = False
             cmdUpdate.Enabled = False
+            tsiRenew.Enabled = False
             cmdRenew.Enabled = False
+            tsiRequote.Enabled = False
             cmdRequote.Enabled = False
 
-            cmdDelete.Enabled = False
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = True
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
-            cmdExit.Enabled = True
-            cmdClear.Enabled = True
-            cmdSearch.Enabled = True
+            mmdDelete.Enabled = False
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = True
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
+            mmdExit.Enabled = True
+            mmdClear.Enabled = True
+            mmdSearch.Enabled = True
+            mmdFunction.Enabled = False
+            tsiCIH.Enabled = False
 
+            mmdPrint.Enabled = False
             '*** Phase 2 comment it
             'cmdFirst.Enabled = False
             'cmdLast.Enabled = False
@@ -22531,6 +22725,9 @@ Then
             txtDTLCustShpDateEnd.Text = ""
             cboCus1No.Enabled = False
             cboCus2No.Enabled = False
+
+
+            ' btcQUM00001.SelectedTab = tpQUM00001_1 'header page
         ElseIf Mode = cModeAdd Then
             EditModeHdr = Mode
             Call SetInputBoxesStatus("EnableAll")
@@ -22565,17 +22762,17 @@ Then
 
             txtCusSub.Enabled = False
 
-            cmdSave.Enabled = Enq_right_local 'True
+            mmdSave.Enabled = Enq_right_local
             'If OldItemRecord = True Then
             '    cmdReset.Enabled = Enq_right_local
             'Else
             '    cmdReset.Enabled = False
             'End If
-            cmdDelete.Enabled = False
-            cmdAdd.Enabled = False
-            cmdFind.Enabled = False
-            cmdSearch.Enabled = False
-            cmdCopy.Enabled = False
+            mmdDelete.Enabled = False
+            mmdAdd.Enabled = False
+            mmdFind.Enabled = False
+            mmdSearch.Enabled = False
+            mmdCopy.Enabled = False
             Call SetStatusBar(Mode)
 
             cboDtlPrcTrm.Enabled = False
@@ -22806,96 +23003,6 @@ Then
 
 
 
-
-                '*** Additional Information
-                '*** Phase 2 comment it
-                'Cursor = Cursors.WaitCursor
-
-                'gsCompany = Trim(cboCoCde.Text)
-                'Call Update_gs_Value(gsCompany)
-
-                'gspStr = "sp_select_QUADDINF '" & cboCoCde.Text & "',''"
-                'rtnLong = execute_SQLStatement(gspStr, rs_QUADDINF, rtnStr)
-                'gspStr = ""
-
-                'Cursor = Cursors.Default
-
-                'If rtnLong <> RC_SUCCESS Then
-                '    MsgBox("Error on loading setStatus sp_select_QUADDINF :" & rtnStr)
-                '   '''' Cursor = Cursors.Default
-                '    Exit Sub
-                'End If
-
-                'For i As Integer = 0 To rs_QUADDINF.Tables("RESULT").Columns.Count - 1
-                '    rs_QUADDINF.Tables("RESULT").Columns(i).ReadOnly = False
-                'Next i
-
-                '*** Cost Element
-                'Cursor = Cursors.WaitCursor
-
-                'gsCompany = Trim(cboCoCde.Text)
-                'Call Update_gs_Value(gsCompany)
-
-                'gspStr = "sp_select_QUCSTEMT '" & cboCoCde.Text & "',''"
-                'rtnLong = execute_SQLStatement(gspStr, rs_QUCSTEMT, rtnStr)
-                'gspStr = ""
-
-                'Cursor = Cursors.Default
-
-                'If rtnLong <> RC_SUCCESS Then
-                '    MsgBox("Error on loading setStatus sp_select_QUCSTEMT :" & rtnStr)
-                '   '''' Cursor = Cursors.Default
-                '    Exit Sub
-                'End If
-
-                'For i As Integer = 0 To rs_QUCSTEMT.Tables("RESULT").Columns.Count - 1
-                '    rs_QUCSTEMT.Tables("RESULT").Columns(i).ReadOnly = False
-                'Next i
-
-                '*** ELC
-                'Cursor = Cursors.WaitCursor
-
-                'gsCompany = Trim(cboCoCde.Text)
-                'Call Update_gs_Value(gsCompany)
-
-                'gspStr = "sp_select_QUELC '" & cboCoCde.Text & "',''"
-                'rtnLong = execute_SQLStatement(gspStr, rs_QUELC, rtnStr)
-                'gspStr = ""
-
-                'Cursor = Cursors.Default
-
-                'If rtnLong <> RC_SUCCESS Then
-                '    MsgBox("Error on loading setStatus sp_select_QUELC :" & rtnStr)
-                '   '''' Cursor = Cursors.Default
-                '    Exit Sub
-                'End If
-
-                'For i As Integer = 0 To rs_QUELC.Tables("RESULT").Columns.Count - 1
-                '    rs_QUELC.Tables("RESULT").Columns(i).ReadOnly = False
-                'Next i
-
-                '*** ELC Details
-                'Cursor = Cursors.WaitCursor
-
-                'gsCompany = Trim(cboCoCde.Text)
-                'Call Update_gs_Value(gsCompany)
-
-                'gspStr = "sp_select_QUELCDTL '" & cboCoCde.Text & "',''"
-                'rtnLong = execute_SQLStatement(gspStr, rs_QUELCDTL, rtnStr)
-                'gspStr = ""
-
-                'Cursor = Cursors.Default
-
-                'If rtnLong <> RC_SUCCESS Then
-                '    MsgBox("Error on loading setStatus sp_select_QUELCDTL :" & rtnStr)
-                '   '''' Cursor = Cursors.Default
-                '    Exit Sub
-                'End If
-
-                'For i As Integer = 0 To rs_QUELCDTL.Tables("RESULT").Columns.Count - 1
-                '    rs_QUELCDTL.Tables("RESULT").Columns(i).ReadOnly = False
-                'Next i
-
                 'modify
                 ''cboCusals.Enabled = False
                 txtUPC.Enabled = False
@@ -22974,48 +23081,45 @@ Then
             txtAlscolcde.Text = ""
 
             txtCusSub.Enabled = False
-            cmdAdd.Enabled = False
+            mmdAdd.Enabled = False
 
-            cmdSave.Enabled = Enq_right_local 'True
-            ''If OldItemRecord = True Then
-            ''    cmdReset.Enabled = Enq_right_local
-            ''Else
-            ''    cmdReset.Enabled = False
-            ''End If
-            '''20130909
+            mmdSave.Enabled = Enq_right_local
+            tsiUpdate.Enabled = True
             cmdUpdate.Enabled = True
+            tsiRenew.Enabled = True
             cmdRenew.Enabled = True
+            tsiRequote.Enabled = True
             cmdRequote.Enabled = True
-
-            cmdDelete.Enabled = False 'Del_right
-            cmdFind.Enabled = False
-            cmdSearch.Enabled = False
-            'cmdspecial.Enabled = False
-            'CmdLookup.Enabled = True
-            'cmdInsRow.Enabled = Enq_right_local 'True
-            'cmdDelRow.Enabled = Del_right_local 'True
+            tsiPrintQuotation.Enabled = Print_right_local
+            mmdPrint.Enabled = (Print_right_local Or Export_right_local)
+            mmdDelete.Enabled = False
+            mmdFind.Enabled = False
+            mmdSearch.Enabled = False
 
             If rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_cus2no").ToString() <> "" Then
                 If Microsoft.VisualBasic.Right(Trim(rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_cus1no").ToString), 8) <> "(Active)" Or _
                     Microsoft.VisualBasic.Right(Trim(rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_cus2no").ToString), 8) <> "(Active)" Then
-                    cmdInsRow.Enabled = False
-                    cmdDelRow.Enabled = False
+                    mmdInsRow.Enabled = False
+                    mmdDelRow.Enabled = False
                 Else
-                    cmdInsRow.Enabled = Enq_right_local 'True
-                    cmdDelRow.Enabled = Del_right_local 'True
+                    mmdInsRow.Enabled = Enq_right_local
+                    mmdInsRow.Enabled = False
+                    mmdDelRow.Enabled = False
                 End If
             Else
                 If Microsoft.VisualBasic.Right(Trim(rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_cus1no").ToString), 8) <> "(Active)" Then
-                    cmdInsRow.Enabled = False
-                    cmdDelRow.Enabled = False
+                    mmdInsRow.Enabled = False
+                    mmdDelRow.Enabled = False
                 Else
-                    cmdInsRow.Enabled = Enq_right_local 'True
-                    cmdDelRow.Enabled = Del_right_local 'True
+                    mmdInsRow.Enabled = Enq_right_local
+                    mmdDelRow.Enabled = Del_right_local
+                    mmdInsRow.Enabled = False
+                    mmdDelRow.Enabled = False
                 End If
             End If
 
-            cmdExit.Enabled = True
-            cmdClear.Enabled = True
+            mmdExit.Enabled = True
+            mmdClear.Enabled = True
             ''''''20130826   cmdReset.Enabled = True
 
             '*** Header
@@ -23053,7 +23157,7 @@ Then
             txtValDat.Enabled = False
 
             If Microsoft.VisualBasic.Left(rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_qutsts").ToString, 1) = "A" Then
-                chkCancel.Enabled = Del_right_local 'True
+                chkCancel.Enabled = False 'True
                 chkApprove.Enabled = False
             ElseIf Microsoft.VisualBasic.Left(rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_qutsts").ToString, 1) = "E" Then
                 chkCancel.Enabled = False
@@ -23062,7 +23166,7 @@ Then
                 '    chkCancel.Enabled = False
                 '    chkApprove.Enabled = False
             ElseIf Microsoft.VisualBasic.Left(rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_qutsts").ToString, 1) = "W" And gsUsrRank <= 3 Then
-                chkCancel.Enabled = Del_right_local 'True
+                chkCancel.Enabled = False 'True
                 chkApprove.Enabled = True
             ElseIf Microsoft.VisualBasic.Left(rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_qutsts").ToString, 1) = "W" And gsUsrRank > 3 Then
                 chkCancel.Enabled = False
@@ -23175,6 +23279,7 @@ Then
             'Recordstatus = False
             Insert_flag = False
             Call SetStatusBar(Mode)
+            mmdFunction.Enabled = True
         ElseIf Mode = cModeSave Then
             Call SetStatusBar(Mode)
             If Add_flag = True Then
@@ -23528,10 +23633,10 @@ Then
 
     Private Sub freeze_Quotation()
         Call SetInputBoxesStatus("DisableAll")
-        cmdClear.Enabled = True
+        mmdClear.Enabled = True
         ''''''20130826   cmdReset.Enabled = True
 
-        cmdExit.Enabled = True
+        mmdExit.Enabled = True
         btcQUM00001.Enabled = True
         cmdBackD.Enabled = True
         cmdNextD.Enabled = True
@@ -29208,71 +29313,71 @@ Then
         End If
     End Sub
 
-    Private Sub PrcEmtCopyFromDetail()
-        txtSeqP.Text = txtSeq.Text
-        txtItmNoP.Text = txtItmNo.Text
-      If txtItmNoVen.Text <> "" Then
-            txtPckingP.Text = cboUM.Text & " / " & txtInrQty.Text & " / " & txtMtrQty.Text & " / " & txtCft.Text & " / " & _
-                                txtCBM.Text & " / " & cboFtyPrcTrm.Text & " / " & cboDtlPrcTrm.Text & " / " & cboTranTrm.Text
-        Else
-            txtPckingP.Text = cboPcking.Text
-        End If
+    'Private Sub PrcEmtCopyFromDetail()
+    '    txtSeqP.Text = txtSeq.Text
+    '    txtItmNoP.Text = txtItmNo.Text
+    '  If txtItmNoVen.Text <> "" Then
+    '        txtPckingP.Text = cboUM.Text & " / " & txtInrQty.Text & " / " & txtMtrQty.Text & " / " & txtCft.Text & " / " & _
+    '                            txtCBM.Text & " / " & cboFtyPrcTrm.Text & " / " & cboDtlPrcTrm.Text & " / " & cboTranTrm.Text
+    '    Else
+    '        txtPckingP.Text = cboPcking.Text
+    '    End If
 
-         txtCus1NoP.Text = cboCus1No.Text
-        '0627
-        txtCus2NoP.Text = cboCus2No.Text
-        txtVenNoP.Text = cboCusVen.Text
-        txtPrcTrmP.Text = cboDtlPrcTrm.Text
-        txtTranTrmP.Text = cboTranTrm.Text
+    '     txtCus1NoP.Text = cboCus1No.Text
+    '    '0627
+    '    txtCus2NoP.Text = cboCus2No.Text
+    '    txtVenNoP.Text = cboCusVen.Text
+    '    txtPrcTrmP.Text = cboDtlPrcTrm.Text
+    '    txtTranTrmP.Text = cboTranTrm.Text
 
 
-        txtFtyCstCurrP.Text = txtFCurCde.Text
-        txtFtyCstP.Text = txtFtyCst.Text
-        txtFtyPrcCurrP.Text = txtFCurCde.Text
-        txtFtyPrcP.Text = txtFtyPrc.Text
-        txtBasPrcCurrP.Text = txtCurCde2.Text
-        txtBasPrcP.Text = txtBasPrc.Text
+    '    txtFtyCstCurrP.Text = txtFCurCde.Text
+    '    txtFtyCstP.Text = txtFtyCst.Text
+    '    txtFtyPrcCurrP.Text = txtFCurCde.Text
+    '    txtFtyPrcP.Text = txtFtyPrc.Text
+    '    txtBasPrcCurrP.Text = txtCurCde2.Text
+    '    txtBasPrcP.Text = txtBasPrc.Text
 
-        lblMUMinP.Text = lblMUMin.Text
-        txtMUP.Text = txtMU.Text
+    '    lblMUMinP.Text = lblMUMin.Text
+    '    txtMUP.Text = txtMU.Text
 
-        txtMUPriceCurrP.Text = txtCurCde2.Text
-        txtMUPriceP.Text = txtMUPrice.Text
+    '    txtMUPriceCurrP.Text = txtCurCde2.Text
+    '    txtMUPriceP.Text = txtMUPrice.Text
 
-        txtPckCstAmtChgP.Text = txtPckCstAmt.Text
-        txtPckCst1P.Text = txtPckCstAmt.Text
+    '    txtPckCstAmtChgP.Text = txtPckCstAmt.Text
+    '    txtPckCst1P.Text = txtPckCstAmt.Text
 
-        txtItmCommAmtChgP.Text = txtItmCommAmt.Text
-        txtItmComm1P.Text = txtItmCommAmt.Text
+    '    txtItmCommAmtChgP.Text = txtItmCommAmt.Text
+    '    txtItmComm1P.Text = txtItmCommAmt.Text
 
-        txtCurCde2P.Text = txtCurCde2.Text
-        txtCus1SpP.Text = txtCus1Sp.Text
+    '    txtCurCde2P.Text = txtCurCde2.Text
+    '    txtCus1SpP.Text = txtCus1Sp.Text
 
-        txtCurCde21P.Text = txtCurCde2P.Text
-        txtCus1DpP.Text = txtCus1Dp.Text
+    '    txtCurCde21P.Text = txtCurCde2P.Text
+    '    txtCus1DpP.Text = txtCus1Dp.Text
 
-        lblApproveAmtP.Text = "Amt (" + txtCurCde2P.Text + ")"
-    End Sub
+    '    lblApproveAmtP.Text = "Amt (" + txtCurCde2P.Text + ")"
+    'End Sub
 
-    Private Sub PrcEmtCopyToDetail()
-        txtItmCat.Text = txtItmCatP.Text
-        txtVenTyp.Text = txtVenTypP.Text
-        '0627
-        'cboVenNo.Text = txtVenNoP.Text
+    'Private Sub PrcEmtCopyToDetail()
+    '    txtItmCat.Text = txtItmCatP.Text
+    '    txtVenTyp.Text = txtVenTypP.Text
+    '    '0627
+    '    'cboVenNo.Text = txtVenNoP.Text
 
-        lblMUMin.Text = lblMUMinP.Text
-        txtMU.Text = txtMUP.Text
+    '    lblMUMin.Text = lblMUMinP.Text
+    '    txtMU.Text = txtMUP.Text
 
-        txtMUPrice.Text = txtMUPriceP.Text
+    '    txtMUPrice.Text = txtMUPriceP.Text
 
-        txtPckCstAmt.Text = txtPckCst1P.Text
+    '    txtPckCstAmt.Text = txtPckCst1P.Text
 
-        txtItmCommAmt.Text = txtItmComm1P.Text
+    '    txtItmCommAmt.Text = txtItmComm1P.Text
 
-        txtCus1Sp.Text = Format(round(CDbl(Val(txtStdPrcP.Text)), txtInvRndP.Text), "###,###,##0.0000")
+    '    txtCus1Sp.Text = Format(round(CDbl(Val(txtStdPrcP.Text)), txtInvRndP.Text), "###,###,##0.0000")
 
-        txtCus1Dp.Text = Format(round(CDbl(Val(txtCus1DpP.Text)), txtInvRndP.Text), "###,###,##0.0000")
-    End Sub
+    '    txtCus1Dp.Text = Format(round(CDbl(Val(txtCus1DpP.Text)), txtInvRndP.Text), "###,###,##0.0000")
+    'End Sub
 
     Private Sub CalDiscnt_Cus1()
         If txtDiscntP.Text = "" Or Val(txtDiscntP.Text) = 0 Then
@@ -30376,7 +30481,7 @@ Then
                                 For counter = 0 To rsIMBASINF.Tables("RESULT").Rows.Count - 1
                                     If rsIMBASINF.Tables("RESULT").Rows(0)("ibi_itmsts") = "DIS" Then
                                         '''20130807 allow delete item chkDelete.Enabled = False
-                                        cmdSave.Enabled = True
+                                        mmdSave.Enabled = True
                                         Exit For
                                     End If
                                 Next
@@ -34595,9 +34700,6 @@ EvalErr:
 
     End Sub
 
-    Private Sub txtQutNo_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtQutNo.TextChanged
-
-    End Sub
 
 
     Private Sub rbView_A_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbView_A.Click
@@ -35268,10 +35370,6 @@ EvalErr:
                 Next
             End With
         End If
-
-    End Sub
-
-    Private Sub dgOthDtl_CellEndEdit(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgOthDtl.CellEndEdit
 
     End Sub
 
@@ -36141,7 +36239,7 @@ EvalErr:
             rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_qutsts") = "R"
             chkPC_hdr.Enabled = False
             ' ElseIf count_sts_E = rs_QUOTNDTL.Tables("RESULT").Rows.Count Then
-        ElseIf rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_qutsts") = "E - Expired" Then
+        ElseIf rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_qutsts") = "E - Expired" Or rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_qutsts") = "E" Then
             'E
             txtQutSts.Text = "E-Expiry"
             rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_qutsts") = "E"
@@ -36215,7 +36313,7 @@ EvalErr:
             chkPC_hdr.Enabled = False
             ' ElseIf count_sts_E = rs_QUOTNDTL.Tables("RESULT").Rows.Count Then
             ' rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_qutsts") = "E - Expired"
-        ElseIf rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_qutsts") = "E - Expired" Then
+        ElseIf rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_qutsts") = "E - Expired" Or rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_qutsts") = "E" Then
             'E
             txtQutSts.Text = "E-Expiry"
             rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_qutsts") = "E"
@@ -36992,13 +37090,10 @@ EvalErr:
 
     End Sub
 
-    Private Sub dgOthDtl_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgOthDtl.CellContentClick
 
-    End Sub
-
-    Private Sub cmdRenew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdRenew.Click
+    Private Sub cmdRenew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdRenew.Click, tsiRenew.Click
         If Recordstatus = True Then
-            MsgBox("Please save the quotation, before renewing the items!")
+            MsgBox("Quotation has been changed. Please save before renewing the items!")
             Exit Sub
         End If
 
@@ -38353,10 +38448,10 @@ EvalErr:
 
     End Sub
 
-    Private Sub cmdGenTent_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdGenTent.Click
+    Private Sub cmdGenTent_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdGenTent.Click, tsiGenTent.Click
 
         If Recordstatus = True Then
-            MsgBox("Please save the quotation, before generating the TO!")
+            MsgBox("Quotation has been changed. Please save before generating TO.")
             Exit Sub
         End If
 
@@ -38365,34 +38460,19 @@ EvalErr:
 
         Cursor = Cursors.WaitCursor
         'TOM00002.Show()
-        TOM00002.Hide()
-        TOM00002.Close()
-        TOM00002.Show()
+        'TOM00002.Hide()
+        'TOM00002.Close()
+        'TOM00002.Show()
 
-        TOM00002.cboCoCde.Text = cboCoCde.Text
-        TOM00002.txtQutNo.Text = txtQutNo.Text
-
-        'TOM00002.cmdFind
-
+        'TOM00002.cboCoCde.Text = cboCoCde.Text
+        'TOM00002.txtQutNo.Text = txtQutNo.Text
+        'TOM00002.txtQutNo.Enabled = False
 
 
-        'Call Auto_find_TO()
-        'If flag_to_released = False Then  'not released yet, so now to release
-        '    If flag_no_TO_item_to_gen = False Then
+        Dim TOM00002 As New TOM00002
+        TOM00002.callbyQUM01(txtQutNo.Text, cboCoCde.Text)
 
-        '        Call Auto_gen_TO()
-        '        gs_messaeg = gs_messaeg & "Tentative Order Generated!" & vbLf
 
-        '        'Call Auto_TO_release()
-
-        '    End If
-        'End If
-
-        'If Trim(gs_messaeg) <> "" Then
-        '    MsgBox(gs_messaeg)
-        'End If
-
-        'gs_messaeg = ""
 
         Cursor = Cursors.Default
 
@@ -39457,52 +39537,7 @@ tod_adjprc & "','" & _
 
     End Sub
 
-    'Function cal_mk_by_pcprc() As Decimal
-    '    Dim temp_value_BE As String
-    '    Dim temp_value_BF As String
 
-    '    temp_value_BF = round(temp_value_BF, cus1_rounding)
-
-
-    '    ''' Here to re-cal BD, by value of BE
-    '    calBasicPrice = temp_value_AP
-    '    calAdjustedPrice = temp_value_BF
-
-    '    calPckCstAmt = temp_value_AV
-    '    If IS_contopc = True Then
-    '        temp_value_AW = temp_value_AW * temp_value_I
-    '    End If
-
-    '    calCommPer = temp_value_AW
-
-    '    calCommAmt = temp_value_AX
-
-    '    calCURounding = 4 'temporary hard code : used in Standard Price and Adjusted Price
-
-    '    '' ''1. Calculate Markup Price
-    '    Dim resMarkupPrice As Decimal
-
-
-    '    '' ''2. Calculate Markup %
-    '    Dim resMarkup_Usr As Decimal
-
-    '    If calAdjustedPrice = 0 Then
-    '        resMarkup_Usr = 0
-    '        resMarkupPrice = 0
-    '    Else
-    '        If ((calAdjustedPrice - calCommAmt) * (1 - calCommPer / 100) - calPckCstAmt) <> 0 Then
-    '            resMarkup_Usr = round(100 * (1 - calBasicPrice / ((calAdjustedPrice - calCommAmt) * (1 - calCommPer / 100) - calPckCstAmt)), calCURounding)
-    '        End If
-
-    '        'If (1 - resMarkup_Usr / 100) <> 0 Then
-    '        '    resMarkupPrice = round(calBasicPrice / (1 - resMarkup_Usr / 100), calCURounding)
-    '        'End If
-    '    End If
-
-    '    temp_value_BE = resMarkup_Usr
-
-    '    cal_mk_by_pcprc = temp_value_BE
-    'End Function
     Sub mu_change_pcprc()
 
         ''20130902
@@ -39596,9 +39631,9 @@ tod_adjprc & "','" & _
 
     End Sub
 
-    Private Sub cmdRequote_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdRequote.Click
+    Private Sub cmdRequote_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdRequote.Click, tsiRequote.Click
         If Recordstatus = True Then
-            MsgBox("Please save the quotation, before requoting items!")
+            MsgBox("Quotation has been changed. Please save before requoting items!")
             Exit Sub
         End If
 
@@ -39620,9 +39655,7 @@ tod_adjprc & "','" & _
 
     End Sub
 
-    Private Sub GroupBox10_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox10.Enter
 
-    End Sub
 
 
 
@@ -39676,39 +39709,47 @@ tod_adjprc & "','" & _
 
     End Sub
     Function all_cmd_dis()
-        dispSaveFlag = cmdSave.Enabled
-        dispCopyFlag = cmdCopy.Enabled
-        dispClearFlag = cmdClear.Enabled
-        dispInsFlag = cmdInsRow.Enabled
-        dispDelFlag = cmdDelRow.Enabled
-        dispExitFlag = cmdExit.Enabled
+        dispSaveFlag = mmdSave.Enabled
+        dispCopyFlag = mmdCopy.Enabled
+        dispClearFlag = mmdClear.Enabled
+        dispInsFlag = mmdInsRow.Enabled
+        dispDelFlag = mmdDelRow.Enabled
+        dispExitFlag = mmdExit.Enabled
         dispGenSmpFlag = cmdGenSmp.Enabled
         dispGenTentFlag = cmdGenTent.Enabled
         dispUpdateFlag = cmdUpdate.Enabled
         dispRenewFlag = cmdRenew.Enabled
 
-        cmdSave.Enabled = False
-        cmdCopy.Enabled = False
-        cmdClear.Enabled = False
-        cmdInsRow.Enabled = False
-        cmdDelRow.Enabled = False
-        cmdExit.Enabled = False
+        mmdSave.Enabled = False
+        mmdCopy.Enabled = False
+        mmdClear.Enabled = False
+        mmdInsRow.Enabled = False
+        mmdDelRow.Enabled = False
+        mmdExit.Enabled = False
+        tsiGenSmp.Enabled = False
         cmdGenSmp.Enabled = False
+        tsiGenTent.Enabled = False
         cmdGenTent.Enabled = False
+        tsiUpdate.Enabled = False
         cmdUpdate.Enabled = False
+        tsiRenew.Enabled = False
         cmdRenew.Enabled = False
     End Function
 
     Function all_cmd_en()
-        cmdSave.Enabled = dispSaveFlag
-        cmdCopy.Enabled = dispCopyFlag
-        cmdClear.Enabled = dispClearFlag
-        cmdInsRow.Enabled = dispInsFlag
-        cmdDelRow.Enabled = dispDelFlag
-        cmdExit.Enabled = dispExitFlag
+        mmdSave.Enabled = dispSaveFlag
+        mmdCopy.Enabled = dispCopyFlag
+        mmdClear.Enabled = dispClearFlag
+        mmdInsRow.Enabled = dispInsFlag
+        mmdDelRow.Enabled = dispDelFlag
+        mmdExit.Enabled = dispExitFlag
+        tsiGenSmp.Enabled = dispGenSmpFlag
         cmdGenSmp.Enabled = dispGenSmpFlag
+        tsiGenTent.Enabled = dispGenTentFlag
         cmdGenTent.Enabled = dispGenTentFlag
+        tsiUpdate.Enabled = dispUpdateFlag
         cmdUpdate.Enabled = dispUpdateFlag
+        tsiRenew.Enabled = dispRenewFlag
         cmdRenew.Enabled = dispRenewFlag
     End Function
 
@@ -39787,7 +39828,149 @@ Handles dgMatBkd.DataError
 
     End Sub
 
+    Private Sub mmdPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsiPrintQuotation.Click
+
+        If Recordstatus = True Then
+            MessageBox.Show("Quotation has been changed. Please save before printing.")
+            Exit Sub
+        Else
+            Dim QUR00001 As New QUR00001
+            QUR00001.callByQUM01(txtQutNo.Text, cboCoCde.Text)
+
+        End If
+    End Sub
+
+    Private Sub ExportToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsiExportToExcel.Click
+
+        If Recordstatus = True Then
+            MessageBox.Show("Quotation has been changed. Please save before export.")
+            Exit Sub
+        Else
+            Dim QUR00003 As New QUR00003
+            QUR00003.callByQUM01(txtQutNo.Text, cboCoCde.Text)
+
+        End If
+    End Sub
+
+#Region "Movable Panel"
+
+    Dim ProgramPosition, CursorPoint As Point
+    Dim movePanel As String
+    Dim panelMoveTimer As Timer
+    Private Sub RenewPanel(ByVal panel As Panel)
+        ProgramPosition = panel.Location
+        CursorPoint = Cursor.Position
+    End Sub
+
+    Private Sub SetPanelPosition(ByVal panel As Panel)
+        Dim X As Integer = 0
+        Dim Y As Integer = 0
+
+
+        Dim Xlimit As Integer
+        Dim Ylimit As Integer
+       
+        Xlimit = Me.ClientSize.Width - panel.Width
+        Ylimit = Me.ClientSize.Height - panel.Height
+        If (ProgramPosition - CursorPoint + Cursor.Position).X > 0 And (ProgramPosition - CursorPoint + Cursor.Position).X < Xlimit Then
+            X = (ProgramPosition - CursorPoint + Cursor.Position).X
+        ElseIf (ProgramPosition - CursorPoint + Cursor.Position).X <= 0 Then
+            X = 0
+        Else
+            X = Xlimit
+        End If
+
+        If (ProgramPosition - CursorPoint + Cursor.Position).Y > 0 And (ProgramPosition - CursorPoint + Cursor.Position).Y < Ylimit Then
+            Y = (ProgramPosition - CursorPoint + Cursor.Position).Y
+        ElseIf (ProgramPosition - CursorPoint + Cursor.Position).Y <= 0 Then
+            Y = 0
+        Else
+            Y = Ylimit
+        End If
+
+        panel.Location = New Point(X, Y)
+    End Sub
+
+    Private Sub panelMoveTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Dim X As Integer = 0
+        Dim Y As Integer = 0
+        Select Case movePanel
+            Case PanelMutShp.Name
+                SetPanelPosition(PanelMutShp)
+            Case PanelCptBkd.Name
+                SetPanelPosition(PanelCptBkd)
+        End Select
+
+
+    End Sub
+
+    Private Sub PanelMutShp_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PanelMutShpHeaderBar.MouseDown, PanelMutShpHeader.MouseDown
+        movePanel = PanelMutShp.Name
+        panelMoveTimer.Enabled = True
+        panelMoveTimer.Start()
+        RenewPanel(PanelMutShp)
+    End Sub
+
+    Private Sub PanelMutShp_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PanelMutShpHeaderBar.MouseUp, PanelMutShpHeader.MouseUp
+        panelMoveTimer.Stop()
+        RenewPanel(PanelMutShp)
+        movePanel = ""
+    End Sub
+    Private Sub PanelCptBkd_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PanelCptBkdHeaderBar.MouseDown, PanelCptBkdHeader.MouseDown
+        movePanel = PanelCptBkd.Name
+        panelMoveTimer.Enabled = True
+        panelMoveTimer.Start()
+        RenewPanel(PanelCptBkd)
+    End Sub
+
+    Private Sub PanelCptBkd_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PanelCptBkdHeaderBar.MouseUp, PanelCptBkdHeader.MouseUp
+        panelMoveTimer.Stop()
+        RenewPanel(PanelCptBkd)
+        movePanel = ""
+    End Sub
+#End Region
+
+
+
+    Private Sub mmdCIH_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsiCIH.Click
+        Dim frmCUM00003 As New CUM00003
+        Dim cus1no, cus2no, itemno As String
+        cus1no = Microsoft.VisualBasic.Left(cboCus1No.Text, InStr(cboCus1No.Text, " - ") - 1)
+        cus2no = ""
+        If cboCus2No.Text <> "" Then
+            cus2no = Microsoft.VisualBasic.Left(cboCus2No.Text, InStr(cboCus2No.Text, " - ") - 1)
+        End If
+
+        itemno = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_itmnoreal").ToString.Trim()
+        frmCUM00003.callbyQUM01(cus1no, cus2no, itemno)
+    End Sub
+
+    Private Sub dgOthDtl_CellValueChanged(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgOthDtl.CellValueChanged
+
+        Recordstatus = True
+    End Sub
+
+    Private Sub refresh_lblMUMin()
+        edit_lblMUMinContent()
+        ' set_lblMUMinPosition()
+    End Sub
+
+    Private Sub edit_lblMUMinContent()
+        lblMUMin.Text = "(Min " + Format(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), "###,###,##0.0000") + "%" + _
+                            " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
+
+    End Sub
+    Private Sub set_lblMUMinPosition()
+        Dim g As Graphics
+        Dim Size As SizeF
+        Size = g.MeasureString(lblMUMin.Text, lblMUMin.Font)
+        Dim txtMULocationMid As New Point
+        txtMULocationMid = New Point(txtMU.Location.X + txtMU.Size.Width / 2, txtMU.Location.Y)
+        Dim lblMUMinLocationMid As New Point
+        lblMUMinLocationMid = New Point(txtMULocationMid.X, txtMU.Location.Y - 17)
+        set_lblMUMinPositionByMidPoint(lblMUMinLocationMid)
+    End Sub
+    Private Sub set_lblMUMinPositionByMidPoint(ByVal midPoint As Point)
+        lblMUMin.Location = New Point(midPoint.X, midPoint.Y)
+    End Sub
 End Class
-
-
-

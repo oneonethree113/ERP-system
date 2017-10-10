@@ -17,12 +17,12 @@ Public Class RIR00001
         Call FillCompCombo(gsUsrID, cboCocde)
         Call GetDefaultCompany(cboCocde, txtCoNam)
 
-        If gsDefaultCompany <> "MS" Then
-            cboCocde.Items.Add("UC-G")
-        End If
+        'If gsDefaultCompany <> "MS" Then
+        '    cboCocde.Items.Add("UC-G")
+        'End If
 
         Call AddSearchBtnHandler()
-
+        Call Formstartup(Me.Name)
     End Sub
 
     'Company Box Start
@@ -71,11 +71,11 @@ Public Class RIR00001
 
         For i As Integer = 1 To textboxlist.Count
             If (textboxlist(i).Text.Length > 1000) Then
-                Dim tmp_labelname As String = "SLabel_" + i.ToString
-                Dim label() As Control = GroupBox1.Controls.Find(tmp_labelname, True)
+                'Dim tmp_labelname As String = "SLabel_" + i.ToString
+                'Dim label() As Control = Controls.Find(tmp_labelname, True)
 
                 'Me.Controls.Find(tmp_labelname, True)
-                MsgBox(label(i).Text + " exceeds 1000 characters")
+                MsgBox("Textbox exceeds 1000 characters")
                 Exit Function
             End If
         Next

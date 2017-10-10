@@ -1349,4 +1349,24 @@
         grdDetail.ClearSelection()
         txtbox.Clear()
     End Sub
+
+    Dim CoCde As String
+    Public Sub callbyQUM01(ByVal SAIno As String, ByVal ComparyCode As String)
+        txtQutNo.Text = SAIno
+        CoCde = ComparyCode
+        txtQutNo.Enabled = False
+        cboCoCde.Enabled = False
+        
+        'Hints: In .net, 'Shown' event is called after 'Load' event
+        AddHandler Me.Shown, AddressOf callByQUM01AfterLoading
+        Me.ShowDialog()
+    End Sub
+
+    Private Sub callByQUM01AfterLoading()
+        cmdClear.Enabled = False
+        cmdClearAll.Enabled = False
+        cboCoCde.Text = CoCde
+        cmdFind_Click(Nothing, Nothing)
+        RemoveHandler Me.Shown, AddressOf callByQUM01AfterLoading
+    End Sub
 End Class

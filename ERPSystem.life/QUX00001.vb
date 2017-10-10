@@ -166,20 +166,22 @@ Public Class QUX00001
 
 
         i = 0 '0
-        grdItem.Columns(i).HeaderText = "Count"
+        grdItem.Columns(i).HeaderText = "Seq"
         grdItem.Columns(i).Width = 30
+        grdItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1 '1
         grdItem.Columns(i).HeaderText = "Action"
         grdItem.Columns(i).Width = 40
         i = i + 1 '1
         grdItem.Columns(i).HeaderText = "Excel Rows"
-        grdItem.Columns(i).Width = 30
+        grdItem.Columns(i).Width = 35
+        grdItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1 '2
         grdItem.Columns(i).HeaderText = "Excel Item No."
         grdItem.Columns(i).Width = 99
         i = i + 1 '3
         grdItem.Columns(i).HeaderText = "Vendor No."
-        grdItem.Columns(i).Width = 40
+        grdItem.Columns(i).Width = 50
         i = i + 1 '4
         grdItem.Columns(i).HeaderText = "Vendor Name"
         grdItem.Columns(i).Width = 50
@@ -189,7 +191,7 @@ Public Class QUX00001
         grdItem.Columns(i).Visible = False
 
         i = i + 1 '6
-        grdItem.Columns(i).HeaderText = "color code"
+        grdItem.Columns(i).HeaderText = "Color code"
         grdItem.Columns(i).Width = 90
         grdItem.Columns(i).CellTemplate.Style.BackColor = Color.LightPink
         i = i + 1 '7
@@ -197,18 +199,20 @@ Public Class QUX00001
         grdItem.Columns(i).Width = 30
         grdItem.Columns(i).CellTemplate.Style.BackColor = Color.LightGreen
         i = i + 1 '8
-        grdItem.Columns(i).HeaderText = "Inner Quantity"
-        grdItem.Columns(i).Width = 30
+        grdItem.Columns(i).HeaderText = "Inner"
+        grdItem.Columns(i).Width = 40
         grdItem.Columns(i).CellTemplate.Style.BackColor = Color.LightGreen
+        grdItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1 '9
-        grdItem.Columns(i).HeaderText = "Master Quantity"
-        grdItem.Columns(i).Width = 30
+        grdItem.Columns(i).HeaderText = "Master"
+        grdItem.Columns(i).Width = 40
         grdItem.Columns(i).CellTemplate.Style.BackColor = Color.LightGreen
+        grdItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1 '10
-        grdItem.Columns(i).HeaderText = "HK Price term"
+        grdItem.Columns(i).HeaderText = "HK Term"
         grdItem.Columns(i).Width = 50
         i = i + 1 '11
-        grdItem.Columns(i).HeaderText = "FTY Price term"
+        grdItem.Columns(i).HeaderText = "FTY Term"
         grdItem.Columns(i).Width = 50
         i = i + 1 '12
         grdItem.Columns(i).HeaderText = "Trans Term"
@@ -231,22 +235,24 @@ Public Class QUX00001
         grdItem.Columns(i).Width = 30
         grdItem.Columns(i).CellTemplate.Style.BackColor = Color.LightGreen
         i = i + 1 '17
-        grdItem.Columns(i).HeaderText = "Inner Quantity"
-        grdItem.Columns(i).Width = 30
+        grdItem.Columns(i).HeaderText = "Inner"
+        grdItem.Columns(i).Width = 40
         grdItem.Columns(i).CellTemplate.Style.BackColor = Color.LightGreen
+        grdItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1 '18
-        grdItem.Columns(i).HeaderText = "master Quantity"
-        grdItem.Columns(i).Width = 30
+        grdItem.Columns(i).HeaderText = "Master"
+        grdItem.Columns(i).Width = 40
         grdItem.Columns(i).CellTemplate.Style.BackColor = Color.LightGreen
+        grdItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1 '19
-        grdItem.Columns(i).HeaderText = "HK Price Term"
+        grdItem.Columns(i).HeaderText = "HK Term"
         grdItem.Columns(i).Width = 50
         i = i + 1 '20
-        grdItem.Columns(i).HeaderText = "FTY Price Term"
+        grdItem.Columns(i).HeaderText = "FTY Term"
         grdItem.Columns(i).Width = 50
         i = i + 1 '21
         grdItem.Columns(i).HeaderText = "Trans Term"
-        grdItem.Columns(i).Width = 40
+        grdItem.Columns(i).Width = 50
 
         i = i + 1 '22
         grdItem.Columns(i).HeaderText = "Message"
@@ -6862,11 +6868,5 @@ tod_adjprc & "','" & _
 
     End Sub
 
-    Private Sub GroupBox2_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox2.Enter
 
-    End Sub
-
-    Private Sub GroupBox3_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox3.Enter
-
-    End Sub
 End Class

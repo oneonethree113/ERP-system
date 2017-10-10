@@ -107,6 +107,9 @@ Public Class QUA00001
     Dim org_IM_MOA_tmp As String
     Dim temp_txtQutNo As String
 
+    Dim curCol As Integer = 0
+    Dim curRow As Integer = 0
+
 
     Private Sub display_grdItem()
         'type
@@ -142,13 +145,15 @@ Public Class QUA00001
         i = 0 '0
         grdItem.Columns(i).HeaderText = "Count"
         grdItem.Columns(i).Width = 30
+        grdItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1 '1
         grdItem.Columns(i).HeaderText = "Action"
         grdItem.Columns(i).Width = 50
         grdItem.Columns(i).ReadOnly = False
         i = i + 1 '1
         grdItem.Columns(i).HeaderText = "Upload order"
-        grdItem.Columns(i).Width = 37
+        grdItem.Columns(i).Width = 45
+        grdItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1 '2
         grdItem.Columns(i).HeaderText = "Upload Item No."
         grdItem.Columns(i).Width = 90
@@ -170,16 +175,18 @@ Public Class QUA00001
         grdItem.Columns(i).HeaderText = "UM"
         grdItem.Columns(i).Width = 50
         i = i + 1 '8
-        grdItem.Columns(i).HeaderText = "Inner Quantity"
+        grdItem.Columns(i).HeaderText = "Inner Qty"
         grdItem.Columns(i).Width = 50
+        grdItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1 '9
-        grdItem.Columns(i).HeaderText = "Master Quantity"
+        grdItem.Columns(i).HeaderText = "Master Qty"
         grdItem.Columns(i).Width = 50
+        grdItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1 '10
-        grdItem.Columns(i).HeaderText = "HK Price term"
+        grdItem.Columns(i).HeaderText = "HK term"
         grdItem.Columns(i).Width = 90
         i = i + 1 '11
-        grdItem.Columns(i).HeaderText = "FTY Price term"
+        grdItem.Columns(i).HeaderText = "Fty term"
         grdItem.Columns(i).Width = 90
         i = i + 1 '12
         grdItem.Columns(i).HeaderText = "Trans Term"
@@ -200,16 +207,18 @@ Public Class QUA00001
         grdItem.Columns(i).HeaderText = "UM"
         grdItem.Columns(i).Width = 50
         i = i + 1 '17
-        grdItem.Columns(i).HeaderText = "Inner Quantity"
+        grdItem.Columns(i).HeaderText = "Inner Qty"
         grdItem.Columns(i).Width = 90
+        grdItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1 '18
-        grdItem.Columns(i).HeaderText = "master Quantity"
+        grdItem.Columns(i).HeaderText = "Master Qty"
         grdItem.Columns(i).Width = 90
+        grdItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1 '19
-        grdItem.Columns(i).HeaderText = "HK Price Term"
+        grdItem.Columns(i).HeaderText = "HK Term"
         grdItem.Columns(i).Width = 90
         i = i + 1 '20
-        grdItem.Columns(i).HeaderText = "FTY Price Term"
+        grdItem.Columns(i).HeaderText = "FTY Term"
         grdItem.Columns(i).Width = 90
         i = i + 1 '21
         grdItem.Columns(i).HeaderText = "Trans Term"
@@ -220,13 +229,14 @@ Public Class QUA00001
         grdItem.Columns(i).Width = 180
         i = i + 1 '23
         grdItem.Columns(i).HeaderText = "Act. Type"
-        grdItem.Columns(i).Width = 90
+        grdItem.Columns(i).Width = 70
         i = i + 1 '24
         grdItem.Columns(i).HeaderText = "Check"
-        grdItem.Columns(i).Width = 90
+        grdItem.Columns(i).Width = 60
         i = i + 1 '25
         grdItem.Columns(i).HeaderText = "Case"
-        grdItem.Columns(i).Width = 90
+        grdItem.Columns(i).Width = 60
+        grdItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
 
 
 
@@ -2135,12 +2145,16 @@ exit_main_loop:
             End If
         End If
 
+        curCol = e.ColumnIndex
+        curRow = e.RowIndex
 
     End Sub
 
     Private Sub grdItem_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grdItem.CellContentClick
 
 
+        curCol = e.ColumnIndex
+        curRow = e.RowIndex
 
     End Sub
 
@@ -4022,4 +4036,8 @@ exit_main_loop:
 
 
 
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+
+        MessageBox.Show("Width : " + grdItem.Columns(curCol).Width.ToString + "Header : " + grdItem.Columns(curCol).HeaderText.ToString + ", Col:" + curCol.ToString)
+    End Sub
 End Class

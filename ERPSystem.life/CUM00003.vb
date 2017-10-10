@@ -742,8 +742,8 @@
             mmdCopy.Enabled = False
             mmdFind.Enabled = False
             'CmdLookup.Enabled = True
-            mmdInsRow.Enabled = Enq_right
-            mmdDelRow.Enabled = Del_right
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
             mmdExit.Enabled = True
             mmdClear.Enabled = True
 
@@ -1229,5 +1229,18 @@
                                     70, 40, 120 _
                                   }
     End Sub
+    Public Sub callbyQUM01(ByVal cus1no As String, ByVal cus2no As String, ByVal itemno As String)
+        txtCusNo.Text = cus1no
+        txtSecCus.Text = cus2no
+        txtItmNo.Text = itemno
 
+        AddHandler Me.Shown, AddressOf callByQUM01AfterLoading
+        Me.ShowDialog()
+
+    End Sub
+
+    Private Sub callByQUM01AfterLoading()
+        RemoveHandler Me.Shown, AddressOf callByQUM01AfterLoading
+        cmdFindClick()
+    End Sub
 End Class

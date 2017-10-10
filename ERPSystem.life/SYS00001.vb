@@ -14,8 +14,16 @@
     Dim current_mode As String
     Dim last_mode As String
 
-    Dim fun_short_list As New ArrayList
-    Dim fun_long_list As New ArrayList
+    Dim fun_FullName_list As New ArrayList
+    Dim fun_FullNameWithDesc_list As New ArrayList
+    Dim fun_Description_list As New ArrayList
+    Dim fun_ShortName_list As New ArrayList
+    Dim fun_ShortNameWithDesc_list As New ArrayList
+
+    Const funFullNameCol As Integer = 1
+    Const funShortNameCol As Integer = 2
+    Const funDescCol As Integer = 3
+    Const accessRightCol As Integer = 4
 
     Private Sub SYS00001_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
@@ -291,14 +299,18 @@
                         .Columns(i).Width = 50
                         .Columns(i).HeaderText = "Del"
                         .Columns(i).ReadOnly = True
-                    Case 1
+                    Case funFullNameCol
                         .Columns(i).Width = 100
                         .Columns(i).HeaderText = "User Function"
-                    Case 2
+                    Case funShortNameCol
+                        .Columns(i).Width = 100
+                        .Columns(i).HeaderText = "(Short Code)"
+                        .Columns(i).ReadOnly = True
+                    Case funDescCol
                         .Columns(i).Width = 300
                         .Columns(i).HeaderText = "Function Description"
                         .Columns(i).ReadOnly = True
-                    Case 3
+                    Case accessRightCol
                         .Columns(i).Width = 230
                         .Columns(i).HeaderText = "Access Right"
                     Case Else
@@ -419,7 +431,7 @@
             txtUsrGrp.Visible = False
             cboUsrGrp.Visible = True
             cboUsrGrp.Enabled = False
-            cboComGrp.Enabled = True
+            ' cboComGrp.Enabled = True
             cboComGrp.SelectedIndex = -1
             cboComGrp.SelectedItem = gsCompanyGroup
 
@@ -558,14 +570,18 @@
         Dim iRow As Integer = cell.RowIndex
         Dim dgView As DataGridView = cell.DataGridView
 
-        If iCol = 1 Then
+        If iCol = funFullNameCol Then
             For Each dr As DataRow In rs_syusrfun.Tables("RESULT").Rows
                 cboCell.Items.Add(dr.Item("yuf_usrfun").ToString.Trim)
             Next
-        ElseIf iCol = 3 Then
+        ElseIf iCol = accessRightCol Then
             cboCell.Items.Add("MWD - Maintenace with Delete")
             cboCell.Items.Add("MOD - Maintenance without Delete")
             cboCell.Items.Add("ENQ - Enquiry Only")
+        ElseIf iCol = funShortNameCol Then
+            For Each dr As DataRow In rs_syusrfun.Tables("RESULT").Rows
+                cboCell.Items.Add(dr.Item("yuf_usrfun2").ToString.Trim)
+            Next
         End If
         cboCell.DropDownWidth = 150
         cboCell.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing
@@ -586,12 +602,17 @@
                 strSelItem = cboBox.SelectedItem.ToString
                 RemoveHandler cboBox.SelectedIndexChanged, AddressOf cboOpt_SelectedIndexChanged
                 ' User has changed the function
-                If iCol = 1 Then
-                    Me.DataGrid.Rows(iRow).Cells(iCol).Value = strSelItem
-                    Me.DataGrid.Rows(iRow).Cells(iCol + 1).Value = fun_long_list(cboBox.SelectedIndex)
+                If iCol = funFullNameCol Then
+                    Me.DataGrid.Rows(iRow).Cells(funFullNameCol).Value = strSelItem
+                    Me.DataGrid.Rows(iRow).Cells(funDescCol).Value = fun_Description_list(cboBox.SelectedIndex)
+                    Me.DataGrid.Rows(iRow).Cells(funShortNameCol).Value = fun_ShortName_list(cboBox.SelectedIndex)
                     'Me.DataGrid.Rows(iRow).Cells(iCol + 1).Value = rs_syusrfun.Tables("RESULT").Select("yuf_usrfun = '" & strSelItem & "'")(0).Item("yuf_fundsc").ToString
-                ElseIf iCol = 3 Then
+                ElseIf iCol = accessRightCol Then
                     Me.DataGrid.Rows(iRow).Cells(iCol).Value = strSelItem
+                ElseIf iCol = funShortNameCol Then
+                    Me.DataGrid.Rows(iRow).Cells(funFullNameCol).Value = fun_FullName_list(cboBox.SelectedIndex)
+                    Me.DataGrid.Rows(iRow).Cells(funDescCol).Value = fun_Description_list(cboBox.SelectedIndex)
+                    Me.DataGrid.Rows(iRow).Cells(funShortNameCol).Value = strSelItem
                 End If
                 AddHandler cboBox.SelectedIndexChanged, AddressOf cboOpt_SelectedIndexChanged
 
@@ -599,12 +620,40 @@
         End If
     End Sub
 
-    Private Sub cboOpt_SelectionChangeCommitted(ByVal sender As Object, ByVal e As System.EventArgs)
+    Private Sub cboOpt_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs)
         Dim cbobox As ComboBox = CType(sender, ComboBox)
-        If DataGrid.CurrentCell.ColumnIndex = 1 Then
+        If DataGrid.CurrentCell.ColumnIndex = funFullNameCol Then
             If Not cbobox Is Nothing AndAlso Not cbobox.SelectedItem Is Nothing Then
                 Dim tmp_index = cbobox.SelectedIndex
-                cbobox.DataSource = fun_short_list
+                cbobox.DataSource = fun_FullName_list
+                cbobox.SelectedIndex = tmp_index
+
+            End If
+        End If
+        If DataGrid.CurrentCell.ColumnIndex = funShortNameCol Then
+            If Not cbobox Is Nothing AndAlso Not cbobox.SelectedItem Is Nothing Then
+                Dim tmp_index = cbobox.SelectedIndex
+                cbobox.DataSource = fun_ShortName_list
+                cbobox.SelectedIndex = tmp_index
+
+            End If
+        End If
+    End Sub
+
+    Private Sub cboOpt_SelectionChangeCommitted(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim cbobox As ComboBox = CType(sender, ComboBox)
+        If DataGrid.CurrentCell.ColumnIndex = funFullNameCol Then
+            If Not cbobox Is Nothing AndAlso Not cbobox.SelectedItem Is Nothing Then
+                Dim tmp_index = cbobox.SelectedIndex
+                cbobox.DataSource = fun_FullName_list
+                cbobox.SelectedIndex = tmp_index
+
+            End If
+        End If
+        If DataGrid.CurrentCell.ColumnIndex = funShortNameCol Then
+            If Not cbobox Is Nothing AndAlso Not cbobox.SelectedItem Is Nothing Then
+                Dim tmp_index = cbobox.SelectedIndex
+                cbobox.DataSource = fun_ShortName_list
                 cbobox.SelectedIndex = tmp_index
 
             End If
@@ -613,10 +662,19 @@
 
     Private Sub cboOpt_click(ByVal sender As Object, ByVal e As System.EventArgs)
         Dim cbobox As ComboBox = CType(sender, ComboBox)
-        If DataGrid.CurrentCell.ColumnIndex = 1 Then
+        If DataGrid.CurrentCell.ColumnIndex = funFullNameCol Then
             If Not cbobox Is Nothing AndAlso Not cbobox.SelectedItem Is Nothing Then
                 Dim tmp_index = cbobox.SelectedIndex
-                cbobox.DataSource = fun_long_list
+                cbobox.DataSource = fun_FullNameWithDesc_list
+                cbobox.SelectedIndex = tmp_index
+                cbobox.Width = 400
+            End If
+        End If
+        'fun_ShortNameWithDesc_list
+        If DataGrid.CurrentCell.ColumnIndex = funShortNameCol Then
+            If Not cbobox Is Nothing AndAlso Not cbobox.SelectedItem Is Nothing Then
+                Dim tmp_index = cbobox.SelectedIndex
+                cbobox.DataSource = fun_ShortNameWithDesc_list
                 cbobox.SelectedIndex = tmp_index
                 cbobox.Width = 400
             End If
@@ -630,24 +688,37 @@
 
     Private Sub DataGrid_EditingControlShowing(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles DataGrid.EditingControlShowing
 
-        If DataGrid.CurrentCell.ColumnIndex = 1 Or DataGrid.CurrentCell.ColumnIndex = 3 Then
+        If DataGrid.CurrentCell.ColumnIndex = funFullNameCol Or DataGrid.CurrentCell.ColumnIndex = funShortNameCol Or DataGrid.CurrentCell.ColumnIndex = accessRightCol Then
             If TypeOf (e.Control) Is DataGridViewComboBoxEditingControl Then
                 Dim cboBox As ComboBox = CType(e.Control, ComboBox)
                 If Not cboBox Is Nothing Then
-                    If DataGrid.CurrentCell.ColumnIndex = 1 Then
+                    If DataGrid.CurrentCell.ColumnIndex = funFullNameCol Then
                         RemoveHandler cboBox.SelectedIndexChanged, AddressOf cboOpt_SelectedIndexChanged
                         RemoveHandler cboBox.SelectionChangeCommitted, AddressOf cboOpt_SelectionChangeCommitted
                         RemoveHandler cboBox.Click, AddressOf cboOpt_click
                         Dim tmp_index = cboBox.SelectedIndex
-                        cboBox.DataSource = fun_long_list
+                        cboBox.DataSource = fun_FullNameWithDesc_list
                         cboBox.SelectedIndex = tmp_index
                         cboBox.Width = 400
                         AddHandler cboBox.SelectedIndexChanged, AddressOf cboOpt_SelectedIndexChanged
+                        AddHandler cboBox.LostFocus, AddressOf cboOpt_LostFocus
                         AddHandler cboBox.SelectionChangeCommitted, AddressOf cboOpt_SelectionChangeCommitted
                         AddHandler cboBox.Click, AddressOf cboOpt_click
-                    ElseIf DataGrid.CurrentCell.ColumnIndex = 3 Then
+                    ElseIf DataGrid.CurrentCell.ColumnIndex = accessRightCol Then
                         RemoveHandler cboBox.SelectedIndexChanged, AddressOf cboOpt_SelectedIndexChanged
                         AddHandler cboBox.SelectedIndexChanged, AddressOf cboOpt_SelectedIndexChanged
+                    ElseIf DataGrid.CurrentCell.ColumnIndex = funShortNameCol Then
+                        RemoveHandler cboBox.SelectedIndexChanged, AddressOf cboOpt_SelectedIndexChanged
+                        RemoveHandler cboBox.SelectionChangeCommitted, AddressOf cboOpt_SelectionChangeCommitted
+                        RemoveHandler cboBox.Click, AddressOf cboOpt_click
+                        Dim tmp_index = cboBox.SelectedIndex
+                        cboBox.DataSource = fun_ShortNameWithDesc_list
+                        cboBox.SelectedIndex = tmp_index
+                        cboBox.Width = 400
+                        AddHandler cboBox.SelectedIndexChanged, AddressOf cboOpt_SelectedIndexChanged
+                        AddHandler cboBox.LostFocus, AddressOf cboOpt_LostFocus
+                        AddHandler cboBox.SelectionChangeCommitted, AddressOf cboOpt_SelectionChangeCommitted
+                        AddHandler cboBox.Click, AddressOf cboOpt_click
                     End If
                 End If
             End If
@@ -665,13 +736,13 @@
                     Call mmdDelRow_Click(sender, e)
                 End If
 
-            ElseIf e.ColumnIndex = 1 Or e.ColumnIndex = 3 Then
+            ElseIf e.ColumnIndex = funFullNameCol Or e.ColumnIndex = accessRightCol Or e.ColumnIndex = funShortNameCol Then
                 If row.Cells("yug_status").Value.ToString = "" Then
                     If TypeOf (DataGrid.CurrentCell) Is DataGridViewTextBoxCell Then
                         createComboBoxCell(DataGrid.CurrentCell)
                         DataGrid.BeginEdit(True)
                         mmdSave.Enabled = Enq_right_local
-                    ElseIf TypeOf (DataGrid.CurrentCell) Is DataGridViewComboBoxCell And e.ColumnIndex = 1 Then
+                    ElseIf TypeOf (DataGrid.CurrentCell) Is DataGridViewComboBoxCell And e.ColumnIndex = funFullNameCol Then
                         'cboOpt_click(sender, Nothing)
                     End If
                 Else
@@ -690,7 +761,7 @@
 
         If row.Cells(e.ColumnIndex).IsInEditMode Then
 
-            If e.ColumnIndex = 1 Then
+            If e.ColumnIndex = funFullNameCol Then
                 If Not chkGrdCellValue(row.Cells("yug_usrfun"), "String", 10) Then
                     e.Cancel = True
                 Else
@@ -706,7 +777,22 @@
                 End If
             End If
 
-            If e.ColumnIndex = 3 Then
+            If e.ColumnIndex = funShortNameCol Then
+                If Not chkGrdCellValue(row.Cells("yug_usrfun2"), "String", 10) Then
+                    e.Cancel = True
+                Else
+                    For Each drr As DataGridViewRow In DataGrid.Rows
+                        If drr.Index <> e.RowIndex Then
+                            If drr.Cells("yug_usrfun2").Value.ToString.ToUpper = strNewVal.ToUpper Then
+                                MsgBox("Duplicated function code!")
+                                e.Cancel = True
+                                Exit For
+                            End If
+                        End If
+                    Next
+                End If
+            End If
+            If e.ColumnIndex = accessRightCol Then
                 If Not chkGrdCellValue(row.Cells("yug_assrig"), "String", 40) Then
                     e.Cancel = True
                 End If
@@ -732,8 +818,8 @@
         dt.Rows.Add(dr)
 
         For Each drr As DataGridViewRow In DataGrid.Rows
-            If IsDBNull(drr.Cells(1).Value) Then
-                DataGrid.CurrentCell = drr.Cells(1)
+            If IsDBNull(drr.Cells(funFullNameCol).Value) Then
+                DataGrid.CurrentCell = drr.Cells(funFullNameCol)
                 createComboBoxCell(DataGrid.CurrentCell)
                 DataGrid.BeginEdit(True)
             End If
@@ -855,6 +941,7 @@
                                 gspStr = "sp_update_SYUSRGRP '" & gsCompany & "','" & _
                                             strUsrGrp & "','" & _
                                             dr.Item("yug_usrfun").ToString.Replace("'", "''").Trim & "','" & _
+                                            dr.Item("yug_usrfun2").ToString.Replace("'", "''").Trim & "','" & _
                                             dr.Item("yug_fundsc").ToString.Replace("'", "''").Trim & "','" & _
                                             dr.Item("yug_assrig").ToString.Replace("'", "''").Trim & "','" & _
                                             dr.Item("yug_usrfun", DataRowVersion.Original).ToString.Replace("'", "''").Trim & "','" & _
@@ -867,6 +954,7 @@
                                 gspStr = "sp_insert_SYUSRGRP '" & gsCompany & "','" & _
                                                 strUsrGrp & "','" & _
                                                 dr.Item("yug_usrfun").ToString.Replace("'", "''").Trim & "','" & _
+                                                dr.Item("yug_usrfun2").ToString.Replace("'", "''").Trim & "','" & _
                                                 dr.Item("yug_fundsc").ToString.Replace("'", "''").Trim & "','" & _
                                                 dr.Item("yug_assrig").ToString.Replace("'", "''").Trim & "','" & _
                                                 gsUsrID & "','" & _
@@ -940,14 +1028,22 @@
 
 
     Private Sub setfunlist()
-        Dim tmp_string_short, tmp_string_long As String
-        fun_short_list.Clear()
-        fun_long_list.Clear()
+        Dim tmp_string_fullname, tmp_string_fullnameWithDesc, tmp_string_shortname, _
+            tmp_string_shortnameWithDesc, tmp_desc As String
+        fun_FullName_list.Clear()
+        fun_FullNameWithDesc_list.Clear()
+        fun_ShortName_list.Clear()
         For Each dr As DataRow In rs_syusrfun.Tables("RESULT").Rows
-            tmp_string_short = dr.Item("yuf_usrfun").ToString.Trim
-            tmp_string_long = tmp_string_short + " - " + dr.Item("yuf_fundsc").ToString.Trim
-            fun_short_list.Add(tmp_string_short)
-            fun_long_list.Add(tmp_string_long)
+            tmp_string_fullname = dr.Item("yuf_usrfun").ToString.Trim
+            tmp_string_fullnameWithDesc = tmp_string_fullname + " - " + dr.Item("yuf_fundsc").ToString.Trim
+            tmp_string_shortname = dr.Item("yuf_usrfun2").ToString.Trim
+            tmp_string_shortnameWithDesc = tmp_string_shortname + " - " + dr.Item("yuf_fundsc").ToString.Trim
+            tmp_desc = dr.Item("yuf_fundsc").ToString.Trim
+            fun_FullName_list.Add(tmp_string_fullname)
+            fun_FullNameWithDesc_list.Add(tmp_string_fullnameWithDesc)
+            fun_ShortName_list.Add(tmp_string_shortname)
+            fun_ShortNameWithDesc_list.Add(tmp_string_shortnameWithDesc)
+            fun_Description_list.Add(tmp_desc)
         Next
     End Sub
 

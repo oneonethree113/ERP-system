@@ -340,6 +340,9 @@
     <Compile Include="CUM00004.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ERP00000new.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ERP00002.Designer.vb">
       <DependentUpon>ERP00002.vb</DependentUpon>
     </Compile>
@@ -2757,6 +2760,10 @@
       <DependentUpon>CUM00004.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ERP00000new.resx">
+      <DependentUpon>ERP00000new.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="ERP00002.resx">
       <DependentUpon>ERP00002.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -3573,6 +3580,9 @@
       <DependentUpon>QUX00001.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="RIR00001.resx">
+      <DependentUpon>RIR00001.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SAM00001.resx">
       <DependentUpon>SAM00001.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -4070,7 +4080,6 @@
     <None Include="BSP00004data.xss">
       <DependentUpon>BSP00004data.xsd</DependentUpon>
     </None>
-    <None Include="ERPSystem_TemporaryKey.pfx" />
     <None Include="IAR00001Rpt.xsc">
       <DependentUpon>IAR00001Rpt.xsd</DependentUpon>
     </None>

@@ -28,21 +28,12 @@ Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New S
 Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
 Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
 Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(QUM00001))
 Me.cboCoCde = New System.Windows.Forms.ComboBox
 Me.lblCoCde = New System.Windows.Forms.Label
 Me.txtCoNam = New System.Windows.Forms.TextBox
 Me.lblCoNam = New System.Windows.Forms.Label
 Me.chkPC_hdr = New System.Windows.Forms.CheckBox
-Me.cmdInsRow = New System.Windows.Forms.Button
-Me.cmdDelete = New System.Windows.Forms.Button
-Me.cmdSave = New System.Windows.Forms.Button
-Me.cmdAdd = New System.Windows.Forms.Button
-Me.cmdFind = New System.Windows.Forms.Button
-Me.cmdCopy = New System.Windows.Forms.Button
-Me.cmdClear = New System.Windows.Forms.Button
-Me.cmdExit = New System.Windows.Forms.Button
-Me.cmdDelRow = New System.Windows.Forms.Button
-Me.cmdSearch = New System.Windows.Forms.Button
 Me.txtQutNo = New System.Windows.Forms.TextBox
 Me.lblQutNo = New System.Windows.Forms.Label
 Me.txtIssDat = New System.Windows.Forms.TextBox
@@ -342,6 +333,58 @@ Me.cmdPanPrcEmtQuit = New System.Windows.Forms.Button
 Me.cmdPanPrcEmtUpdate = New System.Windows.Forms.Button
 Me.txtMaxApproveAmtP = New System.Windows.Forms.TextBox
 Me.lblMaxApproveP = New System.Windows.Forms.Label
+Me.gbCstEmt1P = New System.Windows.Forms.GroupBox
+Me.lblPCPrcP = New System.Windows.Forms.Label
+Me.txtPCPrcP = New System.Windows.Forms.TextBox
+Me.txtPCPrcCurP = New System.Windows.Forms.TextBox
+Me.Label111 = New System.Windows.Forms.Label
+Me.txtHKMUP = New System.Windows.Forms.TextBox
+Me.txtTranTrmP = New System.Windows.Forms.TextBox
+Me.txtVenNoP = New System.Windows.Forms.TextBox
+Me.txtCus2NoP = New System.Windows.Forms.TextBox
+Me.txtPrcTrmP = New System.Windows.Forms.TextBox
+Me.Label110 = New System.Windows.Forms.Label
+Me.lblMUPriceP = New System.Windows.Forms.Label
+Me.txtMUPriceCurrP = New System.Windows.Forms.TextBox
+Me.txtMUPriceP = New System.Windows.Forms.TextBox
+Me.lblItmComm1P = New System.Windows.Forms.Label
+Me.txtItmComm1CurrP = New System.Windows.Forms.TextBox
+Me.txtItmComm1P = New System.Windows.Forms.TextBox
+Me.lblComm1P = New System.Windows.Forms.Label
+Me.txtComm1P = New System.Windows.Forms.TextBox
+Me.lblPckCst1P = New System.Windows.Forms.Label
+Me.txtPckCst1CurrP = New System.Windows.Forms.TextBox
+Me.txtPckCst1P = New System.Windows.Forms.TextBox
+Me.lblMUMinP = New System.Windows.Forms.Label
+Me.txtVenTranP = New System.Windows.Forms.TextBox
+Me.lblVenTranP = New System.Windows.Forms.Label
+Me.txtVenTypP = New System.Windows.Forms.TextBox
+Me.lblVenTypP = New System.Windows.Forms.Label
+Me.txtItmCatP = New System.Windows.Forms.TextBox
+Me.lblItmCatP = New System.Windows.Forms.Label
+Me.txtCus1NoP = New System.Windows.Forms.TextBox
+Me.lblCus1NoP = New System.Windows.Forms.Label
+Me.txtFtyCstP = New System.Windows.Forms.TextBox
+Me.txtFtyPrcCurrP = New System.Windows.Forms.TextBox
+Me.lblFtyPrcP = New System.Windows.Forms.Label
+Me.txtFtyPrcP = New System.Windows.Forms.TextBox
+Me.txtFtyCstCurrP = New System.Windows.Forms.TextBox
+Me.lblFtyCstP = New System.Windows.Forms.Label
+Me.lblBasPrcP = New System.Windows.Forms.Label
+Me.txtBasPrcCurrP = New System.Windows.Forms.TextBox
+Me.txtBasPrcP = New System.Windows.Forms.TextBox
+Me.lblMUP = New System.Windows.Forms.Label
+Me.txtMUP = New System.Windows.Forms.TextBox
+Me.txtCus1SpP = New System.Windows.Forms.TextBox
+Me.txtCurCde2P = New System.Windows.Forms.TextBox
+Me.lblCus1DpP = New System.Windows.Forms.Label
+Me.lblCus1SpP = New System.Windows.Forms.Label
+Me.txtCus1DpP = New System.Windows.Forms.TextBox
+Me.txtCurCde21P = New System.Windows.Forms.TextBox
+Me.lblPckingTermP = New System.Windows.Forms.Label
+Me.lblPrcElemtTitleP = New System.Windows.Forms.Label
+Me.txtDiscntP = New System.Windows.Forms.TextBox
+Me.lblDiscntP = New System.Windows.Forms.Label
 Me.gbCstEmt2P = New System.Windows.Forms.GroupBox
 Me.txtCostBufPercOriP = New System.Windows.Forms.TextBox
 Me.txtFAPercOriP = New System.Windows.Forms.TextBox
@@ -401,60 +444,56 @@ Me.lblOthersP = New System.Windows.Forms.Label
 Me.txtLabPercChgP = New System.Windows.Forms.TextBox
 Me.txtFAPercChgP = New System.Windows.Forms.TextBox
 Me.lblLabP = New System.Windows.Forms.Label
-Me.gbCstEmt1P = New System.Windows.Forms.GroupBox
-Me.lblPCPrcP = New System.Windows.Forms.Label
-Me.txtPCPrcP = New System.Windows.Forms.TextBox
-Me.txtPCPrcCurP = New System.Windows.Forms.TextBox
-Me.Label111 = New System.Windows.Forms.Label
-Me.txtHKMUP = New System.Windows.Forms.TextBox
-Me.txtTranTrmP = New System.Windows.Forms.TextBox
-Me.txtVenNoP = New System.Windows.Forms.TextBox
-Me.txtCus2NoP = New System.Windows.Forms.TextBox
-Me.txtPrcTrmP = New System.Windows.Forms.TextBox
-Me.Label110 = New System.Windows.Forms.Label
-Me.lblMUPriceP = New System.Windows.Forms.Label
-Me.txtMUPriceCurrP = New System.Windows.Forms.TextBox
-Me.txtMUPriceP = New System.Windows.Forms.TextBox
-Me.lblItmComm1P = New System.Windows.Forms.Label
-Me.txtItmComm1CurrP = New System.Windows.Forms.TextBox
-Me.txtItmComm1P = New System.Windows.Forms.TextBox
-Me.lblComm1P = New System.Windows.Forms.Label
-Me.txtComm1P = New System.Windows.Forms.TextBox
-Me.lblPckCst1P = New System.Windows.Forms.Label
-Me.txtPckCst1CurrP = New System.Windows.Forms.TextBox
-Me.txtPckCst1P = New System.Windows.Forms.TextBox
-Me.lblMUMinP = New System.Windows.Forms.Label
-Me.txtVenTranP = New System.Windows.Forms.TextBox
-Me.lblVenTranP = New System.Windows.Forms.Label
-Me.txtVenTypP = New System.Windows.Forms.TextBox
-Me.lblVenTypP = New System.Windows.Forms.Label
-Me.txtItmCatP = New System.Windows.Forms.TextBox
-Me.lblItmCatP = New System.Windows.Forms.Label
-Me.txtCus1NoP = New System.Windows.Forms.TextBox
-Me.lblCus1NoP = New System.Windows.Forms.Label
-Me.txtFtyCstP = New System.Windows.Forms.TextBox
-Me.txtFtyPrcCurrP = New System.Windows.Forms.TextBox
-Me.lblFtyPrcP = New System.Windows.Forms.Label
-Me.txtFtyPrcP = New System.Windows.Forms.TextBox
-Me.txtFtyCstCurrP = New System.Windows.Forms.TextBox
-Me.lblFtyCstP = New System.Windows.Forms.Label
-Me.lblBasPrcP = New System.Windows.Forms.Label
-Me.txtBasPrcCurrP = New System.Windows.Forms.TextBox
-Me.txtBasPrcP = New System.Windows.Forms.TextBox
-Me.lblMUP = New System.Windows.Forms.Label
-Me.txtMUP = New System.Windows.Forms.TextBox
-Me.txtCus1SpP = New System.Windows.Forms.TextBox
-Me.txtCurCde2P = New System.Windows.Forms.TextBox
-Me.lblCus1DpP = New System.Windows.Forms.Label
-Me.lblCus1SpP = New System.Windows.Forms.Label
-Me.txtCus1DpP = New System.Windows.Forms.TextBox
-Me.txtCurCde21P = New System.Windows.Forms.TextBox
-Me.lblPckingTermP = New System.Windows.Forms.Label
-Me.lblPrcElemtTitleP = New System.Windows.Forms.Label
-Me.txtDiscntP = New System.Windows.Forms.TextBox
-Me.lblDiscntP = New System.Windows.Forms.Label
 Me.cmdRenew = New System.Windows.Forms.Button
 Me.cmdRequote = New System.Windows.Forms.Button
+Me.mmdRel = New System.Windows.Forms.ToolStripMenuItem
+Me.mmdApv = New System.Windows.Forms.ToolStripMenuItem
+Me.menuStrip = New System.Windows.Forms.MenuStrip
+Me.mmdAdd = New System.Windows.Forms.ToolStripMenuItem
+Me.mmdSave = New System.Windows.Forms.ToolStripMenuItem
+Me.mmdDelete = New System.Windows.Forms.ToolStripMenuItem
+Me.mmdCopy = New System.Windows.Forms.ToolStripMenuItem
+Me.mmdFind = New System.Windows.Forms.ToolStripMenuItem
+Me.t1 = New System.Windows.Forms.ToolStripMenuItem
+Me.mmdClear = New System.Windows.Forms.ToolStripMenuItem
+Me.t2 = New System.Windows.Forms.ToolStripMenuItem
+Me.mmdSearch = New System.Windows.Forms.ToolStripMenuItem
+Me.t3 = New System.Windows.Forms.ToolStripMenuItem
+Me.mmdInsRow = New System.Windows.Forms.ToolStripMenuItem
+Me.mmdDelRow = New System.Windows.Forms.ToolStripMenuItem
+Me.t4 = New System.Windows.Forms.ToolStripMenuItem
+Me.mmdPrint = New System.Windows.Forms.ToolStripMenuItem
+Me.tsiPrintQuotation = New System.Windows.Forms.ToolStripMenuItem
+Me.tsiExportToExcel = New System.Windows.Forms.ToolStripMenuItem
+Me.t5 = New System.Windows.Forms.ToolStripMenuItem
+Me.mmdAttach = New System.Windows.Forms.ToolStripMenuItem
+Me.t6 = New System.Windows.Forms.ToolStripMenuItem
+Me.mmdFunction = New System.Windows.Forms.ToolStripMenuItem
+Me.tsiCIH = New System.Windows.Forms.ToolStripMenuItem
+Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
+Me.tsiUpdate = New System.Windows.Forms.ToolStripMenuItem
+Me.tsiRenew = New System.Windows.Forms.ToolStripMenuItem
+Me.tsiRequote = New System.Windows.Forms.ToolStripMenuItem
+Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator
+Me.tsiGenTent = New System.Windows.Forms.ToolStripMenuItem
+Me.tsiGenSmp = New System.Windows.Forms.ToolStripMenuItem
+Me.t7 = New System.Windows.Forms.ToolStripMenuItem
+Me.mmdLink = New System.Windows.Forms.ToolStripMenuItem
+Me.t8 = New System.Windows.Forms.ToolStripMenuItem
+Me.mmdExit = New System.Windows.Forms.ToolStripMenuItem
+Me.PanelMutShp = New System.Windows.Forms.Panel
+Me.cmdPanMutShpIns = New System.Windows.Forms.Button
+Me.PanelMutShpHeaderBar = New System.Windows.Forms.Panel
+Me.PanelMutShpHeader = New System.Windows.Forms.Label
+Me.cmdPanMutShpQuit = New System.Windows.Forms.Button
+Me.dgMutShp = New System.Windows.Forms.DataGridView
+Me.PanelCptBkd = New System.Windows.Forms.Panel
+Me.PanelCptBkdHeaderBar = New System.Windows.Forms.Panel
+Me.PanelCptBkdHeader = New System.Windows.Forms.Label
+Me.cmdPanCptBkdIns = New System.Windows.Forms.Button
+Me.dgMatBkd = New System.Windows.Forms.DataGridView
+Me.cmdPanCptBkdQuit = New System.Windows.Forms.Button
+Me.DataSet131 = New ERPSystem.DataSet13
 Me.btcQUM00001 = New ERPSystem.BaseTabControl
 Me.tpQUM00001_1 = New System.Windows.Forms.TabPage
 Me.gbShipdate = New System.Windows.Forms.GroupBox
@@ -531,19 +570,6 @@ Me.lblCusAgt = New System.Windows.Forms.Label
 Me.tpQUM00001_2 = New System.Windows.Forms.TabPage
 Me.txtNote = New System.Windows.Forms.TextBox
 Me.cmdReset = New System.Windows.Forms.Button
-Me.cmdRenItm = New System.Windows.Forms.Button
-Me.PanelMutShp = New System.Windows.Forms.Panel
-Me.GroupBox10 = New System.Windows.Forms.GroupBox
-Me.Label102 = New System.Windows.Forms.Label
-Me.cmdPanMutShpIns = New System.Windows.Forms.Button
-Me.dgMutShp = New System.Windows.Forms.DataGridView
-Me.cmdPanMutShpQuit = New System.Windows.Forms.Button
-Me.PanelCptBkd = New System.Windows.Forms.Panel
-Me.GroupBox2 = New System.Windows.Forms.GroupBox
-Me.lblCptBkd = New System.Windows.Forms.Label
-Me.cmdPanCptBkdIns = New System.Windows.Forms.Button
-Me.dgMatBkd = New System.Windows.Forms.DataGridView
-Me.cmdPanCptBkdQuit = New System.Windows.Forms.Button
 Me.PanelItmNoSelect = New System.Windows.Forms.Panel
 Me.GroupBox13 = New System.Windows.Forms.GroupBox
 Me.lblRealNoItemSelect = New System.Windows.Forms.Label
@@ -752,6 +778,7 @@ Me.lblCusCol = New System.Windows.Forms.Label
 Me.lblCusSub = New System.Windows.Forms.Label
 Me.txtCusSub = New System.Windows.Forms.TextBox
 Me.gbItem = New System.Windows.Forms.GroupBox
+Me.cmdBrowse = New System.Windows.Forms.Button
 Me.cmdItmNoConvVen = New System.Windows.Forms.Button
 Me.Label106 = New System.Windows.Forms.Label
 Me.Label105 = New System.Windows.Forms.Label
@@ -769,7 +796,6 @@ Me.txtItmDsc = New System.Windows.Forms.RichTextBox
 Me.cboCusals = New System.Windows.Forms.ComboBox
 Me.lblCusals = New System.Windows.Forms.Label
 Me.txtCusItm = New System.Windows.Forms.TextBox
-Me.cmdBrowse = New System.Windows.Forms.Button
 Me.lblCusItm = New System.Windows.Forms.Label
 Me.txtAlias = New System.Windows.Forms.TextBox
 Me.lblAlias = New System.Windows.Forms.Label
@@ -810,7 +836,9 @@ Me.chkTBM = New System.Windows.Forms.CheckBox
 Me.txtSeq = New System.Windows.Forms.TextBox
 Me.lblSeq = New System.Windows.Forms.Label
 Me.txtFtyTmpItmNo = New System.Windows.Forms.TextBox
+Me.cmdRenItm = New System.Windows.Forms.Button
 Me.tpQUM00001_3 = New System.Windows.Forms.TabPage
+Me.Button20 = New System.Windows.Forms.Button
 Me.lblView = New System.Windows.Forms.Label
 Me.gbView = New System.Windows.Forms.GroupBox
 Me.rbView_S = New System.Windows.Forms.RadioButton
@@ -834,9 +862,17 @@ CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.GroupBox12.SuspendLayout
 CType(Me.DataGridView2,System.ComponentModel.ISupportInitialize).BeginInit
 Me.gbPanelCstEmt.SuspendLayout
+Me.gbCstEmt1P.SuspendLayout
 Me.gbCstEmt2P.SuspendLayout
 Me.gbInvP.SuspendLayout
-Me.gbCstEmt1P.SuspendLayout
+Me.menuStrip.SuspendLayout
+Me.PanelMutShp.SuspendLayout
+Me.PanelMutShpHeaderBar.SuspendLayout
+CType(Me.dgMutShp,System.ComponentModel.ISupportInitialize).BeginInit
+Me.PanelCptBkd.SuspendLayout
+Me.PanelCptBkdHeaderBar.SuspendLayout
+CType(Me.dgMatBkd,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.DataSet131,System.ComponentModel.ISupportInitialize).BeginInit
 Me.btcQUM00001.SuspendLayout
 Me.tpQUM00001_1.SuspendLayout
 Me.gbShipdate.SuspendLayout
@@ -846,12 +882,6 @@ Me.gbTerm.SuspendLayout
 Me.gbPri.SuspendLayout
 Me.gbSales.SuspendLayout
 Me.tpQUM00001_2.SuspendLayout
-Me.PanelMutShp.SuspendLayout
-Me.GroupBox10.SuspendLayout
-CType(Me.dgMutShp,System.ComponentModel.ISupportInitialize).BeginInit
-Me.PanelCptBkd.SuspendLayout
-Me.GroupBox2.SuspendLayout
-CType(Me.dgMatBkd,System.ComponentModel.ISupportInitialize).BeginInit
 Me.PanelItmNoSelect.SuspendLayout
 Me.GroupBox13.SuspendLayout
 CType(Me.dgPanItmNoSelect,System.ComponentModel.ISupportInitialize).BeginInit
@@ -873,45 +903,41 @@ Me.SuspendLayout
 '
 'cboCoCde
 '
-Me.cboCoCde.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.cboCoCde.FormattingEnabled = true
-Me.cboCoCde.Location = New System.Drawing.Point(88, 28)
+Me.cboCoCde.Location = New System.Drawing.Point(90, 27)
 Me.cboCoCde.Name = "cboCoCde"
-Me.cboCoCde.Size = New System.Drawing.Size(84, 21)
+Me.cboCoCde.Size = New System.Drawing.Size(84, 20)
 Me.cboCoCde.TabIndex = 15
 '
 'lblCoCde
 '
 Me.lblCoCde.AutoSize = true
-Me.lblCoCde.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.lblCoCde.ForeColor = System.Drawing.Color.MediumBlue
-Me.lblCoCde.Location = New System.Drawing.Point(0, 31)
+Me.lblCoCde.Location = New System.Drawing.Point(2, 30)
 Me.lblCoCde.Name = "lblCoCde"
-Me.lblCoCde.Size = New System.Drawing.Size(82, 13)
+Me.lblCoCde.Size = New System.Drawing.Size(79, 12)
 Me.lblCoCde.TabIndex = 30
-Me.lblCoCde.Text = "Company Code:"
+Me.lblCoCde.Text = "Company Code"
 '
 'txtCoNam
 '
 Me.txtCoNam.BackColor = System.Drawing.SystemColors.MenuBar
 Me.txtCoNam.Enabled = false
-Me.txtCoNam.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.txtCoNam.ForeColor = System.Drawing.Color.DimGray
-Me.txtCoNam.Location = New System.Drawing.Point(258, 28)
+Me.txtCoNam.Location = New System.Drawing.Point(260, 27)
 Me.txtCoNam.MaxLength = 30
 Me.txtCoNam.Name = "txtCoNam"
 Me.txtCoNam.ReadOnly = true
-Me.txtCoNam.Size = New System.Drawing.Size(316, 20)
+Me.txtCoNam.Size = New System.Drawing.Size(316, 22)
 Me.txtCoNam.TabIndex = 16
 Me.txtCoNam.Visible = false
 '
 'lblCoNam
 '
 Me.lblCoNam.AutoSize = true
-Me.lblCoNam.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.lblCoNam.Location = New System.Drawing.Point(168, 31)
+Me.lblCoNam.Location = New System.Drawing.Point(170, 30)
 Me.lblCoNam.Name = "lblCoNam"
-Me.lblCoNam.Size = New System.Drawing.Size(85, 13)
+Me.lblCoNam.Size = New System.Drawing.Size(84, 12)
 Me.lblCoNam.TabIndex = 33
 Me.lblCoNam.Text = "Company Name:"
 Me.lblCoNam.Visible = false
@@ -919,200 +945,99 @@ Me.lblCoNam.Visible = false
 'chkPC_hdr
 '
 Me.chkPC_hdr.AutoSize = true
-Me.chkPC_hdr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.chkPC_hdr.Location = New System.Drawing.Point(837, 54)
+Me.chkPC_hdr.Location = New System.Drawing.Point(839, 53)
 Me.chkPC_hdr.Name = "chkPC_hdr"
-Me.chkPC_hdr.Size = New System.Drawing.Size(106, 17)
+Me.chkPC_hdr.Size = New System.Drawing.Size(108, 16)
 Me.chkPC_hdr.TabIndex = 24
 Me.chkPC_hdr.Text = "Convert All to PC"
 Me.chkPC_hdr.UseVisualStyleBackColor = true
 '
-'cmdInsRow
-'
-Me.cmdInsRow.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdInsRow.Location = New System.Drawing.Point(404, 0)
-Me.cmdInsRow.Name = "cmdInsRow"
-Me.cmdInsRow.Size = New System.Drawing.Size(54, 25)
-Me.cmdInsRow.TabIndex = 8
-Me.cmdInsRow.Text = "I&ns Row"
-Me.cmdInsRow.UseVisualStyleBackColor = true
-'
-'cmdDelete
-'
-Me.cmdDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdDelete.Location = New System.Drawing.Point(120, 0)
-Me.cmdDelete.Name = "cmdDelete"
-Me.cmdDelete.Size = New System.Drawing.Size(56, 25)
-Me.cmdDelete.TabIndex = 3
-Me.cmdDelete.Text = "&Delete"
-'
-'cmdSave
-'
-Me.cmdSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdSave.Location = New System.Drawing.Point(60, 0)
-Me.cmdSave.Name = "cmdSave"
-Me.cmdSave.Size = New System.Drawing.Size(60, 25)
-Me.cmdSave.TabIndex = 2
-Me.cmdSave.Text = "&Save"
-'
-'cmdAdd
-'
-Me.cmdAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdAdd.Location = New System.Drawing.Point(0, 0)
-Me.cmdAdd.Name = "cmdAdd"
-Me.cmdAdd.Size = New System.Drawing.Size(60, 25)
-Me.cmdAdd.TabIndex = 1
-Me.cmdAdd.Text = "&Add"
-'
-'cmdFind
-'
-Me.cmdFind.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdFind.Location = New System.Drawing.Point(233, 0)
-Me.cmdFind.Name = "cmdFind"
-Me.cmdFind.Size = New System.Drawing.Size(57, 25)
-Me.cmdFind.TabIndex = 5
-Me.cmdFind.Text = "&Find"
-'
-'cmdCopy
-'
-Me.cmdCopy.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdCopy.Location = New System.Drawing.Point(176, 0)
-Me.cmdCopy.Name = "cmdCopy"
-Me.cmdCopy.Size = New System.Drawing.Size(57, 25)
-Me.cmdCopy.TabIndex = 4
-Me.cmdCopy.Text = "&Copy"
-'
-'cmdClear
-'
-Me.cmdClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdClear.Location = New System.Drawing.Point(290, 0)
-Me.cmdClear.Name = "cmdClear"
-Me.cmdClear.Size = New System.Drawing.Size(54, 25)
-Me.cmdClear.TabIndex = 6
-Me.cmdClear.Text = "Cl&ear"
-'
-'cmdExit
-'
-Me.cmdExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdExit.Location = New System.Drawing.Point(903, 0)
-Me.cmdExit.Name = "cmdExit"
-Me.cmdExit.Size = New System.Drawing.Size(51, 25)
-Me.cmdExit.TabIndex = 14
-Me.cmdExit.Text = "E&xit"
-'
-'cmdDelRow
-'
-Me.cmdDelRow.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdDelRow.Location = New System.Drawing.Point(458, 0)
-Me.cmdDelRow.Name = "cmdDelRow"
-Me.cmdDelRow.Size = New System.Drawing.Size(56, 25)
-Me.cmdDelRow.TabIndex = 9
-Me.cmdDelRow.Text = "Del Ro&w"
-'
-'cmdSearch
-'
-Me.cmdSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdSearch.Location = New System.Drawing.Point(344, 0)
-Me.cmdSearch.Name = "cmdSearch"
-Me.cmdSearch.Size = New System.Drawing.Size(60, 25)
-Me.cmdSearch.TabIndex = 7
-Me.cmdSearch.Text = "Searc&h"
-'
 'txtQutNo
 '
-Me.txtQutNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtQutNo.Location = New System.Drawing.Point(88, 52)
+Me.txtQutNo.Location = New System.Drawing.Point(90, 51)
 Me.txtQutNo.MaxLength = 10
 Me.txtQutNo.Name = "txtQutNo"
-Me.txtQutNo.Size = New System.Drawing.Size(84, 20)
+Me.txtQutNo.Size = New System.Drawing.Size(84, 22)
 Me.txtQutNo.TabIndex = 16
 '
 'lblQutNo
 '
 Me.lblQutNo.AutoSize = true
-Me.lblQutNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.lblQutNo.ForeColor = System.Drawing.Color.Red
-Me.lblQutNo.Location = New System.Drawing.Point(0, 55)
+Me.lblQutNo.Location = New System.Drawing.Point(2, 54)
 Me.lblQutNo.Name = "lblQutNo"
-Me.lblQutNo.Size = New System.Drawing.Size(73, 13)
+Me.lblQutNo.Size = New System.Drawing.Size(68, 12)
 Me.lblQutNo.TabIndex = 259
-Me.lblQutNo.Text = "Quotation No:"
+Me.lblQutNo.Text = "Quotation No"
 '
 'txtIssDat
 '
-Me.txtIssDat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtIssDat.Location = New System.Drawing.Point(580, 28)
+Me.txtIssDat.Location = New System.Drawing.Point(582, 27)
 Me.txtIssDat.MaxLength = 10
 Me.txtIssDat.Name = "txtIssDat"
-Me.txtIssDat.Size = New System.Drawing.Size(74, 20)
+Me.txtIssDat.Size = New System.Drawing.Size(74, 22)
 Me.txtIssDat.TabIndex = 19
 '
 'lblIssDat
 '
 Me.lblIssDat.AutoSize = true
-Me.lblIssDat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.lblIssDat.Location = New System.Drawing.Point(505, 31)
+Me.lblIssDat.Location = New System.Drawing.Point(507, 30)
 Me.lblIssDat.Name = "lblIssDat"
-Me.lblIssDat.Size = New System.Drawing.Size(61, 13)
+Me.lblIssDat.Size = New System.Drawing.Size(52, 12)
 Me.lblIssDat.TabIndex = 261
-Me.lblIssDat.Text = "Issue Date:"
+Me.lblIssDat.Text = "Issue Date"
 '
 'txtRvsDat
 '
-Me.txtRvsDat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtRvsDat.Location = New System.Drawing.Point(580, 52)
+Me.txtRvsDat.Location = New System.Drawing.Point(582, 51)
 Me.txtRvsDat.MaxLength = 10
 Me.txtRvsDat.Name = "txtRvsDat"
-Me.txtRvsDat.Size = New System.Drawing.Size(74, 20)
+Me.txtRvsDat.Size = New System.Drawing.Size(74, 22)
 Me.txtRvsDat.TabIndex = 20
 '
 'lblRvsDat
 '
 Me.lblRvsDat.AutoSize = true
-Me.lblRvsDat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.lblRvsDat.Location = New System.Drawing.Point(505, 55)
+Me.lblRvsDat.Location = New System.Drawing.Point(507, 54)
 Me.lblRvsDat.Name = "lblRvsDat"
-Me.lblRvsDat.Size = New System.Drawing.Size(69, 13)
+Me.lblRvsDat.Size = New System.Drawing.Size(60, 12)
 Me.lblRvsDat.TabIndex = 263
-Me.lblRvsDat.Text = "Revise Date:"
+Me.lblRvsDat.Text = "Revise Date"
 '
 'chkCancel
 '
 Me.chkCancel.AutoSize = true
-Me.chkCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.chkCancel.Location = New System.Drawing.Point(660, 54)
+Me.chkCancel.Enabled = false
+Me.chkCancel.Location = New System.Drawing.Point(662, 53)
 Me.chkCancel.Name = "chkCancel"
-Me.chkCancel.Size = New System.Drawing.Size(79, 17)
+Me.chkCancel.Size = New System.Drawing.Size(76, 16)
 Me.chkCancel.TabIndex = 22
 Me.chkCancel.Text = "Cancel Qut"
 Me.chkCancel.UseVisualStyleBackColor = true
 '
 'txtQutSts
 '
-Me.txtQutSts.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtQutSts.Location = New System.Drawing.Point(755, 28)
+Me.txtQutSts.Location = New System.Drawing.Point(757, 27)
 Me.txtQutSts.MaxLength = 20
 Me.txtQutSts.Name = "txtQutSts"
-Me.txtQutSts.Size = New System.Drawing.Size(102, 20)
+Me.txtQutSts.Size = New System.Drawing.Size(102, 22)
 Me.txtQutSts.TabIndex = 21
 '
 'lblQutSts
 '
 Me.lblQutSts.AutoSize = true
-Me.lblQutSts.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.lblQutSts.Location = New System.Drawing.Point(660, 31)
+Me.lblQutSts.Location = New System.Drawing.Point(662, 31)
 Me.lblQutSts.Name = "lblQutSts"
-Me.lblQutSts.Size = New System.Drawing.Size(89, 13)
+Me.lblQutSts.Size = New System.Drawing.Size(81, 12)
 Me.lblQutSts.TabIndex = 266
-Me.lblQutSts.Text = "Quotation Status:"
+Me.lblQutSts.Text = "Quotation Status"
 '
 'chkApprove
 '
 Me.chkApprove.AutoSize = true
-Me.chkApprove.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.chkApprove.Location = New System.Drawing.Point(745, 54)
+Me.chkApprove.Location = New System.Drawing.Point(747, 53)
 Me.chkApprove.Name = "chkApprove"
-Me.chkApprove.Size = New System.Drawing.Size(86, 17)
+Me.chkApprove.Size = New System.Drawing.Size(85, 16)
 Me.chkApprove.TabIndex = 23
 Me.chkApprove.Text = "Approve Qut"
 Me.chkApprove.UseVisualStyleBackColor = true
@@ -1120,32 +1045,32 @@ Me.chkApprove.UseVisualStyleBackColor = true
 'StatusBar
 '
 Me.StatusBar.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.StatusBar.Location = New System.Drawing.Point(0, 639)
+Me.StatusBar.Location = New System.Drawing.Point(0, 615)
 Me.StatusBar.Name = "StatusBar"
 Me.StatusBar.Panels.AddRange(New System.Windows.Forms.StatusBarPanel() {Me.StatusBarPanel1, Me.StatusBarPanel2})
 Me.StatusBar.ShowPanels = true
-Me.StatusBar.Size = New System.Drawing.Size(968, 16)
+Me.StatusBar.Size = New System.Drawing.Size(954, 16)
 Me.StatusBar.TabIndex = 269
 '
 'StatusBarPanel1
 '
 Me.StatusBarPanel1.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
 Me.StatusBarPanel1.Name = "StatusBarPanel1"
-Me.StatusBarPanel1.Width = 475
+Me.StatusBarPanel1.Width = 468
 '
 'StatusBarPanel2
 '
 Me.StatusBarPanel2.Alignment = System.Windows.Forms.HorizontalAlignment.Right
 Me.StatusBarPanel2.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
 Me.StatusBarPanel2.Name = "StatusBarPanel2"
-Me.StatusBarPanel2.Width = 475
+Me.StatusBarPanel2.Width = 468
 '
 'cmdUpdate
 '
 Me.cmdUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.cmdUpdate.Location = New System.Drawing.Point(728, 0)
+Me.cmdUpdate.Location = New System.Drawing.Point(685, 75)
 Me.cmdUpdate.Name = "cmdUpdate"
-Me.cmdUpdate.Size = New System.Drawing.Size(90, 25)
+Me.cmdUpdate.Size = New System.Drawing.Size(90, 20)
 Me.cmdUpdate.TabIndex = 12
 Me.cmdUpdate.Text = "Update Item(s)"
 Me.cmdUpdate.UseVisualStyleBackColor = true
@@ -1153,9 +1078,9 @@ Me.cmdUpdate.UseVisualStyleBackColor = true
 'cmdGenSmp
 '
 Me.cmdGenSmp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.cmdGenSmp.Location = New System.Drawing.Point(514, 0)
+Me.cmdGenSmp.Location = New System.Drawing.Point(471, 75)
 Me.cmdGenSmp.Name = "cmdGenSmp"
-Me.cmdGenSmp.Size = New System.Drawing.Size(102, 25)
+Me.cmdGenSmp.Size = New System.Drawing.Size(102, 20)
 Me.cmdGenSmp.TabIndex = 10
 Me.cmdGenSmp.Text = "Generate Sample"
 Me.cmdGenSmp.UseVisualStyleBackColor = true
@@ -1163,9 +1088,9 @@ Me.cmdGenSmp.UseVisualStyleBackColor = true
 'cmdGenTent
 '
 Me.cmdGenTent.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.cmdGenTent.Location = New System.Drawing.Point(616, 0)
+Me.cmdGenTent.Location = New System.Drawing.Point(573, 75)
 Me.cmdGenTent.Name = "cmdGenTent"
-Me.cmdGenTent.Size = New System.Drawing.Size(112, 25)
+Me.cmdGenTent.Size = New System.Drawing.Size(112, 20)
 Me.cmdGenTent.TabIndex = 11
 Me.cmdGenTent.Text = "Generate Tentative"
 Me.cmdGenTent.UseVisualStyleBackColor = true
@@ -1173,36 +1098,36 @@ Me.cmdGenTent.UseVisualStyleBackColor = true
 'cboCus2No
 '
 Me.cboCus2No.FormattingEnabled = true
-Me.cboCus2No.Location = New System.Drawing.Point(289, 52)
+Me.cboCus2No.Location = New System.Drawing.Point(291, 51)
 Me.cboCus2No.Name = "cboCus2No"
-Me.cboCus2No.Size = New System.Drawing.Size(210, 21)
+Me.cboCus2No.Size = New System.Drawing.Size(210, 20)
 Me.cboCus2No.TabIndex = 18
 '
 'lblCus2No
 '
 Me.lblCus2No.AutoSize = true
 Me.lblCus2No.ForeColor = System.Drawing.Color.MediumBlue
-Me.lblCus2No.Location = New System.Drawing.Point(178, 55)
+Me.lblCus2No.Location = New System.Drawing.Point(180, 54)
 Me.lblCus2No.Name = "lblCus2No"
-Me.lblCus2No.Size = New System.Drawing.Size(105, 13)
+Me.lblCus2No.Size = New System.Drawing.Size(102, 12)
 Me.lblCus2No.TabIndex = 105
 Me.lblCus2No.Text = "Secondary Customer"
 '
 'cboCus1No
 '
 Me.cboCus1No.FormattingEnabled = true
-Me.cboCus1No.Location = New System.Drawing.Point(289, 28)
+Me.cboCus1No.Location = New System.Drawing.Point(291, 27)
 Me.cboCus1No.Name = "cboCus1No"
-Me.cboCus1No.Size = New System.Drawing.Size(210, 21)
+Me.cboCus1No.Size = New System.Drawing.Size(210, 20)
 Me.cboCus1No.TabIndex = 17
 '
 'lblCus1No
 '
 Me.lblCus1No.AutoSize = true
 Me.lblCus1No.ForeColor = System.Drawing.Color.MediumBlue
-Me.lblCus1No.Location = New System.Drawing.Point(178, 31)
+Me.lblCus1No.Location = New System.Drawing.Point(180, 30)
 Me.lblCus1No.Name = "lblCus1No"
-Me.lblCus1No.Size = New System.Drawing.Size(88, 13)
+Me.lblCus1No.Size = New System.Drawing.Size(90, 12)
 Me.lblCus1No.TabIndex = 103
 Me.lblCus1No.Text = "Primary Customer"
 '
@@ -3896,13 +3821,13 @@ Me.gbPanelCstEmt.Controls.Add(Me.cmdPanPrcEmtQuit)
 Me.gbPanelCstEmt.Controls.Add(Me.cmdPanPrcEmtUpdate)
 Me.gbPanelCstEmt.Controls.Add(Me.txtMaxApproveAmtP)
 Me.gbPanelCstEmt.Controls.Add(Me.lblMaxApproveP)
-Me.gbPanelCstEmt.Controls.Add(Me.gbCstEmt2P)
 Me.gbPanelCstEmt.Controls.Add(Me.gbCstEmt1P)
 Me.gbPanelCstEmt.Controls.Add(Me.lblPckingTermP)
 Me.gbPanelCstEmt.Controls.Add(Me.lblPrcElemtTitleP)
 Me.gbPanelCstEmt.Controls.Add(Me.txtDiscntP)
 Me.gbPanelCstEmt.Controls.Add(Me.lblDiscntP)
-Me.gbPanelCstEmt.Location = New System.Drawing.Point(168, 74)
+Me.gbPanelCstEmt.Controls.Add(Me.gbCstEmt2P)
+Me.gbPanelCstEmt.Location = New System.Drawing.Point(170, 73)
 Me.gbPanelCstEmt.Name = "gbPanelCstEmt"
 Me.gbPanelCstEmt.Size = New System.Drawing.Size(747, 594)
 Me.gbPanelCstEmt.TabIndex = 530
@@ -3927,7 +3852,7 @@ Me.Label115.AutoSize = true
 Me.Label115.ForeColor = System.Drawing.SystemColors.ControlText
 Me.Label115.Location = New System.Drawing.Point(309, 529)
 Me.Label115.Name = "Label115"
-Me.Label115.Size = New System.Drawing.Size(114, 13)
+Me.Label115.Size = New System.Drawing.Size(117, 12)
 Me.Label115.TabIndex = 614
 Me.Label115.Text = "Minimum Markup Price"
 '
@@ -3964,7 +3889,7 @@ Me.lblCushCostBufP.AutoSize = true
 Me.lblCushCostBufP.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblCushCostBufP.Location = New System.Drawing.Point(23, 529)
 Me.lblCushCostBufP.Name = "lblCushCostBufP"
-Me.lblCushCostBufP.Size = New System.Drawing.Size(123, 13)
+Me.lblCushCostBufP.Size = New System.Drawing.Size(129, 12)
 Me.lblCushCostBufP.TabIndex = 612
 Me.lblCushCostBufP.Text = "Cushion && Costing Buffer"
 '
@@ -4000,7 +3925,7 @@ Me.lblOtherDisLmtP.AutoSize = true
 Me.lblOtherDisLmtP.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblOtherDisLmtP.Location = New System.Drawing.Point(23, 550)
 Me.lblOtherDisLmtP.Name = "lblOtherDisLmtP"
-Me.lblOtherDisLmtP.Size = New System.Drawing.Size(102, 13)
+Me.lblOtherDisLmtP.Size = New System.Drawing.Size(103, 12)
 Me.lblOtherDisLmtP.TabIndex = 609
 Me.lblOtherDisLmtP.Text = "Other Discount Limit"
 '
@@ -4023,7 +3948,7 @@ Me.lblApproveAmtP.AutoSize = true
 Me.lblApproveAmtP.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblApproveAmtP.Location = New System.Drawing.Point(201, 509)
 Me.lblApproveAmtP.Name = "lblApproveAmtP"
-Me.lblApproveAmtP.Size = New System.Drawing.Size(57, 13)
+Me.lblApproveAmtP.Size = New System.Drawing.Size(58, 12)
 Me.lblApproveAmtP.TabIndex = 606
 Me.lblApproveAmtP.Text = "Amt (USD)"
 Me.lblApproveAmtP.Visible = false
@@ -4034,7 +3959,7 @@ Me.lblApprovePercP.AutoSize = true
 Me.lblApprovePercP.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblApprovePercP.Location = New System.Drawing.Point(168, 509)
 Me.lblApprovePercP.Name = "lblApprovePercP"
-Me.lblApprovePercP.Size = New System.Drawing.Size(15, 13)
+Me.lblApprovePercP.Size = New System.Drawing.Size(14, 12)
 Me.lblApprovePercP.TabIndex = 605
 Me.lblApprovePercP.Text = "%"
 '
@@ -4042,7 +3967,7 @@ Me.lblApprovePercP.Text = "%"
 '
 Me.txtSeqP.Enabled = false
 Me.txtSeqP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtSeqP.Location = New System.Drawing.Point(56, 43)
+Me.txtSeqP.Location = New System.Drawing.Point(56, 45)
 Me.txtSeqP.MaxLength = 5
 Me.txtSeqP.Name = "txtSeqP"
 Me.txtSeqP.ReadOnly = true
@@ -4055,7 +3980,7 @@ Me.txtSeqP.Text = "1"
 Me.lblCushP.AutoSize = true
 Me.lblCushP.Location = New System.Drawing.Point(23, 487)
 Me.lblCushP.Name = "lblCushP"
-Me.lblCushP.Size = New System.Drawing.Size(128, 13)
+Me.lblCushP.Size = New System.Drawing.Size(135, 12)
 Me.lblCushP.TabIndex = 466
 Me.lblCushP.Text = "Cushion (for Profit Margin)"
 '
@@ -4076,9 +4001,9 @@ Me.txtCushPercChgP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
 '
 Me.lblSeqP.AutoSize = true
 Me.lblSeqP.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblSeqP.Location = New System.Drawing.Point(21, 46)
+Me.lblSeqP.Location = New System.Drawing.Point(21, 48)
 Me.lblSeqP.Name = "lblSeqP"
-Me.lblSeqP.Size = New System.Drawing.Size(29, 13)
+Me.lblSeqP.Size = New System.Drawing.Size(25, 12)
 Me.lblSeqP.TabIndex = 533
 Me.lblSeqP.Text = "Seq."
 '
@@ -4088,7 +4013,7 @@ Me.lblItmNoP.AutoSize = true
 Me.lblItmNoP.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblItmNoP.Location = New System.Drawing.Point(118, 48)
 Me.lblItmNoP.Name = "lblItmNoP"
-Me.lblItmNoP.Size = New System.Drawing.Size(44, 13)
+Me.lblItmNoP.Size = New System.Drawing.Size(43, 12)
 Me.lblItmNoP.TabIndex = 531
 Me.lblItmNoP.Text = "Item No"
 '
@@ -4123,7 +4048,7 @@ Me.txtPckingP.Text = "PC / 6 / 36 / 6.3 / 0.1783 / FOB HK / FOB HK / CTNR"
 Me.lblDiscntMaxP.AutoSize = true
 Me.lblDiscntMaxP.Location = New System.Drawing.Point(354, 550)
 Me.lblDiscntMaxP.Name = "lblDiscntMaxP"
-Me.lblDiscntMaxP.Size = New System.Drawing.Size(59, 13)
+Me.lblDiscntMaxP.Size = New System.Drawing.Size(61, 12)
 Me.lblDiscntMaxP.TabIndex = 595
 Me.lblDiscntMaxP.Text = "(Max 3.2%)"
 Me.lblDiscntMaxP.Visible = false
@@ -4134,7 +4059,7 @@ Me.lblPckingP.AutoSize = true
 Me.lblPckingP.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblPckingP.Location = New System.Drawing.Point(315, 48)
 Me.lblPckingP.Name = "lblPckingP"
-Me.lblPckingP.Size = New System.Drawing.Size(87, 13)
+Me.lblPckingP.Size = New System.Drawing.Size(86, 12)
 Me.lblPckingP.TabIndex = 534
 Me.lblPckingP.Text = "Packing && Terms"
 '
@@ -4178,9 +4103,633 @@ Me.lblMaxApproveP.AutoSize = true
 Me.lblMaxApproveP.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblMaxApproveP.Location = New System.Drawing.Point(23, 571)
 Me.lblMaxApproveP.Name = "lblMaxApproveP"
-Me.lblMaxApproveP.Size = New System.Drawing.Size(103, 13)
+Me.lblMaxApproveP.Size = New System.Drawing.Size(100, 12)
 Me.lblMaxApproveP.TabIndex = 597
 Me.lblMaxApproveP.Text = "Approve check Max"
+'
+'gbCstEmt1P
+'
+Me.gbCstEmt1P.Controls.Add(Me.lblPCPrcP)
+Me.gbCstEmt1P.Controls.Add(Me.txtPCPrcP)
+Me.gbCstEmt1P.Controls.Add(Me.txtPCPrcCurP)
+Me.gbCstEmt1P.Controls.Add(Me.Label111)
+Me.gbCstEmt1P.Controls.Add(Me.txtHKMUP)
+Me.gbCstEmt1P.Controls.Add(Me.txtTranTrmP)
+Me.gbCstEmt1P.Controls.Add(Me.txtVenNoP)
+Me.gbCstEmt1P.Controls.Add(Me.txtCus2NoP)
+Me.gbCstEmt1P.Controls.Add(Me.txtPrcTrmP)
+Me.gbCstEmt1P.Controls.Add(Me.Label110)
+Me.gbCstEmt1P.Controls.Add(Me.lblMUPriceP)
+Me.gbCstEmt1P.Controls.Add(Me.txtMUPriceCurrP)
+Me.gbCstEmt1P.Controls.Add(Me.txtMUPriceP)
+Me.gbCstEmt1P.Controls.Add(Me.lblItmComm1P)
+Me.gbCstEmt1P.Controls.Add(Me.txtItmComm1CurrP)
+Me.gbCstEmt1P.Controls.Add(Me.txtItmComm1P)
+Me.gbCstEmt1P.Controls.Add(Me.lblComm1P)
+Me.gbCstEmt1P.Controls.Add(Me.txtComm1P)
+Me.gbCstEmt1P.Controls.Add(Me.lblPckCst1P)
+Me.gbCstEmt1P.Controls.Add(Me.txtPckCst1CurrP)
+Me.gbCstEmt1P.Controls.Add(Me.txtPckCst1P)
+Me.gbCstEmt1P.Controls.Add(Me.lblMUMinP)
+Me.gbCstEmt1P.Controls.Add(Me.txtVenTranP)
+Me.gbCstEmt1P.Controls.Add(Me.lblVenTranP)
+Me.gbCstEmt1P.Controls.Add(Me.txtVenTypP)
+Me.gbCstEmt1P.Controls.Add(Me.lblVenTypP)
+Me.gbCstEmt1P.Controls.Add(Me.txtItmCatP)
+Me.gbCstEmt1P.Controls.Add(Me.lblItmCatP)
+Me.gbCstEmt1P.Controls.Add(Me.txtCus1NoP)
+Me.gbCstEmt1P.Controls.Add(Me.lblCus1NoP)
+Me.gbCstEmt1P.Controls.Add(Me.txtFtyCstP)
+Me.gbCstEmt1P.Controls.Add(Me.txtFtyPrcCurrP)
+Me.gbCstEmt1P.Controls.Add(Me.lblFtyPrcP)
+Me.gbCstEmt1P.Controls.Add(Me.txtFtyPrcP)
+Me.gbCstEmt1P.Controls.Add(Me.txtFtyCstCurrP)
+Me.gbCstEmt1P.Controls.Add(Me.lblFtyCstP)
+Me.gbCstEmt1P.Controls.Add(Me.lblBasPrcP)
+Me.gbCstEmt1P.Controls.Add(Me.txtBasPrcCurrP)
+Me.gbCstEmt1P.Controls.Add(Me.txtBasPrcP)
+Me.gbCstEmt1P.Controls.Add(Me.lblMUP)
+Me.gbCstEmt1P.Controls.Add(Me.txtMUP)
+Me.gbCstEmt1P.Controls.Add(Me.txtCus1SpP)
+Me.gbCstEmt1P.Controls.Add(Me.txtCurCde2P)
+Me.gbCstEmt1P.Controls.Add(Me.lblCus1DpP)
+Me.gbCstEmt1P.Controls.Add(Me.lblCus1SpP)
+Me.gbCstEmt1P.Controls.Add(Me.txtCus1DpP)
+Me.gbCstEmt1P.Controls.Add(Me.txtCurCde21P)
+Me.gbCstEmt1P.Location = New System.Drawing.Point(17, 64)
+Me.gbCstEmt1P.Name = "gbCstEmt1P"
+Me.gbCstEmt1P.Size = New System.Drawing.Size(287, 409)
+Me.gbCstEmt1P.TabIndex = 588
+Me.gbCstEmt1P.TabStop = false
+'
+'lblPCPrcP
+'
+Me.lblPCPrcP.AutoSize = true
+Me.lblPCPrcP.ForeColor = System.Drawing.SystemColors.ControlText
+Me.lblPCPrcP.Location = New System.Drawing.Point(6, 387)
+Me.lblPCPrcP.Name = "lblPCPrcP"
+Me.lblPCPrcP.Size = New System.Drawing.Size(62, 12)
+Me.lblPCPrcP.TabIndex = 619
+Me.lblPCPrcP.Text = "Price for PC"
+'
+'txtPCPrcP
+'
+Me.txtPCPrcP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtPCPrcP.Location = New System.Drawing.Point(187, 384)
+Me.txtPCPrcP.MaxLength = 20
+Me.txtPCPrcP.Name = "txtPCPrcP"
+Me.txtPCPrcP.Size = New System.Drawing.Size(92, 20)
+Me.txtPCPrcP.TabIndex = 618
+Me.txtPCPrcP.Text = "20.5000"
+Me.txtPCPrcP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+'
+'txtPCPrcCurP
+'
+Me.txtPCPrcCurP.Enabled = false
+Me.txtPCPrcCurP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtPCPrcCurP.Location = New System.Drawing.Point(154, 384)
+Me.txtPCPrcCurP.MaxLength = 20
+Me.txtPCPrcCurP.Name = "txtPCPrcCurP"
+Me.txtPCPrcCurP.ReadOnly = true
+Me.txtPCPrcCurP.Size = New System.Drawing.Size(33, 20)
+Me.txtPCPrcCurP.TabIndex = 617
+Me.txtPCPrcCurP.Text = "USD"
+'
+'Label111
+'
+Me.Label111.AutoSize = true
+Me.Label111.Location = New System.Drawing.Point(6, 173)
+Me.Label111.Name = "Label111"
+Me.Label111.Size = New System.Drawing.Size(73, 12)
+Me.Label111.TabIndex = 615
+Me.Label111.Text = "HK Markup %"
+'
+'txtHKMUP
+'
+Me.txtHKMUP.BackColor = System.Drawing.SystemColors.Control
+Me.txtHKMUP.Enabled = false
+Me.txtHKMUP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtHKMUP.Location = New System.Drawing.Point(188, 170)
+Me.txtHKMUP.MaxLength = 10
+Me.txtHKMUP.Name = "txtHKMUP"
+Me.txtHKMUP.Size = New System.Drawing.Size(92, 20)
+Me.txtHKMUP.TabIndex = 616
+Me.txtHKMUP.Text = "CG24 - *1.22"
+Me.txtHKMUP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+'
+'txtTranTrmP
+'
+Me.txtTranTrmP.Enabled = false
+Me.txtTranTrmP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtTranTrmP.Location = New System.Drawing.Point(216, 78)
+Me.txtTranTrmP.MaxLength = 20
+Me.txtTranTrmP.Name = "txtTranTrmP"
+Me.txtTranTrmP.ReadOnly = true
+Me.txtTranTrmP.Size = New System.Drawing.Size(63, 20)
+Me.txtTranTrmP.TabIndex = 614
+Me.txtTranTrmP.Text = "FOB HK"
+'
+'txtVenNoP
+'
+Me.txtVenNoP.Enabled = false
+Me.txtVenNoP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtVenNoP.Location = New System.Drawing.Point(187, 55)
+Me.txtVenNoP.MaxLength = 20
+Me.txtVenNoP.Name = "txtVenNoP"
+Me.txtVenNoP.ReadOnly = true
+Me.txtVenNoP.Size = New System.Drawing.Size(92, 20)
+Me.txtVenNoP.TabIndex = 613
+Me.txtVenNoP.Text = "A -"
+'
+'txtCus2NoP
+'
+Me.txtCus2NoP.Enabled = false
+Me.txtCus2NoP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtCus2NoP.Location = New System.Drawing.Point(187, 10)
+Me.txtCus2NoP.MaxLength = 20
+Me.txtCus2NoP.Name = "txtCus2NoP"
+Me.txtCus2NoP.ReadOnly = true
+Me.txtCus2NoP.Size = New System.Drawing.Size(92, 20)
+Me.txtCus2NoP.TabIndex = 612
+Me.txtCus2NoP.Text = "50360 - Target"
+'
+'txtPrcTrmP
+'
+Me.txtPrcTrmP.Enabled = false
+Me.txtPrcTrmP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtPrcTrmP.Location = New System.Drawing.Point(154, 78)
+Me.txtPrcTrmP.MaxLength = 20
+Me.txtPrcTrmP.Name = "txtPrcTrmP"
+Me.txtPrcTrmP.ReadOnly = true
+Me.txtPrcTrmP.Size = New System.Drawing.Size(63, 20)
+Me.txtPrcTrmP.TabIndex = 610
+Me.txtPrcTrmP.Text = "FOB HK"
+'
+'Label110
+'
+Me.Label110.AutoSize = true
+Me.Label110.ForeColor = System.Drawing.SystemColors.ControlText
+Me.Label110.Location = New System.Drawing.Point(6, 81)
+Me.Label110.Name = "Label110"
+Me.Label110.Size = New System.Drawing.Size(109, 12)
+Me.Label110.TabIndex = 611
+Me.Label110.Text = "Price Term/Tran Term"
+'
+'lblMUPriceP
+'
+Me.lblMUPriceP.AutoSize = true
+Me.lblMUPriceP.ForeColor = System.Drawing.SystemColors.ControlText
+Me.lblMUPriceP.Location = New System.Drawing.Point(6, 249)
+Me.lblMUPriceP.Name = "lblMUPriceP"
+Me.lblMUPriceP.Size = New System.Drawing.Size(68, 12)
+Me.lblMUPriceP.TabIndex = 609
+Me.lblMUPriceP.Text = "Markup Price"
+'
+'txtMUPriceCurrP
+'
+Me.txtMUPriceCurrP.Enabled = false
+Me.txtMUPriceCurrP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtMUPriceCurrP.Location = New System.Drawing.Point(154, 246)
+Me.txtMUPriceCurrP.MaxLength = 20
+Me.txtMUPriceCurrP.Name = "txtMUPriceCurrP"
+Me.txtMUPriceCurrP.ReadOnly = true
+Me.txtMUPriceCurrP.Size = New System.Drawing.Size(33, 20)
+Me.txtMUPriceCurrP.TabIndex = 607
+Me.txtMUPriceCurrP.Text = "USD"
+'
+'txtMUPriceP
+'
+Me.txtMUPriceP.Enabled = false
+Me.txtMUPriceP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtMUPriceP.Location = New System.Drawing.Point(187, 246)
+Me.txtMUPriceP.MaxLength = 20
+Me.txtMUPriceP.Name = "txtMUPriceP"
+Me.txtMUPriceP.ReadOnly = true
+Me.txtMUPriceP.Size = New System.Drawing.Size(92, 20)
+Me.txtMUPriceP.TabIndex = 608
+Me.txtMUPriceP.Text = "24.6789"
+Me.txtMUPriceP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+'
+'lblItmComm1P
+'
+Me.lblItmComm1P.AutoSize = true
+Me.lblItmComm1P.ForeColor = System.Drawing.SystemColors.ControlText
+Me.lblItmComm1P.Location = New System.Drawing.Point(6, 318)
+Me.lblItmComm1P.Name = "lblItmComm1P"
+Me.lblItmComm1P.Size = New System.Drawing.Size(87, 12)
+Me.lblItmComm1P.TabIndex = 606
+Me.lblItmComm1P.Text = "Item Commission"
+'
+'txtItmComm1CurrP
+'
+Me.txtItmComm1CurrP.Enabled = false
+Me.txtItmComm1CurrP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtItmComm1CurrP.Location = New System.Drawing.Point(154, 315)
+Me.txtItmComm1CurrP.MaxLength = 20
+Me.txtItmComm1CurrP.Name = "txtItmComm1CurrP"
+Me.txtItmComm1CurrP.ReadOnly = true
+Me.txtItmComm1CurrP.Size = New System.Drawing.Size(33, 20)
+Me.txtItmComm1CurrP.TabIndex = 604
+Me.txtItmComm1CurrP.Text = "USD"
+'
+'txtItmComm1P
+'
+Me.txtItmComm1P.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtItmComm1P.Location = New System.Drawing.Point(187, 315)
+Me.txtItmComm1P.MaxLength = 20
+Me.txtItmComm1P.Name = "txtItmComm1P"
+Me.txtItmComm1P.Size = New System.Drawing.Size(92, 20)
+Me.txtItmComm1P.TabIndex = 605
+Me.txtItmComm1P.Text = "0"
+Me.txtItmComm1P.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+'
+'lblComm1P
+'
+Me.lblComm1P.AutoSize = true
+Me.lblComm1P.Location = New System.Drawing.Point(6, 294)
+Me.lblComm1P.Name = "lblComm1P"
+Me.lblComm1P.Size = New System.Drawing.Size(75, 12)
+Me.lblComm1P.TabIndex = 602
+Me.lblComm1P.Text = "Commission %"
+'
+'txtComm1P
+'
+Me.txtComm1P.Enabled = false
+Me.txtComm1P.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtComm1P.Location = New System.Drawing.Point(187, 291)
+Me.txtComm1P.MaxLength = 10
+Me.txtComm1P.Name = "txtComm1P"
+Me.txtComm1P.ReadOnly = true
+Me.txtComm1P.Size = New System.Drawing.Size(92, 20)
+Me.txtComm1P.TabIndex = 603
+Me.txtComm1P.Text = "2"
+Me.txtComm1P.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+'
+'lblPckCst1P
+'
+Me.lblPckCst1P.AutoSize = true
+Me.lblPckCst1P.ForeColor = System.Drawing.SystemColors.ControlText
+Me.lblPckCst1P.Location = New System.Drawing.Point(6, 270)
+Me.lblPckCst1P.Name = "lblPckCst1P"
+Me.lblPckCst1P.Size = New System.Drawing.Size(77, 12)
+Me.lblPckCst1P.TabIndex = 601
+Me.lblPckCst1P.Text = "Packaging Cost"
+'
+'txtPckCst1CurrP
+'
+Me.txtPckCst1CurrP.Enabled = false
+Me.txtPckCst1CurrP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtPckCst1CurrP.Location = New System.Drawing.Point(154, 267)
+Me.txtPckCst1CurrP.MaxLength = 20
+Me.txtPckCst1CurrP.Name = "txtPckCst1CurrP"
+Me.txtPckCst1CurrP.ReadOnly = true
+Me.txtPckCst1CurrP.Size = New System.Drawing.Size(33, 20)
+Me.txtPckCst1CurrP.TabIndex = 599
+Me.txtPckCst1CurrP.Text = "USD"
+'
+'txtPckCst1P
+'
+Me.txtPckCst1P.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtPckCst1P.Location = New System.Drawing.Point(187, 267)
+Me.txtPckCst1P.MaxLength = 20
+Me.txtPckCst1P.Name = "txtPckCst1P"
+Me.txtPckCst1P.Size = New System.Drawing.Size(92, 20)
+Me.txtPckCst1P.TabIndex = 600
+Me.txtPckCst1P.Text = "1.5"
+Me.txtPckCst1P.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+'
+'lblMUMinP
+'
+Me.lblMUMinP.AutoSize = true
+Me.lblMUMinP.Location = New System.Drawing.Point(72, 222)
+Me.lblMUMinP.Name = "lblMUMinP"
+Me.lblMUMinP.Size = New System.Drawing.Size(71, 12)
+Me.lblMUMinP.TabIndex = 598
+Me.lblMUMinP.Text = "(Min 14.25%)"
+'
+'txtVenTranP
+'
+Me.txtVenTranP.Enabled = false
+Me.txtVenTranP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtVenTranP.Location = New System.Drawing.Point(154, 102)
+Me.txtVenTranP.MaxLength = 20
+Me.txtVenTranP.Name = "txtVenTranP"
+Me.txtVenTranP.ReadOnly = true
+Me.txtVenTranP.Size = New System.Drawing.Size(125, 20)
+Me.txtVenTranP.TabIndex = 596
+Me.txtVenTranP.Text = "N"
+'
+'lblVenTranP
+'
+Me.lblVenTranP.AutoSize = true
+Me.lblVenTranP.ForeColor = System.Drawing.SystemColors.ControlText
+Me.lblVenTranP.Location = New System.Drawing.Point(6, 105)
+Me.lblVenTranP.Name = "lblVenTranP"
+Me.lblVenTranP.Size = New System.Drawing.Size(143, 12)
+Me.lblVenTranP.TabIndex = 597
+Me.lblVenTranP.Text = "Vendor Cover Transportation"
+'
+'txtVenTypP
+'
+Me.txtVenTypP.Enabled = false
+Me.txtVenTypP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtVenTypP.Location = New System.Drawing.Point(154, 55)
+Me.txtVenTypP.MaxLength = 20
+Me.txtVenTypP.Name = "txtVenTypP"
+Me.txtVenTypP.ReadOnly = true
+Me.txtVenTypP.Size = New System.Drawing.Size(33, 20)
+Me.txtVenTypP.TabIndex = 592
+Me.txtVenTypP.Text = "INT"
+'
+'lblVenTypP
+'
+Me.lblVenTypP.AutoSize = true
+Me.lblVenTypP.ForeColor = System.Drawing.SystemColors.ControlText
+Me.lblVenTypP.Location = New System.Drawing.Point(6, 58)
+Me.lblVenTypP.Name = "lblVenTypP"
+Me.lblVenTypP.Size = New System.Drawing.Size(90, 12)
+Me.lblVenTypP.TabIndex = 593
+Me.lblVenTypP.Text = "Vendor Type / PV"
+'
+'txtItmCatP
+'
+Me.txtItmCatP.Enabled = false
+Me.txtItmCatP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtItmCatP.Location = New System.Drawing.Point(154, 34)
+Me.txtItmCatP.MaxLength = 20
+Me.txtItmCatP.Name = "txtItmCatP"
+Me.txtItmCatP.ReadOnly = true
+Me.txtItmCatP.Size = New System.Drawing.Size(125, 20)
+Me.txtItmCatP.TabIndex = 590
+Me.txtItmCatP.Text = "Standard"
+'
+'lblItmCatP
+'
+Me.lblItmCatP.AutoSize = true
+Me.lblItmCatP.ForeColor = System.Drawing.SystemColors.ControlText
+Me.lblItmCatP.Location = New System.Drawing.Point(6, 37)
+Me.lblItmCatP.Name = "lblItmCatP"
+Me.lblItmCatP.Size = New System.Drawing.Size(85, 12)
+Me.lblItmCatP.TabIndex = 591
+Me.lblItmCatP.Text = "Item Cat / Nature"
+'
+'txtCus1NoP
+'
+Me.txtCus1NoP.Enabled = false
+Me.txtCus1NoP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtCus1NoP.Location = New System.Drawing.Point(89, 10)
+Me.txtCus1NoP.MaxLength = 20
+Me.txtCus1NoP.Name = "txtCus1NoP"
+Me.txtCus1NoP.ReadOnly = true
+Me.txtCus1NoP.Size = New System.Drawing.Size(98, 20)
+Me.txtCus1NoP.TabIndex = 586
+Me.txtCus1NoP.Text = "50360 - Target"
+'
+'lblCus1NoP
+'
+Me.lblCus1NoP.AutoSize = true
+Me.lblCus1NoP.ForeColor = System.Drawing.SystemColors.ControlText
+Me.lblCus1NoP.Location = New System.Drawing.Point(6, 15)
+Me.lblCus1NoP.Name = "lblCus1NoP"
+Me.lblCus1NoP.Size = New System.Drawing.Size(61, 12)
+Me.lblCus1NoP.TabIndex = 587
+Me.lblCus1NoP.Text = "Pri/Sec Cust"
+'
+'txtFtyCstP
+'
+Me.txtFtyCstP.Enabled = false
+Me.txtFtyCstP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtFtyCstP.Location = New System.Drawing.Point(187, 125)
+Me.txtFtyCstP.MaxLength = 20
+Me.txtFtyCstP.Name = "txtFtyCstP"
+Me.txtFtyCstP.ReadOnly = true
+Me.txtFtyCstP.Size = New System.Drawing.Size(92, 20)
+Me.txtFtyCstP.TabIndex = 541
+Me.txtFtyCstP.Text = "100.0000"
+Me.txtFtyCstP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+'
+'txtFtyPrcCurrP
+'
+Me.txtFtyPrcCurrP.Enabled = false
+Me.txtFtyPrcCurrP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtFtyPrcCurrP.Location = New System.Drawing.Point(154, 146)
+Me.txtFtyPrcCurrP.MaxLength = 20
+Me.txtFtyPrcCurrP.Name = "txtFtyPrcCurrP"
+Me.txtFtyPrcCurrP.ReadOnly = true
+Me.txtFtyPrcCurrP.Size = New System.Drawing.Size(33, 20)
+Me.txtFtyPrcCurrP.TabIndex = 537
+Me.txtFtyPrcCurrP.Text = "HKD"
+'
+'lblFtyPrcP
+'
+Me.lblFtyPrcP.AutoSize = true
+Me.lblFtyPrcP.ForeColor = System.Drawing.SystemColors.ControlText
+Me.lblFtyPrcP.Location = New System.Drawing.Point(6, 149)
+Me.lblFtyPrcP.Name = "lblFtyPrcP"
+Me.lblFtyPrcP.Size = New System.Drawing.Size(46, 12)
+Me.lblFtyPrcP.TabIndex = 539
+Me.lblFtyPrcP.Text = "Fty Price"
+'
+'txtFtyPrcP
+'
+Me.txtFtyPrcP.Enabled = false
+Me.txtFtyPrcP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtFtyPrcP.Location = New System.Drawing.Point(187, 146)
+Me.txtFtyPrcP.MaxLength = 20
+Me.txtFtyPrcP.Name = "txtFtyPrcP"
+Me.txtFtyPrcP.ReadOnly = true
+Me.txtFtyPrcP.Size = New System.Drawing.Size(92, 20)
+Me.txtFtyPrcP.TabIndex = 538
+Me.txtFtyPrcP.Text = "118.0000"
+Me.txtFtyPrcP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+'
+'txtFtyCstCurrP
+'
+Me.txtFtyCstCurrP.Enabled = false
+Me.txtFtyCstCurrP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtFtyCstCurrP.Location = New System.Drawing.Point(154, 125)
+Me.txtFtyCstCurrP.MaxLength = 20
+Me.txtFtyCstCurrP.Name = "txtFtyCstCurrP"
+Me.txtFtyCstCurrP.ReadOnly = true
+Me.txtFtyCstCurrP.Size = New System.Drawing.Size(33, 20)
+Me.txtFtyCstCurrP.TabIndex = 540
+Me.txtFtyCstCurrP.Text = "HKD"
+'
+'lblFtyCstP
+'
+Me.lblFtyCstP.AutoSize = true
+Me.lblFtyCstP.ForeColor = System.Drawing.SystemColors.ControlText
+Me.lblFtyCstP.Location = New System.Drawing.Point(6, 128)
+Me.lblFtyCstP.Name = "lblFtyCstP"
+Me.lblFtyCstP.Size = New System.Drawing.Size(44, 12)
+Me.lblFtyCstP.TabIndex = 542
+Me.lblFtyCstP.Text = "Fty Cost"
+'
+'lblBasPrcP
+'
+Me.lblBasPrcP.AutoSize = true
+Me.lblBasPrcP.ForeColor = System.Drawing.SystemColors.ControlText
+Me.lblBasPrcP.Location = New System.Drawing.Point(6, 197)
+Me.lblBasPrcP.Name = "lblBasPrcP"
+Me.lblBasPrcP.Size = New System.Drawing.Size(56, 12)
+Me.lblBasPrcP.TabIndex = 526
+Me.lblBasPrcP.Text = "Basic Price"
+'
+'txtBasPrcCurrP
+'
+Me.txtBasPrcCurrP.Enabled = false
+Me.txtBasPrcCurrP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtBasPrcCurrP.Location = New System.Drawing.Point(154, 194)
+Me.txtBasPrcCurrP.MaxLength = 20
+Me.txtBasPrcCurrP.Name = "txtBasPrcCurrP"
+Me.txtBasPrcCurrP.ReadOnly = true
+Me.txtBasPrcCurrP.Size = New System.Drawing.Size(33, 20)
+Me.txtBasPrcCurrP.TabIndex = 524
+Me.txtBasPrcCurrP.Text = "USD"
+'
+'txtBasPrcP
+'
+Me.txtBasPrcP.Enabled = false
+Me.txtBasPrcP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtBasPrcP.Location = New System.Drawing.Point(187, 194)
+Me.txtBasPrcP.MaxLength = 20
+Me.txtBasPrcP.Name = "txtBasPrcP"
+Me.txtBasPrcP.ReadOnly = true
+Me.txtBasPrcP.Size = New System.Drawing.Size(92, 20)
+Me.txtBasPrcP.TabIndex = 525
+Me.txtBasPrcP.Text = "17.5097"
+Me.txtBasPrcP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+'
+'lblMUP
+'
+Me.lblMUP.AutoSize = true
+Me.lblMUP.Location = New System.Drawing.Point(6, 222)
+Me.lblMUP.Name = "lblMUP"
+Me.lblMUP.Size = New System.Drawing.Size(54, 12)
+Me.lblMUP.TabIndex = 543
+Me.lblMUP.Text = "Markup %"
+'
+'txtMUP
+'
+Me.txtMUP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtMUP.Location = New System.Drawing.Point(187, 218)
+Me.txtMUP.MaxLength = 10
+Me.txtMUP.Name = "txtMUP"
+Me.txtMUP.Size = New System.Drawing.Size(92, 20)
+Me.txtMUP.TabIndex = 547
+Me.txtMUP.Text = "29.05"
+Me.txtMUP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+'
+'txtCus1SpP
+'
+Me.txtCus1SpP.Enabled = false
+Me.txtCus1SpP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtCus1SpP.Location = New System.Drawing.Point(187, 338)
+Me.txtCus1SpP.MaxLength = 20
+Me.txtCus1SpP.Name = "txtCus1SpP"
+Me.txtCus1SpP.ReadOnly = true
+Me.txtCus1SpP.Size = New System.Drawing.Size(92, 20)
+Me.txtCus1SpP.TabIndex = 144
+Me.txtCus1SpP.Text = "21.7903"
+Me.txtCus1SpP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+'
+'txtCurCde2P
+'
+Me.txtCurCde2P.Enabled = false
+Me.txtCurCde2P.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtCurCde2P.Location = New System.Drawing.Point(154, 339)
+Me.txtCurCde2P.MaxLength = 20
+Me.txtCurCde2P.Name = "txtCurCde2P"
+Me.txtCurCde2P.ReadOnly = true
+Me.txtCurCde2P.Size = New System.Drawing.Size(33, 20)
+Me.txtCurCde2P.TabIndex = 143
+Me.txtCurCde2P.Text = "USD"
+'
+'lblCus1DpP
+'
+Me.lblCus1DpP.AutoSize = true
+Me.lblCus1DpP.ForeColor = System.Drawing.SystemColors.ControlText
+Me.lblCus1DpP.Location = New System.Drawing.Point(6, 364)
+Me.lblCus1DpP.Name = "lblCus1DpP"
+Me.lblCus1DpP.Size = New System.Drawing.Size(72, 12)
+Me.lblCus1DpP.TabIndex = 564
+Me.lblCus1DpP.Text = "Adjusted Price"
+'
+'lblCus1SpP
+'
+Me.lblCus1SpP.AutoSize = true
+Me.lblCus1SpP.ForeColor = System.Drawing.SystemColors.ControlText
+Me.lblCus1SpP.Location = New System.Drawing.Point(6, 341)
+Me.lblCus1SpP.Name = "lblCus1SpP"
+Me.lblCus1SpP.Size = New System.Drawing.Size(72, 12)
+Me.lblCus1SpP.TabIndex = 549
+Me.lblCus1SpP.Text = "Standard Price"
+'
+'txtCus1DpP
+'
+Me.txtCus1DpP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtCus1DpP.Location = New System.Drawing.Point(187, 361)
+Me.txtCus1DpP.MaxLength = 20
+Me.txtCus1DpP.Name = "txtCus1DpP"
+Me.txtCus1DpP.Size = New System.Drawing.Size(92, 20)
+Me.txtCus1DpP.TabIndex = 561
+Me.txtCus1DpP.Text = "20.5000"
+Me.txtCus1DpP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+'
+'txtCurCde21P
+'
+Me.txtCurCde21P.Enabled = false
+Me.txtCurCde21P.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtCurCde21P.Location = New System.Drawing.Point(154, 361)
+Me.txtCurCde21P.MaxLength = 20
+Me.txtCurCde21P.Name = "txtCurCde21P"
+Me.txtCurCde21P.ReadOnly = true
+Me.txtCurCde21P.Size = New System.Drawing.Size(33, 20)
+Me.txtCurCde21P.TabIndex = 560
+Me.txtCurCde21P.Text = "USD"
+'
+'lblPckingTermP
+'
+Me.lblPckingTermP.AutoSize = true
+Me.lblPckingTermP.ForeColor = System.Drawing.SystemColors.ControlText
+Me.lblPckingTermP.Location = New System.Drawing.Point(408, 28)
+Me.lblPckingTermP.Name = "lblPckingTermP"
+Me.lblPckingTermP.Size = New System.Drawing.Size(284, 12)
+Me.lblPckingTermP.TabIndex = 571
+Me.lblPckingTermP.Text = "UM/Inner/Master/CFT/CBM/Fty Term/HK Term/Tran Term"
+'
+'lblPrcElemtTitleP
+'
+Me.lblPrcElemtTitleP.AutoSize = true
+Me.lblPrcElemtTitleP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline),System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+Me.lblPrcElemtTitleP.ForeColor = System.Drawing.SystemColors.ControlText
+Me.lblPrcElemtTitleP.Location = New System.Drawing.Point(20, 15)
+Me.lblPrcElemtTitleP.Name = "lblPrcElemtTitleP"
+Me.lblPrcElemtTitleP.Size = New System.Drawing.Size(143, 20)
+Me.lblPrcElemtTitleP.TabIndex = 529
+Me.lblPrcElemtTitleP.Text = "Pricing Elements"
+'
+'txtDiscntP
+'
+Me.txtDiscntP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtDiscntP.Location = New System.Drawing.Point(419, 547)
+Me.txtDiscntP.MaxLength = 10
+Me.txtDiscntP.Name = "txtDiscntP"
+Me.txtDiscntP.Size = New System.Drawing.Size(92, 20)
+Me.txtDiscntP.TabIndex = 519
+Me.txtDiscntP.Text = "0"
+Me.txtDiscntP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+Me.txtDiscntP.Visible = false
+'
+'lblDiscntP
+'
+Me.lblDiscntP.AutoSize = true
+Me.lblDiscntP.Location = New System.Drawing.Point(309, 550)
+Me.lblDiscntP.Name = "lblDiscntP"
+Me.lblDiscntP.Size = New System.Drawing.Size(37, 12)
+Me.lblDiscntP.TabIndex = 518
+Me.lblDiscntP.Text = "Disc %"
+Me.lblDiscntP.Visible = false
 '
 'gbCstEmt2P
 '
@@ -4341,7 +4890,7 @@ Me.txtPckCstAmtChgCurr.Text = "USD"
 Me.lblProMarP.AutoSize = true
 Me.lblProMarP.Location = New System.Drawing.Point(8, 57)
 Me.lblProMarP.Name = "lblProMarP"
-Me.lblProMarP.Size = New System.Drawing.Size(66, 13)
+Me.lblProMarP.Size = New System.Drawing.Size(68, 12)
 Me.lblProMarP.TabIndex = 622
 Me.lblProMarP.Text = "Profit Margin"
 '
@@ -4402,10 +4951,9 @@ Me.txtCostBufPercChgP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
 'lblCostBufP
 '
 Me.lblCostBufP.AutoSize = true
-Me.lblCostBufP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.lblCostBufP.Location = New System.Drawing.Point(8, 197)
 Me.lblCostBufP.Name = "lblCostBufP"
-Me.lblCostBufP.Size = New System.Drawing.Size(73, 13)
+Me.lblCostBufP.Size = New System.Drawing.Size(75, 12)
 Me.lblCostBufP.TabIndex = 576
 Me.lblCostBufP.Text = "Costing Buffer"
 '
@@ -4463,7 +5011,7 @@ Me.txtSubTtlPercChgP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
 Me.lblPLIP.AutoSize = true
 Me.lblPLIP.Location = New System.Drawing.Point(8, 246)
 Me.lblPLIP.Name = "lblPLIP"
-Me.lblPLIP.Size = New System.Drawing.Size(23, 13)
+Me.lblPLIP.Size = New System.Drawing.Size(22, 12)
 Me.lblPLIP.TabIndex = 487
 Me.lblPLIP.Text = "PLI"
 '
@@ -4472,7 +5020,7 @@ Me.lblPLIP.Text = "PLI"
 Me.lblRebateP.AutoSize = true
 Me.lblRebateP.Location = New System.Drawing.Point(8, 288)
 Me.lblRebateP.Name = "lblRebateP"
-Me.lblRebateP.Size = New System.Drawing.Size(42, 13)
+Me.lblRebateP.Size = New System.Drawing.Size(37, 12)
 Me.lblRebateP.TabIndex = 482
 Me.lblRebateP.Text = "Rebate"
 '
@@ -4535,7 +5083,7 @@ Me.txtRebatePercChgP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
 Me.lblTHCCustP.AutoSize = true
 Me.lblTHCCustP.Location = New System.Drawing.Point(8, 106)
 Me.lblTHCCustP.Name = "lblTHCCustP"
-Me.lblTHCCustP.Size = New System.Drawing.Size(90, 13)
+Me.lblTHCCustP.Size = New System.Drawing.Size(88, 12)
 Me.lblTHCCustP.TabIndex = 597
 Me.lblTHCCustP.Text = "THC Freight Rate"
 '
@@ -4588,7 +5136,7 @@ Me.lblStdPrcMUPercP.AutoSize = true
 Me.lblStdPrcMUPercP.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblStdPrcMUPercP.Location = New System.Drawing.Point(6, 19)
 Me.lblStdPrcMUPercP.Name = "lblStdPrcMUPercP"
-Me.lblStdPrcMUPercP.Size = New System.Drawing.Size(127, 13)
+Me.lblStdPrcMUPercP.Size = New System.Drawing.Size(124, 12)
 Me.lblStdPrcMUPercP.TabIndex = 609
 Me.lblStdPrcMUPercP.Text = "Standard Price Markup %"
 '
@@ -4611,7 +5159,7 @@ Me.lblAdjPrcMUPercP.AutoSize = true
 Me.lblAdjPrcMUPercP.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblAdjPrcMUPercP.Location = New System.Drawing.Point(6, 40)
 Me.lblAdjPrcMUPercP.Name = "lblAdjPrcMUPercP"
-Me.lblAdjPrcMUPercP.Size = New System.Drawing.Size(125, 13)
+Me.lblAdjPrcMUPercP.Size = New System.Drawing.Size(124, 12)
 Me.lblAdjPrcMUPercP.TabIndex = 607
 Me.lblAdjPrcMUPercP.Text = "Adjusted Price Markup %"
 '
@@ -4621,7 +5169,7 @@ Me.lblInvRndP.AutoSize = true
 Me.lblInvRndP.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblInvRndP.Location = New System.Drawing.Point(6, 61)
 Me.lblInvRndP.Name = "lblInvRndP"
-Me.lblInvRndP.Size = New System.Drawing.Size(53, 13)
+Me.lblInvRndP.Size = New System.Drawing.Size(52, 12)
 Me.lblInvRndP.TabIndex = 605
 Me.lblInvRndP.Text = "Rounding"
 '
@@ -4656,7 +5204,7 @@ Me.txtTHCCustPercChgP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
 Me.lblDefMDP.AutoSize = true
 Me.lblDefMDP.Location = New System.Drawing.Point(8, 267)
 Me.lblDefMDP.Name = "lblDefMDP"
-Me.lblDefMDP.Size = New System.Drawing.Size(106, 13)
+Me.lblDefMDP.Size = New System.Drawing.Size(103, 12)
 Me.lblDefMDP.TabIndex = 494
 Me.lblDefMDP.Text = "Defective Markdown"
 '
@@ -4743,17 +5291,16 @@ Me.txtPckCstAmtOriP.Visible = false
 Me.lblCommP.AutoSize = true
 Me.lblCommP.Location = New System.Drawing.Point(8, 372)
 Me.lblCommP.Name = "lblCommP"
-Me.lblCommP.Size = New System.Drawing.Size(62, 13)
+Me.lblCommP.Size = New System.Drawing.Size(63, 12)
 Me.lblCommP.TabIndex = 504
 Me.lblCommP.Text = "Commission"
 '
 'lblPckCstP
 '
 Me.lblPckCstP.AutoSize = true
-Me.lblPckCstP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.lblPckCstP.Location = New System.Drawing.Point(8, 344)
 Me.lblPckCstP.Name = "lblPckCstP"
-Me.lblPckCstP.Size = New System.Drawing.Size(82, 13)
+Me.lblPckCstP.Size = New System.Drawing.Size(77, 12)
 Me.lblPckCstP.TabIndex = 471
 Me.lblPckCstP.Text = "Packaging Cost"
 '
@@ -4802,7 +5349,7 @@ Me.txtCommPercChgP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
 Me.lblItmCommP.AutoSize = true
 Me.lblItmCommP.Location = New System.Drawing.Point(8, 400)
 Me.lblItmCommP.Name = "lblItmCommP"
-Me.lblItmCommP.Size = New System.Drawing.Size(85, 13)
+Me.lblItmCommP.Size = New System.Drawing.Size(87, 12)
 Me.lblItmCommP.TabIndex = 566
 Me.lblItmCommP.Text = "Item Commission"
 '
@@ -4838,7 +5385,7 @@ Me.txtCustMUPercOriP.Visible = false
 Me.lblCustMUP.AutoSize = true
 Me.lblCustMUP.Location = New System.Drawing.Point(8, 36)
 Me.lblCustMUP.Name = "lblCustMUP"
-Me.lblCustMUP.Size = New System.Drawing.Size(90, 13)
+Me.lblCustMUP.Size = New System.Drawing.Size(90, 12)
 Me.lblCustMUP.TabIndex = 456
 Me.lblCustMUP.Text = "Customer Markup"
 '
@@ -4847,17 +5394,16 @@ Me.lblCustMUP.Text = "Customer Markup"
 Me.lblFAP.AutoSize = true
 Me.lblFAP.Location = New System.Drawing.Point(8, 176)
 Me.lblFAP.Name = "lblFAP"
-Me.lblFAP.Size = New System.Drawing.Size(69, 13)
+Me.lblFAP.Size = New System.Drawing.Size(69, 12)
 Me.lblFAP.TabIndex = 419
 Me.lblFAP.Text = "Factory Audit"
 '
 'lblSubTtlP
 '
 Me.lblSubTtlP.AutoSize = true
-Me.lblSubTtlP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.lblSubTtlP.Location = New System.Drawing.Point(8, 316)
 Me.lblSubTtlP.Name = "lblSubTtlP"
-Me.lblSubTtlP.Size = New System.Drawing.Size(64, 13)
+Me.lblSubTtlP.Size = New System.Drawing.Size(62, 12)
 Me.lblSubTtlP.TabIndex = 441
 Me.lblSubTtlP.Text = "Sub Total %"
 '
@@ -4879,7 +5425,7 @@ Me.txtOthersPercChgP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
 Me.lblUPSP.AutoSize = true
 Me.lblUPSP.Location = New System.Drawing.Point(8, 135)
 Me.lblUPSP.Name = "lblUPSP"
-Me.lblUPSP.Size = New System.Drawing.Size(83, 13)
+Me.lblUPSP.Size = New System.Drawing.Size(78, 12)
 Me.lblUPSP.TabIndex = 424
 Me.lblUPSP.Text = "UPS / Sampling"
 '
@@ -4901,7 +5447,7 @@ Me.txtUPSPercChgP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
 Me.lblOthersP.AutoSize = true
 Me.lblOthersP.Location = New System.Drawing.Point(8, 218)
 Me.lblOthersP.Name = "lblOthersP"
-Me.lblOthersP.Size = New System.Drawing.Size(38, 13)
+Me.lblOthersP.Size = New System.Drawing.Size(35, 12)
 Me.lblOthersP.TabIndex = 436
 Me.lblOthersP.Text = "Others"
 '
@@ -4936,643 +5482,16 @@ Me.txtFAPercChgP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
 Me.lblLabP.AutoSize = true
 Me.lblLabP.Location = New System.Drawing.Point(8, 155)
 Me.lblLabP.Name = "lblLabP"
-Me.lblLabP.Size = New System.Drawing.Size(49, 13)
+Me.lblLabP.Size = New System.Drawing.Size(45, 12)
 Me.lblLabP.TabIndex = 431
 Me.lblLabP.Text = "Lab Test"
-'
-'gbCstEmt1P
-'
-Me.gbCstEmt1P.Controls.Add(Me.lblPCPrcP)
-Me.gbCstEmt1P.Controls.Add(Me.txtPCPrcP)
-Me.gbCstEmt1P.Controls.Add(Me.txtPCPrcCurP)
-Me.gbCstEmt1P.Controls.Add(Me.Label111)
-Me.gbCstEmt1P.Controls.Add(Me.txtHKMUP)
-Me.gbCstEmt1P.Controls.Add(Me.txtTranTrmP)
-Me.gbCstEmt1P.Controls.Add(Me.txtVenNoP)
-Me.gbCstEmt1P.Controls.Add(Me.txtCus2NoP)
-Me.gbCstEmt1P.Controls.Add(Me.txtPrcTrmP)
-Me.gbCstEmt1P.Controls.Add(Me.Label110)
-Me.gbCstEmt1P.Controls.Add(Me.lblMUPriceP)
-Me.gbCstEmt1P.Controls.Add(Me.txtMUPriceCurrP)
-Me.gbCstEmt1P.Controls.Add(Me.txtMUPriceP)
-Me.gbCstEmt1P.Controls.Add(Me.lblItmComm1P)
-Me.gbCstEmt1P.Controls.Add(Me.txtItmComm1CurrP)
-Me.gbCstEmt1P.Controls.Add(Me.txtItmComm1P)
-Me.gbCstEmt1P.Controls.Add(Me.lblComm1P)
-Me.gbCstEmt1P.Controls.Add(Me.txtComm1P)
-Me.gbCstEmt1P.Controls.Add(Me.lblPckCst1P)
-Me.gbCstEmt1P.Controls.Add(Me.txtPckCst1CurrP)
-Me.gbCstEmt1P.Controls.Add(Me.txtPckCst1P)
-Me.gbCstEmt1P.Controls.Add(Me.lblMUMinP)
-Me.gbCstEmt1P.Controls.Add(Me.txtVenTranP)
-Me.gbCstEmt1P.Controls.Add(Me.lblVenTranP)
-Me.gbCstEmt1P.Controls.Add(Me.txtVenTypP)
-Me.gbCstEmt1P.Controls.Add(Me.lblVenTypP)
-Me.gbCstEmt1P.Controls.Add(Me.txtItmCatP)
-Me.gbCstEmt1P.Controls.Add(Me.lblItmCatP)
-Me.gbCstEmt1P.Controls.Add(Me.txtCus1NoP)
-Me.gbCstEmt1P.Controls.Add(Me.lblCus1NoP)
-Me.gbCstEmt1P.Controls.Add(Me.txtFtyCstP)
-Me.gbCstEmt1P.Controls.Add(Me.txtFtyPrcCurrP)
-Me.gbCstEmt1P.Controls.Add(Me.lblFtyPrcP)
-Me.gbCstEmt1P.Controls.Add(Me.txtFtyPrcP)
-Me.gbCstEmt1P.Controls.Add(Me.txtFtyCstCurrP)
-Me.gbCstEmt1P.Controls.Add(Me.lblFtyCstP)
-Me.gbCstEmt1P.Controls.Add(Me.lblBasPrcP)
-Me.gbCstEmt1P.Controls.Add(Me.txtBasPrcCurrP)
-Me.gbCstEmt1P.Controls.Add(Me.txtBasPrcP)
-Me.gbCstEmt1P.Controls.Add(Me.lblMUP)
-Me.gbCstEmt1P.Controls.Add(Me.txtMUP)
-Me.gbCstEmt1P.Controls.Add(Me.txtCus1SpP)
-Me.gbCstEmt1P.Controls.Add(Me.txtCurCde2P)
-Me.gbCstEmt1P.Controls.Add(Me.lblCus1DpP)
-Me.gbCstEmt1P.Controls.Add(Me.lblCus1SpP)
-Me.gbCstEmt1P.Controls.Add(Me.txtCus1DpP)
-Me.gbCstEmt1P.Controls.Add(Me.txtCurCde21P)
-Me.gbCstEmt1P.Location = New System.Drawing.Point(17, 64)
-Me.gbCstEmt1P.Name = "gbCstEmt1P"
-Me.gbCstEmt1P.Size = New System.Drawing.Size(287, 409)
-Me.gbCstEmt1P.TabIndex = 588
-Me.gbCstEmt1P.TabStop = false
-'
-'lblPCPrcP
-'
-Me.lblPCPrcP.AutoSize = true
-Me.lblPCPrcP.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblPCPrcP.Location = New System.Drawing.Point(6, 387)
-Me.lblPCPrcP.Name = "lblPCPrcP"
-Me.lblPCPrcP.Size = New System.Drawing.Size(63, 13)
-Me.lblPCPrcP.TabIndex = 619
-Me.lblPCPrcP.Text = "Price for PC"
-'
-'txtPCPrcP
-'
-Me.txtPCPrcP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtPCPrcP.Location = New System.Drawing.Point(187, 384)
-Me.txtPCPrcP.MaxLength = 20
-Me.txtPCPrcP.Name = "txtPCPrcP"
-Me.txtPCPrcP.Size = New System.Drawing.Size(92, 20)
-Me.txtPCPrcP.TabIndex = 618
-Me.txtPCPrcP.Text = "20.5000"
-Me.txtPCPrcP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-'
-'txtPCPrcCurP
-'
-Me.txtPCPrcCurP.Enabled = false
-Me.txtPCPrcCurP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtPCPrcCurP.Location = New System.Drawing.Point(154, 384)
-Me.txtPCPrcCurP.MaxLength = 20
-Me.txtPCPrcCurP.Name = "txtPCPrcCurP"
-Me.txtPCPrcCurP.ReadOnly = true
-Me.txtPCPrcCurP.Size = New System.Drawing.Size(33, 20)
-Me.txtPCPrcCurP.TabIndex = 617
-Me.txtPCPrcCurP.Text = "USD"
-'
-'Label111
-'
-Me.Label111.AutoSize = true
-Me.Label111.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.Label111.Location = New System.Drawing.Point(7, 173)
-Me.Label111.Name = "Label111"
-Me.Label111.Size = New System.Drawing.Size(72, 13)
-Me.Label111.TabIndex = 615
-Me.Label111.Text = "HK Markup %"
-'
-'txtHKMUP
-'
-Me.txtHKMUP.BackColor = System.Drawing.SystemColors.Control
-Me.txtHKMUP.Enabled = false
-Me.txtHKMUP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtHKMUP.Location = New System.Drawing.Point(188, 170)
-Me.txtHKMUP.MaxLength = 10
-Me.txtHKMUP.Name = "txtHKMUP"
-Me.txtHKMUP.Size = New System.Drawing.Size(92, 20)
-Me.txtHKMUP.TabIndex = 616
-Me.txtHKMUP.Text = "CG24 - *1.22"
-Me.txtHKMUP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-'
-'txtTranTrmP
-'
-Me.txtTranTrmP.Enabled = false
-Me.txtTranTrmP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtTranTrmP.Location = New System.Drawing.Point(216, 78)
-Me.txtTranTrmP.MaxLength = 20
-Me.txtTranTrmP.Name = "txtTranTrmP"
-Me.txtTranTrmP.ReadOnly = true
-Me.txtTranTrmP.Size = New System.Drawing.Size(63, 20)
-Me.txtTranTrmP.TabIndex = 614
-Me.txtTranTrmP.Text = "FOB HK"
-'
-'txtVenNoP
-'
-Me.txtVenNoP.Enabled = false
-Me.txtVenNoP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtVenNoP.Location = New System.Drawing.Point(187, 55)
-Me.txtVenNoP.MaxLength = 20
-Me.txtVenNoP.Name = "txtVenNoP"
-Me.txtVenNoP.ReadOnly = true
-Me.txtVenNoP.Size = New System.Drawing.Size(92, 20)
-Me.txtVenNoP.TabIndex = 613
-Me.txtVenNoP.Text = "A -"
-'
-'txtCus2NoP
-'
-Me.txtCus2NoP.Enabled = false
-Me.txtCus2NoP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCus2NoP.Location = New System.Drawing.Point(187, 10)
-Me.txtCus2NoP.MaxLength = 20
-Me.txtCus2NoP.Name = "txtCus2NoP"
-Me.txtCus2NoP.ReadOnly = true
-Me.txtCus2NoP.Size = New System.Drawing.Size(92, 20)
-Me.txtCus2NoP.TabIndex = 612
-Me.txtCus2NoP.Text = "50360 - Target"
-'
-'txtPrcTrmP
-'
-Me.txtPrcTrmP.Enabled = false
-Me.txtPrcTrmP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtPrcTrmP.Location = New System.Drawing.Point(154, 78)
-Me.txtPrcTrmP.MaxLength = 20
-Me.txtPrcTrmP.Name = "txtPrcTrmP"
-Me.txtPrcTrmP.ReadOnly = true
-Me.txtPrcTrmP.Size = New System.Drawing.Size(63, 20)
-Me.txtPrcTrmP.TabIndex = 610
-Me.txtPrcTrmP.Text = "FOB HK"
-'
-'Label110
-'
-Me.Label110.AutoSize = true
-Me.Label110.ForeColor = System.Drawing.SystemColors.ControlText
-Me.Label110.Location = New System.Drawing.Point(6, 81)
-Me.Label110.Name = "Label110"
-Me.Label110.Size = New System.Drawing.Size(112, 13)
-Me.Label110.TabIndex = 611
-Me.Label110.Text = "Price Term/Tran Term"
-'
-'lblMUPriceP
-'
-Me.lblMUPriceP.AutoSize = true
-Me.lblMUPriceP.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblMUPriceP.Location = New System.Drawing.Point(6, 249)
-Me.lblMUPriceP.Name = "lblMUPriceP"
-Me.lblMUPriceP.Size = New System.Drawing.Size(70, 13)
-Me.lblMUPriceP.TabIndex = 609
-Me.lblMUPriceP.Text = "Markup Price"
-'
-'txtMUPriceCurrP
-'
-Me.txtMUPriceCurrP.Enabled = false
-Me.txtMUPriceCurrP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtMUPriceCurrP.Location = New System.Drawing.Point(154, 246)
-Me.txtMUPriceCurrP.MaxLength = 20
-Me.txtMUPriceCurrP.Name = "txtMUPriceCurrP"
-Me.txtMUPriceCurrP.ReadOnly = true
-Me.txtMUPriceCurrP.Size = New System.Drawing.Size(33, 20)
-Me.txtMUPriceCurrP.TabIndex = 607
-Me.txtMUPriceCurrP.Text = "USD"
-'
-'txtMUPriceP
-'
-Me.txtMUPriceP.Enabled = false
-Me.txtMUPriceP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtMUPriceP.Location = New System.Drawing.Point(187, 246)
-Me.txtMUPriceP.MaxLength = 20
-Me.txtMUPriceP.Name = "txtMUPriceP"
-Me.txtMUPriceP.ReadOnly = true
-Me.txtMUPriceP.Size = New System.Drawing.Size(92, 20)
-Me.txtMUPriceP.TabIndex = 608
-Me.txtMUPriceP.Text = "24.6789"
-Me.txtMUPriceP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-'
-'lblItmComm1P
-'
-Me.lblItmComm1P.AutoSize = true
-Me.lblItmComm1P.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblItmComm1P.Location = New System.Drawing.Point(6, 318)
-Me.lblItmComm1P.Name = "lblItmComm1P"
-Me.lblItmComm1P.Size = New System.Drawing.Size(85, 13)
-Me.lblItmComm1P.TabIndex = 606
-Me.lblItmComm1P.Text = "Item Commission"
-'
-'txtItmComm1CurrP
-'
-Me.txtItmComm1CurrP.Enabled = false
-Me.txtItmComm1CurrP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtItmComm1CurrP.Location = New System.Drawing.Point(154, 315)
-Me.txtItmComm1CurrP.MaxLength = 20
-Me.txtItmComm1CurrP.Name = "txtItmComm1CurrP"
-Me.txtItmComm1CurrP.ReadOnly = true
-Me.txtItmComm1CurrP.Size = New System.Drawing.Size(33, 20)
-Me.txtItmComm1CurrP.TabIndex = 604
-Me.txtItmComm1CurrP.Text = "USD"
-'
-'txtItmComm1P
-'
-Me.txtItmComm1P.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtItmComm1P.Location = New System.Drawing.Point(187, 315)
-Me.txtItmComm1P.MaxLength = 20
-Me.txtItmComm1P.Name = "txtItmComm1P"
-Me.txtItmComm1P.Size = New System.Drawing.Size(92, 20)
-Me.txtItmComm1P.TabIndex = 605
-Me.txtItmComm1P.Text = "0"
-Me.txtItmComm1P.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-'
-'lblComm1P
-'
-Me.lblComm1P.AutoSize = true
-Me.lblComm1P.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.lblComm1P.Location = New System.Drawing.Point(6, 294)
-Me.lblComm1P.Name = "lblComm1P"
-Me.lblComm1P.Size = New System.Drawing.Size(73, 13)
-Me.lblComm1P.TabIndex = 602
-Me.lblComm1P.Text = "Commission %"
-'
-'txtComm1P
-'
-Me.txtComm1P.Enabled = false
-Me.txtComm1P.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtComm1P.Location = New System.Drawing.Point(187, 291)
-Me.txtComm1P.MaxLength = 10
-Me.txtComm1P.Name = "txtComm1P"
-Me.txtComm1P.ReadOnly = true
-Me.txtComm1P.Size = New System.Drawing.Size(92, 20)
-Me.txtComm1P.TabIndex = 603
-Me.txtComm1P.Text = "2"
-Me.txtComm1P.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-'
-'lblPckCst1P
-'
-Me.lblPckCst1P.AutoSize = true
-Me.lblPckCst1P.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblPckCst1P.Location = New System.Drawing.Point(6, 270)
-Me.lblPckCst1P.Name = "lblPckCst1P"
-Me.lblPckCst1P.Size = New System.Drawing.Size(82, 13)
-Me.lblPckCst1P.TabIndex = 601
-Me.lblPckCst1P.Text = "Packaging Cost"
-'
-'txtPckCst1CurrP
-'
-Me.txtPckCst1CurrP.Enabled = false
-Me.txtPckCst1CurrP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtPckCst1CurrP.Location = New System.Drawing.Point(154, 267)
-Me.txtPckCst1CurrP.MaxLength = 20
-Me.txtPckCst1CurrP.Name = "txtPckCst1CurrP"
-Me.txtPckCst1CurrP.ReadOnly = true
-Me.txtPckCst1CurrP.Size = New System.Drawing.Size(33, 20)
-Me.txtPckCst1CurrP.TabIndex = 599
-Me.txtPckCst1CurrP.Text = "USD"
-'
-'txtPckCst1P
-'
-Me.txtPckCst1P.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtPckCst1P.Location = New System.Drawing.Point(187, 267)
-Me.txtPckCst1P.MaxLength = 20
-Me.txtPckCst1P.Name = "txtPckCst1P"
-Me.txtPckCst1P.Size = New System.Drawing.Size(92, 20)
-Me.txtPckCst1P.TabIndex = 600
-Me.txtPckCst1P.Text = "1.5"
-Me.txtPckCst1P.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-'
-'lblMUMinP
-'
-Me.lblMUMinP.AutoSize = true
-Me.lblMUMinP.Location = New System.Drawing.Point(72, 222)
-Me.lblMUMinP.Name = "lblMUMinP"
-Me.lblMUMinP.Size = New System.Drawing.Size(68, 13)
-Me.lblMUMinP.TabIndex = 598
-Me.lblMUMinP.Text = "(Min 14.25%)"
-'
-'txtVenTranP
-'
-Me.txtVenTranP.Enabled = false
-Me.txtVenTranP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtVenTranP.Location = New System.Drawing.Point(154, 102)
-Me.txtVenTranP.MaxLength = 20
-Me.txtVenTranP.Name = "txtVenTranP"
-Me.txtVenTranP.ReadOnly = true
-Me.txtVenTranP.Size = New System.Drawing.Size(125, 20)
-Me.txtVenTranP.TabIndex = 596
-Me.txtVenTranP.Text = "N"
-'
-'lblVenTranP
-'
-Me.lblVenTranP.AutoSize = true
-Me.lblVenTranP.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblVenTranP.Location = New System.Drawing.Point(6, 105)
-Me.lblVenTranP.Name = "lblVenTranP"
-Me.lblVenTranP.Size = New System.Drawing.Size(143, 13)
-Me.lblVenTranP.TabIndex = 597
-Me.lblVenTranP.Text = "Vendor Cover Transportation"
-'
-'txtVenTypP
-'
-Me.txtVenTypP.Enabled = false
-Me.txtVenTypP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtVenTypP.Location = New System.Drawing.Point(154, 55)
-Me.txtVenTypP.MaxLength = 20
-Me.txtVenTypP.Name = "txtVenTypP"
-Me.txtVenTypP.ReadOnly = true
-Me.txtVenTypP.Size = New System.Drawing.Size(33, 20)
-Me.txtVenTypP.TabIndex = 592
-Me.txtVenTypP.Text = "INT"
-'
-'lblVenTypP
-'
-Me.lblVenTypP.AutoSize = true
-Me.lblVenTypP.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblVenTypP.Location = New System.Drawing.Point(6, 58)
-Me.lblVenTypP.Name = "lblVenTypP"
-Me.lblVenTypP.Size = New System.Drawing.Size(93, 13)
-Me.lblVenTypP.TabIndex = 593
-Me.lblVenTypP.Text = "Vendor Type / PV"
-'
-'txtItmCatP
-'
-Me.txtItmCatP.Enabled = false
-Me.txtItmCatP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtItmCatP.Location = New System.Drawing.Point(154, 34)
-Me.txtItmCatP.MaxLength = 20
-Me.txtItmCatP.Name = "txtItmCatP"
-Me.txtItmCatP.ReadOnly = true
-Me.txtItmCatP.Size = New System.Drawing.Size(125, 20)
-Me.txtItmCatP.TabIndex = 590
-Me.txtItmCatP.Text = "Standard"
-'
-'lblItmCatP
-'
-Me.lblItmCatP.AutoSize = true
-Me.lblItmCatP.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblItmCatP.Location = New System.Drawing.Point(6, 37)
-Me.lblItmCatP.Name = "lblItmCatP"
-Me.lblItmCatP.Size = New System.Drawing.Size(89, 13)
-Me.lblItmCatP.TabIndex = 591
-Me.lblItmCatP.Text = "Item Cat / Nature"
-'
-'txtCus1NoP
-'
-Me.txtCus1NoP.Enabled = false
-Me.txtCus1NoP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCus1NoP.Location = New System.Drawing.Point(89, 10)
-Me.txtCus1NoP.MaxLength = 20
-Me.txtCus1NoP.Name = "txtCus1NoP"
-Me.txtCus1NoP.ReadOnly = true
-Me.txtCus1NoP.Size = New System.Drawing.Size(98, 20)
-Me.txtCus1NoP.TabIndex = 586
-Me.txtCus1NoP.Text = "50360 - Target"
-'
-'lblCus1NoP
-'
-Me.lblCus1NoP.AutoSize = true
-Me.lblCus1NoP.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblCus1NoP.Location = New System.Drawing.Point(6, 15)
-Me.lblCus1NoP.Name = "lblCus1NoP"
-Me.lblCus1NoP.Size = New System.Drawing.Size(67, 13)
-Me.lblCus1NoP.TabIndex = 587
-Me.lblCus1NoP.Text = "Pri/Sec Cust"
-'
-'txtFtyCstP
-'
-Me.txtFtyCstP.Enabled = false
-Me.txtFtyCstP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtFtyCstP.Location = New System.Drawing.Point(187, 125)
-Me.txtFtyCstP.MaxLength = 20
-Me.txtFtyCstP.Name = "txtFtyCstP"
-Me.txtFtyCstP.ReadOnly = true
-Me.txtFtyCstP.Size = New System.Drawing.Size(92, 20)
-Me.txtFtyCstP.TabIndex = 541
-Me.txtFtyCstP.Text = "100.0000"
-Me.txtFtyCstP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-'
-'txtFtyPrcCurrP
-'
-Me.txtFtyPrcCurrP.Enabled = false
-Me.txtFtyPrcCurrP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtFtyPrcCurrP.Location = New System.Drawing.Point(154, 146)
-Me.txtFtyPrcCurrP.MaxLength = 20
-Me.txtFtyPrcCurrP.Name = "txtFtyPrcCurrP"
-Me.txtFtyPrcCurrP.ReadOnly = true
-Me.txtFtyPrcCurrP.Size = New System.Drawing.Size(33, 20)
-Me.txtFtyPrcCurrP.TabIndex = 537
-Me.txtFtyPrcCurrP.Text = "HKD"
-'
-'lblFtyPrcP
-'
-Me.lblFtyPrcP.AutoSize = true
-Me.lblFtyPrcP.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblFtyPrcP.Location = New System.Drawing.Point(6, 149)
-Me.lblFtyPrcP.Name = "lblFtyPrcP"
-Me.lblFtyPrcP.Size = New System.Drawing.Size(48, 13)
-Me.lblFtyPrcP.TabIndex = 539
-Me.lblFtyPrcP.Text = "Fty Price"
-'
-'txtFtyPrcP
-'
-Me.txtFtyPrcP.Enabled = false
-Me.txtFtyPrcP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtFtyPrcP.Location = New System.Drawing.Point(187, 146)
-Me.txtFtyPrcP.MaxLength = 20
-Me.txtFtyPrcP.Name = "txtFtyPrcP"
-Me.txtFtyPrcP.ReadOnly = true
-Me.txtFtyPrcP.Size = New System.Drawing.Size(92, 20)
-Me.txtFtyPrcP.TabIndex = 538
-Me.txtFtyPrcP.Text = "118.0000"
-Me.txtFtyPrcP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-'
-'txtFtyCstCurrP
-'
-Me.txtFtyCstCurrP.Enabled = false
-Me.txtFtyCstCurrP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtFtyCstCurrP.Location = New System.Drawing.Point(154, 125)
-Me.txtFtyCstCurrP.MaxLength = 20
-Me.txtFtyCstCurrP.Name = "txtFtyCstCurrP"
-Me.txtFtyCstCurrP.ReadOnly = true
-Me.txtFtyCstCurrP.Size = New System.Drawing.Size(33, 20)
-Me.txtFtyCstCurrP.TabIndex = 540
-Me.txtFtyCstCurrP.Text = "HKD"
-'
-'lblFtyCstP
-'
-Me.lblFtyCstP.AutoSize = true
-Me.lblFtyCstP.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblFtyCstP.Location = New System.Drawing.Point(6, 128)
-Me.lblFtyCstP.Name = "lblFtyCstP"
-Me.lblFtyCstP.Size = New System.Drawing.Size(45, 13)
-Me.lblFtyCstP.TabIndex = 542
-Me.lblFtyCstP.Text = "Fty Cost"
-'
-'lblBasPrcP
-'
-Me.lblBasPrcP.AutoSize = true
-Me.lblBasPrcP.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblBasPrcP.Location = New System.Drawing.Point(6, 197)
-Me.lblBasPrcP.Name = "lblBasPrcP"
-Me.lblBasPrcP.Size = New System.Drawing.Size(60, 13)
-Me.lblBasPrcP.TabIndex = 526
-Me.lblBasPrcP.Text = "Basic Price"
-'
-'txtBasPrcCurrP
-'
-Me.txtBasPrcCurrP.Enabled = false
-Me.txtBasPrcCurrP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtBasPrcCurrP.Location = New System.Drawing.Point(154, 194)
-Me.txtBasPrcCurrP.MaxLength = 20
-Me.txtBasPrcCurrP.Name = "txtBasPrcCurrP"
-Me.txtBasPrcCurrP.ReadOnly = true
-Me.txtBasPrcCurrP.Size = New System.Drawing.Size(33, 20)
-Me.txtBasPrcCurrP.TabIndex = 524
-Me.txtBasPrcCurrP.Text = "USD"
-'
-'txtBasPrcP
-'
-Me.txtBasPrcP.Enabled = false
-Me.txtBasPrcP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtBasPrcP.Location = New System.Drawing.Point(187, 194)
-Me.txtBasPrcP.MaxLength = 20
-Me.txtBasPrcP.Name = "txtBasPrcP"
-Me.txtBasPrcP.ReadOnly = true
-Me.txtBasPrcP.Size = New System.Drawing.Size(92, 20)
-Me.txtBasPrcP.TabIndex = 525
-Me.txtBasPrcP.Text = "17.5097"
-Me.txtBasPrcP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-'
-'lblMUP
-'
-Me.lblMUP.AutoSize = true
-Me.lblMUP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.lblMUP.Location = New System.Drawing.Point(6, 222)
-Me.lblMUP.Name = "lblMUP"
-Me.lblMUP.Size = New System.Drawing.Size(54, 13)
-Me.lblMUP.TabIndex = 543
-Me.lblMUP.Text = "Markup %"
-'
-'txtMUP
-'
-Me.txtMUP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtMUP.Location = New System.Drawing.Point(187, 218)
-Me.txtMUP.MaxLength = 10
-Me.txtMUP.Name = "txtMUP"
-Me.txtMUP.Size = New System.Drawing.Size(92, 20)
-Me.txtMUP.TabIndex = 547
-Me.txtMUP.Text = "29.05"
-Me.txtMUP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-'
-'txtCus1SpP
-'
-Me.txtCus1SpP.Enabled = false
-Me.txtCus1SpP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCus1SpP.Location = New System.Drawing.Point(187, 338)
-Me.txtCus1SpP.MaxLength = 20
-Me.txtCus1SpP.Name = "txtCus1SpP"
-Me.txtCus1SpP.ReadOnly = true
-Me.txtCus1SpP.Size = New System.Drawing.Size(92, 20)
-Me.txtCus1SpP.TabIndex = 144
-Me.txtCus1SpP.Text = "21.7903"
-Me.txtCus1SpP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-'
-'txtCurCde2P
-'
-Me.txtCurCde2P.Enabled = false
-Me.txtCurCde2P.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCurCde2P.Location = New System.Drawing.Point(154, 339)
-Me.txtCurCde2P.MaxLength = 20
-Me.txtCurCde2P.Name = "txtCurCde2P"
-Me.txtCurCde2P.ReadOnly = true
-Me.txtCurCde2P.Size = New System.Drawing.Size(33, 20)
-Me.txtCurCde2P.TabIndex = 143
-Me.txtCurCde2P.Text = "USD"
-'
-'lblCus1DpP
-'
-Me.lblCus1DpP.AutoSize = true
-Me.lblCus1DpP.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblCus1DpP.Location = New System.Drawing.Point(6, 364)
-Me.lblCus1DpP.Name = "lblCus1DpP"
-Me.lblCus1DpP.Size = New System.Drawing.Size(75, 13)
-Me.lblCus1DpP.TabIndex = 564
-Me.lblCus1DpP.Text = "Adjusted Price"
-'
-'lblCus1SpP
-'
-Me.lblCus1SpP.AutoSize = true
-Me.lblCus1SpP.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblCus1SpP.Location = New System.Drawing.Point(6, 341)
-Me.lblCus1SpP.Name = "lblCus1SpP"
-Me.lblCus1SpP.Size = New System.Drawing.Size(77, 13)
-Me.lblCus1SpP.TabIndex = 549
-Me.lblCus1SpP.Text = "Standard Price"
-'
-'txtCus1DpP
-'
-Me.txtCus1DpP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCus1DpP.Location = New System.Drawing.Point(187, 361)
-Me.txtCus1DpP.MaxLength = 20
-Me.txtCus1DpP.Name = "txtCus1DpP"
-Me.txtCus1DpP.Size = New System.Drawing.Size(92, 20)
-Me.txtCus1DpP.TabIndex = 561
-Me.txtCus1DpP.Text = "20.5000"
-Me.txtCus1DpP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-'
-'txtCurCde21P
-'
-Me.txtCurCde21P.Enabled = false
-Me.txtCurCde21P.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCurCde21P.Location = New System.Drawing.Point(154, 361)
-Me.txtCurCde21P.MaxLength = 20
-Me.txtCurCde21P.Name = "txtCurCde21P"
-Me.txtCurCde21P.ReadOnly = true
-Me.txtCurCde21P.Size = New System.Drawing.Size(33, 20)
-Me.txtCurCde21P.TabIndex = 560
-Me.txtCurCde21P.Text = "USD"
-'
-'lblPckingTermP
-'
-Me.lblPckingTermP.AutoSize = true
-Me.lblPckingTermP.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblPckingTermP.Location = New System.Drawing.Point(408, 28)
-Me.lblPckingTermP.Name = "lblPckingTermP"
-Me.lblPckingTermP.Size = New System.Drawing.Size(290, 13)
-Me.lblPckingTermP.TabIndex = 571
-Me.lblPckingTermP.Text = "UM/Inner/Master/CFT/CBM/Fty Term/HK Term/Tran Term"
-'
-'lblPrcElemtTitleP
-'
-Me.lblPrcElemtTitleP.AutoSize = true
-Me.lblPrcElemtTitleP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline),System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.lblPrcElemtTitleP.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblPrcElemtTitleP.Location = New System.Drawing.Point(20, 15)
-Me.lblPrcElemtTitleP.Name = "lblPrcElemtTitleP"
-Me.lblPrcElemtTitleP.Size = New System.Drawing.Size(143, 20)
-Me.lblPrcElemtTitleP.TabIndex = 529
-Me.lblPrcElemtTitleP.Text = "Pricing Elements"
-'
-'txtDiscntP
-'
-Me.txtDiscntP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtDiscntP.Location = New System.Drawing.Point(419, 547)
-Me.txtDiscntP.MaxLength = 10
-Me.txtDiscntP.Name = "txtDiscntP"
-Me.txtDiscntP.Size = New System.Drawing.Size(92, 20)
-Me.txtDiscntP.TabIndex = 519
-Me.txtDiscntP.Text = "0"
-Me.txtDiscntP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-Me.txtDiscntP.Visible = false
-'
-'lblDiscntP
-'
-Me.lblDiscntP.AutoSize = true
-Me.lblDiscntP.Location = New System.Drawing.Point(309, 550)
-Me.lblDiscntP.Name = "lblDiscntP"
-Me.lblDiscntP.Size = New System.Drawing.Size(39, 13)
-Me.lblDiscntP.TabIndex = 518
-Me.lblDiscntP.Text = "Disc %"
-Me.lblDiscntP.Visible = false
 '
 'cmdRenew
 '
 Me.cmdRenew.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.cmdRenew.Location = New System.Drawing.Point(818, 0)
+Me.cmdRenew.Location = New System.Drawing.Point(775, 75)
 Me.cmdRenew.Name = "cmdRenew"
-Me.cmdRenew.Size = New System.Drawing.Size(86, 25)
+Me.cmdRenew.Size = New System.Drawing.Size(86, 20)
 Me.cmdRenew.TabIndex = 531
 Me.cmdRenew.Text = "Renew Item(s)"
 Me.cmdRenew.UseVisualStyleBackColor = true
@@ -5581,12 +5500,387 @@ Me.cmdRenew.UseVisualStyleBackColor = true
 '
 Me.cmdRequote.Enabled = false
 Me.cmdRequote.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.cmdRequote.Location = New System.Drawing.Point(860, 26)
+Me.cmdRequote.Location = New System.Drawing.Point(861, 75)
 Me.cmdRequote.Name = "cmdRequote"
-Me.cmdRequote.Size = New System.Drawing.Size(90, 25)
+Me.cmdRequote.Size = New System.Drawing.Size(90, 20)
 Me.cmdRequote.TabIndex = 532
 Me.cmdRequote.Text = "Requote Item(s)"
 Me.cmdRequote.UseVisualStyleBackColor = true
+'
+'mmdRel
+'
+Me.mmdRel.Name = "mmdRel"
+Me.mmdRel.Size = New System.Drawing.Size(121, 22)
+Me.mmdRel.Text = "Release"
+'
+'mmdApv
+'
+Me.mmdApv.Name = "mmdApv"
+Me.mmdApv.Size = New System.Drawing.Size(121, 22)
+Me.mmdApv.Text = "Approval"
+'
+'menuStrip
+'
+Me.menuStrip.Font = New System.Drawing.Font("Arial", 9!)
+Me.menuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mmdAdd, Me.mmdSave, Me.mmdDelete, Me.mmdCopy, Me.mmdFind, Me.t1, Me.mmdClear, Me.t2, Me.mmdSearch, Me.t3, Me.mmdInsRow, Me.mmdDelRow, Me.t4, Me.mmdPrint, Me.t5, Me.mmdAttach, Me.t6, Me.mmdFunction, Me.t7, Me.mmdLink, Me.t8, Me.mmdExit})
+Me.menuStrip.Location = New System.Drawing.Point(0, 0)
+Me.menuStrip.Name = "menuStrip"
+Me.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+Me.menuStrip.Size = New System.Drawing.Size(954, 24)
+Me.menuStrip.TabIndex = 533
+Me.menuStrip.Text = "MenuStrip1"
+'
+'mmdAdd
+'
+Me.mmdAdd.BackColor = System.Drawing.SystemColors.Control
+Me.mmdAdd.Name = "mmdAdd"
+Me.mmdAdd.Size = New System.Drawing.Size(40, 20)
+Me.mmdAdd.Tag = "Add"
+Me.mmdAdd.Text = "&Add"
+'
+'mmdSave
+'
+Me.mmdSave.Name = "mmdSave"
+Me.mmdSave.Size = New System.Drawing.Size(46, 20)
+Me.mmdSave.Text = "&Save"
+'
+'mmdDelete
+'
+Me.mmdDelete.Name = "mmdDelete"
+Me.mmdDelete.Size = New System.Drawing.Size(55, 20)
+Me.mmdDelete.Text = "&Delete"
+'
+'mmdCopy
+'
+Me.mmdCopy.Name = "mmdCopy"
+Me.mmdCopy.Size = New System.Drawing.Size(47, 20)
+Me.mmdCopy.Text = "&Copy"
+'
+'mmdFind
+'
+Me.mmdFind.Name = "mmdFind"
+Me.mmdFind.Size = New System.Drawing.Size(43, 20)
+Me.mmdFind.Text = "&Find"
+'
+'t1
+'
+Me.t1.AutoSize = false
+Me.t1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+Me.t1.Enabled = false
+Me.t1.Name = "t1"
+Me.t1.Size = New System.Drawing.Size(8, 20)
+Me.t1.Text = "|"
+'
+'mmdClear
+'
+Me.mmdClear.Name = "mmdClear"
+Me.mmdClear.Size = New System.Drawing.Size(49, 20)
+Me.mmdClear.Text = "Cl&ear"
+'
+'t2
+'
+Me.t2.AutoSize = false
+Me.t2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+Me.t2.Enabled = false
+Me.t2.Name = "t2"
+Me.t2.Size = New System.Drawing.Size(8, 20)
+Me.t2.Text = "|"
+'
+'mmdSearch
+'
+Me.mmdSearch.Name = "mmdSearch"
+Me.mmdSearch.Size = New System.Drawing.Size(58, 20)
+Me.mmdSearch.Text = "Searc&h"
+'
+'t3
+'
+Me.t3.AutoSize = false
+Me.t3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+Me.t3.Enabled = false
+Me.t3.Name = "t3"
+Me.t3.Size = New System.Drawing.Size(8, 20)
+Me.t3.Text = "|"
+'
+'mmdInsRow
+'
+Me.mmdInsRow.Name = "mmdInsRow"
+Me.mmdInsRow.Size = New System.Drawing.Size(64, 20)
+Me.mmdInsRow.Text = "I&ns Row"
+'
+'mmdDelRow
+'
+Me.mmdDelRow.Name = "mmdDelRow"
+Me.mmdDelRow.Size = New System.Drawing.Size(66, 20)
+Me.mmdDelRow.Text = "Del Ro&w"
+'
+'t4
+'
+Me.t4.AutoSize = false
+Me.t4.Enabled = false
+Me.t4.Name = "t4"
+Me.t4.Size = New System.Drawing.Size(8, 20)
+Me.t4.Text = "|"
+'
+'mmdPrint
+'
+Me.mmdPrint.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsiPrintQuotation, Me.tsiExportToExcel})
+Me.mmdPrint.Name = "mmdPrint"
+Me.mmdPrint.Size = New System.Drawing.Size(44, 20)
+Me.mmdPrint.Text = "&Print"
+'
+'tsiPrintQuotation
+'
+Me.tsiPrintQuotation.Name = "tsiPrintQuotation"
+Me.tsiPrintQuotation.Size = New System.Drawing.Size(155, 22)
+Me.tsiPrintQuotation.Text = "Print Quotation"
+'
+'tsiExportToExcel
+'
+Me.tsiExportToExcel.Name = "tsiExportToExcel"
+Me.tsiExportToExcel.Size = New System.Drawing.Size(155, 22)
+Me.tsiExportToExcel.Text = "Export to Excel"
+'
+'t5
+'
+Me.t5.AutoSize = false
+Me.t5.Enabled = false
+Me.t5.Name = "t5"
+Me.t5.Size = New System.Drawing.Size(8, 20)
+Me.t5.Text = "|"
+'
+'mmdAttach
+'
+Me.mmdAttach.Name = "mmdAttach"
+Me.mmdAttach.Size = New System.Drawing.Size(52, 20)
+Me.mmdAttach.Text = "Attach"
+'
+'t6
+'
+Me.t6.AutoSize = false
+Me.t6.Enabled = false
+Me.t6.Name = "t6"
+Me.t6.Size = New System.Drawing.Size(8, 20)
+Me.t6.Text = "|"
+'
+'mmdFunction
+'
+Me.mmdFunction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsiCIH, Me.ToolStripSeparator1, Me.tsiUpdate, Me.tsiRenew, Me.tsiRequote, Me.ToolStripSeparator2, Me.tsiGenTent, Me.tsiGenSmp})
+Me.mmdFunction.Name = "mmdFunction"
+Me.mmdFunction.Size = New System.Drawing.Size(66, 20)
+Me.mmdFunction.Text = "Function"
+'
+'tsiCIH
+'
+Me.tsiCIH.Name = "tsiCIH"
+Me.tsiCIH.Size = New System.Drawing.Size(197, 22)
+Me.tsiCIH.Text = "Customer Item History"
+'
+'ToolStripSeparator1
+'
+Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+Me.ToolStripSeparator1.Size = New System.Drawing.Size(194, 6)
+'
+'tsiUpdate
+'
+Me.tsiUpdate.Name = "tsiUpdate"
+Me.tsiUpdate.Size = New System.Drawing.Size(197, 22)
+Me.tsiUpdate.Text = "Update Item(s)"
+'
+'tsiRenew
+'
+Me.tsiRenew.Name = "tsiRenew"
+Me.tsiRenew.Size = New System.Drawing.Size(197, 22)
+Me.tsiRenew.Text = "Renew Item(s)"
+'
+'tsiRequote
+'
+Me.tsiRequote.Name = "tsiRequote"
+Me.tsiRequote.Size = New System.Drawing.Size(197, 22)
+Me.tsiRequote.Text = "Requote Item(s)"
+'
+'ToolStripSeparator2
+'
+Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+Me.ToolStripSeparator2.Size = New System.Drawing.Size(194, 6)
+'
+'tsiGenTent
+'
+Me.tsiGenTent.Name = "tsiGenTent"
+Me.tsiGenTent.Size = New System.Drawing.Size(197, 22)
+Me.tsiGenTent.Text = "Generate Tentative"
+'
+'tsiGenSmp
+'
+Me.tsiGenSmp.Name = "tsiGenSmp"
+Me.tsiGenSmp.Size = New System.Drawing.Size(197, 22)
+Me.tsiGenSmp.Text = "Generate Sample"
+'
+'t7
+'
+Me.t7.AutoSize = false
+Me.t7.Enabled = false
+Me.t7.Name = "t7"
+Me.t7.Size = New System.Drawing.Size(8, 20)
+Me.t7.Text = "|"
+'
+'mmdLink
+'
+Me.mmdLink.Name = "mmdLink"
+Me.mmdLink.Size = New System.Drawing.Size(42, 20)
+Me.mmdLink.Text = "Link"
+'
+'t8
+'
+Me.t8.AutoSize = false
+Me.t8.Enabled = false
+Me.t8.Name = "t8"
+Me.t8.Size = New System.Drawing.Size(8, 20)
+Me.t8.Text = "|"
+'
+'mmdExit
+'
+Me.mmdExit.Name = "mmdExit"
+Me.mmdExit.Size = New System.Drawing.Size(38, 20)
+Me.mmdExit.Text = "E&xit"
+'
+'PanelMutShp
+'
+Me.PanelMutShp.BackColor = System.Drawing.Color.SkyBlue
+Me.PanelMutShp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+Me.PanelMutShp.Controls.Add(Me.cmdPanMutShpIns)
+Me.PanelMutShp.Controls.Add(Me.PanelMutShpHeaderBar)
+Me.PanelMutShp.Controls.Add(Me.cmdPanMutShpQuit)
+Me.PanelMutShp.Controls.Add(Me.dgMutShp)
+Me.PanelMutShp.Location = New System.Drawing.Point(589, 33)
+Me.PanelMutShp.Name = "PanelMutShp"
+Me.PanelMutShp.Size = New System.Drawing.Size(421, 229)
+Me.PanelMutShp.TabIndex = 432
+Me.PanelMutShp.Visible = false
+'
+'cmdPanMutShpIns
+'
+Me.cmdPanMutShpIns.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+Me.cmdPanMutShpIns.Location = New System.Drawing.Point(252, 203)
+Me.cmdPanMutShpIns.Name = "cmdPanMutShpIns"
+Me.cmdPanMutShpIns.Size = New System.Drawing.Size(80, 22)
+Me.cmdPanMutShpIns.TabIndex = 522
+Me.cmdPanMutShpIns.Text = "Insert"
+Me.cmdPanMutShpIns.UseVisualStyleBackColor = true
+'
+'PanelMutShpHeaderBar
+'
+Me.PanelMutShpHeaderBar.BackColor = System.Drawing.Color.DeepSkyBlue
+Me.PanelMutShpHeaderBar.Controls.Add(Me.PanelMutShpHeader)
+Me.PanelMutShpHeaderBar.Location = New System.Drawing.Point(1, -1)
+Me.PanelMutShpHeaderBar.Name = "PanelMutShpHeaderBar"
+Me.PanelMutShpHeaderBar.Size = New System.Drawing.Size(479, 31)
+Me.PanelMutShpHeaderBar.TabIndex = 524
+'
+'PanelMutShpHeader
+'
+Me.PanelMutShpHeader.AutoSize = true
+Me.PanelMutShpHeader.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline),System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+Me.PanelMutShpHeader.Location = New System.Drawing.Point(139, 6)
+Me.PanelMutShpHeader.Name = "PanelMutShpHeader"
+Me.PanelMutShpHeader.Size = New System.Drawing.Size(152, 20)
+Me.PanelMutShpHeader.TabIndex = 354
+Me.PanelMutShpHeader.Text = "Multiple Shipment"
+'
+'cmdPanMutShpQuit
+'
+Me.cmdPanMutShpQuit.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+Me.cmdPanMutShpQuit.Location = New System.Drawing.Point(338, 203)
+Me.cmdPanMutShpQuit.Name = "cmdPanMutShpQuit"
+Me.cmdPanMutShpQuit.Size = New System.Drawing.Size(80, 22)
+Me.cmdPanMutShpQuit.TabIndex = 384
+Me.cmdPanMutShpQuit.Text = "Quit"
+Me.cmdPanMutShpQuit.UseVisualStyleBackColor = true
+'
+'dgMutShp
+'
+Me.dgMutShp.AllowUserToAddRows = false
+Me.dgMutShp.AllowUserToDeleteRows = false
+Me.dgMutShp.ColumnHeadersHeight = 20
+Me.dgMutShp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+Me.dgMutShp.Location = New System.Drawing.Point(9, 34)
+Me.dgMutShp.Name = "dgMutShp"
+Me.dgMutShp.RowHeadersWidth = 20
+Me.dgMutShp.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+Me.dgMutShp.RowTemplate.Height = 16
+Me.dgMutShp.Size = New System.Drawing.Size(400, 162)
+Me.dgMutShp.TabIndex = 101
+'
+'PanelCptBkd
+'
+Me.PanelCptBkd.BackColor = System.Drawing.Color.SkyBlue
+Me.PanelCptBkd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+Me.PanelCptBkd.Controls.Add(Me.PanelCptBkdHeaderBar)
+Me.PanelCptBkd.Controls.Add(Me.cmdPanCptBkdIns)
+Me.PanelCptBkd.Controls.Add(Me.dgMatBkd)
+Me.PanelCptBkd.Controls.Add(Me.cmdPanCptBkdQuit)
+Me.PanelCptBkd.Location = New System.Drawing.Point(949, 31)
+Me.PanelCptBkd.Name = "PanelCptBkd"
+Me.PanelCptBkd.Size = New System.Drawing.Size(421, 229)
+Me.PanelCptBkd.TabIndex = 431
+Me.PanelCptBkd.Visible = false
+'
+'PanelCptBkdHeaderBar
+'
+Me.PanelCptBkdHeaderBar.BackColor = System.Drawing.Color.DeepSkyBlue
+Me.PanelCptBkdHeaderBar.Controls.Add(Me.PanelCptBkdHeader)
+Me.PanelCptBkdHeaderBar.Location = New System.Drawing.Point(0, -1)
+Me.PanelCptBkdHeaderBar.Name = "PanelCptBkdHeaderBar"
+Me.PanelCptBkdHeaderBar.Size = New System.Drawing.Size(420, 31)
+Me.PanelCptBkdHeaderBar.TabIndex = 525
+'
+'PanelCptBkdHeader
+'
+Me.PanelCptBkdHeader.AutoSize = true
+Me.PanelCptBkdHeader.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline),System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+Me.PanelCptBkdHeader.Location = New System.Drawing.Point(118, 6)
+Me.PanelCptBkdHeader.Name = "PanelCptBkdHeader"
+Me.PanelCptBkdHeader.Size = New System.Drawing.Size(167, 20)
+Me.PanelCptBkdHeader.TabIndex = 354
+Me.PanelCptBkdHeader.Text = "Material Breakdown"
+'
+'cmdPanCptBkdIns
+'
+Me.cmdPanCptBkdIns.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+Me.cmdPanCptBkdIns.Location = New System.Drawing.Point(240, 202)
+Me.cmdPanCptBkdIns.Name = "cmdPanCptBkdIns"
+Me.cmdPanCptBkdIns.Size = New System.Drawing.Size(80, 22)
+Me.cmdPanCptBkdIns.TabIndex = 522
+Me.cmdPanCptBkdIns.Text = "Insert"
+Me.cmdPanCptBkdIns.UseVisualStyleBackColor = true
+'
+'dgMatBkd
+'
+Me.dgMatBkd.AllowUserToAddRows = false
+Me.dgMatBkd.AllowUserToDeleteRows = false
+Me.dgMatBkd.ColumnHeadersHeight = 20
+Me.dgMatBkd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+Me.dgMatBkd.Location = New System.Drawing.Point(9, 34)
+Me.dgMatBkd.Name = "dgMatBkd"
+Me.dgMatBkd.RowHeadersWidth = 20
+Me.dgMatBkd.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+Me.dgMatBkd.RowTemplate.Height = 16
+Me.dgMatBkd.Size = New System.Drawing.Size(400, 162)
+Me.dgMatBkd.TabIndex = 101
+'
+'cmdPanCptBkdQuit
+'
+Me.cmdPanCptBkdQuit.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+Me.cmdPanCptBkdQuit.Location = New System.Drawing.Point(326, 202)
+Me.cmdPanCptBkdQuit.Name = "cmdPanCptBkdQuit"
+Me.cmdPanCptBkdQuit.Size = New System.Drawing.Size(80, 22)
+Me.cmdPanCptBkdQuit.TabIndex = 384
+Me.cmdPanCptBkdQuit.Text = "Quit"
+Me.cmdPanCptBkdQuit.UseVisualStyleBackColor = true
+'
+'DataSet131
+'
+Me.DataSet131.DataSetName = "DataSet13"
+Me.DataSet131.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
 '
 'btcQUM00001
 '
@@ -5595,10 +5889,10 @@ Me.btcQUM00001.Controls.Add(Me.tpQUM00001_2)
 Me.btcQUM00001.Controls.Add(Me.tpQUM00001_3)
 Me.btcQUM00001.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
 Me.btcQUM00001.ItemSize = New System.Drawing.Size(110, 18)
-Me.btcQUM00001.Location = New System.Drawing.Point(0, 77)
+Me.btcQUM00001.Location = New System.Drawing.Point(2, 74)
 Me.btcQUM00001.Name = "btcQUM00001"
 Me.btcQUM00001.SelectedIndex = 0
-Me.btcQUM00001.Size = New System.Drawing.Size(966, 561)
+Me.btcQUM00001.Size = New System.Drawing.Size(950, 542)
 Me.btcQUM00001.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
 Me.btcQUM00001.TabIndex = 26
 '
@@ -5627,7 +5921,7 @@ Me.tpQUM00001_1.Controls.Add(Me.gbSales)
 Me.tpQUM00001_1.Location = New System.Drawing.Point(4, 22)
 Me.tpQUM00001_1.Name = "tpQUM00001_1"
 Me.tpQUM00001_1.Padding = New System.Windows.Forms.Padding(3)
-Me.tpQUM00001_1.Size = New System.Drawing.Size(958, 535)
+Me.tpQUM00001_1.Size = New System.Drawing.Size(942, 516)
 Me.tpQUM00001_1.TabIndex = 0
 Me.tpQUM00001_1.Text = "(1) Header"
 Me.tpQUM00001_1.UseVisualStyleBackColor = true
@@ -5642,82 +5936,78 @@ Me.gbShipdate.Controls.Add(Me.Label112)
 Me.gbShipdate.Controls.Add(Me.Label113)
 Me.gbShipdate.Controls.Add(Me.Label117)
 Me.gbShipdate.Controls.Add(Me.Label118)
-Me.gbShipdate.Location = New System.Drawing.Point(479, 421)
+Me.gbShipdate.Location = New System.Drawing.Point(471, 407)
 Me.gbShipdate.Name = "gbShipdate"
-Me.gbShipdate.Size = New System.Drawing.Size(474, 68)
+Me.gbShipdate.Size = New System.Drawing.Size(466, 68)
 Me.gbShipdate.TabIndex = 452
 Me.gbShipdate.TabStop = false
 Me.gbShipdate.Text = "Default Shipdate"
 '
 'txtHDRCustShpDateStr
 '
-Me.txtHDRCustShpDateStr.Location = New System.Drawing.Point(127, 38)
+Me.txtHDRCustShpDateStr.Location = New System.Drawing.Point(124, 39)
 Me.txtHDRCustShpDateStr.Mask = "##/##/####"
 Me.txtHDRCustShpDateStr.Name = "txtHDRCustShpDateStr"
-Me.txtHDRCustShpDateStr.Size = New System.Drawing.Size(86, 20)
+Me.txtHDRCustShpDateStr.Size = New System.Drawing.Size(86, 22)
 Me.txtHDRCustShpDateStr.TabIndex = 462
 '
 'txtHDRCustShpDateEnd
 '
-Me.txtHDRCustShpDateEnd.Location = New System.Drawing.Point(368, 38)
+Me.txtHDRCustShpDateEnd.Location = New System.Drawing.Point(369, 39)
 Me.txtHDRCustShpDateEnd.Mask = "##/##/####"
 Me.txtHDRCustShpDateEnd.Name = "txtHDRCustShpDateEnd"
-Me.txtHDRCustShpDateEnd.Size = New System.Drawing.Size(86, 20)
+Me.txtHDRCustShpDateEnd.Size = New System.Drawing.Size(86, 22)
 Me.txtHDRCustShpDateEnd.TabIndex = 461
 '
 'txtHDRFtyShpDateEnd
 '
-Me.txtHDRFtyShpDateEnd.Location = New System.Drawing.Point(368, 12)
+Me.txtHDRFtyShpDateEnd.Location = New System.Drawing.Point(369, 13)
 Me.txtHDRFtyShpDateEnd.Mask = "##/##/####"
 Me.txtHDRFtyShpDateEnd.Name = "txtHDRFtyShpDateEnd"
-Me.txtHDRFtyShpDateEnd.Size = New System.Drawing.Size(86, 20)
+Me.txtHDRFtyShpDateEnd.Size = New System.Drawing.Size(86, 22)
 Me.txtHDRFtyShpDateEnd.TabIndex = 459
 '
 'txtHDRFtyShpDateStr
 '
-Me.txtHDRFtyShpDateStr.Location = New System.Drawing.Point(127, 12)
+Me.txtHDRFtyShpDateStr.Location = New System.Drawing.Point(124, 13)
 Me.txtHDRFtyShpDateStr.Mask = "##/##/####"
 Me.txtHDRFtyShpDateStr.Name = "txtHDRFtyShpDateStr"
-Me.txtHDRFtyShpDateStr.Size = New System.Drawing.Size(86, 20)
+Me.txtHDRFtyShpDateStr.Size = New System.Drawing.Size(86, 22)
 Me.txtHDRFtyShpDateStr.TabIndex = 458
 '
 'Label112
 '
 Me.Label112.AutoSize = true
-Me.Label112.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.Label112.Location = New System.Drawing.Point(273, 41)
+Me.Label112.Location = New System.Drawing.Point(288, 42)
 Me.Label112.Name = "Label112"
-Me.Label112.Size = New System.Drawing.Size(76, 13)
+Me.Label112.Size = New System.Drawing.Size(72, 12)
 Me.Label112.TabIndex = 457
 Me.Label112.Text = "Ship End Date"
 '
 'Label113
 '
 Me.Label113.AutoSize = true
-Me.Label113.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.Label113.Location = New System.Drawing.Point(15, 42)
 Me.Label113.Name = "Label113"
-Me.Label113.Size = New System.Drawing.Size(103, 13)
+Me.Label113.Size = New System.Drawing.Size(98, 12)
 Me.Label113.TabIndex = 456
 Me.Label113.Text = "Cust Ship Start Date"
 '
 'Label117
 '
 Me.Label117.AutoSize = true
-Me.Label117.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.Label117.Location = New System.Drawing.Point(273, 15)
+Me.Label117.Location = New System.Drawing.Point(288, 16)
 Me.Label117.Name = "Label117"
-Me.Label117.Size = New System.Drawing.Size(76, 13)
+Me.Label117.Size = New System.Drawing.Size(72, 12)
 Me.Label117.TabIndex = 446
 Me.Label117.Text = "Ship End Date"
 '
 'Label118
 '
 Me.Label118.AutoSize = true
-Me.Label118.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.Label118.Location = New System.Drawing.Point(15, 20)
+Me.Label118.Location = New System.Drawing.Point(15, 16)
 Me.Label118.Name = "Label118"
-Me.Label118.Size = New System.Drawing.Size(96, 13)
+Me.Label118.Size = New System.Drawing.Size(92, 12)
 Me.Label118.TabIndex = 444
 Me.Label118.Text = "Fty Ship Start Date"
 '
@@ -5725,16 +6015,16 @@ Me.Label118.Text = "Fty Ship Start Date"
 '
 Me.lblDeptH.AutoSize = true
 Me.lblDeptH.ForeColor = System.Drawing.Color.Black
-Me.lblDeptH.Location = New System.Drawing.Point(485, 307)
+Me.lblDeptH.Location = New System.Drawing.Point(477, 307)
 Me.lblDeptH.Name = "lblDeptH"
-Me.lblDeptH.Size = New System.Drawing.Size(62, 13)
+Me.lblDeptH.Size = New System.Drawing.Size(59, 12)
 Me.lblDeptH.TabIndex = 384
 Me.lblDeptH.Text = "Department"
 '
 'txtDeptH
 '
 Me.txtDeptH.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtDeptH.Location = New System.Drawing.Point(606, 304)
+Me.txtDeptH.Location = New System.Drawing.Point(596, 304)
 Me.txtDeptH.MaxLength = 20
 Me.txtDeptH.Name = "txtDeptH"
 Me.txtDeptH.Size = New System.Drawing.Size(70, 20)
@@ -5744,9 +6034,9 @@ Me.txtDeptH.TabIndex = 123
 '
 Me.lblDesc.AutoSize = true
 Me.lblDesc.ForeColor = System.Drawing.Color.MediumBlue
-Me.lblDesc.Location = New System.Drawing.Point(603, 360)
+Me.lblDesc.Location = New System.Drawing.Point(593, 360)
 Me.lblDesc.Name = "lblDesc"
-Me.lblDesc.Size = New System.Drawing.Size(40, 13)
+Me.lblDesc.Size = New System.Drawing.Size(37, 12)
 Me.lblDesc.TabIndex = 277
 Me.lblDesc.Text = "Project"
 '
@@ -5754,9 +6044,9 @@ Me.lblDesc.Text = "Project"
 '
 Me.lblSeason.AutoSize = true
 Me.lblSeason.ForeColor = System.Drawing.Color.MediumBlue
-Me.lblSeason.Location = New System.Drawing.Point(772, 331)
+Me.lblSeason.Location = New System.Drawing.Point(768, 333)
 Me.lblSeason.Name = "lblSeason"
-Me.lblSeason.Size = New System.Drawing.Size(43, 13)
+Me.lblSeason.Size = New System.Drawing.Size(37, 12)
 Me.lblSeason.TabIndex = 276
 Me.lblSeason.Text = "Season"
 '
@@ -5764,28 +6054,28 @@ Me.lblSeason.Text = "Season"
 '
 Me.lblYear.AutoSize = true
 Me.lblYear.ForeColor = System.Drawing.Color.MediumBlue
-Me.lblYear.Location = New System.Drawing.Point(603, 333)
+Me.lblYear.Location = New System.Drawing.Point(593, 333)
 Me.lblYear.Name = "lblYear"
-Me.lblYear.Size = New System.Drawing.Size(29, 13)
+Me.lblYear.Size = New System.Drawing.Size(27, 12)
 Me.lblYear.TabIndex = 275
 Me.lblYear.Text = "Year"
 '
 'txtValDat
 '
 Me.txtValDat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtValDat.Location = New System.Drawing.Point(119, 433)
+Me.txtValDat.Location = New System.Drawing.Point(130, 436)
 Me.txtValDat.MaxLength = 10
 Me.txtValDat.Name = "txtValDat"
-Me.txtValDat.Size = New System.Drawing.Size(85, 20)
+Me.txtValDat.Size = New System.Drawing.Size(74, 20)
 Me.txtValDat.TabIndex = 52
 Me.txtValDat.Visible = false
 '
 'lblValDat
 '
 Me.lblValDat.AutoSize = true
-Me.lblValDat.Location = New System.Drawing.Point(9, 436)
+Me.lblValDat.Location = New System.Drawing.Point(9, 439)
 Me.lblValDat.Name = "lblValDat"
-Me.lblValDat.Size = New System.Drawing.Size(66, 13)
+Me.lblValDat.Size = New System.Drawing.Size(66, 12)
 Me.lblValDat.TabIndex = 272
 Me.lblValDat.Text = "Validity Date"
 Me.lblValDat.Visible = false
@@ -5804,9 +6094,9 @@ Me.gbSec.Controls.Add(Me.lblCus2St)
 Me.gbSec.Controls.Add(Me.txtCus2St)
 Me.gbSec.Controls.Add(Me.txtCus2Ad)
 Me.gbSec.Controls.Add(Me.lblCus2Ad)
-Me.gbSec.Location = New System.Drawing.Point(479, 5)
+Me.gbSec.Location = New System.Drawing.Point(471, 5)
 Me.gbSec.Name = "gbSec"
-Me.gbSec.Size = New System.Drawing.Size(474, 197)
+Me.gbSec.Size = New System.Drawing.Size(466, 197)
 Me.gbSec.TabIndex = 105
 Me.gbSec.TabStop = false
 Me.gbSec.Text = "Secondary Customer"
@@ -5814,16 +6104,16 @@ Me.gbSec.Text = "Secondary Customer"
 'cboCus2Cp
 '
 Me.cboCus2Cp.FormattingEnabled = true
-Me.cboCus2Cp.Location = New System.Drawing.Point(127, 142)
+Me.cboCus2Cp.Location = New System.Drawing.Point(125, 142)
 Me.cboCus2Cp.Name = "cboCus2Cp"
-Me.cboCus2Cp.Size = New System.Drawing.Size(339, 21)
+Me.cboCus2Cp.Size = New System.Drawing.Size(331, 20)
 Me.cboCus2Cp.TabIndex = 119
 '
 'gbRelation
 '
 Me.gbRelation.Controls.Add(Me.optPassive)
 Me.gbRelation.Controls.Add(Me.optActive)
-Me.gbRelation.Location = New System.Drawing.Point(127, 161)
+Me.gbRelation.Location = New System.Drawing.Point(125, 161)
 Me.gbRelation.Name = "gbRelation"
 Me.gbRelation.Size = New System.Drawing.Size(110, 30)
 Me.gbRelation.TabIndex = 276
@@ -5834,7 +6124,7 @@ Me.gbRelation.TabStop = false
 Me.optPassive.AutoSize = true
 Me.optPassive.Location = New System.Drawing.Point(66, 9)
 Me.optPassive.Name = "optPassive"
-Me.optPassive.Size = New System.Drawing.Size(39, 17)
+Me.optPassive.Size = New System.Drawing.Size(37, 16)
 Me.optPassive.TabIndex = 121
 Me.optPassive.TabStop = true
 Me.optPassive.Text = "No"
@@ -5845,7 +6135,7 @@ Me.optPassive.UseVisualStyleBackColor = true
 Me.optActive.AutoSize = true
 Me.optActive.Location = New System.Drawing.Point(6, 9)
 Me.optActive.Name = "optActive"
-Me.optActive.Size = New System.Drawing.Size(43, 17)
+Me.optActive.Size = New System.Drawing.Size(40, 16)
 Me.optActive.TabIndex = 120
 Me.optActive.TabStop = true
 Me.optActive.Text = "Yes"
@@ -5854,9 +6144,9 @@ Me.optActive.UseVisualStyleBackColor = true
 'lblRelation
 '
 Me.lblRelation.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblRelation.Location = New System.Drawing.Point(6, 165)
+Me.lblRelation.Location = New System.Drawing.Point(6, 171)
 Me.lblRelation.Name = "lblRelation"
-Me.lblRelation.Size = New System.Drawing.Size(115, 26)
+Me.lblRelation.Size = New System.Drawing.Size(115, 16)
 Me.lblRelation.TabIndex = 275
 Me.lblRelation.Text = "Secondary Quoted Printout"
 '
@@ -5866,7 +6156,7 @@ Me.lblCus2Cp.AutoSize = true
 Me.lblCus2Cp.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblCus2Cp.Location = New System.Drawing.Point(6, 145)
 Me.lblCus2Cp.Name = "lblCus2Cp"
-Me.lblCus2Cp.Size = New System.Drawing.Size(80, 13)
+Me.lblCus2Cp.Size = New System.Drawing.Size(75, 12)
 Me.lblCus2Cp.TabIndex = 274
 Me.lblCus2Cp.Text = "Contact Person"
 '
@@ -5875,14 +6165,14 @@ Me.lblCus2Cp.Text = "Contact Person"
 Me.lblCus2Zp.AutoSize = true
 Me.lblCus2Zp.Location = New System.Drawing.Point(6, 122)
 Me.lblCus2Zp.Name = "lblCus2Zp"
-Me.lblCus2Zp.Size = New System.Drawing.Size(92, 13)
+Me.lblCus2Zp.Size = New System.Drawing.Size(86, 12)
 Me.lblCus2Zp.TabIndex = 272
 Me.lblCus2Zp.Text = "Postal / ZIP Code"
 '
 'txtCus2Zp
 '
 Me.txtCus2Zp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCus2Zp.Location = New System.Drawing.Point(127, 119)
+Me.txtCus2Zp.Location = New System.Drawing.Point(125, 119)
 Me.txtCus2Zp.MaxLength = 10
 Me.txtCus2Zp.Name = "txtCus2Zp"
 Me.txtCus2Zp.Size = New System.Drawing.Size(130, 20)
@@ -5891,19 +6181,19 @@ Me.txtCus2Zp.TabIndex = 118
 'lblCus2Cy
 '
 Me.lblCus2Cy.AutoSize = true
-Me.lblCus2Cy.Location = New System.Drawing.Point(293, 99)
+Me.lblCus2Cy.Location = New System.Drawing.Point(296, 99)
 Me.lblCus2Cy.Name = "lblCus2Cy"
-Me.lblCus2Cy.Size = New System.Drawing.Size(43, 13)
+Me.lblCus2Cy.Size = New System.Drawing.Size(44, 12)
 Me.lblCus2Cy.TabIndex = 270
 Me.lblCus2Cy.Text = "Country"
 '
 'txtCus2Cy
 '
 Me.txtCus2Cy.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCus2Cy.Location = New System.Drawing.Point(355, 96)
+Me.txtCus2Cy.Location = New System.Drawing.Point(363, 95)
 Me.txtCus2Cy.MaxLength = 10
 Me.txtCus2Cy.Name = "txtCus2Cy"
-Me.txtCus2Cy.Size = New System.Drawing.Size(111, 20)
+Me.txtCus2Cy.Size = New System.Drawing.Size(93, 20)
 Me.txtCus2Cy.TabIndex = 117
 '
 'lblCus2St
@@ -5911,24 +6201,24 @@ Me.txtCus2Cy.TabIndex = 117
 Me.lblCus2St.AutoSize = true
 Me.lblCus2St.Location = New System.Drawing.Point(6, 99)
 Me.lblCus2St.Name = "lblCus2St"
-Me.lblCus2St.Size = New System.Drawing.Size(85, 13)
+Me.lblCus2St.Size = New System.Drawing.Size(77, 12)
 Me.lblCus2St.TabIndex = 268
 Me.lblCus2St.Text = "State / Province"
 '
 'txtCus2St
 '
 Me.txtCus2St.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCus2St.Location = New System.Drawing.Point(127, 96)
+Me.txtCus2St.Location = New System.Drawing.Point(125, 96)
 Me.txtCus2St.MaxLength = 10
 Me.txtCus2St.Name = "txtCus2St"
-Me.txtCus2St.Size = New System.Drawing.Size(131, 20)
+Me.txtCus2St.Size = New System.Drawing.Size(93, 20)
 Me.txtCus2St.TabIndex = 116
 '
 'txtCus2Ad
 '
-Me.txtCus2Ad.Location = New System.Drawing.Point(127, 13)
+Me.txtCus2Ad.Location = New System.Drawing.Point(125, 13)
 Me.txtCus2Ad.Name = "txtCus2Ad"
-Me.txtCus2Ad.Size = New System.Drawing.Size(339, 80)
+Me.txtCus2Ad.Size = New System.Drawing.Size(331, 80)
 Me.txtCus2Ad.TabIndex = 115
 Me.txtCus2Ad.Text = ""
 '
@@ -5937,7 +6227,7 @@ Me.txtCus2Ad.Text = ""
 Me.lblCus2Ad.AutoSize = true
 Me.lblCus2Ad.Location = New System.Drawing.Point(6, 16)
 Me.lblCus2Ad.Name = "lblCus2Ad"
-Me.lblCus2Ad.Size = New System.Drawing.Size(45, 13)
+Me.lblCus2Ad.Size = New System.Drawing.Size(42, 12)
 Me.lblCus2Ad.TabIndex = 107
 Me.lblCus2Ad.Text = "Address"
 '
@@ -5951,9 +6241,9 @@ Me.gbTerm.Controls.Add(Me.cboSmpFgt)
 Me.gbTerm.Controls.Add(Me.lblSmpFgt)
 Me.gbTerm.Controls.Add(Me.cboSmpPrd)
 Me.gbTerm.Controls.Add(Me.lblSmpPrd)
-Me.gbTerm.Location = New System.Drawing.Point(3, 208)
+Me.gbTerm.Location = New System.Drawing.Point(6, 208)
 Me.gbTerm.Name = "gbTerm"
-Me.gbTerm.Size = New System.Drawing.Size(475, 112)
+Me.gbTerm.Size = New System.Drawing.Size(460, 112)
 Me.gbTerm.TabIndex = 270
 Me.gbTerm.TabStop = false
 '
@@ -5963,17 +6253,17 @@ Me.lblCurCde.AutoSize = true
 Me.lblCurCde.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblCurCde.Location = New System.Drawing.Point(6, 87)
 Me.lblCurCde.Name = "lblCurCde"
-Me.lblCurCde.Size = New System.Drawing.Size(49, 13)
+Me.lblCurCde.Size = New System.Drawing.Size(49, 12)
 Me.lblCurCde.TabIndex = 278
 Me.lblCurCde.Text = "Currency"
 '
 'txtCurCde
 '
 Me.txtCurCde.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCurCde.Location = New System.Drawing.Point(116, 84)
+Me.txtCurCde.Location = New System.Drawing.Point(127, 84)
 Me.txtCurCde.MaxLength = 10
 Me.txtCurCde.Name = "txtCurCde"
-Me.txtCurCde.Size = New System.Drawing.Size(141, 20)
+Me.txtCurCde.Size = New System.Drawing.Size(130, 20)
 Me.txtCurCde.TabIndex = 111
 '
 'lblPayTrm
@@ -5982,25 +6272,25 @@ Me.lblPayTrm.AutoSize = true
 Me.lblPayTrm.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblPayTrm.Location = New System.Drawing.Point(6, 64)
 Me.lblPayTrm.Name = "lblPayTrm"
-Me.lblPayTrm.Size = New System.Drawing.Size(75, 13)
+Me.lblPayTrm.Size = New System.Drawing.Size(73, 12)
 Me.lblPayTrm.TabIndex = 276
 Me.lblPayTrm.Text = "Payment Term"
 '
 'txtPayTrm
 '
 Me.txtPayTrm.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtPayTrm.Location = New System.Drawing.Point(116, 61)
+Me.txtPayTrm.Location = New System.Drawing.Point(127, 61)
 Me.txtPayTrm.MaxLength = 10
 Me.txtPayTrm.Name = "txtPayTrm"
-Me.txtPayTrm.Size = New System.Drawing.Size(353, 20)
+Me.txtPayTrm.Size = New System.Drawing.Size(321, 20)
 Me.txtPayTrm.TabIndex = 110
 '
 'cboSmpFgt
 '
 Me.cboSmpFgt.FormattingEnabled = true
-Me.cboSmpFgt.Location = New System.Drawing.Point(116, 37)
+Me.cboSmpFgt.Location = New System.Drawing.Point(127, 37)
 Me.cboSmpFgt.Name = "cboSmpFgt"
-Me.cboSmpFgt.Size = New System.Drawing.Size(353, 21)
+Me.cboSmpFgt.Size = New System.Drawing.Size(321, 20)
 Me.cboSmpFgt.TabIndex = 109
 '
 'lblSmpFgt
@@ -6009,16 +6299,16 @@ Me.lblSmpFgt.AutoSize = true
 Me.lblSmpFgt.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblSmpFgt.Location = New System.Drawing.Point(6, 40)
 Me.lblSmpFgt.Name = "lblSmpFgt"
-Me.lblSmpFgt.Size = New System.Drawing.Size(104, 13)
+Me.lblSmpFgt.Size = New System.Drawing.Size(103, 12)
 Me.lblSmpFgt.TabIndex = 270
 Me.lblSmpFgt.Text = "Sample Freight Term"
 '
 'cboSmpPrd
 '
 Me.cboSmpPrd.FormattingEnabled = true
-Me.cboSmpPrd.Location = New System.Drawing.Point(116, 13)
+Me.cboSmpPrd.Location = New System.Drawing.Point(127, 13)
 Me.cboSmpPrd.Name = "cboSmpPrd"
-Me.cboSmpPrd.Size = New System.Drawing.Size(353, 21)
+Me.cboSmpPrd.Size = New System.Drawing.Size(321, 20)
 Me.cboSmpPrd.TabIndex = 108
 '
 'lblSmpPrd
@@ -6027,7 +6317,7 @@ Me.lblSmpPrd.AutoSize = true
 Me.lblSmpPrd.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblSmpPrd.Location = New System.Drawing.Point(6, 16)
 Me.lblSmpPrd.Name = "lblSmpPrd"
-Me.lblSmpPrd.Size = New System.Drawing.Size(109, 13)
+Me.lblSmpPrd.Size = New System.Drawing.Size(106, 12)
 Me.lblSmpPrd.TabIndex = 268
 Me.lblSmpPrd.Text = "Sample Product Term"
 '
@@ -6035,9 +6325,9 @@ Me.lblSmpPrd.Text = "Sample Product Term"
 '
 Me.lblPrcTrm.AutoSize = true
 Me.lblPrcTrm.ForeColor = System.Drawing.Color.MediumBlue
-Me.lblPrcTrm.Location = New System.Drawing.Point(9, 462)
+Me.lblPrcTrm.Location = New System.Drawing.Point(9, 465)
 Me.lblPrcTrm.Name = "lblPrcTrm"
-Me.lblPrcTrm.Size = New System.Drawing.Size(58, 13)
+Me.lblPrcTrm.Size = New System.Drawing.Size(56, 12)
 Me.lblPrcTrm.TabIndex = 274
 Me.lblPrcTrm.Text = "Price Term"
 Me.lblPrcTrm.Visible = false
@@ -6045,62 +6335,62 @@ Me.lblPrcTrm.Visible = false
 'txtDesc
 '
 Me.txtDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtDesc.Location = New System.Drawing.Point(649, 357)
+Me.txtDesc.Location = New System.Drawing.Point(639, 357)
 Me.txtDesc.MaxLength = 100
 Me.txtDesc.Name = "txtDesc"
-Me.txtDesc.Size = New System.Drawing.Size(296, 20)
+Me.txtDesc.Size = New System.Drawing.Size(288, 20)
 Me.txtDesc.TabIndex = 126
 '
 'txtPrcTrm
 '
 Me.txtPrcTrm.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtPrcTrm.Location = New System.Drawing.Point(119, 459)
+Me.txtPrcTrm.Location = New System.Drawing.Point(130, 462)
 Me.txtPrcTrm.MaxLength = 10
 Me.txtPrcTrm.Name = "txtPrcTrm"
-Me.txtPrcTrm.Size = New System.Drawing.Size(357, 20)
+Me.txtPrcTrm.Size = New System.Drawing.Size(323, 20)
 Me.txtPrcTrm.TabIndex = 49
 Me.txtPrcTrm.Visible = false
 '
 'cboSeason
 '
 Me.cboSeason.FormattingEnabled = true
-Me.cboSeason.Location = New System.Drawing.Point(834, 329)
+Me.cboSeason.Location = New System.Drawing.Point(833, 330)
 Me.cboSeason.Name = "cboSeason"
-Me.cboSeason.Size = New System.Drawing.Size(111, 21)
+Me.cboSeason.Size = New System.Drawing.Size(94, 20)
 Me.cboSeason.TabIndex = 125
 '
 'cboYear
 '
 Me.cboYear.FormattingEnabled = true
-Me.cboYear.Location = New System.Drawing.Point(649, 330)
+Me.cboYear.Location = New System.Drawing.Point(639, 330)
 Me.cboYear.Name = "cboYear"
-Me.cboYear.Size = New System.Drawing.Size(88, 21)
+Me.cboYear.Size = New System.Drawing.Size(74, 20)
 Me.cboYear.TabIndex = 124
 '
 'lblQuotTitle
 '
 Me.lblQuotTitle.AutoSize = true
 Me.lblQuotTitle.ForeColor = System.Drawing.Color.MediumBlue
-Me.lblQuotTitle.Location = New System.Drawing.Point(485, 333)
+Me.lblQuotTitle.Location = New System.Drawing.Point(477, 333)
 Me.lblQuotTitle.Name = "lblQuotTitle"
-Me.lblQuotTitle.Size = New System.Drawing.Size(76, 13)
+Me.lblQuotTitle.Size = New System.Drawing.Size(75, 12)
 Me.lblQuotTitle.TabIndex = 109
 Me.lblQuotTitle.Text = "Quotation Title"
 '
 'txtRmk
 '
-Me.txtRmk.Location = New System.Drawing.Point(606, 222)
+Me.txtRmk.Location = New System.Drawing.Point(596, 222)
 Me.txtRmk.Name = "txtRmk"
-Me.txtRmk.Size = New System.Drawing.Size(339, 74)
+Me.txtRmk.Size = New System.Drawing.Size(331, 74)
 Me.txtRmk.TabIndex = 122
 Me.txtRmk.Text = ""
 '
 'lblRmk
 '
 Me.lblRmk.AutoSize = true
-Me.lblRmk.Location = New System.Drawing.Point(485, 225)
+Me.lblRmk.Location = New System.Drawing.Point(477, 225)
 Me.lblRmk.Name = "lblRmk"
-Me.lblRmk.Size = New System.Drawing.Size(44, 13)
+Me.lblRmk.Size = New System.Drawing.Size(42, 12)
 Me.lblRmk.TabIndex = 108
 Me.lblRmk.Text = "Remark"
 '
@@ -6121,9 +6411,9 @@ Me.gbPri.Controls.Add(Me.lblCus1St)
 Me.gbPri.Controls.Add(Me.txtCus1St)
 Me.gbPri.Controls.Add(Me.txtCus1Ad)
 Me.gbPri.Controls.Add(Me.lblCus1Ad)
-Me.gbPri.Location = New System.Drawing.Point(3, 5)
+Me.gbPri.Location = New System.Drawing.Point(6, 5)
 Me.gbPri.Name = "gbPri"
-Me.gbPri.Size = New System.Drawing.Size(475, 197)
+Me.gbPri.Size = New System.Drawing.Size(460, 197)
 Me.gbPri.TabIndex = 104
 Me.gbPri.TabStop = false
 Me.gbPri.Text = "Primary Customer"
@@ -6132,9 +6422,9 @@ Me.gbPri.Text = "Primary Customer"
 '
 Me.lblCus1CgExt.AutoSize = true
 Me.lblCus1CgExt.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblCus1CgExt.Location = New System.Drawing.Point(272, 169)
+Me.lblCus1CgExt.Location = New System.Drawing.Point(267, 171)
 Me.lblCus1CgExt.Name = "lblCus1CgExt"
-Me.lblCus1CgExt.Size = New System.Drawing.Size(45, 13)
+Me.lblCus1CgExt.Size = New System.Drawing.Size(44, 12)
 Me.lblCus1CgExt.TabIndex = 272
 Me.lblCus1CgExt.Text = "External"
 '
@@ -6142,18 +6432,18 @@ Me.lblCus1CgExt.Text = "External"
 '
 Me.cboCus1CgExt.Enabled = false
 Me.cboCus1CgExt.FormattingEnabled = true
-Me.cboCus1CgExt.Location = New System.Drawing.Point(327, 167)
+Me.cboCus1CgExt.Location = New System.Drawing.Point(374, 167)
 Me.cboCus1CgExt.Name = "cboCus1CgExt"
-Me.cboCus1CgExt.Size = New System.Drawing.Size(74, 21)
+Me.cboCus1CgExt.Size = New System.Drawing.Size(74, 20)
 Me.cboCus1CgExt.TabIndex = 107
 '
 'lblCus1CgInt
 '
 Me.lblCus1CgInt.AutoSize = true
 Me.lblCus1CgInt.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblCus1CgInt.Location = New System.Drawing.Point(113, 169)
+Me.lblCus1CgInt.Location = New System.Drawing.Point(124, 171)
 Me.lblCus1CgInt.Name = "lblCus1CgInt"
-Me.lblCus1CgInt.Size = New System.Drawing.Size(42, 13)
+Me.lblCus1CgInt.Size = New System.Drawing.Size(41, 12)
 Me.lblCus1CgInt.TabIndex = 270
 Me.lblCus1CgInt.Text = "Internal"
 '
@@ -6161,98 +6451,98 @@ Me.lblCus1CgInt.Text = "Internal"
 '
 Me.cboCus1CgInt.Enabled = false
 Me.cboCus1CgInt.FormattingEnabled = true
-Me.cboCus1CgInt.Location = New System.Drawing.Point(184, 167)
+Me.cboCus1CgInt.Location = New System.Drawing.Point(172, 167)
 Me.cboCus1CgInt.Name = "cboCus1CgInt"
-Me.cboCus1CgInt.Size = New System.Drawing.Size(74, 21)
+Me.cboCus1CgInt.Size = New System.Drawing.Size(74, 20)
 Me.cboCus1CgInt.TabIndex = 106
 '
 'lblCus1Cg
 '
 Me.lblCus1Cg.AutoSize = true
 Me.lblCus1Cg.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblCus1Cg.Location = New System.Drawing.Point(6, 169)
+Me.lblCus1Cg.Location = New System.Drawing.Point(6, 171)
 Me.lblCus1Cg.Name = "lblCus1Cg"
-Me.lblCus1Cg.Size = New System.Drawing.Size(83, 13)
+Me.lblCus1Cg.Size = New System.Drawing.Size(83, 12)
 Me.lblCus1Cg.TabIndex = 268
 Me.lblCus1Cg.Text = "Customer Group"
 '
 'cboCus1Cp
 '
 Me.cboCus1Cp.FormattingEnabled = true
-Me.cboCus1Cp.Location = New System.Drawing.Point(116, 142)
+Me.cboCus1Cp.Location = New System.Drawing.Point(127, 142)
 Me.cboCus1Cp.Name = "cboCus1Cp"
-Me.cboCus1Cp.Size = New System.Drawing.Size(353, 21)
+Me.cboCus1Cp.Size = New System.Drawing.Size(320, 20)
 Me.cboCus1Cp.TabIndex = 105
 '
 'lblCus1Cp
 '
 Me.lblCus1Cp.AutoSize = true
 Me.lblCus1Cp.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblCus1Cp.Location = New System.Drawing.Point(6, 145)
+Me.lblCus1Cp.Location = New System.Drawing.Point(6, 144)
 Me.lblCus1Cp.Name = "lblCus1Cp"
-Me.lblCus1Cp.Size = New System.Drawing.Size(80, 13)
+Me.lblCus1Cp.Size = New System.Drawing.Size(75, 12)
 Me.lblCus1Cp.TabIndex = 266
 Me.lblCus1Cp.Text = "Contact Person"
 '
 'lblCus1Zp
 '
 Me.lblCus1Zp.AutoSize = true
-Me.lblCus1Zp.Location = New System.Drawing.Point(6, 122)
+Me.lblCus1Zp.Location = New System.Drawing.Point(6, 121)
 Me.lblCus1Zp.Name = "lblCus1Zp"
-Me.lblCus1Zp.Size = New System.Drawing.Size(92, 13)
+Me.lblCus1Zp.Size = New System.Drawing.Size(86, 12)
 Me.lblCus1Zp.TabIndex = 264
 Me.lblCus1Zp.Text = "Postal / ZIP Code"
 '
 'txtCus1Zp
 '
 Me.txtCus1Zp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCus1Zp.Location = New System.Drawing.Point(116, 119)
+Me.txtCus1Zp.Location = New System.Drawing.Point(127, 119)
 Me.txtCus1Zp.MaxLength = 10
 Me.txtCus1Zp.Name = "txtCus1Zp"
-Me.txtCus1Zp.Size = New System.Drawing.Size(141, 20)
+Me.txtCus1Zp.Size = New System.Drawing.Size(130, 20)
 Me.txtCus1Zp.TabIndex = 104
 '
 'lblCus1Cy
 '
 Me.lblCus1Cy.AutoSize = true
-Me.lblCus1Cy.Location = New System.Drawing.Point(272, 99)
+Me.lblCus1Cy.Location = New System.Drawing.Point(267, 98)
 Me.lblCus1Cy.Name = "lblCus1Cy"
-Me.lblCus1Cy.Size = New System.Drawing.Size(43, 13)
+Me.lblCus1Cy.Size = New System.Drawing.Size(44, 12)
 Me.lblCus1Cy.TabIndex = 262
 Me.lblCus1Cy.Text = "Country"
 '
 'txtCus1Cy
 '
 Me.txtCus1Cy.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCus1Cy.Location = New System.Drawing.Point(327, 96)
+Me.txtCus1Cy.Location = New System.Drawing.Point(354, 95)
 Me.txtCus1Cy.MaxLength = 10
 Me.txtCus1Cy.Name = "txtCus1Cy"
-Me.txtCus1Cy.Size = New System.Drawing.Size(142, 20)
+Me.txtCus1Cy.Size = New System.Drawing.Size(93, 20)
 Me.txtCus1Cy.TabIndex = 103
 '
 'lblCus1St
 '
 Me.lblCus1St.AutoSize = true
-Me.lblCus1St.Location = New System.Drawing.Point(6, 99)
+Me.lblCus1St.Location = New System.Drawing.Point(6, 98)
 Me.lblCus1St.Name = "lblCus1St"
-Me.lblCus1St.Size = New System.Drawing.Size(85, 13)
+Me.lblCus1St.Size = New System.Drawing.Size(77, 12)
 Me.lblCus1St.TabIndex = 260
 Me.lblCus1St.Text = "State / Province"
 '
 'txtCus1St
 '
 Me.txtCus1St.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCus1St.Location = New System.Drawing.Point(116, 96)
+Me.txtCus1St.Location = New System.Drawing.Point(127, 96)
 Me.txtCus1St.MaxLength = 10
 Me.txtCus1St.Name = "txtCus1St"
-Me.txtCus1St.Size = New System.Drawing.Size(141, 20)
+Me.txtCus1St.Size = New System.Drawing.Size(93, 20)
 Me.txtCus1St.TabIndex = 102
 '
 'txtCus1Ad
 '
-Me.txtCus1Ad.Location = New System.Drawing.Point(116, 13)
+Me.txtCus1Ad.Location = New System.Drawing.Point(127, 13)
 Me.txtCus1Ad.Name = "txtCus1Ad"
-Me.txtCus1Ad.Size = New System.Drawing.Size(353, 80)
+Me.txtCus1Ad.Size = New System.Drawing.Size(320, 80)
 Me.txtCus1Ad.TabIndex = 101
 Me.txtCus1Ad.Text = ""
 '
@@ -6261,7 +6551,7 @@ Me.txtCus1Ad.Text = ""
 Me.lblCus1Ad.AutoSize = true
 Me.lblCus1Ad.Location = New System.Drawing.Point(6, 16)
 Me.lblCus1Ad.Name = "lblCus1Ad"
-Me.lblCus1Ad.Size = New System.Drawing.Size(45, 13)
+Me.lblCus1Ad.Size = New System.Drawing.Size(42, 12)
 Me.lblCus1Ad.TabIndex = 105
 Me.lblCus1Ad.Text = "Address"
 '
@@ -6273,18 +6563,18 @@ Me.gbSales.Controls.Add(Me.cboSalRep)
 Me.gbSales.Controls.Add(Me.lblSalRep)
 Me.gbSales.Controls.Add(Me.cboCusAgt)
 Me.gbSales.Controls.Add(Me.lblCusAgt)
-Me.gbSales.Location = New System.Drawing.Point(3, 326)
+Me.gbSales.Location = New System.Drawing.Point(6, 326)
 Me.gbSales.Name = "gbSales"
-Me.gbSales.Size = New System.Drawing.Size(475, 88)
+Me.gbSales.Size = New System.Drawing.Size(460, 88)
 Me.gbSales.TabIndex = 106
 Me.gbSales.TabStop = false
 '
 'cboSalDiv
 '
 Me.cboSalDiv.FormattingEnabled = true
-Me.cboSalDiv.Location = New System.Drawing.Point(116, 37)
+Me.cboSalDiv.Location = New System.Drawing.Point(127, 37)
 Me.cboSalDiv.Name = "cboSalDiv"
-Me.cboSalDiv.Size = New System.Drawing.Size(353, 21)
+Me.cboSalDiv.Size = New System.Drawing.Size(321, 20)
 Me.cboSalDiv.TabIndex = 113
 '
 'lblSalDiv
@@ -6293,16 +6583,16 @@ Me.lblSalDiv.AutoSize = true
 Me.lblSalDiv.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblSalDiv.Location = New System.Drawing.Point(6, 40)
 Me.lblSalDiv.Name = "lblSalDiv"
-Me.lblSalDiv.Size = New System.Drawing.Size(109, 13)
+Me.lblSalDiv.Size = New System.Drawing.Size(107, 12)
 Me.lblSalDiv.TabIndex = 272
 Me.lblSalDiv.Text = "Sales Division (Team)"
 '
 'cboSalRep
 '
 Me.cboSalRep.FormattingEnabled = true
-Me.cboSalRep.Location = New System.Drawing.Point(116, 61)
+Me.cboSalRep.Location = New System.Drawing.Point(127, 61)
 Me.cboSalRep.Name = "cboSalRep"
-Me.cboSalRep.Size = New System.Drawing.Size(353, 21)
+Me.cboSalRep.Size = New System.Drawing.Size(321, 20)
 Me.cboSalRep.TabIndex = 114
 '
 'lblSalRep
@@ -6311,16 +6601,16 @@ Me.lblSalRep.AutoSize = true
 Me.lblSalRep.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblSalRep.Location = New System.Drawing.Point(6, 64)
 Me.lblSalRep.Name = "lblSalRep"
-Me.lblSalRep.Size = New System.Drawing.Size(76, 13)
+Me.lblSalRep.Size = New System.Drawing.Size(73, 12)
 Me.lblSalRep.TabIndex = 270
 Me.lblSalRep.Text = "Sales Rep (ID)"
 '
 'cboCusAgt
 '
 Me.cboCusAgt.FormattingEnabled = true
-Me.cboCusAgt.Location = New System.Drawing.Point(116, 13)
+Me.cboCusAgt.Location = New System.Drawing.Point(127, 13)
 Me.cboCusAgt.Name = "cboCusAgt"
-Me.cboCusAgt.Size = New System.Drawing.Size(353, 21)
+Me.cboCusAgt.Size = New System.Drawing.Size(321, 20)
 Me.cboCusAgt.TabIndex = 112
 '
 'lblCusAgt
@@ -6329,7 +6619,7 @@ Me.lblCusAgt.AutoSize = true
 Me.lblCusAgt.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblCusAgt.Location = New System.Drawing.Point(6, 16)
 Me.lblCusAgt.Name = "lblCusAgt"
-Me.lblCusAgt.Size = New System.Drawing.Size(35, 13)
+Me.lblCusAgt.Size = New System.Drawing.Size(33, 12)
 Me.lblCusAgt.TabIndex = 268
 Me.lblCusAgt.Text = "Agent"
 '
@@ -6337,9 +6627,6 @@ Me.lblCusAgt.Text = "Agent"
 '
 Me.tpQUM00001_2.Controls.Add(Me.txtNote)
 Me.tpQUM00001_2.Controls.Add(Me.cmdReset)
-Me.tpQUM00001_2.Controls.Add(Me.cmdRenItm)
-Me.tpQUM00001_2.Controls.Add(Me.PanelMutShp)
-Me.tpQUM00001_2.Controls.Add(Me.PanelCptBkd)
 Me.tpQUM00001_2.Controls.Add(Me.PanelItmNoSelect)
 Me.tpQUM00001_2.Controls.Add(Me.txtSmpPrc)
 Me.tpQUM00001_2.Controls.Add(Me.PanelItmNoConv)
@@ -6397,17 +6684,18 @@ Me.tpQUM00001_2.Controls.Add(Me.chkTBM)
 Me.tpQUM00001_2.Controls.Add(Me.txtSeq)
 Me.tpQUM00001_2.Controls.Add(Me.lblSeq)
 Me.tpQUM00001_2.Controls.Add(Me.txtFtyTmpItmNo)
+Me.tpQUM00001_2.Controls.Add(Me.cmdRenItm)
 Me.tpQUM00001_2.Location = New System.Drawing.Point(4, 22)
 Me.tpQUM00001_2.Name = "tpQUM00001_2"
 Me.tpQUM00001_2.Padding = New System.Windows.Forms.Padding(3)
-Me.tpQUM00001_2.Size = New System.Drawing.Size(958, 535)
+Me.tpQUM00001_2.Size = New System.Drawing.Size(942, 516)
 Me.tpQUM00001_2.TabIndex = 1
 Me.tpQUM00001_2.Text = "(2) Details"
 Me.tpQUM00001_2.UseVisualStyleBackColor = true
 '
 'txtNote
 '
-Me.txtNote.Font = New System.Drawing.Font("Microsoft Sans Serif", 9!)
+Me.txtNote.Font = New System.Drawing.Font("Arial", 8.25!)
 Me.txtNote.Location = New System.Drawing.Point(80, 487)
 Me.txtNote.MaxLength = 261
 Me.txtNote.Multiline = true
@@ -6418,7 +6706,6 @@ Me.txtNote.TabIndex = 534
 '
 'cmdReset
 '
-Me.cmdReset.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.cmdReset.Location = New System.Drawing.Point(368, 485)
 Me.cmdReset.Name = "cmdReset"
 Me.cmdReset.Size = New System.Drawing.Size(98, 25)
@@ -6426,151 +6713,6 @@ Me.cmdReset.TabIndex = 533
 Me.cmdReset.Text = "Reset Item"
 Me.cmdReset.UseVisualStyleBackColor = true
 Me.cmdReset.Visible = false
-'
-'cmdRenItm
-'
-Me.cmdRenItm.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.cmdRenItm.Location = New System.Drawing.Point(774, 495)
-Me.cmdRenItm.Name = "cmdRenItm"
-Me.cmdRenItm.Size = New System.Drawing.Size(92, 21)
-Me.cmdRenItm.TabIndex = 532
-Me.cmdRenItm.Text = "Renew Item"
-Me.cmdRenItm.UseVisualStyleBackColor = true
-Me.cmdRenItm.Visible = false
-'
-'PanelMutShp
-'
-Me.PanelMutShp.BackColor = System.Drawing.Color.SkyBlue
-Me.PanelMutShp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-Me.PanelMutShp.Controls.Add(Me.GroupBox10)
-Me.PanelMutShp.Location = New System.Drawing.Point(938, 16)
-Me.PanelMutShp.Name = "PanelMutShp"
-Me.PanelMutShp.Size = New System.Drawing.Size(482, 282)
-Me.PanelMutShp.TabIndex = 432
-Me.PanelMutShp.Visible = false
-'
-'GroupBox10
-'
-Me.GroupBox10.Controls.Add(Me.Label102)
-Me.GroupBox10.Controls.Add(Me.cmdPanMutShpIns)
-Me.GroupBox10.Controls.Add(Me.dgMutShp)
-Me.GroupBox10.Controls.Add(Me.cmdPanMutShpQuit)
-Me.GroupBox10.Location = New System.Drawing.Point(10, 10)
-Me.GroupBox10.Name = "GroupBox10"
-Me.GroupBox10.Size = New System.Drawing.Size(459, 261)
-Me.GroupBox10.TabIndex = 523
-Me.GroupBox10.TabStop = false
-'
-'Label102
-'
-Me.Label102.AutoSize = true
-Me.Label102.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline),System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.Label102.Location = New System.Drawing.Point(27, 26)
-Me.Label102.Name = "Label102"
-Me.Label102.Size = New System.Drawing.Size(152, 20)
-Me.Label102.TabIndex = 354
-Me.Label102.Text = "Multiple Shipment"
-'
-'cmdPanMutShpIns
-'
-Me.cmdPanMutShpIns.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdPanMutShpIns.Location = New System.Drawing.Point(265, 222)
-Me.cmdPanMutShpIns.Name = "cmdPanMutShpIns"
-Me.cmdPanMutShpIns.Size = New System.Drawing.Size(80, 22)
-Me.cmdPanMutShpIns.TabIndex = 522
-Me.cmdPanMutShpIns.Text = "Insert"
-Me.cmdPanMutShpIns.UseVisualStyleBackColor = true
-'
-'dgMutShp
-'
-Me.dgMutShp.AllowUserToAddRows = false
-Me.dgMutShp.AllowUserToDeleteRows = false
-Me.dgMutShp.ColumnHeadersHeight = 20
-Me.dgMutShp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-Me.dgMutShp.Location = New System.Drawing.Point(31, 54)
-Me.dgMutShp.Name = "dgMutShp"
-Me.dgMutShp.RowHeadersWidth = 20
-Me.dgMutShp.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.dgMutShp.RowTemplate.Height = 16
-Me.dgMutShp.Size = New System.Drawing.Size(400, 162)
-Me.dgMutShp.TabIndex = 101
-'
-'cmdPanMutShpQuit
-'
-Me.cmdPanMutShpQuit.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdPanMutShpQuit.Location = New System.Drawing.Point(351, 222)
-Me.cmdPanMutShpQuit.Name = "cmdPanMutShpQuit"
-Me.cmdPanMutShpQuit.Size = New System.Drawing.Size(80, 22)
-Me.cmdPanMutShpQuit.TabIndex = 384
-Me.cmdPanMutShpQuit.Text = "Quit"
-Me.cmdPanMutShpQuit.UseVisualStyleBackColor = true
-'
-'PanelCptBkd
-'
-Me.PanelCptBkd.BackColor = System.Drawing.Color.SkyBlue
-Me.PanelCptBkd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-Me.PanelCptBkd.Controls.Add(Me.GroupBox2)
-Me.PanelCptBkd.Location = New System.Drawing.Point(995, 10)
-Me.PanelCptBkd.Name = "PanelCptBkd"
-Me.PanelCptBkd.Size = New System.Drawing.Size(478, 279)
-Me.PanelCptBkd.TabIndex = 431
-Me.PanelCptBkd.Visible = false
-'
-'GroupBox2
-'
-Me.GroupBox2.Controls.Add(Me.lblCptBkd)
-Me.GroupBox2.Controls.Add(Me.cmdPanCptBkdIns)
-Me.GroupBox2.Controls.Add(Me.dgMatBkd)
-Me.GroupBox2.Controls.Add(Me.cmdPanCptBkdQuit)
-Me.GroupBox2.Location = New System.Drawing.Point(8, 6)
-Me.GroupBox2.Name = "GroupBox2"
-Me.GroupBox2.Size = New System.Drawing.Size(459, 261)
-Me.GroupBox2.TabIndex = 523
-Me.GroupBox2.TabStop = false
-'
-'lblCptBkd
-'
-Me.lblCptBkd.AutoSize = true
-Me.lblCptBkd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline),System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.lblCptBkd.Location = New System.Drawing.Point(27, 26)
-Me.lblCptBkd.Name = "lblCptBkd"
-Me.lblCptBkd.Size = New System.Drawing.Size(167, 20)
-Me.lblCptBkd.TabIndex = 354
-Me.lblCptBkd.Text = "Material Breakdown"
-'
-'cmdPanCptBkdIns
-'
-Me.cmdPanCptBkdIns.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdPanCptBkdIns.Location = New System.Drawing.Point(265, 222)
-Me.cmdPanCptBkdIns.Name = "cmdPanCptBkdIns"
-Me.cmdPanCptBkdIns.Size = New System.Drawing.Size(80, 22)
-Me.cmdPanCptBkdIns.TabIndex = 522
-Me.cmdPanCptBkdIns.Text = "Insert"
-Me.cmdPanCptBkdIns.UseVisualStyleBackColor = true
-'
-'dgMatBkd
-'
-Me.dgMatBkd.AllowUserToAddRows = false
-Me.dgMatBkd.AllowUserToDeleteRows = false
-Me.dgMatBkd.ColumnHeadersHeight = 20
-Me.dgMatBkd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-Me.dgMatBkd.Location = New System.Drawing.Point(31, 54)
-Me.dgMatBkd.Name = "dgMatBkd"
-Me.dgMatBkd.RowHeadersWidth = 20
-Me.dgMatBkd.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.dgMatBkd.RowTemplate.Height = 16
-Me.dgMatBkd.Size = New System.Drawing.Size(400, 162)
-Me.dgMatBkd.TabIndex = 101
-'
-'cmdPanCptBkdQuit
-'
-Me.cmdPanCptBkdQuit.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdPanCptBkdQuit.Location = New System.Drawing.Point(351, 222)
-Me.cmdPanCptBkdQuit.Name = "cmdPanCptBkdQuit"
-Me.cmdPanCptBkdQuit.Size = New System.Drawing.Size(80, 22)
-Me.cmdPanCptBkdQuit.TabIndex = 384
-Me.cmdPanCptBkdQuit.Text = "Quit"
-Me.cmdPanCptBkdQuit.UseVisualStyleBackColor = true
 '
 'PanelItmNoSelect
 '
@@ -6632,8 +6774,8 @@ Me.dgPanItmNoSelect.TabIndex = 102
 '
 'txtSmpPrc
 '
-Me.txtSmpPrc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtSmpPrc.Location = New System.Drawing.Point(894, 373)
+Me.txtSmpPrc.Font = New System.Drawing.Font("Arial", 8.25!)
+Me.txtSmpPrc.Location = New System.Drawing.Point(881, 371)
 Me.txtSmpPrc.MaxLength = 10
 Me.txtSmpPrc.Name = "txtSmpPrc"
 Me.txtSmpPrc.Size = New System.Drawing.Size(55, 20)
@@ -6702,7 +6844,7 @@ Me.cmdPanItmNoConvApply.UseVisualStyleBackColor = true
 Me.txtPanItmNoConvTo.BackColor = System.Drawing.Color.White
 Me.txtPanItmNoConvTo.Location = New System.Drawing.Point(126, 292)
 Me.txtPanItmNoConvTo.Name = "txtPanItmNoConvTo"
-Me.txtPanItmNoConvTo.Size = New System.Drawing.Size(40, 20)
+Me.txtPanItmNoConvTo.Size = New System.Drawing.Size(40, 22)
 Me.txtPanItmNoConvTo.TabIndex = 388
 '
 'txtPanItmNoConvFrm
@@ -6710,7 +6852,7 @@ Me.txtPanItmNoConvTo.TabIndex = 388
 Me.txtPanItmNoConvFrm.BackColor = System.Drawing.Color.White
 Me.txtPanItmNoConvFrm.Location = New System.Drawing.Point(55, 292)
 Me.txtPanItmNoConvFrm.Name = "txtPanItmNoConvFrm"
-Me.txtPanItmNoConvFrm.Size = New System.Drawing.Size(40, 20)
+Me.txtPanItmNoConvFrm.Size = New System.Drawing.Size(40, 22)
 Me.txtPanItmNoConvFrm.TabIndex = 387
 '
 'lblPanItmNoConvTo
@@ -6762,16 +6904,16 @@ Me.cmdPanItmNoConvQuit.UseVisualStyleBackColor = true
 'lblSmpPrc
 '
 Me.lblSmpPrc.AutoSize = true
-Me.lblSmpPrc.Location = New System.Drawing.Point(827, 376)
+Me.lblSmpPrc.Location = New System.Drawing.Point(814, 374)
 Me.lblSmpPrc.Name = "lblSmpPrc"
-Me.lblSmpPrc.Size = New System.Drawing.Size(31, 13)
+Me.lblSmpPrc.Size = New System.Drawing.Size(28, 12)
 Me.lblSmpPrc.TabIndex = 348
 Me.lblSmpPrc.Text = "Price"
 '
 'txtCurCde7
 '
-Me.txtCurCde7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCurCde7.Location = New System.Drawing.Point(864, 373)
+Me.txtCurCde7.Font = New System.Drawing.Font("Arial", 8.25!)
+Me.txtCurCde7.Location = New System.Drawing.Point(851, 371)
 Me.txtCurCde7.MaxLength = 4
 Me.txtCurCde7.Name = "txtCurCde7"
 Me.txtCurCde7.Size = New System.Drawing.Size(30, 20)
@@ -6780,16 +6922,16 @@ Me.txtCurCde7.TabIndex = 303
 'lblSmpUnt
 '
 Me.lblSmpUnt.AutoSize = true
-Me.lblSmpUnt.Location = New System.Drawing.Point(754, 376)
+Me.lblSmpUnt.Location = New System.Drawing.Point(741, 374)
 Me.lblSmpUnt.Name = "lblSmpUnt"
-Me.lblSmpUnt.Size = New System.Drawing.Size(34, 13)
+Me.lblSmpUnt.Size = New System.Drawing.Size(32, 12)
 Me.lblSmpUnt.TabIndex = 346
 Me.lblSmpUnt.Text = "S.UM"
 '
 'txtSmpUnt
 '
-Me.txtSmpUnt.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtSmpUnt.Location = New System.Drawing.Point(791, 373)
+Me.txtSmpUnt.Font = New System.Drawing.Font("Arial", 8.25!)
+Me.txtSmpUnt.Location = New System.Drawing.Point(778, 371)
 Me.txtSmpUnt.MaxLength = 4
 Me.txtSmpUnt.Name = "txtSmpUnt"
 Me.txtSmpUnt.Size = New System.Drawing.Size(30, 20)
@@ -6798,16 +6940,16 @@ Me.txtSmpUnt.TabIndex = 302
 'lblSmpQtyTot
 '
 Me.lblSmpQtyTot.AutoSize = true
-Me.lblSmpQtyTot.Location = New System.Drawing.Point(684, 376)
+Me.lblSmpQtyTot.Location = New System.Drawing.Point(671, 374)
 Me.lblSmpQtyTot.Name = "lblSmpQtyTot"
-Me.lblSmpQtyTot.Size = New System.Drawing.Size(31, 13)
+Me.lblSmpQtyTot.Size = New System.Drawing.Size(29, 12)
 Me.lblSmpQtyTot.TabIndex = 344
 Me.lblSmpQtyTot.Text = "Total"
 '
 'txtSmpQty
 '
-Me.txtSmpQty.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtSmpQty.Location = New System.Drawing.Point(718, 373)
+Me.txtSmpQty.Font = New System.Drawing.Font("Arial", 8.25!)
+Me.txtSmpQty.Location = New System.Drawing.Point(705, 371)
 Me.txtSmpQty.MaxLength = 4
 Me.txtSmpQty.Name = "txtSmpQty"
 Me.txtSmpQty.Size = New System.Drawing.Size(30, 20)
@@ -6816,16 +6958,16 @@ Me.txtSmpQty.TabIndex = 301
 'lblCusQty
 '
 Me.lblCusQty.AutoSize = true
-Me.lblCusQty.Location = New System.Drawing.Point(618, 376)
+Me.lblCusQty.Location = New System.Drawing.Point(605, 374)
 Me.lblCusQty.Name = "lblCusQty"
-Me.lblCusQty.Size = New System.Drawing.Size(28, 13)
+Me.lblCusQty.Size = New System.Drawing.Size(26, 12)
 Me.lblCusQty.TabIndex = 342
 Me.lblCusQty.Text = "Cust"
 '
 'txtCusQty
 '
-Me.txtCusQty.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCusQty.Location = New System.Drawing.Point(648, 373)
+Me.txtCusQty.Font = New System.Drawing.Font("Arial", 8.25!)
+Me.txtCusQty.Location = New System.Drawing.Point(635, 371)
 Me.txtCusQty.MaxLength = 4
 Me.txtCusQty.Name = "txtCusQty"
 Me.txtCusQty.Size = New System.Drawing.Size(30, 20)
@@ -6834,25 +6976,25 @@ Me.txtCusQty.TabIndex = 300
 'lblStkQty
 '
 Me.lblStkQty.AutoSize = true
-Me.lblStkQty.Location = New System.Drawing.Point(545, 376)
+Me.lblStkQty.Location = New System.Drawing.Point(532, 374)
 Me.lblStkQty.Name = "lblStkQty"
-Me.lblStkQty.Size = New System.Drawing.Size(35, 13)
+Me.lblStkQty.Size = New System.Drawing.Size(31, 12)
 Me.lblStkQty.TabIndex = 340
 Me.lblStkQty.Text = "Stock"
 '
 'lblSmpQty
 '
 Me.lblSmpQty.AutoSize = true
-Me.lblSmpQty.Location = New System.Drawing.Point(490, 376)
+Me.lblSmpQty.Location = New System.Drawing.Point(477, 374)
 Me.lblSmpQty.Name = "lblSmpQty"
-Me.lblSmpQty.Size = New System.Drawing.Size(47, 13)
+Me.lblSmpQty.Size = New System.Drawing.Size(46, 12)
 Me.lblSmpQty.TabIndex = 339
 Me.lblSmpQty.Text = "Smp Qty"
 '
 'txtStkQty
 '
-Me.txtStkQty.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtStkQty.Location = New System.Drawing.Point(582, 373)
+Me.txtStkQty.Font = New System.Drawing.Font("Arial", 8.25!)
+Me.txtStkQty.Location = New System.Drawing.Point(569, 371)
 Me.txtStkQty.MaxLength = 4
 Me.txtStkQty.Name = "txtStkQty"
 Me.txtStkQty.Size = New System.Drawing.Size(30, 20)
@@ -6868,7 +7010,7 @@ Me.lblIMRmk.Text = "Item Rmk(IM)"
 '
 'txtIMRmk
 '
-Me.txtIMRmk.Font = New System.Drawing.Font("Microsoft Sans Serif", 9!)
+Me.txtIMRmk.Font = New System.Drawing.Font("Arial", 8.25!)
 Me.txtIMRmk.Location = New System.Drawing.Point(80, 449)
 Me.txtIMRmk.Name = "txtIMRmk"
 Me.txtIMRmk.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
@@ -6881,43 +7023,45 @@ Me.txtIMRmk.Text = ""
 Me.lblNote.AutoSize = true
 Me.lblNote.Location = New System.Drawing.Point(6, 489)
 Me.lblNote.Name = "lblNote"
-Me.lblNote.Size = New System.Drawing.Size(35, 13)
+Me.lblNote.Size = New System.Drawing.Size(31, 12)
 Me.lblNote.TabIndex = 351
 Me.lblNote.Text = "Notes"
 '
 'cboCusCadCurr
 '
+Me.cboCusCadCurr.Font = New System.Drawing.Font("Arial", 8.25!)
 Me.cboCusCadCurr.FormattingEnabled = true
 Me.cboCusCadCurr.Items.AddRange(New Object() {"", "USD", "CAD", "CNY", "JPY", "AUD", "EUR"})
-Me.cboCusCadCurr.Location = New System.Drawing.Point(715, 349)
+Me.cboCusCadCurr.Location = New System.Drawing.Point(702, 347)
 Me.cboCusCadCurr.Name = "cboCusCadCurr"
-Me.cboCusCadCurr.Size = New System.Drawing.Size(48, 21)
+Me.cboCusCadCurr.Size = New System.Drawing.Size(48, 22)
 Me.cboCusCadCurr.TabIndex = 296
 Me.cboCusCadCurr.Text = "CAD"
 '
 'cboCusUsdCurr
 '
+Me.cboCusUsdCurr.Font = New System.Drawing.Font("Arial", 8.25!)
 Me.cboCusUsdCurr.FormattingEnabled = true
 Me.cboCusUsdCurr.Items.AddRange(New Object() {"", "USD", "CAD", "CNY", "JPY", "AUD", "EUR"})
-Me.cboCusUsdCurr.Location = New System.Drawing.Point(577, 349)
+Me.cboCusUsdCurr.Location = New System.Drawing.Point(564, 347)
 Me.cboCusUsdCurr.Name = "cboCusUsdCurr"
-Me.cboCusUsdCurr.Size = New System.Drawing.Size(48, 21)
+Me.cboCusUsdCurr.Size = New System.Drawing.Size(48, 22)
 Me.cboCusUsdCurr.TabIndex = 294
 Me.cboCusUsdCurr.Text = "USD"
 '
 'lblCosMth
 '
 Me.lblCosMth.AutoSize = true
-Me.lblCosMth.Location = New System.Drawing.Point(490, 305)
+Me.lblCosMth.Location = New System.Drawing.Point(477, 303)
 Me.lblCosMth.Name = "lblCosMth"
-Me.lblCosMth.Size = New System.Drawing.Size(105, 13)
+Me.lblCosMth.Size = New System.Drawing.Size(104, 12)
 Me.lblCosMth.TabIndex = 356
 Me.lblCosMth.Text = "Construction Method"
 '
 'txtCosMth
 '
-Me.txtCosMth.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCosMth.Location = New System.Drawing.Point(601, 302)
+Me.txtCosMth.Font = New System.Drawing.Font("Arial", 8.25!)
+Me.txtCosMth.Location = New System.Drawing.Point(588, 300)
 Me.txtCosMth.MaxLength = 20
 Me.txtCosMth.Name = "txtCosMth"
 Me.txtCosMth.Size = New System.Drawing.Size(348, 20)
@@ -6929,17 +7073,18 @@ Me.lblRndSts.AutoSize = true
 Me.lblRndSts.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblRndSts.Location = New System.Drawing.Point(542, 7)
 Me.lblRndSts.Name = "lblRndSts"
-Me.lblRndSts.Size = New System.Drawing.Size(49, 13)
+Me.lblRndSts.Size = New System.Drawing.Size(45, 12)
 Me.lblRndSts.TabIndex = 432
 Me.lblRndSts.Text = "Smp Sts."
 Me.lblRndSts.Visible = false
 '
 'cboRndSts
 '
+Me.cboRndSts.Font = New System.Drawing.Font("Arial", 8.25!)
 Me.cboRndSts.FormattingEnabled = true
 Me.cboRndSts.Location = New System.Drawing.Point(571, 4)
 Me.cboRndSts.Name = "cboRndSts"
-Me.cboRndSts.Size = New System.Drawing.Size(55, 21)
+Me.cboRndSts.Size = New System.Drawing.Size(55, 22)
 Me.cboRndSts.TabIndex = 205
 Me.cboRndSts.Visible = false
 '
@@ -6962,7 +7107,7 @@ Me.gbTO.Controls.Add(Me.cboTOFty)
 Me.gbTO.Controls.Add(Me.lblTOFty)
 Me.gbTO.Controls.Add(Me.lblTO1ShipDat)
 Me.gbTO.Controls.Add(Me.lblTORcvDat)
-Me.gbTO.Location = New System.Drawing.Point(489, 394)
+Me.gbTO.Location = New System.Drawing.Point(476, 389)
 Me.gbTO.Name = "gbTO"
 Me.gbTO.Size = New System.Drawing.Size(466, 103)
 Me.gbTO.TabIndex = 451
@@ -6973,7 +7118,7 @@ Me.gbTO.TabStop = false
 Me.txtDTLCustShpDateStr.Location = New System.Drawing.Point(105, 82)
 Me.txtDTLCustShpDateStr.Mask = "##/##/####"
 Me.txtDTLCustShpDateStr.Name = "txtDTLCustShpDateStr"
-Me.txtDTLCustShpDateStr.Size = New System.Drawing.Size(86, 20)
+Me.txtDTLCustShpDateStr.Size = New System.Drawing.Size(86, 22)
 Me.txtDTLCustShpDateStr.TabIndex = 466
 '
 'txtDTLCustShpDateEnd
@@ -6981,7 +7126,7 @@ Me.txtDTLCustShpDateStr.TabIndex = 466
 Me.txtDTLCustShpDateEnd.Location = New System.Drawing.Point(276, 83)
 Me.txtDTLCustShpDateEnd.Mask = "##/##/####"
 Me.txtDTLCustShpDateEnd.Name = "txtDTLCustShpDateEnd"
-Me.txtDTLCustShpDateEnd.Size = New System.Drawing.Size(86, 20)
+Me.txtDTLCustShpDateEnd.Size = New System.Drawing.Size(86, 22)
 Me.txtDTLCustShpDateEnd.TabIndex = 465
 '
 'txtDTLFtyShpDateEnd
@@ -6989,7 +7134,7 @@ Me.txtDTLCustShpDateEnd.TabIndex = 465
 Me.txtDTLFtyShpDateEnd.Location = New System.Drawing.Point(276, 57)
 Me.txtDTLFtyShpDateEnd.Mask = "##/##/####"
 Me.txtDTLFtyShpDateEnd.Name = "txtDTLFtyShpDateEnd"
-Me.txtDTLFtyShpDateEnd.Size = New System.Drawing.Size(86, 20)
+Me.txtDTLFtyShpDateEnd.Size = New System.Drawing.Size(86, 22)
 Me.txtDTLFtyShpDateEnd.TabIndex = 464
 '
 'txtDTLFtyShpDateStr
@@ -6997,15 +7142,15 @@ Me.txtDTLFtyShpDateEnd.TabIndex = 464
 Me.txtDTLFtyShpDateStr.Location = New System.Drawing.Point(105, 56)
 Me.txtDTLFtyShpDateStr.Mask = "##/##/####"
 Me.txtDTLFtyShpDateStr.Name = "txtDTLFtyShpDateStr"
-Me.txtDTLFtyShpDateStr.Size = New System.Drawing.Size(86, 20)
+Me.txtDTLFtyShpDateStr.Size = New System.Drawing.Size(86, 22)
 Me.txtDTLFtyShpDateStr.TabIndex = 463
 '
 'Label114
 '
 Me.Label114.AutoSize = true
-Me.Label114.Location = New System.Drawing.Point(271, 16)
+Me.Label114.Location = New System.Drawing.Point(271, 13)
 Me.Label114.Name = "Label114"
-Me.Label114.Size = New System.Drawing.Size(68, 13)
+Me.Label114.Size = New System.Drawing.Size(66, 12)
 Me.Label114.TabIndex = 459
 Me.Label114.Text = "TO Ship Port"
 '
@@ -7030,20 +7175,18 @@ Me.btnTOMutShp.Text = "Multiple Shipment"
 'Label100
 '
 Me.Label100.AutoSize = true
-Me.Label100.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.Label100.Location = New System.Drawing.Point(199, 83)
 Me.Label100.Name = "Label100"
-Me.Label100.Size = New System.Drawing.Size(76, 13)
+Me.Label100.Size = New System.Drawing.Size(72, 12)
 Me.Label100.TabIndex = 457
 Me.Label100.Text = "Ship End Date"
 '
 'Label101
 '
 Me.Label101.AutoSize = true
-Me.Label101.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.Label101.Location = New System.Drawing.Point(2, 83)
 Me.Label101.Name = "Label101"
-Me.Label101.Size = New System.Drawing.Size(103, 13)
+Me.Label101.Size = New System.Drawing.Size(98, 12)
 Me.Label101.TabIndex = 456
 Me.Label101.Text = "Cust Ship Start Date"
 '
@@ -7052,7 +7195,7 @@ Me.Label101.Text = "Cust Ship Start Date"
 Me.Label99.AutoSize = true
 Me.Label99.Location = New System.Drawing.Point(6, 39)
 Me.Label99.Name = "Label99"
-Me.Label99.Size = New System.Drawing.Size(62, 13)
+Me.Label99.Size = New System.Drawing.Size(60, 12)
 Me.Label99.TabIndex = 454
 Me.Label99.Text = "TO Remark"
 '
@@ -7072,7 +7215,7 @@ Me.txtTORemark.TabIndex = 307
 Me.lblTOQty.AutoSize = true
 Me.lblTOQty.Location = New System.Drawing.Point(157, 14)
 Me.lblTOQty.Name = "lblTOQty"
-Me.lblTOQty.Size = New System.Drawing.Size(41, 13)
+Me.lblTOQty.Size = New System.Drawing.Size(40, 12)
 Me.lblTOQty.TabIndex = 389
 Me.lblTOQty.Text = "TO Qty"
 '
@@ -7090,7 +7233,7 @@ Me.txtTOOrdQty.TabIndex = 306
 Me.cboTOFty.FormattingEnabled = true
 Me.cboTOFty.Location = New System.Drawing.Point(70, 11)
 Me.cboTOFty.Name = "cboTOFty"
-Me.cboTOFty.Size = New System.Drawing.Size(86, 21)
+Me.cboTOFty.Size = New System.Drawing.Size(86, 20)
 Me.cboTOFty.TabIndex = 305
 '
 'lblTOFty
@@ -7099,34 +7242,31 @@ Me.lblTOFty.AutoSize = true
 Me.lblTOFty.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblTOFty.Location = New System.Drawing.Point(2, 14)
 Me.lblTOFty.Name = "lblTOFty"
-Me.lblTOFty.Size = New System.Drawing.Size(62, 13)
+Me.lblTOFty.Size = New System.Drawing.Size(62, 12)
 Me.lblTOFty.TabIndex = 440
 Me.lblTOFty.Text = "Buyer Code"
 '
 'lblTO1ShipDat
 '
 Me.lblTO1ShipDat.AutoSize = true
-Me.lblTO1ShipDat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.lblTO1ShipDat.Location = New System.Drawing.Point(199, 62)
 Me.lblTO1ShipDat.Name = "lblTO1ShipDat"
-Me.lblTO1ShipDat.Size = New System.Drawing.Size(76, 13)
+Me.lblTO1ShipDat.Size = New System.Drawing.Size(72, 12)
 Me.lblTO1ShipDat.TabIndex = 446
 Me.lblTO1ShipDat.Text = "Ship End Date"
 '
 'lblTORcvDat
 '
 Me.lblTORcvDat.AutoSize = true
-Me.lblTORcvDat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.lblTORcvDat.Location = New System.Drawing.Point(2, 62)
 Me.lblTORcvDat.Name = "lblTORcvDat"
-Me.lblTORcvDat.Size = New System.Drawing.Size(96, 13)
+Me.lblTORcvDat.Size = New System.Drawing.Size(92, 12)
 Me.lblTORcvDat.TabIndex = 444
 Me.lblTORcvDat.Text = "Fty Ship Start Date"
 '
 'cmdCptBkd
 '
-Me.cmdCptBkd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdCptBkd.Location = New System.Drawing.Point(489, 505)
+Me.cmdCptBkd.Location = New System.Drawing.Point(476, 495)
 Me.cmdCptBkd.Name = "cmdCptBkd"
 Me.cmdCptBkd.Size = New System.Drawing.Size(100, 21)
 Me.cmdCptBkd.TabIndex = 313
@@ -7135,18 +7275,16 @@ Me.cmdCptBkd.Text = "Mtrl Breakdown"
 'chkFtyTmpItm
 '
 Me.chkFtyTmpItm.AutoSize = true
-Me.chkFtyTmpItm.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.chkFtyTmpItm.Location = New System.Drawing.Point(632, 6)
 Me.chkFtyTmpItm.Name = "chkFtyTmpItm"
-Me.chkFtyTmpItm.Size = New System.Drawing.Size(93, 17)
+Me.chkFtyTmpItm.Size = New System.Drawing.Size(93, 16)
 Me.chkFtyTmpItm.TabIndex = 206
 Me.chkFtyTmpItm.Text = "Fty Temp Item"
 Me.chkFtyTmpItm.UseVisualStyleBackColor = true
 '
 'cmdAss
 '
-Me.cmdAss.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdAss.Location = New System.Drawing.Point(590, 505)
+Me.cmdAss.Location = New System.Drawing.Point(577, 495)
 Me.cmdAss.Name = "cmdAss"
 Me.cmdAss.Size = New System.Drawing.Size(70, 21)
 Me.cmdAss.TabIndex = 314
@@ -7155,16 +7293,16 @@ Me.cmdAss.Text = "Assortment"
 'lblCustRetail
 '
 Me.lblCustRetail.AutoSize = true
-Me.lblCustRetail.Location = New System.Drawing.Point(490, 352)
+Me.lblCustRetail.Location = New System.Drawing.Point(477, 350)
 Me.lblCustRetail.Name = "lblCustRetail"
-Me.lblCustRetail.Size = New System.Drawing.Size(84, 13)
+Me.lblCustRetail.Size = New System.Drawing.Size(83, 12)
 Me.lblCustRetail.TabIndex = 427
 Me.lblCustRetail.Text = "Customer Retail:"
 '
 'txtCusUsd
 '
-Me.txtCusUsd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCusUsd.Location = New System.Drawing.Point(624, 349)
+Me.txtCusUsd.Font = New System.Drawing.Font("Arial", 8.25!)
+Me.txtCusUsd.Location = New System.Drawing.Point(611, 347)
 Me.txtCusUsd.MaxLength = 20
 Me.txtCusUsd.Name = "txtCusUsd"
 Me.txtCusUsd.Size = New System.Drawing.Size(80, 20)
@@ -7172,8 +7310,8 @@ Me.txtCusUsd.TabIndex = 295
 '
 'txtCusCad
 '
-Me.txtCusCad.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtCusCad.Location = New System.Drawing.Point(762, 349)
+Me.txtCusCad.Font = New System.Drawing.Font("Arial", 8.25!)
+Me.txtCusCad.Location = New System.Drawing.Point(749, 347)
 Me.txtCusCad.MaxLength = 20
 Me.txtCusCad.Name = "txtCusCad"
 Me.txtCusCad.Size = New System.Drawing.Size(80, 20)
@@ -7182,10 +7320,9 @@ Me.txtCusCad.TabIndex = 297
 'chkDelete
 '
 Me.chkDelete.AutoSize = true
-Me.chkDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.chkDelete.Location = New System.Drawing.Point(794, 6)
 Me.chkDelete.Name = "chkDelete"
-Me.chkDelete.Size = New System.Drawing.Size(149, 17)
+Me.chkDelete.Size = New System.Drawing.Size(145, 16)
 Me.chkDelete.TabIndex = 208
 Me.chkDelete.Text = "Delete (Checked if delete)"
 Me.chkDelete.UseVisualStyleBackColor = true
@@ -7194,9 +7331,9 @@ Me.chkDelete.UseVisualStyleBackColor = true
 '
 Me.lblDtyRatPercent.AutoSize = true
 Me.lblDtyRatPercent.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblDtyRatPercent.Location = New System.Drawing.Point(935, 443)
+Me.lblDtyRatPercent.Location = New System.Drawing.Point(922, 443)
 Me.lblDtyRatPercent.Name = "lblDtyRatPercent"
-Me.lblDtyRatPercent.Size = New System.Drawing.Size(15, 13)
+Me.lblDtyRatPercent.Size = New System.Drawing.Size(14, 12)
 Me.lblDtyRatPercent.TabIndex = 419
 Me.lblDtyRatPercent.Text = "%"
 '
@@ -7204,17 +7341,17 @@ Me.lblDtyRatPercent.Text = "%"
 '
 Me.lblDtyRat.AutoSize = true
 Me.lblDtyRat.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblDtyRat.Location = New System.Drawing.Point(848, 352)
+Me.lblDtyRat.Location = New System.Drawing.Point(835, 350)
 Me.lblDtyRat.Name = "lblDtyRat"
-Me.lblDtyRat.Size = New System.Drawing.Size(29, 13)
+Me.lblDtyRat.Size = New System.Drawing.Size(28, 12)
 Me.lblDtyRat.TabIndex = 418
 Me.lblDtyRat.Text = "Duty"
 '
 'txtDtyRat
 '
 Me.txtDtyRat.Enabled = false
-Me.txtDtyRat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.txtDtyRat.Location = New System.Drawing.Point(882, 349)
+Me.txtDtyRat.Font = New System.Drawing.Font("Arial", 8.25!)
+Me.txtDtyRat.Location = New System.Drawing.Point(869, 347)
 Me.txtDtyRat.MaxLength = 10
 Me.txtDtyRat.Name = "txtDtyRat"
 Me.txtDtyRat.Size = New System.Drawing.Size(67, 20)
@@ -7222,28 +7359,28 @@ Me.txtDtyRat.TabIndex = 298
 '
 'cboHrmCde
 '
+Me.cboHrmCde.Font = New System.Drawing.Font("Arial", 8.25!)
 Me.cboHrmCde.FormattingEnabled = true
-Me.cboHrmCde.Location = New System.Drawing.Point(577, 325)
+Me.cboHrmCde.Location = New System.Drawing.Point(564, 323)
 Me.cboHrmCde.Name = "cboHrmCde"
-Me.cboHrmCde.Size = New System.Drawing.Size(372, 21)
+Me.cboHrmCde.Size = New System.Drawing.Size(372, 22)
 Me.cboHrmCde.TabIndex = 293
 '
 'lblHrmCde
 '
 Me.lblHrmCde.AutoSize = true
-Me.lblHrmCde.Location = New System.Drawing.Point(490, 328)
+Me.lblHrmCde.Location = New System.Drawing.Point(477, 326)
 Me.lblHrmCde.Name = "lblHrmCde"
-Me.lblHrmCde.Size = New System.Drawing.Size(82, 13)
+Me.lblHrmCde.Size = New System.Drawing.Size(79, 12)
 Me.lblHrmCde.TabIndex = 417
 Me.lblHrmCde.Text = "HSTU / Tariff #"
 '
 'chkApproveDtl
 '
 Me.chkApproveDtl.AutoSize = true
-Me.chkApproveDtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.chkApproveDtl.Location = New System.Drawing.Point(726, 6)
 Me.chkApproveDtl.Name = "chkApproveDtl"
-Me.chkApproveDtl.Size = New System.Drawing.Size(66, 17)
+Me.chkApproveDtl.Size = New System.Drawing.Size(65, 16)
 Me.chkApproveDtl.TabIndex = 207
 Me.chkApproveDtl.Text = "Approve"
 Me.chkApproveDtl.UseVisualStyleBackColor = true
@@ -7292,7 +7429,7 @@ Me.gbPrice.Controls.Add(Me.lblDiscnt)
 Me.gbPrice.Controls.Add(Me.txtDiscnt)
 Me.gbPrice.Controls.Add(Me.lblMUPrice)
 Me.gbPrice.Controls.Add(Me.txtMUPrice)
-Me.gbPrice.Location = New System.Drawing.Point(489, 25)
+Me.gbPrice.Location = New System.Drawing.Point(476, 25)
 Me.gbPrice.Name = "gbPrice"
 Me.gbPrice.Size = New System.Drawing.Size(466, 215)
 Me.gbPrice.TabIndex = 390
@@ -7301,12 +7438,11 @@ Me.gbPrice.TabStop = false
 'lblMUMin
 '
 Me.lblMUMin.AutoSize = true
-Me.lblMUMin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.lblMUMin.Location = New System.Drawing.Point(83, 37)
+Me.lblMUMin.Location = New System.Drawing.Point(44, 37)
 Me.lblMUMin.Name = "lblMUMin"
-Me.lblMUMin.Size = New System.Drawing.Size(56, 13)
+Me.lblMUMin.Size = New System.Drawing.Size(138, 12)
 Me.lblMUMin.TabIndex = 495
-Me.lblMUMin.Text = "Min 0.00%"
+Me.lblMUMin.Text = "(Min 0.0000%; USD $XXX)"
 '
 'txtMU
 '
@@ -7320,7 +7456,6 @@ Me.txtMU.Text = "0.00"
 '
 'lblMU
 '
-Me.lblMU.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.lblMU.Location = New System.Drawing.Point(2, 49)
 Me.lblMU.Name = "lblMU"
 Me.lblMU.Size = New System.Drawing.Size(82, 28)
@@ -7330,10 +7465,9 @@ Me.lblMU.Text = "Primary Cust. Markup"
 'lblItmCommAmt
 '
 Me.lblItmCommAmt.AutoSize = true
-Me.lblItmCommAmt.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.lblItmCommAmt.Location = New System.Drawing.Point(386, 37)
 Me.lblItmCommAmt.Name = "lblItmCommAmt"
-Me.lblItmCommAmt.Size = New System.Drawing.Size(55, 13)
+Me.lblItmCommAmt.Size = New System.Drawing.Size(60, 12)
 Me.lblItmCommAmt.TabIndex = 492
 Me.lblItmCommAmt.Text = "Amt (XXX)"
 '
@@ -7352,17 +7486,16 @@ Me.lblStdPrc.AutoSize = true
 Me.lblStdPrc.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblStdPrc.Location = New System.Drawing.Point(218, 78)
 Me.lblStdPrc.Name = "lblStdPrc"
-Me.lblStdPrc.Size = New System.Drawing.Size(77, 13)
+Me.lblStdPrc.Size = New System.Drawing.Size(72, 12)
 Me.lblStdPrc.TabIndex = 412
 Me.lblStdPrc.Text = "Standard Price"
 '
 'lblPckCstAmt
 '
 Me.lblPckCstAmt.AutoSize = true
-Me.lblPckCstAmt.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.lblPckCstAmt.Location = New System.Drawing.Point(233, 37)
 Me.lblPckCstAmt.Name = "lblPckCstAmt"
-Me.lblPckCstAmt.Size = New System.Drawing.Size(55, 13)
+Me.lblPckCstAmt.Size = New System.Drawing.Size(60, 12)
 Me.lblPckCstAmt.TabIndex = 490
 Me.lblPckCstAmt.Text = "Amt (XXX)"
 '
@@ -7370,9 +7503,9 @@ Me.lblPckCstAmt.Text = "Amt (XXX)"
 '
 Me.lblCurCde2.AutoSize = true
 Me.lblCurCde2.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblCurCde2.Location = New System.Drawing.Point(83, 78)
+Me.lblCurCde2.Location = New System.Drawing.Point(86, 78)
 Me.lblCurCde2.Name = "lblCurCde2"
-Me.lblCurCde2.Size = New System.Drawing.Size(28, 13)
+Me.lblCurCde2.Size = New System.Drawing.Size(29, 12)
 Me.lblCurCde2.TabIndex = 409
 Me.lblCurCde2.Text = "CCY"
 '
@@ -7427,19 +7560,18 @@ Me.txtCurCde3.TabIndex = 272
 '
 Me.lblBasPrc.AutoSize = true
 Me.lblBasPrc.ForeColor = System.Drawing.SystemColors.ControlText
-Me.lblBasPrc.Location = New System.Drawing.Point(116, 78)
+Me.lblBasPrc.Location = New System.Drawing.Point(119, 78)
 Me.lblBasPrc.Name = "lblBasPrc"
-Me.lblBasPrc.Size = New System.Drawing.Size(60, 13)
+Me.lblBasPrc.Size = New System.Drawing.Size(56, 12)
 Me.lblBasPrc.TabIndex = 406
 Me.lblBasPrc.Text = "Basic Price"
 '
 'lblPckCst
 '
 Me.lblPckCst.AutoSize = true
-Me.lblPckCst.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.lblPckCst.Location = New System.Drawing.Point(150, 57)
 Me.lblPckCst.Name = "lblPckCst"
-Me.lblPckCst.Size = New System.Drawing.Size(82, 13)
+Me.lblPckCst.Size = New System.Drawing.Size(77, 12)
 Me.lblPckCst.TabIndex = 481
 Me.lblPckCst.Text = "Packaging Cost"
 '
@@ -7449,17 +7581,16 @@ Me.lblCus2Dp.AutoSize = true
 Me.lblCus2Dp.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblCus2Dp.Location = New System.Drawing.Point(2, 121)
 Me.lblCus2Dp.Name = "lblCus2Dp"
-Me.lblCus2Dp.Size = New System.Drawing.Size(58, 13)
+Me.lblCus2Dp.Size = New System.Drawing.Size(54, 12)
 Me.lblCus2Dp.TabIndex = 391
 Me.lblCus2Dp.Text = "Secondary"
 '
 'lblItmComm
 '
 Me.lblItmComm.AutoSize = true
-Me.lblItmComm.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.lblItmComm.Location = New System.Drawing.Point(300, 57)
 Me.lblItmComm.Name = "lblItmComm"
-Me.lblItmComm.Size = New System.Drawing.Size(85, 13)
+Me.lblItmComm.Size = New System.Drawing.Size(87, 12)
 Me.lblItmComm.TabIndex = 486
 Me.lblItmComm.Text = "Item Commission"
 '
@@ -7469,7 +7600,7 @@ Me.lblCus1Dp.AutoSize = true
 Me.lblCus1Dp.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblCus1Dp.Location = New System.Drawing.Point(2, 98)
 Me.lblCus1Dp.Name = "lblCus1Dp"
-Me.lblCus1Dp.Size = New System.Drawing.Size(41, 13)
+Me.lblCus1Dp.Size = New System.Drawing.Size(42, 12)
 Me.lblCus1Dp.TabIndex = 388
 Me.lblCus1Dp.Text = "Primary"
 '
@@ -7488,7 +7619,7 @@ Me.lblAdjPrc.AutoSize = true
 Me.lblAdjPrc.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblAdjPrc.Location = New System.Drawing.Point(347, 78)
 Me.lblAdjPrc.Name = "lblAdjPrc"
-Me.lblAdjPrc.Size = New System.Drawing.Size(75, 13)
+Me.lblAdjPrc.Size = New System.Drawing.Size(72, 12)
 Me.lblAdjPrc.TabIndex = 411
 Me.lblAdjPrc.Text = "Adjusted Price"
 '
@@ -7516,7 +7647,7 @@ Me.lblCIHprc.AutoSize = true
 Me.lblCIHprc.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblCIHprc.Location = New System.Drawing.Point(2, 144)
 Me.lblCIHprc.Name = "lblCIHprc"
-Me.lblCIHprc.Size = New System.Drawing.Size(52, 13)
+Me.lblCIHprc.Size = New System.Drawing.Size(51, 12)
 Me.lblCIHprc.TabIndex = 392
 Me.lblCIHprc.Text = "CIH Price"
 '
@@ -7558,7 +7689,7 @@ Me.optOneTimN.AutoSize = true
 Me.optOneTimN.Checked = true
 Me.optOneTimN.Location = New System.Drawing.Point(187, 20)
 Me.optOneTimN.Name = "optOneTimN"
-Me.optOneTimN.Size = New System.Drawing.Size(39, 17)
+Me.optOneTimN.Size = New System.Drawing.Size(37, 16)
 Me.optOneTimN.TabIndex = 388
 Me.optOneTimN.TabStop = true
 Me.optOneTimN.Text = "No"
@@ -7570,7 +7701,7 @@ Me.optOneTimN.Visible = false
 Me.optOneTimY.AutoSize = true
 Me.optOneTimY.Location = New System.Drawing.Point(144, 19)
 Me.optOneTimY.Name = "optOneTimY"
-Me.optOneTimY.Size = New System.Drawing.Size(43, 17)
+Me.optOneTimY.Size = New System.Drawing.Size(40, 16)
 Me.optOneTimY.TabIndex = 387
 Me.optOneTimY.Text = "Yes"
 Me.optOneTimY.UseVisualStyleBackColor = true
@@ -7581,7 +7712,7 @@ Me.optOneTimY.Visible = false
 Me.optMU.AutoSize = true
 Me.optMU.Location = New System.Drawing.Point(224, 11)
 Me.optMU.Name = "optMU"
-Me.optMU.Size = New System.Drawing.Size(77, 17)
+Me.optMU.Size = New System.Drawing.Size(77, 16)
 Me.optMU.TabIndex = 263
 Me.optMU.Text = "Mark Up %"
 Me.optMU.UseVisualStyleBackColor = true
@@ -7591,7 +7722,7 @@ Me.optMU.UseVisualStyleBackColor = true
 Me.optGM.AutoSize = true
 Me.optGM.Location = New System.Drawing.Point(115, 11)
 Me.optGM.Name = "optGM"
-Me.optGM.Size = New System.Drawing.Size(98, 17)
+Me.optGM.Size = New System.Drawing.Size(98, 16)
 Me.optGM.TabIndex = 262
 Me.optGM.Text = "Gross Margin %"
 Me.optGM.UseVisualStyleBackColor = true
@@ -7611,13 +7742,12 @@ Me.lblForSecCust.AutoSize = true
 Me.lblForSecCust.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblForSecCust.Location = New System.Drawing.Point(2, 13)
 Me.lblForSecCust.Name = "lblForSecCust"
-Me.lblForSecCust.Size = New System.Drawing.Size(103, 13)
+Me.lblForSecCust.Size = New System.Drawing.Size(100, 12)
 Me.lblForSecCust.TabIndex = 383
 Me.lblForSecCust.Text = "For Secondary Cust."
 '
 'cmdPrcEmt
 '
-Me.cmdPrcEmt.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.cmdPrcEmt.Location = New System.Drawing.Point(401, 163)
 Me.cmdPrcEmt.Name = "cmdPrcEmt"
 Me.cmdPrcEmt.Size = New System.Drawing.Size(60, 44)
@@ -7630,7 +7760,7 @@ Me.lblPrcKey.AutoSize = true
 Me.lblPrcKey.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblPrcKey.Location = New System.Drawing.Point(2, 167)
 Me.lblPrcKey.Name = "lblPrcKey"
-Me.lblPrcKey.Size = New System.Drawing.Size(63, 13)
+Me.lblPrcKey.Size = New System.Drawing.Size(62, 12)
 Me.lblPrcKey.TabIndex = 402
 Me.lblPrcKey.Text = "Cust. Group"
 '
@@ -7639,7 +7769,7 @@ Me.lblPrcKey.Text = "Cust. Group"
 Me.lblPeriod.AutoSize = true
 Me.lblPeriod.Location = New System.Drawing.Point(2, 190)
 Me.lblPeriod.Name = "lblPeriod"
-Me.lblPeriod.Size = New System.Drawing.Size(61, 13)
+Me.lblPeriod.Size = New System.Drawing.Size(59, 12)
 Me.lblPeriod.TabIndex = 293
 Me.lblPeriod.Text = "Cost Period"
 '
@@ -7678,7 +7808,7 @@ Me.lblExpDat.AutoSize = true
 Me.lblExpDat.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblExpDat.Location = New System.Drawing.Point(220, 190)
 Me.lblExpDat.Name = "lblExpDat"
-Me.lblExpDat.Size = New System.Drawing.Size(61, 13)
+Me.lblExpDat.Size = New System.Drawing.Size(61, 12)
 Me.lblExpDat.TabIndex = 400
 Me.lblExpDat.Text = "Expiry Date"
 '
@@ -7698,7 +7828,7 @@ Me.lblEffDat.AutoSize = true
 Me.lblEffDat.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblEffDat.Location = New System.Drawing.Point(220, 167)
 Me.lblEffDat.Name = "lblEffDat"
-Me.lblEffDat.Size = New System.Drawing.Size(75, 13)
+Me.lblEffDat.Size = New System.Drawing.Size(71, 12)
 Me.lblEffDat.TabIndex = 398
 Me.lblEffDat.Text = "Effective Date"
 '
@@ -7718,7 +7848,7 @@ Me.lblPCPrc.AutoSize = true
 Me.lblPCPrc.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblPCPrc.Location = New System.Drawing.Point(220, 144)
 Me.lblPCPrc.Name = "lblPCPrc"
-Me.lblPCPrc.Size = New System.Drawing.Size(63, 13)
+Me.lblPCPrc.Size = New System.Drawing.Size(62, 12)
 Me.lblPCPrc.TabIndex = 395
 Me.lblPCPrc.Text = "Price for PC"
 '
@@ -7737,7 +7867,7 @@ Me.lblDiscnt.AutoSize = true
 Me.lblDiscnt.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblDiscnt.Location = New System.Drawing.Point(175, 170)
 Me.lblDiscnt.Name = "lblDiscnt"
-Me.lblDiscnt.Size = New System.Drawing.Size(39, 13)
+Me.lblDiscnt.Size = New System.Drawing.Size(37, 12)
 Me.lblDiscnt.TabIndex = 386
 Me.lblDiscnt.Text = "Disc %"
 Me.lblDiscnt.Visible = false
@@ -7758,7 +7888,7 @@ Me.lblMUPrice.AutoSize = true
 Me.lblMUPrice.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblMUPrice.Location = New System.Drawing.Point(372, 8)
 Me.lblMUPrice.Name = "lblMUPrice"
-Me.lblMUPrice.Size = New System.Drawing.Size(70, 13)
+Me.lblMUPrice.Size = New System.Drawing.Size(68, 12)
 Me.lblMUPrice.TabIndex = 498
 Me.lblMUPrice.Text = "Markup Price"
 Me.lblMUPrice.Visible = false
@@ -7780,13 +7910,13 @@ Me.lblDept.AutoSize = true
 Me.lblDept.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblDept.Location = New System.Drawing.Point(427, 7)
 Me.lblDept.Name = "lblDept"
-Me.lblDept.Size = New System.Drawing.Size(33, 13)
+Me.lblDept.Size = New System.Drawing.Size(30, 12)
 Me.lblDept.TabIndex = 382
 Me.lblDept.Text = "Dept."
 '
 'txtDept
 '
-Me.txtDept.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtDept.Font = New System.Drawing.Font("Arial", 8.25!)
 Me.txtDept.Location = New System.Drawing.Point(466, 4)
 Me.txtDept.MaxLength = 20
 Me.txtDept.Name = "txtDept"
@@ -7875,9 +8005,9 @@ Me.gbPacking.TabStop = false
 'cbocusprc
 '
 Me.cbocusprc.FormattingEnabled = true
-Me.cbocusprc.Location = New System.Drawing.Point(203, 11)
+Me.cbocusprc.Location = New System.Drawing.Point(203, 31)
 Me.cbocusprc.Name = "cbocusprc"
-Me.cbocusprc.Size = New System.Drawing.Size(63, 21)
+Me.cbocusprc.Size = New System.Drawing.Size(63, 20)
 Me.cbocusprc.TabIndex = 446
 Me.cbocusprc.Visible = false
 '
@@ -7887,7 +8017,7 @@ Me.lblPckingTerm.AutoSize = true
 Me.lblPckingTerm.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblPckingTerm.Location = New System.Drawing.Point(75, 15)
 Me.lblPckingTerm.Name = "lblPckingTerm"
-Me.lblPckingTerm.Size = New System.Drawing.Size(296, 13)
+Me.lblPckingTerm.Size = New System.Drawing.Size(292, 12)
 Me.lblPckingTerm.TabIndex = 445
 Me.lblPckingTerm.Text = "(UM/Inner/Master/CFT/CBM/Fty Term/HK Term/Tran Term)"
 '
@@ -7896,15 +8026,15 @@ Me.lblPckingTerm.Text = "(UM/Inner/Master/CFT/CBM/Fty Term/HK Term/Tran Term)"
 Me.cboTranTrm.FormattingEnabled = true
 Me.cboTranTrm.Location = New System.Drawing.Point(403, 32)
 Me.cboTranTrm.Name = "cboTranTrm"
-Me.cboTranTrm.Size = New System.Drawing.Size(58, 21)
+Me.cboTranTrm.Size = New System.Drawing.Size(58, 20)
 Me.cboTranTrm.TabIndex = 234
 '
 'cboDtlPrcTrm
 '
 Me.cboDtlPrcTrm.FormattingEnabled = true
-Me.cboDtlPrcTrm.Location = New System.Drawing.Point(343, 13)
+Me.cboDtlPrcTrm.Location = New System.Drawing.Point(343, 32)
 Me.cboDtlPrcTrm.Name = "cboDtlPrcTrm"
-Me.cboDtlPrcTrm.Size = New System.Drawing.Size(61, 21)
+Me.cboDtlPrcTrm.Size = New System.Drawing.Size(61, 20)
 Me.cboDtlPrcTrm.TabIndex = 233
 '
 'cboFtyPrcTrm
@@ -7912,7 +8042,7 @@ Me.cboDtlPrcTrm.TabIndex = 233
 Me.cboFtyPrcTrm.FormattingEnabled = true
 Me.cboFtyPrcTrm.Location = New System.Drawing.Point(282, 32)
 Me.cboFtyPrcTrm.Name = "cboFtyPrcTrm"
-Me.cboFtyPrcTrm.Size = New System.Drawing.Size(60, 21)
+Me.cboFtyPrcTrm.Size = New System.Drawing.Size(60, 20)
 Me.cboFtyPrcTrm.TabIndex = 232
 '
 'cboUM
@@ -7920,7 +8050,7 @@ Me.cboFtyPrcTrm.TabIndex = 232
 Me.cboUM.FormattingEnabled = true
 Me.cboUM.Location = New System.Drawing.Point(78, 32)
 Me.cboUM.Name = "cboUM"
-Me.cboUM.Size = New System.Drawing.Size(63, 21)
+Me.cboUM.Size = New System.Drawing.Size(63, 20)
 Me.cboUM.TabIndex = 227
 '
 'lblKG2
@@ -7928,7 +8058,7 @@ Me.cboUM.TabIndex = 227
 Me.lblKG2.AutoSize = true
 Me.lblKG2.Location = New System.Drawing.Point(271, 82)
 Me.lblKG2.Name = "lblKG2"
-Me.lblKG2.Size = New System.Drawing.Size(22, 13)
+Me.lblKG2.Size = New System.Drawing.Size(21, 12)
 Me.lblKG2.TabIndex = 327
 Me.lblKG2.Text = "KG"
 '
@@ -7937,7 +8067,7 @@ Me.lblKG2.Text = "KG"
 Me.lblNetwgt.AutoSize = true
 Me.lblNetwgt.Location = New System.Drawing.Point(156, 82)
 Me.lblNetwgt.Name = "lblNetwgt"
-Me.lblNetwgt.Size = New System.Drawing.Size(61, 13)
+Me.lblNetwgt.Size = New System.Drawing.Size(58, 12)
 Me.lblNetwgt.TabIndex = 326
 Me.lblNetwgt.Text = "Net Weight"
 '
@@ -7955,7 +8085,7 @@ Me.txtNetwgt.TabIndex = 243
 Me.lblKG1.AutoSize = true
 Me.lblKG1.Location = New System.Drawing.Point(129, 82)
 Me.lblKG1.Name = "lblKG1"
-Me.lblKG1.Size = New System.Drawing.Size(22, 13)
+Me.lblKG1.Size = New System.Drawing.Size(21, 12)
 Me.lblKG1.TabIndex = 324
 Me.lblKG1.Text = "KG"
 '
@@ -7973,7 +8103,7 @@ Me.txtGrswgt.TabIndex = 242
 Me.lblGrswgt.AutoSize = true
 Me.lblGrswgt.Location = New System.Drawing.Point(3, 82)
 Me.lblGrswgt.Name = "lblGrswgt"
-Me.lblGrswgt.Size = New System.Drawing.Size(71, 13)
+Me.lblGrswgt.Size = New System.Drawing.Size(68, 12)
 Me.lblGrswgt.TabIndex = 323
 Me.lblGrswgt.Text = "Gross Weight"
 '
@@ -7982,7 +8112,7 @@ Me.lblGrswgt.Text = "Gross Weight"
 Me.lblInrin.AutoSize = true
 Me.lblInrin.Location = New System.Drawing.Point(50, 122)
 Me.lblInrin.Name = "lblInrin"
-Me.lblInrin.Size = New System.Drawing.Size(21, 13)
+Me.lblInrin.Size = New System.Drawing.Size(22, 12)
 Me.lblInrin.TabIndex = 438
 Me.lblInrin.Text = "(in)"
 '
@@ -7991,7 +8121,7 @@ Me.lblInrin.Text = "(in)"
 Me.lblMtrin.AutoSize = true
 Me.lblMtrin.Location = New System.Drawing.Point(50, 147)
 Me.lblMtrin.Name = "lblMtrin"
-Me.lblMtrin.Size = New System.Drawing.Size(21, 13)
+Me.lblMtrin.Size = New System.Drawing.Size(22, 12)
 Me.lblMtrin.TabIndex = 439
 Me.lblMtrin.Text = "(in)"
 '
@@ -8000,7 +8130,7 @@ Me.lblMtrin.Text = "(in)"
 Me.lblCmH.AutoSize = true
 Me.lblCmH.Location = New System.Drawing.Point(430, 102)
 Me.lblCmH.Name = "lblCmH"
-Me.lblCmH.Size = New System.Drawing.Size(15, 13)
+Me.lblCmH.Size = New System.Drawing.Size(13, 12)
 Me.lblCmH.TabIndex = 437
 Me.lblCmH.Text = "H"
 '
@@ -8020,7 +8150,7 @@ Me.chkPC.UseVisualStyleBackColor = true
 Me.lblCmW.AutoSize = true
 Me.lblCmW.Location = New System.Drawing.Point(368, 102)
 Me.lblCmW.Name = "lblCmW"
-Me.lblCmW.Size = New System.Drawing.Size(18, 13)
+Me.lblCmW.Size = New System.Drawing.Size(16, 12)
 Me.lblCmW.TabIndex = 436
 Me.lblCmW.Text = "W"
 '
@@ -8029,7 +8159,7 @@ Me.lblCmW.Text = "W"
 Me.lblInH.AutoSize = true
 Me.lblInH.Location = New System.Drawing.Point(213, 102)
 Me.lblInH.Name = "lblInH"
-Me.lblInH.Size = New System.Drawing.Size(15, 13)
+Me.lblInH.Size = New System.Drawing.Size(13, 12)
 Me.lblInH.TabIndex = 435
 Me.lblInH.Text = "H"
 '
@@ -8038,7 +8168,7 @@ Me.lblInH.Text = "H"
 Me.lblInW.AutoSize = true
 Me.lblInW.Location = New System.Drawing.Point(153, 102)
 Me.lblInW.Name = "lblInW"
-Me.lblInW.Size = New System.Drawing.Size(18, 13)
+Me.lblInW.Size = New System.Drawing.Size(16, 12)
 Me.lblInW.TabIndex = 434
 Me.lblInW.Text = "W"
 '
@@ -8047,7 +8177,7 @@ Me.lblInW.Text = "W"
 Me.lblCmL.AutoSize = true
 Me.lblCmL.Location = New System.Drawing.Point(309, 102)
 Me.lblCmL.Name = "lblCmL"
-Me.lblCmL.Size = New System.Drawing.Size(13, 13)
+Me.lblCmL.Size = New System.Drawing.Size(12, 12)
 Me.lblCmL.TabIndex = 433
 Me.lblCmL.Text = "L"
 '
@@ -8056,7 +8186,7 @@ Me.lblCmL.Text = "L"
 Me.lblInL.AutoSize = true
 Me.lblInL.Location = New System.Drawing.Point(93, 102)
 Me.lblInL.Name = "lblInL"
-Me.lblInL.Size = New System.Drawing.Size(13, 13)
+Me.lblInL.Size = New System.Drawing.Size(12, 12)
 Me.lblInL.TabIndex = 432
 Me.lblInL.Text = "L"
 '
@@ -8075,7 +8205,7 @@ Me.lblUMFtr.AutoSize = true
 Me.lblUMFtr.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblUMFtr.Location = New System.Drawing.Point(3, 59)
 Me.lblUMFtr.Name = "lblUMFtr"
-Me.lblUMFtr.Size = New System.Drawing.Size(37, 13)
+Me.lblUMFtr.Size = New System.Drawing.Size(34, 12)
 Me.lblUMFtr.TabIndex = 281
 Me.lblUMFtr.Text = "Factor"
 '
@@ -8103,7 +8233,7 @@ Me.lblCurrMOQ.AutoSize = true
 Me.lblCurrMOQ.ForeColor = System.Drawing.SystemColors.ControlText
 Me.lblCurrMOQ.Location = New System.Drawing.Point(309, 59)
 Me.lblCurrMOQ.Name = "lblCurrMOQ"
-Me.lblCurrMOQ.Size = New System.Drawing.Size(35, 13)
+Me.lblCurrMOQ.Size = New System.Drawing.Size(34, 12)
 Me.lblCurrMOQ.TabIndex = 378
 Me.lblCurrMOQ.Text = "CTN="
 '
@@ -8141,7 +8271,7 @@ Me.optMOA.AutoSize = true
 Me.optMOA.ForeColor = System.Drawing.Color.MediumBlue
 Me.optMOA.Location = New System.Drawing.Point(297, 80)
 Me.optMOA.Name = "optMOA"
-Me.optMOA.Size = New System.Drawing.Size(49, 17)
+Me.optMOA.Size = New System.Drawing.Size(49, 16)
 Me.optMOA.TabIndex = 244
 Me.optMOA.TabStop = true
 Me.optMOA.Text = "MOA"
@@ -8162,7 +8292,7 @@ Me.optMOQ.AutoSize = true
 Me.optMOQ.ForeColor = System.Drawing.Color.MediumBlue
 Me.optMOQ.Location = New System.Drawing.Point(181, 57)
 Me.optMOQ.Name = "optMOQ"
-Me.optMOQ.Size = New System.Drawing.Size(50, 17)
+Me.optMOQ.Size = New System.Drawing.Size(49, 16)
 Me.optMOQ.TabIndex = 238
 Me.optMOQ.TabStop = true
 Me.optMOQ.Text = "MOQ"
@@ -8204,7 +8334,7 @@ Me.lblTranTrm.AutoSize = true
 Me.lblTranTrm.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblTranTrm.Location = New System.Drawing.Point(402, 15)
 Me.lblTranTrm.Name = "lblTranTrm"
-Me.lblTranTrm.Size = New System.Drawing.Size(59, 13)
+Me.lblTranTrm.Size = New System.Drawing.Size(59, 12)
 Me.lblTranTrm.TabIndex = 389
 Me.lblTranTrm.Text = "Tran Term)"
 Me.lblTranTrm.Visible = false
@@ -8214,7 +8344,7 @@ Me.lblTranTrm.Visible = false
 Me.cboPcking.FormattingEnabled = true
 Me.cboPcking.Location = New System.Drawing.Point(78, 32)
 Me.cboPcking.Name = "cboPcking"
-Me.cboPcking.Size = New System.Drawing.Size(383, 21)
+Me.cboPcking.Size = New System.Drawing.Size(383, 20)
 Me.cboPcking.TabIndex = 235
 '
 'lblPcking
@@ -8232,7 +8362,7 @@ Me.lblFtyPrcTrm.AutoSize = true
 Me.lblFtyPrcTrm.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblFtyPrcTrm.Location = New System.Drawing.Point(286, 15)
 Me.lblFtyPrcTrm.Name = "lblFtyPrcTrm"
-Me.lblFtyPrcTrm.Size = New System.Drawing.Size(48, 13)
+Me.lblFtyPrcTrm.Size = New System.Drawing.Size(48, 12)
 Me.lblFtyPrcTrm.TabIndex = 366
 Me.lblFtyPrcTrm.Text = "Fty Term"
 Me.lblFtyPrcTrm.Visible = false
@@ -8243,7 +8373,7 @@ Me.lblUM.AutoSize = true
 Me.lblUM.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblUM.Location = New System.Drawing.Point(77, 15)
 Me.lblUM.Name = "lblUM"
-Me.lblUM.Size = New System.Drawing.Size(27, 13)
+Me.lblUM.Size = New System.Drawing.Size(27, 12)
 Me.lblUM.TabIndex = 285
 Me.lblUM.Text = "(UM"
 Me.lblUM.Visible = false
@@ -8254,7 +8384,7 @@ Me.lblInrQty.AutoSize = true
 Me.lblInrQty.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblInrQty.Location = New System.Drawing.Point(139, 15)
 Me.lblInrQty.Name = "lblInrQty"
-Me.lblInrQty.Size = New System.Drawing.Size(31, 13)
+Me.lblInrQty.Size = New System.Drawing.Size(30, 12)
 Me.lblInrQty.TabIndex = 287
 Me.lblInrQty.Text = "Inner"
 Me.lblInrQty.Visible = false
@@ -8265,7 +8395,7 @@ Me.lblMtrQty.AutoSize = true
 Me.lblMtrQty.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblMtrQty.Location = New System.Drawing.Point(174, 15)
 Me.lblMtrQty.Name = "lblMtrQty"
-Me.lblMtrQty.Size = New System.Drawing.Size(39, 13)
+Me.lblMtrQty.Size = New System.Drawing.Size(36, 12)
 Me.lblMtrQty.TabIndex = 289
 Me.lblMtrQty.Text = "Master"
 Me.lblMtrQty.Visible = false
@@ -8276,7 +8406,7 @@ Me.lblCft.AutoSize = true
 Me.lblCft.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblCft.Location = New System.Drawing.Point(214, 15)
 Me.lblCft.Name = "lblCft"
-Me.lblCft.Size = New System.Drawing.Size(27, 13)
+Me.lblCft.Size = New System.Drawing.Size(26, 12)
 Me.lblCft.TabIndex = 291
 Me.lblCft.Text = "CFT"
 Me.lblCft.Visible = false
@@ -8287,7 +8417,7 @@ Me.lblDtlPrcTrm.AutoSize = true
 Me.lblDtlPrcTrm.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblDtlPrcTrm.Location = New System.Drawing.Point(345, 15)
 Me.lblDtlPrcTrm.Name = "lblDtlPrcTrm"
-Me.lblDtlPrcTrm.Size = New System.Drawing.Size(49, 13)
+Me.lblDtlPrcTrm.Size = New System.Drawing.Size(49, 12)
 Me.lblDtlPrcTrm.TabIndex = 388
 Me.lblDtlPrcTrm.Text = "HK Term"
 Me.lblDtlPrcTrm.Visible = false
@@ -8306,7 +8436,7 @@ Me.txtInrdin.TabIndex = 247
 Me.lblInr.AutoSize = true
 Me.lblInr.Location = New System.Drawing.Point(3, 122)
 Me.lblInr.Name = "lblInr"
-Me.lblInr.Size = New System.Drawing.Size(31, 13)
+Me.lblInr.Size = New System.Drawing.Size(30, 12)
 Me.lblInr.TabIndex = 296
 Me.lblInr.Text = "Inner"
 '
@@ -8324,7 +8454,7 @@ Me.txtInrwin.TabIndex = 248
 Me.lblInrcm.AutoSize = true
 Me.lblInrcm.Location = New System.Drawing.Point(260, 122)
 Me.lblInrcm.Name = "lblInrcm"
-Me.lblInrcm.Size = New System.Drawing.Size(27, 13)
+Me.lblInrcm.Size = New System.Drawing.Size(27, 12)
 Me.lblInrcm.TabIndex = 299
 Me.lblInrcm.Text = "(cm)"
 '
@@ -8369,7 +8499,7 @@ Me.txtInrhcm.TabIndex = 252
 Me.lblX3.AutoSize = true
 Me.lblX3.Location = New System.Drawing.Point(340, 122)
 Me.lblX3.Name = "lblX3"
-Me.lblX3.Size = New System.Drawing.Size(12, 13)
+Me.lblX3.Size = New System.Drawing.Size(11, 12)
 Me.lblX3.TabIndex = 308
 Me.lblX3.Text = "x"
 '
@@ -8378,7 +8508,7 @@ Me.lblX3.Text = "x"
 Me.lblX1.AutoSize = true
 Me.lblX1.Location = New System.Drawing.Point(123, 122)
 Me.lblX1.Name = "lblX1"
-Me.lblX1.Size = New System.Drawing.Size(12, 13)
+Me.lblX1.Size = New System.Drawing.Size(11, 12)
 Me.lblX1.TabIndex = 303
 Me.lblX1.Text = "x"
 '
@@ -8387,7 +8517,7 @@ Me.lblX1.Text = "x"
 Me.lblX4.AutoSize = true
 Me.lblX4.Location = New System.Drawing.Point(400, 122)
 Me.lblX4.Name = "lblX4"
-Me.lblX4.Size = New System.Drawing.Size(12, 13)
+Me.lblX4.Size = New System.Drawing.Size(11, 12)
 Me.lblX4.TabIndex = 309
 Me.lblX4.Text = "x"
 '
@@ -8396,7 +8526,7 @@ Me.lblX4.Text = "x"
 Me.lblMtr.AutoSize = true
 Me.lblMtr.Location = New System.Drawing.Point(3, 147)
 Me.lblMtr.Name = "lblMtr"
-Me.lblMtr.Size = New System.Drawing.Size(39, 13)
+Me.lblMtr.Size = New System.Drawing.Size(36, 12)
 Me.lblMtr.TabIndex = 311
 Me.lblMtr.Text = "Master"
 '
@@ -8405,7 +8535,7 @@ Me.lblMtr.Text = "Master"
 Me.lblX2.AutoSize = true
 Me.lblX2.Location = New System.Drawing.Point(183, 122)
 Me.lblX2.Name = "lblX2"
-Me.lblX2.Size = New System.Drawing.Size(12, 13)
+Me.lblX2.Size = New System.Drawing.Size(11, 12)
 Me.lblX2.TabIndex = 304
 Me.lblX2.Text = "x"
 '
@@ -8414,7 +8544,7 @@ Me.lblX2.Text = "x"
 Me.lblMtrcm.AutoSize = true
 Me.lblMtrcm.Location = New System.Drawing.Point(260, 147)
 Me.lblMtrcm.Name = "lblMtrcm"
-Me.lblMtrcm.Size = New System.Drawing.Size(27, 13)
+Me.lblMtrcm.Size = New System.Drawing.Size(27, 12)
 Me.lblMtrcm.TabIndex = 314
 Me.lblMtrcm.Text = "(cm)"
 '
@@ -8424,7 +8554,7 @@ Me.lblCBM.AutoSize = true
 Me.lblCBM.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblCBM.Location = New System.Drawing.Point(247, 15)
 Me.lblCBM.Name = "lblCBM"
-Me.lblCBM.Size = New System.Drawing.Size(30, 13)
+Me.lblCBM.Size = New System.Drawing.Size(31, 12)
 Me.lblCBM.TabIndex = 283
 Me.lblCBM.Text = "CBM"
 Me.lblCBM.Visible = false
@@ -8507,7 +8637,7 @@ Me.txtMtrhin.TabIndex = 255
 Me.lblX7.AutoSize = true
 Me.lblX7.Location = New System.Drawing.Point(340, 147)
 Me.lblX7.Name = "lblX7"
-Me.lblX7.Size = New System.Drawing.Size(12, 13)
+Me.lblX7.Size = New System.Drawing.Size(11, 12)
 Me.lblX7.TabIndex = 320
 Me.lblX7.Text = "x"
 '
@@ -8516,7 +8646,7 @@ Me.lblX7.Text = "x"
 Me.lblX8.AutoSize = true
 Me.lblX8.Location = New System.Drawing.Point(400, 147)
 Me.lblX8.Name = "lblX8"
-Me.lblX8.Size = New System.Drawing.Size(12, 13)
+Me.lblX8.Size = New System.Drawing.Size(11, 12)
 Me.lblX8.TabIndex = 321
 Me.lblX8.Text = "x"
 '
@@ -8525,7 +8655,7 @@ Me.lblX8.Text = "x"
 Me.lblX5.AutoSize = true
 Me.lblX5.Location = New System.Drawing.Point(123, 147)
 Me.lblX5.Name = "lblX5"
-Me.lblX5.Size = New System.Drawing.Size(12, 13)
+Me.lblX5.Size = New System.Drawing.Size(11, 12)
 Me.lblX5.TabIndex = 315
 Me.lblX5.Text = "x"
 '
@@ -8534,7 +8664,7 @@ Me.lblX5.Text = "x"
 Me.lblX6.AutoSize = true
 Me.lblX6.Location = New System.Drawing.Point(183, 147)
 Me.lblX6.Name = "lblX6"
-Me.lblX6.Size = New System.Drawing.Size(12, 13)
+Me.lblX6.Size = New System.Drawing.Size(11, 12)
 Me.lblX6.TabIndex = 316
 Me.lblX6.Text = "x"
 '
@@ -8575,7 +8705,7 @@ Me.txtColCde.TabIndex = 222
 Me.cboColCde.FormattingEnabled = true
 Me.cboColCde.Location = New System.Drawing.Point(93, 13)
 Me.cboColCde.Name = "cboColCde"
-Me.cboColCde.Size = New System.Drawing.Size(115, 21)
+Me.cboColCde.Size = New System.Drawing.Size(115, 20)
 Me.cboColCde.TabIndex = 223
 '
 'lblColCde
@@ -8584,7 +8714,7 @@ Me.lblColCde.AutoSize = true
 Me.lblColCde.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblColCde.Location = New System.Drawing.Point(3, 16)
 Me.lblColCde.Name = "lblColCde"
-Me.lblColCde.Size = New System.Drawing.Size(59, 13)
+Me.lblColCde.Size = New System.Drawing.Size(60, 12)
 Me.lblColCde.TabIndex = 270
 Me.lblColCde.Text = "Color Code"
 '
@@ -8602,7 +8732,7 @@ Me.txtColDsc.TabIndex = 224
 Me.lblColDsc.AutoSize = true
 Me.lblColDsc.Location = New System.Drawing.Point(224, 16)
 Me.lblColDsc.Name = "lblColDsc"
-Me.lblColDsc.Size = New System.Drawing.Size(62, 13)
+Me.lblColDsc.Size = New System.Drawing.Size(60, 12)
 Me.lblColDsc.TabIndex = 275
 Me.lblColDsc.Text = "Color Desc."
 '
@@ -8639,7 +8769,7 @@ Me.txtVenItm.Visible = false
 Me.lblVenItm.AutoSize = true
 Me.lblVenItm.Location = New System.Drawing.Point(410, 39)
 Me.lblVenItm.Name = "lblVenItm"
-Me.lblVenItm.Size = New System.Drawing.Size(47, 13)
+Me.lblVenItm.Size = New System.Drawing.Size(48, 12)
 Me.lblVenItm.TabIndex = 364
 Me.lblVenItm.Text = "Vdr Itm#"
 Me.lblVenItm.Visible = false
@@ -8649,7 +8779,7 @@ Me.lblVenItm.Visible = false
 Me.lblSubCde.AutoSize = true
 Me.lblSubCde.Location = New System.Drawing.Point(405, 44)
 Me.lblSubCde.Name = "lblSubCde"
-Me.lblSubCde.Size = New System.Drawing.Size(54, 13)
+Me.lblSubCde.Size = New System.Drawing.Size(51, 12)
 Me.lblSubCde.TabIndex = 358
 Me.lblSubCde.Text = "Sub Code"
 Me.lblSubCde.Visible = false
@@ -8659,7 +8789,7 @@ Me.lblSubCde.Visible = false
 Me.lblAlscolcde.AutoSize = true
 Me.lblAlscolcde.Location = New System.Drawing.Point(3, 40)
 Me.lblAlscolcde.Name = "lblAlscolcde"
-Me.lblAlscolcde.Size = New System.Drawing.Size(56, 13)
+Me.lblAlscolcde.Size = New System.Drawing.Size(58, 12)
 Me.lblAlscolcde.TabIndex = 277
 Me.lblAlscolcde.Text = "Alias Color"
 '
@@ -8678,7 +8808,7 @@ Me.txtSubCde.Visible = false
 Me.lblCusCol.AutoSize = true
 Me.lblCusCol.Location = New System.Drawing.Point(224, 40)
 Me.lblCusCol.Name = "lblCusCol"
-Me.lblCusCol.Size = New System.Drawing.Size(58, 13)
+Me.lblCusCol.Size = New System.Drawing.Size(59, 12)
 Me.lblCusCol.TabIndex = 279
 Me.lblCusCol.Text = "Cust. Color"
 '
@@ -8687,7 +8817,7 @@ Me.lblCusCol.Text = "Cust. Color"
 Me.lblCusSub.AutoSize = true
 Me.lblCusSub.Location = New System.Drawing.Point(406, 39)
 Me.lblCusSub.Name = "lblCusSub"
-Me.lblCusSub.Size = New System.Drawing.Size(50, 13)
+Me.lblCusSub.Size = New System.Drawing.Size(47, 12)
 Me.lblCusSub.TabIndex = 362
 Me.lblCusSub.Text = "Cust Sub"
 Me.lblCusSub.Visible = false
@@ -8704,6 +8834,7 @@ Me.txtCusSub.Visible = false
 '
 'gbItem
 '
+Me.gbItem.Controls.Add(Me.cmdBrowse)
 Me.gbItem.Controls.Add(Me.cmdItmNoConvVen)
 Me.gbItem.Controls.Add(Me.Label106)
 Me.gbItem.Controls.Add(Me.Label105)
@@ -8721,7 +8852,6 @@ Me.gbItem.Controls.Add(Me.txtItmDsc)
 Me.gbItem.Controls.Add(Me.cboCusals)
 Me.gbItem.Controls.Add(Me.lblCusals)
 Me.gbItem.Controls.Add(Me.txtCusItm)
-Me.gbItem.Controls.Add(Me.cmdBrowse)
 Me.gbItem.Controls.Add(Me.lblCusItm)
 Me.gbItem.Controls.Add(Me.txtAlias)
 Me.gbItem.Controls.Add(Me.lblAlias)
@@ -8736,13 +8866,23 @@ Me.gbItem.Size = New System.Drawing.Size(466, 135)
 Me.gbItem.TabIndex = 384
 Me.gbItem.TabStop = false
 '
+'cmdBrowse
+'
+Me.cmdBrowse.BackgroundImage = CType(resources.GetObject("cmdBrowse.BackgroundImage"),System.Drawing.Image)
+Me.cmdBrowse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+Me.cmdBrowse.Location = New System.Drawing.Point(196, 9)
+Me.cmdBrowse.Name = "cmdBrowse"
+Me.cmdBrowse.Size = New System.Drawing.Size(26, 26)
+Me.cmdBrowse.TabIndex = 214
+Me.cmdBrowse.UseVisualStyleBackColor = true
+'
 'cmdItmNoConvVen
 '
-Me.cmdItmNoConvVen.BackgroundImage = Global.ERPSystem.Resources.Convert
+Me.cmdItmNoConvVen.BackgroundImage = CType(resources.GetObject("cmdItmNoConvVen.BackgroundImage"),System.Drawing.Image)
 Me.cmdItmNoConvVen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
 Me.cmdItmNoConvVen.Location = New System.Drawing.Point(427, 58)
 Me.cmdItmNoConvVen.Name = "cmdItmNoConvVen"
-Me.cmdItmNoConvVen.Size = New System.Drawing.Size(25, 25)
+Me.cmdItmNoConvVen.Size = New System.Drawing.Size(26, 26)
 Me.cmdItmNoConvVen.TabIndex = 216
 Me.cmdItmNoConvVen.UseVisualStyleBackColor = true
 '
@@ -8752,7 +8892,7 @@ Me.Label106.AutoSize = true
 Me.Label106.ForeColor = System.Drawing.Color.MediumBlue
 Me.Label106.Location = New System.Drawing.Point(3, 62)
 Me.Label106.Name = "Label106"
-Me.Label106.Size = New System.Drawing.Size(64, 13)
+Me.Label106.Size = New System.Drawing.Size(64, 12)
 Me.Label106.TabIndex = 460
 Me.Label106.Text = "Vendor Item"
 '
@@ -8762,7 +8902,7 @@ Me.Label105.AutoSize = true
 Me.Label105.ForeColor = System.Drawing.Color.MediumBlue
 Me.Label105.Location = New System.Drawing.Point(3, 37)
 Me.Label105.Name = "Label105"
-Me.Label105.Size = New System.Drawing.Size(57, 13)
+Me.Label105.Size = New System.Drawing.Size(56, 12)
 Me.Label105.TabIndex = 459
 Me.Label105.Text = "Temp Item"
 '
@@ -8772,14 +8912,13 @@ Me.Label103.AutoSize = true
 Me.Label103.ForeColor = System.Drawing.Color.MediumBlue
 Me.Label103.Location = New System.Drawing.Point(3, 15)
 Me.Label103.Name = "Label103"
-Me.Label103.Size = New System.Drawing.Size(47, 13)
+Me.Label103.Size = New System.Drawing.Size(46, 12)
 Me.Label103.TabIndex = 457
 Me.Label103.Text = "Item No."
 '
 'cmdImage
 '
 Me.cmdImage.Enabled = false
-Me.cmdImage.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.cmdImage.Location = New System.Drawing.Point(400, 83)
 Me.cmdImage.Name = "cmdImage"
 Me.cmdImage.Size = New System.Drawing.Size(60, 21)
@@ -8810,11 +8949,11 @@ Me.txtItmNoReal.TabIndex = 209
 '
 'cmdItmNoConv
 '
-Me.cmdItmNoConv.BackgroundImage = Global.ERPSystem.Resources.Convert
+Me.cmdItmNoConv.BackgroundImage = CType(resources.GetObject("cmdItmNoConv.BackgroundImage"),System.Drawing.Image)
 Me.cmdItmNoConv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
 Me.cmdItmNoConv.Location = New System.Drawing.Point(196, 34)
 Me.cmdItmNoConv.Name = "cmdItmNoConv"
-Me.cmdItmNoConv.Size = New System.Drawing.Size(25, 25)
+Me.cmdItmNoConv.Size = New System.Drawing.Size(26, 26)
 Me.cmdItmNoConv.TabIndex = 215
 Me.cmdItmNoConv.UseVisualStyleBackColor = true
 '
@@ -8833,7 +8972,7 @@ Me.lblItmVen.AutoSize = true
 Me.lblItmVen.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblItmVen.Location = New System.Drawing.Point(194, 62)
 Me.lblItmVen.Name = "lblItmVen"
-Me.lblItmVen.Size = New System.Drawing.Size(63, 13)
+Me.lblItmVen.Size = New System.Drawing.Size(62, 12)
 Me.lblItmVen.TabIndex = 335
 Me.lblItmVen.Text = "Vendor Cde"
 '
@@ -8851,7 +8990,7 @@ Me.txtItmNoTmp.TabIndex = 210
 Me.cboItmNoVen.FormattingEnabled = true
 Me.cboItmNoVen.Location = New System.Drawing.Point(257, 59)
 Me.cboItmNoVen.Name = "cboItmNoVen"
-Me.cboItmNoVen.Size = New System.Drawing.Size(165, 21)
+Me.cboItmNoVen.Size = New System.Drawing.Size(165, 20)
 Me.cboItmNoVen.TabIndex = 212
 '
 'lblItmDsc
@@ -8877,7 +9016,7 @@ Me.txtItmDsc.Text = ""
 Me.cboCusals.FormattingEnabled = true
 Me.cboCusals.Location = New System.Drawing.Point(93, 83)
 Me.cboCusals.Name = "cboCusals"
-Me.cboCusals.Size = New System.Drawing.Size(115, 21)
+Me.cboCusals.Size = New System.Drawing.Size(115, 20)
 Me.cboCusals.TabIndex = 217
 '
 'lblCusals
@@ -8885,7 +9024,7 @@ Me.cboCusals.TabIndex = 217
 Me.lblCusals.AutoSize = true
 Me.lblCusals.Location = New System.Drawing.Point(3, 86)
 Me.lblCusals.Name = "lblCusals"
-Me.lblCusals.Size = New System.Drawing.Size(77, 13)
+Me.lblCusals.Size = New System.Drawing.Size(75, 12)
 Me.lblCusals.TabIndex = 262
 Me.lblCusals.Text = "Cust. Style No."
 '
@@ -8898,22 +9037,12 @@ Me.txtCusItm.Name = "txtCusItm"
 Me.txtCusItm.Size = New System.Drawing.Size(99, 20)
 Me.txtCusItm.TabIndex = 218
 '
-'cmdBrowse
-'
-Me.cmdBrowse.BackgroundImage = Global.ERPSystem.Resources.BROWSE
-Me.cmdBrowse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-Me.cmdBrowse.Location = New System.Drawing.Point(196, 9)
-Me.cmdBrowse.Name = "cmdBrowse"
-Me.cmdBrowse.Size = New System.Drawing.Size(25, 25)
-Me.cmdBrowse.TabIndex = 214
-Me.cmdBrowse.UseVisualStyleBackColor = true
-'
 'lblCusItm
 '
 Me.lblCusItm.AutoSize = true
 Me.lblCusItm.Location = New System.Drawing.Point(224, 86)
 Me.lblCusItm.Name = "lblCusItm"
-Me.lblCusItm.Size = New System.Drawing.Size(54, 13)
+Me.lblCusItm.Size = New System.Drawing.Size(53, 12)
 Me.lblCusItm.TabIndex = 265
 Me.lblCusItm.Text = "Cust. Item"
 '
@@ -8931,7 +9060,7 @@ Me.txtAlias.TabIndex = 219
 Me.lblAlias.AutoSize = true
 Me.lblAlias.Location = New System.Drawing.Point(3, 110)
 Me.lblAlias.Name = "lblAlias"
-Me.lblAlias.Size = New System.Drawing.Size(49, 13)
+Me.lblAlias.Size = New System.Drawing.Size(48, 12)
 Me.lblAlias.TabIndex = 267
 Me.lblAlias.Text = "Alias No."
 '
@@ -8949,7 +9078,7 @@ Me.txtUPC.TabIndex = 220
 Me.lblUPC.AutoSize = true
 Me.lblUPC.Location = New System.Drawing.Point(224, 110)
 Me.lblUPC.Name = "lblUPC"
-Me.lblUPC.Size = New System.Drawing.Size(36, 13)
+Me.lblUPC.Size = New System.Drawing.Size(33, 12)
 Me.lblUPC.TabIndex = 269
 Me.lblUPC.Text = "UPC#"
 '
@@ -8970,7 +9099,7 @@ Me.gbImage.Visible = false
 Me.optImageN.AutoSize = true
 Me.optImageN.Location = New System.Drawing.Point(98, 8)
 Me.optImageN.Name = "optImageN"
-Me.optImageN.Size = New System.Drawing.Size(39, 17)
+Me.optImageN.Size = New System.Drawing.Size(37, 16)
 Me.optImageN.TabIndex = 113
 Me.optImageN.TabStop = true
 Me.optImageN.Text = "No"
@@ -8981,7 +9110,7 @@ Me.optImageN.UseVisualStyleBackColor = true
 Me.optImageY.AutoSize = true
 Me.optImageY.Location = New System.Drawing.Point(49, 8)
 Me.optImageY.Name = "optImageY"
-Me.optImageY.Size = New System.Drawing.Size(43, 17)
+Me.optImageY.Size = New System.Drawing.Size(40, 16)
 Me.optImageY.TabIndex = 112
 Me.optImageY.TabStop = true
 Me.optImageY.Text = "Yes"
@@ -9019,8 +9148,7 @@ Me.txtVenTyp.Visible = false
 '
 'cmdBackD
 '
-Me.cmdBackD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdBackD.Location = New System.Drawing.Point(866, 505)
+Me.cmdBackD.Location = New System.Drawing.Point(853, 495)
 Me.cmdBackD.Name = "cmdBackD"
 Me.cmdBackD.Size = New System.Drawing.Size(44, 21)
 Me.cmdBackD.TabIndex = 317
@@ -9028,8 +9156,7 @@ Me.cmdBackD.Text = "Back"
 '
 'cmdNextD
 '
-Me.cmdNextD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdNextD.Location = New System.Drawing.Point(911, 505)
+Me.cmdNextD.Location = New System.Drawing.Point(898, 495)
 Me.cmdNextD.Name = "cmdNextD"
 Me.cmdNextD.Size = New System.Drawing.Size(44, 21)
 Me.cmdNextD.TabIndex = 318
@@ -9037,8 +9164,7 @@ Me.cmdNextD.Text = "Next"
 '
 'cmdUpdateMO
 '
-Me.cmdUpdateMO.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdUpdateMO.Location = New System.Drawing.Point(661, 505)
+Me.cmdUpdateMO.Location = New System.Drawing.Point(648, 495)
 Me.cmdUpdateMO.Name = "cmdUpdateMO"
 Me.cmdUpdateMO.Size = New System.Drawing.Size(111, 21)
 Me.cmdUpdateMO.TabIndex = 315
@@ -9046,8 +9172,8 @@ Me.cmdUpdateMO.Text = "Update MOQ/MOA"
 '
 'cmdTBM
 '
-Me.cmdTBM.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.cmdTBM.Location = New System.Drawing.Point(489, 502)
+Me.cmdTBM.Font = New System.Drawing.Font("Arial", 8.25!)
+Me.cmdTBM.Location = New System.Drawing.Point(476, 492)
 Me.cmdTBM.Name = "cmdTBM"
 Me.cmdTBM.Size = New System.Drawing.Size(88, 21)
 Me.cmdTBM.TabIndex = 117
@@ -9056,8 +9182,7 @@ Me.cmdTBM.Visible = false
 '
 'cmdUpdItm
 '
-Me.cmdUpdItm.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-Me.cmdUpdItm.Location = New System.Drawing.Point(773, 505)
+Me.cmdUpdItm.Location = New System.Drawing.Point(760, 495)
 Me.cmdUpdItm.Name = "cmdUpdItm"
 Me.cmdUpdItm.Size = New System.Drawing.Size(92, 21)
 Me.cmdUpdItm.TabIndex = 316
@@ -9081,9 +9206,9 @@ Me.gbVendor.Controls.Add(Me.lblCusVen)
 Me.gbVendor.Controls.Add(Me.txtFCurCde)
 Me.gbVendor.Controls.Add(Me.lblFtyPrc)
 Me.gbVendor.Controls.Add(Me.txtFtyPrc)
-Me.gbVendor.Location = New System.Drawing.Point(488, 239)
+Me.gbVendor.Location = New System.Drawing.Point(477, 237)
 Me.gbVendor.Name = "gbVendor"
-Me.gbVendor.Size = New System.Drawing.Size(466, 60)
+Me.gbVendor.Size = New System.Drawing.Size(464, 60)
 Me.gbVendor.TabIndex = 372
 Me.gbVendor.TabStop = false
 '
@@ -9092,7 +9217,7 @@ Me.gbVendor.TabStop = false
 Me.cboFA.FormattingEnabled = true
 Me.cboFA.Location = New System.Drawing.Point(369, 34)
 Me.cboFA.Name = "cboFA"
-Me.cboFA.Size = New System.Drawing.Size(94, 21)
+Me.cboFA.Size = New System.Drawing.Size(94, 20)
 Me.cboFA.TabIndex = 289
 '
 'lblFA
@@ -9100,7 +9225,7 @@ Me.cboFA.TabIndex = 289
 Me.lblFA.AutoSize = true
 Me.lblFA.Location = New System.Drawing.Point(346, 37)
 Me.lblFA.Name = "lblFA"
-Me.lblFA.Size = New System.Drawing.Size(20, 13)
+Me.lblFA.Size = New System.Drawing.Size(19, 12)
 Me.lblFA.TabIndex = 377
 Me.lblFA.Text = "FA"
 '
@@ -9109,7 +9234,7 @@ Me.lblFA.Text = "FA"
 Me.cboTV.FormattingEnabled = true
 Me.cboTV.Location = New System.Drawing.Point(253, 34)
 Me.cboTV.Name = "cboTV"
-Me.cboTV.Size = New System.Drawing.Size(94, 21)
+Me.cboTV.Size = New System.Drawing.Size(94, 20)
 Me.cboTV.TabIndex = 288
 '
 'lblTV
@@ -9117,7 +9242,7 @@ Me.cboTV.TabIndex = 288
 Me.lblTV.AutoSize = true
 Me.lblTV.Location = New System.Drawing.Point(230, 37)
 Me.lblTV.Name = "lblTV"
-Me.lblTV.Size = New System.Drawing.Size(21, 13)
+Me.lblTV.Size = New System.Drawing.Size(20, 12)
 Me.lblTV.TabIndex = 375
 Me.lblTV.Text = "TV"
 '
@@ -9126,7 +9251,7 @@ Me.lblTV.Text = "TV"
 Me.cboDV.FormattingEnabled = true
 Me.cboDV.Location = New System.Drawing.Point(369, 11)
 Me.cboDV.Name = "cboDV"
-Me.cboDV.Size = New System.Drawing.Size(94, 21)
+Me.cboDV.Size = New System.Drawing.Size(94, 20)
 Me.cboDV.TabIndex = 287
 '
 'lblDV
@@ -9134,7 +9259,7 @@ Me.cboDV.TabIndex = 287
 Me.lblDV.AutoSize = true
 Me.lblDV.Location = New System.Drawing.Point(346, 14)
 Me.lblDV.Name = "lblDV"
-Me.lblDV.Size = New System.Drawing.Size(22, 13)
+Me.lblDV.Size = New System.Drawing.Size(21, 12)
 Me.lblDV.TabIndex = 373
 Me.lblDV.Text = "DV"
 '
@@ -9143,7 +9268,7 @@ Me.lblDV.Text = "DV"
 Me.cboVenNo.FormattingEnabled = true
 Me.cboVenNo.Location = New System.Drawing.Point(28, 10)
 Me.cboVenNo.Name = "cboVenNo"
-Me.cboVenNo.Size = New System.Drawing.Size(197, 21)
+Me.cboVenNo.Size = New System.Drawing.Size(197, 20)
 Me.cboVenNo.TabIndex = 285
 '
 'lblVenNo
@@ -9151,7 +9276,7 @@ Me.cboVenNo.TabIndex = 285
 Me.lblVenNo.AutoSize = true
 Me.lblVenNo.Location = New System.Drawing.Point(2, 13)
 Me.lblVenNo.Name = "lblVenNo"
-Me.lblVenNo.Size = New System.Drawing.Size(21, 13)
+Me.lblVenNo.Size = New System.Drawing.Size(19, 12)
 Me.lblVenNo.TabIndex = 356
 Me.lblVenNo.Text = "PV"
 '
@@ -9160,7 +9285,7 @@ Me.lblVenNo.Text = "PV"
 Me.lblFtyCst.AutoSize = true
 Me.lblFtyCst.Location = New System.Drawing.Point(138, 37)
 Me.lblFtyCst.Name = "lblFtyCst"
-Me.lblFtyCst.Size = New System.Drawing.Size(45, 13)
+Me.lblFtyCst.Size = New System.Drawing.Size(44, 12)
 Me.lblFtyCst.TabIndex = 371
 Me.lblFtyCst.Text = "Fty Cost"
 '
@@ -9178,7 +9303,7 @@ Me.txtFtyCst.TabIndex = 291
 Me.cboCusVen.FormattingEnabled = true
 Me.cboCusVen.Location = New System.Drawing.Point(253, 10)
 Me.cboCusVen.Name = "cboCusVen"
-Me.cboCusVen.Size = New System.Drawing.Size(94, 21)
+Me.cboCusVen.Size = New System.Drawing.Size(94, 20)
 Me.cboCusVen.TabIndex = 286
 '
 'lblCusVen
@@ -9186,7 +9311,7 @@ Me.cboCusVen.TabIndex = 286
 Me.lblCusVen.AutoSize = true
 Me.lblCusVen.Location = New System.Drawing.Point(230, 13)
 Me.lblCusVen.Name = "lblCusVen"
-Me.lblCusVen.Size = New System.Drawing.Size(21, 13)
+Me.lblCusVen.Size = New System.Drawing.Size(21, 12)
 Me.lblCusVen.TabIndex = 360
 Me.lblCusVen.Text = "CV"
 '
@@ -9204,7 +9329,7 @@ Me.txtFCurCde.TabIndex = 290
 Me.lblFtyPrc.AutoSize = true
 Me.lblFtyPrc.Location = New System.Drawing.Point(2, 37)
 Me.lblFtyPrc.Name = "lblFtyPrc"
-Me.lblFtyPrc.Size = New System.Drawing.Size(48, 13)
+Me.lblFtyPrc.Size = New System.Drawing.Size(46, 12)
 Me.lblFtyPrc.TabIndex = 368
 Me.lblFtyPrc.Text = "Fty Price"
 '
@@ -9223,13 +9348,13 @@ Me.lblQutItmSts.AutoSize = true
 Me.lblQutItmSts.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblQutItmSts.Location = New System.Drawing.Point(283, 7)
 Me.lblQutItmSts.Name = "lblQutItmSts"
-Me.lblQutItmSts.Size = New System.Drawing.Size(30, 13)
+Me.lblQutItmSts.Size = New System.Drawing.Size(30, 12)
 Me.lblQutItmSts.TabIndex = 337
 Me.lblQutItmSts.Text = "(Qut)"
 '
 'txtQutItmSts
 '
-Me.txtQutItmSts.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtQutItmSts.Font = New System.Drawing.Font("Arial", 8.25!)
 Me.txtQutItmSts.Location = New System.Drawing.Point(319, 4)
 Me.txtQutItmSts.MaxLength = 20
 Me.txtQutItmSts.Name = "txtQutItmSts"
@@ -9238,10 +9363,11 @@ Me.txtQutItmSts.TabIndex = 203
 '
 'cboItmSts
 '
+Me.cboItmSts.Font = New System.Drawing.Font("Arial", 8.25!)
 Me.cboItmSts.FormattingEnabled = true
 Me.cboItmSts.Location = New System.Drawing.Point(168, 4)
 Me.cboItmSts.Name = "cboItmSts"
-Me.cboItmSts.Size = New System.Drawing.Size(109, 21)
+Me.cboItmSts.Size = New System.Drawing.Size(109, 22)
 Me.cboItmSts.TabIndex = 202
 '
 'lblItmSts
@@ -9250,17 +9376,17 @@ Me.lblItmSts.AutoSize = true
 Me.lblItmSts.ForeColor = System.Drawing.Color.MediumBlue
 Me.lblItmSts.Location = New System.Drawing.Point(84, 7)
 Me.lblItmSts.Name = "lblItmSts"
-Me.lblItmSts.Size = New System.Drawing.Size(78, 13)
+Me.lblItmSts.Size = New System.Drawing.Size(78, 12)
 Me.lblItmSts.TabIndex = 334
 Me.lblItmSts.Text = "Item Status(IM)"
 '
 'chkTBM
 '
 Me.chkTBM.AutoSize = true
-Me.chkTBM.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.chkTBM.Font = New System.Drawing.Font("Arial", 8.25!)
 Me.chkTBM.Location = New System.Drawing.Point(702, 13)
 Me.chkTBM.Name = "chkTBM"
-Me.chkTBM.Size = New System.Drawing.Size(49, 17)
+Me.chkTBM.Size = New System.Drawing.Size(47, 18)
 Me.chkTBM.TabIndex = 56
 Me.chkTBM.Text = "TBM"
 Me.chkTBM.UseVisualStyleBackColor = true
@@ -9268,7 +9394,7 @@ Me.chkTBM.Visible = false
 '
 'txtSeq
 '
-Me.txtSeq.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtSeq.Font = New System.Drawing.Font("Arial", 8.25!)
 Me.txtSeq.Location = New System.Drawing.Point(41, 4)
 Me.txtSeq.MaxLength = 5
 Me.txtSeq.Name = "txtSeq"
@@ -9278,16 +9404,17 @@ Me.txtSeq.TabIndex = 201
 'lblSeq
 '
 Me.lblSeq.AutoSize = true
+Me.lblSeq.Font = New System.Drawing.Font("Arial", 8.25!)
 Me.lblSeq.ForeColor = System.Drawing.Color.Red
 Me.lblSeq.Location = New System.Drawing.Point(6, 7)
 Me.lblSeq.Name = "lblSeq"
-Me.lblSeq.Size = New System.Drawing.Size(29, 13)
+Me.lblSeq.Size = New System.Drawing.Size(29, 14)
 Me.lblSeq.TabIndex = 106
 Me.lblSeq.Text = "Seq."
 '
 'txtFtyTmpItmNo
 '
-Me.txtFtyTmpItmNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.txtFtyTmpItmNo.Font = New System.Drawing.Font("Arial", 8.25!)
 Me.txtFtyTmpItmNo.Location = New System.Drawing.Point(766, 4)
 Me.txtFtyTmpItmNo.MaxLength = 20
 Me.txtFtyTmpItmNo.Name = "txtFtyTmpItmNo"
@@ -9295,18 +9422,40 @@ Me.txtFtyTmpItmNo.Size = New System.Drawing.Size(99, 20)
 Me.txtFtyTmpItmNo.TabIndex = 381
 Me.txtFtyTmpItmNo.Visible = false
 '
+'cmdRenItm
+'
+Me.cmdRenItm.Font = New System.Drawing.Font("Arial", 8.25!)
+Me.cmdRenItm.Location = New System.Drawing.Point(761, 485)
+Me.cmdRenItm.Name = "cmdRenItm"
+Me.cmdRenItm.Size = New System.Drawing.Size(92, 21)
+Me.cmdRenItm.TabIndex = 532
+Me.cmdRenItm.Text = "Renew Item"
+Me.cmdRenItm.UseVisualStyleBackColor = true
+Me.cmdRenItm.Visible = false
+'
 'tpQUM00001_3
 '
+Me.tpQUM00001_3.Controls.Add(Me.Button20)
 Me.tpQUM00001_3.Controls.Add(Me.lblView)
 Me.tpQUM00001_3.Controls.Add(Me.gbView)
 Me.tpQUM00001_3.Controls.Add(Me.dgOthDtl)
 Me.tpQUM00001_3.Location = New System.Drawing.Point(4, 22)
 Me.tpQUM00001_3.Name = "tpQUM00001_3"
 Me.tpQUM00001_3.Padding = New System.Windows.Forms.Padding(3)
-Me.tpQUM00001_3.Size = New System.Drawing.Size(958, 535)
+Me.tpQUM00001_3.Size = New System.Drawing.Size(942, 516)
 Me.tpQUM00001_3.TabIndex = 2
 Me.tpQUM00001_3.Text = "(3) Summary"
 Me.tpQUM00001_3.UseVisualStyleBackColor = true
+'
+'Button20
+'
+Me.Button20.Location = New System.Drawing.Point(514, 5)
+Me.Button20.Name = "Button20"
+Me.Button20.Size = New System.Drawing.Size(312, 38)
+Me.Button20.TabIndex = 171
+Me.Button20.Text = "Check column width (for development only. User should not see this)"
+Me.Button20.UseVisualStyleBackColor = true
+Me.Button20.Visible = false
 '
 'lblView
 '
@@ -9325,7 +9474,6 @@ Me.gbView.Controls.Add(Me.rbView_T)
 Me.gbView.Controls.Add(Me.rbView_P)
 Me.gbView.Controls.Add(Me.rbView_F)
 Me.gbView.Controls.Add(Me.rbView_A)
-Me.gbView.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.gbView.Location = New System.Drawing.Point(56, 6)
 Me.gbView.Name = "gbView"
 Me.gbView.Size = New System.Drawing.Size(408, 35)
@@ -9400,20 +9548,21 @@ Me.dgOthDtl.Name = "dgOthDtl"
 Me.dgOthDtl.RowHeadersWidth = 20
 Me.dgOthDtl.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.dgOthDtl.RowTemplate.Height = 16
-Me.dgOthDtl.Size = New System.Drawing.Size(949, 456)
+Me.dgOthDtl.Size = New System.Drawing.Size(934, 456)
 Me.dgOthDtl.TabIndex = 168
 '
 'QUM00001
 '
 Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-Me.ClientSize = New System.Drawing.Size(968, 655)
-Me.Controls.Add(Me.cmdRequote)
+Me.ClientSize = New System.Drawing.Size(954, 631)
+Me.Controls.Add(Me.PanelCptBkd)
 Me.Controls.Add(Me.cmdRenew)
-Me.Controls.Add(Me.btcQUM00001)
 Me.Controls.Add(Me.cmdGenTent)
 Me.Controls.Add(Me.cmdGenSmp)
-Me.Controls.Add(Me.StatusBar)
 Me.Controls.Add(Me.cmdUpdate)
+Me.Controls.Add(Me.menuStrip)
+Me.Controls.Add(Me.cmdRequote)
+Me.Controls.Add(Me.StatusBar)
 Me.Controls.Add(Me.chkApprove)
 Me.Controls.Add(Me.txtQutSts)
 Me.Controls.Add(Me.lblQutSts)
@@ -9429,25 +9578,18 @@ Me.Controls.Add(Me.txtQutNo)
 Me.Controls.Add(Me.cboCus1No)
 Me.Controls.Add(Me.lblQutNo)
 Me.Controls.Add(Me.lblCus1No)
-Me.Controls.Add(Me.cmdInsRow)
-Me.Controls.Add(Me.cmdDelete)
-Me.Controls.Add(Me.cmdSave)
-Me.Controls.Add(Me.cmdAdd)
-Me.Controls.Add(Me.cmdCopy)
-Me.Controls.Add(Me.cmdClear)
-Me.Controls.Add(Me.cmdExit)
-Me.Controls.Add(Me.cmdDelRow)
-Me.Controls.Add(Me.cmdSearch)
 Me.Controls.Add(Me.cboCoCde)
 Me.Controls.Add(Me.lblCoCde)
-Me.Controls.Add(Me.cmdFind)
 Me.Controls.Add(Me.txtCoNam)
 Me.Controls.Add(Me.lblCoNam)
+Me.Controls.Add(Me.btcQUM00001)
+Me.Controls.Add(Me.PanelMutShp)
 Me.Controls.Add(Me.gbPanelCstEmt)
-Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
 Me.MaximizeBox = false
 Me.Name = "QUM00001"
-Me.Text = "QUM00001 - Quotation Maintenance"
+Me.Text = "QUM00001 - Quotation Maintenance (QUM01)"
 CType(Me.StatusBarPanel1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.StatusBarPanel2,System.ComponentModel.ISupportInitialize).EndInit
 Me.GroupBox1.ResumeLayout(false)
@@ -9474,12 +9616,23 @@ Me.GroupBox12.PerformLayout
 CType(Me.DataGridView2,System.ComponentModel.ISupportInitialize).EndInit
 Me.gbPanelCstEmt.ResumeLayout(false)
 Me.gbPanelCstEmt.PerformLayout
+Me.gbCstEmt1P.ResumeLayout(false)
+Me.gbCstEmt1P.PerformLayout
 Me.gbCstEmt2P.ResumeLayout(false)
 Me.gbCstEmt2P.PerformLayout
 Me.gbInvP.ResumeLayout(false)
 Me.gbInvP.PerformLayout
-Me.gbCstEmt1P.ResumeLayout(false)
-Me.gbCstEmt1P.PerformLayout
+Me.menuStrip.ResumeLayout(false)
+Me.menuStrip.PerformLayout
+Me.PanelMutShp.ResumeLayout(false)
+Me.PanelMutShpHeaderBar.ResumeLayout(false)
+Me.PanelMutShpHeaderBar.PerformLayout
+CType(Me.dgMutShp,System.ComponentModel.ISupportInitialize).EndInit
+Me.PanelCptBkd.ResumeLayout(false)
+Me.PanelCptBkdHeaderBar.ResumeLayout(false)
+Me.PanelCptBkdHeaderBar.PerformLayout
+CType(Me.dgMatBkd,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.DataSet131,System.ComponentModel.ISupportInitialize).EndInit
 Me.btcQUM00001.ResumeLayout(false)
 Me.tpQUM00001_1.ResumeLayout(false)
 Me.tpQUM00001_1.PerformLayout
@@ -9497,14 +9650,6 @@ Me.gbSales.ResumeLayout(false)
 Me.gbSales.PerformLayout
 Me.tpQUM00001_2.ResumeLayout(false)
 Me.tpQUM00001_2.PerformLayout
-Me.PanelMutShp.ResumeLayout(false)
-Me.GroupBox10.ResumeLayout(false)
-Me.GroupBox10.PerformLayout
-CType(Me.dgMutShp,System.ComponentModel.ISupportInitialize).EndInit
-Me.PanelCptBkd.ResumeLayout(false)
-Me.GroupBox2.ResumeLayout(false)
-Me.GroupBox2.PerformLayout
-CType(Me.dgMatBkd,System.ComponentModel.ISupportInitialize).EndInit
 Me.PanelItmNoSelect.ResumeLayout(false)
 Me.GroupBox13.ResumeLayout(false)
 Me.GroupBox13.PerformLayout
@@ -9543,16 +9688,6 @@ End Sub
     Friend WithEvents txtCoNam As System.Windows.Forms.TextBox
     Friend WithEvents lblCoNam As System.Windows.Forms.Label
     Friend WithEvents chkPC_hdr As System.Windows.Forms.CheckBox
-    Friend WithEvents cmdInsRow As System.Windows.Forms.Button
-    Friend WithEvents cmdDelete As System.Windows.Forms.Button
-    Friend WithEvents cmdSave As System.Windows.Forms.Button
-    Friend WithEvents cmdAdd As System.Windows.Forms.Button
-    Friend WithEvents cmdFind As System.Windows.Forms.Button
-    Friend WithEvents cmdCopy As System.Windows.Forms.Button
-    Friend WithEvents cmdClear As System.Windows.Forms.Button
-    Friend WithEvents cmdExit As System.Windows.Forms.Button
-    Friend WithEvents cmdDelRow As System.Windows.Forms.Button
-    Friend WithEvents cmdSearch As System.Windows.Forms.Button
     Friend WithEvents txtQutNo As System.Windows.Forms.TextBox
     Friend WithEvents lblQutNo As System.Windows.Forms.Label
     Friend WithEvents txtIssDat As System.Windows.Forms.TextBox
@@ -9872,7 +10007,7 @@ End Sub
     Friend WithEvents lblCosMth As System.Windows.Forms.Label
     Friend WithEvents txtCosMth As System.Windows.Forms.TextBox
     Friend WithEvents dgMatBkd As System.Windows.Forms.DataGridView
-    Friend WithEvents lblCptBkd As System.Windows.Forms.Label
+    Friend WithEvents PanelCptBkdHeader As System.Windows.Forms.Label
     Friend WithEvents txtItmNoReal As System.Windows.Forms.TextBox
     Friend WithEvents cmdPanCptBkdIns As System.Windows.Forms.Button
     Friend WithEvents cboCus1CgInt As System.Windows.Forms.ComboBox
@@ -9890,7 +10025,6 @@ End Sub
     Friend WithEvents cboSalDiv As System.Windows.Forms.ComboBox
     Friend WithEvents lblPrcElemtTitleP As System.Windows.Forms.Label
     Friend WithEvents gbPanelCstEmt As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents gbPanItmNoConv As System.Windows.Forms.GroupBox
     Friend WithEvents lblView As System.Windows.Forms.Label
     Friend WithEvents gbView As System.Windows.Forms.GroupBox
@@ -10251,8 +10385,7 @@ End Sub
     Friend WithEvents Label101 As System.Windows.Forms.Label
     Friend WithEvents btnTOMutShp As System.Windows.Forms.Button
     Friend WithEvents PanelMutShp As System.Windows.Forms.Panel
-    Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label102 As System.Windows.Forms.Label
+    Friend WithEvents PanelMutShpHeader As System.Windows.Forms.Label
     Friend WithEvents cmdPanMutShpIns As System.Windows.Forms.Button
     Friend WithEvents dgMutShp As System.Windows.Forms.DataGridView
     Friend WithEvents cmdPanMutShpQuit As System.Windows.Forms.Button
@@ -10329,4 +10462,43 @@ End Sub
     Friend WithEvents Label115 As System.Windows.Forms.Label
     Friend WithEvents cmdRequote As System.Windows.Forms.Button
     Friend WithEvents cbocusprc As System.Windows.Forms.ComboBox
+    Friend WithEvents mmdRel As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdApv As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuStrip As System.Windows.Forms.MenuStrip
+    Friend WithEvents mmdAdd As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdSave As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdDelete As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdCopy As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdFind As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdClear As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdSearch As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdInsRow As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdDelRow As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t4 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdPrint As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t5 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdAttach As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t6 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdFunction As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t7 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdLink As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t8 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdExit As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsiGenSmp As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsiGenTent As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsiUpdate As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsiRenew As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsiRequote As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PanelMutShpHeaderBar As System.Windows.Forms.Panel
+    Friend WithEvents PanelCptBkdHeaderBar As System.Windows.Forms.Panel
+    Friend WithEvents Button20 As System.Windows.Forms.Button
+    Friend WithEvents tsiPrintQuotation As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsiCIH As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents tsiExportToExcel As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DataSet131 As ERPSystem.DataSet13
 End Class

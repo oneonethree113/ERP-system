@@ -2154,7 +2154,7 @@ Public Class ERP00000
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 15)
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(992, 646)
+        Me.ClientSize = New System.Drawing.Size(992, 627)
         Me.Controls.Add(Me.lbMenu)
         Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

@@ -398,14 +398,23 @@ Public Class ERP00001
 
             '5. Show Main Form
             Me.Hide()
-            Dim MainForm As New ERP00000
+            Dim MainFormNew As New ERP00000new
+            MainFormNew.Text = "United Chinese Group: New ERP System " & gsERPVer & "     (Env: " & Replace(gsDBSvr, "\MSSQLSERVER2012", "") & " - " & gsDB & " ; Login: " & gsUsrID & " ; Date: " & lblUpddat.Text & ")"
+            MainFormNew.Owner = Me
+            MainFormNew.Show()
 
-            MainForm.Text = "United Chinese Group: New ERP System " & gsERPVer & "     (Env: " & Replace(gsDBSvr, "\MSSQLSERVER2012", "") & " - " & gsDB & " ; Login: " & gsUsrID & " ; Date: " & lblUpddat.Text & ")"
-            MainForm.Owner = Me
-            MainForm.Show()
+            'If gsUsrID = "mis" Then
+            '    Dim MainFormNew As New ERP00000new
+            '    MainFormNew.Text = "United Chinese Group: New ERP System " & gsERPVer & "     (Env: " & Replace(gsDBSvr, "\MSSQLSERVER2012", "") & " - " & gsDB & " ; Login: " & gsUsrID & " ; Date: " & lblUpddat.Text & ")"
+            '    MainFormNew.Owner = Me
+            '    MainFormNew.Show()
+            'Else
+            '    Dim MainForm As New ERP00000
 
-
-
+            '    MainForm.Text = "United Chinese Group: New ERP System " & gsERPVer & "     (Env: " & Replace(gsDBSvr, "\MSSQLSERVER2012", "") & " - " & gsDB & " ; Login: " & gsUsrID & " ; Date: " & lblUpddat.Text & ")"
+            '    MainForm.Owner = Me
+            '    MainForm.Show()
+            'End If
         ElseIf rtnLong = RC_NOTFOUND Then
             MsgBox("User Not Found!")
             txtUsrID.Focus()

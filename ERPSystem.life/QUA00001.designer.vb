@@ -22,6 +22,7 @@ Partial Class QUA00001
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(QUA00001))
         Me.btcQUAPP001 = New ERPSystem.BaseTabControl
         Me.tpQUXLS001_1 = New System.Windows.Forms.TabPage
         Me.cboCus2No = New System.Windows.Forms.ComboBox
@@ -39,6 +40,7 @@ Partial Class QUA00001
         Me.Label6 = New System.Windows.Forms.Label
         Me.cmdOK = New System.Windows.Forms.Button
         Me.tpQUXLS001_2 = New System.Windows.Forms.TabPage
+        Me.Button1 = New System.Windows.Forms.Button
         Me.cmdUpload = New System.Windows.Forms.Button
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.chkallmatch = New System.Windows.Forms.CheckBox
@@ -77,7 +79,7 @@ Partial Class QUA00001
         Me.btcQUAPP001.Location = New System.Drawing.Point(-1, 1)
         Me.btcQUAPP001.Name = "btcQUAPP001"
         Me.btcQUAPP001.SelectedIndex = 0
-        Me.btcQUAPP001.Size = New System.Drawing.Size(929, 615)
+        Me.btcQUAPP001.Size = New System.Drawing.Size(954, 615)
         Me.btcQUAPP001.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.btcQUAPP001.TabIndex = 1
         '
@@ -98,9 +100,9 @@ Partial Class QUA00001
         Me.tpQUXLS001_1.Location = New System.Drawing.Point(4, 22)
         Me.tpQUXLS001_1.Name = "tpQUXLS001_1"
         Me.tpQUXLS001_1.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpQUXLS001_1.Size = New System.Drawing.Size(921, 589)
+        Me.tpQUXLS001_1.Size = New System.Drawing.Size(946, 589)
         Me.tpQUXLS001_1.TabIndex = 0
-        Me.tpQUXLS001_1.Text = "(1) Apps#"
+        Me.tpQUXLS001_1.Text = "(1) Apps No."
         Me.tpQUXLS001_1.UseVisualStyleBackColor = True
         '
         'cboCus2No
@@ -133,7 +135,7 @@ Partial Class QUA00001
         '
         Me.lblCus1No.AutoSize = True
         Me.lblCus1No.ForeColor = System.Drawing.Color.MediumBlue
-        Me.lblCus1No.Location = New System.Drawing.Point(145, 131)
+        Me.lblCus1No.Location = New System.Drawing.Point(145, 130)
         Me.lblCus1No.Name = "lblCus1No"
         Me.lblCus1No.Size = New System.Drawing.Size(90, 12)
         Me.lblCus1No.TabIndex = 422
@@ -177,18 +179,17 @@ Partial Class QUA00001
         'lblCoNam
         '
         Me.lblCoNam.AutoSize = True
-        Me.lblCoNam.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.lblCoNam.Location = New System.Drawing.Point(332, 99)
+        Me.lblCoNam.Location = New System.Drawing.Point(352, 99)
         Me.lblCoNam.Name = "lblCoNam"
-        Me.lblCoNam.Size = New System.Drawing.Size(85, 13)
+        Me.lblCoNam.Size = New System.Drawing.Size(81, 12)
         Me.lblCoNam.TabIndex = 417
-        Me.lblCoNam.Text = "Company Name:"
+        Me.lblCoNam.Text = "Company Name"
         '
         'cboCoCde
         '
         Me.cboCoCde.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.cboCoCde.FormattingEnabled = True
-        Me.cboCoCde.Location = New System.Drawing.Point(242, 95)
+        Me.cboCoCde.Location = New System.Drawing.Point(262, 95)
         Me.cboCoCde.Name = "cboCoCde"
         Me.cboCoCde.Size = New System.Drawing.Size(84, 21)
         Me.cboCoCde.TabIndex = 264
@@ -199,7 +200,7 @@ Partial Class QUA00001
         Me.txtCoNam.Enabled = False
         Me.txtCoNam.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.txtCoNam.ForeColor = System.Drawing.Color.DimGray
-        Me.txtCoNam.Location = New System.Drawing.Point(423, 95)
+        Me.txtCoNam.Location = New System.Drawing.Point(443, 95)
         Me.txtCoNam.MaxLength = 30
         Me.txtCoNam.Name = "txtCoNam"
         Me.txtCoNam.ReadOnly = True
@@ -218,28 +219,26 @@ Partial Class QUA00001
         'lblQutNo
         '
         Me.lblQutNo.AutoSize = True
-        Me.lblQutNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.lblQutNo.ForeColor = System.Drawing.Color.Red
-        Me.lblQutNo.Location = New System.Drawing.Point(165, 244)
+        Me.lblQutNo.Location = New System.Drawing.Point(144, 244)
         Me.lblQutNo.Name = "lblQutNo"
-        Me.lblQutNo.Size = New System.Drawing.Size(130, 13)
+        Me.lblQutNo.Size = New System.Drawing.Size(125, 12)
         Me.lblQutNo.TabIndex = 263
-        Me.lblQutNo.Text = "Apps Temp Quotation No:"
+        Me.lblQutNo.Text = "Apps Temp Quotation No"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Label6.ForeColor = System.Drawing.Color.MediumBlue
         Me.Label6.Location = New System.Drawing.Point(145, 99)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(82, 13)
+        Me.Label6.Size = New System.Drawing.Size(79, 12)
         Me.Label6.TabIndex = 262
-        Me.Label6.Text = "Company Code:"
+        Me.Label6.Text = "Company Code"
         '
         'cmdOK
         '
-        Me.cmdOK.Location = New System.Drawing.Point(554, 248)
+        Me.cmdOK.Location = New System.Drawing.Point(555, 239)
         Me.cmdOK.Name = "cmdOK"
         Me.cmdOK.Size = New System.Drawing.Size(156, 23)
         Me.cmdOK.TabIndex = 35
@@ -248,6 +247,7 @@ Partial Class QUA00001
         '
         'tpQUXLS001_2
         '
+        Me.tpQUXLS001_2.Controls.Add(Me.Button1)
         Me.tpQUXLS001_2.Controls.Add(Me.cmdUpload)
         Me.tpQUXLS001_2.Controls.Add(Me.GroupBox2)
         Me.tpQUXLS001_2.Controls.Add(Me.txtQutNo2)
@@ -265,10 +265,20 @@ Partial Class QUA00001
         Me.tpQUXLS001_2.Location = New System.Drawing.Point(4, 22)
         Me.tpQUXLS001_2.Name = "tpQUXLS001_2"
         Me.tpQUXLS001_2.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpQUXLS001_2.Size = New System.Drawing.Size(921, 589)
+        Me.tpQUXLS001_2.Size = New System.Drawing.Size(946, 589)
         Me.tpQUXLS001_2.TabIndex = 1
         Me.tpQUXLS001_2.Text = "(2) Approval"
         Me.tpQUXLS001_2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(875, 84)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(98, 21)
+        Me.Button1.TabIndex = 425
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'cmdUpload
         '
@@ -283,16 +293,16 @@ Partial Class QUA00001
         '
         Me.GroupBox2.Controls.Add(Me.chkallmatch)
         Me.GroupBox2.Controls.Add(Me.chknomsg)
-        Me.GroupBox2.Location = New System.Drawing.Point(659, 9)
+        Me.GroupBox2.Location = New System.Drawing.Point(659, 6)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(226, 69)
+        Me.GroupBox2.Size = New System.Drawing.Size(226, 72)
         Me.GroupBox2.TabIndex = 423
         Me.GroupBox2.TabStop = False
         '
         'chkallmatch
         '
         Me.chkallmatch.AutoSize = True
-        Me.chkallmatch.Location = New System.Drawing.Point(31, 40)
+        Me.chkallmatch.Location = New System.Drawing.Point(28, 43)
         Me.chkallmatch.Name = "chkallmatch"
         Me.chkallmatch.Size = New System.Drawing.Size(148, 16)
         Me.chkallmatch.TabIndex = 1
@@ -302,7 +312,7 @@ Partial Class QUA00001
         'chknomsg
         '
         Me.chknomsg.AutoSize = True
-        Me.chknomsg.Location = New System.Drawing.Point(31, 12)
+        Me.chknomsg.Location = New System.Drawing.Point(28, 18)
         Me.chknomsg.Name = "chknomsg"
         Me.chknomsg.Size = New System.Drawing.Size(103, 16)
         Me.chknomsg.TabIndex = 0
@@ -326,9 +336,9 @@ Partial Class QUA00001
         Me.Label7.ForeColor = System.Drawing.Color.Red
         Me.Label7.Location = New System.Drawing.Point(285, 23)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(73, 13)
+        Me.Label7.Size = New System.Drawing.Size(70, 13)
         Me.Label7.TabIndex = 422
-        Me.Label7.Text = "Quotation No:"
+        Me.Label7.Text = "Quotation No"
         '
         'gbStatus
         '
@@ -403,7 +413,7 @@ Partial Class QUA00001
         Me.grdItem.RowHeadersWidth = 20
         Me.grdItem.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Arial", 8.25!)
         Me.grdItem.RowTemplate.Height = 16
-        Me.grdItem.Size = New System.Drawing.Size(912, 468)
+        Me.grdItem.Size = New System.Drawing.Size(937, 468)
         Me.grdItem.TabIndex = 43
         '
         'cmdClose
@@ -473,13 +483,14 @@ Partial Class QUA00001
         'QUA00001
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(929, 615)
+        Me.ClientSize = New System.Drawing.Size(954, 631)
         Me.Controls.Add(Me.btcQUAPP001)
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "QUA00001"
-        Me.Text = "QUA00001 - Apps Upload for Quotation Generation"
+        Me.Text = "QUA00001 - Apps Upload for Quotation Generation (QUA01)"
         Me.btcQUAPP001.ResumeLayout(False)
         Me.tpQUXLS001_1.ResumeLayout(False)
         Me.tpQUXLS001_1.PerformLayout()
@@ -532,4 +543,5 @@ Partial Class QUA00001
     Friend WithEvents chkallmatch As System.Windows.Forms.CheckBox
     Friend WithEvents chknomsg As System.Windows.Forms.CheckBox
     Friend WithEvents cmdUpload As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

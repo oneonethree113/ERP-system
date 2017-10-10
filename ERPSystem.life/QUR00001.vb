@@ -21,6 +21,7 @@ Public Class QUR00001
     Dim Del_right_local As Boolean
 
     Dim rs_QUR00001Status As New DataSet
+    Dim CoCde As String
 
     Private Sub QUR00001_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Cursor = Cursors.WaitCursor
@@ -732,5 +733,25 @@ Public Class QUR00001
         xlsApp = Nothing
 
         Cursor = Cursors.Default
+    End Sub
+
+    Public Sub callByQUM01(ByVal QUno As String, ByVal ComparyCode As String)
+        txtFromQuotNo.Text = QUno
+        txtToQuotNo.Text = QUno
+        txtFromQuotNo.Enabled = False
+
+        txtToQuotNo.Enabled = False
+        CoCde = ComparyCode
+        cboCoCde.Enabled = False
+        AddHandler Me.Shown, AddressOf callByQUM01AfterLoading
+        Me.ShowDialog()
+
+    End Sub
+
+
+    Private Sub callByQUM01AfterLoading()
+        cboCoCde.SelectedItem = CoCde
+        cboCoCde.Enabled = False
+        RemoveHandler Me.Shown, AddressOf callByQUM01AfterLoading
     End Sub
 End Class

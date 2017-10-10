@@ -25,6 +25,8 @@ Public Class QUR00003
     Public rs_QUASSINF As New DataSet ' for Assortment Item information
 
     Dim rs_lightspec As New DataSet
+    Dim CoCde As String
+
 
 
 
@@ -2135,5 +2137,24 @@ Public Class QUR00003
 
     Private Sub saveto_folder_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles saveto_folder.TextChanged
 
+    End Sub
+
+
+    Public Sub callByQUM01(ByVal QUno As String, ByVal ComparyCode As String)
+        txtFromQuotNo.Text = QUno
+        txtFromQuotNo.Enabled = False
+
+        CoCde = ComparyCode
+        cboCoCde.Enabled = False
+        Combo1.Enabled = False
+        AddHandler Me.Shown, AddressOf callByQUM01AfterLoading
+        Me.ShowDialog()
+
+    End Sub
+
+    Private Sub callByQUM01AfterLoading()
+        cboCoCde.SelectedItem = CoCde
+        cboCoCde.Enabled = False
+        RemoveHandler Me.Shown, AddressOf callByQUM01AfterLoading
     End Sub
 End Class

@@ -89,9 +89,9 @@ Partial Class SYS00001
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(11, 87)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(90, 12)
+        Me.Label2.Size = New System.Drawing.Size(87, 12)
         Me.Label2.TabIndex = 207
-        Me.Label2.Text = "Company Group :"
+        Me.Label2.Text = "Company Group "
         '
         'lblLeft
         '
@@ -131,9 +131,9 @@ Partial Class SYS00001
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(12, 49)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(65, 12)
+        Me.Label5.Size = New System.Drawing.Size(62, 12)
         Me.Label5.TabIndex = 203
-        Me.Label5.Text = "User Group :"
+        Me.Label5.Text = "User Group "
         '
         'cboUsrGrp
         '
@@ -157,16 +157,16 @@ Partial Class SYS00001
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(349, 49)
+        Me.Label1.Location = New System.Drawing.Point(352, 49)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(64, 12)
+        Me.Label1.Size = New System.Drawing.Size(61, 12)
         Me.Label1.TabIndex = 209
-        Me.Label1.Text = "Description :"
+        Me.Label1.Text = "Description "
         '
         'txtDesc
         '
         Me.txtDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDesc.Location = New System.Drawing.Point(444, 47)
+        Me.txtDesc.Location = New System.Drawing.Point(444, 45)
         Me.txtDesc.Name = "txtDesc"
         Me.txtDesc.ReadOnly = True
         Me.txtDesc.Size = New System.Drawing.Size(400, 21)
@@ -362,7 +362,6 @@ Partial Class SYS00001
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(954, 631)
-        Me.Controls.Add(Me.txtUsrGrp)
         Me.Controls.Add(Me.txtDesc)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cboComGrp)
@@ -372,6 +371,7 @@ Partial Class SYS00001
         Me.Controls.Add(Me.cboUsrGrp)
         Me.Controls.Add(Me.StatusBar)
         Me.Controls.Add(Me.menuStrip)
+        Me.Controls.Add(Me.txtUsrGrp)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.menuStrip

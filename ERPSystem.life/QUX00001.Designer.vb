@@ -22,6 +22,7 @@ Partial Class QUX00001
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(QUX00001))
         Me.btcQUXLS001 = New ERPSystem.BaseTabControl
         Me.tpQUXLS001_1 = New System.Windows.Forms.TabPage
         Me.cboCus2No = New System.Windows.Forms.ComboBox
@@ -88,7 +89,7 @@ Partial Class QUX00001
         Me.btcQUXLS001.Location = New System.Drawing.Point(-1, 1)
         Me.btcQUXLS001.Name = "btcQUXLS001"
         Me.btcQUXLS001.SelectedIndex = 0
-        Me.btcQUXLS001.Size = New System.Drawing.Size(929, 615)
+        Me.btcQUXLS001.Size = New System.Drawing.Size(959, 615)
         Me.btcQUXLS001.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.btcQUXLS001.TabIndex = 1
         '
@@ -117,7 +118,7 @@ Partial Class QUX00001
         Me.tpQUXLS001_1.Location = New System.Drawing.Point(4, 22)
         Me.tpQUXLS001_1.Name = "tpQUXLS001_1"
         Me.tpQUXLS001_1.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpQUXLS001_1.Size = New System.Drawing.Size(921, 589)
+        Me.tpQUXLS001_1.Size = New System.Drawing.Size(951, 589)
         Me.tpQUXLS001_1.TabIndex = 0
         Me.tpQUXLS001_1.Text = "(1) Upload"
         Me.tpQUXLS001_1.UseVisualStyleBackColor = True
@@ -191,18 +192,17 @@ Partial Class QUX00001
         'lblCoNam
         '
         Me.lblCoNam.AutoSize = True
-        Me.lblCoNam.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.lblCoNam.Location = New System.Drawing.Point(187, 53)
+        Me.lblCoNam.Location = New System.Drawing.Point(272, 53)
         Me.lblCoNam.Name = "lblCoNam"
-        Me.lblCoNam.Size = New System.Drawing.Size(85, 13)
+        Me.lblCoNam.Size = New System.Drawing.Size(81, 12)
         Me.lblCoNam.TabIndex = 417
-        Me.lblCoNam.Text = "Company Name:"
+        Me.lblCoNam.Text = "Company Name"
         '
         'cboCoCde
         '
         Me.cboCoCde.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.cboCoCde.FormattingEnabled = True
-        Me.cboCoCde.Location = New System.Drawing.Point(97, 49)
+        Me.cboCoCde.Location = New System.Drawing.Point(127, 49)
         Me.cboCoCde.Name = "cboCoCde"
         Me.cboCoCde.Size = New System.Drawing.Size(84, 21)
         Me.cboCoCde.TabIndex = 264
@@ -211,22 +211,20 @@ Partial Class QUX00001
         '
         Me.txtCoNam.BackColor = System.Drawing.SystemColors.MenuBar
         Me.txtCoNam.Enabled = False
-        Me.txtCoNam.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.txtCoNam.ForeColor = System.Drawing.Color.DimGray
-        Me.txtCoNam.Location = New System.Drawing.Point(278, 49)
+        Me.txtCoNam.Location = New System.Drawing.Point(363, 49)
         Me.txtCoNam.MaxLength = 30
         Me.txtCoNam.Name = "txtCoNam"
         Me.txtCoNam.ReadOnly = True
-        Me.txtCoNam.Size = New System.Drawing.Size(316, 20)
+        Me.txtCoNam.Size = New System.Drawing.Size(316, 22)
         Me.txtCoNam.TabIndex = 265
         '
         'txtQutNo
         '
-        Me.txtQutNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.txtQutNo.Location = New System.Drawing.Point(96, 81)
+        Me.txtQutNo.Location = New System.Drawing.Point(128, 81)
         Me.txtQutNo.MaxLength = 10
         Me.txtQutNo.Name = "txtQutNo"
-        Me.txtQutNo.Size = New System.Drawing.Size(104, 20)
+        Me.txtQutNo.Size = New System.Drawing.Size(104, 22)
         Me.txtQutNo.TabIndex = 261
         Me.txtQutNo.Visible = False
         '
@@ -245,27 +243,26 @@ Partial Class QUX00001
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Label6.ForeColor = System.Drawing.Color.MediumBlue
         Me.Label6.Location = New System.Drawing.Point(8, 53)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(82, 13)
+        Me.Label6.Size = New System.Drawing.Size(79, 12)
         Me.Label6.TabIndex = 262
-        Me.Label6.Text = "Company Code:"
+        Me.Label6.Text = "Company Code"
         '
         'txtProcess
         '
         Me.txtProcess.BackColor = System.Drawing.Color.White
-        Me.txtProcess.Location = New System.Drawing.Point(12, 391)
+        Me.txtProcess.Location = New System.Drawing.Point(12, 447)
         Me.txtProcess.Multiline = True
         Me.txtProcess.Name = "txtProcess"
         Me.txtProcess.ReadOnly = True
-        Me.txtProcess.Size = New System.Drawing.Size(728, 134)
+        Me.txtProcess.Size = New System.Drawing.Size(927, 134)
         Me.txtProcess.TabIndex = 36
         '
         'cmdOK
         '
-        Me.cmdOK.Location = New System.Drawing.Point(665, 363)
+        Me.cmdOK.Location = New System.Drawing.Point(864, 419)
         Me.cmdOK.Name = "cmdOK"
         Me.cmdOK.Size = New System.Drawing.Size(75, 23)
         Me.cmdOK.TabIndex = 35
@@ -274,7 +271,7 @@ Partial Class QUX00001
         '
         'cmdRefresh
         '
-        Me.cmdRefresh.Location = New System.Drawing.Point(584, 363)
+        Me.cmdRefresh.Location = New System.Drawing.Point(783, 419)
         Me.cmdRefresh.Name = "cmdRefresh"
         Me.cmdRefresh.Size = New System.Drawing.Size(75, 23)
         Me.cmdRefresh.TabIndex = 34
@@ -285,7 +282,7 @@ Partial Class QUX00001
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(9, 361)
+        Me.Label3.Location = New System.Drawing.Point(9, 424)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(369, 12)
         Me.Label3.TabIndex = 33
@@ -304,16 +301,16 @@ Partial Class QUX00001
         '
         Me.filSource.FormattingEnabled = True
         Me.filSource.ItemHeight = 12
-        Me.filSource.Location = New System.Drawing.Point(494, 148)
+        Me.filSource.Location = New System.Drawing.Point(576, 148)
         Me.filSource.Name = "filSource"
-        Me.filSource.Size = New System.Drawing.Size(246, 208)
+        Me.filSource.Size = New System.Drawing.Size(362, 268)
         Me.filSource.Sorted = True
         Me.filSource.TabIndex = 30
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(491, 131)
+        Me.Label2.Location = New System.Drawing.Point(573, 131)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(86, 12)
         Me.Label2.TabIndex = 32
@@ -323,7 +320,7 @@ Partial Class QUX00001
         '
         Me.dirSource.Location = New System.Drawing.Point(12, 175)
         Me.dirSource.Name = "dirSource"
-        Me.dirSource.Size = New System.Drawing.Size(476, 185)
+        Me.dirSource.Size = New System.Drawing.Size(558, 241)
         Me.dirSource.TabIndex = 29
         '
         'drvSource
@@ -331,7 +328,7 @@ Partial Class QUX00001
         Me.drvSource.FormattingEnabled = True
         Me.drvSource.Location = New System.Drawing.Point(12, 148)
         Me.drvSource.Name = "drvSource"
-        Me.drvSource.Size = New System.Drawing.Size(476, 20)
+        Me.drvSource.Size = New System.Drawing.Size(558, 20)
         Me.drvSource.TabIndex = 28
         '
         'tpQUXLS001_2
@@ -355,7 +352,7 @@ Partial Class QUX00001
         Me.tpQUXLS001_2.Location = New System.Drawing.Point(4, 22)
         Me.tpQUXLS001_2.Name = "tpQUXLS001_2"
         Me.tpQUXLS001_2.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpQUXLS001_2.Size = New System.Drawing.Size(921, 589)
+        Me.tpQUXLS001_2.Size = New System.Drawing.Size(951, 589)
         Me.tpQUXLS001_2.TabIndex = 1
         Me.tpQUXLS001_2.Text = "(2) Approval"
         Me.tpQUXLS001_2.UseVisualStyleBackColor = True
@@ -365,7 +362,7 @@ Partial Class QUX00001
         Me.GroupBox3.Controls.Add(Me.chkGenTO)
         Me.GroupBox3.Location = New System.Drawing.Point(659, 73)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(248, 50)
+        Me.GroupBox3.Size = New System.Drawing.Size(279, 50)
         Me.GroupBox3.TabIndex = 424
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "TO option"
@@ -407,7 +404,7 @@ Partial Class QUX00001
         Me.GroupBox2.Controls.Add(Me.chkallmatch)
         Me.GroupBox2.Location = New System.Drawing.Point(659, 9)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(248, 57)
+        Me.GroupBox2.Size = New System.Drawing.Size(279, 57)
         Me.GroupBox2.TabIndex = 423
         Me.GroupBox2.TabStop = False
         '
@@ -436,11 +433,10 @@ Partial Class QUX00001
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Label7.ForeColor = System.Drawing.Color.Red
         Me.Label7.Location = New System.Drawing.Point(285, 23)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(73, 13)
+        Me.Label7.Size = New System.Drawing.Size(71, 12)
         Me.Label7.TabIndex = 422
         Me.Label7.Text = "Quotation No:"
         '
@@ -501,7 +497,7 @@ Partial Class QUX00001
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(378, 101)
+        Me.Label5.Location = New System.Drawing.Point(378, 102)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(17, 12)
         Me.Label5.TabIndex = 412
@@ -517,7 +513,7 @@ Partial Class QUX00001
         Me.grdItem.RowHeadersWidth = 20
         Me.grdItem.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Arial", 8.25!)
         Me.grdItem.RowTemplate.Height = 16
-        Me.grdItem.Size = New System.Drawing.Size(912, 450)
+        Me.grdItem.Size = New System.Drawing.Size(932, 450)
         Me.grdItem.TabIndex = 43
         '
         'cmdClose
@@ -541,10 +537,9 @@ Partial Class QUX00001
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.Label4.Location = New System.Drawing.Point(448, 101)
+        Me.Label4.Location = New System.Drawing.Point(449, 102)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(20, 13)
+        Me.Label4.Size = New System.Drawing.Size(18, 12)
         Me.Label4.TabIndex = 411
         Me.Label4.Text = "To"
         '
@@ -559,11 +554,10 @@ Partial Class QUX00001
         '
         'txtFromApply
         '
-        Me.txtFromApply.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.txtFromApply.Location = New System.Drawing.Point(402, 98)
+        Me.txtFromApply.Location = New System.Drawing.Point(402, 97)
         Me.txtFromApply.MaxLength = 4
         Me.txtFromApply.Name = "txtFromApply"
-        Me.txtFromApply.Size = New System.Drawing.Size(40, 20)
+        Me.txtFromApply.Size = New System.Drawing.Size(40, 22)
         Me.txtFromApply.TabIndex = 408
         '
         'cmdGen
@@ -578,23 +572,23 @@ Partial Class QUX00001
         '
         'txtToApply
         '
-        Me.txtToApply.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.txtToApply.Location = New System.Drawing.Point(474, 98)
         Me.txtToApply.MaxLength = 4
         Me.txtToApply.Name = "txtToApply"
-        Me.txtToApply.Size = New System.Drawing.Size(40, 20)
+        Me.txtToApply.Size = New System.Drawing.Size(40, 22)
         Me.txtToApply.TabIndex = 409
         '
         'QUX00001
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(929, 636)
+        Me.ClientSize = New System.Drawing.Size(954, 631)
         Me.Controls.Add(Me.btcQUXLS001)
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "QUX00001"
-        Me.Text = "QUX00001 - Item List Upload for Quotation Generation"
+        Me.Text = "QUX00001 - Item List Upload for Quotation Generation (QUX01)"
         Me.btcQUXLS001.ResumeLayout(False)
         Me.tpQUXLS001_1.ResumeLayout(False)
         Me.tpQUXLS001_1.PerformLayout()

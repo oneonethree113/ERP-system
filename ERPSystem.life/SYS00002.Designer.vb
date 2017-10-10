@@ -24,6 +24,8 @@ Partial Class SYS00002
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SYS00002))
         Me.GrpBoxMain = New System.Windows.Forms.GroupBox
+        Me.cboMenuBarStyle = New System.Windows.Forms.ComboBox
+        Me.Label10 = New System.Windows.Forms.Label
         Me.DataGrid = New System.Windows.Forms.DataGridView
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.DataGridRights = New System.Windows.Forms.DataGridView
@@ -81,6 +83,8 @@ Partial Class SYS00002
         '
         'GrpBoxMain
         '
+        Me.GrpBoxMain.Controls.Add(Me.cboMenuBarStyle)
+        Me.GrpBoxMain.Controls.Add(Me.Label10)
         Me.GrpBoxMain.Controls.Add(Me.DataGrid)
         Me.GrpBoxMain.Controls.Add(Me.GroupBox2)
         Me.GrpBoxMain.Controls.Add(Me.Label9)
@@ -104,6 +108,27 @@ Partial Class SYS00002
         Me.GrpBoxMain.Size = New System.Drawing.Size(948, 579)
         Me.GrpBoxMain.TabIndex = 193
         Me.GrpBoxMain.TabStop = False
+        '
+        'cboMenuBarStyle
+        '
+        Me.cboMenuBarStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboMenuBarStyle.Enabled = False
+        Me.cboMenuBarStyle.FormattingEnabled = True
+        Me.cboMenuBarStyle.Items.AddRange(New Object() {"1. LongCode MenuBar (Enable version)", "2. LongCode MenuBar (Visible version)", "3. ShortCode MenuBar (Enable version)", "4. ShortCode MenuBar (Visible version)"})
+        Me.cboMenuBarStyle.Location = New System.Drawing.Point(139, 311)
+        Me.cboMenuBarStyle.Name = "cboMenuBarStyle"
+        Me.cboMenuBarStyle.Size = New System.Drawing.Size(275, 20)
+        Me.cboMenuBarStyle.TabIndex = 230
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.ForeColor = System.Drawing.Color.Blue
+        Me.Label10.Location = New System.Drawing.Point(13, 314)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(78, 12)
+        Me.Label10.TabIndex = 229
+        Me.Label10.Text = "Menu Bar Style"
         '
         'DataGrid
         '
@@ -148,7 +173,7 @@ Partial Class SYS00002
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(236, 261)
+        Me.Label9.Location = New System.Drawing.Point(236, 232)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(87, 12)
         Me.Label9.TabIndex = 224
@@ -157,7 +182,7 @@ Partial Class SYS00002
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(236, 211)
+        Me.Label8.Location = New System.Drawing.Point(236, 187)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(87, 12)
         Me.Label8.TabIndex = 223
@@ -167,7 +192,7 @@ Partial Class SYS00002
         '
         Me.txtAccExp.Enabled = False
         Me.txtAccExp.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAccExp.Location = New System.Drawing.Point(140, 256)
+        Me.txtAccExp.Location = New System.Drawing.Point(140, 227)
         Me.txtAccExp.Mask = "##/##/####"
         Me.txtAccExp.Name = "txtAccExp"
         Me.txtAccExp.Size = New System.Drawing.Size(94, 21)
@@ -177,7 +202,7 @@ Partial Class SYS00002
         '
         Me.txtExpDat.Enabled = False
         Me.txtExpDat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtExpDat.Location = New System.Drawing.Point(140, 207)
+        Me.txtExpDat.Location = New System.Drawing.Point(140, 183)
         Me.txtExpDat.Mask = "##/##/####"
         Me.txtExpDat.Name = "txtExpDat"
         Me.txtExpDat.Size = New System.Drawing.Size(94, 21)
@@ -186,7 +211,7 @@ Partial Class SYS00002
         'txtMailAd
         '
         Me.txtMailAd.Enabled = False
-        Me.txtMailAd.Location = New System.Drawing.Point(139, 304)
+        Me.txtMailAd.Location = New System.Drawing.Point(139, 270)
         Me.txtMailAd.MaxLength = 50
         Me.txtMailAd.Name = "txtMailAd"
         Me.txtMailAd.Size = New System.Drawing.Size(275, 22)
@@ -194,7 +219,7 @@ Partial Class SYS00002
         '
         'txtConPwd
         '
-        Me.txtConPwd.Location = New System.Drawing.Point(139, 159)
+        Me.txtConPwd.Location = New System.Drawing.Point(139, 141)
         Me.txtConPwd.MaxLength = 10
         Me.txtConPwd.Name = "txtConPwd"
         Me.txtConPwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -203,7 +228,7 @@ Partial Class SYS00002
         '
         'txtUsrPwd
         '
-        Me.txtUsrPwd.Location = New System.Drawing.Point(139, 115)
+        Me.txtUsrPwd.Location = New System.Drawing.Point(139, 100)
         Me.txtUsrPwd.MaxLength = 10
         Me.txtUsrPwd.Name = "txtUsrPwd"
         Me.txtUsrPwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -213,7 +238,7 @@ Partial Class SYS00002
         'txtUsrNam
         '
         Me.txtUsrNam.Enabled = False
-        Me.txtUsrNam.Location = New System.Drawing.Point(139, 69)
+        Me.txtUsrNam.Location = New System.Drawing.Point(139, 61)
         Me.txtUsrNam.MaxLength = 100
         Me.txtUsrNam.Name = "txtUsrNam"
         Me.txtUsrNam.Size = New System.Drawing.Size(275, 22)
@@ -231,61 +256,61 @@ Partial Class SYS00002
         '
         Me.Label7.AutoSize = True
         Me.Label7.ForeColor = System.Drawing.Color.Blue
-        Me.Label7.Location = New System.Drawing.Point(13, 307)
+        Me.Label7.Location = New System.Drawing.Point(13, 273)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(78, 12)
+        Me.Label7.Size = New System.Drawing.Size(75, 12)
         Me.Label7.TabIndex = 13
-        Me.Label7.Text = "Email Address :"
+        Me.Label7.Text = "Email Address "
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.Blue
-        Me.Label6.Location = New System.Drawing.Point(13, 261)
+        Me.Label6.Location = New System.Drawing.Point(13, 232)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(109, 12)
+        Me.Label6.Size = New System.Drawing.Size(103, 12)
         Me.Label6.TabIndex = 12
-        Me.Label6.Text = "Account Expiry Date :"
+        Me.Label6.Text = "Account Expiry Date"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.Color.Blue
-        Me.Label5.Location = New System.Drawing.Point(13, 212)
+        Me.Label5.Location = New System.Drawing.Point(13, 188)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(113, 12)
+        Me.Label5.Size = New System.Drawing.Size(110, 12)
         Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Passowrd Expiry Date :"
+        Me.Label5.Text = "Passowrd Expiry Date "
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.Blue
-        Me.Label4.Location = New System.Drawing.Point(13, 163)
+        Me.Label4.Location = New System.Drawing.Point(13, 145)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(97, 12)
+        Me.Label4.Size = New System.Drawing.Size(94, 12)
         Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Confirm Password :"
+        Me.Label4.Text = "Confirm Password "
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.Blue
-        Me.Label3.Location = New System.Drawing.Point(13, 117)
+        Me.Label3.Location = New System.Drawing.Point(13, 105)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(54, 12)
+        Me.Label3.Size = New System.Drawing.Size(51, 12)
         Me.Label3.TabIndex = 9
-        Me.Label3.Text = "Password :"
+        Me.Label3.Text = "Password "
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.Blue
-        Me.Label2.Location = New System.Drawing.Point(13, 71)
+        Me.Label2.Location = New System.Drawing.Point(13, 65)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(38, 12)
+        Me.Label2.Size = New System.Drawing.Size(35, 12)
         Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Name :"
+        Me.Label2.Text = "Name "
         '
         'Label1
         '
@@ -293,9 +318,9 @@ Partial Class SYS00002
         Me.Label1.ForeColor = System.Drawing.Color.Red
         Me.Label1.Location = New System.Drawing.Point(13, 25)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(47, 12)
+        Me.Label1.Size = New System.Drawing.Size(44, 12)
         Me.Label1.TabIndex = 7
-        Me.Label1.Text = "User ID :"
+        Me.Label1.Text = "User ID "
         '
         'StatusBar
         '
@@ -573,4 +598,6 @@ Partial Class SYS00002
     Friend WithEvents mmdLink As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents t8 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mmdExit As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents cboMenuBarStyle As System.Windows.Forms.ComboBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
 End Class

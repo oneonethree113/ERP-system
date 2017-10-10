@@ -47,6 +47,11 @@
                         .Columns(i).Width = 400
                         .Columns(i).HeaderText = "Function Description"
                         .Columns(i).ReadOnly = True
+                    Case 9
+                        .Columns(i).Width = 100
+                        .Columns(i).HeaderText = "(Short Code)"
+                        .Columns(i).ReadOnly = True
+                        .Columns(i).DisplayIndex = 3
                     Case Else
                         .Columns(i).Visible = False
                 End Select
