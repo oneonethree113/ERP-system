@@ -39899,6 +39899,8 @@ Handles dgMatBkd.DataError
                 SetPanelPosition(PanelMutShp)
             Case PanelCptBkd.Name
                 SetPanelPosition(PanelCptBkd)
+            Case PanelItmNoConv.Name
+                SetPanelPosition(PanelItmNoConv)
         End Select
 
 
@@ -39928,6 +39930,20 @@ Handles dgMatBkd.DataError
         RenewPanel(PanelCptBkd)
         movePanel = ""
     End Sub
+
+    Private Sub PanelItmNoConv_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PanelItmNoConvHeaderBar.MouseDown, PanelItmNoConvHeader.MouseDown
+        movePanel = PanelItmNoConv.Name
+        panelMoveTimer.Enabled = True
+        panelMoveTimer.Start()
+        RenewPanel(PanelItmNoConv)
+    End Sub
+
+    Private Sub PanelItmNoConv_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PanelItmNoConvHeaderBar.MouseUp, PanelItmNoConvHeader.MouseUp
+        panelMoveTimer.Stop()
+        RenewPanel(PanelItmNoConv)
+        movePanel = ""
+    End Sub
+
 #End Region
 
 
@@ -39973,4 +39989,5 @@ Handles dgMatBkd.DataError
     Private Sub set_lblMUMinPositionByMidPoint(ByVal midPoint As Point)
         lblMUMin.Location = New Point(midPoint.X, midPoint.Y)
     End Sub
+
 End Class
