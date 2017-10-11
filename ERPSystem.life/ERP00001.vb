@@ -245,7 +245,7 @@ Public Class ERP00001
         gsERPVer = "Ver. 18.0.a.20"
 
         lblVer.Text = gsERPVer
-        lblUpddat.Text = "10/09/2017"
+        lblUpddat.Text = "10/10/2017"
 
         'cboCoGrp
         cboCoGrp.Items.Add("UCP/UCPP/PG/EW/TT/HB/HX/HH/GU")

@@ -660,23 +660,23 @@ Public Class ERP00000new
         Me.FileToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiReLegin, Me.ToolStripMenuItem22, Me.ExitToolStripMenuItem1})
         Me.FileToolStripMenuItem1.Name = "FileToolStripMenuItem1"
         Me.FileToolStripMenuItem1.Size = New System.Drawing.Size(34, 16)
-        Me.FileToolStripMenuItem1.Text = "File"
+        Me.FileToolStripMenuItem1.Text = "&File"
         '
         'smiReLegin
         '
         Me.smiReLegin.Name = "smiReLegin"
-        Me.smiReLegin.Size = New System.Drawing.Size(115, 22)
+        Me.smiReLegin.Size = New System.Drawing.Size(152, 22)
         Me.smiReLegin.Text = "Re-Login"
         '
         'ToolStripMenuItem22
         '
         Me.ToolStripMenuItem22.Name = "ToolStripMenuItem22"
-        Me.ToolStripMenuItem22.Size = New System.Drawing.Size(112, 6)
+        Me.ToolStripMenuItem22.Size = New System.Drawing.Size(149, 6)
         '
         'ExitToolStripMenuItem1
         '
         Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
-        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(115, 22)
+        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem1.Text = "Exit"
         '
         'ToolStripTextBox2
@@ -2500,7 +2500,7 @@ Public Class ERP00000new
         Me.KeyPreview = True
         Me.Name = "ERP00000new"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "ERP00000"
+        Me.Text = "s"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.msMenuERP.ResumeLayout(False)
         Me.msMenuERP.PerformLayout()

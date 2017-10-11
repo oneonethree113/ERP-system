@@ -7,6 +7,11 @@
     Dim Enq_right_local As Boolean
     Dim Del_right_local As Boolean
 
+    Const funCodeCol As Integer = 2
+    Const funShortCodeCol As Integer = 3
+    Const funDescCol As Integer = 4
+
+
     Private Sub SYS00003_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         Try
@@ -39,19 +44,18 @@
             .DataSource = dv
             For i = 0 To .Columns.Count - 1
                 Select Case i
-                    Case 2
+                    Case funCodeCol
                         .Columns(i).Width = 200
                         .Columns(i).HeaderText = "User Function"
                         .Columns(i).ReadOnly = True
-                    Case 3
-                        .Columns(i).Width = 400
-                        .Columns(i).HeaderText = "Function Description"
-                        .Columns(i).ReadOnly = True
-                    Case 9
+                    Case funShortCodeCol
                         .Columns(i).Width = 100
                         .Columns(i).HeaderText = "(Short Code)"
                         .Columns(i).ReadOnly = True
-                        .Columns(i).DisplayIndex = 3
+                    Case funDescCol
+                        .Columns(i).Width = 400
+                        .Columns(i).HeaderText = "Function Description"
+                        .Columns(i).ReadOnly = True
                     Case Else
                         .Columns(i).Visible = False
                 End Select
