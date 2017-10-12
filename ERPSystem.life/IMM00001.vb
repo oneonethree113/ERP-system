@@ -7290,11 +7290,11 @@ Public Class IMM00001
         i = i + 1 '7
         dgBOMASS_ibi_engdsc = i
         dgBOMASS.Columns(i).HeaderText = "Item Description"
-        dgBOMASS.Columns(i).Width = 130
+         dgBOMASS.Columns(i).Width = 140
         i = i + 1 '8
         dgBOMASS_vbi_vensna = i
-        dgBOMASS.Columns(i).HeaderText = "Vendor"
-        dgBOMASS.Columns(i).Width = 60
+        dgBOMASS.Columns(i).HeaderText = "Default PV"
+        dgBOMASS.Columns(i).Width = 70
         i = i + 1 '9
         dgBOMASS_iba_period = i
         If bomass = "BOM" Then
