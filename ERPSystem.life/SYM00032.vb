@@ -174,7 +174,7 @@
 
     End Sub
 
-    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
+    Private Sub mmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
         Dim YNC As Integer
         Dim flgMod As Boolean = False
 
@@ -190,7 +190,7 @@
 
             If YNC = Windows.Forms.DialogResult.Yes Then
                 If Enq_right_local Then
-                    Call cmdSave_Click(sender, e)
+                    Call mmdSave_Click(sender, e)
 
                     If save_ok Then
                         Call SYM00032_Load(Nothing, Nothing)
@@ -263,47 +263,47 @@
     Private Sub setStatus(ByVal mode As String)
 
         If mode = "Init" Then
-            cmdAdd.Enabled = False
-            cmdSave.Enabled = Enq_right_local
-            cmdDelete.Enabled = False
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = False
-            cmdExit.Enabled = True
-            cmdClear.Enabled = True
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
-            cmdSearch.Enabled = False
+            mmdAdd.Enabled = False
+            mmdSave.Enabled = Enq_right_local
+            mmdDelete.Enabled = False
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = False
+            mmdExit.Enabled = True
+            mmdClear.Enabled = True
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
+            mmdSearch.Enabled = False
             cmdAddEffDat.Enabled = True
-            cmdFirst.Enabled = False
-            cmdLast.Enabled = False
-            cmdNext.Enabled = False
-            cmdPrevious.Enabled = False
             txtEffDat.Visible = False
             cboEffDat.Visible = True
             cmdAddEffDat.Text = "Add"
 
+            mmdPrint.Enabled = False
+            mmdAttach.Enabled = False
+            mmdFunction.Enabled = False
+            mmdLink.Enabled = False
             Call ResetDefaultDisp()
             Call SetStatusBar(mode)
 
         ElseIf mode = "Add" Then
-            cmdAdd.Enabled = False
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = False
-            cmdClear.Enabled = True
-            cmdSave.Enabled = False
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
+            mmdAdd.Enabled = False
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = False
+            mmdClear.Enabled = True
+            mmdSave.Enabled = False
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
             txtEffDat.Visible = True
             cboEffDat.Visible = False
             Call SetStatusBar(mode)
 
         ElseIf mode = "InsRow" Then
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = False
-            cmdSave.Enabled = Enq_right_local
-            cmdInsRow.Enabled = False
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = False
+            mmdSave.Enabled = Enq_right_local
+            mmdInsRow.Enabled = False
             cmdAddEffDat.Enabled = False
-            cmdDelRow.Enabled = False
+            mmdDelRow.Enabled = False
             txtEffDat.Visible = False
             cboEffDat.Visible = True
             Call SetStatusBar(mode)
@@ -316,10 +316,10 @@
             Call SYM00032_Load(Nothing, Nothing)
 
         ElseIf mode = "DelRow" Then
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = False
-            cmdSave.Enabled = Enq_right_local
-            cmdDelRow.Enabled = Del_right_local
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = False
+            mmdSave.Enabled = Enq_right_local
+            mmdDelRow.Enabled = Del_right_local
             Call SetStatusBar(mode)
 
         ElseIf mode = "Clear" Then
@@ -328,11 +328,11 @@
         End If
 
         If Not CanModify Then
-            cmdAdd.Enabled = False
-            cmdSave.Enabled = False
-            cmdDelete.Enabled = False
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
+            mmdAdd.Enabled = False
+            mmdSave.Enabled = False
+            mmdDelete.Enabled = False
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
 
             Call ResetDefaultDisp()
             Call SetStatusBar("ReadOnly")
@@ -417,7 +417,7 @@
     End Sub
 
 
-    Private Sub cmdSave_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmdSave.Click
+    Private Sub mmdSave_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles mmdSave.Click
         Dim drr() As DataRow
         Dim flgErr As Boolean = False
         Dim flgReAct As Boolean = False
@@ -427,6 +427,14 @@
 
             save_ok = True
             bindSrc.EndEdit()
+            Dim testDate As DateTime
+            If DateTime.TryParse(txtEffDat.Text, testDate) Then
+            Else
+                MsgBox("No effective date is set or you are not in the add mode")
+                save_ok = False
+                Exit Sub
+
+            End If
             For Each row As DataGridViewRow In DataGrid.Rows
 
                 If row.Cells("yce_status").Value.ToString = "" Then
@@ -547,7 +555,7 @@
 
             If YNC = Windows.Forms.DialogResult.Yes Then
                 If Enq_right_local Then
-                    Call cmdSave_Click(sender, e)
+                    Call mmdSave_Click(sender, e)
 
                     If save_ok Then
                         e.Cancel = False
@@ -566,11 +574,16 @@
 
     End Sub
 
-    Private Sub CmdExit_Click() Handles cmdExit.Click
+    Private Sub mmdExit_Click()
         Me.Close()
     End Sub
 
     Private Sub txtEffDat_MaskInputRejected(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MaskInputRejectedEventArgs) Handles txtEffDat.MaskInputRejected
 
     End Sub
+
+    Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
+        mmdExit_Click()
+    End Sub
 End Class
+

@@ -167,8 +167,8 @@
         If recordStatus = True Then
             Dim ans As Integer = MsgBox("Record has been modified. Do you want to save before clearing the screen?", MsgBoxStyle.YesNoCancel, "Clear Screen")
             If ans = 6 Then         'Yes
-                If cmdSave.Enabled = True Then
-                    cmdSave.PerformClick()
+                If mmdSave.Enabled = True Then
+                    mmdSave.PerformClick()
                     If saveOK = True Then
                         setStatus("Clear")
                     Else
@@ -237,8 +237,8 @@
             If answer = 2 Then      'Cancel
                 Exit Sub
             ElseIf answer = 6 Then  'Yes
-                If cmdSave.Enabled Then
-                    cmdSave.PerformClick()
+                If mmdSave.Enabled Then
+                    mmdSave.PerformClick()
                     If saveOK = True Then
                         setStatus("Clear")
                     Else
@@ -501,23 +501,25 @@
     Private Sub setStatus(ByVal Mode As String)
 
         If Mode = "Init" Then
-            cmdAdd.Enabled = False
-            cmdSave.Enabled = False
-            cmdDelete.Enabled = False
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = True
-            cmdClear.Enabled = True
+            mmdAdd.Enabled = False
+            mmdSave.Enabled = False
+            mmdDelete.Enabled = False
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = True
+            mmdClear.Enabled = True
 
             'disable button which without any function
-            cmdSearch.Enabled = False
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
-            cmdFirst.Enabled = False
-            cmdLast.Enabled = False
-            cmdNext.Enabled = False
-            cmdPrevious.Enabled = False
+            mmdSearch.Enabled = False
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
 
-            cmdExit.Enabled = True
+
+            mmdPrint.Enabled = False
+            mmdAttach.Enabled = False
+            mmdFunction.Enabled = False
+            mmdLink.Enabled = False
+
+            mmdExit.Enabled = True
 
             txtVenItm.Enabled = True
             txtVenItm.Text = ""
@@ -561,17 +563,17 @@
             '***Reset the flag
             recordStatus = False
         ElseIf Mode = "Updating" Then
-            cmdAdd.Enabled = False
-            cmdSave.Enabled = enq_right_local 'True
-            cmdDelete.Enabled = False
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = False
-            cmdClear.Enabled = True
+            mmdAdd.Enabled = False
+            mmdSave.Enabled = enq_right_local 'True
+            mmdDelete.Enabled = False
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = False
+            mmdClear.Enabled = True
 
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
 
-            cmdExit.Enabled = True
+            mmdExit.Enabled = True
 
             cmdApply.Enabled = True
             optInvalid.Enabled = True
@@ -646,3 +648,4 @@
         End If
     End Sub
 End Class
+

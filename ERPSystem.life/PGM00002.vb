@@ -4579,6 +4579,7 @@ Public Class PGM00002
 
     End Function
     Private Sub mmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
+        If checkFocus(Me) Then Exit Sub
         If mode = "UPDATE" Then
             If Not checkTimeStamp() Then
                 MsgBox("Data does not synchronous please refresh.", vbInformation, gsCompany)
@@ -5367,6 +5368,7 @@ Public Class PGM00002
 
     End Sub
     Private Sub mmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
+        If checkFocus(Me) Then Exit Sub
         Dim tmp_reqno As String
         Dim tmp_cocde As String
 
@@ -5697,7 +5699,7 @@ Public Class PGM00002
     End Sub
 
     Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
-
+        If checkFocus(Me) Then Exit Sub
         If recordstatus = True Then
             mmdClear_Click(sender, e)
         End If
@@ -5987,6 +5989,7 @@ Public Class PGM00002
         End If
     End Sub
     Private Sub mmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSearch.Click
+
         Dim frmSYM00018 As New SYM00018
 
         frmSYM00018.keyName = txtReqno.Name

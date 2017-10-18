@@ -95,7 +95,7 @@ Partial Class TOM00001
         Me.mmdAttach = New System.Windows.Forms.ToolStripMenuItem
         Me.t6 = New System.Windows.Forms.ToolStripMenuItem
         Me.mmdFunction = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmbTOM00003 = New System.Windows.Forms.ToolStripMenuItem
         Me.CancelTOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.SummaryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.t7 = New System.Windows.Forms.ToolStripMenuItem
@@ -388,14 +388,14 @@ Partial Class TOM00001
         '
         Me.StatusBarPanel1.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
         Me.StatusBarPanel1.Name = "StatusBarPanel1"
-        Me.StatusBarPanel1.Width = 469
+        Me.StatusBarPanel1.Width = 468
         '
         'StatusBarPanel2
         '
         Me.StatusBarPanel2.Alignment = System.Windows.Forms.HorizontalAlignment.Right
         Me.StatusBarPanel2.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
         Me.StatusBarPanel2.Name = "StatusBarPanel2"
-        Me.StatusBarPanel2.Width = 469
+        Me.StatusBarPanel2.Width = 468
         '
         'TextBox14
         '
@@ -887,16 +887,16 @@ Partial Class TOM00001
         '
         'mmdFunction
         '
-        Me.mmdFunction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.CancelTOToolStripMenuItem, Me.SummaryToolStripMenuItem})
+        Me.mmdFunction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mmbTOM00003, Me.CancelTOToolStripMenuItem, Me.SummaryToolStripMenuItem})
         Me.mmdFunction.Name = "mmdFunction"
         Me.mmdFunction.Size = New System.Drawing.Size(66, 20)
         Me.mmdFunction.Text = "Function"
         '
-        'ToolStripMenuItem1
+        'mmbTOM00003
         '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(188, 22)
-        Me.ToolStripMenuItem1.Text = "Release / Unrelease"
+        Me.mmbTOM00003.Name = "mmbTOM00003"
+        Me.mmbTOM00003.Size = New System.Drawing.Size(188, 22)
+        Me.mmbTOM00003.Text = "Release / Unrelease"
         '
         'CancelTOToolStripMenuItem
         '
@@ -2643,7 +2643,7 @@ Partial Class TOM00001
     Friend WithEvents mmdAttach As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents t6 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mmdFunction As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmbTOM00003 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents t7 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mmdLink As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents t8 As System.Windows.Forms.ToolStripMenuItem

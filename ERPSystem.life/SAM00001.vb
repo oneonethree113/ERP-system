@@ -18,6 +18,8 @@ Public Class SAM00001
     Dim VendorType As String
     Dim Enq_right_local As Boolean
     Dim Del_right_local As Boolean
+    Dim Print_right_local As Boolean
+    Dim SAsammary_right_local As Boolean
     Dim warn As Boolean
     Dim bookmark As Object
     Dim bolDisplay As Boolean
@@ -41,6 +43,11 @@ Public Class SAM00001
 
 
     Private Sub SAM00001_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        Print_right_local = getEnquiryRightByFormName(SAR00006.Name.ToString)
+        SAsammary_right_local = getEnquiryRightByFormName(SAM00002.Name.ToString)
+
+
         AccessRight(Me.Name) '*** For Access Right use, added by Tommy on 5 Oct 2001
         FillCompCombo(gsUsrID, cboCoCde)
         GetDefaultCompany(cboCoCde, txtCoNam)
@@ -898,7 +905,7 @@ Public Class SAM00001
             mmdExit.Enabled = True
             mmdClear.Enabled = True
 
-            mmdPrint.Enabled = True
+            mmdPrint.Enabled = Print_right_local
             mmdAttach.Enabled = False
             mmdFunction.Enabled = False
             mmdLink.Enabled = False
@@ -1892,7 +1899,7 @@ Public Class SAM00001
                 checkBackNext()
                 Call Display_Detail()
                 mmdFunction.Enabled = True
-
+                SummaryToolStripMenuItem.Enabled = SAsammary_right_local
 
 
             ElseIf Me.TabPageMain.SelectedIndex = 2 Then
@@ -1907,7 +1914,7 @@ Public Class SAM00001
                         rs_SAREQDTL.Tables("RESULT").Rows(i).Item("cancel") = IIf(rs_SAREQDTL.Tables("RESULT").Rows(i).Item("cancel") = "Y", "Y", IIf(rs_SAREQDTL.Tables("RESULT").Rows(i).Item("srd_canflg") = "Y", "Y", "N"))
                         'rs_SAREQDTL.MoveNext()
                     Next
-                    mmdFunction.Enabled = True
+                    SummaryToolStripMenuItem.Enabled = SAsammary_right_local
                     'If current_pos > 0 Then
                     'rs_SAREQDTL.AbsolutePosition = current_pos
                     'End If

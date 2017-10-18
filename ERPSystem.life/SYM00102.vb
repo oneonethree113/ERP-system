@@ -1,4 +1,4 @@
-Public Class SYM00102
+Public Class SYM00034
     Inherits System.Windows.Forms.Form
 
 #Region " Windows Form Designer generated code "
@@ -211,7 +211,7 @@ Public Class SYM00102
         Me.dgCharge.Size = New System.Drawing.Size(728, 422)
         Me.dgCharge.TabIndex = 7
         '
-        'SYM00102
+        'SYM00034
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(6, 15)
         Me.ClientSize = New System.Drawing.Size(752, 498)
@@ -234,8 +234,8 @@ Public Class SYM00102
         Me.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
-        Me.Name = "SYM00102"
-        Me.Text = "SYM00102 - Trading Terms Maintenance"
+        Me.Name = "SYM00034"
+        Me.Text = "SYM00034 - Trading Terms Maintenance"
         CType(Me.dgCharge, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -561,7 +561,7 @@ Public Class SYM00102
 
     End Sub
 
- 
+
 
 
     Private Sub DataGrid_EditingControlShowing(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dgCharge.EditingControlShowing

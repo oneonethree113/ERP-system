@@ -168,8 +168,8 @@
     Private Sub PGM00004_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call AccessRight("PGM00008")
         mmdFunction_Right = Enq_right
-        Call AccessRight("PGM00007")
-        mmdPrint_Right = Enq_right
+        '  Call AccessRight("PGM00007")
+        '   mmdPrint_Right = Enq_right
 
 
 
@@ -772,11 +772,16 @@
 
             mmdRel.Enabled = True
             mmdSearch.Enabled = False
-
             mmdPrint.Enabled = False
+            If cboStatus.Items.Count > 0 Then
+                If cboStatus.Text.Split(" -")(0) = "APV" Then
+                    mmdPrint.Enabled = True
+                End If
+            End If
+
 
             mmdAdd.Enabled = False
-            mmdSave.Enabled = Enq_right_local
+            mmdSave.Enabled = False
             mmdDelete.Enabled = False
             mmdCopy.Enabled = False
             mmdFind.Enabled = False
@@ -1128,9 +1133,12 @@
             mmdRel.Enabled = True
             mmdSearch.Enabled = False
 
-
-
-            mmdPrint.Enabled = mmdPrint_Right
+            mmdPrint.Enabled = False
+            If cboStatus.Items.Count > 0 Then
+                If cboStatus.Text.Split(" -")(0) = "APV" Then
+                    mmdPrint.Enabled = True
+                End If
+            End If
 
             mmdAdd.Enabled = False
             mmdSave.Enabled = Enq_right_local
@@ -1372,301 +1380,301 @@
             PanelRepord.Visible = False
             lstRepord.Items.Clear()
 
-        ElseIf mode = "ADD" Then
-            Panel1.Visible = False
-            cmdReChose.Enabled = False
-            cbococde.Enabled = False
-            txtReqno.Enabled = False
-            txtVerno.Enabled = False
-            txtIssDate.Enabled = False
-            txtRevDate.Enabled = False
-            cboStatus.Enabled = False
-            cmdRelease.Enabled = False
-            cmdUnRelease.Enabled = False
-            cboPriCust.Enabled = False
-            cboSecCust.Enabled = False
-            txtToNo.Enabled = True
-            txtToVer.Enabled = False
-            cboToStatus.Enabled = False
-            txtToIssDate.Enabled = False
-            txtToRevDate.Enabled = False
-            txtRefQuot.Enabled = False
-            rdoMock.Enabled = False
-            rdoPack.Enabled = False
-            txtSalesDiv.Enabled = False
-            cboSalesRep.Enabled = False
-            txtScNo.Enabled = True
-            txtScVer.Enabled = False
-            cboScStatus.Enabled = False
-            txtScIssDat.Enabled = False
-            txtScRevDate.Enabled = False
-            txtCustPoDate.Enabled = False
-            txtScCancelDate.Enabled = False
-            txtScShipDateEnd.Enabled = False
-            txtScShipDateStr.Enabled = False
-            txtScRemark.Enabled = False
-            txtSeq.Enabled = False
-            txtItemNo.Enabled = False
-            txtTerms.Enabled = False
-            txtPkgItem.Enabled = False
-            txtCate.Enabled = False
-            txtPkgChDesc.Enabled = False
-            txtPkgEnDesc.Enabled = False
-            txtPkgRemark.Enabled = False
-            cboPkgVendor.Enabled = False
-            cboRemi.Enabled = False
-            txtPkgAddress.Enabled = False
-            txtPkgState.Enabled = False
-            txtPkgCtry.Enabled = False
-            txtZip.Enabled = False
-            txtTel.Enabled = False
-            cboPkgCtnPer.Enabled = False
-            txtEISizeH.Enabled = False
-            txtEISizeL.Enabled = False
-            txtEISizeW.Enabled = False
-            txtECSizeH.Enabled = False
-            txtECSizeL.Enabled = False
-            txtECSizeW.Enabled = False
-            txtFCSizeH.Enabled = False
-            txtFCSizeL.Enabled = False
-            txtFCSizeW.Enabled = False
-            txtFISizeH.Enabled = False
-            txtFISizeL.Enabled = False
-            txtFISizeW.Enabled = False
-            txtMatri.Enabled = False
-            txtTcknes.Enabled = False
-            txtPrtMtd.Enabled = False
-            txtForntCol.Enabled = False
-            txtBackCol.Enabled = False
-            txtFinish.Enabled = False
-            txtPkgSTQty.Enabled = False
-            cboSTOUM.Enabled = False
-            txtPkgMult.Enabled = False
-            txtPkgOrdQty.Enabled = False
-            txtPkgWastPer.Enabled = False
-            txtPkgWast.Enabled = False
-            txtPkgTtlQty.Enabled = False
-            txtPkgUnitPri.Enabled = False
-            txtTtlAmt.Enabled = False
-            txtPkgRcive.Enabled = False
-            cboOrdUm.Enabled = False
-            cboWastUm.Enabled = False
-            cboTtlUm.Enabled = False
-            txtPkgUnitPriCur.Enabled = False
-            txtTtlAmtCur.Enabled = False
-            cboReceUm.Enabled = False
-            ChkDel.Enabled = True
+            ElseIf mode = "ADD" Then
+                Panel1.Visible = False
+                cmdReChose.Enabled = False
+                cbococde.Enabled = False
+                txtReqno.Enabled = False
+                txtVerno.Enabled = False
+                txtIssDate.Enabled = False
+                txtRevDate.Enabled = False
+                cboStatus.Enabled = False
+                cmdRelease.Enabled = False
+                cmdUnRelease.Enabled = False
+                cboPriCust.Enabled = False
+                cboSecCust.Enabled = False
+                txtToNo.Enabled = True
+                txtToVer.Enabled = False
+                cboToStatus.Enabled = False
+                txtToIssDate.Enabled = False
+                txtToRevDate.Enabled = False
+                txtRefQuot.Enabled = False
+                rdoMock.Enabled = False
+                rdoPack.Enabled = False
+                txtSalesDiv.Enabled = False
+                cboSalesRep.Enabled = False
+                txtScNo.Enabled = True
+                txtScVer.Enabled = False
+                cboScStatus.Enabled = False
+                txtScIssDat.Enabled = False
+                txtScRevDate.Enabled = False
+                txtCustPoDate.Enabled = False
+                txtScCancelDate.Enabled = False
+                txtScShipDateEnd.Enabled = False
+                txtScShipDateStr.Enabled = False
+                txtScRemark.Enabled = False
+                txtSeq.Enabled = False
+                txtItemNo.Enabled = False
+                txtTerms.Enabled = False
+                txtPkgItem.Enabled = False
+                txtCate.Enabled = False
+                txtPkgChDesc.Enabled = False
+                txtPkgEnDesc.Enabled = False
+                txtPkgRemark.Enabled = False
+                cboPkgVendor.Enabled = False
+                cboRemi.Enabled = False
+                txtPkgAddress.Enabled = False
+                txtPkgState.Enabled = False
+                txtPkgCtry.Enabled = False
+                txtZip.Enabled = False
+                txtTel.Enabled = False
+                cboPkgCtnPer.Enabled = False
+                txtEISizeH.Enabled = False
+                txtEISizeL.Enabled = False
+                txtEISizeW.Enabled = False
+                txtECSizeH.Enabled = False
+                txtECSizeL.Enabled = False
+                txtECSizeW.Enabled = False
+                txtFCSizeH.Enabled = False
+                txtFCSizeL.Enabled = False
+                txtFCSizeW.Enabled = False
+                txtFISizeH.Enabled = False
+                txtFISizeL.Enabled = False
+                txtFISizeW.Enabled = False
+                txtMatri.Enabled = False
+                txtTcknes.Enabled = False
+                txtPrtMtd.Enabled = False
+                txtForntCol.Enabled = False
+                txtBackCol.Enabled = False
+                txtFinish.Enabled = False
+                txtPkgSTQty.Enabled = False
+                cboSTOUM.Enabled = False
+                txtPkgMult.Enabled = False
+                txtPkgOrdQty.Enabled = False
+                txtPkgWastPer.Enabled = False
+                txtPkgWast.Enabled = False
+                txtPkgTtlQty.Enabled = False
+                txtPkgUnitPri.Enabled = False
+                txtTtlAmt.Enabled = False
+                txtPkgRcive.Enabled = False
+                cboOrdUm.Enabled = False
+                cboWastUm.Enabled = False
+                cboTtlUm.Enabled = False
+                txtPkgUnitPriCur.Enabled = False
+                txtTtlAmtCur.Enabled = False
+                cboReceUm.Enabled = False
+                ChkDel.Enabled = True
 
 
-            cmdBack.Enabled = True
-            cmdNext.Enabled = True
+                cmdBack.Enabled = True
+                cmdNext.Enabled = True
 
-            txtStkqty.Enabled = False
-            cboStkUm.Enabled = False
+                txtStkqty.Enabled = False
+                cboStkUm.Enabled = False
 
-            mmdRel.Enabled = False
-            mmdSearch.Enabled = False
-
-
-
-            mmdAdd.Enabled = False
-            mmdSave.Enabled = False
-            mmdDelete.Enabled = False
-            mmdCopy.Enabled = False
-            mmdFind.Enabled = False
-            mmdClear.Enabled = True
-            mmdInsRow.Enabled = False
-            mmdExit.Enabled = True
-            'txtForntFin.Enabled = False
-            'txtBackFin.Enabled = False
-
-            txtMatDsc.Enabled = False
-            txtTckDsc.Enabled = False
-            txtPrtDsc.Enabled = False
-            cmdInvDetail.Enabled = True
-
-            rdoIn.Enabled = False
-            rdoOut.Enabled = False
-
-            txtHdrShpEnd.Enabled = True
-            txtHdrShpStr.Enabled = True
-            cboHdrFty.Enabled = True
-            cboHdrAdd_fty.Enabled = True
-            txtHdrSta_fty.Enabled = True
-            txtHdrCty_fty.Enabled = True
-            txtHdrzip_fty.Enabled = True
-            cboHdrCtn_fty.Enabled = True
-            txtHdrTel_fty.Enabled = True
-
-            txtDtlShpEnd.Enabled = True
-            txtDtlShpStr.Enabled = True
-            cboDtlFty.Enabled = True
-            cboHdrAdd_dtl.Enabled = True
-            txtHdrSta_dtl.Enabled = True
-            txtHdrCty_dtl.Enabled = True
-            txtHdrzip_dtl.Enabled = True
-            cboHdrCtn_dtl.Enabled = True
-            txtHdrTel_dtl.Enabled = True
-
-            txtBonQty.Enabled = True
-
-            cmdAttach.Enabled = True
-            txtWasIn.Enabled = False
-            txtMOA.Enabled = True
-            txtMOACur.Enabled = False
-
-            txtReprtFlag.Enabled = False
-            txtReprtFlag.Text = ""
-            txtMOA.Text = ""
-            txtMOACur.Text = ""
-            txtWasIn.Text = ""
-            txtReqno.Text = ""
-            txtVerno.Text = ""
-            txtIssDate.Text = ""
-            txtRevDate.Text = ""
-            cboStatus.Text = ""
-            cboPriCust.Text = ""
-            cboSecCust.Text = ""
-            txtToNo.Text = ""
-            txtToVer.Text = ""
-            cboToStatus.Text = ""
-            txtToIssDate.Text = ""
-            txtToRevDate.Text = ""
-            txtRefQuot.Text = ""
-            rdoPack.Checked = False
-            rdoMock.Checked = False
-            txtSalesDiv.Text = ""
-            cboSalesRep.Text = ""
-            txtScNo.Text = ""
-            txtScVer.Text = ""
-            cboScStatus.Text = ""
-            txtScIssDat.Text = ""
-            txtScRevDate.Text = ""
-            txtCustPoDate.Text = ""
-            txtScCancelDate.Text = ""
-            txtScShipDateEnd.Text = ""
-            txtScShipDateStr.Text = ""
-            txtScRemark.Text = ""
-            txtSeq.Text = ""
-            txtItemNo.Text = ""
-            txtTerms.Text = ""
-            txtPkgItem.Text = ""
-            cboPkgVendor.Text = ""
-            txtCate.Text = ""
-            cboRemi.Text = ""
-            txtPkgChDesc.Text = ""
-            txtPkgAddress.Text = ""
-            txtPkgEnDesc.Text = ""
-            txtPkgRemark.Text = ""
-            txtPkgState.Text = ""
-            txtPkgCtry.Text = ""
-            txtZip.Text = ""
-            txtTel.Text = ""
-            cboPkgCtnPer.Text = ""
-            txtPkgSTQty.Text = ""
-            cboSTOUM.Text = ""
-            txtPkgMult.Text = ""
-            txtPkgOrdQty.Text = ""
-            cboOrdUm.Text = ""
-            txtPkgWastPer.Text = ""
-            txtPkgWast.Text = ""
-            cboWastUm.Text = ""
-            txtPkgTtlQty.Text = ""
-            cboTtlUm.Text = ""
-            txtPkgUnitPriCur.Text = ""
-            txtPkgUnitPri.Text = ""
-            txtTtlAmtCur.Text = ""
-            txtTtlAmt.Text = ""
-            txtPkgRcive.Text = ""
-            cboReceUm.Text = ""
-
-            txtTerms.Text = ""
-
-            txtEISizeH.Text = ""
-            txtEISizeL.Text = ""
-            txtEISizeW.Text = ""
-
-            txtECSizeH.Text = ""
-            txtECSizeL.Text = ""
-            txtEISizeW.Text = ""
-
-            txtFCSizeH.Text = ""
-            txtFCSizeL.Text = ""
-            txtFCSizeW.Text = ""
-            txtFISizeH.Text = ""
-            txtFISizeL.Text = ""
-            txtFISizeW.Text = ""
-
-            txtMatri.Text = ""
-            txtTcknes.Text = ""
-            txtPrtMtd.Text = ""
-            txtForntCol.Text = ""
-            txtBackCol.Text = ""
-            txtFinish.Text = ""
-            ChkDel.Checked = False
-
-            txtStkqty.Text = ""
-            cboStkUm.Text = ""
-
-            txtConRemark.Text = ""
+                mmdRel.Enabled = False
+                mmdSearch.Enabled = False
 
 
 
+                mmdAdd.Enabled = False
+                mmdSave.Enabled = Enq_right_local
+                mmdDelete.Enabled = False
+                mmdCopy.Enabled = False
+                mmdFind.Enabled = False
+                mmdClear.Enabled = True
+                mmdInsRow.Enabled = False
+                mmdExit.Enabled = True
+                'txtForntFin.Enabled = False
+                'txtBackFin.Enabled = False
 
-            txtDvyDat.Text = ""
-            txtDremark.Text = ""
-            txtiremark.Text = ""
-            cboHdrVen.Text = ""
-            cboHdrRemi.Text = ""
-            txtHdrAdd.Text = ""
-            txtHdrSta.Text = ""
-            txtHdrCty.Text = ""
-            txtHdrzip.Text = ""
-            txtHdrTel.Text = ""
-            cboHdrCtn.Text = ""
-            'txtForntFin.Text = ""
-            'txtBackFin.Text = ""
-            txtMatDsc.Text = ""
-            txtTckDsc.Text = ""
-            txtPrtDsc.Text = ""
-            cboTabHdrVen.Text = ""
+                txtMatDsc.Enabled = False
+                txtTckDsc.Enabled = False
+                txtPrtDsc.Enabled = False
+                cmdInvDetail.Enabled = True
+
+                rdoIn.Enabled = False
+                rdoOut.Enabled = False
+
+                txtHdrShpEnd.Enabled = True
+                txtHdrShpStr.Enabled = True
+                cboHdrFty.Enabled = True
+                cboHdrAdd_fty.Enabled = True
+                txtHdrSta_fty.Enabled = True
+                txtHdrCty_fty.Enabled = True
+                txtHdrzip_fty.Enabled = True
+                cboHdrCtn_fty.Enabled = True
+                txtHdrTel_fty.Enabled = True
+
+                txtDtlShpEnd.Enabled = True
+                txtDtlShpStr.Enabled = True
+                cboDtlFty.Enabled = True
+                cboHdrAdd_dtl.Enabled = True
+                txtHdrSta_dtl.Enabled = True
+                txtHdrCty_dtl.Enabled = True
+                txtHdrzip_dtl.Enabled = True
+                cboHdrCtn_dtl.Enabled = True
+                txtHdrTel_dtl.Enabled = True
+
+                txtBonQty.Enabled = True
+
+                cmdAttach.Enabled = True
+                txtWasIn.Enabled = False
+                txtMOA.Enabled = True
+                txtMOACur.Enabled = False
+
+                txtReprtFlag.Enabled = False
+                txtReprtFlag.Text = ""
+                txtMOA.Text = ""
+                txtMOACur.Text = ""
+                txtWasIn.Text = ""
+                txtReqno.Text = ""
+                txtVerno.Text = ""
+                txtIssDate.Text = ""
+                txtRevDate.Text = ""
+                cboStatus.Text = ""
+                cboPriCust.Text = ""
+                cboSecCust.Text = ""
+                txtToNo.Text = ""
+                txtToVer.Text = ""
+                cboToStatus.Text = ""
+                txtToIssDate.Text = ""
+                txtToRevDate.Text = ""
+                txtRefQuot.Text = ""
+                rdoPack.Checked = False
+                rdoMock.Checked = False
+                txtSalesDiv.Text = ""
+                cboSalesRep.Text = ""
+                txtScNo.Text = ""
+                txtScVer.Text = ""
+                cboScStatus.Text = ""
+                txtScIssDat.Text = ""
+                txtScRevDate.Text = ""
+                txtCustPoDate.Text = ""
+                txtScCancelDate.Text = ""
+                txtScShipDateEnd.Text = ""
+                txtScShipDateStr.Text = ""
+                txtScRemark.Text = ""
+                txtSeq.Text = ""
+                txtItemNo.Text = ""
+                txtTerms.Text = ""
+                txtPkgItem.Text = ""
+                cboPkgVendor.Text = ""
+                txtCate.Text = ""
+                cboRemi.Text = ""
+                txtPkgChDesc.Text = ""
+                txtPkgAddress.Text = ""
+                txtPkgEnDesc.Text = ""
+                txtPkgRemark.Text = ""
+                txtPkgState.Text = ""
+                txtPkgCtry.Text = ""
+                txtZip.Text = ""
+                txtTel.Text = ""
+                cboPkgCtnPer.Text = ""
+                txtPkgSTQty.Text = ""
+                cboSTOUM.Text = ""
+                txtPkgMult.Text = ""
+                txtPkgOrdQty.Text = ""
+                cboOrdUm.Text = ""
+                txtPkgWastPer.Text = ""
+                txtPkgWast.Text = ""
+                cboWastUm.Text = ""
+                txtPkgTtlQty.Text = ""
+                cboTtlUm.Text = ""
+                txtPkgUnitPriCur.Text = ""
+                txtPkgUnitPri.Text = ""
+                txtTtlAmtCur.Text = ""
+                txtTtlAmt.Text = ""
+                txtPkgRcive.Text = ""
+                cboReceUm.Text = ""
+
+                txtTerms.Text = ""
+
+                txtEISizeH.Text = ""
+                txtEISizeL.Text = ""
+                txtEISizeW.Text = ""
+
+                txtECSizeH.Text = ""
+                txtECSizeL.Text = ""
+                txtEISizeW.Text = ""
+
+                txtFCSizeH.Text = ""
+                txtFCSizeL.Text = ""
+                txtFCSizeW.Text = ""
+                txtFISizeH.Text = ""
+                txtFISizeL.Text = ""
+                txtFISizeW.Text = ""
+
+                txtMatri.Text = ""
+                txtTcknes.Text = ""
+                txtPrtMtd.Text = ""
+                txtForntCol.Text = ""
+                txtBackCol.Text = ""
+                txtFinish.Text = ""
+                ChkDel.Checked = False
+
+                txtStkqty.Text = ""
+                cboStkUm.Text = ""
+
+                txtConRemark.Text = ""
 
 
 
 
-            txtHdrShpEnd.Text = ""
-            txtHdrShpStr.Text = ""
-            cboHdrFty.Text = ""
-            txtDtlShpEnd.Text = ""
-            txtDtlShpStr.Text = ""
-            cboDtlFty.Text = ""
-            txtBonQty.Text = ""
+                txtDvyDat.Text = ""
+                txtDremark.Text = ""
+                txtiremark.Text = ""
+                cboHdrVen.Text = ""
+                cboHdrRemi.Text = ""
+                txtHdrAdd.Text = ""
+                txtHdrSta.Text = ""
+                txtHdrCty.Text = ""
+                txtHdrzip.Text = ""
+                txtHdrTel.Text = ""
+                cboHdrCtn.Text = ""
+                'txtForntFin.Text = ""
+                'txtBackFin.Text = ""
+                txtMatDsc.Text = ""
+                txtTckDsc.Text = ""
+                txtPrtDsc.Text = ""
+                cboTabHdrVen.Text = ""
 
 
-            txtDvyDat.Enabled = False
-            txtDremark.Enabled = False
-            txtiremark.Enabled = False
-            cboHdrVen.Enabled = False
-            cboHdrRemi.Enabled = False
-            txtHdrAdd.Enabled = False
-            txtHdrSta.Enabled = False
-            txtHdrCty.Enabled = False
-            txtHdrzip.Enabled = False
-            txtHdrTel.Enabled = False
-            cboHdrCtn.Enabled = False
-            cmdCanOrd.Enabled = True
 
-            mmdCancel.Enabled = True
 
-            Call SetStatusBar(mode)
+                txtHdrShpEnd.Text = ""
+                txtHdrShpStr.Text = ""
+                cboHdrFty.Text = ""
+                txtDtlShpEnd.Text = ""
+                txtDtlShpStr.Text = ""
+                cboDtlFty.Text = ""
+                txtBonQty.Text = ""
 
-            Me.BaseTabControl1.TabPages(0).Enabled = True
-            Me.BaseTabControl1.TabPages(1).Enabled = False
 
-            PanelRepord.Visible = False
-            lstRepord.Items.Clear()
+                txtDvyDat.Enabled = False
+                txtDremark.Enabled = False
+                txtiremark.Enabled = False
+                cboHdrVen.Enabled = False
+                cboHdrRemi.Enabled = False
+                txtHdrAdd.Enabled = False
+                txtHdrSta.Enabled = False
+                txtHdrCty.Enabled = False
+                txtHdrzip.Enabled = False
+                txtHdrTel.Enabled = False
+                cboHdrCtn.Enabled = False
+                cmdCanOrd.Enabled = True
 
-        End If
+                mmdCancel.Enabled = True
+
+                Call SetStatusBar(mode)
+
+                Me.BaseTabControl1.TabPages(0).Enabled = True
+                Me.BaseTabControl1.TabPages(1).Enabled = False
+
+                PanelRepord.Visible = False
+                lstRepord.Items.Clear()
+
+            End If
 
 
 
@@ -2122,7 +2130,7 @@
         display_combo(rs_PKORDHDR.Tables("RESULT").Rows(0).Item("poh_status"), cboStatus)
 
         If cboStatus.Text.Split(" -")(0) = "APV" Then
-            mmdPrint.Enabled = mmdPrint_Right
+            mmdPrint.Enabled = True
         Else
             mmdPrint.Enabled = False
         End If
@@ -2691,6 +2699,7 @@
     End Sub
 
     Private Sub mmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
+        If checkFocus(Me) Then Exit Sub
         Dim tmp_reqno As String
         Dim tmp_cocde As String
 
@@ -2725,6 +2734,7 @@
     End Sub
 
     Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
+        If checkFocus(Me) Then Exit Sub
         Me.Close()
 
         'display_dgPKORDDTL()
@@ -3346,6 +3356,7 @@
 
 
     Private Sub mmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
+        If checkFocus(Me) Then Exit Sub
         If mode = "UPDATE" Then
             If Not checkTimeStamp() Then
                 MsgBox("Data does not synchronous please refresh.", vbInformation, gsCompany)

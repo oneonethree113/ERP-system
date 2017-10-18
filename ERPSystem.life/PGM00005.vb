@@ -661,6 +661,7 @@ Public Class PGM00005
 
 
     Private Sub mmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
+        If checkFocus(Me) Then Exit Sub
         Dim rs As DataSet
         Dim msg As String = ""
 
@@ -1956,6 +1957,7 @@ Public Class PGM00005
     End Sub
 
     Private Sub mmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
+        If checkFocus(Me) Then Exit Sub
         If recordStatus = True Then
             If MsgBox("Changes have been made." & Environment.NewLine & "Are you sure you want to clear without saving?", MsgBoxStyle.YesNo, "PGM00005 - Clear Data") = MsgBoxResult.No Then
                 Exit Sub
@@ -1968,6 +1970,7 @@ Public Class PGM00005
     End Sub
 
     Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
+        If checkFocus(Me) Then Exit Sub
         If recordStatus = True Then
             If MsgBox("Changes have been made." & Environment.NewLine & "Are you sure you want to exit without saving?", MsgBoxStyle.YesNo, "PGM00005 - Exit Program") = MsgBoxResult.No Then
                 Exit Sub

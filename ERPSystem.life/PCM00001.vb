@@ -122,7 +122,7 @@
         End If
     End Sub
 
-    Private Sub cmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAdd.Click
+    Private Sub mmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdAdd.Click
         ActionMode = "Add"
         Cursor = Cursors.WaitCursor
         '    If (Trim(txtPftCtr.Text) = "") Then
@@ -150,13 +150,13 @@
         '    End If
     End Sub
 
-    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
+    Private Sub mmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
         ActionMode = ""
         Call ResetDefaultDisp()
         Call setStatus("Clear")
     End Sub
 
-    Private Sub CmdDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdDelete.Click
+    Private Sub mmdDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdDelete.Click
         ActionMode = "Del"
         Dim txtPCNO As String
         txtPCNO = Me.cboPCNo.Text
@@ -175,7 +175,7 @@
 
         If del = vbOK Then
             Call func_SaveRecordset()
-            Call cmdClear_Click("", EventArgs.Empty)
+            Call mmdClear_Click("", EventArgs.Empty)
             Call FillInComboBox()
         End If
     End Sub
@@ -196,13 +196,13 @@
     '    End If
     'End Sub
 
-    Private Sub CmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdExit.Click
+    Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
         Me.Close()
     End Sub
 
 
 
-    Private Sub cmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdInsRow.Click
+    Private Sub cmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdInsRow.Click
         If SSTabPC.SelectedIndex = 0 Then
             'And Grid_Got_Focus = "grdAssDgnVen" Then
             'If rs_PCMDV.RecordCount > 0 Then
@@ -438,7 +438,7 @@
     End Function
 
 
-    Private Sub CmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSave.Click
+    Private Sub mmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
 
         '***check all Input is vaild
         If Not InputIsValid() Then
@@ -475,53 +475,13 @@
 
     End Sub
 
-    Private Sub cmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSearch.Click
-        'gsSearchKey = ""
+    Private Sub mmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSearch.Click
 
-        'SYM00018.Module = "PC"
-        'SYM00018.Show(1)
-
-
-        ''    txtPftCtr.Text = gsSearchKey
-        'Me.cboPCNo.Text = gsSearchKey
-
-        'gsSearchKey = ""
-        ''    txtPftCtr.SelStart = 0
-        ''    txtPftCtr.SelLength = Len(txtPftCtr.Text)
-        'Me.cboPCNo.selStart = 0
-        'Me.cboPCNo.SelLength = Len(Me.cboPCNo.Text)
-        '    If txtPftCtr.Text <> "" Then
-        '        Timer1.Enabled = True
-        '    End If
     End Sub
 
 
-    'Private Sub Command1_Click()
-    '    If rs_VNBASINF.RecordCount > 0 Then
-    '        rs_VNBASINF.MoveFirst()
-    '        While Not rs_VNBASINF.EOF
-    '            Grid_Got_Focus = "grdAssDgnVen"
-    '            SSTabPC.SelectedIndex = 0
-    '            '            Grid_Got_Focus = "grdDevChrg"
-    '            '            SSTabPC.SelectedIndex = 2
-    '            cmdInsRow_Click()
-
-    '            rs_PCMDV.Fields("pdv_vencde") = rs_VNBASINF("vbi_venno")
-    '            rs_PCMDV.Fields("pdv_vennam") = rs_VNBASINF("vbi_vensna")
 
 
-    '            '            rs_PCMDEVCRG.Fields("pdc_facde") = rs_VNBASINF("vbi_venno")
-    '            '            rs_PCMDEVCRG.Fields("pdc_fanam") = rs_VNBASINF("vbi_vensna")
-    '            '            rs_PCMDEVCRG.Fields("pdc_decfmlopt") = "B01"
-    '            '            rs_PCMDEVCRG.Fields("pdc_decfml") = "B01"
-
-
-    '            rs_VNBASINF.MoveNext()
-    '        End While
-    '    End If
-    'End Sub
-
-  
 
 
 
@@ -530,24 +490,25 @@
 
         If Mode = "Init" Then
 
-            cmdAdd.Enabled = Enq_right
-            cmdSave.Enabled = False
-            cmdDelete.Enabled = False
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = True
+            mmdAdd.Enabled = Enq_right
+            mmdSave.Enabled = False
+            mmdDelete.Enabled = False
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = True
             'CmdLookup.Enabled = False
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
-            cmdExit.Enabled = True
-            cmdClear.Enabled = True
-            cmdSearch.Enabled = True
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
+            mmdExit.Enabled = True
+            mmdClear.Enabled = True
+            Me.mmdPrint.Enabled = False
+            Me.mmdAttach.Enabled = False
+            Me.mmdFunction.Enabled = False
+            Me.mmdLink.Enabled = False
+            'mmdSearch.Enabled = True
+            'cmdSearch.Enabled = True
             'cmdspecial.Enabled = False
             'cmdbrowlist.Enabled = False
 
-            cmdfirst.Enabled = False
-            cmdlast.Enabled = False
-            cmdNext.Enabled = False
-            cmdPrv.Enabled = False
 
             SSTabPC.SelectedIndex = 0
             GroupBox3.Enabled = True
@@ -556,33 +517,31 @@
 
         ElseIf Mode = "Adding" Then
 
-            cmdAdd.Enabled = False
-            cmdSave.Enabled = Enq_right_local
-            cmdDelete.Enabled = False
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = False
-            cmdInsRow.Enabled = Enq_right_local
-            'cmdDelRow.Enabled = Del_right_local
+            mmdAdd.Enabled = False
+            mmdSave.Enabled = Enq_right_local
+            mmdDelete.Enabled = False
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = False
+            mmdInsRow.Enabled = Enq_right_local
 
-            cmdExit.Enabled = True
-            cmdClear.Enabled = True
-            cmdSearch.Enabled = False
+            mmdExit.Enabled = True
+            mmdClear.Enabled = True
+            mmdSearch.Enabled = False
 
             SSTabPC.SelectedIndex = 0
             GroupBox3.Enabled = False
 
         ElseIf Mode = "Updating" Then
 
-            cmdAdd.Enabled = False
-            cmdSave.Enabled = Enq_right_local
-            cmdDelete.Enabled = Del_right_local
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = False
-            cmdInsRow.Enabled = Enq_right_local
-            'cmdDelRow.Enabled = Del_right_local
-            cmdExit.Enabled = True
-            cmdClear.Enabled = True
-            cmdSearch.Enabled = False
+            mmdAdd.Enabled = False
+            mmdSave.Enabled = Enq_right_local
+            mmdDelete.Enabled = Del_right_local
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = False
+            mmdInsRow.Enabled = Enq_right_local
+            mmdExit.Enabled = True
+            mmdClear.Enabled = True
+            mmdSearch.Enabled = False
 
             SSTabPC.SelectedIndex = 0
             GroupBox3.Enabled = False
@@ -594,12 +553,12 @@
 
         'Check for access right
         If Not CanModify Then
-            cmdAdd.Enabled = False
-            cmdCopy.Enabled = False
-            cmdSave.Enabled = False
-            cmdDelete.Enabled = False
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
+            mmdAdd.Enabled = False
+            mmdCopy.Enabled = False
+            mmdSave.Enabled = False
+            mmdDelete.Enabled = False
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
         End If
 
 
@@ -879,12 +838,12 @@
             '.Columns(1).Width = 0
             .Columns(1).Visible = False
 
-            .Columns(2).Width = 70
+            .Columns(2).Width = 100
             .Columns(2).HeaderText = "Vendor Code"
             '.Columns(2).Button = True
             '.Columns(2).Locked = True
 
-            .Columns(3).Width = 100
+            .Columns(3).Width = 400
             .Columns(3).HeaderText = "Vendor Name"
             '.Columns(3).Button = True
             '.Columns(3).Locked = True
@@ -937,7 +896,7 @@
 
 
 
-            .Columns(5).Width = 150
+            .Columns(5).Width = 250
             .Columns(5).HeaderText = "Handling Charge Formula"
 
             .Columns(6).Visible = False
@@ -995,7 +954,7 @@
 
             '.Columns(6).Width = 0
             '.Columns(6).Visible = False
-            .Columns(6).Width = 150
+            .Columns(6).Width = 250
             .Columns(6).HeaderText = "Development Charge Formula"
 
 
@@ -1370,7 +1329,7 @@
         grdAssDgnVen.Focus()
     End Sub
 
-   
+
 
 
     Private Sub grdAssDgnVen_Click()
@@ -2178,7 +2137,7 @@
                         Exit Function
                     End If
                 End If
-               
+
             Next
         End If
 
@@ -2257,7 +2216,7 @@
                         Exit Function
                     End If
 
- 
+
                 ElseIf rs_PCMAGYCRG.Tables(0).Rows(i).Item("pac_creusr") = "~*DEL*~" Or ActionMode = "Del" Then
                     gspStr = "sp_physical_delete_PCMAGYCRG '', '" & rs_PCMAGYCRG.Tables(0).Rows(i).Item("pac_pcno") & "','" & _
                         rs_PCMAGYCRG.Tables(0).Rows(i).Item("pac_cocde") & "','" & _
@@ -2565,7 +2524,7 @@
 
     End Sub
 
-    Private Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFind.Click
+    Private Sub mmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFind.Click
         PCM_Find()
     End Sub
 
@@ -2602,7 +2561,7 @@
 
 
     Private Sub cboPCNo_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cboPCNo.KeyPress
-        If e.KeyChar = Chr(13) And cmdFind.Enabled = True Then
+        If e.KeyChar = Chr(13) And mmdFind.Enabled = True Then
             PCM_Find()
         End If
     End Sub
@@ -3157,7 +3116,7 @@
 
 #End Region
 
-  
+
     Private Sub createComboBoxCell_grdDevChrg(ByVal cell As DataGridViewCell)
         Dim cbocell As New DataGridViewComboBoxCell
         Dim iCol As Integer = cell.ColumnIndex
@@ -3248,7 +3207,7 @@
                     grdDevChrg.BeginEdit(True)
 
                 End If
-                End If
+            End If
         End If
     End Sub
 
@@ -3425,10 +3384,10 @@
             Label2.ForeColor = Color.Blue
             Label8.ForeColor = Color.Black
 
-            cmdClear.Enabled = False
-            cmdAdd.Enabled = False
-            cmdSearch.Enabled = False
-            cmdFind.Enabled = False
+            mmdClear.Enabled = False
+            mmdAdd.Enabled = False
+            mmdSearch.Enabled = False
+            mmdFind.Enabled = False
         Else
             GroupBox1.Enabled = True
             GroupBox2.Enabled = False
@@ -3437,13 +3396,15 @@
             Label2.ForeColor = Color.Black
             Label8.ForeColor = Color.Blue
 
-            cmdAdd.Enabled = True
-            cmdSearch.Enabled = True
-            cmdFind.Enabled = True
+            mmdAdd.Enabled = True
+            'mmdSearch.Enabled = True
+            'cmdSearch.Enabled = True
+            mmdFind.Enabled = True
 
 
         End If
     End Sub
 
-    
+
 End Class
+

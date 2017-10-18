@@ -16,6 +16,8 @@ Public Class IMR00018
 
         txtFromVenNc.MaxLength = 4
         txtToVenNc.MaxLength = 4
+
+        Call Formstartup(Me.Name)
     End Sub
 
     Private Sub cmdShow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdShow.Click

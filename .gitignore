@@ -289,4 +289,12 @@ __pycache__/
 bin/
 obj/
 bin1/
+<<<<<<< HEAD
 obj1/
+ERPSystem.life/My Project/
+=======
+obj1/
+>>>>>>> MPO-UI
+*.resx
+*.vb
+*.vb

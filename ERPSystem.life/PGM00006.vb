@@ -746,6 +746,7 @@
     End Sub
 
     Private Sub mmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
+        If checkFocus(Me) Then Exit Sub
         Dim before() As DataRow
         Dim rs_sql As DataSet
 
@@ -913,6 +914,7 @@
 
 
     Private Sub mmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
+        If checkFocus(Me) Then Exit Sub
         If checkChangesMade() = True Then
             Dim response As Integer
             response = MsgBox("Changes have been made. Would you like to save changes before clearing?", MsgBoxStyle.YesNoCancel)
@@ -936,6 +938,7 @@
     End Sub
 
     Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
+        If checkFocus(Me) Then Exit Sub
         Close()
     End Sub
 

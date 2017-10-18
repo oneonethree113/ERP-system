@@ -39,11 +39,11 @@ Partial Class IMX00005
         'txtProcess
         '
         Me.txtProcess.BackColor = System.Drawing.Color.White
-        Me.txtProcess.Location = New System.Drawing.Point(12, 206)
+        Me.txtProcess.Location = New System.Drawing.Point(12, 280)
         Me.txtProcess.Multiline = True
         Me.txtProcess.Name = "txtProcess"
         Me.txtProcess.ReadOnly = True
-        Me.txtProcess.Size = New System.Drawing.Size(559, 119)
+        Me.txtProcess.Size = New System.Drawing.Size(619, 119)
         Me.txtProcess.TabIndex = 18
         '
         'imgListFolders
@@ -55,7 +55,7 @@ Partial Class IMX00005
         '
         'cmdOK
         '
-        Me.cmdOK.Location = New System.Drawing.Point(496, 177)
+        Me.cmdOK.Location = New System.Drawing.Point(556, 251)
         Me.cmdOK.Name = "cmdOK"
         Me.cmdOK.Size = New System.Drawing.Size(75, 23)
         Me.cmdOK.TabIndex = 17
@@ -64,7 +64,7 @@ Partial Class IMX00005
         '
         'cmdRefresh
         '
-        Me.cmdRefresh.Location = New System.Drawing.Point(415, 177)
+        Me.cmdRefresh.Location = New System.Drawing.Point(475, 251)
         Me.cmdRefresh.Name = "cmdRefresh"
         Me.cmdRefresh.Size = New System.Drawing.Size(75, 23)
         Me.cmdRefresh.TabIndex = 16
@@ -75,7 +75,7 @@ Partial Class IMX00005
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(9, 182)
+        Me.Label3.Location = New System.Drawing.Point(10, 256)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(372, 12)
         Me.Label3.TabIndex = 15
@@ -84,7 +84,7 @@ Partial Class IMX00005
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(374, 8)
+        Me.Label2.Location = New System.Drawing.Point(417, 8)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(86, 12)
         Me.Label2.TabIndex = 14
@@ -103,9 +103,9 @@ Partial Class IMX00005
         '
         Me.filSource.FormattingEnabled = True
         Me.filSource.ItemHeight = 12
-        Me.filSource.Location = New System.Drawing.Point(374, 24)
+        Me.filSource.Location = New System.Drawing.Point(417, 24)
         Me.filSource.Name = "filSource"
-        Me.filSource.Size = New System.Drawing.Size(197, 136)
+        Me.filSource.Size = New System.Drawing.Size(214, 220)
         Me.filSource.TabIndex = 12
         '
         'dirSource
@@ -115,7 +115,7 @@ Partial Class IMX00005
         Me.dirSource.Location = New System.Drawing.Point(12, 51)
         Me.dirSource.Name = "dirSource"
         Me.dirSource.SelectedImageIndex = 1
-        Me.dirSource.Size = New System.Drawing.Size(356, 120)
+        Me.dirSource.Size = New System.Drawing.Size(399, 193)
         Me.dirSource.TabIndex = 11
         '
         'drvSource
@@ -123,13 +123,13 @@ Partial Class IMX00005
         Me.drvSource.FormattingEnabled = True
         Me.drvSource.Location = New System.Drawing.Point(12, 24)
         Me.drvSource.Name = "drvSource"
-        Me.drvSource.Size = New System.Drawing.Size(356, 20)
+        Me.drvSource.Size = New System.Drawing.Size(399, 20)
         Me.drvSource.TabIndex = 10
         '
         'IMX00005
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
-        Me.ClientSize = New System.Drawing.Size(584, 339)
+        Me.ClientSize = New System.Drawing.Size(634, 411)
         Me.Controls.Add(Me.txtProcess)
         Me.Controls.Add(Me.cmdOK)
         Me.Controls.Add(Me.cmdRefresh)
@@ -140,9 +140,10 @@ Partial Class IMX00005
         Me.Controls.Add(Me.dirSource)
         Me.Controls.Add(Me.drvSource)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "IMX00005"
-        Me.Text = "IMX00005 - Item Excel File Upload (External Item)"
+        Me.Text = "IMX00005 - Item Excel File Upload (External Item) (IMX05)"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

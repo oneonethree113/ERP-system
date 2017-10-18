@@ -46,7 +46,6 @@ Class MPM00003
     Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
     Friend WithEvents ComboBox6 As System.Windows.Forms.ComboBox
     Friend WithEvents RichTextBox3 As System.Windows.Forms.RichTextBox
-    Friend WithEvents gbRelation As System.Windows.Forms.GroupBox
     Friend WithEvents lblAction As System.Windows.Forms.Label
     Friend WithEvents optModify As System.Windows.Forms.RadioButton
     Friend WithEvents optAdd As System.Windows.Forms.RadioButton
@@ -67,6 +66,7 @@ Class MPM00003
     Friend WithEvents txtSeqFm As System.Windows.Forms.TextBox
     Friend WithEvents cmdApply As System.Windows.Forms.Button
     Friend WithEvents cmdSelect As System.Windows.Forms.Button
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 
     Public rs_POM00010_AppList As New DataSet
 
@@ -99,6 +99,7 @@ Class MPM00003
     Friend WithEvents cmdClear As System.Windows.Forms.Button
     Friend WithEvents cmdShow As System.Windows.Forms.Button
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MPM00003))
         Me.cmdClear = New System.Windows.Forms.Button
         Me.cmdShow = New System.Windows.Forms.Button
         Me.StatusBar1 = New System.Windows.Forms.StatusBar
@@ -107,13 +108,13 @@ Class MPM00003
         Me.TextBox11 = New System.Windows.Forms.TextBox
         Me.ComboBox6 = New System.Windows.Forms.ComboBox
         Me.RichTextBox3 = New System.Windows.Forms.RichTextBox
-        Me.gbRelation = New System.Windows.Forms.GroupBox
         Me.optModify = New System.Windows.Forms.RadioButton
         Me.optAdd = New System.Windows.Forms.RadioButton
         Me.lblAction = New System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.grdDelivery = New System.Windows.Forms.DataGridView
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
+        Me.Panel1 = New System.Windows.Forms.Panel
         Me.cmdInsRow = New System.Windows.Forms.Button
         Me.cmdSave = New System.Windows.Forms.Button
         Me.cmdDelRow = New System.Windows.Forms.Button
@@ -130,10 +131,10 @@ Class MPM00003
         Me.cmdSelect = New System.Windows.Forms.Button
         CType(Me.StatusBarPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StatusBarPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.gbRelation.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.grdDelivery, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.grdMPO, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -141,7 +142,7 @@ Class MPM00003
         'cmdClear
         '
         Me.cmdClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdClear.Location = New System.Drawing.Point(337, 78)
+        Me.cmdClear.Location = New System.Drawing.Point(564, 75)
         Me.cmdClear.Name = "cmdClear"
         Me.cmdClear.Size = New System.Drawing.Size(66, 24)
         Me.cmdClear.TabIndex = 5
@@ -151,7 +152,7 @@ Class MPM00003
         'cmdShow
         '
         Me.cmdShow.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdShow.Location = New System.Drawing.Point(268, 78)
+        Me.cmdShow.Location = New System.Drawing.Point(495, 75)
         Me.cmdShow.Name = "cmdShow"
         Me.cmdShow.Size = New System.Drawing.Size(66, 24)
         Me.cmdShow.TabIndex = 4
@@ -161,11 +162,11 @@ Class MPM00003
         'StatusBar1
         '
         Me.StatusBar1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StatusBar1.Location = New System.Drawing.Point(0, 510)
+        Me.StatusBar1.Location = New System.Drawing.Point(0, 605)
         Me.StatusBar1.Name = "StatusBar1"
         Me.StatusBar1.Panels.AddRange(New System.Windows.Forms.StatusBarPanel() {Me.StatusBarPanel1, Me.StatusBarPanel2})
         Me.StatusBar1.ShowPanels = True
-        Me.StatusBar1.Size = New System.Drawing.Size(892, 26)
+        Me.StatusBar1.Size = New System.Drawing.Size(954, 26)
         Me.StatusBar1.TabIndex = 276
         '
         'StatusBarPanel1
@@ -173,14 +174,14 @@ Class MPM00003
         Me.StatusBarPanel1.Alignment = System.Windows.Forms.HorizontalAlignment.Right
         Me.StatusBarPanel1.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
         Me.StatusBarPanel1.Name = "StatusBarPanel1"
-        Me.StatusBarPanel1.Width = 437
+        Me.StatusBarPanel1.Width = 468
         '
         'StatusBarPanel2
         '
         Me.StatusBarPanel2.Alignment = System.Windows.Forms.HorizontalAlignment.Right
         Me.StatusBarPanel2.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
         Me.StatusBarPanel2.Name = "StatusBarPanel2"
-        Me.StatusBarPanel2.Width = 437
+        Me.StatusBarPanel2.Width = 468
         '
         'TextBox11
         '
@@ -208,22 +209,12 @@ Class MPM00003
         Me.RichTextBox3.TabIndex = 17
         Me.RichTextBox3.Text = ""
         '
-        'gbRelation
-        '
-        Me.gbRelation.Controls.Add(Me.optModify)
-        Me.gbRelation.Controls.Add(Me.optAdd)
-        Me.gbRelation.Location = New System.Drawing.Point(98, 14)
-        Me.gbRelation.Name = "gbRelation"
-        Me.gbRelation.Size = New System.Drawing.Size(131, 30)
-        Me.gbRelation.TabIndex = 283
-        Me.gbRelation.TabStop = False
-        '
         'optModify
         '
         Me.optModify.AutoSize = True
-        Me.optModify.Location = New System.Drawing.Point(62, 10)
+        Me.optModify.Location = New System.Drawing.Point(67, 6)
         Me.optModify.Name = "optModify"
-        Me.optModify.Size = New System.Drawing.Size(63, 19)
+        Me.optModify.Size = New System.Drawing.Size(58, 16)
         Me.optModify.TabIndex = 1
         Me.optModify.TabStop = True
         Me.optModify.Text = "Modify"
@@ -232,9 +223,9 @@ Class MPM00003
         'optAdd
         '
         Me.optAdd.AutoSize = True
-        Me.optAdd.Location = New System.Drawing.Point(8, 10)
+        Me.optAdd.Location = New System.Drawing.Point(3, 6)
         Me.optAdd.Name = "optAdd"
-        Me.optAdd.Size = New System.Drawing.Size(46, 19)
+        Me.optAdd.Size = New System.Drawing.Size(43, 16)
         Me.optAdd.TabIndex = 0
         Me.optAdd.TabStop = True
         Me.optAdd.Text = "Add"
@@ -243,10 +234,9 @@ Class MPM00003
         'lblAction
         '
         Me.lblAction.AutoSize = True
-        Me.lblAction.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.lblAction.Location = New System.Drawing.Point(20, 25)
         Me.lblAction.Name = "lblAction"
-        Me.lblAction.Size = New System.Drawing.Size(37, 13)
+        Me.lblAction.Size = New System.Drawing.Size(36, 12)
         Me.lblAction.TabIndex = 279
         Me.lblAction.Text = "Action"
         '
@@ -256,7 +246,7 @@ Class MPM00003
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.WindowText
         Me.GroupBox1.Location = New System.Drawing.Point(12, 126)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(868, 188)
+        Me.GroupBox1.Size = New System.Drawing.Size(930, 238)
         Me.GroupBox1.TabIndex = 284
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Delivery Record(s)"
@@ -272,32 +262,41 @@ Class MPM00003
         Me.grdDelivery.RowHeadersWidth = 20
         Me.grdDelivery.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grdDelivery.RowTemplate.Height = 16
-        Me.grdDelivery.Size = New System.Drawing.Size(856, 162)
+        Me.grdDelivery.Size = New System.Drawing.Size(918, 212)
         Me.grdDelivery.TabIndex = 9
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.cmdInsRow)
-        Me.GroupBox2.Controls.Add(Me.cmdSave)
-        Me.GroupBox2.Controls.Add(Me.cmdDelRow)
-        Me.GroupBox2.Controls.Add(Me.lblAction)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.txtItmNo)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.txtDlvNo)
+        Me.GroupBox2.Controls.Add(Me.Panel1)
+        Me.GroupBox2.Controls.Add(Me.cmdInsRow)
+        Me.GroupBox2.Controls.Add(Me.cmdSave)
+        Me.GroupBox2.Controls.Add(Me.cmdDelRow)
+        Me.GroupBox2.Controls.Add(Me.lblAction)
         Me.GroupBox2.Controls.Add(Me.cmdClear)
-        Me.GroupBox2.Controls.Add(Me.gbRelation)
         Me.GroupBox2.Controls.Add(Me.cmdShow)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 0)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(868, 121)
+        Me.GroupBox2.Size = New System.Drawing.Size(930, 121)
         Me.GroupBox2.TabIndex = 285
         Me.GroupBox2.TabStop = False
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.optModify)
+        Me.Panel1.Controls.Add(Me.optAdd)
+        Me.Panel1.Location = New System.Drawing.Point(98, 19)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(146, 30)
+        Me.Panel1.TabIndex = 288
         '
         'cmdInsRow
         '
         Me.cmdInsRow.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdInsRow.Location = New System.Drawing.Point(551, 78)
+        Me.cmdInsRow.Location = New System.Drawing.Point(778, 75)
         Me.cmdInsRow.Name = "cmdInsRow"
         Me.cmdInsRow.Size = New System.Drawing.Size(66, 24)
         Me.cmdInsRow.TabIndex = 7
@@ -307,7 +306,7 @@ Class MPM00003
         'cmdSave
         '
         Me.cmdSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdSave.Location = New System.Drawing.Point(406, 78)
+        Me.cmdSave.Location = New System.Drawing.Point(633, 75)
         Me.cmdSave.Name = "cmdSave"
         Me.cmdSave.Size = New System.Drawing.Size(66, 24)
         Me.cmdSave.TabIndex = 6
@@ -317,7 +316,7 @@ Class MPM00003
         'cmdDelRow
         '
         Me.cmdDelRow.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdDelRow.Location = New System.Drawing.Point(621, 78)
+        Me.cmdDelRow.Location = New System.Drawing.Point(848, 75)
         Me.cmdDelRow.Name = "cmdDelRow"
         Me.cmdDelRow.Size = New System.Drawing.Size(66, 24)
         Me.cmdDelRow.TabIndex = 8
@@ -327,48 +326,46 @@ Class MPM00003
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.Label3.Location = New System.Drawing.Point(20, 78)
+        Me.Label3.Location = New System.Drawing.Point(20, 77)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 13)
+        Me.Label3.Size = New System.Drawing.Size(43, 12)
         Me.Label3.TabIndex = 287
-        Me.Label3.Text = "Item No   : "
+        Me.Label3.Text = "Item No"
         '
         'txtItmNo
         '
         Me.txtItmNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.txtItmNo.Location = New System.Drawing.Point(98, 78)
+        Me.txtItmNo.Location = New System.Drawing.Point(98, 74)
         Me.txtItmNo.MaxLength = 10
         Me.txtItmNo.Name = "txtItmNo"
-        Me.txtItmNo.Size = New System.Drawing.Size(129, 20)
+        Me.txtItmNo.Size = New System.Drawing.Size(146, 20)
         Me.txtItmNo.TabIndex = 3
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.Label2.Location = New System.Drawing.Point(20, 52)
+        Me.Label2.Location = New System.Drawing.Point(20, 51)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(71, 13)
+        Me.Label2.Size = New System.Drawing.Size(62, 12)
         Me.Label2.TabIndex = 285
-        Me.Label2.Text = "Delivery No : "
+        Me.Label2.Text = "Delivery No"
         '
         'txtDlvNo
         '
         Me.txtDlvNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.txtDlvNo.Location = New System.Drawing.Point(98, 51)
+        Me.txtDlvNo.Location = New System.Drawing.Point(98, 47)
         Me.txtDlvNo.MaxLength = 10
         Me.txtDlvNo.Name = "txtDlvNo"
-        Me.txtDlvNo.Size = New System.Drawing.Size(129, 20)
+        Me.txtDlvNo.Size = New System.Drawing.Size(146, 20)
         Me.txtDlvNo.TabIndex = 2
         '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.grdMPO)
         Me.GroupBox3.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 320)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 370)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(868, 188)
+        Me.GroupBox3.Size = New System.Drawing.Size(930, 229)
         Me.GroupBox3.TabIndex = 286
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "MPO Record(s)"
@@ -384,7 +381,7 @@ Class MPM00003
         Me.grdMPO.RowHeadersWidth = 20
         Me.grdMPO.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grdMPO.RowTemplate.Height = 16
-        Me.grdMPO.Size = New System.Drawing.Size(856, 162)
+        Me.grdMPO.Size = New System.Drawing.Size(918, 203)
         Me.grdMPO.TabIndex = 10
         '
         'cmdReset
@@ -442,8 +439,8 @@ Class MPM00003
         '
         'MPM00003
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 14)
-        Me.ClientSize = New System.Drawing.Size(892, 536)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 15)
+        Me.ClientSize = New System.Drawing.Size(954, 631)
         Me.Controls.Add(Me.cmdReset)
         Me.Controls.Add(Me.txtSeqTo)
         Me.Controls.Add(Me.txtSeqFm)
@@ -453,20 +450,19 @@ Class MPM00003
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.StatusBar1)
-        Me.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MinimizeBox = False
         Me.Name = "MPM00003"
-        Me.Text = "MPM00003 - Supplier Delivery Maintenance"
+        Me.Text = "MPM00003 - Supplier Delivery Maintenance (MPM03)"
         CType(Me.StatusBarPanel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StatusBarPanel2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.gbRelation.ResumeLayout(False)
-        Me.gbRelation.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.grdDelivery, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.grdMPO, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -1543,17 +1539,19 @@ Class MPM00003
             .Columns(intCol).HeaderText = "Order Qty"
             .Columns(intCol).ReadOnly = True
             .Columns(intCol).Width = 800 / 13
-
+            .Columns(intCol).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
 
             intCol = intCol + 1
             .Columns(intCol).HeaderText = "Ship Qty"
             .Columns(intCol).ReadOnly = True
             .Columns(intCol).Width = 900 / 13
+            .Columns(intCol).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
 
             intCol = intCol + 1
             .Columns(intCol).HeaderText = "OS Qty"
             .Columns(intCol).ReadOnly = True
             .Columns(intCol).Width = 800 / 13
+            .Columns(intCol).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
 
             intCol = intCol + 1
             .Columns(intCol).HeaderText = "Ori DQty"
@@ -1566,6 +1564,7 @@ Class MPM00003
             .Columns(intCol).HeaderText = "Delivery Qty"
             .Columns(intCol).ReadOnly = True
             .Columns(intCol).Width = 1000 / 13
+            .Columns(intCol).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
 
             If strAction = "ADD" Then
                 intCol = intCol + 1
@@ -1578,12 +1577,14 @@ Class MPM00003
                 .Columns(intCol).HeaderText = "Distributed DQty"
                 .Columns(intCol).ReadOnly = True
                 .Columns(intCol).Width = 1200 / 13
+                .Columns(intCol).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
             End If
 
             intCol = intCol + 1
             .Columns(intCol).HeaderText = "Adjust Qty"
             .Columns(intCol).ReadOnly = True
             .Columns(intCol).Width = 800 / 13
+            .Columns(intCol).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
 
             intCol = intCol + 1
             .Columns(intCol).HeaderText = "Prv Delivery Qty"
@@ -1596,7 +1597,7 @@ Class MPM00003
             .Columns(intCol).Width = 2400 / 13
 
             intCol = intCol + 1
-            .Columns(intCol).HeaderText = "Vendor No"
+            .Columns(intCol).HeaderText = "Vendor"
             .Columns(intCol).ReadOnly = True
             .Columns(intCol).Width = 800 / 13
 
@@ -1641,7 +1642,6 @@ Class MPM00003
 
         Cursor = Cursors.WaitCursor
 
-        Me.Icon = ERP00000.Icon
 
         AccessRight(Me.Name) '*** For Access Right use, added by Tommy on 5 Oct 2001
         Enq_right_local = Enq_right
@@ -1941,7 +1941,7 @@ err_Handle_rt:
     Private Sub grdMPO_AfterColEdit(ByVal ColIndex As Integer)
     End Sub
     Private Sub grdMPO_RowHeaderMouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles grdMPO.RowHeaderMouseDoubleClick
-        
+
 
 
     End Sub
