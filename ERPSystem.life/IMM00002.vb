@@ -48,7 +48,7 @@
 
     End Sub
 
-    Private Sub mmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFind.Click
+    Private Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFind.Click
         If txtCusVenFrom.Text <> "" And txtCusVenTo.TextLength = 0 Then
             txtCusVenTo.Text = txtCusVenFrom.Text
         End If
@@ -172,8 +172,7 @@
         End If
     End Sub
 
-    Private Sub mmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
-        If checkFocus(Me) Then Exit Sub
+    Private Sub cmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSave.Click
         Dim IsUpdated As Boolean = False
         Dim rs_update, rs_temp As New DataSet
 
@@ -720,12 +719,10 @@
                 grdOldRecord.DataSource = rs_BOMASSold.Tables("RESULT").DefaultView
                 If rs_IMITMDAT.Tables("RESULT").Rows(selected_Rowno)("iid_itmtyp") = "REG" Then
 
-                    grdOldRecord.Columns(2).Width = 300
-                    Me.grdOldRecord.Columns(0).HeaderText = "Item No."
-                    Me.grdOldRecord.Columns(1).HeaderText = "Accessory No."
+                    grdOldRecord.Columns(2).Width = 160
                 Else
                     grdOldRecord.Columns(3).Width = 50
-                    grdOldRecord.Columns(4).Width = 260
+                    grdOldRecord.Columns(4).Width = 160
 
                 End If
             End If
@@ -744,12 +741,10 @@
                 grdNewRecord.DataSource = rs_BOMASSnew.Tables("RESULT").DefaultView
                 If rs_IMITMDAT.Tables("RESULT").Rows(selected_Rowno)("iid_itmtyp") = "REG" Then
 
-                    grdNewRecord.Columns(2).Width = 300
-                    Me.grdNewRecord.Columns(0).HeaderText = "Item No."
-                    Me.grdNewRecord.Columns(1).HeaderText = "Accessory No."
+                    grdNewRecord.Columns(2).Width = 160
                 Else
                     grdNewRecord.Columns(3).Width = 50
-                    grdNewRecord.Columns(4).Width = 260
+                    grdNewRecord.Columns(4).Width = 160
                 End If
 
             End If
@@ -870,11 +865,11 @@
                         .Columns(i).ReadOnly = True
                     Case 2
                         .Columns(i).HeaderText = "Before"
-                        .Columns(i).Width = 325
+                        .Columns(i).Width = 220
                         .Columns(i).ReadOnly = True
                     Case 3
                         .Columns(i).HeaderText = "After"
-                        .Columns(i).Width = 325
+                        .Columns(i).Width = 220
                         .Columns(i).ReadOnly = True
                     Case 4
                         .Columns(i).HeaderText = "Change"
@@ -1023,13 +1018,12 @@
         End If
     End Sub
 
-    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
-        If checkFocus(Me) Then Exit Sub
+    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
         If recordStatus = True Then
             Dim ans As Integer = MsgBox("Record has been modified. Do you want to save before clearing the screen?", MsgBoxStyle.YesNoCancel, "Clear Screen")
             If ans = 6 Then         'Yes
-                If mmdSave.Enabled = True Then
-                    mmdSave.PerformClick()
+                If cmdSave.Enabled = True Then
+                    cmdSave.PerformClick()
                     If saveOK = True Then
                         setStatus("Clear")
                     Else
@@ -1052,8 +1046,13 @@
     End Sub
 
     Private Sub Enable_IAR00001()
- 
-        cmdIAR00001.Enabled = getEnquiryRightByFormName(IAR00001.Name.ToString)
+        ' Removed by David Yue 2013-01-03
+        'If miSCM00004.miIAR00001.Enabled = False Then
+        '    cmdIAR00001.Enabled = False
+        'Else
+        '    cmdIAR00001.Enabled = True
+        'End If
+        cmdIAR00001.Enabled = True
     End Sub
 
     Private Sub tabFrame_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tabFrame.SelectedIndexChanged
@@ -1063,24 +1062,23 @@
     Private Sub setStatus(ByVal Mode As String)
 
         If Mode = "Init" Then
-            mmdAdd.Enabled = False
-            mmdSave.Enabled = False
-            mmdDelete.Enabled = False
-            mmdCopy.Enabled = False
-            mmdFind.Enabled = True
-            mmdClear.Enabled = True
+            cmdAdd.Enabled = False
+            cmdSave.Enabled = False
+            cmdDelete.Enabled = False
+            cmdCopy.Enabled = False
+            cmdFind.Enabled = True
+            cmdClear.Enabled = True
 
             'disable button which without any function
-            mmdSearch.Enabled = False
-            mmdInsRow.Enabled = False
-            mmdDelRow.Enabled = False
+            cmdSearch.Enabled = False
+            cmdInsRow.Enabled = False
+            cmdDelRow.Enabled = False
+            cmdFirst.Enabled = False
+            cmdLast.Enabled = False
+            cmdNext.Enabled = False
+            cmdPrevious.Enabled = False
 
-            mmdPrint.Enabled = False
-            mmdAttach.Enabled = False
-            mmdFunction.Enabled = False
-            mmdLink.Enabled = False
-
-            mmdExit.Enabled = True
+            cmdExit.Enabled = True
 
             txtVenItm.Enabled = True
             txtVenItm.Text = ""
@@ -1194,17 +1192,17 @@
             recordStatus = False
             results = False
         ElseIf Mode = "Updating" Then
-            mmdAdd.Enabled = False
-            mmdSave.Enabled = enq_right_local
-            mmdDelete.Enabled = False
-            mmdCopy.Enabled = False
-            mmdFind.Enabled = False
-            mmdClear.Enabled = True
+            cmdAdd.Enabled = False
+            cmdSave.Enabled = enq_right_local
+            cmdDelete.Enabled = False
+            cmdCopy.Enabled = False
+            cmdFind.Enabled = False
+            cmdClear.Enabled = True
 
-            mmdInsRow.Enabled = False
-            mmdDelRow.Enabled = False
+            cmdInsRow.Enabled = False
+            cmdDelRow.Enabled = False
 
-            mmdExit.Enabled = True
+            cmdExit.Enabled = True
 
             cmdFirst_dtl.Enabled = True
             cmdLast_dtl.Enabled = True
@@ -1314,8 +1312,7 @@
         End If
     End Sub
 
-    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
-        If checkFocus(Me) Then Exit Sub
+    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdExit.Click
         Dim answer As Integer
 
         If recordStatus = True Then
@@ -1323,8 +1320,8 @@
             If answer = 2 Then      'Cancel
                 Exit Sub
             ElseIf answer = 6 Then  'Yes
-                If mmdSave.Enabled Then
-                    mmdSave.PerformClick()
+                If cmdSave.Enabled Then
+                    cmdSave.PerformClick()
                     If saveOK = True Then
                         setStatus("Clear")
                     Else
@@ -1522,5 +1519,4 @@
             rs_IMITMDAT.Tables("RESULT").Columns("iid_ftytmp").ReadOnly = True
         End If
     End Sub
-
 End Class

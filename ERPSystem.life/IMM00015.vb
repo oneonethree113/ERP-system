@@ -39,21 +39,20 @@ Public Class IMM00015
     Private Sub setStatus(ByVal mode As String)
         Select Case UCase(mode)
             Case "INIT"
-                mmdAdd.Enabled = True
-                mmdSave.Enabled = False
-                mmdDelete.Enabled = False
-                mmdCopy.Enabled = False
-                mmdFind.Enabled = False
-                mmdClear.Enabled = False
-                mmdSearch.Enabled = False
-                mmdInsRow.Enabled = False
-                mmdDelRow.Enabled = False
-                mmdExit.Enabled = True
-
-                mmdPrint.Enabled = False
-                mmdAttach.Enabled = False
-                mmdFunction.Enabled = False
-                mmdLink.Enabled = False
+                cmdAdd.Enabled = True
+                cmdSave.Enabled = False
+                cmdDelete.Enabled = False
+                cmdCopy.Enabled = False
+                cmdFind.Enabled = False
+                cmdClear.Enabled = False
+                cmdSearch.Enabled = False
+                cmdInsRow.Enabled = False
+                cmdDelRow.Enabled = False
+                cmdFirst.Enabled = False
+                cmdPrevious.Enabled = False
+                cmdNext.Enabled = False
+                cmdLast.Enabled = False
+                cmdExit.Enabled = True
 
                 grpItem.Enabled = False
                 txtItmNo.Enabled = False
@@ -93,16 +92,20 @@ Public Class IMM00015
 
                 initialize_DataSet()
             Case "ADD"
-                mmdAdd.Enabled = False
-                mmdSave.Enabled = False
-                mmdDelete.Enabled = False
-                mmdCopy.Enabled = False
-                mmdFind.Enabled = False
-                mmdClear.Enabled = True
-                mmdSearch.Enabled = False
-                mmdInsRow.Enabled = False
-                mmdDelRow.Enabled = False
-                mmdExit.Enabled = True
+                cmdAdd.Enabled = False
+                cmdSave.Enabled = False
+                cmdDelete.Enabled = False
+                cmdCopy.Enabled = False
+                cmdFind.Enabled = False
+                cmdClear.Enabled = True
+                cmdSearch.Enabled = False
+                cmdInsRow.Enabled = False
+                cmdDelRow.Enabled = False
+                cmdFirst.Enabled = False
+                cmdPrevious.Enabled = False
+                cmdNext.Enabled = False
+                cmdLast.Enabled = False
+                cmdExit.Enabled = True
 
                 grpItem.Enabled = True
                 txtItmNo.Enabled = True
@@ -155,16 +158,20 @@ Public Class IMM00015
                     recordStatus = True
                 End If
             Case "SELECT"
-                mmdAdd.Enabled = False
-                mmdSave.Enabled = False
-                mmdDelete.Enabled = False
-                mmdCopy.Enabled = False
-                mmdFind.Enabled = False
-                mmdClear.Enabled = True
-                mmdSearch.Enabled = False
-                mmdInsRow.Enabled = False
-                mmdDelRow.Enabled = False
-                mmdExit.Enabled = True
+                cmdAdd.Enabled = False
+                cmdSave.Enabled = False
+                cmdDelete.Enabled = False
+                cmdCopy.Enabled = False
+                cmdFind.Enabled = False
+                cmdClear.Enabled = True
+                cmdSearch.Enabled = False
+                cmdInsRow.Enabled = False
+                cmdDelRow.Enabled = False
+                cmdFirst.Enabled = False
+                cmdPrevious.Enabled = False
+                cmdNext.Enabled = False
+                cmdLast.Enabled = False
+                cmdExit.Enabled = True
 
                 grpItem.Enabled = True
                 txtItmNo.Enabled = True
@@ -204,7 +211,7 @@ Public Class IMM00015
         End Select
     End Sub
 
-    Private Sub cmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdAdd.Click
+    Private Sub cmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAdd.Click
         setStatus("ADD")
     End Sub
 
@@ -279,7 +286,7 @@ Public Class IMM00015
 
     End Sub
 
-    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
+    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
         If recordStatus = True Then
             Dim answer As Integer = MsgBox("Unsaved data has been detect." & Environment.NewLine & "Export data before clearing?", MsgBoxStyle.Information + MsgBoxStyle.YesNoCancel, Me.Name & " - Clear")
             If answer = MsgBoxResult.Yes Then
@@ -300,7 +307,7 @@ Public Class IMM00015
         End If
     End Sub
 
-    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
+    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdExit.Click
         Me.Close()
     End Sub
 
@@ -568,14 +575,14 @@ Public Class IMM00015
                     dgItem.Columns(i).HeaderText = "Sec Cust."
                     dgItem.Columns(i).Width = 60
                 Case "ivi_venitm"
-                    dgItem.Columns(i).HeaderText = "Vendor Item No."
-                    dgItem.Columns(i).Width = 90
+                    dgItem.Columns(i).HeaderText = "Vendor Item #"
+                    dgItem.Columns(i).Width = 80
                 Case "ibi_itmno"
                     dgItem.Columns(i).HeaderText = "Item No."
                     dgItem.Columns(i).Width = 100
                 Case "ibi_dsgno"
-                    dgItem.Columns(i).HeaderText = "Design Item No."
-                    dgItem.Columns(i).Width = 90
+                    dgItem.Columns(i).HeaderText = "Design Item #"
+                    dgItem.Columns(i).Width = 80
                 Case "ibi_typ"
                     dgItem.Columns(i).HeaderText = "Type"
                     dgItem.Columns(i).Width = 40
@@ -583,10 +590,10 @@ Public Class IMM00015
                     dgItem.Columns(i).HeaderText = "Cat. (Lvl 4)"
                     dgItem.Columns(i).Width = 80
                 Case "ibi_engdsc"
-                    dgItem.Columns(i).HeaderText = "English Description"
+                    dgItem.Columns(i).HeaderText = "English Desc."
                     dgItem.Columns(i).Width = 180
                 Case "ibi_chndsc"
-                    dgItem.Columns(i).HeaderText = "Chinese Description"
+                    dgItem.Columns(i).HeaderText = "Chinese Desc."
                     dgItem.Columns(i).Width = 180
                 Case "ibi_material"
                     dgItem.Columns(i).HeaderText = "Key Material"
@@ -626,70 +633,58 @@ Public Class IMM00015
                     dgItem.Columns(i).HeaderText = "Con Ftr"
                     dgItem.Columns(i).Width = 35
                     dgItem.Columns(i).DisplayIndex = 5
-                    dgItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_inrqty"
                     dgItem.Columns(i).HeaderText = "Inr"
                     dgItem.Columns(i).Width = 35
                     dgItem.Columns(i).DisplayIndex = 6
-                    dgItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_mtrqty"
                     dgItem.Columns(i).HeaderText = "Mtr"
                     dgItem.Columns(i).Width = 35
                     dgItem.Columns(i).DisplayIndex = 7
-                    dgItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_inrdin"
                     dgItem.Columns(i).HeaderText = "Inr (L)"
                     dgItem.Columns(i).Width = 45
-                    dgItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_inrwin"
                     dgItem.Columns(i).HeaderText = "Inr (W)"
                     dgItem.Columns(i).Width = 48
-                    dgItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_inrhin"
                     dgItem.Columns(i).HeaderText = "Inr (H)"
                     dgItem.Columns(i).Width = 48
-                    dgItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_mtrdin"
                     dgItem.Columns(i).HeaderText = "Mtr (L)"
                     dgItem.Columns(i).Width = 48
-                    dgItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_mtrwin"
                     dgItem.Columns(i).HeaderText = "Mtr (W)"
                     dgItem.Columns(i).Width = 48
-                    dgItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_mtrhin"
                     dgItem.Columns(i).HeaderText = "Mtr (H)"
                     dgItem.Columns(i).Width = 48
-                    dgItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_cft"
                     dgItem.Columns(i).HeaderText = "CFT"
                     dgItem.Columns(i).Width = 45
-                    dgItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_pckmsr"
                     dgItem.Columns(i).HeaderText = "Pck Msr"
                     dgItem.Columns(i).Width = 40
                 Case "ipi_grswgt"
                     dgItem.Columns(i).HeaderText = "GW"
                     dgItem.Columns(i).Width = 30
-                    dgItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_netwgt"
                     dgItem.Columns(i).HeaderText = "NW"
                     dgItem.Columns(i).Width = 30
-                    dgItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_pckitr"
-                    dgItem.Columns(i).HeaderText = "Packing Instruction"
+                    dgItem.Columns(i).HeaderText = "Pack Instr"
                     dgItem.Columns(i).Width = 150
                 Case "imu_ftyprctrm"
                     dgItem.Columns(i).HeaderText = "Fty Prc Trm"
-                    dgItem.Columns(i).Width = 70
+                    dgItem.Columns(i).Width = 50
                     dgItem.Columns(i).DisplayIndex = 10
                 Case "imu_hkprctrm"
                     dgItem.Columns(i).HeaderText = "HK Prc Trm"
-                    dgItem.Columns(i).Width = 70
+                    dgItem.Columns(i).Width = 50
                     dgItem.Columns(i).DisplayIndex = 11
                 Case "imu_trantrm"
-                    dgItem.Columns(i).HeaderText = "Tran Trm"
-                    dgItem.Columns(i).Width = 70
+                    dgItem.Columns(i).HeaderText = "Trn Trm"
+                    dgItem.Columns(i).Width = 50
                     dgItem.Columns(i).DisplayIndex = 12
                 Case "imu_curcde"
                     dgItem.Columns(i).HeaderText = "CCY"
@@ -697,21 +692,18 @@ Public Class IMM00015
                 Case "imu_ftyprc"
                     dgItem.Columns(i).HeaderText = "Fty Prc"
                     dgItem.Columns(i).Width = 55
-                    dgItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "imm_moqunttyp"
                     dgItem.Columns(i).HeaderText = "MOQ UM"
                     dgItem.Columns(i).Width = 40
                 Case "imm_moqctn"
                     dgItem.Columns(i).HeaderText = "MOQ Qty"
-                    dgItem.Columns(i).Width = 60
-                    dgItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                    dgItem.Columns(i).Width = 40
                 Case "imm_curcde"
                     dgItem.Columns(i).HeaderText = "MOQ CCY"
-                    dgItem.Columns(i).Width = 65
+                    dgItem.Columns(i).Width = 40
                 Case "imm_moa"
                     dgItem.Columns(i).HeaderText = "MOQ Amt"
-                    dgItem.Columns(i).Width = 60
-                    dgItem.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                    dgItem.Columns(i).Width = 40
                 Case "ipi_qutdat"
                     dgItem.Columns(i).HeaderText = "Qut Date"
                     dgItem.Columns(i).Width = 70
@@ -730,8 +722,6 @@ Public Class IMM00015
                 Case "imu_estprcref"
                     dgItem.Columns(i).HeaderText = "Est Prc Ref"
                     dgItem.Columns(i).Width = 100
-                Case Else
-                    dgItem.Columns(i).Visible = False
             End Select
         Next
 
@@ -764,14 +754,14 @@ Public Class IMM00015
                     dgExport.Columns(i).HeaderText = "Sec Cust."
                     dgExport.Columns(i).Width = 60
                 Case "ivi_venitm"
-                    dgExport.Columns(i).HeaderText = "Vendor Item No."
-                    dgExport.Columns(i).Width = 90
+                    dgExport.Columns(i).HeaderText = "Vendor Item #"
+                    dgExport.Columns(i).Width = 80
                 Case "ibi_itmno"
                     dgExport.Columns(i).HeaderText = "Item No."
                     dgExport.Columns(i).Width = 100
                 Case "ibi_dsgno"
-                    dgExport.Columns(i).HeaderText = "Design Item No."
-                    dgExport.Columns(i).Width = 90
+                    dgExport.Columns(i).HeaderText = "Design Item #"
+                    dgExport.Columns(i).Width = 80
                 Case "ibi_typ"
                     dgExport.Columns(i).HeaderText = "Type"
                     dgExport.Columns(i).Width = 40
@@ -779,10 +769,10 @@ Public Class IMM00015
                     dgExport.Columns(i).HeaderText = "Cat. (Lvl 4)"
                     dgExport.Columns(i).Width = 80
                 Case "ibi_engdsc"
-                    dgExport.Columns(i).HeaderText = "English Description"
+                    dgExport.Columns(i).HeaderText = "English Desc."
                     dgExport.Columns(i).Width = 180
                 Case "ibi_chndsc"
-                    dgExport.Columns(i).HeaderText = "Chinese Description"
+                    dgExport.Columns(i).HeaderText = "Chinese Desc."
                     dgExport.Columns(i).Width = 180
                 Case "ibi_material"
                     dgExport.Columns(i).HeaderText = "Key Material"
@@ -822,70 +812,58 @@ Public Class IMM00015
                     dgExport.Columns(i).HeaderText = "Con Ftr"
                     dgExport.Columns(i).Width = 35
                     dgExport.Columns(i).DisplayIndex = 5
-                    dgExport.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_inrqty"
                     dgExport.Columns(i).HeaderText = "Inr"
                     dgExport.Columns(i).Width = 35
                     dgExport.Columns(i).DisplayIndex = 6
-                    dgExport.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_mtrqty"
                     dgExport.Columns(i).HeaderText = "Mtr"
                     dgExport.Columns(i).Width = 35
                     dgExport.Columns(i).DisplayIndex = 7
-                    dgExport.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_inrdin"
                     dgExport.Columns(i).HeaderText = "Inr (L)"
                     dgExport.Columns(i).Width = 45
-                    dgExport.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_inrwin"
                     dgExport.Columns(i).HeaderText = "Inr (W)"
                     dgExport.Columns(i).Width = 48
-                    dgExport.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_inrhin"
                     dgExport.Columns(i).HeaderText = "Inr (H)"
                     dgExport.Columns(i).Width = 48
-                    dgExport.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_mtrdin"
                     dgExport.Columns(i).HeaderText = "Mtr (L)"
                     dgExport.Columns(i).Width = 48
-                    dgExport.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_mtrwin"
                     dgExport.Columns(i).HeaderText = "Mtr (W)"
                     dgExport.Columns(i).Width = 48
-                    dgExport.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_mtrhin"
                     dgExport.Columns(i).HeaderText = "Mtr (H)"
                     dgExport.Columns(i).Width = 48
-                    dgExport.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_cft"
                     dgExport.Columns(i).HeaderText = "CFT"
                     dgExport.Columns(i).Width = 45
-                    dgExport.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_pckmsr"
                     dgExport.Columns(i).HeaderText = "Pck Msr"
                     dgExport.Columns(i).Width = 40
                 Case "ipi_grswgt"
                     dgExport.Columns(i).HeaderText = "GW"
                     dgExport.Columns(i).Width = 30
-                    dgExport.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_netwgt"
                     dgExport.Columns(i).HeaderText = "NW"
                     dgExport.Columns(i).Width = 30
-                    dgExport.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "ipi_pckitr"
-                    dgExport.Columns(i).HeaderText = "Packing Instruction"
+                    dgExport.Columns(i).HeaderText = "Pack Instr"
                     dgExport.Columns(i).Width = 150
                 Case "imu_ftyprctrm"
                     dgExport.Columns(i).HeaderText = "Fty Prc Trm"
-                    dgExport.Columns(i).Width = 70
+                    dgExport.Columns(i).Width = 50
                     dgExport.Columns(i).DisplayIndex = 10
                 Case "imu_hkprctrm"
                     dgExport.Columns(i).HeaderText = "HK Prc Trm"
-                    dgExport.Columns(i).Width = 70
+                    dgExport.Columns(i).Width = 50
                     dgExport.Columns(i).DisplayIndex = 11
                 Case "imu_trantrm"
-                    dgExport.Columns(i).HeaderText = "Tran Trm"
-                    dgExport.Columns(i).Width = 70
+                    dgExport.Columns(i).HeaderText = "Trn Trm"
+                    dgExport.Columns(i).Width = 50
                     dgExport.Columns(i).DisplayIndex = 12
                 Case "imu_curcde"
                     dgExport.Columns(i).HeaderText = "CCY"
@@ -893,21 +871,18 @@ Public Class IMM00015
                 Case "imu_ftyprc"
                     dgExport.Columns(i).HeaderText = "Fty Prc"
                     dgExport.Columns(i).Width = 55
-                    dgExport.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 Case "imm_moqunttyp"
                     dgExport.Columns(i).HeaderText = "MOQ UM"
                     dgExport.Columns(i).Width = 40
                 Case "imm_moqctn"
                     dgExport.Columns(i).HeaderText = "MOQ Qty"
-                    dgExport.Columns(i).Width = 60
-                    dgExport.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                    dgExport.Columns(i).Width = 40
                 Case "imm_curcde"
                     dgExport.Columns(i).HeaderText = "MOQ CCY"
-                    dgExport.Columns(i).Width = 65
+                    dgExport.Columns(i).Width = 40
                 Case "imm_moa"
                     dgExport.Columns(i).HeaderText = "MOQ Amt"
-                    dgExport.Columns(i).Width = 60
-                    dgExport.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                    dgExport.Columns(i).Width = 40
                 Case "ipi_qutdat"
                     dgExport.Columns(i).HeaderText = "Qut Date"
                     dgExport.Columns(i).Width = 70
@@ -926,8 +901,6 @@ Public Class IMM00015
                 Case "imu_estprcref"
                     dgExport.Columns(i).HeaderText = "Est Prc Ref"
                     dgExport.Columns(i).Width = 100
-                Case Else
-                    dgExport.Columns(i).Visible = False
             End Select
         Next
 
@@ -1183,7 +1156,4 @@ Public Class IMM00015
             End If
         Next
     End Sub
-
 End Class
-
-

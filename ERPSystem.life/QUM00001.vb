@@ -382,12 +382,6 @@ Public Class QUM00001
     Dim dispGenTentFlag As Boolean
     Dim dispUpdateFlag As Boolean
     Dim dispRenewFlag As Boolean
-    Dim dispRequoteFlag As Boolean
-
-    Dim dispPrintFlag As Boolean
-    Dim dispAttachFlag As Boolean
-    Dim dispFunctionFlag As Boolean
-    Dim dispLinkFlag As Boolean
 
     Public qum1_1 As QUM00001_1
 
@@ -3252,11 +3246,8 @@ Public Class QUM00001
                         txtMU.Text = Format(Val(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qpe_mu").ToString), "###,###,##0.0000")
                         txtPckCstAmt.Text = Format(Val(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_pkgper").ToString), "###,###,##0.0000")
                         txtItmCommAmt.Text = Format(Val(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_icmper").ToString), "###,###,##0.0000")
-<<<<<<< HEAD
                         'lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%" + _
                         '                " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
-=======
->>>>>>> MPO-UI
                         refresh_lblMUMin()
                         Call displayMOQMOA()
 
@@ -10383,11 +10374,8 @@ Then
                 If get_QUPRCEMT_CU(txtSeq.Text, Split(cboCus1No.Text, "-")(0).Trim, Split(cboCus2No.Text, "-")(0).Trim, txtVenTyp.Text.Trim, txtItmCat.Text.Trim, Split(cboVenNo.Text.Trim, "-")(0).Trim, cboDtlPrcTrm.Text, cboTranTrm.Text) = True Then
                     Call calculate_gbPandelCstEmt(txtSeq.Text)
                     txtMU.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mu")
-<<<<<<< HEAD
                     'lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%" + _
                     '                    " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
-=======
->>>>>>> MPO-UI
                     refresh_lblMUMin()
                     txtPckCstAmt.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_pkgper")
                     txtItmCommAmt.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_icmper")
@@ -11514,11 +11502,8 @@ Then
             Else
                 rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_creusr") = "~*UPD*~"
             End If
-<<<<<<< HEAD
             'lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%" + _
             '                " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
-=======
->>>>>>> MPO-UI
             refresh_lblMUMin()
             Recordstatus = True
 
@@ -11591,11 +11576,8 @@ Then
             Else
                 rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_creusr") = "~*UPD*~"
             End If
-<<<<<<< HEAD
             'lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%" + _
             '                " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
-=======
->>>>>>> MPO-UI
             refresh_lblMUMin()
             Recordstatus = True
 
@@ -11657,7 +11639,6 @@ Then
 
 
 
-        Call all_cmd_dis()
         Call freeze_TabControl(-1)
     End Sub
 
@@ -11913,11 +11894,8 @@ Then
         txtMU.Text = Format(Val(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qpe_mu").ToString), "###,###,##0.0000")
         txtPckCstAmt.Text = Format(Val(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_pkgper").ToString), "###,###,##0.0000")
         txtItmCommAmt.Text = Format(Val(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_icmper").ToString), "###,###,##0.0000")
-<<<<<<< HEAD
         'lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%" + _
         '                                " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
-=======
->>>>>>> MPO-UI
         refresh_lblMUMin()
 
         '''III
@@ -12028,7 +12006,6 @@ Then
 
 
 
-        Call all_cmd_en()
         Call release_TabControl()
     End Sub
 
@@ -12081,7 +12058,7 @@ Then
 
 
 
-        Call all_cmd_en()
+
         Call release_TabControl()
     End Sub
 
@@ -12102,8 +12079,6 @@ Then
         Call all_cmd_dis()
 
         PanelCptBkd.BringToFront()
-
-        Call freeze_TabControl(-1)
     End Sub
 
     Private Sub cmdPanCptBkdIns_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdPanCptBkdIns.Click
@@ -12329,7 +12304,6 @@ Then
         PanelCptBkd.Visible = False
         Call all_cmd_en()
 
-        Call release_TabControl()
     End Sub
 
     Private Sub btnTOMutShp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTOMutShp.Click
@@ -12352,7 +12326,6 @@ Then
         Call display_MutShp()
         Call all_cmd_dis()
 
-        Call freeze_TabControl(-1)
         PanelMutShp.BringToFront()
     End Sub
 
@@ -12419,8 +12392,6 @@ Then
         bIsShowPanels = False
         PanelMutShp.SendToBack()
         PanelMutShp.Visible = False
-
-        Call release_TabControl()
     End Sub
 
     Private Sub display_MutShp()
@@ -18341,11 +18312,8 @@ Then
 
 
             txtMU.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mu")
-<<<<<<< HEAD
             'lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%" + _
             '                            " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
-=======
->>>>>>> MPO-UI
             refresh_lblMUMin()
 
             txtPckCstAmt.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_pkgper")
@@ -21813,11 +21781,8 @@ Then
                 If get_QUPRCEMT_CU(txtSeq.Text, Split(cboCus1No.Text, "-")(0).Trim, Split(cboCus2No.Text, "-")(0).Trim, txtVenTyp.Text.Trim, txtItmCat.Text.Trim, Split(cboVenNo.Text.Trim, "-")(0).Trim, cboDtlPrcTrm.Text, cboTranTrm.Text) = True Then
                     Call calculate_gbPandelCstEmt(txtSeq.Text)
                     txtMU.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mu")
-<<<<<<< HEAD
                     'lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%" + _
                     '                    " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
-=======
->>>>>>> MPO-UI
                     refresh_lblMUMin()
                     txtPckCstAmt.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_pkgper")
                     txtItmCommAmt.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_icmper")
@@ -37133,6 +37098,75 @@ EvalErr:
         End If
 
 
+        ' ''If rs_QUOTNDTL.Tables("RESULT") Is Nothing Then
+        ' ''    Exit Sub
+        ' ''End If
+
+        ' ''Dim index As Integer
+        ''''''20130909
+        '''''' 
+        ' ''If MsgBox("Are you sure to Renew All old items?", vbQuestion + vbYesNo, "Question") = vbYes Then
+
+        ' ''    Cursor = Cursors.WaitCursor
+        ' ''    Dim qutseq As Integer
+        ' ''    Dim temp_old_itmno As String
+
+        ' ''    qutseq = rs_QUOTNDTL.Tables("RESULT").Rows(index).Item("qud_qutseq")
+        ' ''    temp_old_itmno = rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmno")
+
+
+        ' ''    For index = 0 To rs_QUOTNDTL.Tables("RESULT").Rows.Count - 1
+
+        ' ''        qutseq = rs_QUOTNDTL.Tables("RESULT").Rows(index).Item("qud_qutseq")
+        ' ''        temp_old_itmno = rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmno")
+
+        ' ''        If Not IsDBNull(rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmsts")) Then
+        ' ''            If (rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmsts").ToString().Substring(0, 3) = "OLD") Then
+        ' ''                '''OldItemRecord = True
+
+        ' ''                rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmno") = get_new_itmno(temp_old_itmno)
+
+        ' ''                If rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmnoreal").ToString.Trim <> "" Then
+        ' ''                    rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmnoreal") = rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmno")
+        ' ''                    txtItmNoReal.Text = rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmno")
+        ' ''                End If
+        ' ''                If rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmnotmp").ToString.Trim <> "" Then
+        ' ''                    rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmnotmp") = rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmno")
+        ' ''                    txtItmNoTmp.Text = rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmno")
+        ' ''                End If
+        ' ''                If rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmnoven").ToString.Trim <> "" Then
+        ' ''                    rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmnoven") = rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmno")
+        ' ''                    cboItmNoVen.text = rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_itmno")
+        ' ''                End If
+
+        ' ''                rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_alsitmno") = temp_old_itmno
+
+        ' ''            End If
+        ' ''        End If
+
+
+        ' ''    Next index
+
+
+        ' ''    If rs_QUOTNDTL.Tables("RESULT").Rows.Count > sReadingIndexQ Then
+        ' ''        txtItmNo.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_itmno")
+        ' ''        If rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_itmnoreal").ToString.Trim <> "" Then
+        ' ''            txtItmNoReal.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_itmno")
+        ' ''        End If
+        ' ''        If rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_itmnotmp").ToString.Trim <> "" Then
+        ' ''            txtItmNoTmp.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_itmno")
+        ' ''        End If
+        ' ''        If rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_itmnoven").ToString.Trim <> "" Then
+        ' ''            cboItmNoVen.text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_itmno")
+        ' ''        End If
+        ' ''    End If
+
+        ' ''End If
+
+        ' ''Call linked_tentative()
+
+        ' ''MsgBox("Item(s) Renewed!")
+        ' ''Cursor = Cursors.Default
 
         If not_in_Combo_DTL() = True Then
             Exit Sub
@@ -37140,6 +37174,28 @@ EvalErr:
 
         Dim rs As New DataSet
 
+        '' Cursor = Cursors.WaitCursor
+
+        'gsCompany = Trim(cboCoCde.Text)
+        'Call Update_gs_Value(gsCompany)
+
+        'gspStr = "sp_list_QUOTNDTL_RnwItm '" & cboCoCde.Text & "','" & txtQutNo.Text & "','DTL'"
+        'rtnLong = execute_SQLStatement(gspStr, rs, rtnStr)
+        'gspStr = ""
+
+        ' '' Cursor = Cursors.Default
+
+        'If rtnLong <> RC_SUCCESS Then
+        '    MsgBox("Error on loading cmdUpdate_Click sp_list_QUOTNDTL_RnwItm :" & rtnStr)
+        '    Exit Sub
+        'End If
+
+        'If rs.Tables("RESULT").Rows.Count = 0 Then
+        '    MsgBox("No Record Found!")
+        '    Exit Sub
+        'End If
+
+        '        btcQUM00001.SelectedIndex = 4
         btcQUM00001.SelectedIndex = 0
         'flgRnwItm = True
 
@@ -37152,6 +37208,38 @@ EvalErr:
         RnwItm.ma = Me
 
         RnwItm.ShowDialog()
+        'frmQutRnwItm.Show(vbModal)
+
+        'If rs_QUOTNDTL.Tables.Count > 0 Then
+        '    If rs_QUOTNDTL.Tables("RESULT").Rows.Count > 0 Then
+        '        sReadingIndexQ = 0
+        '        no_Display_Detail = False
+        '        'Call display_Detail()
+        '        no_Display_Detail = True
+
+        '        '*** Phase 2 comment it
+        '        'Call cboCustItmCatPress()
+
+        '        If Val(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_cususd").ToString) > 0 Then
+        '            txtCusUsd.Text = Format(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_cususd"), "###,###,##0.0000")
+        '        Else
+        '            txtCusUsd.Text = ""
+        '        End If
+        '        If Val(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_cuscad").ToString) > 0 Then
+        '            txtCusCad.Text = Format(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_cuscad"), "###,###,##0.0000")
+        '        Else
+        '            txtCusCad.Text = ""
+        '        End If
+
+        '        '*** Phase 2 comment it
+        '        'Call CalculatePMU(txtCusUsd)
+        '    End If
+        'End If
+
+
+        'Call linked_tentative()
+
+        'flgRnwItm = False
 
     End Sub
 
@@ -38375,7 +38463,6 @@ EvalErr:
         'TOM00002.Hide()
         'TOM00002.Close()
         'TOM00002.Show()
-<<<<<<< HEAD
 
         'TOM00002.cboCoCde.Text = cboCoCde.Text
         'TOM00002.txtQutNo.Text = txtQutNo.Text
@@ -38386,18 +38473,6 @@ EvalErr:
         TOM00002.callbyQUM01(txtQutNo.Text, cboCoCde.Text)
 
 
-=======
-
-        'TOM00002.cboCoCde.Text = cboCoCde.Text
-        'TOM00002.txtQutNo.Text = txtQutNo.Text
-        'TOM00002.txtQutNo.Enabled = False
-
-
-        Dim TOM00002 As New TOM00002
-        TOM00002.callbyQUM01(txtQutNo.Text, cboCoCde.Text)
-
-
->>>>>>> MPO-UI
 
         Cursor = Cursors.Default
 
@@ -39644,17 +39719,7 @@ tod_adjprc & "','" & _
         dispGenTentFlag = cmdGenTent.Enabled
         dispUpdateFlag = cmdUpdate.Enabled
         dispRenewFlag = cmdRenew.Enabled
-        dispPrintFlag = mmdPrint.Enabled
-        dispAttachFlag = mmdAttach.Enabled
-        dispFunctionFlag = mmdFunction.Enabled
-        dispLinkFlag = mmdLink.Enabled
-        dispRequoteFlag = cmdRequote.Enabled
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> MPO-UI
         mmdSave.Enabled = False
         mmdCopy.Enabled = False
         mmdClear.Enabled = False
@@ -39669,12 +39734,6 @@ tod_adjprc & "','" & _
         cmdUpdate.Enabled = False
         tsiRenew.Enabled = False
         cmdRenew.Enabled = False
-        tsiRequote.Enabled = False
-        cmdRequote.Enabled = False
-        mmdPrint.Enabled = False
-        mmdAttach.Enabled = False
-        mmdFunction.Enabled = False
-        mmdLink.Enabled = False
     End Function
 
     Function all_cmd_en()
@@ -39692,12 +39751,6 @@ tod_adjprc & "','" & _
         cmdUpdate.Enabled = dispUpdateFlag
         tsiRenew.Enabled = dispRenewFlag
         cmdRenew.Enabled = dispRenewFlag
-        cmdRequote.Enabled = dispRequoteFlag
-        tsiRequote.Enabled = dispRequoteFlag
-        mmdPrint.Enabled = dispPrintFlag
-        mmdAttach.Enabled = dispAttachFlag
-        mmdFunction.Enabled = dispFunctionFlag
-        mmdLink.Enabled = dispLinkFlag
     End Function
 
     Private Sub gbView_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gbView.Enter
@@ -39776,7 +39829,6 @@ Handles dgMatBkd.DataError
     End Sub
 
     Private Sub mmdPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsiPrintQuotation.Click
-<<<<<<< HEAD
 
         If Recordstatus = True Then
             MessageBox.Show("Quotation has been changed. Please save before printing.")
@@ -39796,44 +39848,6 @@ Handles dgMatBkd.DataError
         Else
             Dim QUR00003 As New QUR00003
             QUR00003.callByQUM01(txtQutNo.Text, cboCoCde.Text)
-=======
-
-        If Recordstatus = True Then
-            MessageBox.Show("Quotation has been changed. Please save before printing.")
-            Exit Sub
-        Else
-            Dim QUR00001 As New QUR00001
-            QUR00001.callByQUM01(txtQutNo.Text, cboCoCde.Text)
-
-        End If
-    End Sub
-
-    Private Sub ExportToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsiExportToExcel.Click
-
-        If Recordstatus = True Then
-            MessageBox.Show("Quotation has been changed. Please save before export.")
-            Exit Sub
-        Else
-            Dim QUR00003 As New QUR00003
-            QUR00003.callByQUM01(txtQutNo.Text, cboCoCde.Text)
-
-        End If
-    End Sub
-
-#Region "Movable Panel"
-
-    Dim ProgramPosition, CursorPoint As Point
-    Dim movePanel As String
-    Dim panelMoveTimer As Timer
-    Private Sub RenewPanel(ByVal panel As Panel)
-        ProgramPosition = panel.Location
-        CursorPoint = Cursor.Position
-    End Sub
-
-    Private Sub SetPanelPosition(ByVal panel As Panel)
-        Dim X As Integer = 0
-        Dim Y As Integer = 0
->>>>>>> MPO-UI
 
         End If
     End Sub
@@ -39877,33 +39891,6 @@ Handles dgMatBkd.DataError
         panel.Location = New Point(X, Y)
     End Sub
 
-<<<<<<< HEAD
-=======
-        Dim Xlimit As Integer
-        Dim Ylimit As Integer
-       
-        Xlimit = Me.ClientSize.Width - panel.Width
-        Ylimit = Me.ClientSize.Height - panel.Height
-        If (ProgramPosition - CursorPoint + Cursor.Position).X > 0 And (ProgramPosition - CursorPoint + Cursor.Position).X < Xlimit Then
-            X = (ProgramPosition - CursorPoint + Cursor.Position).X
-        ElseIf (ProgramPosition - CursorPoint + Cursor.Position).X <= 0 Then
-            X = 0
-        Else
-            X = Xlimit
-        End If
-
-        If (ProgramPosition - CursorPoint + Cursor.Position).Y > 0 And (ProgramPosition - CursorPoint + Cursor.Position).Y < Ylimit Then
-            Y = (ProgramPosition - CursorPoint + Cursor.Position).Y
-        ElseIf (ProgramPosition - CursorPoint + Cursor.Position).Y <= 0 Then
-            Y = 0
-        Else
-            Y = Ylimit
-        End If
-
-        panel.Location = New Point(X, Y)
-    End Sub
-
->>>>>>> MPO-UI
     Private Sub panelMoveTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim X As Integer = 0
         Dim Y As Integer = 0
@@ -39965,10 +39952,7 @@ Handles dgMatBkd.DataError
 
     Private Sub refresh_lblMUMin()
         edit_lblMUMinContent()
-<<<<<<< HEAD
         ' set_lblMUMinPosition()
-=======
->>>>>>> MPO-UI
     End Sub
 
     Private Sub edit_lblMUMinContent()
@@ -39976,7 +39960,6 @@ Handles dgMatBkd.DataError
                             " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
 
     End Sub
-<<<<<<< HEAD
     Private Sub set_lblMUMinPosition()
         Dim g As Graphics
         Dim Size As SizeF
@@ -39990,6 +39973,4 @@ Handles dgMatBkd.DataError
     Private Sub set_lblMUMinPositionByMidPoint(ByVal midPoint As Point)
         lblMUMin.Location = New Point(midPoint.X, midPoint.Y)
     End Sub
-=======
->>>>>>> MPO-UI
 End Class

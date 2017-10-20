@@ -146,6 +146,7 @@ Public Class MPR00004
     End Function
     Private Sub MPR00004_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+        Me.Icon = ERP00000.Icon
 
         AccessRight(Me.Name) '*** For Access Right use, added by Tommy on 5 Oct 2001
         Enq_right_local = Enq_right

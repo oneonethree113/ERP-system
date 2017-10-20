@@ -245,11 +245,7 @@ Public Class ERP00001
         gsERPVer = "Ver. 18.0.a.20"
 
         lblVer.Text = gsERPVer
-<<<<<<< HEAD
-        lblUpddat.Text = "10/17/2017"
-=======
-        lblUpddat.Text = "08/24/2017"
->>>>>>> MPO-UI
+        lblUpddat.Text = "10/19/2017"
 
         'cboCoGrp
         cboCoGrp.Items.Add("UCP/UCPP/PG/EW/TT/HB/HX/HH/GU")
@@ -402,21 +398,11 @@ Public Class ERP00001
 
             '5. Show Main Form
             Me.Hide()
-<<<<<<< HEAD
-=======
-            'Dim MainForm As New ERP00000
-            'MainForm.Text = "United Chinese Group: New ERP System " & gsERPVer & "     (Env: " & Replace(gsDBSvr, "\MSSQLSERVER2012", "") & " - " & gsDB & " ; Login: " & gsUsrID & " ; Date: " & lblUpddat.Text & ")"
-            'MainForm.Owner = Me
-            'MainForm.Show()
-
-
->>>>>>> MPO-UI
             Dim MainFormNew As New ERP00000new
             MainFormNew.Text = "United Chinese Group: New ERP System " & gsERPVer & "     (Env: " & Replace(gsDBSvr, "\MSSQLSERVER2012", "") & " - " & gsDB & " ; Login: " & gsUsrID & " ; Date: " & lblUpddat.Text & ")"
             MainFormNew.Owner = Me
             MainFormNew.Show()
 
-<<<<<<< HEAD
             'If gsUsrID = "mis" Then
             '    Dim MainFormNew As New ERP00000new
             '    MainFormNew.Text = "United Chinese Group: New ERP System " & gsERPVer & "     (Env: " & Replace(gsDBSvr, "\MSSQLSERVER2012", "") & " - " & gsDB & " ; Login: " & gsUsrID & " ; Date: " & lblUpddat.Text & ")"
@@ -429,9 +415,6 @@ Public Class ERP00001
             '    MainForm.Owner = Me
             '    MainForm.Show()
             'End If
-=======
-
->>>>>>> MPO-UI
         ElseIf rtnLong = RC_NOTFOUND Then
             MsgBox("User Not Found!")
             txtUsrID.Focus()

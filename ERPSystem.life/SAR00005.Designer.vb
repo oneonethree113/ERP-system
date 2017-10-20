@@ -27,6 +27,7 @@ Partial Class SAR00005
         Me.Label2 = New System.Windows.Forms.Label
         Me.cboCoCde = New System.Windows.Forms.ComboBox
         Me.Label3 = New System.Windows.Forms.Label
+        Me.txtCoNam = New System.Windows.Forms.TextBox
         Me.GroupBox5 = New System.Windows.Forms.GroupBox
         Me.optGroupYes = New System.Windows.Forms.RadioButton
         Me.optGroupNo = New System.Windows.Forms.RadioButton
@@ -43,7 +44,6 @@ Partial Class SAR00005
         Me.txtFm = New System.Windows.Forms.TextBox
         Me.lblNoFm = New System.Windows.Forms.Label
         Me.cmdShow = New System.Windows.Forms.Button
-        Me.txtCoNam = New System.Windows.Forms.TextBox
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.SuspendLayout()
@@ -86,6 +86,16 @@ Partial Class SAR00005
         Me.Label3.Size = New System.Drawing.Size(87, 12)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Company Name :"
+        '
+        'txtCoNam
+        '
+        Me.txtCoNam.BackColor = System.Drawing.Color.White
+        Me.txtCoNam.Enabled = False
+        Me.txtCoNam.Location = New System.Drawing.Point(324, 43)
+        Me.txtCoNam.Name = "txtCoNam"
+        Me.txtCoNam.ReadOnly = True
+        Me.txtCoNam.Size = New System.Drawing.Size(302, 22)
+        Me.txtCoNam.TabIndex = 4
         '
         'GroupBox5
         '
@@ -242,16 +252,6 @@ Partial Class SAR00005
         Me.cmdShow.Text = "&Show Report"
         Me.cmdShow.UseVisualStyleBackColor = True
         '
-        'txtCoNam
-        '
-        Me.txtCoNam.BackColor = System.Drawing.Color.White
-        Me.txtCoNam.Enabled = False
-        Me.txtCoNam.Location = New System.Drawing.Point(324, 43)
-        Me.txtCoNam.Name = "txtCoNam"
-        Me.txtCoNam.ReadOnly = True
-        Me.txtCoNam.Size = New System.Drawing.Size(302, 22)
-        Me.txtCoNam.TabIndex = 4
-        '
         'SAR00005
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -291,6 +291,7 @@ Partial Class SAR00005
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents cboCoCde As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents txtCoNam As System.Windows.Forms.TextBox
     Friend WithEvents optGroupNo As System.Windows.Forms.RadioButton
     Friend WithEvents optGroupYes As System.Windows.Forms.RadioButton
     Friend WithEvents Label6 As System.Windows.Forms.Label
@@ -307,5 +308,4 @@ Partial Class SAR00005
     Friend WithEvents optAliasYes As System.Windows.Forms.RadioButton
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents txtCoNam As System.Windows.Forms.TextBox
 End Class

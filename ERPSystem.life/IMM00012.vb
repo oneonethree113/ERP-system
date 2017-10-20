@@ -45,7 +45,7 @@
 
     End Sub
 
-    Private Sub mmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFind.Click
+    Private Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFind.Click
         If txtCusVenFrom.Text <> "" And txtCusVenTo.TextLength = 0 Then
             txtCusVenTo.Text = txtCusVenFrom.Text
         End If
@@ -180,23 +180,23 @@
                         .Columns(i).Width = 55
                         .Columns(i).ReadOnly = True
                     Case 3
-                        .Columns(i).HeaderText = "DV"
+                        .Columns(i).HeaderText = "D. Vendor"
                         .Columns(i).Width = 65
                         .Columns(i).ReadOnly = True
                     Case 4
-                        .Columns(i).HeaderText = "CV"
+                        .Columns(i).HeaderText = "C. Vendor"
                         .Columns(i).Width = 65
                         .Columns(i).ReadOnly = True
                     Case 5
-                        .Columns(i).HeaderText = "PV"
+                        .Columns(i).HeaderText = "P. Vendor"
                         .Columns(i).Width = 65
                         .Columns(i).ReadOnly = True
                     Case 6
-                        .Columns(i).HeaderText = "Pri Cust."
+                        .Columns(i).HeaderText = "P. Cust."
                         .Columns(i).Width = 65
                         .Columns(i).ReadOnly = True
                     Case 7
-                        .Columns(i).HeaderText = "Sec Cust."
+                        .Columns(i).HeaderText = "S. Cust"
                         .Columns(i).Width = 65
                         .Columns(i).ReadOnly = True
                     Case 8
@@ -423,33 +423,29 @@
     End Sub
 
     Private Sub Enable_IAR00001()
-<<<<<<< HEAD
         cmdIAR00001.Enabled = getEnquiryRightByFormName("IAR00001")
-=======
-        cmdIAR00001.Enabled = getEnquiryRightByFormName(IAR00001.Name.ToString)
->>>>>>> MPO-UI
     End Sub
 
     Private Sub setStatus(ByVal Mode As String)
 
         If Mode = "Init" Then
-            mmdAdd.Enabled = False
-            mmdSave.Enabled = False
-            mmdDelete.Enabled = False
-            mmdCopy.Enabled = False
-            mmdFind.Enabled = True
-            mmdClear.Enabled = True
+            cmdAdd.Enabled = False
+            cmdSave.Enabled = False
+            cmdDelete.Enabled = False
+            cmdCopy.Enabled = False
+            cmdFind.Enabled = True
+            cmdClear.Enabled = True
 
             'disable button which without any function
-            mmdSearch.Enabled = False
-            mmdInsRow.Enabled = False
-            mmdDelRow.Enabled = False
+            cmdSearch.Enabled = False
+            cmdQuickInsert.Enabled = False
+            cmdDelRow.Enabled = False
+            cmdFirst.Enabled = False
+            cmdLast.Enabled = False
+            cmdNext.Enabled = False
+            cmdPrevious.Enabled = False
 
-            mmdPrint.Enabled = False
-            mmdAttach.Enabled = False
-            mmdFunction.Enabled = False
-            mmdLink.Enabled = False
-            mmdExit.Enabled = True
+            cmdExit.Enabled = True
 
             txtVenItm.Enabled = True
             txtVenItm.Text = ""
@@ -549,17 +545,17 @@
             recordStatus = False
             results = False
         ElseIf Mode = "Updating" Then
-            mmdAdd.Enabled = False
-            mmdSave.Enabled = enq_right_local
-            mmdDelete.Enabled = False
-            mmdCopy.Enabled = False
-            mmdFind.Enabled = False
-            mmdClear.Enabled = True
+            cmdAdd.Enabled = False
+            cmdSave.Enabled = enq_right_local
+            cmdDelete.Enabled = False
+            cmdCopy.Enabled = False
+            cmdFind.Enabled = False
+            cmdClear.Enabled = True
 
-            mmdInsRow.Enabled = False
-            mmdDelRow.Enabled = False
+            cmdQuickInsert.Enabled = False
+            cmdDelRow.Enabled = False
 
-            mmdExit.Enabled = True
+            cmdExit.Enabled = True
 
             cmdFirst_dtl.Enabled = True
             cmdLast_dtl.Enabled = True
@@ -700,13 +696,12 @@ DATE_ERROR:
         End If
     End Sub
 
-    Private Sub mmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
-        If checkFocus(Me) Then Exit Sub
+    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
         If recordStatus = True Then
             Dim ans As Integer = MsgBox("Record has been modified. Do you want to save before clearing the screen?", MsgBoxStyle.YesNoCancel, "Clear Screen")
             If ans = 6 Then         'Yes
-                If mmdSave.Enabled = True Then
-                    mmdSave.PerformClick()
+                If cmdSave.Enabled = True Then
+                    cmdSave.PerformClick()
                     If saveOK = True Then
                         setStatus("Clear")
                     Else
@@ -728,8 +723,7 @@ DATE_ERROR:
         End If
     End Sub
 
-    Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
-        If checkFocus(Me) Then Exit Sub
+    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdExit.Click
         Dim answer As Integer
 
         If recordStatus = True Then
@@ -737,8 +731,8 @@ DATE_ERROR:
             If answer = 2 Then      'Cancel
                 Exit Sub
             ElseIf answer = 6 Then  'Yes
-                If mmdSave.Enabled Then
-                    mmdSave.PerformClick()
+                If cmdSave.Enabled Then
+                    cmdSave.PerformClick()
                     If saveOK = True Then
                         setStatus("Clear")
                     Else
@@ -887,11 +881,11 @@ DATE_ERROR:
                         .Columns(i).ReadOnly = True
                     Case 2
                         .Columns(i).HeaderText = "Before"
-                        .Columns(i).Width = 320
+                        .Columns(i).Width = 200
                         .Columns(i).ReadOnly = True
                     Case 3
                         .Columns(i).HeaderText = "After"
-                        .Columns(i).Width = 320
+                        .Columns(i).Width = 200
                         .Columns(i).ReadOnly = True
                     Case Else
                         .Columns(i).Visible = False
@@ -1027,8 +1021,7 @@ DATE_ERROR:
         End If
     End Sub
 
-    Private Sub mmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
-        If checkFocus(Me) Then Exit Sub
+    Private Sub cmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSave.Click
         If verifyApproval() = False Then
             Exit Sub
         End If
@@ -1241,7 +1234,4 @@ DATE_ERROR:
 
         Return True
     End Function
-
-
 End Class
-

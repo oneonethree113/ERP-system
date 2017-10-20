@@ -22,7 +22,6 @@ Partial Class IMR00035
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IMR00035))
         Me.txt_S_UpddatTo = New System.Windows.Forms.MaskedTextBox
         Me.txt_S_UpddatFm = New System.Windows.Forms.MaskedTextBox
         Me.cmdReport = New System.Windows.Forms.Button
@@ -50,7 +49,7 @@ Partial Class IMR00035
         '
         'txt_S_UpddatTo
         '
-        Me.txt_S_UpddatTo.Location = New System.Drawing.Point(447, 151)
+        Me.txt_S_UpddatTo.Location = New System.Drawing.Point(404, 178)
         Me.txt_S_UpddatTo.Mask = "00/00/0000"
         Me.txt_S_UpddatTo.Name = "txt_S_UpddatTo"
         Me.txt_S_UpddatTo.Size = New System.Drawing.Size(85, 22)
@@ -58,7 +57,7 @@ Partial Class IMR00035
         '
         'txt_S_UpddatFm
         '
-        Me.txt_S_UpddatFm.Location = New System.Drawing.Point(212, 151)
+        Me.txt_S_UpddatFm.Location = New System.Drawing.Point(224, 178)
         Me.txt_S_UpddatFm.Mask = "00/00/0000"
         Me.txt_S_UpddatFm.Name = "txt_S_UpddatFm"
         Me.txt_S_UpddatFm.Size = New System.Drawing.Size(88, 22)
@@ -66,7 +65,7 @@ Partial Class IMR00035
         '
         'cmdReport
         '
-        Me.cmdReport.Location = New System.Drawing.Point(250, 232)
+        Me.cmdReport.Location = New System.Drawing.Point(197, 250)
         Me.cmdReport.Name = "cmdReport"
         Me.cmdReport.Size = New System.Drawing.Size(155, 27)
         Me.cmdReport.TabIndex = 38
@@ -76,7 +75,7 @@ Partial Class IMR00035
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(538, 154)
+        Me.Label6.Location = New System.Drawing.Point(401, 199)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(79, 12)
         Me.Label6.TabIndex = 32
@@ -85,7 +84,7 @@ Partial Class IMR00035
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(423, 154)
+        Me.Label7.Location = New System.Drawing.Point(346, 181)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(18, 12)
         Me.Label7.TabIndex = 31
@@ -94,7 +93,7 @@ Partial Class IMR00035
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(306, 154)
+        Me.Label5.Location = New System.Drawing.Point(221, 199)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(79, 12)
         Me.Label5.TabIndex = 30
@@ -103,7 +102,7 @@ Partial Class IMR00035
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(172, 154)
+        Me.Label8.Location = New System.Drawing.Point(176, 181)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(30, 12)
         Me.Label8.TabIndex = 29
@@ -112,7 +111,7 @@ Partial Class IMR00035
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 154)
+        Me.Label4.Location = New System.Drawing.Point(19, 181)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(62, 12)
         Me.Label4.TabIndex = 28
@@ -120,16 +119,16 @@ Partial Class IMR00035
         '
         'txt_S_ItmNo
         '
-        Me.txt_S_ItmNo.Location = New System.Drawing.Point(175, 15)
+        Me.txt_S_ItmNo.Location = New System.Drawing.Point(171, 21)
         Me.txt_S_ItmNo.Name = "txt_S_ItmNo"
-        Me.txt_S_ItmNo.Size = New System.Drawing.Size(443, 22)
+        Me.txt_S_ItmNo.Size = New System.Drawing.Size(350, 22)
         Me.txt_S_ItmNo.TabIndex = 21
         '
         'cmd_S_ItmNo
         '
-        Me.cmd_S_ItmNo.Location = New System.Drawing.Point(118, 15)
+        Me.cmd_S_ItmNo.Location = New System.Drawing.Point(117, 24)
         Me.cmd_S_ItmNo.Name = "cmd_S_ItmNo"
-        Me.cmd_S_ItmNo.Size = New System.Drawing.Size(45, 22)
+        Me.cmd_S_ItmNo.Size = New System.Drawing.Size(45, 18)
         Me.cmd_S_ItmNo.TabIndex = 20
         Me.cmd_S_ItmNo.Text = "＞＞"
         Me.cmd_S_ItmNo.UseVisualStyleBackColor = True
@@ -137,7 +136,7 @@ Partial Class IMR00035
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 18)
+        Me.Label1.Location = New System.Drawing.Point(11, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(46, 12)
         Me.Label1.TabIndex = 19
@@ -146,7 +145,7 @@ Partial Class IMR00035
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 189)
+        Me.Label2.Location = New System.Drawing.Point(19, 221)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(37, 12)
         Me.Label2.TabIndex = 36
@@ -155,7 +154,7 @@ Partial Class IMR00035
         'chkIntRpt
         '
         Me.chkIntRpt.AutoSize = True
-        Me.chkIntRpt.Location = New System.Drawing.Point(175, 188)
+        Me.chkIntRpt.Location = New System.Drawing.Point(179, 220)
         Me.chkIntRpt.Name = "chkIntRpt"
         Me.chkIntRpt.Size = New System.Drawing.Size(54, 16)
         Me.chkIntRpt.TabIndex = 35
@@ -165,7 +164,7 @@ Partial Class IMR00035
         'chkExtRpt
         '
         Me.chkExtRpt.AutoSize = True
-        Me.chkExtRpt.Location = New System.Drawing.Point(426, 188)
+        Me.chkExtRpt.Location = New System.Drawing.Point(349, 220)
         Me.chkExtRpt.Name = "chkExtRpt"
         Me.chkExtRpt.Size = New System.Drawing.Size(63, 16)
         Me.chkExtRpt.TabIndex = 37
@@ -174,38 +173,38 @@ Partial Class IMR00035
         '
         'txt_S_SecCustAll
         '
-        Me.txt_S_SecCustAll.Location = New System.Drawing.Point(175, 83)
+        Me.txt_S_SecCustAll.Location = New System.Drawing.Point(171, 80)
         Me.txt_S_SecCustAll.Name = "txt_S_SecCustAll"
-        Me.txt_S_SecCustAll.Size = New System.Drawing.Size(443, 22)
-        Me.txt_S_SecCustAll.TabIndex = 25
+        Me.txt_S_SecCustAll.Size = New System.Drawing.Size(350, 22)
+        Me.txt_S_SecCustAll.TabIndex = 70
         '
         'cmd_S_SecCustAll
         '
-        Me.cmd_S_SecCustAll.Location = New System.Drawing.Point(118, 83)
+        Me.cmd_S_SecCustAll.Location = New System.Drawing.Point(117, 80)
         Me.cmd_S_SecCustAll.Name = "cmd_S_SecCustAll"
-        Me.cmd_S_SecCustAll.Size = New System.Drawing.Size(45, 22)
-        Me.cmd_S_SecCustAll.TabIndex = 24
+        Me.cmd_S_SecCustAll.Size = New System.Drawing.Size(45, 18)
+        Me.cmd_S_SecCustAll.TabIndex = 69
         Me.cmd_S_SecCustAll.Text = "＞＞"
         '
         'txt_S_PriCustAll
         '
-        Me.txt_S_PriCustAll.Location = New System.Drawing.Point(175, 49)
+        Me.txt_S_PriCustAll.Location = New System.Drawing.Point(171, 52)
         Me.txt_S_PriCustAll.Name = "txt_S_PriCustAll"
-        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(443, 22)
-        Me.txt_S_PriCustAll.TabIndex = 23
+        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(350, 22)
+        Me.txt_S_PriCustAll.TabIndex = 68
         '
         'cmd_S_PriCustAll
         '
-        Me.cmd_S_PriCustAll.Location = New System.Drawing.Point(118, 49)
+        Me.cmd_S_PriCustAll.Location = New System.Drawing.Point(117, 52)
         Me.cmd_S_PriCustAll.Name = "cmd_S_PriCustAll"
-        Me.cmd_S_PriCustAll.Size = New System.Drawing.Size(45, 22)
-        Me.cmd_S_PriCustAll.TabIndex = 22
+        Me.cmd_S_PriCustAll.Size = New System.Drawing.Size(45, 18)
+        Me.cmd_S_PriCustAll.TabIndex = 67
         Me.cmd_S_PriCustAll.Text = "＞＞"
         '
         'SLabel_2
         '
         Me.SLabel_2.AutoSize = True
-        Me.SLabel_2.Location = New System.Drawing.Point(11, 86)
+        Me.SLabel_2.Location = New System.Drawing.Point(11, 84)
         Me.SLabel_2.Name = "SLabel_2"
         Me.SLabel_2.Size = New System.Drawing.Size(102, 12)
         Me.SLabel_2.TabIndex = 66
@@ -214,7 +213,7 @@ Partial Class IMR00035
         'SLabel_1
         '
         Me.SLabel_1.AutoSize = True
-        Me.SLabel_1.Location = New System.Drawing.Point(11, 52)
+        Me.SLabel_1.Location = New System.Drawing.Point(11, 55)
         Me.SLabel_1.Name = "SLabel_1"
         Me.SLabel_1.Size = New System.Drawing.Size(90, 12)
         Me.SLabel_1.TabIndex = 65
@@ -222,23 +221,23 @@ Partial Class IMR00035
         '
         'txt_S_DV
         '
-        Me.txt_S_DV.Location = New System.Drawing.Point(175, 117)
+        Me.txt_S_DV.Location = New System.Drawing.Point(171, 108)
         Me.txt_S_DV.Name = "txt_S_DV"
-        Me.txt_S_DV.Size = New System.Drawing.Size(443, 22)
-        Me.txt_S_DV.TabIndex = 27
+        Me.txt_S_DV.Size = New System.Drawing.Size(350, 22)
+        Me.txt_S_DV.TabIndex = 71
         '
         'cmd_S_DV
         '
-        Me.cmd_S_DV.Location = New System.Drawing.Point(118, 117)
+        Me.cmd_S_DV.Location = New System.Drawing.Point(117, 104)
         Me.cmd_S_DV.Name = "cmd_S_DV"
-        Me.cmd_S_DV.Size = New System.Drawing.Size(45, 22)
-        Me.cmd_S_DV.TabIndex = 26
+        Me.cmd_S_DV.Size = New System.Drawing.Size(45, 18)
+        Me.cmd_S_DV.TabIndex = 72
         Me.cmd_S_DV.Text = "＞＞"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(11, 120)
+        Me.Label3.Location = New System.Drawing.Point(11, 107)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(75, 12)
         Me.Label3.TabIndex = 73
@@ -247,7 +246,7 @@ Partial Class IMR00035
         'IMR00035
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
-        Me.ClientSize = New System.Drawing.Size(634, 271)
+        Me.ClientSize = New System.Drawing.Size(536, 304)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cmd_S_DV)
         Me.Controls.Add(Me.txt_S_DV)
@@ -272,10 +271,9 @@ Partial Class IMR00035
         Me.Controls.Add(Me.cmd_S_ItmNo)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "IMR00035"
-        Me.Text = "IMR00035 - Item Master Price Change Report (IMR35)"
+        Me.Text = "IMR00035  - Item Master Price Change Report"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -21,6 +21,9 @@ Public Class MPO00001
     Friend WithEvents SSTab1 As ERPSystem.BaseTabControl
     Friend WithEvents tpMPO00001_1 As System.Windows.Forms.TabPage
     Friend WithEvents tpMPO00001_2 As System.Windows.Forms.TabPage
+    Friend WithEvents cmdSearch As System.Windows.Forms.Button
+    Friend WithEvents cmdspecial As System.Windows.Forms.Button
+    Friend WithEvents cmdbrowlist As System.Windows.Forms.Button
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents optCtrSiz3 As System.Windows.Forms.RadioButton
     Friend WithEvents optCtrSiz2 As System.Windows.Forms.RadioButton
@@ -85,6 +88,7 @@ Public Class MPO00001
     Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
     Friend WithEvents ComboBox6 As System.Windows.Forms.ComboBox
     Friend WithEvents RichTextBox3 As System.Windows.Forms.RichTextBox
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents grdMPOHdr As System.Windows.Forms.DataGridView
     Friend WithEvents grdMPODtl As System.Windows.Forms.DataGridView
     Friend WithEvents frmApproveReject As System.Windows.Forms.GroupBox
@@ -101,31 +105,6 @@ Public Class MPO00001
     Friend WithEvents txtPOTo As System.Windows.Forms.TextBox
     Friend WithEvents chkNew As System.Windows.Forms.CheckBox
     Friend WithEvents chkGen As System.Windows.Forms.CheckBox
-    Friend WithEvents menuStrip As System.Windows.Forms.MenuStrip
-    Friend WithEvents mmdAdd As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdSave As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdDelete As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdCopy As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdFind As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents t1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdClear As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents t2 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdSearch As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents t3 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdInsRow As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdDelRow As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents t4 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdPrint As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents t5 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdAttach As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents t6 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdFunction As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdRel As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdApv As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents t7 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdLink As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents t8 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdExit As System.Windows.Forms.ToolStripMenuItem
 
     Public rs_POM00010_AppList As New DataSet
 
@@ -155,10 +134,38 @@ Public Class MPO00001
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
+    Friend WithEvents cmdDelete As System.Windows.Forms.Button
+    Friend WithEvents cmdSave As System.Windows.Forms.Button
+    Friend WithEvents cmdAdd As System.Windows.Forms.Button
+    Friend WithEvents cmdLast As System.Windows.Forms.Button
+    Friend WithEvents cmdPrv As System.Windows.Forms.Button
+    Friend WithEvents cmdNext As System.Windows.Forms.Button
+    Friend WithEvents cmdFind As System.Windows.Forms.Button
+    Friend WithEvents cmdCopy As System.Windows.Forms.Button
+    Friend WithEvents cmdClear As System.Windows.Forms.Button
+    Friend WithEvents cmdExit As System.Windows.Forms.Button
+    Friend WithEvents cmdDelRow As System.Windows.Forms.Button
+    Friend WithEvents cmdFirst As System.Windows.Forms.Button
+    Friend WithEvents cmdInsRow As System.Windows.Forms.Button
+    Friend WithEvents CmdLookup As System.Windows.Forms.Button
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MPO00001))
+        Me.cmdDelete = New System.Windows.Forms.Button
+        Me.cmdSave = New System.Windows.Forms.Button
+        Me.cmdAdd = New System.Windows.Forms.Button
+        Me.cmdLast = New System.Windows.Forms.Button
+        Me.cmdPrv = New System.Windows.Forms.Button
+        Me.cmdNext = New System.Windows.Forms.Button
+        Me.cmdFind = New System.Windows.Forms.Button
+        Me.cmdCopy = New System.Windows.Forms.Button
+        Me.cmdClear = New System.Windows.Forms.Button
+        Me.cmdExit = New System.Windows.Forms.Button
+        Me.cmdDelRow = New System.Windows.Forms.Button
+        Me.cmdFirst = New System.Windows.Forms.Button
+        Me.cmdInsRow = New System.Windows.Forms.Button
+        Me.CmdLookup = New System.Windows.Forms.Button
+        Me.cmdSearch = New System.Windows.Forms.Button
+        Me.cmdspecial = New System.Windows.Forms.Button
+        Me.cmdbrowlist = New System.Windows.Forms.Button
         Me.StatusBar = New System.Windows.Forms.StatusBar
         Me.StatusBarPanel1 = New System.Windows.Forms.StatusBarPanel
         Me.StatusBarPanel2 = New System.Windows.Forms.StatusBarPanel
@@ -179,35 +186,11 @@ Public Class MPO00001
         Me.txtUplDatFm = New System.Windows.Forms.TextBox
         Me.lblRvsDat = New System.Windows.Forms.Label
         Me.txtPOTo = New System.Windows.Forms.TextBox
-        Me.menuStrip = New System.Windows.Forms.MenuStrip
-        Me.mmdAdd = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdSave = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdDelete = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdCopy = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdFind = New System.Windows.Forms.ToolStripMenuItem
-        Me.t1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdClear = New System.Windows.Forms.ToolStripMenuItem
-        Me.t2 = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdSearch = New System.Windows.Forms.ToolStripMenuItem
-        Me.t3 = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdInsRow = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdDelRow = New System.Windows.Forms.ToolStripMenuItem
-        Me.t4 = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdPrint = New System.Windows.Forms.ToolStripMenuItem
-        Me.t5 = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdAttach = New System.Windows.Forms.ToolStripMenuItem
-        Me.t6 = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdFunction = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdRel = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdApv = New System.Windows.Forms.ToolStripMenuItem
-        Me.t7 = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdLink = New System.Windows.Forms.ToolStripMenuItem
-        Me.t8 = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdExit = New System.Windows.Forms.ToolStripMenuItem
         Me.SSTab1 = New ERPSystem.BaseTabControl
         Me.tpMPO00001_1 = New System.Windows.Forms.TabPage
         Me.grdMPOHdr = New System.Windows.Forms.DataGridView
         Me.tpMPO00001_2 = New System.Windows.Forms.TabPage
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox
         Me.grdMPODtl = New System.Windows.Forms.DataGridView
         Me.txtmodvol = New System.Windows.Forms.TextBox
         Me.txtCusVen = New System.Windows.Forms.TextBox
@@ -270,23 +253,195 @@ Public Class MPO00001
         CType(Me.StatusBarPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StatusBarPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.frmApproveReject.SuspendLayout()
-        Me.menuStrip.SuspendLayout()
         Me.SSTab1.SuspendLayout()
         Me.tpMPO00001_1.SuspendLayout()
         CType(Me.grdMPOHdr, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpMPO00001_2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         CType(Me.grdMPODtl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
+        'cmdDelete
+        '
+        Me.cmdDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cmdDelete.Location = New System.Drawing.Point(106, 0)
+        Me.cmdDelete.Name = "cmdDelete"
+        Me.cmdDelete.Size = New System.Drawing.Size(54, 34)
+        Me.cmdDelete.TabIndex = 2
+        Me.cmdDelete.TabStop = False
+        Me.cmdDelete.Text = "&Delete"
+        '
+        'cmdSave
+        '
+        Me.cmdSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cmdSave.Location = New System.Drawing.Point(53, 0)
+        Me.cmdSave.Name = "cmdSave"
+        Me.cmdSave.Size = New System.Drawing.Size(54, 34)
+        Me.cmdSave.TabIndex = 1
+        Me.cmdSave.TabStop = False
+        Me.cmdSave.Text = "&Save"
+        '
+        'cmdAdd
+        '
+        Me.cmdAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cmdAdd.Location = New System.Drawing.Point(0, 0)
+        Me.cmdAdd.Name = "cmdAdd"
+        Me.cmdAdd.Size = New System.Drawing.Size(54, 34)
+        Me.cmdAdd.TabIndex = 0
+        Me.cmdAdd.TabStop = False
+        Me.cmdAdd.Text = "&Add"
+        '
+        'cmdLast
+        '
+        Me.cmdLast.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cmdLast.Location = New System.Drawing.Point(794, 0)
+        Me.cmdLast.Name = "cmdLast"
+        Me.cmdLast.Size = New System.Drawing.Size(38, 34)
+        Me.cmdLast.TabIndex = 13
+        Me.cmdLast.TabStop = False
+        Me.cmdLast.Text = ">>|"
+        '
+        'cmdPrv
+        '
+        Me.cmdPrv.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cmdPrv.Location = New System.Drawing.Point(720, 0)
+        Me.cmdPrv.Name = "cmdPrv"
+        Me.cmdPrv.Size = New System.Drawing.Size(38, 34)
+        Me.cmdPrv.TabIndex = 11
+        Me.cmdPrv.TabStop = False
+        Me.cmdPrv.Text = "<"
+        '
+        'cmdNext
+        '
+        Me.cmdNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cmdNext.Location = New System.Drawing.Point(757, 0)
+        Me.cmdNext.Name = "cmdNext"
+        Me.cmdNext.Size = New System.Drawing.Size(38, 34)
+        Me.cmdNext.TabIndex = 12
+        Me.cmdNext.TabStop = False
+        Me.cmdNext.Text = ">"
+        '
+        'cmdFind
+        '
+        Me.cmdFind.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cmdFind.Location = New System.Drawing.Point(206, 0)
+        Me.cmdFind.Name = "cmdFind"
+        Me.cmdFind.Size = New System.Drawing.Size(54, 34)
+        Me.cmdFind.TabIndex = 4
+        Me.cmdFind.TabStop = False
+        Me.cmdFind.Text = "&Find"
+        '
+        'cmdCopy
+        '
+        Me.cmdCopy.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cmdCopy.Location = New System.Drawing.Point(159, 0)
+        Me.cmdCopy.Name = "cmdCopy"
+        Me.cmdCopy.Size = New System.Drawing.Size(48, 34)
+        Me.cmdCopy.TabIndex = 3
+        Me.cmdCopy.TabStop = False
+        Me.cmdCopy.Text = "&Copy"
+        '
+        'cmdClear
+        '
+        Me.cmdClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cmdClear.Location = New System.Drawing.Point(259, 0)
+        Me.cmdClear.Name = "cmdClear"
+        Me.cmdClear.Size = New System.Drawing.Size(53, 34)
+        Me.cmdClear.TabIndex = 5
+        Me.cmdClear.TabStop = False
+        Me.cmdClear.Text = "Cl&ear"
+        '
+        'cmdExit
+        '
+        Me.cmdExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cmdExit.Location = New System.Drawing.Point(838, 0)
+        Me.cmdExit.Name = "cmdExit"
+        Me.cmdExit.Size = New System.Drawing.Size(54, 34)
+        Me.cmdExit.TabIndex = 14
+        Me.cmdExit.TabStop = False
+        Me.cmdExit.Text = "E&xit"
+        '
+        'cmdDelRow
+        '
+        Me.cmdDelRow.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cmdDelRow.Location = New System.Drawing.Point(615, 0)
+        Me.cmdDelRow.Name = "cmdDelRow"
+        Me.cmdDelRow.Size = New System.Drawing.Size(53, 34)
+        Me.cmdDelRow.TabIndex = 9
+        Me.cmdDelRow.TabStop = False
+        Me.cmdDelRow.Text = "Del Ro&w"
+        '
+        'cmdFirst
+        '
+        Me.cmdFirst.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cmdFirst.Location = New System.Drawing.Point(683, 0)
+        Me.cmdFirst.Name = "cmdFirst"
+        Me.cmdFirst.Size = New System.Drawing.Size(38, 34)
+        Me.cmdFirst.TabIndex = 10
+        Me.cmdFirst.TabStop = False
+        Me.cmdFirst.Text = "|<<"
+        '
+        'cmdInsRow
+        '
+        Me.cmdInsRow.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cmdInsRow.Location = New System.Drawing.Point(562, 0)
+        Me.cmdInsRow.Name = "cmdInsRow"
+        Me.cmdInsRow.Size = New System.Drawing.Size(54, 34)
+        Me.cmdInsRow.TabIndex = 7
+        Me.cmdInsRow.TabStop = False
+        Me.cmdInsRow.Text = "I&ns Row"
+        '
+        'CmdLookup
+        '
+        Me.CmdLookup.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.CmdLookup.Location = New System.Drawing.Point(446, 0)
+        Me.CmdLookup.Name = "CmdLookup"
+        Me.CmdLookup.Size = New System.Drawing.Size(54, 34)
+        Me.CmdLookup.TabIndex = 8
+        Me.CmdLookup.TabStop = False
+        Me.CmdLookup.Text = "Look &up"
+        Me.CmdLookup.UseVisualStyleBackColor = True
+        '
+        'cmdSearch
+        '
+        Me.cmdSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cmdSearch.Location = New System.Drawing.Point(323, 0)
+        Me.cmdSearch.Name = "cmdSearch"
+        Me.cmdSearch.Size = New System.Drawing.Size(61, 34)
+        Me.cmdSearch.TabIndex = 6
+        Me.cmdSearch.TabStop = False
+        Me.cmdSearch.Text = "Searc&h"
+        '
+        'cmdspecial
+        '
+        Me.cmdspecial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cmdspecial.Location = New System.Drawing.Point(383, 0)
+        Me.cmdspecial.Name = "cmdspecial"
+        Me.cmdspecial.Size = New System.Drawing.Size(64, 34)
+        Me.cmdspecial.TabIndex = 49
+        Me.cmdspecial.TabStop = False
+        Me.cmdspecial.Text = "S&pecial Search"
+        '
+        'cmdbrowlist
+        '
+        Me.cmdbrowlist.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cmdbrowlist.Location = New System.Drawing.Point(499, 0)
+        Me.cmdbrowlist.Name = "cmdbrowlist"
+        Me.cmdbrowlist.Size = New System.Drawing.Size(52, 34)
+        Me.cmdbrowlist.TabIndex = 50
+        Me.cmdbrowlist.TabStop = False
+        Me.cmdbrowlist.Text = "&Browse List"
+        Me.cmdbrowlist.UseVisualStyleBackColor = True
+        '
         'StatusBar
         '
         Me.StatusBar.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StatusBar.Location = New System.Drawing.Point(0, 605)
+        Me.StatusBar.Location = New System.Drawing.Point(0, 510)
         Me.StatusBar.Name = "StatusBar"
         Me.StatusBar.Panels.AddRange(New System.Windows.Forms.StatusBarPanel() {Me.StatusBarPanel1, Me.StatusBarPanel2})
         Me.StatusBar.ShowPanels = True
-        Me.StatusBar.Size = New System.Drawing.Size(954, 26)
+        Me.StatusBar.Size = New System.Drawing.Size(892, 26)
         Me.StatusBar.TabIndex = 276
         '
         'StatusBarPanel1
@@ -294,14 +449,14 @@ Public Class MPO00001
         Me.StatusBarPanel1.Alignment = System.Windows.Forms.HorizontalAlignment.Right
         Me.StatusBarPanel1.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
         Me.StatusBarPanel1.Name = "StatusBarPanel1"
-        Me.StatusBarPanel1.Width = 468
+        Me.StatusBarPanel1.Width = 437
         '
         'StatusBarPanel2
         '
         Me.StatusBarPanel2.Alignment = System.Windows.Forms.HorizontalAlignment.Right
         Me.StatusBarPanel2.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
         Me.StatusBarPanel2.Name = "StatusBarPanel2"
-        Me.StatusBarPanel2.Width = 468
+        Me.StatusBarPanel2.Width = 437
         '
         'TextBox11
         '
@@ -335,7 +490,7 @@ Public Class MPO00001
         Me.frmApproveReject.Controls.Add(Me.chkDelete)
         Me.frmApproveReject.Controls.Add(Me.chkNew)
         Me.frmApproveReject.ForeColor = System.Drawing.Color.Black
-        Me.frmApproveReject.Location = New System.Drawing.Point(482, 36)
+        Me.frmApproveReject.Location = New System.Drawing.Point(486, 39)
         Me.frmApproveReject.Name = "frmApproveReject"
         Me.frmApproveReject.Size = New System.Drawing.Size(287, 48)
         Me.frmApproveReject.TabIndex = 371
@@ -345,9 +500,10 @@ Public Class MPO00001
         'chkGen
         '
         Me.chkGen.AutoSize = True
+        Me.chkGen.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.chkGen.Location = New System.Drawing.Point(169, 20)
         Me.chkGen.Name = "chkGen"
-        Me.chkGen.Size = New System.Drawing.Size(89, 16)
+        Me.chkGen.Size = New System.Drawing.Size(92, 17)
         Me.chkGen.TabIndex = 544
         Me.chkGen.Text = "Generate only"
         Me.chkGen.UseVisualStyleBackColor = True
@@ -355,9 +511,10 @@ Public Class MPO00001
         'chkDelete
         '
         Me.chkDelete.AutoSize = True
+        Me.chkDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.chkDelete.Location = New System.Drawing.Point(89, 20)
         Me.chkDelete.Name = "chkDelete"
-        Me.chkDelete.Size = New System.Drawing.Size(77, 16)
+        Me.chkDelete.Size = New System.Drawing.Size(79, 17)
         Me.chkDelete.TabIndex = 542
         Me.chkDelete.Text = "Delete only"
         Me.chkDelete.UseVisualStyleBackColor = True
@@ -367,9 +524,10 @@ Public Class MPO00001
         Me.chkNew.AutoSize = True
         Me.chkNew.Checked = True
         Me.chkNew.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.chkNew.Location = New System.Drawing.Point(6, 20)
         Me.chkNew.Name = "chkNew"
-        Me.chkNew.Size = New System.Drawing.Size(69, 16)
+        Me.chkNew.Size = New System.Drawing.Size(70, 17)
         Me.chkNew.TabIndex = 543
         Me.chkNew.Text = "New only"
         Me.chkNew.UseVisualStyleBackColor = True
@@ -377,43 +535,47 @@ Public Class MPO00001
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(83, 37)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Label1.Location = New System.Drawing.Point(87, 40)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(30, 12)
+        Me.Label1.Size = New System.Drawing.Size(33, 13)
         Me.Label1.TabIndex = 383
-        Me.Label1.Text = "From"
+        Me.Label1.Text = "From:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(258, 40)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Label4.Location = New System.Drawing.Point(262, 40)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(18, 12)
+        Me.Label4.Size = New System.Drawing.Size(23, 13)
         Me.Label4.TabIndex = 384
-        Me.Label4.Text = "To"
+        Me.Label4.Text = "To:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(7, 62)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Label2.Location = New System.Drawing.Point(11, 65)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(63, 12)
+        Me.Label2.Size = New System.Drawing.Size(67, 13)
         Me.Label2.TabIndex = 381
         Me.Label2.Text = "Upload Date"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(8, 37)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Label3.Location = New System.Drawing.Point(12, 40)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(55, 12)
+        Me.Label3.Size = New System.Drawing.Size(59, 13)
         Me.Label3.TabIndex = 382
         Me.Label3.Text = "ZS PO No."
         '
         'txtPOFm
         '
         Me.txtPOFm.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.txtPOFm.Location = New System.Drawing.Point(129, 37)
+        Me.txtPOFm.Location = New System.Drawing.Point(133, 40)
         Me.txtPOFm.MaxLength = 10
         Me.txtPOFm.Name = "txtPOFm"
         Me.txtPOFm.Size = New System.Drawing.Size(114, 20)
@@ -422,7 +584,7 @@ Public Class MPO00001
         'txtUplDatTo
         '
         Me.txtUplDatTo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.txtUplDatTo.Location = New System.Drawing.Point(287, 62)
+        Me.txtUplDatTo.Location = New System.Drawing.Point(291, 65)
         Me.txtUplDatTo.MaxLength = 10
         Me.txtUplDatTo.Name = "txtUplDatTo"
         Me.txtUplDatTo.Size = New System.Drawing.Size(114, 20)
@@ -431,16 +593,17 @@ Public Class MPO00001
         'lblIssDat
         '
         Me.lblIssDat.AutoSize = True
-        Me.lblIssDat.Location = New System.Drawing.Point(83, 62)
+        Me.lblIssDat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.lblIssDat.Location = New System.Drawing.Point(87, 65)
         Me.lblIssDat.Name = "lblIssDat"
-        Me.lblIssDat.Size = New System.Drawing.Size(30, 12)
+        Me.lblIssDat.Size = New System.Drawing.Size(33, 13)
         Me.lblIssDat.TabIndex = 378
-        Me.lblIssDat.Text = "From"
+        Me.lblIssDat.Text = "From:"
         '
         'txtUplDatFm
         '
         Me.txtUplDatFm.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.txtUplDatFm.Location = New System.Drawing.Point(129, 62)
+        Me.txtUplDatFm.Location = New System.Drawing.Point(133, 65)
         Me.txtUplDatFm.MaxLength = 10
         Me.txtUplDatFm.Name = "txtUplDatFm"
         Me.txtUplDatFm.Size = New System.Drawing.Size(114, 20)
@@ -449,217 +612,40 @@ Public Class MPO00001
         'lblRvsDat
         '
         Me.lblRvsDat.AutoSize = True
-        Me.lblRvsDat.Location = New System.Drawing.Point(258, 65)
+        Me.lblRvsDat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.lblRvsDat.Location = New System.Drawing.Point(262, 65)
         Me.lblRvsDat.Name = "lblRvsDat"
-        Me.lblRvsDat.Size = New System.Drawing.Size(18, 12)
+        Me.lblRvsDat.Size = New System.Drawing.Size(23, 13)
         Me.lblRvsDat.TabIndex = 379
-        Me.lblRvsDat.Text = "To"
+        Me.lblRvsDat.Text = "To:"
         '
         'txtPOTo
         '
         Me.txtPOTo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.txtPOTo.Location = New System.Drawing.Point(287, 37)
+        Me.txtPOTo.Location = New System.Drawing.Point(291, 40)
         Me.txtPOTo.MaxLength = 10
         Me.txtPOTo.Name = "txtPOTo"
         Me.txtPOTo.Size = New System.Drawing.Size(114, 20)
         Me.txtPOTo.TabIndex = 1
-        '
-        'menuStrip
-        '
-        Me.menuStrip.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.menuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mmdAdd, Me.mmdSave, Me.mmdDelete, Me.mmdCopy, Me.mmdFind, Me.t1, Me.mmdClear, Me.t2, Me.mmdSearch, Me.t3, Me.mmdInsRow, Me.mmdDelRow, Me.t4, Me.mmdPrint, Me.t5, Me.mmdAttach, Me.t6, Me.mmdFunction, Me.t7, Me.mmdLink, Me.t8, Me.mmdExit})
-        Me.menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
-        Me.menuStrip.Location = New System.Drawing.Point(0, 0)
-        Me.menuStrip.Name = "menuStrip"
-        Me.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.menuStrip.Size = New System.Drawing.Size(954, 24)
-        Me.menuStrip.TabIndex = 385
-        Me.menuStrip.Text = "MenuStrip1"
-        '
-        'mmdAdd
-        '
-        Me.mmdAdd.BackColor = System.Drawing.SystemColors.Control
-        Me.mmdAdd.Name = "mmdAdd"
-        Me.mmdAdd.Size = New System.Drawing.Size(40, 19)
-        Me.mmdAdd.Tag = "Add"
-        Me.mmdAdd.Text = "&Add"
-        '
-        'mmdSave
-        '
-        Me.mmdSave.Name = "mmdSave"
-        Me.mmdSave.Size = New System.Drawing.Size(46, 19)
-        Me.mmdSave.Text = "&Save"
-        '
-        'mmdDelete
-        '
-        Me.mmdDelete.Name = "mmdDelete"
-        Me.mmdDelete.Size = New System.Drawing.Size(55, 19)
-        Me.mmdDelete.Text = "&Delete"
-        '
-        'mmdCopy
-        '
-        Me.mmdCopy.Name = "mmdCopy"
-        Me.mmdCopy.Size = New System.Drawing.Size(47, 19)
-        Me.mmdCopy.Text = "&Copy"
-        '
-        'mmdFind
-        '
-        Me.mmdFind.Name = "mmdFind"
-        Me.mmdFind.Size = New System.Drawing.Size(43, 19)
-        Me.mmdFind.Text = "&Find"
-        '
-        't1
-        '
-        Me.t1.AutoSize = False
-        Me.t1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.t1.Enabled = False
-        Me.t1.Name = "t1"
-        Me.t1.Size = New System.Drawing.Size(8, 20)
-        Me.t1.Text = "|"
-        '
-        'mmdClear
-        '
-        Me.mmdClear.Name = "mmdClear"
-        Me.mmdClear.Size = New System.Drawing.Size(49, 19)
-        Me.mmdClear.Text = "Cl&ear"
-        '
-        't2
-        '
-        Me.t2.AutoSize = False
-        Me.t2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.t2.Enabled = False
-        Me.t2.Name = "t2"
-        Me.t2.Size = New System.Drawing.Size(8, 20)
-        Me.t2.Text = "|"
-        '
-        'mmdSearch
-        '
-        Me.mmdSearch.Name = "mmdSearch"
-        Me.mmdSearch.Size = New System.Drawing.Size(58, 19)
-        Me.mmdSearch.Text = "Searc&h"
-        '
-        't3
-        '
-        Me.t3.AutoSize = False
-        Me.t3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.t3.Enabled = False
-        Me.t3.Name = "t3"
-        Me.t3.Size = New System.Drawing.Size(8, 20)
-        Me.t3.Text = "|"
-        '
-        'mmdInsRow
-        '
-        Me.mmdInsRow.Name = "mmdInsRow"
-        Me.mmdInsRow.Size = New System.Drawing.Size(64, 19)
-        Me.mmdInsRow.Text = "I&ns Row"
-        '
-        'mmdDelRow
-        '
-        Me.mmdDelRow.Name = "mmdDelRow"
-        Me.mmdDelRow.Size = New System.Drawing.Size(66, 19)
-        Me.mmdDelRow.Text = "Del Ro&w"
-        '
-        't4
-        '
-        Me.t4.AutoSize = False
-        Me.t4.Enabled = False
-        Me.t4.Name = "t4"
-        Me.t4.Size = New System.Drawing.Size(8, 20)
-        Me.t4.Text = "|"
-        '
-        'mmdPrint
-        '
-        Me.mmdPrint.Name = "mmdPrint"
-        Me.mmdPrint.Size = New System.Drawing.Size(44, 19)
-        Me.mmdPrint.Text = "&Print"
-        '
-        't5
-        '
-        Me.t5.AutoSize = False
-        Me.t5.Enabled = False
-        Me.t5.Name = "t5"
-        Me.t5.Size = New System.Drawing.Size(8, 20)
-        Me.t5.Text = "|"
-        '
-        'mmdAttach
-        '
-        Me.mmdAttach.Name = "mmdAttach"
-        Me.mmdAttach.Size = New System.Drawing.Size(52, 19)
-        Me.mmdAttach.Text = "Attach"
-        '
-        't6
-        '
-        Me.t6.AutoSize = False
-        Me.t6.Enabled = False
-        Me.t6.Name = "t6"
-        Me.t6.Size = New System.Drawing.Size(8, 20)
-        Me.t6.Text = "|"
-        '
-        'mmdFunction
-        '
-        Me.mmdFunction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mmdRel, Me.mmdApv})
-        Me.mmdFunction.Name = "mmdFunction"
-        Me.mmdFunction.Size = New System.Drawing.Size(66, 19)
-        Me.mmdFunction.Text = "Function"
-        '
-        'mmdRel
-        '
-        Me.mmdRel.Name = "mmdRel"
-        Me.mmdRel.Size = New System.Drawing.Size(121, 22)
-        Me.mmdRel.Text = "Release"
-        '
-        'mmdApv
-        '
-        Me.mmdApv.Name = "mmdApv"
-        Me.mmdApv.Size = New System.Drawing.Size(121, 22)
-        Me.mmdApv.Text = "Approval"
-        '
-        't7
-        '
-        Me.t7.AutoSize = False
-        Me.t7.Enabled = False
-        Me.t7.Name = "t7"
-        Me.t7.Size = New System.Drawing.Size(8, 20)
-        Me.t7.Text = "|"
-        '
-        'mmdLink
-        '
-        Me.mmdLink.Name = "mmdLink"
-        Me.mmdLink.Size = New System.Drawing.Size(42, 19)
-        Me.mmdLink.Text = "Link"
-        '
-        't8
-        '
-        Me.t8.AutoSize = False
-        Me.t8.Enabled = False
-        Me.t8.Name = "t8"
-        Me.t8.Size = New System.Drawing.Size(8, 20)
-        Me.t8.Text = "|"
-        '
-        'mmdExit
-        '
-        Me.mmdExit.Name = "mmdExit"
-        Me.mmdExit.Size = New System.Drawing.Size(38, 19)
-        Me.mmdExit.Text = "E&xit"
         '
         'SSTab1
         '
         Me.SSTab1.Controls.Add(Me.tpMPO00001_1)
         Me.SSTab1.Controls.Add(Me.tpMPO00001_2)
         Me.SSTab1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
-        Me.SSTab1.Location = New System.Drawing.Point(0, 88)
+        Me.SSTab1.Location = New System.Drawing.Point(0, 92)
         Me.SSTab1.Name = "SSTab1"
         Me.SSTab1.SelectedIndex = 0
-        Me.SSTab1.Size = New System.Drawing.Size(954, 511)
+        Me.SSTab1.Size = New System.Drawing.Size(993, 415)
         Me.SSTab1.TabIndex = 44
         '
         'tpMPO00001_1
         '
         Me.tpMPO00001_1.Controls.Add(Me.grdMPOHdr)
-        Me.tpMPO00001_1.Location = New System.Drawing.Point(4, 22)
+        Me.tpMPO00001_1.Location = New System.Drawing.Point(4, 24)
         Me.tpMPO00001_1.Name = "tpMPO00001_1"
         Me.tpMPO00001_1.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpMPO00001_1.Size = New System.Drawing.Size(946, 485)
+        Me.tpMPO00001_1.Size = New System.Drawing.Size(985, 387)
         Me.tpMPO00001_1.TabIndex = 0
         Me.tpMPO00001_1.Text = "(1) Header"
         Me.tpMPO00001_1.UseVisualStyleBackColor = True
@@ -668,27 +654,19 @@ Public Class MPO00001
         '
         Me.grdMPOHdr.AllowUserToAddRows = False
         Me.grdMPOHdr.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.grdMPOHdr.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.grdMPOHdr.ColumnHeadersHeight = 20
         Me.grdMPOHdr.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.grdMPOHdr.Location = New System.Drawing.Point(6, 8)
+        Me.grdMPOHdr.Location = New System.Drawing.Point(6, 6)
         Me.grdMPOHdr.Name = "grdMPOHdr"
         Me.grdMPOHdr.RowHeadersWidth = 20
         Me.grdMPOHdr.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grdMPOHdr.RowTemplate.Height = 16
-        Me.grdMPOHdr.Size = New System.Drawing.Size(940, 471)
+        Me.grdMPOHdr.Size = New System.Drawing.Size(866, 376)
         Me.grdMPOHdr.TabIndex = 368
         '
         'tpMPO00001_2
         '
-        Me.tpMPO00001_2.Controls.Add(Me.grdMPODtl)
+        Me.tpMPO00001_2.Controls.Add(Me.GroupBox3)
         Me.tpMPO00001_2.Controls.Add(Me.txtmodvol)
         Me.tpMPO00001_2.Controls.Add(Me.txtCusVen)
         Me.tpMPO00001_2.Controls.Add(Me.txtVenNo)
@@ -714,31 +692,32 @@ Public Class MPO00001
         Me.tpMPO00001_2.Location = New System.Drawing.Point(4, 22)
         Me.tpMPO00001_2.Name = "tpMPO00001_2"
         Me.tpMPO00001_2.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpMPO00001_2.Size = New System.Drawing.Size(946, 485)
+        Me.tpMPO00001_2.Size = New System.Drawing.Size(985, 389)
         Me.tpMPO00001_2.TabIndex = 1
         Me.tpMPO00001_2.Text = "(2) Details"
         Me.tpMPO00001_2.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.grdMPODtl)
+        Me.GroupBox3.Location = New System.Drawing.Point(8, -4)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(871, 391)
+        Me.GroupBox3.TabIndex = 363
+        Me.GroupBox3.TabStop = False
         '
         'grdMPODtl
         '
         Me.grdMPODtl.AllowUserToAddRows = False
         Me.grdMPODtl.AllowUserToDeleteRows = False
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.grdMPODtl.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.grdMPODtl.ColumnHeadersHeight = 20
         Me.grdMPODtl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.grdMPODtl.Location = New System.Drawing.Point(6, 8)
+        Me.grdMPODtl.Location = New System.Drawing.Point(7, 13)
         Me.grdMPODtl.Name = "grdMPODtl"
         Me.grdMPODtl.RowHeadersWidth = 20
         Me.grdMPODtl.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grdMPODtl.RowTemplate.Height = 16
-        Me.grdMPODtl.Size = New System.Drawing.Size(940, 471)
+        Me.grdMPODtl.Size = New System.Drawing.Size(854, 376)
         Me.grdMPODtl.TabIndex = 369
         '
         'txtmodvol
@@ -786,7 +765,7 @@ Public Class MPO00001
         Me.optSearch1.AutoSize = True
         Me.optSearch1.Location = New System.Drawing.Point(832, 669)
         Me.optSearch1.Name = "optSearch1"
-        Me.optSearch1.Size = New System.Drawing.Size(49, 16)
+        Me.optSearch1.Size = New System.Drawing.Size(51, 19)
         Me.optSearch1.TabIndex = 328
         Me.optSearch1.Text = "S/C #"
         Me.optSearch1.UseVisualStyleBackColor = True
@@ -797,7 +776,7 @@ Public Class MPO00001
         Me.optSearch0.AutoSize = True
         Me.optSearch0.Location = New System.Drawing.Point(694, 671)
         Me.optSearch0.Name = "optSearch0"
-        Me.optSearch0.Size = New System.Drawing.Size(59, 16)
+        Me.optSearch0.Size = New System.Drawing.Size(63, 19)
         Me.optSearch0.TabIndex = 327
         Me.optSearch0.Text = "Job No."
         Me.optSearch0.UseVisualStyleBackColor = True
@@ -808,7 +787,7 @@ Public Class MPO00001
         Me.Label30.AutoSize = True
         Me.Label30.Location = New System.Drawing.Point(588, 672)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(54, 12)
+        Me.Label30.Size = New System.Drawing.Size(57, 15)
         Me.Label30.TabIndex = 326
         Me.Label30.Text = "Search by:"
         Me.Label30.Visible = False
@@ -848,7 +827,7 @@ Public Class MPO00001
         Me.Label39.AutoSize = True
         Me.Label39.Location = New System.Drawing.Point(16, 601)
         Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(36, 12)
+        Me.Label39.Size = New System.Drawing.Size(42, 15)
         Me.Label39.TabIndex = 315
         Me.Label39.Text = "Master"
         Me.Label39.Visible = False
@@ -868,7 +847,7 @@ Public Class MPO00001
         Me.Label40.AutoSize = True
         Me.Label40.Location = New System.Drawing.Point(18, 622)
         Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(31, 12)
+        Me.Label40.Size = New System.Drawing.Size(35, 15)
         Me.Label40.TabIndex = 317
         Me.Label40.Text = "CBM"
         Me.Label40.Visible = False
@@ -878,7 +857,7 @@ Public Class MPO00001
         Me.Label56.AutoSize = True
         Me.Label56.Location = New System.Drawing.Point(531, 615)
         Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(74, 12)
+        Me.Label56.Size = New System.Drawing.Size(80, 15)
         Me.Label56.TabIndex = 339
         Me.Label56.Text = "Unit Price / PC"
         Me.Label56.Visible = False
@@ -942,7 +921,7 @@ Public Class MPO00001
         Me.cboCus2No_dtl.FormattingEnabled = True
         Me.cboCus2No_dtl.Location = New System.Drawing.Point(130, -6)
         Me.cboCus2No_dtl.Name = "cboCus2No_dtl"
-        Me.cboCus2No_dtl.Size = New System.Drawing.Size(23, 20)
+        Me.cboCus2No_dtl.Size = New System.Drawing.Size(23, 23)
         Me.cboCus2No_dtl.TabIndex = 359
         Me.cboCus2No_dtl.Visible = False
         '
@@ -951,7 +930,7 @@ Public Class MPO00001
         Me.Label52.AutoSize = True
         Me.Label52.Location = New System.Drawing.Point(202, 135)
         Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(67, 12)
+        Me.Label52.Size = New System.Drawing.Size(72, 15)
         Me.Label52.TabIndex = 338
         Me.Label52.Text = "W.M. Comp."
         '
@@ -969,7 +948,7 @@ Public Class MPO00001
         Me.Label88.AutoSize = True
         Me.Label88.Location = New System.Drawing.Point(103, 2)
         Me.Label88.Name = "Label88"
-        Me.Label88.Size = New System.Drawing.Size(44, 12)
+        Me.Label88.Size = New System.Drawing.Size(47, 15)
         Me.Label88.TabIndex = 351
         Me.Label88.Text = "Consol#"
         Me.Label88.Visible = False
@@ -988,7 +967,7 @@ Public Class MPO00001
         Me.Label49.AutoSize = True
         Me.Label49.Location = New System.Drawing.Point(202, 111)
         Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(73, 12)
+        Me.Label49.Size = New System.Drawing.Size(78, 15)
         Me.Label49.TabIndex = 334
         Me.Label49.Text = "TTL NW (Kg)"
         '
@@ -999,7 +978,7 @@ Public Class MPO00001
         Me.Label50.ForeColor = System.Drawing.Color.Green
         Me.Label50.Location = New System.Drawing.Point(6, 111)
         Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(95, 12)
+        Me.Label50.Size = New System.Drawing.Size(100, 15)
         Me.Label50.TabIndex = 333
         Me.Label50.Text = "Net Wgt/Ctn : (Kg)"
         '
@@ -1036,7 +1015,7 @@ Public Class MPO00001
         Me.Label48.AutoSize = True
         Me.Label48.Location = New System.Drawing.Point(202, 87)
         Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(73, 12)
+        Me.Label48.Size = New System.Drawing.Size(78, 15)
         Me.Label48.TabIndex = 330
         Me.Label48.Text = "TTL GW (Kg)"
         '
@@ -1047,7 +1026,7 @@ Public Class MPO00001
         Me.Label47.ForeColor = System.Drawing.Color.Green
         Me.Label47.Location = New System.Drawing.Point(6, 87)
         Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(105, 12)
+        Me.Label47.Size = New System.Drawing.Size(111, 15)
         Me.Label47.TabIndex = 329
         Me.Label47.Text = "Gross Wgt/Ctn : (Kg)"
         '
@@ -1056,7 +1035,7 @@ Public Class MPO00001
         Me.Label45.AutoSize = True
         Me.Label45.Location = New System.Drawing.Point(202, 63)
         Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(67, 12)
+        Me.Label45.Size = New System.Drawing.Size(73, 15)
         Me.Label45.TabIndex = 328
         Me.Label45.Text = "TTL CBM    "
         '
@@ -1084,7 +1063,7 @@ Public Class MPO00001
         Me.Label46.AutoSize = True
         Me.Label46.Location = New System.Drawing.Point(6, 63)
         Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(84, 12)
+        Me.Label46.Size = New System.Drawing.Size(91, 15)
         Me.Label46.TabIndex = 326
         Me.Label46.Text = "Actual CBM/Ctn"
         '
@@ -1131,7 +1110,7 @@ Public Class MPO00001
         Me.Label44.ForeColor = System.Drawing.Color.Green
         Me.Label44.Location = New System.Drawing.Point(311, 41)
         Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(13, 12)
+        Me.Label44.Size = New System.Drawing.Size(16, 15)
         Me.Label44.TabIndex = 321
         Me.Label44.Text = "H"
         '
@@ -1152,7 +1131,7 @@ Public Class MPO00001
         Me.Label43.ForeColor = System.Drawing.Color.Green
         Me.Label43.Location = New System.Drawing.Point(194, 41)
         Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(16, 12)
+        Me.Label43.Size = New System.Drawing.Size(18, 15)
         Me.Label43.TabIndex = 320
         Me.Label43.Text = "W"
         '
@@ -1163,7 +1142,7 @@ Public Class MPO00001
         Me.Label42.ForeColor = System.Drawing.Color.Green
         Me.Label42.Location = New System.Drawing.Point(103, 41)
         Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(12, 12)
+        Me.Label42.Size = New System.Drawing.Size(14, 15)
         Me.Label42.TabIndex = 319
         Me.Label42.Text = "L"
         '
@@ -1174,7 +1153,7 @@ Public Class MPO00001
         Me.Label41.ForeColor = System.Drawing.Color.Green
         Me.Label41.Location = New System.Drawing.Point(6, 34)
         Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(80, 12)
+        Me.Label41.Size = New System.Drawing.Size(84, 15)
         Me.Label41.TabIndex = 318
         Me.Label41.Text = "Dimension (cm)"
         '
@@ -1183,7 +1162,7 @@ Public Class MPO00001
         Me.Label37.AutoSize = True
         Me.Label37.Location = New System.Drawing.Point(85, 11)
         Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(30, 12)
+        Me.Label37.Size = New System.Drawing.Size(32, 15)
         Me.Label37.TabIndex = 313
         Me.Label37.Text = "Inner"
         '
@@ -1201,7 +1180,7 @@ Public Class MPO00001
         Me.Label38.AutoSize = True
         Me.Label38.Location = New System.Drawing.Point(6, 11)
         Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(26, 12)
+        Me.Label38.Size = New System.Drawing.Size(31, 15)
         Me.Label38.TabIndex = 311
         Me.Label38.Text = "U/M"
         '
@@ -1249,7 +1228,7 @@ Public Class MPO00001
         Me.Label29.AutoSize = True
         Me.Label29.Location = New System.Drawing.Point(-70, -20)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(47, 12)
+        Me.Label29.Size = New System.Drawing.Size(51, 15)
         Me.Label29.TabIndex = 324
         Me.Label29.Text = "Col Desc"
         Me.Label29.Visible = False
@@ -1279,7 +1258,7 @@ Public Class MPO00001
         Me.optCtrSiz3.AutoSize = True
         Me.optCtrSiz3.Location = New System.Drawing.Point(288, 674)
         Me.optCtrSiz3.Name = "optCtrSiz3"
-        Me.optCtrSiz3.Size = New System.Drawing.Size(37, 16)
+        Me.optCtrSiz3.Size = New System.Drawing.Size(39, 19)
         Me.optCtrSiz3.TabIndex = 294
         Me.optCtrSiz3.Text = "45'"
         Me.optCtrSiz3.UseVisualStyleBackColor = True
@@ -1290,7 +1269,7 @@ Public Class MPO00001
         Me.optCtrSiz4.Checked = True
         Me.optCtrSiz4.Location = New System.Drawing.Point(92, 658)
         Me.optCtrSiz4.Name = "optCtrSiz4"
-        Me.optCtrSiz4.Size = New System.Drawing.Size(43, 16)
+        Me.optCtrSiz4.Size = New System.Drawing.Size(46, 19)
         Me.optCtrSiz4.TabIndex = 289
         Me.optCtrSiz4.TabStop = True
         Me.optCtrSiz4.Text = "CFS"
@@ -1301,7 +1280,7 @@ Public Class MPO00001
         Me.optCtrSiz0.AutoSize = True
         Me.optCtrSiz0.Location = New System.Drawing.Point(93, 674)
         Me.optCtrSiz0.Name = "optCtrSiz0"
-        Me.optCtrSiz0.Size = New System.Drawing.Size(37, 16)
+        Me.optCtrSiz0.Size = New System.Drawing.Size(39, 19)
         Me.optCtrSiz0.TabIndex = 291
         Me.optCtrSiz0.Text = "20'"
         Me.optCtrSiz0.UseVisualStyleBackColor = True
@@ -1311,7 +1290,7 @@ Public Class MPO00001
         Me.optCtrSiz1.AutoSize = True
         Me.optCtrSiz1.Location = New System.Drawing.Point(144, 674)
         Me.optCtrSiz1.Name = "optCtrSiz1"
-        Me.optCtrSiz1.Size = New System.Drawing.Size(65, 16)
+        Me.optCtrSiz1.Size = New System.Drawing.Size(67, 19)
         Me.optCtrSiz1.TabIndex = 292
         Me.optCtrSiz1.Text = "40' (8.5')"
         Me.optCtrSiz1.UseVisualStyleBackColor = True
@@ -1321,7 +1300,7 @@ Public Class MPO00001
         Me.optCtrSiz2.AutoSize = True
         Me.optCtrSiz2.Location = New System.Drawing.Point(217, 674)
         Me.optCtrSiz2.Name = "optCtrSiz2"
-        Me.optCtrSiz2.Size = New System.Drawing.Size(61, 16)
+        Me.optCtrSiz2.Size = New System.Drawing.Size(65, 19)
         Me.optCtrSiz2.TabIndex = 293
         Me.optCtrSiz2.Text = "40'(HQ)"
         Me.optCtrSiz2.UseVisualStyleBackColor = True
@@ -1341,16 +1320,15 @@ Public Class MPO00001
         Me.Label27.AutoSize = True
         Me.Label27.Location = New System.Drawing.Point(880, 530)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(46, 12)
+        Me.Label27.Size = New System.Drawing.Size(51, 15)
         Me.Label27.TabIndex = 323
         Me.Label27.Text = "Cust Um"
         Me.Label27.Visible = False
         '
         'MPO00001
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 15)
-        Me.ClientSize = New System.Drawing.Size(954, 631)
-        Me.Controls.Add(Me.menuStrip)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 14)
+        Me.ClientSize = New System.Drawing.Size(892, 536)
         Me.Controls.Add(Me.frmApproveReject)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label4)
@@ -1364,22 +1342,39 @@ Public Class MPO00001
         Me.Controls.Add(Me.txtPOTo)
         Me.Controls.Add(Me.StatusBar)
         Me.Controls.Add(Me.SSTab1)
+        Me.Controls.Add(Me.cmdDelete)
+        Me.Controls.Add(Me.cmdbrowlist)
+        Me.Controls.Add(Me.cmdspecial)
+        Me.Controls.Add(Me.cmdSave)
+        Me.Controls.Add(Me.CmdLookup)
+        Me.Controls.Add(Me.cmdAdd)
+        Me.Controls.Add(Me.cmdFind)
+        Me.Controls.Add(Me.cmdLast)
+        Me.Controls.Add(Me.cmdPrv)
+        Me.Controls.Add(Me.cmdCopy)
+        Me.Controls.Add(Me.cmdNext)
+        Me.Controls.Add(Me.cmdClear)
+        Me.Controls.Add(Me.cmdExit)
+        Me.Controls.Add(Me.cmdFirst)
+        Me.Controls.Add(Me.cmdDelRow)
+        Me.Controls.Add(Me.cmdInsRow)
+        Me.Controls.Add(Me.cmdSearch)
+        Me.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "MPO00001"
-        Me.Text = "MPO00001 - Manufacturing Purchase Order Search (MPO01)"
+        Me.Text = "MPO00001 - Manufacturing Purchase Order Search"
         CType(Me.StatusBarPanel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StatusBarPanel2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.frmApproveReject.ResumeLayout(False)
         Me.frmApproveReject.PerformLayout()
-        Me.menuStrip.ResumeLayout(False)
-        Me.menuStrip.PerformLayout()
         Me.SSTab1.ResumeLayout(False)
         Me.tpMPO00001_1.ResumeLayout(False)
         CType(Me.grdMPOHdr, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpMPO00001_2.ResumeLayout(False)
         Me.tpMPO00001_2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
         CType(Me.grdMPODtl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
@@ -1410,7 +1405,7 @@ Public Class MPO00001
 
     '*** Folder 2
 
-    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
+    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
         Call setStatus("Clear")
 
     End Sub
@@ -1587,27 +1582,27 @@ Public Class MPO00001
 
         Select Case Mode
             Case "Init"
-                mmdAdd.Enabled = False
-                mmdSave.Enabled = False
-                mmdDelete.Enabled = False
-                mmdCopy.Enabled = False
-                mmdFind.Enabled = True
-                mmdClear.Enabled = False
+                cmdAdd.Enabled = False
+                cmdSave.Enabled = False
+                cmdDelete.Enabled = False
+                cmdCopy.Enabled = False
+                cmdFind.Enabled = True
+                cmdClear.Enabled = False
 
-                mmdSearch.Enabled = False
+                cmdSearch.Enabled = False
+                cmdspecial.Enabled = False
+                CmdLookup.Enabled = False
+                cmdbrowlist.Enabled = False
 
+                cmdInsRow.Enabled = False
+                cmdDelRow.Enabled = False
 
-                mmdInsRow.Enabled = False
-                mmdDelRow.Enabled = False
+                cmdFirst.Enabled = False
+                cmdLast.Enabled = False
+                cmdNext.Enabled = False
+                cmdPrv.Enabled = False
 
-
-
-                mmdPrint.Enabled = False
-                mmdAttach.Enabled = False
-                mmdFunction.Enabled = False
-                mmdLink.Enabled = False
-
-                mmdExit.Enabled = True
+                cmdExit.Enabled = True
 
                 '        Me.txtFilNamFm.Enabled = True
                 '        Me.txtFilNamTo.Enabled = True
@@ -1638,8 +1633,8 @@ Public Class MPO00001
 
             Case "Update"
 
-                Me.mmdFind.Enabled = False
-                Me.mmdClear.Enabled = True
+                Me.cmdFind.Enabled = False
+                Me.cmdClear.Enabled = True
 
                 '        Me.txtFilNamFm.Enabled = False
                 '        Me.txtFilNamTo.Enabled = False
@@ -1664,8 +1659,8 @@ Public Class MPO00001
                 rs_MPOXLSHDR = Nothing
                 rs_MPOXLSDTL = Nothing
 
-                mmdFind.Enabled = True
-                mmdClear.Enabled = False
+                cmdFind.Enabled = True
+                cmdClear.Enabled = False
 
                 '        Me.txtFilNamFm.Enabled = True
                 '        Me.txtFilNamTo.Enabled = True
@@ -1747,12 +1742,12 @@ Public Class MPO00001
 
             intCol = intCol + 1
             colPONo = intCol
-            .Columns(intCol).HeaderText = "PO No (ZS)"
+            .Columns(intCol).HeaderText = "PO # (ZS)"
             .Columns(intCol).Width = 100
 
             intCol = intCol + 1
             colVenNo = intCol
-            .Columns(intCol).HeaderText = "Vendor No"
+            .Columns(intCol).HeaderText = "Vendor #"
             .Columns(intCol).Width = 80
 
             intCol = intCol + 1
@@ -1782,7 +1777,7 @@ Public Class MPO00001
             .Columns(intCol).Visible = False
 
             intCol = intCol + 1
-            .Columns(intCol).HeaderText = "MPO No (HK)"
+            .Columns(intCol).HeaderText = "MPO # (HK)"
             .Columns(intCol).Width = 140
 
             intCol = intCol + 1
@@ -1819,7 +1814,7 @@ Public Class MPO00001
             .Columns(intCol).Width = 200
 
             intCol = intCol + 1
-            .Columns(intCol).HeaderText = "seq"
+            .Columns(intCol).HeaderText = "seq #"
             .Columns(intCol).Width = 0
             .Columns(intCol).Visible = False
 
@@ -1875,7 +1870,7 @@ Public Class MPO00001
 
             intCol = intCol + 1
             colPONO_dtl = intCol
-            .Columns(intCol).HeaderText = "PO No (ZS)"
+            .Columns(intCol).HeaderText = "PO # (ZS)"
             .Columns(intCol).Width = 1200 / 13
 
             intCol = intCol + 1
@@ -1914,7 +1909,7 @@ Public Class MPO00001
             intCol = intCol + 1
             .Columns(intCol).HeaderText = "Qty"
             .Columns(intCol).Width = 800 / 13
-            .Columns(intCol).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+
 
             intCol = intCol + 1
             .Columns(intCol).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
@@ -1934,7 +1929,7 @@ Public Class MPO00001
 
 
             intCol = intCol + 1
-            .Columns(intCol).HeaderText = "Request No"
+            .Columns(intCol).HeaderText = "Request #"
             .Columns(intCol).Width = 1200 / 13
 
             intCol = intCol + 1
@@ -1943,7 +1938,7 @@ Public Class MPO00001
             .Columns(intCol).Width = 1200 / 13
 
             intCol = intCol + 1
-            .Columns(intCol).HeaderText = "Production No"
+            .Columns(intCol).HeaderText = "Production #"
             .Columns(intCol).Width = 1200 / 13
 
 
@@ -1970,7 +1965,7 @@ Public Class MPO00001
 
 
             intCol = intCol + 1
-            .Columns(intCol).HeaderText = "MPO No (HK)"
+            .Columns(intCol).HeaderText = "MPO # (HK)"
             .Columns(intCol).Width = 1600 / 13
 
 
@@ -2115,7 +2110,7 @@ Public Class MPO00001
         End If
     End Sub
 
-    Private Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFind.Click
+    Private Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFind.Click
         Call cmdFindClick()
     End Sub
 
@@ -2132,7 +2127,7 @@ Public Class MPO00001
 
     End Sub
 
-    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
+    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdExit.Click
         Me.Close()
     End Sub
 
@@ -2173,3 +2168,81 @@ Public Class MPO00001
 
     End Sub
 End Class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

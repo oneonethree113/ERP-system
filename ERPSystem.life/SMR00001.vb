@@ -40,6 +40,38 @@ Public Class SMR00001
 
         Dim dr() As DataRow
 
+
+        'If rs_CUBASINF.Tables("RESULT").RowsrecordCount > 0 Then
+        '    While Not rs_CUBASINF.EOF
+        '        cboCustNoFm.AddItem(rs_CUBASINF("cbi_cusno") & " - " & rs_CUBASINF("cbi_cussna"))
+        '        cboCustNoTo.AddItem(rs_CUBASINF("cbi_cusno") & " - " & rs_CUBASINF("cbi_cussna"))
+        '        rs_CUBASINF.MoveNext()
+        '    End While
+
+        '    If gsCompanyGroup = "MSG" Then
+        '        rs_CUBASINF.Filter = "cbi_cusno >= '70000'"
+        '        rs_CUBASINF.sort = "cbi_cusno"
+        '        rs_CUBASINF.MoveFirst()
+        '        Call DisplayCombo(Me.cboCustNoFm, rs_CUBASINF("cbi_cusno"))
+
+        '        rs_CUBASINF.Filter = "cbi_cusno <= '80000'"
+        '        rs_CUBASINF.sort = "cbi_cusno desc"
+        '        rs_CUBASINF.MoveFirst()
+        '        Call DisplayCombo(Me.cboCustNoTo, rs_CUBASINF("cbi_cusno"))
+        '    Else
+        '        rs_CUBASINF.Filter = "cbi_cusno >= '50000'"
+        '        rs_CUBASINF.sort = "cbi_cusno"
+        '        rs_CUBASINF.MoveFirst()
+        '        Call DisplayCombo(Me.cboCustNoFm, rs_CUBASINF("cbi_cusno"))
+
+        '        rs_CUBASINF.Filter = "cbi_cusno <= '60000'"
+        '        rs_CUBASINF.sort = "cbi_cusno desc"
+        '        rs_CUBASINF.MoveFirst()
+        '        Call DisplayCombo(Me.cboCustNoTo, rs_CUBASINF("cbi_cusno"))
+        '    End If
+
+        'End If
+
         If rs_CUBASINF.Tables("RESULT").Rows.Count > 0 Then
             dr = rs_CUBASINF.Tables("RESULT").Select("cbi_cusno >= '50000' and cbi_cusno < '60000'")
 
@@ -57,6 +89,15 @@ Public Class SMR00001
 
     End Sub
     Private Sub FillcboVen()
+        '    If rs_VNBASINF.recordCount > 0 Then
+        '        While Not rs_VNBASINF.EOF
+        '            cboVenNoFm.AddItem(rs_VNBASINF("vbi_venno") & " - " & rs_VNBASINF("vbi_vensna"))
+        '            cboVenNoTo.AddItem(rs_VNBASINF("vbi_venno") & " - " & rs_VNBASINF("vbi_vensna"))
+        '            cboPVenNoFm.AddItem(rs_VNBASINF("vbi_venno") & " - " & rs_VNBASINF("vbi_vensna"))
+        '            cboPVenNoTo.AddItem(rs_VNBASINF("vbi_venno") & " - " & rs_VNBASINF("vbi_vensna"))
+        '            rs_VNBASINF.MoveNext()
+        '        End While
+        '    End If
         If rs_VNBASINF.Tables("RESULT").Rows.Count > 0 Then
             For i As Integer = 0 To rs_VNBASINF.Tables("RESULT").Rows.Count - 1
                 cboPVenNoFm.Items.Add(rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_vensna"))
@@ -67,6 +108,14 @@ Public Class SMR00001
         End If
     End Sub
 
+    'Private Function selComboBox(ByRef cbo As ComboBox)
+    '    If cbo.Enabled = True Then
+    '        If cbo.Text <> "" Then
+    '            cbo.selStart = 0
+    '            cbo.SelLength = Len(cbo.Text)
+    '        End If
+    '    End If
+    'End Function
 
 
     Private Sub selComboBox(ByRef cbo As ComboBox)
@@ -104,6 +153,12 @@ Public Class SMR00001
         End If
     End Function
 
+    'Private Function selMaskEdBox(ByRef Mbox As MaskEdBox)
+    '    If Mbox.Enabled = True Then
+    '        Mbox.selStart = 0
+    '        Mbox.SelLength = Mbox.MaxLength
+    '    End If
+    'End Function
 
     Private Function isEmptyForm() As Boolean
         isEmptyForm = False
@@ -647,6 +702,60 @@ Err_Handler:
         Cursor = Cursors.Default
     End Sub
 
+    '    Private Sub Form_Load()
+    '        Dim S As String
+    '        Dim rs() As ADOR.Recordset
+
+    '        Me.Icon = ERP00000.Icon
+    '        Call FillCompCombo(gsUsrID, Me)         'Get availble Company
+    '        Me.cboCoCde.AddItem("ALL")
+    '        Call GetDefaultCompany(Me)
+
+    '#If useMTS Then
+    '        Set objBSGate = CreateObject("ucpBS_Gate.clsBSGate", serverName)
+    '#Else
+    '        objBSGate = CreateObject("ucpBS_Gate.clsBSGate")
+    '#End If
+
+    '        '    If gsConnStr = "" Then
+    '        '    gsConnStr = getConnectionString()
+    '        '    End If
+    '        Screen.MousePointer = vbHourglass
+    '        '================================
+    '        'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    '        '--------------------------------
+    '        Me.Height = 8200
+    '        Me.Width = 9135
+    '        cboSortBy.Clear()
+    '        cboSortBy.AddItem("Customer No. / Name")
+    '        cboSortBy.AddItem("PV - Vendor No. / Name")
+    '        cboSortBy.AddItem("Item No")
+    '        cboSortBy.AddItem("S/C No")
+    '        cboSortBy.AddItem("Customer PO No")
+    '        cboSortBy.AddItem("Vendor PO No")
+    '        cboSortBy.AddItem("Job No")
+    '        cboSortBy.AddItem("Invoice No")
+    '        cboSortBy.AddItem("Invoice Issue Date")
+    '        cboSortBy.AddItem("Shipment Date")
+    '        cboSortBy.ListIndex = 0
+
+    '        Me.optVen(0).Value = True
+    '        'Fill in Customer No and Vendor No
+    '        S = "㊣CUBASINF※L※PA" & _
+    '            "㊣VNBASINF※L"
+    '        rs = objBSGate.Enquire(gsConnStrRpt, "sp_general", S)
+    '        If rs(0)(0) <> "0" Then
+    '            MsgBox(rs(0)(0))
+    '        Else
+    '            rs_CUBASINF = rs(1)
+    '            rs_VNBASINF = rs(2)
+    '            Call FillcboCust()
+    '            Call FillcboVen()
+    '        End If
+    '        '================================
+    '        Call Formstartup(Me.Name)
+    '        Screen.MousePointer = vbDefault
+    '    End Sub
 
 
  
@@ -834,8 +943,8 @@ Err_Handler:
             Exit Sub
         End If
 
-        Call FillcboCust()
-        Call FillcboVen()
+            Call FillcboCust()
+            Call FillcboVen()
         '================================
         Call Formstartup(Me.Name)
 

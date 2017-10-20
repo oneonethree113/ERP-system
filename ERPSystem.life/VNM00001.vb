@@ -478,22 +478,22 @@ Public Class VNM00001
     End Sub
     Private Sub resetcmdButton(ByVal Mode As String)
         If Mode = "INIT" Then
-            mmdAdd.Enabled = Enq_right_local
-            mmdSave.Enabled = False
-            mmdDelete.Enabled = False
-            mmdCopy.Enabled = False 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
-            mmdFind.Enabled = True
-            mmdInsRow.Enabled = False
-            mmdDelRow.Enabled = False
-            mmdExit.Enabled = True
-            mmdClear.Enabled = True
-            mmdSearch.Enabled = True
+            cmdAdd.Enabled = Enq_right_local
+            cmdSave.Enabled = False
+            cmdDelete.Enabled = False
+            cmdCopy.Enabled = False 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+            cmdFind.Enabled = True
+            cmdInsRow.Enabled = False
+            cmdDelRow.Enabled = False
+            cmdExit.Enabled = True
+            cmdClear.Enabled = True
+            cmdSearch.Enabled = True
 
-            Me.mmdPrint.Enabled = False
-            Me.mmdAttach.Enabled = False
-            Me.mmdFunction.Enabled = False
-            Me.mmdLink.Enabled = False
 
+            cmdFirst.Enabled = False
+            cmdLast.Enabled = False
+            cmdNext.Enabled = False
+            cmdPrevious.Enabled = False
             Add_flag = False
             txtVenNo.Enabled = True
 
@@ -501,17 +501,22 @@ Public Class VNM00001
             '   cmdAddCat.Enabled = False '''
 
         ElseIf Mode = "DisableAll" Then 'For copy disable
-            mmdAdd.Enabled = False
-            mmdSave.Enabled = False
-            mmdDelete.Enabled = False
-            mmdCopy.Enabled = False
-            mmdFind.Enabled = False
-            mmdInsRow.Enabled = False
-            mmdDelRow.Enabled = False
-            mmdClear.Enabled = False
-            mmdSearch.Enabled = False
+            cmdAdd.Enabled = False
+            cmdSave.Enabled = False
+            cmdDelete.Enabled = False
+            cmdCopy.Enabled = False
+            cmdFind.Enabled = False
+            cmdInsRow.Enabled = False
+            cmdDelRow.Enabled = False
+            cmdClear.Enabled = False
+            cmdSearch.Enabled = False
 
 
+            cmdFirst.Enabled = False
+            cmdLast.Enabled = False
+            cmdNext.Enabled = False
+            cmdPrevious.Enabled = False
+            cmdCancel.Enabled = False
 
             txtVenNam.Enabled = False
             txtVenChnNam.Enabled = False
@@ -577,7 +582,7 @@ Public Class VNM00001
 
             cboCurCde.Text = ""
             cboVenRat.Text = ""
-            cboVenSts.SelectedIndex = -1
+            cboVenSts.SelectedIndex = 0
             chkActivate.Checked = False
             chkActivate.Visible = False
             chkDiCoTi.Checked = False
@@ -672,15 +677,15 @@ Public Class VNM00001
 
             txtVenNo.Enabled = False
             cmdAddItmNat.Enabled = False
-            mmdAdd.Enabled = False
-            mmdSave.Enabled = False
-            mmdFind.Enabled = False
-            mmdDelete.Enabled = Del_right_local
-            mmdCopy.Enabled = Enq_right_local
-            mmdInsRow.Enabled = False
-            mmdDelRow.Enabled = False
-            mmdSearch.Enabled = False
-            mmdClear.Enabled = True
+            cmdAdd.Enabled = False
+            cmdSave.Enabled = False
+            cmdFind.Enabled = False
+            cmdDelete.Enabled = Del_right_local
+            cmdCopy.Enabled = Enq_right_local
+            cmdInsRow.Enabled = False
+            cmdDelRow.Enabled = False
+            cmdSearch.Enabled = False
+            cmdClear.Enabled = True
             If Microsoft.VisualBasic.Left(cboVenSts.Text, 1) = "D" And Enq_right_local = True And gsUsrRank <= 4 Then
                 chkDiCoTi.Enabled = True
 
@@ -754,16 +759,16 @@ Public Class VNM00001
 
             txtVenWeb.Enabled = True
 
-            mmdClear.Enabled = True
+            cmdClear.Enabled = True
             cmdAddItmNat.Enabled = False
-            mmdAdd.Enabled = False
-            mmdSave.Enabled = True
-            mmdFind.Enabled = False
-            mmdDelete.Enabled = True
-            mmdCopy.Enabled = Enq_right_local
-            mmdInsRow.Enabled = True
-            mmdDelRow.Enabled = True
-            mmdSearch.Enabled = False
+            cmdAdd.Enabled = False
+            cmdSave.Enabled = True
+            cmdFind.Enabled = False
+            cmdDelete.Enabled = True
+            cmdCopy.Enabled = Enq_right_local
+            cmdInsRow.Enabled = True
+            cmdDelRow.Enabled = True
+            cmdSearch.Enabled = False
             Call SetStatusBar(mode)
         ElseIf mode = "ADD" Then
             txtVenNo.Enabled = False
@@ -850,14 +855,14 @@ Public Class VNM00001
             Me.BaseTabControl1.TabPages(4).Enabled = True
 
 
-            mmdSave.Enabled = Enq_right_local
-            mmdDelete.Enabled = False
-            mmdFind.Enabled = False
-            mmdAdd.Enabled = False
-            mmdSearch.Enabled = False
-            mmdInsRow.Enabled = True
-            mmdDelRow.Enabled = True
-            mmdCopy.Enabled = False
+            cmdSave.Enabled = Enq_right_local
+            cmdDelete.Enabled = False
+            cmdFind.Enabled = False
+            cmdAdd.Enabled = False
+            cmdSearch.Enabled = False
+            cmdInsRow.Enabled = True
+            cmdDelRow.Enabled = True
+            cmdCopy.Enabled = False
 
 
 
@@ -959,7 +964,7 @@ Public Class VNM00001
     Private Sub txtVenNo_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtVenNo.KeyPress
         If e.KeyChar.Equals(Chr(13)) Then
 
-            Call mmdFind_Click(sender, e)
+            Call cmdFind_Click(sender, e)
         End If
     End Sub
 
@@ -967,7 +972,7 @@ Public Class VNM00001
 
     End Sub
 
-    Public Sub mmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFind.Click
+    Public Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFind.Click
 
         Me.Cursor = Cursors.WaitCursor
 
@@ -1160,7 +1165,7 @@ Public Class VNM00001
             If Microsoft.VisualBasic.Left(cboVenSts.Text, 1) = "I" And Enq_right_local = True And gsUsrRank <= 4 Then
                 chkActivate.Visible = True
                 chkActivate.Enabled = True
-                mmdSave.Enabled = True
+                cmdSave.Enabled = True
             Else
                 chkActivate.Visible = False
                 chkActivate.Enabled = False
@@ -1511,14 +1516,14 @@ Public Class VNM00001
         i = i + 1 '6
         grdVnCntInf_vci_cty = i
         grdVnCntInf.Columns(i).HeaderText = "Country"
-        grdVnCntInf.Columns(i).Width = 125
+        grdVnCntInf.Columns(i).Width = 130
 
         grdVnCntInf.Columns(i).ReadOnly = True
 
         i = i + 1 '7
         grdVnCntInf_vci_zip = i
         grdVnCntInf.Columns(i).HeaderText = "Zip/Postal"
-        grdVnCntInf.Columns(i).Width = 110
+        grdVnCntInf.Columns(i).Width = 130
         If mode = "UPDATE" Or mode = "ADD" Then
             grdVnCntInf.Columns(i).ReadOnly = False
         Else
@@ -1558,9 +1563,11 @@ Public Class VNM00001
 
         Dim i As Integer
 
+        'If mode = "UPDATE" Or mode = "ADD" Then
         For i = 0 To rs_VNCNTPER_READ.Tables("RESULT").Columns.Count - 1
             rs_VNCNTPER_READ.Tables("RESULT").Columns(i).ReadOnly = False
         Next i
+        'End If
 
         i = 0
         grdVnCntPer_vci_status = i
@@ -1575,7 +1582,6 @@ Public Class VNM00001
         i = i + 1
         grdVnCntPer_vci_cntctp = i
         grdVnCntPer.Columns(i).HeaderText = "Contact Person"
-        grdVnCntPer.Columns(i).Width = 120
         If mode = "UPDATE" Or mode = "ADD" Then
             grdVnCntPer.Columns(i).ReadOnly = False
         Else
@@ -1608,7 +1614,6 @@ Public Class VNM00001
         i = i + 1
         grdVnCntPer_vci_cnteml = i
         grdVnCntPer.Columns(i).HeaderText = "E-mail"
-        grdVnCntPer.Columns(i).Width = 150
         If mode = "UPDATE" Or mode = "ADD" Then
             grdVnCntPer.Columns(i).ReadOnly = False
         Else
@@ -1617,7 +1622,11 @@ Public Class VNM00001
         i = i + 1
         grdVnCntPer_vci_cntdef = i
         grdVnCntPer.Columns(i).HeaderText = "Default"
+        'If mode = "UPDATE" Or mode = "ADD" Then
+        '    grdVnCntPer.Columns(i).ReadOnly = False
+        'Else
         grdVnCntPer.Columns(i).ReadOnly = True
+        'End If
         i = i + 1
         grdVnCntPer_vci_creusr = i
         grdVnCntPer.Columns(i).Visible = False
@@ -1646,9 +1655,11 @@ Public Class VNM00001
 
         Dim i As Integer
 
+        'If mode = "UPDATE" Or mode = "ADD" Then
         For i = 0 To rs_VNCSEINF_B_READ.Tables("RESULT").Columns.Count - 1
             rs_VNCSEINF_B_READ.Tables("RESULT").Columns(i).ReadOnly = False
         Next i
+        'End If
 
 
         i = 0
@@ -1700,7 +1711,11 @@ Public Class VNM00001
         i = i + 1
         grdVnCseBnk_vcs_csecty = i
         grdVnCseBnk.Columns(i).HeaderText = "Country"
+        'If mode = "UPDATE" Or mode = "ADD" Then
+        '    grdVnCseBnk.Columns(i).ReadOnly = False
+        'Else
         grdVnCseBnk.Columns(i).ReadOnly = True
+        'End If
         i = i + 1
         grdVnCseBnk_vcs_csezip = i
         grdVnCseBnk.Columns(i).HeaderText = "Zip/Postal"
@@ -1720,7 +1735,6 @@ Public Class VNM00001
         i = i + 1
         grdVnCseBnk_vcs_csetil = i
         grdVnCseBnk.Columns(i).HeaderText = "Title"
-        grdVnCseBnk.Columns(i).Width = 120
         If mode = "UPDATE" Or mode = "ADD" Then
             grdVnCseBnk.Columns(i).ReadOnly = False
         Else
@@ -1729,7 +1743,6 @@ Public Class VNM00001
         i = i + 1
         grdVnCseBnk_vcs_csephn = i
         grdVnCseBnk.Columns(i).HeaderText = "Phone No."
-        grdVnCseBnk.Columns(i).Width = 100
         If mode = "UPDATE" Or mode = "ADD" Then
             grdVnCseBnk.Columns(i).ReadOnly = False
         Else
@@ -1738,7 +1751,6 @@ Public Class VNM00001
         i = i + 1
         grdVnCseBnk_vcs_csefax = i
         grdVnCseBnk.Columns(i).HeaderText = "Fax"
-        grdVnCseBnk.Columns(i).Width = 100
         If mode = "UPDATE" Or mode = "ADD" Then
             grdVnCseBnk.Columns(i).ReadOnly = False
         Else
@@ -1747,7 +1759,6 @@ Public Class VNM00001
         i = i + 1
         grdVnCseBnk_vcs_cseeml = i
         grdVnCseBnk.Columns(i).HeaderText = "E-mail"
-        grdVnCseBnk.Columns(i).Width = 150
         If mode = "UPDATE" Or mode = "ADD" Then
             grdVnCseBnk.Columns(i).ReadOnly = False
         Else
@@ -1867,13 +1878,13 @@ Public Class VNM00001
         grdvengrp.Columns(i).Visible = False
 
 
-        Dim j As Integer
+        Dim ii As Integer
 
-        For j = 0 To grdvengrp.Columns.Count - 1
+        For ii = 0 To grdvengrp.Columns.Count - 1
 
-            grdvengrp.Columns(j).SortMode = DataGridViewColumnSortMode.NotSortable
+            grdvengrp.Columns(ii).SortMode = DataGridViewColumnSortMode.NotSortable
 
-        Next j
+        Next ii
     End Sub
 
     Private Sub display_grdVnPucInf(ByVal type As String)
@@ -2170,13 +2181,13 @@ Public Class VNM00001
         End If
     End Sub
 
-    Private Sub mmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
+    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
         Dim tmp_itmno As String = txtVenNo.Text
         If Recordstatus = True Then
             Select Case MsgBox("Record has been modified. Do you want to save before clear the screen?", MsgBoxStyle.YesNoCancel)
                 Case MsgBoxResult.Yes
                     If Enq_right_local Then
-                        Call mmdSave_Click(sender, e)
+                        Call cmdSave_Click(sender, e)
                     Else
                         MsgBox("You have no Save record rights!")
                     End If
@@ -2203,14 +2214,14 @@ Public Class VNM00001
 
     End Sub
 
-    Private Sub mmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdAdd.Click
+    Private Sub cmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAdd.Click
         cboVenSts.Text = "A - Active"
         If cboVenType.Text = "" Then
             MsgBox("Please select the Vendor Type")
             txtVenNo.Text = ""
             txtVenNo.Enabled = False
             cboVenType.Enabled = True
-            mmdFind.Enabled = False
+            cmdFind.Enabled = False
 
             cboVenType.Items.Clear()
             cboVenType.Items.Add("Internal")
@@ -2697,7 +2708,7 @@ Public Class VNM00001
     End Sub
 
 
-    Private Sub mmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdInsRow.Click
+    Private Sub cmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdInsRow.Click
         Select Case Got_Focus_Grid
             Case "VNCNTINF"
 
@@ -3779,7 +3790,7 @@ Public Class VNM00001
         End If
     End Sub
 
-    Private Sub mmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
+    Private Sub cmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSave.Click
 
 
 
@@ -4991,7 +5002,7 @@ Public Class VNM00001
 
     End Function
 
-    Private Sub mmdDelRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdDelRow.Click
+    Private Sub cmdDelRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdDelRow.Click
 
 
         If mode = "ReadOnly" Then
@@ -5198,7 +5209,7 @@ Public Class VNM00001
         End If
     End Sub
 
-    Private Sub mmdDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdDelete.Click
+    Private Sub cmdDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdDelete.Click
 
 
         If mode = "UPDATE" Then
@@ -5318,14 +5329,14 @@ Public Class VNM00001
 
     End Function
 
-    Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
+    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdExit.Click
         If Recordstatus = True Then
-            mmdClear_Click(sender, e)
+            cmdClear_Click(sender, e)
         End If
         Me.Close()
     End Sub
 
-    Private Sub mmdCopy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdCopy.Click
+    Private Sub cmdCopy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCopy.Click
         If Recordstatus = True Then
             MsgBox("Vendor has been modified, please save it before Copy")
             Me.Cursor = Cursors.Default
@@ -5449,7 +5460,7 @@ Public Class VNM00001
         End If
 
         txtVenNo.Text = txtPanCopyVendorNo.Text
-        Call mmdFind_Click(sender, e)
+        Call cmdFind_Click(sender, e)
         Call cmdPanCopyCancel_Click(sender, e)
 
         Me.Cursor = Cursors.Default
@@ -5574,8 +5585,8 @@ Public Class VNM00001
             resetcmdButton("DisableAll")
             freeze_TabControl(-1)
             chkDiCoTi.Enabled = True
-            mmdSave.Enabled = True
-            mmdClear.Enabled = True
+            cmdSave.Enabled = True
+            cmdClear.Enabled = True
             cboVenSts.SelectedIndex = 1
 
         ElseIf chkDiCoTi.Checked = False Then
@@ -5663,6 +5674,14 @@ Public Class VNM00001
 
     Private Sub txtVenSna_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtVenSna.LostFocus
         txtVenSna.Text = UCase(txtVenSna.Text)
+    End Sub
+
+    Private Sub txtVenSna_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtVenSna.TextChanged
+
+    End Sub
+
+    Private Sub ChkMOQChg_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChkMOQChg.CheckedChanged
+
     End Sub
 
     Private Sub ChkMOQChg_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ChkMOQChg.Click
@@ -5842,6 +5861,10 @@ Public Class VNM00001
         txtRmk.Height = txtRmk.Height + 50
     End Sub
 
+    Private Sub txtRmk_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtRmk.TextChanged
+
+    End Sub
+
     Private Sub txtRmk_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRmk.KeyPress
         If mode = "UPDATE" Then
             Recordstatus = True
@@ -5934,6 +5957,10 @@ Public Class VNM00001
         End If
     End Sub
 
+    Private Sub txtVenWeb_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtVenWeb.TextChanged
+
+    End Sub
+
     Private Sub cboCty_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboCty.SelectedIndexChanged
 
         If mode = "UPDATE" Then
@@ -5957,9 +5984,12 @@ Public Class VNM00001
         Dim tmpstr As String
         tmpstr = cboCty.Text
 
+
         If Trim(tmpstr) = "" Then
             Exit Sub
         End If
+
+
 
         If cboCty.Items.IndexOf(tmpstr) = -1 Then
             MsgBox("Invalid Country!")
@@ -5971,11 +6001,27 @@ Public Class VNM00001
         auto_search_combo(cboCty, e.KeyCode)
     End Sub
 
+    Private Sub TabPage1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabPage1.Click
+
+    End Sub
+
+    Private Sub cboItmNat_Validating(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles cboItmNat.Validating
+
+    End Sub
+
     Private Sub cboItmNat_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles cboItmNat.KeyUp
         auto_search_combo(cboItmNat, e.KeyCode)
     End Sub
 
-    Private Sub mmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSearch.Click
+    Private Sub chkActivate_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkActivate.CheckedChanged
+
+    End Sub
+
+    Private Sub chkActivate_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkActivate.Click
+
+    End Sub
+
+    Private Sub cmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSearch.Click
         Dim frmSYM00018 As New SYM00018
 
         frmSYM00018.keyName = txtVenNo.Name
@@ -5984,9 +6030,26 @@ Public Class VNM00001
         frmSYM00018.show_frmSYM00018(Me)
     End Sub
 
+    Private Sub grdVnPucInf_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grdVnPucInf.CellContentClick
+
+    End Sub
+
+
+
+    Private Sub grdFactoryRel_Validated(ByVal sender As Object, ByVal e As System.EventArgs) Handles grdFactoryRel.Validated
+
+    End Sub
+
+    Private Sub VNM00001_LocationChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.LocationChanged
+
+    End Sub
+
     Private Sub txtAdr_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtAdr.LostFocus
         txtAdr.Text = UCase(txtAdr.Text)
     End Sub
+
+
+
 
 
     Private Sub grdPrcTrm_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grdPrcTrm.CellClick
@@ -6009,6 +6072,26 @@ Public Class VNM00001
 
 
 
+
+    End Sub
+
+    Private Sub grdPceTme_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grdPrcTrm.CellContentClick
+
+    End Sub
+
+    Private Sub grdvengrp_CellBeginEdit(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellCancelEventArgs) Handles grdvengrp.CellBeginEdit
+
+    End Sub
+
+    Private Sub grdvengrp_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grdvengrp.CellClick
+
+    End Sub
+
+    Private Sub grdvengrp_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grdvengrp.CellContentClick
+
+    End Sub
+
+    Private Sub grdvengrp_CellContentDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grdvengrp.CellContentDoubleClick
 
     End Sub
 
@@ -6300,14 +6383,26 @@ Public Class VNM00001
 
     End Sub
 
+    Private Sub lstVen1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lstVen1.SelectedIndexChanged
+
+    End Sub
+
     Private Sub txtThcAmt_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtThcAmt.KeyPress
         If Not (e.KeyChar = vbBack Or e.KeyChar = ChrW(Keys.Delete) Or e.KeyChar = ChrW(Keys.Enter) Or (e.KeyChar.ToString() >= "0" And e.KeyChar.ToString() <= "9")) Then
             e.KeyChar = ""
         End If
     End Sub
 
+    Private Sub txtThcAmt_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtThcAmt.TextChanged
+
+    End Sub
+
     Private Sub txtVenChnNam_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtVenChnNam.LostFocus
         txtVenChnNam.Text = UCase(txtVenChnNam.Text)
+    End Sub
+
+    Private Sub txtVenChnNam_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtVenChnNam.TextChanged
+
     End Sub
 
     Private Sub txtChnAdr_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtAdr2.LostFocus
@@ -6316,6 +6411,7 @@ Public Class VNM00001
 
     Private Sub txtChnAdr_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtAdr2.TextChanged
         txtChnAdrDisplay.Text = display_address("C", cboCty2.Text, txtStt2.Text, txtCity2.Text, txtTown2.Text, txtAdr2.Text, "")
+
     End Sub
 
     Private Sub txtTranFlag_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
@@ -6333,6 +6429,10 @@ Public Class VNM00001
         If mode = "UPDATE" Then
             Recordstatus = True
         End If
+    End Sub
+
+    Private Sub txtTranFlag_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
     End Sub
 
     Private Sub cboTranFlag_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles cboTranFlag.KeyUp
@@ -6375,6 +6475,8 @@ Public Class VNM00001
     End Sub
 
     Private Sub cboVndFlag_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboVndFlag.SelectedIndexChanged
+        'rs_VNBASINF_READ.Tables("RESULT").Rows(0).Item("vbi_venflag")
+
 
         If mode = "UPDATE" Then
             If rs_VNBASINF_READ.Tables("RESULT").Rows.Count = 1 Then
@@ -6401,6 +6503,8 @@ Public Class VNM00001
             gspStr = "sp_select_SYITMNAT ''"
         End If
 
+
+        'gspStr = "sp_select_SYITMNAT ''"
         rtnLong = execute_SQLStatement(gspStr, rs_SYITMNAT_READ, rtnStr)
         If rtnLong <> RC_SUCCESS Then
             MsgBox("Error on loading cmdFind_Click sp_select_SYITMNAT :" & rtnStr)
@@ -6422,6 +6526,9 @@ Public Class VNM00001
             Next i
         End If
         cboItmNat.SelectedIndex = 0
+
+
+
 
 
     End Sub
@@ -6490,6 +6597,10 @@ Public Class VNM00001
         Return name
     End Function
 
+
+    Private Sub grdExcCus_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grdExcCus.CellContentClick
+
+    End Sub
 
     Private Sub grdExcCus_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grdExcCus.CellDoubleClick
         If mode = "ReadOnly" Then
@@ -6575,6 +6686,56 @@ Public Class VNM00001
 
     End Sub
 
+    Private Sub grdExcCus_CellValidated(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grdExcCus.CellValidated
+        'Try
+        '    Dim txtCell As New DataGridViewTextBoxCell
+        '    Select Case grdExcCus.CurrentCell.ColumnIndex
+
+
+
+
+
+        '        Case grdExcCus_vec_cusno
+        '            grdExcCus.Item(grdExcCus_vec_cusno, grdExcCus.CurrentCell.RowIndex).Value = Split(grdExcCus.Item(grdExcCus_vec_cusno, grdExcCus.CurrentCell.RowIndex).Value, " - ")(0)
+        '            grdExcCus.Item(grdExcCus_vec_cusno, grdExcCus.CurrentCell.RowIndex) = txtCell
+
+
+        '    End Select
+
+
+        'Catch
+        'End Try
+    End Sub
+
+    Private Sub grdExcCus_CellValidating(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellValidatingEventArgs) Handles grdExcCus.CellValidating
+        'Dim row As DataGridViewRow = grdExcCus.CurrentRow
+        'Dim strNewVal As String
+
+        'strNewVal = row.Cells(e.ColumnIndex).EditedFormattedValue.ToString.Trim
+
+        'If row.Cells(e.ColumnIndex).IsInEditMode Then
+        '    Select e.ColumnIndex
+
+        '        Case grdExcCus_vec_cusno
+
+        '            If strNewVal = "" Then
+        '                Exit Sub
+        '            End If
+
+        '            Dim splitvalue As String = Split(strNewVal, " - ")(0)
+
+        '            Dim dr() As DataRow
+        '            dr = rs_VNEXCCUS.Tables("RESULT").Select("vec_cusno ='" & splitvalue & "'")
+        '            If dr.Length > 0 Then
+        '                MsgBox("Duplicate Customer Code")
+        '                e.Cancel = True
+        '                Exit Sub
+        '            End If
+
+
+        '    End Select
+        'End If
+    End Sub
 
     Private Sub grdExcCus_DataError(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewDataErrorEventArgs) Handles grdExcCus.DataError
 
@@ -6802,4 +6963,15 @@ Public Class VNM00001
 
     End Sub
 
+    Private Sub grdvengrp_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles grdvengrp.KeyPress
+
+
+
+
+    End Sub
+    Private Sub grdvengrp_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles grdvengrp.KeyUp
+
+
+
+    End Sub
 End Class

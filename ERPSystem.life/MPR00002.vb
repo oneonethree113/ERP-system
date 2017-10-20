@@ -8,15 +8,49 @@ Public Class MPR00002
 
     Public rs_MPR00002 As DataSet
     Private Sub cboCoCde_Click()
-      
+        'txtCoNam.Text = ChangeCompany(cboCoCde.Text, Me.Name)
+        'Enq_right_local = Enq_right
+        'Del_right_local = Del_right
+        'tempz
+
     End Sub
 
     Private Sub Form_Load()
 
+        Me.Icon = ERP00000.Icon
 
-       
+        'AccessRight(Me.Name) '*** For Access Right use, added by Tommy on 5 Oct 2001
+        'Enq_right_local = Enq_right
+        'Del_right_local = Del_right
+
+        'Call FillCompCombo(gsUsrID, Me)         'Get availble Company
+        'Call GetDefaultCompany(Me)
 
         Call AccessRight(Me.Name) '*** For Access Right use, added by Tommy on 5 Oct 2001 Change by Lewis on 2 Jul 2003
+
+
+
+
+
+
+        '        Call Formstartup(Me.Name)
+        '#If useMTS Then
+        '        Set objBSGate = CreateObject("ucpBS_Gate.clsBSGate", serverName)
+        '#Else
+        '        objBSGate = CreateObject("ucpBS_Gate.clsBSGate")
+        '#End If
+
+        '        If gsConnStr = "" Then
+        '            gsConnStr = getConnectionString()
+        '        End If
+
+        '        Cursor = Cursors.Default
+
+
+
+
+
+
 
     End Sub
 
@@ -70,6 +104,40 @@ Public Class MPR00002
         End If
         Cursor = Cursors.Default
 
+
+        'S = "㊣MPR00002※S※" & txtFromQuotNo & "※" & txtToQuotNo & "※" & Rvs
+        'Screen.MousePointer = vbHourglass
+
+
+        'rs = objBSGate.Enquire(gsConnStr, "sp_general", S)
+
+        'Cursor = Cursors.Default
+
+        'If rs(0)(0) <> "0" Then  '*** An error has occured
+        '    MsgBox(rs(0)(0))
+        'Else
+        '    rs_MPR00002 = rs(1)
+        '    If rs_MPR00002.recordCount = 0 Then
+        '        MsgBox("No Record Found!")
+        '        Exit Sub
+        '    Else
+        '        'Set Rpt_MPR00002 = New MPR00002Rpt
+        '        'Rpt_MPR00002.Database.SetDataSource rs_MPR00002
+        '        'Set frmCR.Report = Rpt_MPR00002
+        '        'frmCR.Show
+        '        ReportName(0) = "MPR00002.rpt"
+        '        ReportRS(0) = rs_MPR00002
+        '        frmReport.Show()
+        '    End If
+        'End If
+
+
+
+
+
+
+
+        '----------------------------------------------------------
     End Sub
 
     Private Sub lblRptName_Click()
@@ -83,18 +151,5 @@ Public Class MPR00002
     Private Sub txtFromQuotNo_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtFromQuotNo.TextChanged
         txtToQuotNo.Text = txtFromQuotNo.Text
 
-    End Sub
-
-    Private Sub MPR00002_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-        Call Formstartup(Me.Name)   'Set the form Sartup position
-    End Sub
-
-    Public Sub callByMPM01(ByVal MPOno As String)
-        txtFromQuotNo.Text = MPOno
-        txtToQuotNo.Text = MPOno
-        txtFromQuotNo.Enabled = False
-        txtToQuotNo.Enabled = False
-        Me.ShowDialog()
     End Sub
 End Class

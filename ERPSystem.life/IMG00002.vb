@@ -89,7 +89,6 @@ Public Class IMG00002
             cmdRefreshLst.Enabled = False
             cmdSelectAll.Enabled = False
             cboImgNamFormat.Enabled = False
-            grpPreview.Enabled = False
         End If
 
         cmdCopyMove.Select()

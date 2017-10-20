@@ -4,10 +4,6 @@
     Dim mode As String
     Dim Enq_right_local As Boolean
     Dim Del_right_local As Boolean
-    Dim Print_right_local As Boolean
-    Dim TOrelease_right_local As Boolean
-    Dim TOsammary_right_local As Boolean
-
     Dim Recordstatus As Boolean
 
     Dim inputvalid As Boolean = True
@@ -126,13 +122,6 @@
 
 
     Private Sub TOM00001_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-        Print_right_local = getEnquiryRightByFormName(TOM00005.Name.ToString)
-
-        TOrelease_right_local = getEnquiryRightByFormName(TOM00003.Name.ToString)
-
-        TOsammary_right_local = getEnquiryRightByFormName(TOM00004.Name.ToString)
-
         Cursor = Cursors.WaitCursor
 
         Call FillCompCombo(gsUsrID, cboCoCde)         'Get availble Company
@@ -318,7 +307,7 @@
 
             Me.mmdInsRow.Enabled = False
             Me.mmdDelRow.Enabled = False
-            mmdPrint.Enabled = Print_right_local
+            mmdPrint.Enabled = True
             mmdFunction.Enabled = True
             Me.mmdExit.Enabled = True
             cmdStandShip.Enabled = True
@@ -328,12 +317,12 @@
             If Not (rs_TOORDHDR Is Nothing) Then
                 If rs_TOORDHDR.Tables("RESULT").Rows(0).Item("toh_verno") = 1 Then
                     If rs_TOORDHDR.Tables("RESULT").Rows(0).Item("toh_ordsts") = "REL" Then
-                        SummaryToolStripMenuItem.Enabled = TOsammary_right_local
+                        SummaryToolStripMenuItem.Enabled = True
                     Else
                         SummaryToolStripMenuItem.Enabled = False
                     End If
                 Else
-                    SummaryToolStripMenuItem.Enabled = TOsammary_right_local
+                    SummaryToolStripMenuItem.Enabled = True
                 End If
             End If
 
@@ -350,22 +339,22 @@
 
             Me.mmdInsRow.Enabled = False
             Me.mmdDelRow.Enabled = False
-            mmdPrint.Enabled = Print_right_local
+            mmdPrint.Enabled = True
             mmdFunction.Enabled = True
 
             Me.mmdExit.Enabled = True
             cmdStandShip.Enabled = False
-            cmdCancelTO.Enabled = False
-            CancelTOToolStripMenuItem.Enabled = False
+            cmdCancelTO.Enabled = True
+            CancelTOToolStripMenuItem.Enabled = True
             If Not (rs_TOORDHDR Is Nothing) Then
                 If rs_TOORDHDR.Tables("RESULT").Rows(0).Item("toh_verno") = 1 Then
                     If rs_TOORDHDR.Tables("RESULT").Rows(0).Item("toh_ordsts") = "REL" Then
-                        SummaryToolStripMenuItem.Enabled = TOsammary_right_local
+                        SummaryToolStripMenuItem.Enabled = True
                     Else
                         SummaryToolStripMenuItem.Enabled = False
                     End If
                 Else
-                    SummaryToolStripMenuItem.Enabled = TOsammary_right_local
+                    SummaryToolStripMenuItem.Enabled = True
                 End If
             End If
 
@@ -459,8 +448,8 @@
             cmdStandShipConfrim.Enabled = True
             cmdStandShipExit.Enabled = True
 
-            cmbTOM00003.Enabled = TOrelease_right_local
-            mmbTOM00003.Enabled = TOrelease_right_local
+            cmbTOM00003.Enabled = True
+            ToolStripMenuItem1.Enabled = True
             CancelTOToolStripMenuItem.Enabled = True
             txtPODate.Enabled = True
 
@@ -499,8 +488,7 @@
             '    CmdDtlNext.Enabled = False
             'End If
 
-            cmbTOM00003.Enabled = TOrelease_right_local
-            mmbTOM00003.Enabled = TOrelease_right_local
+            cmbTOM00003.Enabled = True
             cmdMShp.Enabled = True
             cmdStandShip.Enabled = False
             cmdMShpAdd.Enabled = False
@@ -4260,7 +4248,7 @@ tod_adjprc & "','" & _
 
     End Sub
 
-    Private Sub mmbTOM00003_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbTOM00003.Click, mmbTOM00003.Click
+    Private Sub cmbTOM00003_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbTOM00003.Click, ToolStripMenuItem1.Click
         FrmTOM0003 = New TOM00003
 
         FrmTOM0003.callbyTOM01(txtTONo.Text.Trim, cboCoCde.Text.Trim, cboTOStatus.Text)
@@ -4702,7 +4690,7 @@ tod_adjprc & "','" & _
 
     End Sub
 
-    Private Sub mmdCloseTO_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCancelTO.Click, CancelTOToolStripMenuItem.Click
+    Private Sub cmdCloseTO_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCancelTO.Click, CancelTOToolStripMenuItem.Click
         Dim cloqty As Integer = 0
         Dim rs_tmp As DataSet = Nothing
         Dim rs_TOITMDTL As DataSet

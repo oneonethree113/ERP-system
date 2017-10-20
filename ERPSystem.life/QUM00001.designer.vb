@@ -3827,11 +3827,7 @@ Me.gbPanelCstEmt.Controls.Add(Me.lblPrcElemtTitleP)
 Me.gbPanelCstEmt.Controls.Add(Me.txtDiscntP)
 Me.gbPanelCstEmt.Controls.Add(Me.lblDiscntP)
 Me.gbPanelCstEmt.Controls.Add(Me.gbCstEmt2P)
-<<<<<<< HEAD
 Me.gbPanelCstEmt.Location = New System.Drawing.Point(170, 73)
-=======
-Me.gbPanelCstEmt.Location = New System.Drawing.Point(174, 43)
->>>>>>> MPO-UI
 Me.gbPanelCstEmt.Name = "gbPanelCstEmt"
 Me.gbPanelCstEmt.Size = New System.Drawing.Size(747, 594)
 Me.gbPanelCstEmt.TabIndex = 530
@@ -5755,11 +5751,7 @@ Me.PanelMutShp.Controls.Add(Me.cmdPanMutShpIns)
 Me.PanelMutShp.Controls.Add(Me.PanelMutShpHeaderBar)
 Me.PanelMutShp.Controls.Add(Me.cmdPanMutShpQuit)
 Me.PanelMutShp.Controls.Add(Me.dgMutShp)
-<<<<<<< HEAD
 Me.PanelMutShp.Location = New System.Drawing.Point(589, 33)
-=======
-Me.PanelMutShp.Location = New System.Drawing.Point(53, 45)
->>>>>>> MPO-UI
 Me.PanelMutShp.Name = "PanelMutShp"
 Me.PanelMutShp.Size = New System.Drawing.Size(421, 229)
 Me.PanelMutShp.TabIndex = 432
@@ -5826,11 +5818,7 @@ Me.PanelCptBkd.Controls.Add(Me.PanelCptBkdHeaderBar)
 Me.PanelCptBkd.Controls.Add(Me.cmdPanCptBkdIns)
 Me.PanelCptBkd.Controls.Add(Me.dgMatBkd)
 Me.PanelCptBkd.Controls.Add(Me.cmdPanCptBkdQuit)
-<<<<<<< HEAD
 Me.PanelCptBkd.Location = New System.Drawing.Point(949, 31)
-=======
-Me.PanelCptBkd.Location = New System.Drawing.Point(521, 36)
->>>>>>> MPO-UI
 Me.PanelCptBkd.Name = "PanelCptBkd"
 Me.PanelCptBkd.Size = New System.Drawing.Size(421, 229)
 Me.PanelCptBkd.TabIndex = 431
@@ -9567,10 +9555,7 @@ Me.dgOthDtl.TabIndex = 168
 '
 Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
 Me.ClientSize = New System.Drawing.Size(954, 631)
-<<<<<<< HEAD
 Me.Controls.Add(Me.PanelCptBkd)
-=======
->>>>>>> MPO-UI
 Me.Controls.Add(Me.cmdRenew)
 Me.Controls.Add(Me.cmdGenTent)
 Me.Controls.Add(Me.cmdGenSmp)
@@ -9598,14 +9583,8 @@ Me.Controls.Add(Me.lblCoCde)
 Me.Controls.Add(Me.txtCoNam)
 Me.Controls.Add(Me.lblCoNam)
 Me.Controls.Add(Me.btcQUM00001)
-<<<<<<< HEAD
 Me.Controls.Add(Me.PanelMutShp)
 Me.Controls.Add(Me.gbPanelCstEmt)
-=======
-Me.Controls.Add(Me.PanelCptBkd)
-Me.Controls.Add(Me.gbPanelCstEmt)
-Me.Controls.Add(Me.PanelMutShp)
->>>>>>> MPO-UI
 Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
 Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
 Me.MaximizeBox = false

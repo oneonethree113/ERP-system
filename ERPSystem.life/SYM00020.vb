@@ -30,7 +30,7 @@
 
 
 
-    Private Sub mmdClear_Click()
+    Private Sub cmdClear_Click()
 
         Dim YNC As Integer
 
@@ -95,9 +95,9 @@
                         rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_creusr") = "~*NEW*~"
                         'rs_SYMCATCDE.Tables("RESULT").Rows(readingindex )("ymc_creusr") = "~*DEL*~"
                         rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_status") = "Y"
-                        mmdFind.Enabled = False
+                        cmdFind.Enabled = False
                         Cbolevel.Enabled = False
-                        mmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+                        cmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
                     ElseIf rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_status") = "Y" Then
                         rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_creusr") = rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_updusr")
                         rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_status") = " "
@@ -109,9 +109,9 @@
                         rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_creusr") = rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_updusr")
 
                         rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_status") = "Y"
-                        mmdFind.Enabled = False
+                        cmdFind.Enabled = False
                         Cbolevel.Enabled = False
-                        mmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+                        cmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
                     ElseIf rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_status") = "Y" Then
                         rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_creusr") = rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_updusr")
                         rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_status") = " "
@@ -123,9 +123,9 @@
                         rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_updusr") = rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_creusr")
                         rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_creusr") = "~*DEL*~"
                         rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_status") = "Y"
-                        mmdFind.Enabled = False
+                        cmdFind.Enabled = False
                         Cbolevel.Enabled = False
-                        mmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+                        cmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
                     ElseIf rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_status") = "Y" Then
                         rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_creusr") = rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_updusr")
                         rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_status") = " "
@@ -138,9 +138,9 @@
                     rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_updusr") = rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_creusr")
                     rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_creusr") = "~*DEL*~"
                     rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_status") = "Y"
-                    mmdFind.Enabled = False
+                    cmdFind.Enabled = False
                     Cbolevel.Enabled = False
-                    mmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+                    cmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
                 ElseIf rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_status") = "Y" Then
                     rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_creusr") = rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_updusr")
                     rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_status") = " "
@@ -151,13 +151,13 @@
         End If
     End Sub
 
-    Private Sub mmdExit_Click()
-        If checkFocus(Me) Then Exit Sub
+    Private Sub CmdExit_Click()
+
         Me.Close()
 
     End Sub
 
-    Private Sub mmdFind_Click()
+    Private Sub cmdFind_Click()
         '*** perform query on database after user input an item number
         Me.Cursor = Windows.Forms.Cursors.WaitCursor
         readingindex = 0
@@ -204,25 +204,25 @@
             MsgBox("Record not found!")
             Cbolevel.Focus()
             Call Display()
-            mmdInsRow.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
-            mmdDelRow.Enabled = Del_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+            cmdInsRow.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+            cmdDelRow.Enabled = Del_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
             Me.Cursor = Windows.Forms.Cursors.Default
             Exit Sub
         Else
-            mmdInsRow.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
-            mmdDelRow.Enabled = Del_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+            cmdInsRow.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+            cmdDelRow.Enabled = Del_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
 
             Current_TimeStamp = rs_SYMCATCDE.Tables("RESULT").Rows(0)("ymc_timstp")
             Call Display()
         End If
 
 
-        mmdInsRow.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
-        mmdDelRow.Enabled = Del_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+        cmdInsRow.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+        cmdDelRow.Enabled = Del_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
         Me.Cursor = Windows.Forms.Cursors.Default
     End Sub
 
-    Private Sub mmdInsRow_Click()
+    Private Sub cmdInsRow_Click()
 
         Add_flag = True
 
@@ -249,7 +249,7 @@
             End If
 
         End If
-        mmdFind.Enabled = False
+        cmdFind.Enabled = False
         Cbolevel.Enabled = False
 
         Call setStatus("InsRow")
@@ -343,7 +343,7 @@
     End Sub
 
     Private Sub CmdSave_Click()
-        If checkFocus(Me) Then Exit Sub
+
         'If msgbox("M00129") = vbNo Then
         '    Exit Sub
         'End If
@@ -447,7 +447,7 @@
             MsgBox("No update for save!")
         End If
 
-        Call mmdFind_Click()
+        Call cmdFind_Click()
         Me.Cursor = Windows.Forms.Cursors.Default
 
     End Sub
@@ -470,7 +470,7 @@
                 .Columns(2).Visible = False
 
                 .Columns(3).HeaderText = "Category Name"
-                .Columns(3).Width = 130 / 1.23
+                .Columns(3).Width = 130 / 1.73
                 '.Columns(3).Button = True
                 GrdCat.Columns(3).ReadOnly = True        '---------Temp Locked for key field
 
@@ -583,22 +583,26 @@
         If Mode = "Init" Then
             'Call SetInputBoxesStatus("DisableAll")
             'CmdAdd.Enabled = Enq_right 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
-            mmdAdd.Enabled = False
-            mmdSave.Enabled = False
-            mmdDelete.Enabled = False
-            mmdCopy.Enabled = False 'Enq_right 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
-            mmdFind.Enabled = True
-            mmdInsRow.Enabled = False
-            mmdDelRow.Enabled = False
-            mmdExit.Enabled = True
-            mmdClear.Enabled = True
-            mmdSearch.Enabled = False
+            cmdAdd.Enabled = False
+            cmdSave.Enabled = False
+            cmdDelete.Enabled = False
+            cmdCopy.Enabled = False 'Enq_right 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+            cmdFind.Enabled = True
+            'CmdLookup.Enabled = False   'True
+            cmdInsRow.Enabled = False
+            cmdDelRow.Enabled = False
+            cmdExit.Enabled = True
+            cmdClear.Enabled = True
+            cmdSearch.Enabled = False   'True
+            'cmdspecial.Enabled = False  'True
+            'cmdbrowlist.Enabled = False 'True
 
-            Me.mmdPrint.Enabled = False
-            Me.mmdAttach.Enabled = False
-            Me.mmdFunction.Enabled = False
-            Me.mmdLink.Enabled = False
+            cmdFirst.Enabled = False
+            cmdLast.Enabled = False
+            cmdNext.Enabled = False
+            cmdPrev.Enabled = False
 
+            'cboitmstatus.readonly= True
             Call ResetDefaultDisp()
             Call SetStatusBar(Mode)
 
@@ -623,7 +627,7 @@
             'MsgBox("M00214")
             Call SetStatusBar(Mode)
             Call setStatus("Init")
-            Call mmdFind_Click()
+            Call cmdFind_Click()
 
         ElseIf Mode = "DelRow" Then
             Call SetStatusBar("Delete")
@@ -650,12 +654,12 @@
 
 
 
-            mmdCopy.Enabled = False
-            mmdFind.Enabled = False
+            cmdCopy.Enabled = False
+            cmdFind.Enabled = False
             'CmdLookup.Enabled = False
             Cbolevel.Enabled = False
-            mmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
-            mmdDelRow.Enabled = Del_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+            cmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+            cmdDelRow.Enabled = Del_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
 
 
             Call SetStatusBar(Mode)
@@ -683,12 +687,12 @@
         End If
 
         If Not CanModify Then
-            mmdAdd.Enabled = False
-            mmdSave.Enabled = False
-            mmdDelete.Enabled = False
+            cmdAdd.Enabled = False
+            cmdSave.Enabled = False
+            cmdDelete.Enabled = False
             ''CmdLookup.Enabled = False
-            mmdInsRow.Enabled = False
-            mmdDelRow.Enabled = False
+            cmdInsRow.Enabled = False
+            cmdDelRow.Enabled = False
             Call SetStatusBar("ReadOnly")
         End If
 
@@ -696,8 +700,8 @@
     Private Sub ResetDefaultDisp()
 
         If Save_flag = True Then
-            mmdInsRow.Enabled = Enq_right_local 'True'*** For Access Right use, added by Tommy on 5 Oct 2001
-            mmdDelRow.Enabled = Del_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+            cmdInsRow.Enabled = Enq_right_local 'True'*** For Access Right use, added by Tommy on 5 Oct 2001
+            cmdDelRow.Enabled = Del_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
             Save_flag = False
             Exit Sub
         Else
@@ -880,8 +884,8 @@
 
     End Sub
 
-    Private Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFind.Click
-        Call mmdFind_Click()
+    Private Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFind.Click
+        Call cmdFind_Click()
 
     End Sub
 
@@ -890,7 +894,7 @@
     End Sub
 
 
-    Private Sub cmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
+    Private Sub cmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSave.Click
         Call CmdSave_Click()
 
     End Sub
@@ -910,9 +914,9 @@
                 Else
                     rs_SYMCATCDE.Tables("RESULT").DefaultView(df_readingindex)("ymc_creusr") = "~*DEL*~"
                 End If
-                mmdFind.Enabled = False
+                cmdFind.Enabled = False
                 Cbolevel.Enabled = False
-                mmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+                cmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
             Else
                 rs_SYMCATCDE.Tables("RESULT").DefaultView(df_readingindex)(0) = " "
                 If rs_SYMCATCDE.Tables("RESULT").DefaultView(df_readingindex)("ymc_creusr") = "~*NEW*~" Then
@@ -927,21 +931,21 @@
             If Trim(rs_SYMCATCDE.Tables("RESULT").DefaultView(df_readingindex)(6)) = "" Then
                 rs_SYMCATCDE.Tables("RESULT").DefaultView(df_readingindex)(6) = "Y"
                 rs_SYMCATCDE.Tables("RESULT").DefaultView(df_readingindex)("ymc_cloth") = "Y"
-                mmdFind.Enabled = False
+                cmdFind.Enabled = False
                 Cbolevel.Enabled = False
-                mmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+                cmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
             ElseIf Trim(rs_SYMCATCDE.Tables("RESULT").DefaultView(df_readingindex)(6)) = "Y" Then
                 rs_SYMCATCDE.Tables("RESULT").DefaultView(df_readingindex)(6) = "P"
                 rs_SYMCATCDE.Tables("RESULT").DefaultView(df_readingindex)("ymc_cloth") = "P"
-                mmdFind.Enabled = False
+                cmdFind.Enabled = False
                 Cbolevel.Enabled = False
-                mmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+                cmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
             Else
                 rs_SYMCATCDE.Tables("RESULT").DefaultView(df_readingindex)(6) = " "
                 rs_SYMCATCDE.Tables("RESULT").DefaultView(df_readingindex)("ymc_cloth") = ""
-                mmdFind.Enabled = False
+                cmdFind.Enabled = False
                 Cbolevel.Enabled = False
-                mmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+                cmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
             End If
             If Trim(rs_SYMCATCDE.Tables("RESULT").DefaultView(df_readingindex)("ymc_creusr")) <> "~*ADD*~" And _
                 Trim(rs_SYMCATCDE.Tables("RESULT").DefaultView(df_readingindex)("ymc_creusr")) <> "~*NEW*~" And _
@@ -1001,9 +1005,9 @@
 
         If rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_creusr") <> "~*ADD*~" Then
             rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_creusr") = "~*UPD*~"
-            mmdFind.Enabled = False
+            cmdFind.Enabled = False
             Cbolevel.Enabled = False
-            mmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+            cmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
         End If
 
         Dim lngMOQMOA As Long
@@ -1118,9 +1122,9 @@
 
         If rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_creusr") <> "~*ADD*~" Then
             rs_SYMCATCDE.Tables("RESULT").Rows(readingindex)("ymc_creusr") = "~*UPD*~"
-            mmdFind.Enabled = False
+            cmdFind.Enabled = False
             Cbolevel.Enabled = False
-            mmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+            cmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
         End If
 
 
@@ -1165,24 +1169,18 @@
 
 
 
-    Private Sub cmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdInsRow.Click
-        Call mmdInsRow_Click()
+    Private Sub cmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdInsRow.Click
+        Call cmdInsRow_Click()
     End Sub
 
     Private Sub Cbolevel_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cbolevel.SelectedIndexChanged
-        Call mmdFind_Click()
+        Call cmdFind_Click()
 
     End Sub
 
-    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
-        Call mmdClear_Click()
+    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
+        Call cmdClear_Click()
 
-    End Sub
-
-    Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
-        Call mmdExit_Click()
     End Sub
 End Class
-
-
 

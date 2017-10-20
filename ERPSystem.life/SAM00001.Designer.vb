@@ -484,7 +484,7 @@ Partial Class SAM00001
         'SummaryToolStripMenuItem
         '
         Me.SummaryToolStripMenuItem.Name = "SummaryToolStripMenuItem"
-        Me.SummaryToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
+        Me.SummaryToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
         Me.SummaryToolStripMenuItem.Text = "Sample Order Summary"
         '
         't7

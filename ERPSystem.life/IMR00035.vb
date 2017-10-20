@@ -574,18 +574,4 @@ Public Class IMR00035
         frmItemList.ShowDialog()
         txt_S_ItmNo.Text = frmItemList.strSel
     End Sub
-
-    Public Sub callByIMM01(ByVal ItmNo As String)
-        txt_S_ItmNo.Text = ItmNo
-        AddHandler Me.Shown, AddressOf callByIMM01AfterLoading
-        Me.ShowDialog()
-
-    End Sub
-
-
-    Private Sub callByIMM01AfterLoading()
-        txt_S_ItmNo.Enabled = False
-        cmd_S_ItmNo.Enabled = False
-        RemoveHandler Me.Shown, AddressOf callByIMM01AfterLoading
-    End Sub
 End Class

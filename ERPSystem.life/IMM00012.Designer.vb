@@ -22,7 +22,6 @@ Partial Class IMM00012
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IMM00012))
         Me.Label1 = New System.Windows.Forms.Label
         Me.txtVenItm = New System.Windows.Forms.TextBox
         Me.txtCusVenFrom = New System.Windows.Forms.TextBox
@@ -103,6 +102,20 @@ Partial Class IMM00012
         Me.StatusBar = New System.Windows.Forms.StatusStrip
         Me.lblLeft = New System.Windows.Forms.ToolStripStatusLabel
         Me.lblRight = New System.Windows.Forms.ToolStripStatusLabel
+        Me.cmdQuickInsert = New System.Windows.Forms.Button
+        Me.cmdDelete = New System.Windows.Forms.Button
+        Me.cmdSave = New System.Windows.Forms.Button
+        Me.cmdLast = New System.Windows.Forms.Button
+        Me.cmdPrevious = New System.Windows.Forms.Button
+        Me.cmdAdd = New System.Windows.Forms.Button
+        Me.cmdNext = New System.Windows.Forms.Button
+        Me.cmdFind = New System.Windows.Forms.Button
+        Me.cmdCopy = New System.Windows.Forms.Button
+        Me.cmdClear = New System.Windows.Forms.Button
+        Me.cmdExit = New System.Windows.Forms.Button
+        Me.cmdDelRow = New System.Windows.Forms.Button
+        Me.cmdFirst = New System.Windows.Forms.Button
+        Me.cmdSearch = New System.Windows.Forms.Button
         Me.grpReason = New System.Windows.Forms.GroupBox
         Me.chkHmnErrHK = New System.Windows.Forms.CheckBox
         Me.chkHmnErrFTY = New System.Windows.Forms.CheckBox
@@ -138,34 +151,6 @@ Partial Class IMM00012
         Me.TextBox9 = New System.Windows.Forms.TextBox
         Me.TextBox10 = New System.Windows.Forms.TextBox
         Me.TextBox11 = New System.Windows.Forms.TextBox
-        Me.Label38 = New System.Windows.Forms.Label
-        Me.Label40 = New System.Windows.Forms.Label
-        Me.Label42 = New System.Windows.Forms.Label
-        Me.Label44 = New System.Windows.Forms.Label
-        Me.Label46 = New System.Windows.Forms.Label
-        Me.menuStrip = New System.Windows.Forms.MenuStrip
-        Me.mmdAdd = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdSave = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdDelete = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdCopy = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdFind = New System.Windows.Forms.ToolStripMenuItem
-        Me.t1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdClear = New System.Windows.Forms.ToolStripMenuItem
-        Me.t2 = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdSearch = New System.Windows.Forms.ToolStripMenuItem
-        Me.t3 = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdInsRow = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdDelRow = New System.Windows.Forms.ToolStripMenuItem
-        Me.t4 = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdPrint = New System.Windows.Forms.ToolStripMenuItem
-        Me.t5 = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdAttach = New System.Windows.Forms.ToolStripMenuItem
-        Me.t6 = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdFunction = New System.Windows.Forms.ToolStripMenuItem
-        Me.t7 = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdLink = New System.Windows.Forms.ToolStripMenuItem
-        Me.t8 = New System.Windows.Forms.ToolStripMenuItem
-        Me.mmdExit = New System.Windows.Forms.ToolStripMenuItem
         Me.grpStage.SuspendLayout()
         Me.tabFrame.SuspendLayout()
         Me.tabSummary.SuspendLayout()
@@ -176,30 +161,30 @@ Partial Class IMM00012
         CType(Me.grdDetail, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusBar.SuspendLayout()
         Me.grpReason.SuspendLayout()
-        Me.menuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Blue
         Me.Label1.Location = New System.Drawing.Point(8, 31)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(84, 12)
+        Me.Label1.Size = New System.Drawing.Size(84, 13)
         Me.Label1.TabIndex = 17
         Me.Label1.Text = "Vendor Item No."
         '
         'txtVenItm
         '
-        Me.txtVenItm.Location = New System.Drawing.Point(159, 28)
+        Me.txtVenItm.Location = New System.Drawing.Point(138, 29)
         Me.txtVenItm.MaxLength = 20
         Me.txtVenItm.Name = "txtVenItm"
-        Me.txtVenItm.Size = New System.Drawing.Size(288, 22)
+        Me.txtVenItm.Size = New System.Drawing.Size(174, 22)
         Me.txtVenItm.TabIndex = 18
         '
         'txtCusVenFrom
         '
-        Me.txtCusVenFrom.Location = New System.Drawing.Point(226, 51)
+        Me.txtCusVenFrom.Location = New System.Drawing.Point(138, 50)
         Me.txtCusVenFrom.MaxLength = 6
         Me.txtCusVenFrom.Name = "txtCusVenFrom"
         Me.txtCusVenFrom.Size = New System.Drawing.Size(70, 22)
@@ -208,17 +193,18 @@ Partial Class IMM00012
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Blue
         Me.Label2.Location = New System.Drawing.Point(8, 53)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(112, 12)
+        Me.Label2.Size = New System.Drawing.Size(114, 13)
         Me.Label2.TabIndex = 19
         Me.Label2.Text = "Custom Vendor Range"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(328, 54)
+        Me.Label3.Location = New System.Drawing.Point(214, 53)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(20, 12)
         Me.Label3.TabIndex = 21
@@ -226,7 +212,7 @@ Partial Class IMM00012
         '
         'txtCusVenTo
         '
-        Me.txtCusVenTo.Location = New System.Drawing.Point(377, 51)
+        Me.txtCusVenTo.Location = New System.Drawing.Point(242, 50)
         Me.txtCusVenTo.MaxLength = 6
         Me.txtCusVenTo.Name = "txtCusVenTo"
         Me.txtCusVenTo.Size = New System.Drawing.Size(70, 22)
@@ -234,7 +220,7 @@ Partial Class IMM00012
         '
         'txtDesVenTo
         '
-        Me.txtDesVenTo.Location = New System.Drawing.Point(377, 72)
+        Me.txtDesVenTo.Location = New System.Drawing.Point(242, 71)
         Me.txtDesVenTo.MaxLength = 6
         Me.txtDesVenTo.Name = "txtDesVenTo"
         Me.txtDesVenTo.Size = New System.Drawing.Size(70, 22)
@@ -243,7 +229,7 @@ Partial Class IMM00012
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(328, 75)
+        Me.Label4.Location = New System.Drawing.Point(214, 74)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(20, 12)
         Me.Label4.TabIndex = 25
@@ -251,7 +237,7 @@ Partial Class IMM00012
         '
         'txtDesVenFrom
         '
-        Me.txtDesVenFrom.Location = New System.Drawing.Point(226, 72)
+        Me.txtDesVenFrom.Location = New System.Drawing.Point(138, 71)
         Me.txtDesVenFrom.MaxLength = 6
         Me.txtDesVenFrom.Name = "txtDesVenFrom"
         Me.txtDesVenFrom.Size = New System.Drawing.Size(70, 22)
@@ -260,16 +246,17 @@ Partial Class IMM00012
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Blue
         Me.Label5.Location = New System.Drawing.Point(8, 74)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(108, 12)
+        Me.Label5.Size = New System.Drawing.Size(112, 13)
         Me.Label5.TabIndex = 23
         Me.Label5.Text = "Design Vendor Range"
         '
         'txtPrdVenTo
         '
-        Me.txtPrdVenTo.Location = New System.Drawing.Point(377, 93)
+        Me.txtPrdVenTo.Location = New System.Drawing.Point(242, 92)
         Me.txtPrdVenTo.MaxLength = 6
         Me.txtPrdVenTo.Name = "txtPrdVenTo"
         Me.txtPrdVenTo.Size = New System.Drawing.Size(70, 22)
@@ -278,7 +265,7 @@ Partial Class IMM00012
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(328, 96)
+        Me.Label6.Location = New System.Drawing.Point(214, 95)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(20, 12)
         Me.Label6.TabIndex = 29
@@ -286,7 +273,7 @@ Partial Class IMM00012
         '
         'txtPrdVenFrom
         '
-        Me.txtPrdVenFrom.Location = New System.Drawing.Point(226, 93)
+        Me.txtPrdVenFrom.Location = New System.Drawing.Point(138, 92)
         Me.txtPrdVenFrom.MaxLength = 6
         Me.txtPrdVenFrom.Name = "txtPrdVenFrom"
         Me.txtPrdVenFrom.Size = New System.Drawing.Size(70, 22)
@@ -295,17 +282,18 @@ Partial Class IMM00012
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Blue
         Me.Label7.Location = New System.Drawing.Point(8, 95)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(101, 12)
+        Me.Label7.Size = New System.Drawing.Size(104, 13)
         Me.Label7.TabIndex = 27
         Me.Label7.Text = "Prod. Vendor Range"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(328, 116)
+        Me.Label8.Location = New System.Drawing.Point(214, 116)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(20, 12)
         Me.Label8.TabIndex = 33
@@ -314,16 +302,17 @@ Partial Class IMM00012
         'Label9
         '
         Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Blue
-        Me.Label9.Location = New System.Drawing.Point(8, 115)
+        Me.Label9.Location = New System.Drawing.Point(8, 116)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(111, 12)
+        Me.Label9.Size = New System.Drawing.Size(120, 13)
         Me.Label9.TabIndex = 31
         Me.Label9.Text = "Processing Date Range"
         '
         'txtLineTo
         '
-        Me.txtLineTo.Location = New System.Drawing.Point(377, 135)
+        Me.txtLineTo.Location = New System.Drawing.Point(242, 135)
         Me.txtLineTo.MaxLength = 10
         Me.txtLineTo.Name = "txtLineTo"
         Me.txtLineTo.Size = New System.Drawing.Size(70, 22)
@@ -332,7 +321,7 @@ Partial Class IMM00012
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(328, 138)
+        Me.Label10.Location = New System.Drawing.Point(214, 138)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(20, 12)
         Me.Label10.TabIndex = 37
@@ -340,7 +329,7 @@ Partial Class IMM00012
         '
         'txtLineFrom
         '
-        Me.txtLineFrom.Location = New System.Drawing.Point(226, 135)
+        Me.txtLineFrom.Location = New System.Drawing.Point(138, 135)
         Me.txtLineFrom.MaxLength = 10
         Me.txtLineFrom.Name = "txtLineFrom"
         Me.txtLineFrom.Size = New System.Drawing.Size(70, 22)
@@ -349,27 +338,29 @@ Partial Class IMM00012
         'Label11
         '
         Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Blue
-        Me.Label11.Location = New System.Drawing.Point(8, 137)
+        Me.Label11.Location = New System.Drawing.Point(8, 138)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(120, 12)
+        Me.Label11.Size = New System.Drawing.Size(127, 13)
         Me.Label11.TabIndex = 35
         Me.Label11.Text = "Prod Line / Season Code"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Blue
-        Me.Label12.Location = New System.Drawing.Point(461, 31)
+        Me.Label12.Location = New System.Drawing.Point(325, 31)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(59, 12)
+        Me.Label12.Size = New System.Drawing.Size(63, 13)
         Me.Label12.TabIndex = 39
         Me.Label12.Text = "Item Status:"
         '
         'chkComplete
         '
         Me.chkComplete.AutoSize = True
-        Me.chkComplete.Location = New System.Drawing.Point(565, 30)
+        Me.chkComplete.Location = New System.Drawing.Point(429, 30)
         Me.chkComplete.Name = "chkComplete"
         Me.chkComplete.Size = New System.Drawing.Size(69, 16)
         Me.chkComplete.TabIndex = 41
@@ -379,7 +370,7 @@ Partial Class IMM00012
         'chkIncomplete
         '
         Me.chkIncomplete.AutoSize = True
-        Me.chkIncomplete.Location = New System.Drawing.Point(718, 30)
+        Me.chkIncomplete.Location = New System.Drawing.Point(545, 30)
         Me.chkIncomplete.Name = "chkIncomplete"
         Me.chkIncomplete.Size = New System.Drawing.Size(76, 16)
         Me.chkIncomplete.TabIndex = 42
@@ -389,17 +380,18 @@ Partial Class IMM00012
         'Label13
         '
         Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.Blue
-        Me.Label13.Location = New System.Drawing.Point(461, 48)
+        Me.Label13.Location = New System.Drawing.Point(325, 48)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(35, 12)
+        Me.Label13.Size = New System.Drawing.Size(37, 13)
         Me.Label13.TabIndex = 43
         Me.Label13.Text = "Mode:"
         '
         'chkInsert
         '
         Me.chkInsert.AutoSize = True
-        Me.chkInsert.Location = New System.Drawing.Point(565, 47)
+        Me.chkInsert.Location = New System.Drawing.Point(429, 47)
         Me.chkInsert.Name = "chkInsert"
         Me.chkInsert.Size = New System.Drawing.Size(91, 16)
         Me.chkInsert.TabIndex = 44
@@ -409,7 +401,7 @@ Partial Class IMM00012
         'chkUpdate
         '
         Me.chkUpdate.AutoSize = True
-        Me.chkUpdate.Location = New System.Drawing.Point(718, 47)
+        Me.chkUpdate.Location = New System.Drawing.Point(545, 47)
         Me.chkUpdate.Name = "chkUpdate"
         Me.chkUpdate.Size = New System.Drawing.Size(57, 16)
         Me.chkUpdate.TabIndex = 45
@@ -419,7 +411,7 @@ Partial Class IMM00012
         'chkAlias
         '
         Me.chkAlias.AutoSize = True
-        Me.chkAlias.Location = New System.Drawing.Point(842, 47)
+        Me.chkAlias.Location = New System.Drawing.Point(640, 47)
         Me.chkAlias.Name = "chkAlias"
         Me.chkAlias.Size = New System.Drawing.Size(85, 16)
         Me.chkAlias.TabIndex = 46
@@ -429,17 +421,18 @@ Partial Class IMM00012
         'Label14
         '
         Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.Blue
-        Me.Label14.Location = New System.Drawing.Point(461, 65)
+        Me.Label14.Location = New System.Drawing.Point(325, 65)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(72, 12)
+        Me.Label14.Size = New System.Drawing.Size(78, 13)
         Me.Label14.TabIndex = 47
         Me.Label14.Text = "Record Status:"
         '
         'chkWait
         '
         Me.chkWait.AutoSize = True
-        Me.chkWait.Location = New System.Drawing.Point(842, 64)
+        Me.chkWait.Location = New System.Drawing.Point(640, 64)
         Me.chkWait.Name = "chkWait"
         Me.chkWait.Size = New System.Drawing.Size(110, 16)
         Me.chkWait.TabIndex = 50
@@ -449,7 +442,7 @@ Partial Class IMM00012
         'chkReject
         '
         Me.chkReject.AutoSize = True
-        Me.chkReject.Location = New System.Drawing.Point(718, 64)
+        Me.chkReject.Location = New System.Drawing.Point(545, 64)
         Me.chkReject.Name = "chkReject"
         Me.chkReject.Size = New System.Drawing.Size(64, 16)
         Me.chkReject.TabIndex = 49
@@ -459,7 +452,7 @@ Partial Class IMM00012
         'chkApprove
         '
         Me.chkApprove.AutoSize = True
-        Me.chkApprove.Location = New System.Drawing.Point(565, 64)
+        Me.chkApprove.Location = New System.Drawing.Point(429, 64)
         Me.chkApprove.Name = "chkApprove"
         Me.chkApprove.Size = New System.Drawing.Size(71, 16)
         Me.chkApprove.TabIndex = 48
@@ -475,16 +468,16 @@ Partial Class IMM00012
         Me.grpStage.Controls.Add(Me.Label15)
         Me.grpStage.Controls.Add(Me.txtApplyTo)
         Me.grpStage.Controls.Add(Me.cmdApply)
-        Me.grpStage.Location = New System.Drawing.Point(455, 79)
+        Me.grpStage.Location = New System.Drawing.Point(319, 79)
         Me.grpStage.Name = "grpStage"
-        Me.grpStage.Size = New System.Drawing.Size(495, 36)
+        Me.grpStage.Size = New System.Drawing.Size(429, 36)
         Me.grpStage.TabIndex = 51
         Me.grpStage.TabStop = False
         Me.grpStage.Text = "Approve / Reject"
         '
         'txtApplyFrom
         '
-        Me.txtApplyFrom.Location = New System.Drawing.Point(306, 11)
+        Me.txtApplyFrom.Location = New System.Drawing.Point(257, 13)
         Me.txtApplyFrom.MaxLength = 6
         Me.txtApplyFrom.Name = "txtApplyFrom"
         Me.txtApplyFrom.Size = New System.Drawing.Size(30, 22)
@@ -493,7 +486,7 @@ Partial Class IMM00012
         'optWait
         '
         Me.optWait.AutoSize = True
-        Me.optWait.Location = New System.Drawing.Point(187, 14)
+        Me.optWait.Location = New System.Drawing.Point(150, 14)
         Me.optWait.Name = "optWait"
         Me.optWait.Size = New System.Drawing.Size(109, 16)
         Me.optWait.TabIndex = 2
@@ -504,7 +497,7 @@ Partial Class IMM00012
         'optRejection
         '
         Me.optRejection.AutoSize = True
-        Me.optRejection.Location = New System.Drawing.Point(95, 14)
+        Me.optRejection.Location = New System.Drawing.Point(78, 14)
         Me.optRejection.Name = "optRejection"
         Me.optRejection.Size = New System.Drawing.Size(67, 16)
         Me.optRejection.TabIndex = 1
@@ -526,7 +519,7 @@ Partial Class IMM00012
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(343, 15)
+        Me.Label15.Location = New System.Drawing.Point(290, 16)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(14, 12)
         Me.Label15.TabIndex = 53
@@ -534,7 +527,7 @@ Partial Class IMM00012
         '
         'txtApplyTo
         '
-        Me.txtApplyTo.Location = New System.Drawing.Point(367, 11)
+        Me.txtApplyTo.Location = New System.Drawing.Point(308, 13)
         Me.txtApplyTo.MaxLength = 6
         Me.txtApplyTo.Name = "txtApplyTo"
         Me.txtApplyTo.Size = New System.Drawing.Size(30, 22)
@@ -542,7 +535,7 @@ Partial Class IMM00012
         '
         'cmdApply
         '
-        Me.cmdApply.Location = New System.Drawing.Point(407, 12)
+        Me.cmdApply.Location = New System.Drawing.Point(341, 11)
         Me.cmdApply.Name = "cmdApply"
         Me.cmdApply.Size = New System.Drawing.Size(82, 21)
         Me.cmdApply.TabIndex = 55
@@ -551,7 +544,7 @@ Partial Class IMM00012
         '
         'cmdAssort
         '
-        Me.cmdAssort.Location = New System.Drawing.Point(242, 161)
+        Me.cmdAssort.Location = New System.Drawing.Point(219, 161)
         Me.cmdAssort.Name = "cmdAssort"
         Me.cmdAssort.Size = New System.Drawing.Size(88, 21)
         Me.cmdAssort.TabIndex = 56
@@ -569,7 +562,7 @@ Partial Class IMM00012
         '
         'cmdIAR00001
         '
-        Me.cmdIAR00001.Location = New System.Drawing.Point(129, 161)
+        Me.cmdIAR00001.Location = New System.Drawing.Point(116, 161)
         Me.cmdIAR00001.Name = "cmdIAR00001"
         Me.cmdIAR00001.Size = New System.Drawing.Size(97, 21)
         Me.cmdIAR00001.TabIndex = 58
@@ -579,7 +572,7 @@ Partial Class IMM00012
         'chkConfirmUpload
         '
         Me.chkConfirmUpload.AutoSize = True
-        Me.chkConfirmUpload.Location = New System.Drawing.Point(346, 164)
+        Me.chkConfirmUpload.Location = New System.Drawing.Point(179, 193)
         Me.chkConfirmUpload.Name = "chkConfirmUpload"
         Me.chkConfirmUpload.Size = New System.Drawing.Size(101, 16)
         Me.chkConfirmUpload.TabIndex = 59
@@ -590,10 +583,10 @@ Partial Class IMM00012
         '
         Me.tabFrame.Controls.Add(Me.tabSummary)
         Me.tabFrame.Controls.Add(Me.tabDetail)
-        Me.tabFrame.Location = New System.Drawing.Point(5, 186)
+        Me.tabFrame.Location = New System.Drawing.Point(6, 194)
         Me.tabFrame.Name = "tabFrame"
         Me.tabFrame.SelectedIndex = 0
-        Me.tabFrame.Size = New System.Drawing.Size(946, 433)
+        Me.tabFrame.Size = New System.Drawing.Size(740, 241)
         Me.tabFrame.TabIndex = 60
         '
         'tabSummary
@@ -602,7 +595,7 @@ Partial Class IMM00012
         Me.tabSummary.Location = New System.Drawing.Point(4, 22)
         Me.tabSummary.Name = "tabSummary"
         Me.tabSummary.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabSummary.Size = New System.Drawing.Size(938, 407)
+        Me.tabSummary.Size = New System.Drawing.Size(732, 215)
         Me.tabSummary.TabIndex = 0
         Me.tabSummary.Text = "(1) Summary"
         Me.tabSummary.UseVisualStyleBackColor = True
@@ -610,9 +603,9 @@ Partial Class IMM00012
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.grdSummary)
-        Me.GroupBox2.Location = New System.Drawing.Point(4, 0)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 0)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(938, 401)
+        Me.GroupBox2.Size = New System.Drawing.Size(720, 211)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         '
@@ -620,10 +613,10 @@ Partial Class IMM00012
         '
         Me.grdSummary.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.grdSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grdSummary.Location = New System.Drawing.Point(5, 14)
+        Me.grdSummary.Location = New System.Drawing.Point(7, 11)
         Me.grdSummary.Name = "grdSummary"
         Me.grdSummary.RowTemplate.Height = 15
-        Me.grdSummary.Size = New System.Drawing.Size(923, 381)
+        Me.grdSummary.Size = New System.Drawing.Size(707, 195)
         Me.grdSummary.TabIndex = 0
         '
         'tabDetail
@@ -654,10 +647,11 @@ Partial Class IMM00012
         Me.tabDetail.Controls.Add(Me.chkApprove_dtl)
         Me.tabDetail.Controls.Add(Me.txtVenItm_dtl)
         Me.tabDetail.Controls.Add(Me.Label16)
+        Me.tabDetail.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tabDetail.Location = New System.Drawing.Point(4, 22)
         Me.tabDetail.Name = "tabDetail"
         Me.tabDetail.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabDetail.Size = New System.Drawing.Size(938, 407)
+        Me.tabDetail.Size = New System.Drawing.Size(732, 215)
         Me.tabDetail.TabIndex = 1
         Me.tabDetail.Text = "(2) Detail"
         Me.tabDetail.UseVisualStyleBackColor = True
@@ -665,9 +659,9 @@ Partial Class IMM00012
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.grdDetail)
-        Me.GroupBox3.Location = New System.Drawing.Point(7, 87)
+        Me.GroupBox3.Location = New System.Drawing.Point(8, 68)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(928, 314)
+        Me.GroupBox3.Size = New System.Drawing.Size(719, 143)
         Me.GroupBox3.TabIndex = 44
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Modified Information"
@@ -676,11 +670,10 @@ Partial Class IMM00012
         '
         Me.grdDetail.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.grdDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grdDetail.Location = New System.Drawing.Point(6, 21)
+        Me.grdDetail.Location = New System.Drawing.Point(7, 16)
         Me.grdDetail.Name = "grdDetail"
-        Me.grdDetail.RowHeadersWidth = 20
         Me.grdDetail.RowTemplate.Height = 15
-        Me.grdDetail.Size = New System.Drawing.Size(916, 287)
+        Me.grdDetail.Size = New System.Drawing.Size(704, 122)
         Me.grdDetail.TabIndex = 0
         '
         'txtEngDesc_dtl
@@ -688,19 +681,20 @@ Partial Class IMM00012
         Me.txtEngDesc_dtl.BackColor = System.Drawing.Color.White
         Me.txtEngDesc_dtl.Enabled = False
         Me.txtEngDesc_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEngDesc_dtl.Location = New System.Drawing.Point(81, 60)
+        Me.txtEngDesc_dtl.Location = New System.Drawing.Point(81, 46)
         Me.txtEngDesc_dtl.MaxLength = 0
         Me.txtEngDesc_dtl.Name = "txtEngDesc_dtl"
-        Me.txtEngDesc_dtl.Size = New System.Drawing.Size(530, 18)
+        Me.txtEngDesc_dtl.Size = New System.Drawing.Size(399, 18)
         Me.txtEngDesc_dtl.TabIndex = 43
         '
         'Label24
         '
         Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.Blue
-        Me.Label24.Location = New System.Drawing.Point(15, 63)
+        Me.Label24.Location = New System.Drawing.Point(15, 49)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(55, 12)
+        Me.Label24.Size = New System.Drawing.Size(51, 12)
         Me.Label24.TabIndex = 42
         Me.Label24.Text = "Eng. Desc."
         '
@@ -709,7 +703,7 @@ Partial Class IMM00012
         Me.txtUpdDate_dtl.BackColor = System.Drawing.Color.White
         Me.txtUpdDate_dtl.Enabled = False
         Me.txtUpdDate_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUpdDate_dtl.Location = New System.Drawing.Point(862, 32)
+        Me.txtUpdDate_dtl.Location = New System.Drawing.Point(654, 26)
         Me.txtUpdDate_dtl.MaxLength = 0
         Me.txtUpdDate_dtl.Name = "txtUpdDate_dtl"
         Me.txtUpdDate_dtl.Size = New System.Drawing.Size(70, 18)
@@ -719,10 +713,11 @@ Partial Class IMM00012
         'Label23
         '
         Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.ForeColor = System.Drawing.Color.Blue
-        Me.Label23.Location = New System.Drawing.Point(801, 35)
+        Me.Label23.Location = New System.Drawing.Point(593, 29)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(52, 12)
+        Me.Label23.Size = New System.Drawing.Size(47, 12)
         Me.Label23.TabIndex = 40
         Me.Label23.Text = "Upd. Date"
         '
@@ -731,7 +726,7 @@ Partial Class IMM00012
         Me.txtCusVenNo_dtl.BackColor = System.Drawing.Color.White
         Me.txtCusVenNo_dtl.Enabled = False
         Me.txtCusVenNo_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCusVenNo_dtl.Location = New System.Drawing.Point(705, 32)
+        Me.txtCusVenNo_dtl.Location = New System.Drawing.Point(537, 26)
         Me.txtCusVenNo_dtl.MaxLength = 0
         Me.txtCusVenNo_dtl.Name = "txtCusVenNo_dtl"
         Me.txtCusVenNo_dtl.Size = New System.Drawing.Size(45, 18)
@@ -740,10 +735,11 @@ Partial Class IMM00012
         'Label22
         '
         Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.Blue
-        Me.Label22.Location = New System.Drawing.Point(652, 35)
+        Me.Label22.Location = New System.Drawing.Point(484, 29)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(47, 12)
+        Me.Label22.Size = New System.Drawing.Size(42, 12)
         Me.Label22.TabIndex = 38
         Me.Label22.Text = "C. Vend."
         '
@@ -752,7 +748,7 @@ Partial Class IMM00012
         Me.txtPrdVenNo_dtl.BackColor = System.Drawing.Color.White
         Me.txtPrdVenNo_dtl.Enabled = False
         Me.txtPrdVenNo_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrdVenNo_dtl.Location = New System.Drawing.Point(566, 32)
+        Me.txtPrdVenNo_dtl.Location = New System.Drawing.Point(429, 26)
         Me.txtPrdVenNo_dtl.MaxLength = 0
         Me.txtPrdVenNo_dtl.Name = "txtPrdVenNo_dtl"
         Me.txtPrdVenNo_dtl.Size = New System.Drawing.Size(45, 18)
@@ -761,10 +757,11 @@ Partial Class IMM00012
         'Label21
         '
         Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.Blue
-        Me.Label21.Location = New System.Drawing.Point(514, 35)
+        Me.Label21.Location = New System.Drawing.Point(377, 29)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(45, 12)
+        Me.Label21.Size = New System.Drawing.Size(41, 12)
         Me.Label21.TabIndex = 36
         Me.Label21.Text = "P. Vend."
         '
@@ -773,7 +770,7 @@ Partial Class IMM00012
         Me.txtDesVenNo_dtl.BackColor = System.Drawing.Color.White
         Me.txtDesVenNo_dtl.Enabled = False
         Me.txtDesVenNo_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDesVenNo_dtl.Location = New System.Drawing.Point(417, 32)
+        Me.txtDesVenNo_dtl.Location = New System.Drawing.Point(322, 26)
         Me.txtDesVenNo_dtl.MaxLength = 0
         Me.txtDesVenNo_dtl.Name = "txtDesVenNo_dtl"
         Me.txtDesVenNo_dtl.Size = New System.Drawing.Size(45, 18)
@@ -782,10 +779,11 @@ Partial Class IMM00012
         'Label20
         '
         Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.Blue
-        Me.Label20.Location = New System.Drawing.Point(363, 35)
+        Me.Label20.Location = New System.Drawing.Point(268, 29)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(47, 12)
+        Me.Label20.Size = New System.Drawing.Size(42, 12)
         Me.Label20.TabIndex = 34
         Me.Label20.Text = "D. Vend."
         '
@@ -794,7 +792,7 @@ Partial Class IMM00012
         Me.txtMtrQty_dtl.BackColor = System.Drawing.Color.White
         Me.txtMtrQty_dtl.Enabled = False
         Me.txtMtrQty_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMtrQty_dtl.Location = New System.Drawing.Point(289, 32)
+        Me.txtMtrQty_dtl.Location = New System.Drawing.Point(222, 26)
         Me.txtMtrQty_dtl.MaxLength = 0
         Me.txtMtrQty_dtl.Name = "txtMtrQty_dtl"
         Me.txtMtrQty_dtl.Size = New System.Drawing.Size(35, 18)
@@ -803,10 +801,11 @@ Partial Class IMM00012
         'Label19
         '
         Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.Blue
-        Me.Label19.Location = New System.Drawing.Point(244, 35)
+        Me.Label19.Location = New System.Drawing.Point(177, 29)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(42, 12)
+        Me.Label19.Size = New System.Drawing.Size(37, 12)
         Me.Label19.TabIndex = 32
         Me.Label19.Text = "Mtr Qty"
         '
@@ -815,7 +814,7 @@ Partial Class IMM00012
         Me.txtInrQty_dtl.BackColor = System.Drawing.Color.White
         Me.txtInrQty_dtl.Enabled = False
         Me.txtInrQty_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtInrQty_dtl.Location = New System.Drawing.Point(187, 32)
+        Me.txtInrQty_dtl.Location = New System.Drawing.Point(131, 26)
         Me.txtInrQty_dtl.MaxLength = 0
         Me.txtInrQty_dtl.Name = "txtInrQty_dtl"
         Me.txtInrQty_dtl.Size = New System.Drawing.Size(35, 18)
@@ -824,10 +823,11 @@ Partial Class IMM00012
         'Label18
         '
         Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.Blue
-        Me.Label18.Location = New System.Drawing.Point(145, 35)
+        Me.Label18.Location = New System.Drawing.Point(89, 29)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(39, 12)
+        Me.Label18.Size = New System.Drawing.Size(33, 12)
         Me.Label18.TabIndex = 30
         Me.Label18.Text = "Inr Qty"
         '
@@ -836,7 +836,7 @@ Partial Class IMM00012
         Me.txtUM_dtl.BackColor = System.Drawing.Color.White
         Me.txtUM_dtl.Enabled = False
         Me.txtUM_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUM_dtl.Location = New System.Drawing.Point(43, 32)
+        Me.txtUM_dtl.Location = New System.Drawing.Point(35, 26)
         Me.txtUM_dtl.MaxLength = 0
         Me.txtUM_dtl.Name = "txtUM_dtl"
         Me.txtUM_dtl.Size = New System.Drawing.Size(45, 18)
@@ -845,49 +845,50 @@ Partial Class IMM00012
         'Label17
         '
         Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.Blue
-        Me.Label17.Location = New System.Drawing.Point(15, 35)
+        Me.Label17.Location = New System.Drawing.Point(7, 29)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(23, 12)
+        Me.Label17.Size = New System.Drawing.Size(21, 12)
         Me.Label17.TabIndex = 28
         Me.Label17.Text = "UM"
         '
         'cmdLast_dtl
         '
-        Me.cmdLast_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!)
-        Me.cmdLast_dtl.Location = New System.Drawing.Point(882, 6)
+        Me.cmdLast_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdLast_dtl.Location = New System.Drawing.Point(674, 5)
         Me.cmdLast_dtl.Name = "cmdLast_dtl"
-        Me.cmdLast_dtl.Size = New System.Drawing.Size(50, 20)
+        Me.cmdLast_dtl.Size = New System.Drawing.Size(50, 18)
         Me.cmdLast_dtl.TabIndex = 27
         Me.cmdLast_dtl.Text = "Last"
         Me.cmdLast_dtl.UseVisualStyleBackColor = True
         '
         'cmdNext_dtl
         '
-        Me.cmdNext_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!)
-        Me.cmdNext_dtl.Location = New System.Drawing.Point(832, 6)
+        Me.cmdNext_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdNext_dtl.Location = New System.Drawing.Point(624, 5)
         Me.cmdNext_dtl.Name = "cmdNext_dtl"
-        Me.cmdNext_dtl.Size = New System.Drawing.Size(50, 20)
+        Me.cmdNext_dtl.Size = New System.Drawing.Size(50, 18)
         Me.cmdNext_dtl.TabIndex = 26
         Me.cmdNext_dtl.Text = "Next"
         Me.cmdNext_dtl.UseVisualStyleBackColor = True
         '
         'cmdPrev_dtl
         '
-        Me.cmdPrev_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!)
-        Me.cmdPrev_dtl.Location = New System.Drawing.Point(782, 6)
+        Me.cmdPrev_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdPrev_dtl.Location = New System.Drawing.Point(574, 5)
         Me.cmdPrev_dtl.Name = "cmdPrev_dtl"
-        Me.cmdPrev_dtl.Size = New System.Drawing.Size(50, 20)
+        Me.cmdPrev_dtl.Size = New System.Drawing.Size(50, 18)
         Me.cmdPrev_dtl.TabIndex = 25
         Me.cmdPrev_dtl.Text = "Prev"
         Me.cmdPrev_dtl.UseVisualStyleBackColor = True
         '
         'cmdFirst_dtl
         '
-        Me.cmdFirst_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!)
-        Me.cmdFirst_dtl.Location = New System.Drawing.Point(732, 6)
+        Me.cmdFirst_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdFirst_dtl.Location = New System.Drawing.Point(524, 5)
         Me.cmdFirst_dtl.Name = "cmdFirst_dtl"
-        Me.cmdFirst_dtl.Size = New System.Drawing.Size(50, 20)
+        Me.cmdFirst_dtl.Size = New System.Drawing.Size(50, 18)
         Me.cmdFirst_dtl.TabIndex = 24
         Me.cmdFirst_dtl.Text = "First"
         Me.cmdFirst_dtl.UseVisualStyleBackColor = True
@@ -895,10 +896,11 @@ Partial Class IMM00012
         'chkWait_dtl
         '
         Me.chkWait_dtl.AutoSize = True
+        Me.chkWait_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkWait_dtl.ForeColor = System.Drawing.Color.Blue
-        Me.chkWait_dtl.Location = New System.Drawing.Point(399, 9)
+        Me.chkWait_dtl.Location = New System.Drawing.Point(399, 7)
         Me.chkWait_dtl.Name = "chkWait_dtl"
-        Me.chkWait_dtl.Size = New System.Drawing.Size(110, 16)
+        Me.chkWait_dtl.Size = New System.Drawing.Size(96, 16)
         Me.chkWait_dtl.TabIndex = 23
         Me.chkWait_dtl.Text = "Wait for Approval"
         Me.chkWait_dtl.UseVisualStyleBackColor = True
@@ -906,10 +908,11 @@ Partial Class IMM00012
         'chkReject_dtl
         '
         Me.chkReject_dtl.AutoSize = True
+        Me.chkReject_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkReject_dtl.ForeColor = System.Drawing.Color.Blue
-        Me.chkReject_dtl.Location = New System.Drawing.Point(329, 9)
+        Me.chkReject_dtl.Location = New System.Drawing.Point(329, 7)
         Me.chkReject_dtl.Name = "chkReject_dtl"
-        Me.chkReject_dtl.Size = New System.Drawing.Size(53, 16)
+        Me.chkReject_dtl.Size = New System.Drawing.Size(51, 16)
         Me.chkReject_dtl.TabIndex = 22
         Me.chkReject_dtl.Text = "Reject"
         Me.chkReject_dtl.UseVisualStyleBackColor = True
@@ -917,10 +920,11 @@ Partial Class IMM00012
         'chkApprove_dtl
         '
         Me.chkApprove_dtl.AutoSize = True
+        Me.chkApprove_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkApprove_dtl.ForeColor = System.Drawing.Color.Blue
-        Me.chkApprove_dtl.Location = New System.Drawing.Point(256, 9)
+        Me.chkApprove_dtl.Location = New System.Drawing.Point(256, 7)
         Me.chkApprove_dtl.Name = "chkApprove_dtl"
-        Me.chkApprove_dtl.Size = New System.Drawing.Size(65, 16)
+        Me.chkApprove_dtl.Size = New System.Drawing.Size(60, 16)
         Me.chkApprove_dtl.TabIndex = 21
         Me.chkApprove_dtl.Text = "Approve"
         Me.chkApprove_dtl.UseVisualStyleBackColor = True
@@ -930,7 +934,7 @@ Partial Class IMM00012
         Me.txtVenItm_dtl.BackColor = System.Drawing.Color.White
         Me.txtVenItm_dtl.Enabled = False
         Me.txtVenItm_dtl.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtVenItm_dtl.Location = New System.Drawing.Point(105, 8)
+        Me.txtVenItm_dtl.Location = New System.Drawing.Point(105, 6)
         Me.txtVenItm_dtl.MaxLength = 20
         Me.txtVenItm_dtl.Name = "txtVenItm_dtl"
         Me.txtVenItm_dtl.Size = New System.Drawing.Size(137, 18)
@@ -939,16 +943,17 @@ Partial Class IMM00012
         'Label16
         '
         Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.Blue
-        Me.Label16.Location = New System.Drawing.Point(15, 10)
+        Me.Label16.Location = New System.Drawing.Point(15, 8)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(84, 12)
+        Me.Label16.Size = New System.Drawing.Size(73, 12)
         Me.Label16.TabIndex = 19
         Me.Label16.Text = "Vendor Item No."
         '
         'txtDateFrom
         '
-        Me.txtDateFrom.Location = New System.Drawing.Point(226, 114)
+        Me.txtDateFrom.Location = New System.Drawing.Point(138, 114)
         Me.txtDateFrom.MaxLength = 10
         Me.txtDateFrom.Name = "txtDateFrom"
         Me.txtDateFrom.Size = New System.Drawing.Size(70, 22)
@@ -956,7 +961,7 @@ Partial Class IMM00012
         '
         'txtDateTo
         '
-        Me.txtDateTo.Location = New System.Drawing.Point(377, 114)
+        Me.txtDateTo.Location = New System.Drawing.Point(242, 114)
         Me.txtDateTo.MaxLength = 10
         Me.txtDateTo.Name = "txtDateTo"
         Me.txtDateTo.Size = New System.Drawing.Size(70, 22)
@@ -965,9 +970,9 @@ Partial Class IMM00012
         'StatusBar
         '
         Me.StatusBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblLeft, Me.lblRight})
-        Me.StatusBar.Location = New System.Drawing.Point(0, 609)
+        Me.StatusBar.Location = New System.Drawing.Point(0, 436)
         Me.StatusBar.Name = "StatusBar"
-        Me.StatusBar.Size = New System.Drawing.Size(954, 22)
+        Me.StatusBar.Size = New System.Drawing.Size(752, 22)
         Me.StatusBar.TabIndex = 124
         Me.StatusBar.Text = "StatusStrip1"
         '
@@ -982,9 +987,150 @@ Partial Class IMM00012
         '
         Me.lblRight.AutoSize = False
         Me.lblRight.Name = "lblRight"
-        Me.lblRight.Size = New System.Drawing.Size(389, 17)
+        Me.lblRight.Size = New System.Drawing.Size(284, 17)
         Me.lblRight.Spring = True
         Me.lblRight.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'cmdQuickInsert
+        '
+        Me.cmdQuickInsert.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdQuickInsert.Location = New System.Drawing.Point(412, 0)
+        Me.cmdQuickInsert.Name = "cmdQuickInsert"
+        Me.cmdQuickInsert.Size = New System.Drawing.Size(56, 23)
+        Me.cmdQuickInsert.TabIndex = 132
+        Me.cmdQuickInsert.TabStop = False
+        Me.cmdQuickInsert.Text = "Quick &Insert"
+        Me.cmdQuickInsert.UseVisualStyleBackColor = True
+        '
+        'cmdDelete
+        '
+        Me.cmdDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdDelete.Location = New System.Drawing.Point(112, 0)
+        Me.cmdDelete.Name = "cmdDelete"
+        Me.cmdDelete.Size = New System.Drawing.Size(56, 23)
+        Me.cmdDelete.TabIndex = 127
+        Me.cmdDelete.TabStop = False
+        Me.cmdDelete.Text = "&Delete"
+        '
+        'cmdSave
+        '
+        Me.cmdSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdSave.Location = New System.Drawing.Point(56, 0)
+        Me.cmdSave.Name = "cmdSave"
+        Me.cmdSave.Size = New System.Drawing.Size(56, 23)
+        Me.cmdSave.TabIndex = 126
+        Me.cmdSave.TabStop = False
+        Me.cmdSave.Text = "&Save"
+        '
+        'cmdLast
+        '
+        Me.cmdLast.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdLast.Location = New System.Drawing.Point(650, 0)
+        Me.cmdLast.Name = "cmdLast"
+        Me.cmdLast.Size = New System.Drawing.Size(40, 23)
+        Me.cmdLast.TabIndex = 137
+        Me.cmdLast.TabStop = False
+        Me.cmdLast.Text = ">>|"
+        '
+        'cmdPrevious
+        '
+        Me.cmdPrevious.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdPrevious.Location = New System.Drawing.Point(570, 0)
+        Me.cmdPrevious.Name = "cmdPrevious"
+        Me.cmdPrevious.Size = New System.Drawing.Size(40, 23)
+        Me.cmdPrevious.TabIndex = 135
+        Me.cmdPrevious.TabStop = False
+        Me.cmdPrevious.Text = "<"
+        '
+        'cmdAdd
+        '
+        Me.cmdAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdAdd.Location = New System.Drawing.Point(0, 0)
+        Me.cmdAdd.Name = "cmdAdd"
+        Me.cmdAdd.Size = New System.Drawing.Size(56, 23)
+        Me.cmdAdd.TabIndex = 125
+        Me.cmdAdd.TabStop = False
+        Me.cmdAdd.Text = "&Add"
+        '
+        'cmdNext
+        '
+        Me.cmdNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdNext.Location = New System.Drawing.Point(610, 0)
+        Me.cmdNext.Name = "cmdNext"
+        Me.cmdNext.Size = New System.Drawing.Size(40, 23)
+        Me.cmdNext.TabIndex = 136
+        Me.cmdNext.TabStop = False
+        Me.cmdNext.Text = ">"
+        '
+        'cmdFind
+        '
+        Me.cmdFind.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdFind.Location = New System.Drawing.Point(224, 0)
+        Me.cmdFind.Name = "cmdFind"
+        Me.cmdFind.Size = New System.Drawing.Size(56, 23)
+        Me.cmdFind.TabIndex = 129
+        Me.cmdFind.TabStop = False
+        Me.cmdFind.Text = "&Find"
+        '
+        'cmdCopy
+        '
+        Me.cmdCopy.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdCopy.Location = New System.Drawing.Point(168, 0)
+        Me.cmdCopy.Name = "cmdCopy"
+        Me.cmdCopy.Size = New System.Drawing.Size(56, 23)
+        Me.cmdCopy.TabIndex = 128
+        Me.cmdCopy.TabStop = False
+        Me.cmdCopy.Text = "&Copy"
+        '
+        'cmdClear
+        '
+        Me.cmdClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdClear.Location = New System.Drawing.Point(280, 0)
+        Me.cmdClear.Name = "cmdClear"
+        Me.cmdClear.Size = New System.Drawing.Size(56, 23)
+        Me.cmdClear.TabIndex = 130
+        Me.cmdClear.TabStop = False
+        Me.cmdClear.Text = "Cl&ear"
+        '
+        'cmdExit
+        '
+        Me.cmdExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdExit.Location = New System.Drawing.Point(696, 0)
+        Me.cmdExit.Name = "cmdExit"
+        Me.cmdExit.Size = New System.Drawing.Size(56, 23)
+        Me.cmdExit.TabIndex = 138
+        Me.cmdExit.TabStop = False
+        Me.cmdExit.Text = "E&xit"
+        '
+        'cmdDelRow
+        '
+        Me.cmdDelRow.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdDelRow.Location = New System.Drawing.Point(468, 0)
+        Me.cmdDelRow.Name = "cmdDelRow"
+        Me.cmdDelRow.Size = New System.Drawing.Size(56, 23)
+        Me.cmdDelRow.TabIndex = 133
+        Me.cmdDelRow.TabStop = False
+        Me.cmdDelRow.Text = "Del Ro&w"
+        '
+        'cmdFirst
+        '
+        Me.cmdFirst.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdFirst.Location = New System.Drawing.Point(530, 0)
+        Me.cmdFirst.Name = "cmdFirst"
+        Me.cmdFirst.Size = New System.Drawing.Size(40, 23)
+        Me.cmdFirst.TabIndex = 134
+        Me.cmdFirst.TabStop = False
+        Me.cmdFirst.Text = "|<<"
+        '
+        'cmdSearch
+        '
+        Me.cmdSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdSearch.Location = New System.Drawing.Point(342, 0)
+        Me.cmdSearch.Name = "cmdSearch"
+        Me.cmdSearch.Size = New System.Drawing.Size(64, 23)
+        Me.cmdSearch.TabIndex = 131
+        Me.cmdSearch.TabStop = False
+        Me.cmdSearch.Text = "Searc&h"
         '
         'grpReason
         '
@@ -1000,9 +1146,9 @@ Partial Class IMM00012
         Me.grpReason.Controls.Add(Me.txtApplyReasonTo)
         Me.grpReason.Controls.Add(Me.cmdApplyReason)
         Me.grpReason.Controls.Add(Me.txtReason)
-        Me.grpReason.Location = New System.Drawing.Point(455, 117)
+        Me.grpReason.Location = New System.Drawing.Point(319, 117)
         Me.grpReason.Name = "grpReason"
-        Me.grpReason.Size = New System.Drawing.Size(495, 90)
+        Me.grpReason.Size = New System.Drawing.Size(429, 90)
         Me.grpReason.TabIndex = 245
         Me.grpReason.TabStop = False
         Me.grpReason.Text = "Reason"
@@ -1010,9 +1156,10 @@ Partial Class IMM00012
         'chkHmnErrHK
         '
         Me.chkHmnErrHK.AutoSize = True
-        Me.chkHmnErrHK.Location = New System.Drawing.Point(370, 29)
+        Me.chkHmnErrHK.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkHmnErrHK.Location = New System.Drawing.Point(300, 30)
         Me.chkHmnErrHK.Name = "chkHmnErrHK"
-        Me.chkHmnErrHK.Size = New System.Drawing.Size(113, 16)
+        Me.chkHmnErrHK.Size = New System.Drawing.Size(109, 17)
         Me.chkHmnErrHK.TabIndex = 235
         Me.chkHmnErrHK.Text = "Human Error (HK)"
         Me.chkHmnErrHK.UseVisualStyleBackColor = True
@@ -1020,9 +1167,10 @@ Partial Class IMM00012
         'chkHmnErrFTY
         '
         Me.chkHmnErrFTY.AutoSize = True
-        Me.chkHmnErrFTY.Location = New System.Drawing.Point(370, 14)
+        Me.chkHmnErrFTY.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkHmnErrFTY.Location = New System.Drawing.Point(300, 15)
         Me.chkHmnErrFTY.Name = "chkHmnErrFTY"
-        Me.chkHmnErrFTY.Size = New System.Drawing.Size(118, 16)
+        Me.chkHmnErrFTY.Size = New System.Drawing.Size(114, 17)
         Me.chkHmnErrFTY.TabIndex = 234
         Me.chkHmnErrFTY.Text = "Human Error (FTY)"
         Me.chkHmnErrFTY.UseVisualStyleBackColor = True
@@ -1030,9 +1178,10 @@ Partial Class IMM00012
         'chkMrkupHK
         '
         Me.chkMrkupHK.AutoSize = True
-        Me.chkMrkupHK.Location = New System.Drawing.Point(193, 29)
+        Me.chkMrkupHK.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkMrkupHK.Location = New System.Drawing.Point(145, 30)
         Me.chkMrkupHK.Name = "chkMrkupHK"
-        Me.chkMrkupHK.Size = New System.Drawing.Size(127, 16)
+        Me.chkMrkupHK.Size = New System.Drawing.Size(126, 17)
         Me.chkMrkupHK.TabIndex = 233
         Me.chkMrkupHK.Text = "Markup Change (HK)"
         Me.chkMrkupHK.UseVisualStyleBackColor = True
@@ -1040,9 +1189,10 @@ Partial Class IMM00012
         'chkMrkupFTY
         '
         Me.chkMrkupFTY.AutoSize = True
-        Me.chkMrkupFTY.Location = New System.Drawing.Point(193, 14)
+        Me.chkMrkupFTY.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkMrkupFTY.Location = New System.Drawing.Point(145, 15)
         Me.chkMrkupFTY.Name = "chkMrkupFTY"
-        Me.chkMrkupFTY.Size = New System.Drawing.Size(132, 16)
+        Me.chkMrkupFTY.Size = New System.Drawing.Size(131, 17)
         Me.chkMrkupFTY.TabIndex = 232
         Me.chkMrkupFTY.Text = "Markup Change (FTY)"
         Me.chkMrkupFTY.UseVisualStyleBackColor = True
@@ -1050,9 +1200,10 @@ Partial Class IMM00012
         'chkMoldCst
         '
         Me.chkMoldCst.AutoSize = True
-        Me.chkMoldCst.Location = New System.Drawing.Point(19, 45)
+        Me.chkMoldCst.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkMoldCst.Location = New System.Drawing.Point(19, 46)
         Me.chkMoldCst.Name = "chkMoldCst"
-        Me.chkMoldCst.Size = New System.Drawing.Size(112, 16)
+        Me.chkMoldCst.Size = New System.Drawing.Size(113, 17)
         Me.chkMoldCst.TabIndex = 231
         Me.chkMoldCst.Text = "Mold Cost Change"
         Me.chkMoldCst.UseVisualStyleBackColor = True
@@ -1060,9 +1211,10 @@ Partial Class IMM00012
         'chkPeriod
         '
         Me.chkPeriod.AutoSize = True
-        Me.chkPeriod.Location = New System.Drawing.Point(19, 29)
+        Me.chkPeriod.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkPeriod.Location = New System.Drawing.Point(19, 30)
         Me.chkPeriod.Name = "chkPeriod"
-        Me.chkPeriod.Size = New System.Drawing.Size(93, 16)
+        Me.chkPeriod.Size = New System.Drawing.Size(96, 17)
         Me.chkPeriod.TabIndex = 230
         Me.chkPeriod.Text = "Period Change"
         Me.chkPeriod.UseVisualStyleBackColor = True
@@ -1070,16 +1222,17 @@ Partial Class IMM00012
         'chkRequote
         '
         Me.chkRequote.AutoSize = True
-        Me.chkRequote.Location = New System.Drawing.Point(19, 14)
+        Me.chkRequote.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkRequote.Location = New System.Drawing.Point(19, 15)
         Me.chkRequote.Name = "chkRequote"
-        Me.chkRequote.Size = New System.Drawing.Size(63, 16)
+        Me.chkRequote.Size = New System.Drawing.Size(67, 17)
         Me.chkRequote.TabIndex = 229
         Me.chkRequote.Text = "Requote"
         Me.chkRequote.UseVisualStyleBackColor = True
         '
         'txtApplyReasonFrom
         '
-        Me.txtApplyReasonFrom.Location = New System.Drawing.Point(306, 62)
+        Me.txtApplyReasonFrom.Location = New System.Drawing.Point(257, 66)
         Me.txtApplyReasonFrom.MaxLength = 6
         Me.txtApplyReasonFrom.Name = "txtApplyReasonFrom"
         Me.txtApplyReasonFrom.Size = New System.Drawing.Size(30, 22)
@@ -1088,7 +1241,7 @@ Partial Class IMM00012
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(343, 65)
+        Me.Label25.Location = New System.Drawing.Point(290, 68)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(14, 12)
         Me.Label25.TabIndex = 226
@@ -1096,7 +1249,7 @@ Partial Class IMM00012
         '
         'txtApplyReasonTo
         '
-        Me.txtApplyReasonTo.Location = New System.Drawing.Point(367, 62)
+        Me.txtApplyReasonTo.Location = New System.Drawing.Point(308, 66)
         Me.txtApplyReasonTo.MaxLength = 6
         Me.txtApplyReasonTo.Name = "txtApplyReasonTo"
         Me.txtApplyReasonTo.Size = New System.Drawing.Size(30, 22)
@@ -1104,9 +1257,9 @@ Partial Class IMM00012
         '
         'cmdApplyReason
         '
-        Me.cmdApplyReason.Location = New System.Drawing.Point(407, 61)
+        Me.cmdApplyReason.Location = New System.Drawing.Point(341, 52)
         Me.cmdApplyReason.Name = "cmdApplyReason"
-        Me.cmdApplyReason.Size = New System.Drawing.Size(82, 25)
+        Me.cmdApplyReason.Size = New System.Drawing.Size(82, 33)
         Me.cmdApplyReason.TabIndex = 228
         Me.cmdApplyReason.Text = "Apply &Reason"
         Me.cmdApplyReason.UseVisualStyleBackColor = True
@@ -1114,43 +1267,45 @@ Partial Class IMM00012
         'txtReason
         '
         Me.txtReason.BackColor = System.Drawing.SystemColors.Control
-        Me.txtReason.Location = New System.Drawing.Point(9, 62)
+        Me.txtReason.Location = New System.Drawing.Point(10, 66)
         Me.txtReason.Name = "txtReason"
         Me.txtReason.ReadOnly = True
-        Me.txtReason.Size = New System.Drawing.Size(288, 22)
+        Me.txtReason.Size = New System.Drawing.Size(241, 22)
         Me.txtReason.TabIndex = 0
         '
         'Label26
         '
         Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.Blue
         Me.Label26.Location = New System.Drawing.Point(8, 31)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(84, 12)
+        Me.Label26.Size = New System.Drawing.Size(84, 13)
         Me.Label26.TabIndex = 17
         Me.Label26.Text = "Vendor Item No."
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(159, 28)
+        Me.TextBox1.Location = New System.Drawing.Point(138, 29)
         Me.TextBox1.MaxLength = 20
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(288, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(174, 22)
         Me.TextBox1.TabIndex = 18
         '
         'Label27
         '
         Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label27.ForeColor = System.Drawing.Color.Blue
         Me.Label27.Location = New System.Drawing.Point(8, 53)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(112, 12)
+        Me.Label27.Size = New System.Drawing.Size(114, 13)
         Me.Label27.TabIndex = 19
         Me.Label27.Text = "Custom Vendor Range"
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(226, 51)
+        Me.TextBox2.Location = New System.Drawing.Point(138, 50)
         Me.TextBox2.MaxLength = 6
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(70, 22)
@@ -1159,15 +1314,15 @@ Partial Class IMM00012
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(328, 54)
+        Me.Label28.Location = New System.Drawing.Point(214, 53)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(18, 12)
+        Me.Label28.Size = New System.Drawing.Size(20, 12)
         Me.Label28.TabIndex = 21
-        Me.Label28.Text = "To"
+        Me.Label28.Text = "TO"
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(377, 51)
+        Me.TextBox3.Location = New System.Drawing.Point(242, 50)
         Me.TextBox3.MaxLength = 6
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(70, 22)
@@ -1176,16 +1331,17 @@ Partial Class IMM00012
         'Label29
         '
         Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label29.ForeColor = System.Drawing.Color.Blue
         Me.Label29.Location = New System.Drawing.Point(8, 74)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(108, 12)
+        Me.Label29.Size = New System.Drawing.Size(112, 13)
         Me.Label29.TabIndex = 23
         Me.Label29.Text = "Design Vendor Range"
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(226, 72)
+        Me.TextBox4.Location = New System.Drawing.Point(138, 71)
         Me.TextBox4.MaxLength = 6
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(70, 22)
@@ -1194,15 +1350,15 @@ Partial Class IMM00012
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(328, 75)
+        Me.Label30.Location = New System.Drawing.Point(214, 74)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(18, 12)
+        Me.Label30.Size = New System.Drawing.Size(20, 12)
         Me.Label30.TabIndex = 25
-        Me.Label30.Text = "To"
+        Me.Label30.Text = "TO"
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(377, 72)
+        Me.TextBox5.Location = New System.Drawing.Point(242, 71)
         Me.TextBox5.MaxLength = 6
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(70, 22)
@@ -1211,16 +1367,17 @@ Partial Class IMM00012
         'Label31
         '
         Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label31.ForeColor = System.Drawing.Color.Blue
         Me.Label31.Location = New System.Drawing.Point(8, 95)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(101, 12)
+        Me.Label31.Size = New System.Drawing.Size(104, 13)
         Me.Label31.TabIndex = 27
         Me.Label31.Text = "Prod. Vendor Range"
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(226, 93)
+        Me.TextBox6.Location = New System.Drawing.Point(138, 92)
         Me.TextBox6.MaxLength = 6
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(70, 22)
@@ -1229,15 +1386,15 @@ Partial Class IMM00012
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(328, 96)
+        Me.Label32.Location = New System.Drawing.Point(214, 95)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(18, 12)
+        Me.Label32.Size = New System.Drawing.Size(20, 12)
         Me.Label32.TabIndex = 29
-        Me.Label32.Text = "To"
+        Me.Label32.Text = "TO"
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(377, 93)
+        Me.TextBox7.Location = New System.Drawing.Point(242, 92)
         Me.TextBox7.MaxLength = 6
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(70, 22)
@@ -1246,35 +1403,37 @@ Partial Class IMM00012
         'Label33
         '
         Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label33.ForeColor = System.Drawing.Color.Blue
-        Me.Label33.Location = New System.Drawing.Point(8, 115)
+        Me.Label33.Location = New System.Drawing.Point(8, 116)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(111, 12)
+        Me.Label33.Size = New System.Drawing.Size(120, 13)
         Me.Label33.TabIndex = 31
         Me.Label33.Text = "Processing Date Range"
         '
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(328, 116)
+        Me.Label34.Location = New System.Drawing.Point(214, 116)
         Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(18, 12)
+        Me.Label34.Size = New System.Drawing.Size(20, 12)
         Me.Label34.TabIndex = 33
-        Me.Label34.Text = "To"
+        Me.Label34.Text = "TO"
         '
         'Label35
         '
         Me.Label35.AutoSize = True
+        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label35.ForeColor = System.Drawing.Color.Blue
-        Me.Label35.Location = New System.Drawing.Point(8, 137)
+        Me.Label35.Location = New System.Drawing.Point(8, 138)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(120, 12)
+        Me.Label35.Size = New System.Drawing.Size(127, 13)
         Me.Label35.TabIndex = 35
         Me.Label35.Text = "Prod Line / Season Code"
         '
         'TextBox8
         '
-        Me.TextBox8.Location = New System.Drawing.Point(226, 136)
+        Me.TextBox8.Location = New System.Drawing.Point(138, 135)
         Me.TextBox8.MaxLength = 10
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(70, 22)
@@ -1283,15 +1442,15 @@ Partial Class IMM00012
         'Label36
         '
         Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(328, 138)
+        Me.Label36.Location = New System.Drawing.Point(214, 138)
         Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(18, 12)
+        Me.Label36.Size = New System.Drawing.Size(20, 12)
         Me.Label36.TabIndex = 37
-        Me.Label36.Text = "To"
+        Me.Label36.Text = "TO"
         '
         'TextBox9
         '
-        Me.TextBox9.Location = New System.Drawing.Point(377, 136)
+        Me.TextBox9.Location = New System.Drawing.Point(242, 135)
         Me.TextBox9.MaxLength = 10
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(70, 22)
@@ -1299,7 +1458,7 @@ Partial Class IMM00012
         '
         'TextBox10
         '
-        Me.TextBox10.Location = New System.Drawing.Point(226, 114)
+        Me.TextBox10.Location = New System.Drawing.Point(138, 114)
         Me.TextBox10.MaxLength = 10
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(70, 22)
@@ -1307,233 +1466,32 @@ Partial Class IMM00012
         '
         'TextBox11
         '
-        Me.TextBox11.Location = New System.Drawing.Point(377, 114)
+        Me.TextBox11.Location = New System.Drawing.Point(242, 114)
         Me.TextBox11.MaxLength = 10
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(70, 22)
         Me.TextBox11.TabIndex = 34
         '
-        'Label38
-        '
-        Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(157, 138)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(30, 12)
-        Me.Label38.TabIndex = 255
-        Me.Label38.Text = "From"
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(157, 116)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(30, 12)
-        Me.Label40.TabIndex = 253
-        Me.Label40.Text = "From"
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(157, 96)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(30, 12)
-        Me.Label42.TabIndex = 250
-        Me.Label42.Text = "From"
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(157, 75)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(30, 12)
-        Me.Label44.TabIndex = 249
-        Me.Label44.Text = "From"
-        '
-        'Label46
-        '
-        Me.Label46.AutoSize = True
-        Me.Label46.Location = New System.Drawing.Point(157, 54)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(30, 12)
-        Me.Label46.TabIndex = 247
-        Me.Label46.Text = "From"
-        '
-        'menuStrip
-        '
-        Me.menuStrip.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.menuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mmdAdd, Me.mmdSave, Me.mmdDelete, Me.mmdCopy, Me.mmdFind, Me.t1, Me.mmdClear, Me.t2, Me.mmdSearch, Me.t3, Me.mmdInsRow, Me.mmdDelRow, Me.t4, Me.mmdPrint, Me.t5, Me.mmdAttach, Me.t6, Me.mmdFunction, Me.t7, Me.mmdLink, Me.t8, Me.mmdExit})
-        Me.menuStrip.Location = New System.Drawing.Point(0, 0)
-        Me.menuStrip.Name = "menuStrip"
-        Me.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.menuStrip.Size = New System.Drawing.Size(954, 24)
-        Me.menuStrip.TabIndex = 256
-        Me.menuStrip.Text = "MenuStrip1"
-        '
-        'mmdAdd
-        '
-        Me.mmdAdd.BackColor = System.Drawing.SystemColors.Control
-        Me.mmdAdd.Name = "mmdAdd"
-        Me.mmdAdd.Size = New System.Drawing.Size(40, 20)
-        Me.mmdAdd.Tag = "Add"
-        Me.mmdAdd.Text = "&Add"
-        '
-        'mmdSave
-        '
-        Me.mmdSave.Name = "mmdSave"
-        Me.mmdSave.Size = New System.Drawing.Size(46, 20)
-        Me.mmdSave.Text = "&Save"
-        '
-        'mmdDelete
-        '
-        Me.mmdDelete.Name = "mmdDelete"
-        Me.mmdDelete.Size = New System.Drawing.Size(55, 20)
-        Me.mmdDelete.Text = "&Delete"
-        '
-        'mmdCopy
-        '
-        Me.mmdCopy.Name = "mmdCopy"
-        Me.mmdCopy.Size = New System.Drawing.Size(47, 20)
-        Me.mmdCopy.Text = "&Copy"
-        '
-        'mmdFind
-        '
-        Me.mmdFind.Name = "mmdFind"
-        Me.mmdFind.Size = New System.Drawing.Size(43, 20)
-        Me.mmdFind.Text = "&Find"
-        '
-        't1
-        '
-        Me.t1.AutoSize = False
-        Me.t1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.t1.Enabled = False
-        Me.t1.Name = "t1"
-        Me.t1.Size = New System.Drawing.Size(8, 20)
-        Me.t1.Text = "|"
-        '
-        'mmdClear
-        '
-        Me.mmdClear.Name = "mmdClear"
-        Me.mmdClear.Size = New System.Drawing.Size(49, 20)
-        Me.mmdClear.Text = "Cl&ear"
-        '
-        't2
-        '
-        Me.t2.AutoSize = False
-        Me.t2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.t2.Enabled = False
-        Me.t2.Name = "t2"
-        Me.t2.Size = New System.Drawing.Size(8, 20)
-        Me.t2.Text = "|"
-        '
-        'mmdSearch
-        '
-        Me.mmdSearch.Name = "mmdSearch"
-        Me.mmdSearch.Size = New System.Drawing.Size(58, 20)
-        Me.mmdSearch.Text = "Searc&h"
-        '
-        't3
-        '
-        Me.t3.AutoSize = False
-        Me.t3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.t3.Enabled = False
-        Me.t3.Name = "t3"
-        Me.t3.Size = New System.Drawing.Size(8, 20)
-        Me.t3.Text = "|"
-        '
-        'mmdInsRow
-        '
-        Me.mmdInsRow.Name = "mmdInsRow"
-        Me.mmdInsRow.Size = New System.Drawing.Size(64, 20)
-        Me.mmdInsRow.Text = "In&s Row"
-        '
-        'mmdDelRow
-        '
-        Me.mmdDelRow.Name = "mmdDelRow"
-        Me.mmdDelRow.Size = New System.Drawing.Size(66, 20)
-        Me.mmdDelRow.Text = "Del Ro&w"
-        '
-        't4
-        '
-        Me.t4.AutoSize = False
-        Me.t4.Enabled = False
-        Me.t4.Name = "t4"
-        Me.t4.Size = New System.Drawing.Size(8, 20)
-        Me.t4.Text = "|"
-        '
-        'mmdPrint
-        '
-        Me.mmdPrint.Name = "mmdPrint"
-        Me.mmdPrint.Size = New System.Drawing.Size(44, 20)
-        Me.mmdPrint.Text = "&Print"
-        '
-        't5
-        '
-        Me.t5.AutoSize = False
-        Me.t5.Enabled = False
-        Me.t5.Name = "t5"
-        Me.t5.Size = New System.Drawing.Size(8, 20)
-        Me.t5.Text = "|"
-        '
-        'mmdAttach
-        '
-        Me.mmdAttach.Name = "mmdAttach"
-        Me.mmdAttach.Size = New System.Drawing.Size(52, 20)
-        Me.mmdAttach.Text = "Attach"
-        '
-        't6
-        '
-        Me.t6.AutoSize = False
-        Me.t6.Enabled = False
-        Me.t6.Name = "t6"
-        Me.t6.Size = New System.Drawing.Size(8, 20)
-        Me.t6.Text = "|"
-        '
-        'mmdFunction
-        '
-        Me.mmdFunction.Name = "mmdFunction"
-        Me.mmdFunction.Size = New System.Drawing.Size(66, 20)
-        Me.mmdFunction.Text = "Function"
-        '
-        't7
-        '
-        Me.t7.AutoSize = False
-        Me.t7.Enabled = False
-        Me.t7.Name = "t7"
-        Me.t7.Size = New System.Drawing.Size(8, 20)
-        Me.t7.Text = "|"
-        '
-        'mmdLink
-        '
-        Me.mmdLink.Name = "mmdLink"
-        Me.mmdLink.Size = New System.Drawing.Size(42, 20)
-        Me.mmdLink.Text = "Link"
-        '
-        't8
-        '
-        Me.t8.AutoSize = False
-        Me.t8.Enabled = False
-        Me.t8.Name = "t8"
-        Me.t8.Size = New System.Drawing.Size(8, 20)
-        Me.t8.Text = "|"
-        '
-        'mmdExit
-        '
-        Me.mmdExit.Name = "mmdExit"
-        Me.mmdExit.Size = New System.Drawing.Size(38, 20)
-        Me.mmdExit.Text = "E&xit"
-        '
         'IMM00012
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(954, 631)
-        Me.Controls.Add(Me.menuStrip)
-        Me.Controls.Add(Me.Label38)
-        Me.Controls.Add(Me.Label40)
-        Me.Controls.Add(Me.Label42)
-        Me.Controls.Add(Me.Label44)
-        Me.Controls.Add(Me.Label46)
+        Me.ClientSize = New System.Drawing.Size(752, 458)
         Me.Controls.Add(Me.grpReason)
+        Me.Controls.Add(Me.cmdQuickInsert)
+        Me.Controls.Add(Me.cmdDelete)
+        Me.Controls.Add(Me.cmdSave)
+        Me.Controls.Add(Me.cmdLast)
+        Me.Controls.Add(Me.cmdPrevious)
+        Me.Controls.Add(Me.cmdAdd)
+        Me.Controls.Add(Me.cmdNext)
+        Me.Controls.Add(Me.cmdFind)
+        Me.Controls.Add(Me.cmdCopy)
+        Me.Controls.Add(Me.cmdClear)
+        Me.Controls.Add(Me.cmdExit)
+        Me.Controls.Add(Me.cmdDelRow)
+        Me.Controls.Add(Me.cmdFirst)
+        Me.Controls.Add(Me.cmdSearch)
         Me.Controls.Add(Me.TextBox11)
         Me.Controls.Add(Me.StatusBar)
         Me.Controls.Add(Me.TextBox10)
@@ -1597,10 +1555,9 @@ Partial Class IMM00012
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.tabFrame)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "IMM00012"
-        Me.Text = "IMM00012 - Item Master Approval & Rejection (External Item) (IMM12)"
+        Me.Text = "IMM00012 - Item Master Approval & Rejection (External Item)"
         Me.grpStage.ResumeLayout(False)
         Me.grpStage.PerformLayout()
         Me.tabFrame.ResumeLayout(False)
@@ -1615,8 +1572,6 @@ Partial Class IMM00012
         Me.StatusBar.PerformLayout()
         Me.grpReason.ResumeLayout(False)
         Me.grpReason.PerformLayout()
-        Me.menuStrip.ResumeLayout(False)
-        Me.menuStrip.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1701,6 +1656,20 @@ Partial Class IMM00012
     Friend WithEvents StatusBar As System.Windows.Forms.StatusStrip
     Friend WithEvents lblLeft As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents lblRight As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents cmdQuickInsert As System.Windows.Forms.Button
+    Friend WithEvents cmdDelete As System.Windows.Forms.Button
+    Friend WithEvents cmdSave As System.Windows.Forms.Button
+    Friend WithEvents cmdLast As System.Windows.Forms.Button
+    Friend WithEvents cmdPrevious As System.Windows.Forms.Button
+    Friend WithEvents cmdAdd As System.Windows.Forms.Button
+    Friend WithEvents cmdNext As System.Windows.Forms.Button
+    Friend WithEvents cmdFind As System.Windows.Forms.Button
+    Friend WithEvents cmdCopy As System.Windows.Forms.Button
+    Friend WithEvents cmdClear As System.Windows.Forms.Button
+    Friend WithEvents cmdExit As System.Windows.Forms.Button
+    Friend WithEvents cmdDelRow As System.Windows.Forms.Button
+    Friend WithEvents cmdFirst As System.Windows.Forms.Button
+    Friend WithEvents cmdSearch As System.Windows.Forms.Button
     Friend WithEvents grpReason As System.Windows.Forms.GroupBox
     Friend WithEvents chkHmnErrHK As System.Windows.Forms.CheckBox
     Friend WithEvents chkHmnErrFTY As System.Windows.Forms.CheckBox
@@ -1736,32 +1705,4 @@ Partial Class IMM00012
     Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
-    Friend WithEvents Label38 As System.Windows.Forms.Label
-    Friend WithEvents Label40 As System.Windows.Forms.Label
-    Friend WithEvents Label42 As System.Windows.Forms.Label
-    Friend WithEvents Label44 As System.Windows.Forms.Label
-    Friend WithEvents Label46 As System.Windows.Forms.Label
-    Friend WithEvents menuStrip As System.Windows.Forms.MenuStrip
-    Friend WithEvents mmdAdd As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdSave As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdDelete As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdCopy As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdFind As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents t1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdClear As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents t2 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdSearch As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents t3 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdInsRow As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdDelRow As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents t4 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdPrint As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents t5 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdAttach As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents t6 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdFunction As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents t7 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdLink As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents t8 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mmdExit As System.Windows.Forms.ToolStripMenuItem
 End Class

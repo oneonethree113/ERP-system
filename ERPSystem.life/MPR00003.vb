@@ -137,34 +137,25 @@ Public Class MPR00003
                 Me.optHidden.Enabled = True
                 Me.cboDP.Enabled = True
                 Frame2.Enabled = True
-                Panel1.Enabled = True
                 Frame3.Enabled = True
-                cboDP.Enabled = True
                 Me.cboInvUm.Enabled = True
                 Frame4.Enabled = True
-                cboInvUm.Enabled = True
             ElseIf Microsoft.VisualBasic.Left(Me.cboReport.Text, 1) = optCust Then
                 Me.optShow.Enabled = True
                 Me.optHidden.Enabled = True
                 Me.cboDP.Enabled = True
                 Frame2.Enabled = True
-                Panel1.Enabled = True
                 Frame3.Enabled = True
-                cboDP.Enabled = True
                 Me.cboInvUm.Enabled = False
                 Frame4.Enabled = False
-                cboInvUm.Enabled = False
             Else
                 Me.optShow.Enabled = False
                 Me.optHidden.Enabled = False
                 Me.cboDP.Enabled = False
                 Frame2.Enabled = False
-                Panel1.Enabled = False
                 Frame3.Enabled = False
-                cboDP.Enabled = False
                 Me.cboInvUm.Enabled = False
                 Frame4.Enabled = False
-                cboInvUm.Enabled = False
             End If
         End If
 
@@ -1321,34 +1312,25 @@ Err_Handler:
                 Me.optHidden.Enabled = True
                 Me.cboDP.Enabled = True
                 Frame2.Enabled = True
-                Panel1.Enabled = True
                 Frame3.Enabled = True
-                cboDP.Enabled = True
                 Me.cboInvUm.Enabled = True
                 Frame4.Enabled = True
-                cboInvUm.Enabled = True
             ElseIf Microsoft.VisualBasic.Left(Me.cboReport.Text, 1) = optCust Then
                 Me.optShow.Enabled = True
                 Me.optHidden.Enabled = True
                 Me.cboDP.Enabled = True
                 Frame2.Enabled = True
-                Panel1.Enabled = True
                 Frame3.Enabled = True
-                cboDP.Enabled = True
                 Me.cboInvUm.Enabled = False
                 Frame4.Enabled = False
-                cboInvUm.Enabled = False
             Else
                 Me.optShow.Enabled = False
                 Me.optHidden.Enabled = False
                 Me.cboDP.Enabled = False
                 Frame2.Enabled = False
-                Panel1.Enabled = False
                 Frame3.Enabled = False
-                cboDP.Enabled = False
                 Me.cboInvUm.Enabled = False
                 Frame4.Enabled = False
-                cboInvUm.Enabled = False
             End If
         End If
 
@@ -1370,13 +1352,5 @@ Err_Handler:
         End If
 
 
-    End Sub
-
-    Public Sub callByMPM02(ByVal MPOno As String)
-        txtGrnNoFm.Text = MPOno
-        txtGrnNoTo.Text = MPOno
-        txtGrnNoFm.Enabled = False
-        txtGrnNoTo.Enabled = False
-        Me.ShowDialog()
     End Sub
 End Class

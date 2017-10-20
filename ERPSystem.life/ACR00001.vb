@@ -40,6 +40,7 @@ Public Class ACR00001
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
+    Friend WithEvents StatusBar1 As System.Windows.Forms.StatusBar
     Friend WithEvents TabPage6 As System.Windows.Forms.TabPage
     Friend WithEvents cmd_S_ItmNo As System.Windows.Forms.Button
     Friend WithEvents cmd_S_PriCustAll As System.Windows.Forms.Button
@@ -60,24 +61,15 @@ Public Class ACR00001
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Label21 As System.Windows.Forms.Label
-<<<<<<< HEAD
     '    Friend WithEvents txt_S_SHdatTo As AxMSMask.AxMaskEdBox
-=======
->>>>>>> MPO-UI
     Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents txt_S_SHdatFm As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txt_S_SHdatTo As System.Windows.Forms.MaskedTextBox
-<<<<<<< HEAD
     'Friend WithEvents txt_S_SHdatFm As AxMSMask.AxMaskEdBox
     Friend WithEvents TabPage7 As System.Windows.Forms.TabPage
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.StatusBar1 = New System.Windows.Forms.StatusBar
-=======
-    Friend WithEvents TabPage7 As System.Windows.Forms.TabPage
-    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ACR00001))
->>>>>>> MPO-UI
         Me.TabPage6 = New System.Windows.Forms.TabPage
         Me.TabPage7 = New System.Windows.Forms.TabPage
         Me.cmd_S_ItmNo = New System.Windows.Forms.Button
@@ -105,6 +97,14 @@ Public Class ACR00001
         Me.txt_S_SHdatTo = New System.Windows.Forms.MaskedTextBox
         Me.SuspendLayout()
         '
+        'StatusBar1
+        '
+        Me.StatusBar1.Location = New System.Drawing.Point(0, 295)
+        Me.StatusBar1.Name = "StatusBar1"
+        Me.StatusBar1.Size = New System.Drawing.Size(648, 16)
+        Me.StatusBar1.TabIndex = 1
+        Me.StatusBar1.Text = "StatusBar1"
+        '
         'TabPage6
         '
         Me.TabPage6.Location = New System.Drawing.Point(0, 0)
@@ -121,169 +121,161 @@ Public Class ACR00001
         '
         'cmd_S_ItmNo
         '
-        Me.cmd_S_ItmNo.Location = New System.Drawing.Point(118, 104)
+        Me.cmd_S_ItmNo.Location = New System.Drawing.Point(129, 127)
         Me.cmd_S_ItmNo.Name = "cmd_S_ItmNo"
-        Me.cmd_S_ItmNo.Size = New System.Drawing.Size(45, 22)
+        Me.cmd_S_ItmNo.Size = New System.Drawing.Size(64, 24)
         Me.cmd_S_ItmNo.TabIndex = 7
         Me.cmd_S_ItmNo.Text = "「「"
         '
         'cmd_S_PriCustAll
         '
-        Me.cmd_S_PriCustAll.Location = New System.Drawing.Point(118, 42)
+        Me.cmd_S_PriCustAll.Location = New System.Drawing.Point(129, 50)
         Me.cmd_S_PriCustAll.Name = "cmd_S_PriCustAll"
-        Me.cmd_S_PriCustAll.Size = New System.Drawing.Size(45, 22)
+        Me.cmd_S_PriCustAll.Size = New System.Drawing.Size(64, 24)
         Me.cmd_S_PriCustAll.TabIndex = 3
         Me.cmd_S_PriCustAll.Text = "「「"
         '
         'cmd_S_CoCde
         '
         Me.cmd_S_CoCde.Enabled = False
-        Me.cmd_S_CoCde.Location = New System.Drawing.Point(118, 12)
+        Me.cmd_S_CoCde.Location = New System.Drawing.Point(129, 12)
         Me.cmd_S_CoCde.Name = "cmd_S_CoCde"
-        Me.cmd_S_CoCde.Size = New System.Drawing.Size(45, 22)
+        Me.cmd_S_CoCde.Size = New System.Drawing.Size(64, 24)
         Me.cmd_S_CoCde.TabIndex = 1
         Me.cmd_S_CoCde.Text = "「「"
         '
         'lbl_S_ItmNo
         '
         Me.lbl_S_ItmNo.AutoSize = True
-        Me.lbl_S_ItmNo.Location = New System.Drawing.Point(11, 109)
+        Me.lbl_S_ItmNo.Location = New System.Drawing.Point(17, 130)
         Me.lbl_S_ItmNo.Name = "lbl_S_ItmNo"
-        Me.lbl_S_ItmNo.Size = New System.Drawing.Size(43, 12)
+        Me.lbl_S_ItmNo.Size = New System.Drawing.Size(47, 15)
         Me.lbl_S_ItmNo.TabIndex = 110
         Me.lbl_S_ItmNo.Text = "Item No"
         '
         'txt_S_ItmNo
         '
-        Me.txt_S_ItmNo.Location = New System.Drawing.Point(175, 104)
+        Me.txt_S_ItmNo.Location = New System.Drawing.Point(201, 127)
         Me.txt_S_ItmNo.MaxLength = 5000
         Me.txt_S_ItmNo.Name = "txt_S_ItmNo"
-        Me.txt_S_ItmNo.Size = New System.Drawing.Size(443, 22)
+        Me.txt_S_ItmNo.Size = New System.Drawing.Size(418, 21)
         Me.txt_S_ItmNo.TabIndex = 8
         '
         'txt_S_PriCustAll
         '
-        Me.txt_S_PriCustAll.Location = New System.Drawing.Point(175, 41)
+        Me.txt_S_PriCustAll.Location = New System.Drawing.Point(201, 50)
         Me.txt_S_PriCustAll.MaxLength = 5000
         Me.txt_S_PriCustAll.Name = "txt_S_PriCustAll"
-        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(443, 22)
+        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(418, 21)
         Me.txt_S_PriCustAll.TabIndex = 4
         '
         'txt_S_CoCde
         '
         Me.txt_S_CoCde.Enabled = False
-        Me.txt_S_CoCde.Location = New System.Drawing.Point(175, 12)
+        Me.txt_S_CoCde.Location = New System.Drawing.Point(201, 12)
         Me.txt_S_CoCde.MaxLength = 5000
         Me.txt_S_CoCde.Name = "txt_S_CoCde"
-        Me.txt_S_CoCde.Size = New System.Drawing.Size(443, 22)
+        Me.txt_S_CoCde.Size = New System.Drawing.Size(418, 21)
         Me.txt_S_CoCde.TabIndex = 2
         '
         'lbl_S_PriCust
         '
         Me.lbl_S_PriCust.AutoSize = True
-        Me.lbl_S_PriCust.Location = New System.Drawing.Point(11, 46)
+        Me.lbl_S_PriCust.Location = New System.Drawing.Point(17, 55)
         Me.lbl_S_PriCust.Name = "lbl_S_PriCust"
-        Me.lbl_S_PriCust.Size = New System.Drawing.Size(66, 12)
+        Me.lbl_S_PriCust.Size = New System.Drawing.Size(71, 15)
         Me.lbl_S_PriCust.TabIndex = 105
         Me.lbl_S_PriCust.Text = "Pri Customer"
         '
         'lbl_S_CoCde
         '
         Me.lbl_S_CoCde.AutoSize = True
-        Me.lbl_S_CoCde.Location = New System.Drawing.Point(11, 17)
+        Me.lbl_S_CoCde.Location = New System.Drawing.Point(17, 17)
         Me.lbl_S_CoCde.Name = "lbl_S_CoCde"
-        Me.lbl_S_CoCde.Size = New System.Drawing.Size(79, 12)
+        Me.lbl_S_CoCde.Size = New System.Drawing.Size(83, 15)
         Me.lbl_S_CoCde.TabIndex = 104
         Me.lbl_S_CoCde.Text = "Company Code"
         '
         'cmdShow
         '
-        Me.cmdShow.Location = New System.Drawing.Point(259, 244)
+        Me.cmdShow.Location = New System.Drawing.Point(257, 256)
         Me.cmdShow.Name = "cmdShow"
-        Me.cmdShow.Size = New System.Drawing.Size(140, 22)
+        Me.cmdShow.Size = New System.Drawing.Size(133, 33)
         Me.cmdShow.TabIndex = 13
         Me.cmdShow.Text = "Show Report"
         Me.cmdShow.UseVisualStyleBackColor = True
         '
         'cmd_S_DV
         '
-        Me.cmd_S_DV.Location = New System.Drawing.Point(118, 137)
+        Me.cmd_S_DV.Location = New System.Drawing.Point(129, 168)
         Me.cmd_S_DV.Name = "cmd_S_DV"
-        Me.cmd_S_DV.Size = New System.Drawing.Size(45, 22)
+        Me.cmd_S_DV.Size = New System.Drawing.Size(64, 24)
         Me.cmd_S_DV.TabIndex = 9
         Me.cmd_S_DV.Text = "「「"
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(11, 141)
+        Me.Label18.Location = New System.Drawing.Point(17, 172)
         Me.Label18.Name = "Label18"
-<<<<<<< HEAD
         Me.Label18.Size = New System.Drawing.Size(77, 15)
-=======
-        Me.Label18.Size = New System.Drawing.Size(75, 12)
->>>>>>> MPO-UI
         Me.Label18.TabIndex = 163
         Me.Label18.Text = "Design Vendor"
         '
         'txt_S_DV
         '
-        Me.txt_S_DV.Location = New System.Drawing.Point(175, 137)
+        Me.txt_S_DV.Location = New System.Drawing.Point(201, 168)
         Me.txt_S_DV.MaxLength = 5000
         Me.txt_S_DV.Name = "txt_S_DV"
-        Me.txt_S_DV.Size = New System.Drawing.Size(443, 22)
+        Me.txt_S_DV.Size = New System.Drawing.Size(418, 21)
         Me.txt_S_DV.TabIndex = 10
         '
         'cmd_S_SecCustAll
         '
-        Me.cmd_S_SecCustAll.Location = New System.Drawing.Point(118, 74)
+        Me.cmd_S_SecCustAll.Location = New System.Drawing.Point(129, 88)
         Me.cmd_S_SecCustAll.Name = "cmd_S_SecCustAll"
-        Me.cmd_S_SecCustAll.Size = New System.Drawing.Size(45, 22)
+        Me.cmd_S_SecCustAll.Size = New System.Drawing.Size(64, 24)
         Me.cmd_S_SecCustAll.TabIndex = 5
         Me.cmd_S_SecCustAll.Text = "「「"
         '
         'txt_S_SecCustAll
         '
-        Me.txt_S_SecCustAll.Location = New System.Drawing.Point(175, 74)
+        Me.txt_S_SecCustAll.Location = New System.Drawing.Point(201, 88)
         Me.txt_S_SecCustAll.MaxLength = 5000
         Me.txt_S_SecCustAll.Name = "txt_S_SecCustAll"
-        Me.txt_S_SecCustAll.Size = New System.Drawing.Size(443, 22)
+        Me.txt_S_SecCustAll.Size = New System.Drawing.Size(418, 21)
         Me.txt_S_SecCustAll.TabIndex = 6
         '
         'lbl_S_SecCust
         '
         Me.lbl_S_SecCust.AutoSize = True
-        Me.lbl_S_SecCust.Location = New System.Drawing.Point(11, 79)
+        Me.lbl_S_SecCust.Location = New System.Drawing.Point(17, 96)
         Me.lbl_S_SecCust.Name = "lbl_S_SecCust"
-        Me.lbl_S_SecCust.Size = New System.Drawing.Size(69, 12)
+        Me.lbl_S_SecCust.Size = New System.Drawing.Size(73, 15)
         Me.lbl_S_SecCust.TabIndex = 166
         Me.lbl_S_SecCust.Text = "Sec Customer"
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(133, 190)
+        Me.Label19.Location = New System.Drawing.Point(140, 221)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(30, 12)
+        Me.Label19.Size = New System.Drawing.Size(33, 15)
         Me.Label19.TabIndex = 175
         Me.Label19.Text = "From"
         '
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(405, 190)
+        Me.Label20.Location = New System.Drawing.Point(405, 221)
         Me.Label20.Name = "Label20"
-<<<<<<< HEAD
         Me.Label20.Size = New System.Drawing.Size(20, 15)
-=======
-        Me.Label20.Size = New System.Drawing.Size(18, 12)
->>>>>>> MPO-UI
         Me.Label20.TabIndex = 174
         Me.Label20.Text = "To"
         '
         'Label21
         '
-        Me.Label21.Location = New System.Drawing.Point(533, 190)
+        Me.Label21.Location = New System.Drawing.Point(533, 221)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(100, 16)
         Me.Label21.TabIndex = 173
@@ -291,7 +283,7 @@ Public Class ACR00001
         '
         'Label22
         '
-        Me.Label22.Location = New System.Drawing.Point(269, 190)
+        Me.Label22.Location = New System.Drawing.Point(277, 221)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(100, 16)
         Me.Label22.TabIndex = 172
@@ -299,7 +291,7 @@ Public Class ACR00001
         '
         'Label23
         '
-        Me.Label23.Location = New System.Drawing.Point(11, 190)
+        Me.Label23.Location = New System.Drawing.Point(17, 221)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(138, 23)
         Me.Label23.TabIndex = 171
@@ -307,43 +299,24 @@ Public Class ACR00001
         '
         'txt_S_SHdatFm
         '
-<<<<<<< HEAD
         Me.txt_S_SHdatFm.Location = New System.Drawing.Point(201, 218)
         Me.txt_S_SHdatFm.Mask = "00/00/0000"
         Me.txt_S_SHdatFm.Name = "txt_S_SHdatFm"
         Me.txt_S_SHdatFm.Size = New System.Drawing.Size(72, 21)
-=======
-        Me.txt_S_SHdatFm.Location = New System.Drawing.Point(175, 187)
-        Me.txt_S_SHdatFm.Mask = "00/00/0000"
-        Me.txt_S_SHdatFm.Name = "txt_S_SHdatFm"
-        Me.txt_S_SHdatFm.Size = New System.Drawing.Size(88, 22)
->>>>>>> MPO-UI
         Me.txt_S_SHdatFm.TabIndex = 176
         '
         'txt_S_SHdatTo
         '
-<<<<<<< HEAD
         Me.txt_S_SHdatTo.Location = New System.Drawing.Point(455, 218)
         Me.txt_S_SHdatTo.Mask = "00/00/0000"
         Me.txt_S_SHdatTo.Name = "txt_S_SHdatTo"
         Me.txt_S_SHdatTo.Size = New System.Drawing.Size(72, 21)
-=======
-        Me.txt_S_SHdatTo.Location = New System.Drawing.Point(439, 187)
-        Me.txt_S_SHdatTo.Mask = "00/00/0000"
-        Me.txt_S_SHdatTo.Name = "txt_S_SHdatTo"
-        Me.txt_S_SHdatTo.Size = New System.Drawing.Size(88, 22)
->>>>>>> MPO-UI
         Me.txt_S_SHdatTo.TabIndex = 177
         '
         'ACR00001
         '
-<<<<<<< HEAD
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 14)
         Me.ClientSize = New System.Drawing.Size(648, 311)
-=======
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 15)
-        Me.ClientSize = New System.Drawing.Size(634, 271)
->>>>>>> MPO-UI
         Me.Controls.Add(Me.txt_S_SHdatTo)
         Me.Controls.Add(Me.txt_S_SHdatFm)
         Me.Controls.Add(Me.Label19)
@@ -367,15 +340,10 @@ Public Class ACR00001
         Me.Controls.Add(Me.txt_S_CoCde)
         Me.Controls.Add(Me.lbl_S_PriCust)
         Me.Controls.Add(Me.lbl_S_CoCde)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
+        Me.Controls.Add(Me.StatusBar1)
+        Me.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "ACR00001"
-<<<<<<< HEAD
         Me.Text = "ACR00001 - LAI FEI Analysis Report"
-=======
-        Me.Text = "ACR00001 - LAI FEI Analysis Report (ACR01)"
->>>>>>> MPO-UI
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -533,7 +501,6 @@ Public Class ACR00001
             DVLIST = DVLIST.Replace("'", "''")
         End If
 
-<<<<<<< HEAD
         'If Me.txt_S_SHdatFm.CtlText <> "__/__/____" Then
         '    If Not IsDate(Me.txt_S_SHdatFm.CtlText) Then
         '        MsgBox("Invalid Date Format: Sailing On Board Date From")
@@ -590,52 +557,6 @@ Public Class ACR00001
             SHDATTO = Me.txt_S_SHdatTo.Text
         Else
             SHDATTO = "01/01/1900"
-=======
-        If Me.txt_S_SHdatFm.Text <> "__/__/____" Then
-            If Not IsDate(Me.txt_S_SHdatFm.Text) Then
-                MsgBox("Invalid Date Format: Sailing On Board Date From")
-                Me.txt_S_SHdatFm.Focus()
-                Exit Sub
-            End If
-        End If
-
-        If Me.txt_S_SHdatTo.Text <> "__/__/____" Then
-            If Not IsDate(Me.txt_S_SHdatTo.Text) Then
-                MsgBox("Invalid Date Format: Sailing On Board Date To")
-                Me.txt_S_SHdatTo.Focus()
-                Exit Sub
-            End If
-        End If
-
-        If Mid(Me.txt_S_SHdatFm.Text, 7) > Mid(Me.txt_S_SHdatTo.Text, 7) Then
-            MsgBox("Sailing On Board Date: End Date < Start Date (YY)")
-            Me.txt_S_SHdatFm.Focus()
-            Exit Sub
-        ElseIf Mid(Me.txt_S_SHdatFm.Text, 7) = Mid(Me.txt_S_SHdatTo.Text, 7) Then
-            If Me.txt_S_SHdatFm.Text.Substring(0, 2) > Me.txt_S_SHdatTo.Text.Substring(0, 2) Then
-                MsgBox("Sailing On Board Date: End Date < Start Date (MM)")
-                Me.txt_S_SHdatFm.Focus()
-                Exit Sub
-            ElseIf Me.txt_S_SHdatFm.Text.Substring(0, 2) = Me.txt_S_SHdatTo.Text.Substring(0, 2) Then
-                If Me.txt_S_SHdatFm.Text.Substring(3, 2) > Me.txt_S_SHdatTo.Text.Substring(3, 2) Then
-                    MsgBox("Sailing On Board Date: End Date < Start Date (DD)")
-                    Me.txt_S_SHdatFm.Focus()
-                    Exit Sub
-                End If
-            End If
-        End If
-
-        If Me.txt_S_SHdatFm.Text = "__/__/____" Then
-            SHDATFM = "01/01/1900"
-        Else
-            SHDATFM = Me.txt_S_SHdatFm.Text
-        End If
-
-        If Me.txt_S_SHdatTo.Text = "__/__/____" Then
-            SHDATTO = "01/01/1900"
-        Else
-            SHDATTO = Me.txt_S_SHdatTo.Text
->>>>>>> MPO-UI
         End If
 
 
@@ -742,11 +663,34 @@ Public Class ACR00001
         xlsApp.Selection.CurrentRegion.Columns.AutoFit()
         xlsApp.Selection.CurrentRegion.rows.AutoFit()
 
+        'For i = 0 To rs_EXCEL.Fields.Count - 1
+        '    If xlsApp.Columns(i + 1).Width > 100 Then
+        '        'xlsWS.Columns(i + 1).Width = 100.0
+        '    End If
+        'Next
     End Sub
 
 
     Private Function removeduplicateItem(ByVal s As String) As String
         Return s
     End Function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 End Class

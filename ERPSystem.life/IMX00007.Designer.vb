@@ -22,7 +22,6 @@ Partial Class IMX00007
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IMX00007))
         Me.browseFileDialog = New System.Windows.Forms.OpenFileDialog
         Me.cmdClear = New System.Windows.Forms.Button
         Me.tabFrame = New ERPSystem.BaseTabControl
@@ -57,9 +56,9 @@ Partial Class IMX00007
         '
         'cmdClear
         '
-        Me.cmdClear.Location = New System.Drawing.Point(553, 2)
+        Me.cmdClear.Location = New System.Drawing.Point(518, 10)
         Me.cmdClear.Name = "cmdClear"
-        Me.cmdClear.Size = New System.Drawing.Size(75, 20)
+        Me.cmdClear.Size = New System.Drawing.Size(75, 23)
         Me.cmdClear.TabIndex = 3
         Me.cmdClear.Text = "Clear"
         Me.cmdClear.UseVisualStyleBackColor = True
@@ -70,10 +69,10 @@ Partial Class IMX00007
         Me.tabFrame.Controls.Add(Me.TabApproval)
         Me.tabFrame.Controls.Add(Me.tabInvalid)
         Me.tabFrame.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
-        Me.tabFrame.Location = New System.Drawing.Point(0, 3)
+        Me.tabFrame.Location = New System.Drawing.Point(12, 21)
         Me.tabFrame.Name = "tabFrame"
         Me.tabFrame.SelectedIndex = 0
-        Me.tabFrame.Size = New System.Drawing.Size(632, 405)
+        Me.tabFrame.Size = New System.Drawing.Size(581, 299)
         Me.tabFrame.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.tabFrame.TabIndex = 2
         '
@@ -86,7 +85,7 @@ Partial Class IMX00007
         Me.tabUpload.Location = New System.Drawing.Point(4, 22)
         Me.tabUpload.Name = "tabUpload"
         Me.tabUpload.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabUpload.Size = New System.Drawing.Size(624, 379)
+        Me.tabUpload.Size = New System.Drawing.Size(573, 273)
         Me.tabUpload.TabIndex = 0
         Me.tabUpload.Text = "Upload"
         Me.tabUpload.UseVisualStyleBackColor = True
@@ -95,7 +94,7 @@ Partial Class IMX00007
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(132, 181)
+        Me.Label3.Location = New System.Drawing.Point(119, 143)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(339, 12)
         Me.Label3.TabIndex = 16
@@ -103,7 +102,7 @@ Partial Class IMX00007
         '
         'cmdBrowse
         '
-        Me.cmdBrowse.Location = New System.Drawing.Point(462, 93)
+        Me.cmdBrowse.Location = New System.Drawing.Point(441, 72)
         Me.cmdBrowse.Name = "cmdBrowse"
         Me.cmdBrowse.Size = New System.Drawing.Size(86, 23)
         Me.cmdBrowse.TabIndex = 4
@@ -112,8 +111,8 @@ Partial Class IMX00007
         '
         'txtFilePath
         '
-        Me.txtFilePath.BackColor = System.Drawing.SystemColors.Window
-        Me.txtFilePath.Location = New System.Drawing.Point(79, 95)
+        Me.txtFilePath.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.txtFilePath.Location = New System.Drawing.Point(58, 74)
         Me.txtFilePath.Name = "txtFilePath"
         Me.txtFilePath.ReadOnly = True
         Me.txtFilePath.Size = New System.Drawing.Size(377, 22)
@@ -121,7 +120,7 @@ Partial Class IMX00007
         '
         'cmdUpload
         '
-        Me.cmdUpload.Location = New System.Drawing.Point(248, 239)
+        Me.cmdUpload.Location = New System.Drawing.Point(235, 170)
         Me.cmdUpload.Name = "cmdUpload"
         Me.cmdUpload.Size = New System.Drawing.Size(112, 28)
         Me.cmdUpload.TabIndex = 1
@@ -136,14 +135,14 @@ Partial Class IMX00007
         Me.TabApproval.Location = New System.Drawing.Point(4, 22)
         Me.TabApproval.Name = "TabApproval"
         Me.TabApproval.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabApproval.Size = New System.Drawing.Size(624, 379)
+        Me.TabApproval.Size = New System.Drawing.Size(573, 273)
         Me.TabApproval.TabIndex = 1
         Me.TabApproval.Text = "Approval"
         Me.TabApproval.UseVisualStyleBackColor = True
         '
         'cmdSave
         '
-        Me.cmdSave.Location = New System.Drawing.Point(474, 337)
+        Me.cmdSave.Location = New System.Drawing.Point(466, 227)
         Me.cmdSave.Name = "cmdSave"
         Me.cmdSave.Size = New System.Drawing.Size(75, 36)
         Me.cmdSave.TabIndex = 5
@@ -158,7 +157,7 @@ Partial Class IMX00007
         Me.GroupBox1.Controls.Add(Me.txtApplyFrom)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtApplyTo)
-        Me.GroupBox1.Location = New System.Drawing.Point(45, 330)
+        Me.GroupBox1.Location = New System.Drawing.Point(37, 220)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(396, 45)
         Me.GroupBox1.TabIndex = 4
@@ -166,7 +165,7 @@ Partial Class IMX00007
         '
         'cmdApply
         '
-        Me.cmdApply.Location = New System.Drawing.Point(306, 15)
+        Me.cmdApply.Location = New System.Drawing.Point(306, 14)
         Me.cmdApply.Name = "cmdApply"
         Me.cmdApply.Size = New System.Drawing.Size(82, 23)
         Me.cmdApply.TabIndex = 6
@@ -176,7 +175,7 @@ Partial Class IMX00007
         'optReject
         '
         Me.optReject.AutoSize = True
-        Me.optReject.Location = New System.Drawing.Point(236, 19)
+        Me.optReject.Location = New System.Drawing.Point(236, 17)
         Me.optReject.Name = "optReject"
         Me.optReject.Size = New System.Drawing.Size(52, 16)
         Me.optReject.TabIndex = 5
@@ -187,7 +186,7 @@ Partial Class IMX00007
         'optApprove
         '
         Me.optApprove.AutoSize = True
-        Me.optApprove.Location = New System.Drawing.Point(156, 19)
+        Me.optApprove.Location = New System.Drawing.Point(156, 17)
         Me.optApprove.Name = "optApprove"
         Me.optApprove.Size = New System.Drawing.Size(64, 16)
         Me.optApprove.TabIndex = 4
@@ -206,7 +205,7 @@ Partial Class IMX00007
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(61, 21)
+        Me.Label1.Location = New System.Drawing.Point(61, 19)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(20, 12)
         Me.Label1.TabIndex = 3
@@ -229,8 +228,7 @@ Partial Class IMX00007
         Me.grdApproval.Location = New System.Drawing.Point(7, 7)
         Me.grdApproval.Name = "grdApproval"
         Me.grdApproval.RowHeadersWidth = 20
-        Me.grdApproval.RowTemplate.Height = 24
-        Me.grdApproval.Size = New System.Drawing.Size(614, 317)
+        Me.grdApproval.Size = New System.Drawing.Size(560, 208)
         Me.grdApproval.TabIndex = 0
         '
         'tabInvalid
@@ -239,7 +237,7 @@ Partial Class IMX00007
         Me.tabInvalid.Location = New System.Drawing.Point(4, 22)
         Me.tabInvalid.Name = "tabInvalid"
         Me.tabInvalid.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabInvalid.Size = New System.Drawing.Size(624, 379)
+        Me.tabInvalid.Size = New System.Drawing.Size(573, 273)
         Me.tabInvalid.TabIndex = 2
         Me.tabInvalid.Text = "Invalid"
         Me.tabInvalid.UseVisualStyleBackColor = True
@@ -254,21 +252,19 @@ Partial Class IMX00007
         Me.grdInvalid.Name = "grdInvalid"
         Me.grdInvalid.RowHeadersVisible = False
         Me.grdInvalid.RowHeadersWidth = 20
-        Me.grdInvalid.RowTemplate.Height = 24
-        Me.grdInvalid.Size = New System.Drawing.Size(611, 366)
+        Me.grdInvalid.Size = New System.Drawing.Size(560, 260)
         Me.grdInvalid.TabIndex = 1
         '
         'IMX00007
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
-        Me.ClientSize = New System.Drawing.Size(634, 411)
+        Me.ClientSize = New System.Drawing.Size(605, 332)
         Me.Controls.Add(Me.cmdClear)
         Me.Controls.Add(Me.tabFrame)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "IMX00007"
-        Me.Text = "IMX00007 - Temp Item and Real Item Matching Excel File Upload (IMX07)"
+        Me.Text = "IMX00007 - Temp Item and Real Item Matching Excel File Upload"
         Me.tabFrame.ResumeLayout(False)
         Me.tabUpload.ResumeLayout(False)
         Me.tabUpload.PerformLayout()
