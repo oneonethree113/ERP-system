@@ -31,6 +31,7 @@
         cboGroupBy.Items.Add("Excel - Type1")
         cboGroupBy.SelectedIndex = 0
 
+        Call Formstartup(Me.Name)
 
 
     End Sub

@@ -34,9 +34,6 @@ Public Class MIM00001
 
 
 #Region " Windows Form Designer generated code"
-    Friend WithEvents cmdSearch As System.Windows.Forms.Button
-    Friend WithEvents cmdspecial As System.Windows.Forms.Button
-    Friend WithEvents cmdbrowlist As System.Windows.Forms.Button
     Friend WithEvents txtItmFm As System.Windows.Forms.TextBox
     Friend WithEvents StatusBar As System.Windows.Forms.StatusBar
     Friend WithEvents StatusBarPanel1 As System.Windows.Forms.StatusBarPanel
@@ -54,6 +51,32 @@ Public Class MIM00001
     Friend WithEvents LstUM As System.Windows.Forms.ListBox
     Friend WithEvents Lstlvl0 As System.Windows.Forms.ListBox
     Friend WithEvents Lstlvl1 As System.Windows.Forms.ListBox
+    Friend WithEvents menuStrip As System.Windows.Forms.MenuStrip
+    Friend WithEvents mmdAdd As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdSave As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdDelete As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdCopy As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdFind As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdClear As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdSearch As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdInsRow As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdDelRow As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t4 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdPrint As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t5 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdAttach As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t6 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdFunction As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdRel As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdApv As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t7 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdLink As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t8 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdExit As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 
     Public rs_POM00010_AppList As New DataSet
 
@@ -83,38 +106,8 @@ Public Class MIM00001
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    Friend WithEvents cmdDelete As System.Windows.Forms.Button
-    Friend WithEvents cmdSave As System.Windows.Forms.Button
-    Friend WithEvents cmdAdd As System.Windows.Forms.Button
-    Friend WithEvents cmdLast As System.Windows.Forms.Button
-    Friend WithEvents cmdPrv As System.Windows.Forms.Button
-    Friend WithEvents cmdNext As System.Windows.Forms.Button
-    Friend WithEvents cmdFind As System.Windows.Forms.Button
-    Friend WithEvents cmdCopy As System.Windows.Forms.Button
-    Friend WithEvents cmdClear As System.Windows.Forms.Button
-    Friend WithEvents cmdExit As System.Windows.Forms.Button
-    Friend WithEvents cmdDelRow As System.Windows.Forms.Button
-    Friend WithEvents cmdFirst As System.Windows.Forms.Button
-    Friend WithEvents cmdInsRow As System.Windows.Forms.Button
-    Friend WithEvents CmdLookup As System.Windows.Forms.Button
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.cmdDelete = New System.Windows.Forms.Button
-        Me.cmdSave = New System.Windows.Forms.Button
-        Me.cmdAdd = New System.Windows.Forms.Button
-        Me.cmdLast = New System.Windows.Forms.Button
-        Me.cmdPrv = New System.Windows.Forms.Button
-        Me.cmdNext = New System.Windows.Forms.Button
-        Me.cmdFind = New System.Windows.Forms.Button
-        Me.cmdCopy = New System.Windows.Forms.Button
-        Me.cmdClear = New System.Windows.Forms.Button
-        Me.cmdExit = New System.Windows.Forms.Button
-        Me.cmdDelRow = New System.Windows.Forms.Button
-        Me.cmdFirst = New System.Windows.Forms.Button
-        Me.cmdInsRow = New System.Windows.Forms.Button
-        Me.CmdLookup = New System.Windows.Forms.Button
-        Me.cmdSearch = New System.Windows.Forms.Button
-        Me.cmdspecial = New System.Windows.Forms.Button
-        Me.cmdbrowlist = New System.Windows.Forms.Button
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MIM00001))
         Me.txtItmFm = New System.Windows.Forms.TextBox
         Me.StatusBar = New System.Windows.Forms.StatusBar
         Me.StatusBarPanel1 = New System.Windows.Forms.StatusBarPanel
@@ -132,188 +125,43 @@ Public Class MIM00001
         Me.txtItmTo = New System.Windows.Forms.TextBox
         Me.Label33 = New System.Windows.Forms.Label
         Me.Label25 = New System.Windows.Forms.Label
+        Me.menuStrip = New System.Windows.Forms.MenuStrip
+        Me.mmdAdd = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdSave = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdDelete = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdCopy = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdFind = New System.Windows.Forms.ToolStripMenuItem
+        Me.t1 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdClear = New System.Windows.Forms.ToolStripMenuItem
+        Me.t2 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdSearch = New System.Windows.Forms.ToolStripMenuItem
+        Me.t3 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdInsRow = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdDelRow = New System.Windows.Forms.ToolStripMenuItem
+        Me.t4 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdPrint = New System.Windows.Forms.ToolStripMenuItem
+        Me.t5 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdAttach = New System.Windows.Forms.ToolStripMenuItem
+        Me.t6 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdFunction = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdRel = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdApv = New System.Windows.Forms.ToolStripMenuItem
+        Me.t7 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdLink = New System.Windows.Forms.ToolStripMenuItem
+        Me.t8 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdExit = New System.Windows.Forms.ToolStripMenuItem
+        Me.Label1 = New System.Windows.Forms.Label
         CType(Me.StatusBarPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StatusBarPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbRelation.SuspendLayout()
         CType(Me.GrdCatRel, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.menuStrip.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'cmdDelete
-        '
-        Me.cmdDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdDelete.Location = New System.Drawing.Point(106, 0)
-        Me.cmdDelete.Name = "cmdDelete"
-        Me.cmdDelete.Size = New System.Drawing.Size(54, 34)
-        Me.cmdDelete.TabIndex = 2
-        Me.cmdDelete.TabStop = False
-        Me.cmdDelete.Text = "&Delete"
-        '
-        'cmdSave
-        '
-        Me.cmdSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdSave.Location = New System.Drawing.Point(53, 0)
-        Me.cmdSave.Name = "cmdSave"
-        Me.cmdSave.Size = New System.Drawing.Size(54, 34)
-        Me.cmdSave.TabIndex = 1
-        Me.cmdSave.TabStop = False
-        Me.cmdSave.Text = "&Save"
-        '
-        'cmdAdd
-        '
-        Me.cmdAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdAdd.Location = New System.Drawing.Point(0, 0)
-        Me.cmdAdd.Name = "cmdAdd"
-        Me.cmdAdd.Size = New System.Drawing.Size(54, 34)
-        Me.cmdAdd.TabIndex = 0
-        Me.cmdAdd.TabStop = False
-        Me.cmdAdd.Text = "&Add"
-        '
-        'cmdLast
-        '
-        Me.cmdLast.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdLast.Location = New System.Drawing.Point(794, 0)
-        Me.cmdLast.Name = "cmdLast"
-        Me.cmdLast.Size = New System.Drawing.Size(38, 34)
-        Me.cmdLast.TabIndex = 13
-        Me.cmdLast.TabStop = False
-        Me.cmdLast.Text = ">>|"
-        '
-        'cmdPrv
-        '
-        Me.cmdPrv.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdPrv.Location = New System.Drawing.Point(720, 0)
-        Me.cmdPrv.Name = "cmdPrv"
-        Me.cmdPrv.Size = New System.Drawing.Size(38, 34)
-        Me.cmdPrv.TabIndex = 11
-        Me.cmdPrv.TabStop = False
-        Me.cmdPrv.Text = "<"
-        '
-        'cmdNext
-        '
-        Me.cmdNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdNext.Location = New System.Drawing.Point(757, 0)
-        Me.cmdNext.Name = "cmdNext"
-        Me.cmdNext.Size = New System.Drawing.Size(38, 34)
-        Me.cmdNext.TabIndex = 12
-        Me.cmdNext.TabStop = False
-        Me.cmdNext.Text = ">"
-        '
-        'cmdFind
-        '
-        Me.cmdFind.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdFind.Location = New System.Drawing.Point(206, 0)
-        Me.cmdFind.Name = "cmdFind"
-        Me.cmdFind.Size = New System.Drawing.Size(54, 34)
-        Me.cmdFind.TabIndex = 4
-        Me.cmdFind.TabStop = False
-        Me.cmdFind.Text = "&Find"
-        '
-        'cmdCopy
-        '
-        Me.cmdCopy.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdCopy.Location = New System.Drawing.Point(159, 0)
-        Me.cmdCopy.Name = "cmdCopy"
-        Me.cmdCopy.Size = New System.Drawing.Size(48, 34)
-        Me.cmdCopy.TabIndex = 3
-        Me.cmdCopy.TabStop = False
-        Me.cmdCopy.Text = "&Copy"
-        '
-        'cmdClear
-        '
-        Me.cmdClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdClear.Location = New System.Drawing.Point(259, 0)
-        Me.cmdClear.Name = "cmdClear"
-        Me.cmdClear.Size = New System.Drawing.Size(53, 34)
-        Me.cmdClear.TabIndex = 5
-        Me.cmdClear.TabStop = False
-        Me.cmdClear.Text = "Cl&ear"
-        '
-        'cmdExit
-        '
-        Me.cmdExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdExit.Location = New System.Drawing.Point(838, 0)
-        Me.cmdExit.Name = "cmdExit"
-        Me.cmdExit.Size = New System.Drawing.Size(54, 34)
-        Me.cmdExit.TabIndex = 14
-        Me.cmdExit.TabStop = False
-        Me.cmdExit.Text = "E&xit"
-        '
-        'cmdDelRow
-        '
-        Me.cmdDelRow.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdDelRow.Location = New System.Drawing.Point(615, 0)
-        Me.cmdDelRow.Name = "cmdDelRow"
-        Me.cmdDelRow.Size = New System.Drawing.Size(53, 34)
-        Me.cmdDelRow.TabIndex = 9
-        Me.cmdDelRow.TabStop = False
-        Me.cmdDelRow.Text = "Del Ro&w"
-        '
-        'cmdFirst
-        '
-        Me.cmdFirst.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdFirst.Location = New System.Drawing.Point(683, 0)
-        Me.cmdFirst.Name = "cmdFirst"
-        Me.cmdFirst.Size = New System.Drawing.Size(38, 34)
-        Me.cmdFirst.TabIndex = 10
-        Me.cmdFirst.TabStop = False
-        Me.cmdFirst.Text = "|<<"
-        '
-        'cmdInsRow
-        '
-        Me.cmdInsRow.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdInsRow.Location = New System.Drawing.Point(562, 0)
-        Me.cmdInsRow.Name = "cmdInsRow"
-        Me.cmdInsRow.Size = New System.Drawing.Size(54, 34)
-        Me.cmdInsRow.TabIndex = 7
-        Me.cmdInsRow.TabStop = False
-        Me.cmdInsRow.Text = "I&ns Row"
-        '
-        'CmdLookup
-        '
-        Me.CmdLookup.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.CmdLookup.Location = New System.Drawing.Point(446, 0)
-        Me.CmdLookup.Name = "CmdLookup"
-        Me.CmdLookup.Size = New System.Drawing.Size(54, 34)
-        Me.CmdLookup.TabIndex = 8
-        Me.CmdLookup.TabStop = False
-        Me.CmdLookup.Text = "Look &up"
-        Me.CmdLookup.UseVisualStyleBackColor = True
-        '
-        'cmdSearch
-        '
-        Me.cmdSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdSearch.Location = New System.Drawing.Point(323, 0)
-        Me.cmdSearch.Name = "cmdSearch"
-        Me.cmdSearch.Size = New System.Drawing.Size(61, 34)
-        Me.cmdSearch.TabIndex = 6
-        Me.cmdSearch.TabStop = False
-        Me.cmdSearch.Text = "Searc&h"
-        '
-        'cmdspecial
-        '
-        Me.cmdspecial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdspecial.Location = New System.Drawing.Point(383, 0)
-        Me.cmdspecial.Name = "cmdspecial"
-        Me.cmdspecial.Size = New System.Drawing.Size(64, 34)
-        Me.cmdspecial.TabIndex = 49
-        Me.cmdspecial.TabStop = False
-        Me.cmdspecial.Text = "S&pecial Search"
-        '
-        'cmdbrowlist
-        '
-        Me.cmdbrowlist.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.cmdbrowlist.Location = New System.Drawing.Point(499, 0)
-        Me.cmdbrowlist.Name = "cmdbrowlist"
-        Me.cmdbrowlist.Size = New System.Drawing.Size(52, 34)
-        Me.cmdbrowlist.TabIndex = 50
-        Me.cmdbrowlist.TabStop = False
-        Me.cmdbrowlist.Text = "&Browse List"
-        Me.cmdbrowlist.UseVisualStyleBackColor = True
         '
         'txtItmFm
         '
         Me.txtItmFm.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.txtItmFm.Location = New System.Drawing.Point(106, 39)
+        Me.txtItmFm.Location = New System.Drawing.Point(99, 30)
         Me.txtItmFm.MaxLength = 10
         Me.txtItmFm.Name = "txtItmFm"
         Me.txtItmFm.Size = New System.Drawing.Size(119, 20)
@@ -322,11 +170,11 @@ Public Class MIM00001
         'StatusBar
         '
         Me.StatusBar.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StatusBar.Location = New System.Drawing.Point(0, 441)
+        Me.StatusBar.Location = New System.Drawing.Point(0, 605)
         Me.StatusBar.Name = "StatusBar"
         Me.StatusBar.Panels.AddRange(New System.Windows.Forms.StatusBarPanel() {Me.StatusBarPanel1, Me.StatusBarPanel2})
         Me.StatusBar.ShowPanels = True
-        Me.StatusBar.Size = New System.Drawing.Size(889, 26)
+        Me.StatusBar.Size = New System.Drawing.Size(954, 26)
         Me.StatusBar.TabIndex = 276
         '
         'StatusBarPanel1
@@ -334,14 +182,14 @@ Public Class MIM00001
         Me.StatusBarPanel1.Alignment = System.Windows.Forms.HorizontalAlignment.Right
         Me.StatusBarPanel1.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
         Me.StatusBarPanel1.Name = "StatusBarPanel1"
-        Me.StatusBarPanel1.Width = 436
+        Me.StatusBarPanel1.Width = 468
         '
         'StatusBarPanel2
         '
         Me.StatusBarPanel2.Alignment = System.Windows.Forms.HorizontalAlignment.Right
         Me.StatusBarPanel2.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
         Me.StatusBarPanel2.Name = "StatusBarPanel2"
-        Me.StatusBarPanel2.Width = 436
+        Me.StatusBarPanel2.Width = 468
         '
         'TextBox11
         '
@@ -377,34 +225,34 @@ Public Class MIM00001
         Me.gbRelation.Controls.Add(Me.Lstlvl0)
         Me.gbRelation.Controls.Add(Me.Lstlvl1)
         Me.gbRelation.Controls.Add(Me.GrdCatRel)
-        Me.gbRelation.Location = New System.Drawing.Point(9, 62)
+        Me.gbRelation.Location = New System.Drawing.Point(0, 53)
         Me.gbRelation.Name = "gbRelation"
-        Me.gbRelation.Size = New System.Drawing.Size(874, 373)
+        Me.gbRelation.Size = New System.Drawing.Size(954, 546)
         Me.gbRelation.TabIndex = 283
         Me.gbRelation.TabStop = False
         '
         'LstCUR
         '
         Me.LstCUR.FormattingEnabled = True
-        Me.LstCUR.ItemHeight = 15
+        Me.LstCUR.ItemHeight = 12
         Me.LstCUR.Location = New System.Drawing.Point(466, 80)
         Me.LstCUR.Name = "LstCUR"
-        Me.LstCUR.Size = New System.Drawing.Size(59, 34)
+        Me.LstCUR.Size = New System.Drawing.Size(59, 28)
         Me.LstCUR.TabIndex = 373
         '
         'LstCUSTUM
         '
         Me.LstCUSTUM.FormattingEnabled = True
-        Me.LstCUSTUM.ItemHeight = 15
+        Me.LstCUSTUM.ItemHeight = 12
         Me.LstCUSTUM.Location = New System.Drawing.Point(466, 41)
         Me.LstCUSTUM.Name = "LstCUSTUM"
-        Me.LstCUSTUM.Size = New System.Drawing.Size(76, 34)
+        Me.LstCUSTUM.Size = New System.Drawing.Size(76, 28)
         Me.LstCUSTUM.TabIndex = 372
         '
         'LstUM
         '
         Me.LstUM.FormattingEnabled = True
-        Me.LstUM.ItemHeight = 15
+        Me.LstUM.ItemHeight = 12
         Me.LstUM.Location = New System.Drawing.Point(363, 41)
         Me.LstUM.Name = "LstUM"
         Me.LstUM.Size = New System.Drawing.Size(86, 124)
@@ -413,19 +261,19 @@ Public Class MIM00001
         'Lstlvl0
         '
         Me.Lstlvl0.FormattingEnabled = True
-        Me.Lstlvl0.ItemHeight = 15
+        Me.Lstlvl0.ItemHeight = 12
         Me.Lstlvl0.Location = New System.Drawing.Point(55, 156)
         Me.Lstlvl0.Name = "Lstlvl0"
-        Me.Lstlvl0.Size = New System.Drawing.Size(292, 109)
+        Me.Lstlvl0.Size = New System.Drawing.Size(292, 100)
         Me.Lstlvl0.TabIndex = 370
         '
         'Lstlvl1
         '
         Me.Lstlvl1.FormattingEnabled = True
-        Me.Lstlvl1.ItemHeight = 15
+        Me.Lstlvl1.ItemHeight = 12
         Me.Lstlvl1.Location = New System.Drawing.Point(55, 41)
         Me.Lstlvl1.Name = "Lstlvl1"
-        Me.Lstlvl1.Size = New System.Drawing.Size(292, 109)
+        Me.Lstlvl1.Size = New System.Drawing.Size(292, 100)
         Me.Lstlvl1.TabIndex = 369
         '
         'GrdCatRel
@@ -434,18 +282,18 @@ Public Class MIM00001
         Me.GrdCatRel.AllowUserToDeleteRows = False
         Me.GrdCatRel.ColumnHeadersHeight = 20
         Me.GrdCatRel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.GrdCatRel.Location = New System.Drawing.Point(23, 20)
+        Me.GrdCatRel.Location = New System.Drawing.Point(6, 13)
         Me.GrdCatRel.Name = "GrdCatRel"
         Me.GrdCatRel.RowHeadersWidth = 20
         Me.GrdCatRel.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GrdCatRel.RowTemplate.Height = 16
-        Me.GrdCatRel.Size = New System.Drawing.Size(800, 344)
+        Me.GrdCatRel.Size = New System.Drawing.Size(942, 527)
         Me.GrdCatRel.TabIndex = 368
         '
         'txtItmTo
         '
         Me.txtItmTo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.txtItmTo.Location = New System.Drawing.Point(257, 39)
+        Me.txtItmTo.Location = New System.Drawing.Point(250, 30)
         Me.txtItmTo.MaxLength = 10
         Me.txtItmTo.Name = "txtItmTo"
         Me.txtItmTo.Size = New System.Drawing.Size(119, 20)
@@ -454,61 +302,232 @@ Public Class MIM00001
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.Label33.Location = New System.Drawing.Point(231, 39)
+        Me.Label33.Location = New System.Drawing.Point(224, 33)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(20, 13)
+        Me.Label33.Size = New System.Drawing.Size(18, 12)
         Me.Label33.TabIndex = 296
         Me.Label33.Text = "To"
         '
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.Label25.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.Label25.Location = New System.Drawing.Point(18, 39)
+        Me.Label25.Location = New System.Drawing.Point(11, 33)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(88, 13)
+        Me.Label25.Size = New System.Drawing.Size(46, 12)
         Me.Label25.TabIndex = 295
-        Me.Label25.Text = "Item No. Range :"
+        Me.Label25.Text = "Item No."
+        '
+        'menuStrip
+        '
+        Me.menuStrip.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.menuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mmdAdd, Me.mmdSave, Me.mmdDelete, Me.mmdCopy, Me.mmdFind, Me.t1, Me.mmdClear, Me.t2, Me.mmdSearch, Me.t3, Me.mmdInsRow, Me.mmdDelRow, Me.t4, Me.mmdPrint, Me.t5, Me.mmdAttach, Me.t6, Me.mmdFunction, Me.t7, Me.mmdLink, Me.t8, Me.mmdExit})
+        Me.menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
+        Me.menuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.menuStrip.Name = "menuStrip"
+        Me.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.menuStrip.Size = New System.Drawing.Size(954, 24)
+        Me.menuStrip.TabIndex = 297
+        Me.menuStrip.Text = "MenuStrip1"
+        '
+        'mmdAdd
+        '
+        Me.mmdAdd.BackColor = System.Drawing.SystemColors.Control
+        Me.mmdAdd.Name = "mmdAdd"
+        Me.mmdAdd.Size = New System.Drawing.Size(40, 19)
+        Me.mmdAdd.Tag = "Add"
+        Me.mmdAdd.Text = "&Add"
+        '
+        'mmdSave
+        '
+        Me.mmdSave.Name = "mmdSave"
+        Me.mmdSave.Size = New System.Drawing.Size(46, 19)
+        Me.mmdSave.Text = "&Save"
+        '
+        'mmdDelete
+        '
+        Me.mmdDelete.Name = "mmdDelete"
+        Me.mmdDelete.Size = New System.Drawing.Size(55, 19)
+        Me.mmdDelete.Text = "&Delete"
+        '
+        'mmdCopy
+        '
+        Me.mmdCopy.Name = "mmdCopy"
+        Me.mmdCopy.Size = New System.Drawing.Size(47, 19)
+        Me.mmdCopy.Text = "&Copy"
+        '
+        'mmdFind
+        '
+        Me.mmdFind.Name = "mmdFind"
+        Me.mmdFind.Size = New System.Drawing.Size(43, 19)
+        Me.mmdFind.Text = "&Find"
+        '
+        't1
+        '
+        Me.t1.AutoSize = False
+        Me.t1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.t1.Enabled = False
+        Me.t1.Name = "t1"
+        Me.t1.Size = New System.Drawing.Size(8, 20)
+        Me.t1.Text = "|"
+        '
+        'mmdClear
+        '
+        Me.mmdClear.Name = "mmdClear"
+        Me.mmdClear.Size = New System.Drawing.Size(49, 19)
+        Me.mmdClear.Text = "Cl&ear"
+        '
+        't2
+        '
+        Me.t2.AutoSize = False
+        Me.t2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.t2.Enabled = False
+        Me.t2.Name = "t2"
+        Me.t2.Size = New System.Drawing.Size(8, 20)
+        Me.t2.Text = "|"
+        '
+        'mmdSearch
+        '
+        Me.mmdSearch.Name = "mmdSearch"
+        Me.mmdSearch.Size = New System.Drawing.Size(58, 19)
+        Me.mmdSearch.Text = "Searc&h"
+        '
+        't3
+        '
+        Me.t3.AutoSize = False
+        Me.t3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.t3.Enabled = False
+        Me.t3.Name = "t3"
+        Me.t3.Size = New System.Drawing.Size(8, 20)
+        Me.t3.Text = "|"
+        '
+        'mmdInsRow
+        '
+        Me.mmdInsRow.Name = "mmdInsRow"
+        Me.mmdInsRow.Size = New System.Drawing.Size(64, 19)
+        Me.mmdInsRow.Text = "I&ns Row"
+        '
+        'mmdDelRow
+        '
+        Me.mmdDelRow.Name = "mmdDelRow"
+        Me.mmdDelRow.Size = New System.Drawing.Size(66, 19)
+        Me.mmdDelRow.Text = "Del Ro&w"
+        '
+        't4
+        '
+        Me.t4.AutoSize = False
+        Me.t4.Enabled = False
+        Me.t4.Name = "t4"
+        Me.t4.Size = New System.Drawing.Size(8, 20)
+        Me.t4.Text = "|"
+        '
+        'mmdPrint
+        '
+        Me.mmdPrint.Name = "mmdPrint"
+        Me.mmdPrint.Size = New System.Drawing.Size(44, 19)
+        Me.mmdPrint.Text = "&Print"
+        '
+        't5
+        '
+        Me.t5.AutoSize = False
+        Me.t5.Enabled = False
+        Me.t5.Name = "t5"
+        Me.t5.Size = New System.Drawing.Size(8, 20)
+        Me.t5.Text = "|"
+        '
+        'mmdAttach
+        '
+        Me.mmdAttach.Name = "mmdAttach"
+        Me.mmdAttach.Size = New System.Drawing.Size(52, 19)
+        Me.mmdAttach.Text = "Attach"
+        '
+        't6
+        '
+        Me.t6.AutoSize = False
+        Me.t6.Enabled = False
+        Me.t6.Name = "t6"
+        Me.t6.Size = New System.Drawing.Size(8, 20)
+        Me.t6.Text = "|"
+        '
+        'mmdFunction
+        '
+        Me.mmdFunction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mmdRel, Me.mmdApv})
+        Me.mmdFunction.Name = "mmdFunction"
+        Me.mmdFunction.Size = New System.Drawing.Size(66, 19)
+        Me.mmdFunction.Text = "Function"
+        '
+        'mmdRel
+        '
+        Me.mmdRel.Name = "mmdRel"
+        Me.mmdRel.Size = New System.Drawing.Size(121, 22)
+        Me.mmdRel.Text = "Release"
+        '
+        'mmdApv
+        '
+        Me.mmdApv.Name = "mmdApv"
+        Me.mmdApv.Size = New System.Drawing.Size(121, 22)
+        Me.mmdApv.Text = "Approval"
+        '
+        't7
+        '
+        Me.t7.AutoSize = False
+        Me.t7.Enabled = False
+        Me.t7.Name = "t7"
+        Me.t7.Size = New System.Drawing.Size(8, 20)
+        Me.t7.Text = "|"
+        '
+        'mmdLink
+        '
+        Me.mmdLink.Name = "mmdLink"
+        Me.mmdLink.Size = New System.Drawing.Size(42, 19)
+        Me.mmdLink.Text = "Link"
+        '
+        't8
+        '
+        Me.t8.AutoSize = False
+        Me.t8.Enabled = False
+        Me.t8.Name = "t8"
+        Me.t8.Size = New System.Drawing.Size(8, 20)
+        Me.t8.Text = "|"
+        '
+        'mmdExit
+        '
+        Me.mmdExit.Name = "mmdExit"
+        Me.mmdExit.Size = New System.Drawing.Size(38, 19)
+        Me.mmdExit.Text = "E&xit"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(63, 33)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(30, 12)
+        Me.Label1.TabIndex = 298
+        Me.Label1.Text = "From"
         '
         'MIM00001
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 14)
-        Me.ClientSize = New System.Drawing.Size(889, 467)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 15)
+        Me.ClientSize = New System.Drawing.Size(954, 631)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.menuStrip)
         Me.Controls.Add(Me.Label33)
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.txtItmTo)
         Me.Controls.Add(Me.gbRelation)
         Me.Controls.Add(Me.StatusBar)
         Me.Controls.Add(Me.txtItmFm)
-        Me.Controls.Add(Me.cmdDelete)
-        Me.Controls.Add(Me.cmdbrowlist)
-        Me.Controls.Add(Me.cmdspecial)
-        Me.Controls.Add(Me.cmdSave)
-        Me.Controls.Add(Me.CmdLookup)
-        Me.Controls.Add(Me.cmdAdd)
-        Me.Controls.Add(Me.cmdFind)
-        Me.Controls.Add(Me.cmdLast)
-        Me.Controls.Add(Me.cmdPrv)
-        Me.Controls.Add(Me.cmdCopy)
-        Me.Controls.Add(Me.cmdNext)
-        Me.Controls.Add(Me.cmdClear)
-        Me.Controls.Add(Me.cmdExit)
-        Me.Controls.Add(Me.cmdFirst)
-        Me.Controls.Add(Me.cmdDelRow)
-        Me.Controls.Add(Me.cmdInsRow)
-        Me.Controls.Add(Me.cmdSearch)
-        Me.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MinimizeBox = False
         Me.Name = "MIM00001"
-        Me.Text = "MIM00001 - WT Factory Item Master"
+        Me.Text = "MIM00001 - WT Factory Item Master (MIM01)"
         CType(Me.StatusBarPanel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StatusBarPanel2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbRelation.ResumeLayout(False)
         CType(Me.GrdCatRel, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.menuStrip.ResumeLayout(False)
+        Me.menuStrip.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -574,7 +593,7 @@ Public Class MIM00001
                     rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("zil_creusr").Value = "~*NEW*~"
                     rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("zil_status").Value = "Y"
 
-                    cmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+                    mmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
 
                 ElseIf rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("zil_status") = "Y" Then
                     rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("zil_creusr").Value = rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("zil_updusr").Value
@@ -587,7 +606,7 @@ Public Class MIM00001
                     rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("zil_creusr").Value = "~*DEL*~"
                     rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("zil_status").Value = "Y"
 
-                    cmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+                    mmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
 
                 ElseIf rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("zil_status") = "Y" Then
                     rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("zil_creusr").Value = rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("zil_updusr").Value
@@ -664,10 +683,10 @@ Public Class MIM00001
         Cursor = Cursors.Default
         txtItmFm.ReadOnly = True
         txtItmTo.ReadOnly = True
-        cmdFind.Enabled = False
-        cmdClear.Enabled = True
-        cmdInsRow.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
-        cmdDelRow.Enabled = Del_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+        mmdFind.Enabled = False
+        mmdClear.Enabled = True
+        mmdInsRow.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+        mmdDelRow.Enabled = Del_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
 
 
 
@@ -851,8 +870,8 @@ Public Class MIM00001
         LstUM.Visible = False
         LstCUSTUM.Visible = False
         LstCUR.Visible = False
-        cmdInsRow.Enabled = False
-        cmdDelRow.Enabled = False
+        mmdInsRow.Enabled = False
+        mmdDelRow.Enabled = False
 
         CanModify = True
 
@@ -1008,24 +1027,23 @@ Public Class MIM00001
         If Mode = "init" Then
             readingindex = 0
             'Call SetInputBoxesStatus("DisableAll")
-            cmdAdd.Enabled = False
-            cmdSave.Enabled = False
-            cmdDelete.Enabled = False
+            mmdAdd.Enabled = False
+            mmdSave.Enabled = False
+            mmdDelete.Enabled = False
             '        CmdCopy.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
-            cmdFind.Enabled = True
-            CmdLookup.Enabled = False
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
-            cmdExit.Enabled = True
-            cmdClear.Enabled = False
-            cmdSearch.Enabled = False
-            cmdspecial.Enabled = False
-            cmdbrowlist.Enabled = False
+            mmdFind.Enabled = True
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
+            mmdExit.Enabled = True
+            mmdClear.Enabled = False
+            mmdSearch.Enabled = False
 
-            cmdFirst.Enabled = False
-            cmdLast.Enabled = False
-            cmdNext.Enabled = False
-            cmdPrv.Enabled = False
+
+            mmdPrint.Enabled = False
+            mmdAttach.Enabled = False
+            mmdFunction.Enabled = False
+            mmdLink.Enabled = False
+
 
             txtItmFm.Text = ""
             txtItmTo.Text = ""
@@ -1038,7 +1056,7 @@ Public Class MIM00001
             '***Reset the flag
             Recordstatus = False
             Save_flag = False
-            cmdCopy.Enabled = False
+            mmdCopy.Enabled = False
             'Add your codes here
 
         ElseIf Mode = "InsRow" Then
@@ -1074,12 +1092,11 @@ Public Class MIM00001
 
             '   GrdCatRel.col = 1
 
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = False
-            CmdLookup.Enabled = False
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = False
 
-            cmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
-            cmdDelRow.Enabled = Del_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+            mmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+            mmdDelRow.Enabled = Del_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
 
 
             Call SetStatusBar(Mode)
@@ -1092,19 +1109,19 @@ Public Class MIM00001
 
             Call setStatus("init")
             Call Form_Load()
-            cmdClear.Enabled = True
+            mmdClear.Enabled = True
 
 
 
         End If
 
         If Not CanModify Then
-            cmdAdd.Enabled = False
-            cmdSave.Enabled = False
-            cmdDelete.Enabled = False
+            mmdAdd.Enabled = False
+            mmdSave.Enabled = False
+            mmdDelete.Enabled = False
             'CmdLookup.Enabled = False
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
 
             'Call ResetDefaultDisp
             Call SetStatusBar("ReadOnly")
@@ -1618,27 +1635,27 @@ Public Class MIM00001
     Private Sub txtItmTo_GotFocus()
     End Sub
 
-    Private Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFind.Click
+    Private Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFind.Click
         Call cmdFind_Click()
     End Sub
 
-    Private Sub cmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSave.Click
+    Private Sub cmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
         Call CmdSave_Click()
     End Sub
 
-    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
+    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
         Call cmdClear_Click()
     End Sub
 
-    Private Sub cmdDelRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdDelRow.Click
+    Private Sub cmdDelRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdDelRow.Click
         Call cmdDelRow_Click()
     End Sub
 
-    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdExit.Click
+    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
         Call CmdExit_Click()
     End Sub
 
-    Private Sub cmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSearch.Click
+    Private Sub cmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSearch.Click
 
     End Sub
 
@@ -1657,7 +1674,7 @@ Public Class MIM00001
                 'tempzz
                 rs_ZSITMLST.Tables("RESULT").Rows(readingindex)(0) = "Y"
                 rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("zil_creusr") = "~*DEL*~"
-                cmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+                mmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
             Else
                 rs_ZSITMLST.Tables("RESULT").Rows(readingindex)(0) = " "
                 rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("zil_creusr") = " "
@@ -1772,7 +1789,7 @@ Public Class MIM00001
                     rs_ZSITMLST.Tables("RESULT").Rows(readingindex)(0) = "Y"
                     rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("zil_creusr") = "~*DEL*~"
 
-                    cmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
+                    mmdSave.Enabled = Enq_right_local 'True '*** For Access Right use, added by Tommy on 5 Oct 2001
                 Else
                     rs_ZSITMLST.Tables("RESULT").Rows(readingindex)(0) = " "
                     rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("zil_creusr") = " "
@@ -1835,7 +1852,7 @@ Public Class MIM00001
                 If rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("zil_creusr") <> "~*ADD*~" Then
                     rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("zil_creusr") = "~*UPD*~"
                     'rs_ZSITMLST.Update()
-                    cmdSave.Enabled = Enq_right_local
+                    mmdSave.Enabled = Enq_right_local
                 End If
             ElseIf ColIndex = 8 Then
                 If InStr(rs_ZSITMLST.Tables("RESULT").Rows(readingindex)("Zil_CatCde1"), " - ") > 0 Then
@@ -2000,85 +2017,9 @@ Public Class MIM00001
 
     End Sub
 
-    Private Sub cmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdInsRow.Click
+    Private Sub cmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdInsRow.Click
         Call cmdInsRow_Click()
     End Sub
 End Class
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

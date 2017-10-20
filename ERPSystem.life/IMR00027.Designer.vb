@@ -22,6 +22,7 @@ Partial Class IMR00027
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IMR00027))
         Me.cmdtlItmnat = New System.Windows.Forms.Button
         Me.lbl_S_PV = New System.Windows.Forms.Label
         Me.txtItmnat = New System.Windows.Forms.TextBox
@@ -43,7 +44,6 @@ Partial Class IMR00027
         Me.lbl_S_PriCust = New System.Windows.Forms.Label
         Me.lbl_S_CoCde = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label
         Me.txtPrdGrp = New System.Windows.Forms.TextBox
         Me.txtMatL = New System.Windows.Forms.TextBox
         Me.txtPrdIcon = New System.Windows.Forms.TextBox
@@ -90,169 +90,169 @@ Partial Class IMR00027
         '
         'cmdtlItmnat
         '
-        Me.cmdtlItmnat.Location = New System.Drawing.Point(689, 190)
+        Me.cmdtlItmnat.Location = New System.Drawing.Point(663, 177)
         Me.cmdtlItmnat.Name = "cmdtlItmnat"
-        Me.cmdtlItmnat.Size = New System.Drawing.Size(64, 24)
+        Me.cmdtlItmnat.Size = New System.Drawing.Size(46, 22)
         Me.cmdtlItmnat.TabIndex = 17
         Me.cmdtlItmnat.Text = "＞＞"
         '
         'lbl_S_PV
         '
         Me.lbl_S_PV.AutoSize = True
-        Me.lbl_S_PV.Location = New System.Drawing.Point(91, 169)
+        Me.lbl_S_PV.Location = New System.Drawing.Point(91, 156)
         Me.lbl_S_PV.Name = "lbl_S_PV"
-        Me.lbl_S_PV.Size = New System.Drawing.Size(78, 13)
+        Me.lbl_S_PV.Size = New System.Drawing.Size(77, 12)
         Me.lbl_S_PV.TabIndex = 210
         Me.lbl_S_PV.Text = "Default Vendor"
         '
         'txtItmnat
         '
-        Me.txtItmnat.Location = New System.Drawing.Point(175, 193)
+        Me.txtItmnat.Location = New System.Drawing.Point(175, 178)
         Me.txtItmnat.MaxLength = 5000
         Me.txtItmnat.Name = "txtItmnat"
-        Me.txtItmnat.Size = New System.Drawing.Size(482, 20)
+        Me.txtItmnat.Size = New System.Drawing.Size(482, 22)
         Me.txtItmnat.TabIndex = 16
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(101, 275)
+        Me.Label19.Location = New System.Drawing.Point(101, 254)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(68, 13)
+        Me.Label19.Size = New System.Drawing.Size(65, 12)
         Me.Label19.TabIndex = 209
         Me.Label19.Text = "Product Icon"
         '
         'cmdtlItmDsc
         '
-        Me.cmdtlItmDsc.Location = New System.Drawing.Point(689, 108)
+        Me.cmdtlItmDsc.Location = New System.Drawing.Point(663, 102)
         Me.cmdtlItmDsc.Name = "cmdtlItmDsc"
-        Me.cmdtlItmDsc.Size = New System.Drawing.Size(64, 24)
+        Me.cmdtlItmDsc.Size = New System.Drawing.Size(46, 22)
         Me.cmdtlItmDsc.TabIndex = 8
         Me.cmdtlItmDsc.Text = "＞＞"
         '
         'lbl_S_SecCust
         '
         Me.lbl_S_SecCust.AutoSize = True
-        Me.lbl_S_SecCust.Location = New System.Drawing.Point(86, 117)
+        Me.lbl_S_SecCust.Location = New System.Drawing.Point(86, 108)
         Me.lbl_S_SecCust.Name = "lbl_S_SecCust"
-        Me.lbl_S_SecCust.Size = New System.Drawing.Size(83, 13)
+        Me.lbl_S_SecCust.Size = New System.Drawing.Size(82, 12)
         Me.lbl_S_SecCust.TabIndex = 200
         Me.lbl_S_SecCust.Text = "Item Description"
         '
         'cmdtlColDsc
         '
-        Me.cmdtlColDsc.Location = New System.Drawing.Point(689, 136)
+        Me.cmdtlColDsc.Location = New System.Drawing.Point(663, 128)
         Me.cmdtlColDsc.Name = "cmdtlColDsc"
-        Me.cmdtlColDsc.Size = New System.Drawing.Size(64, 24)
+        Me.cmdtlColDsc.Size = New System.Drawing.Size(46, 22)
         Me.cmdtlColDsc.TabIndex = 11
         Me.cmdtlColDsc.Text = "＞＞"
         '
         'cmdtlPrdLne
         '
-        Me.cmdtlPrdLne.Location = New System.Drawing.Point(689, 55)
+        Me.cmdtlPrdLne.Location = New System.Drawing.Point(663, 53)
         Me.cmdtlPrdLne.Name = "cmdtlPrdLne"
-        Me.cmdtlPrdLne.Size = New System.Drawing.Size(64, 24)
+        Me.cmdtlPrdLne.Size = New System.Drawing.Size(46, 22)
         Me.cmdtlPrdLne.TabIndex = 2
         Me.cmdtlPrdLne.Text = "＞＞"
         '
         'txtItmNo
         '
-        Me.txtItmNo.Location = New System.Drawing.Point(175, 85)
+        Me.txtItmNo.Location = New System.Drawing.Point(175, 78)
         Me.txtItmNo.MaxLength = 5000
         Me.txtItmNo.Name = "txtItmNo"
-        Me.txtItmNo.Size = New System.Drawing.Size(482, 20)
+        Me.txtItmNo.Size = New System.Drawing.Size(482, 22)
         Me.txtItmNo.TabIndex = 4
         '
         'lbl_S_ItmNo
         '
         Me.lbl_S_ItmNo.AutoSize = True
-        Me.lbl_S_ItmNo.Location = New System.Drawing.Point(107, 195)
+        Me.lbl_S_ItmNo.Location = New System.Drawing.Point(107, 180)
         Me.lbl_S_ItmNo.Name = "lbl_S_ItmNo"
-        Me.lbl_S_ItmNo.Size = New System.Drawing.Size(62, 13)
+        Me.lbl_S_ItmNo.Size = New System.Drawing.Size(60, 12)
         Me.lbl_S_ItmNo.TabIndex = 189
         Me.lbl_S_ItmNo.Text = "Item Nature"
         '
         'txtColDsc
         '
-        Me.txtColDsc.Location = New System.Drawing.Point(175, 139)
+        Me.txtColDsc.Location = New System.Drawing.Point(175, 128)
         Me.txtColDsc.MaxLength = 5000
         Me.txtColDsc.Name = "txtColDsc"
-        Me.txtColDsc.Size = New System.Drawing.Size(482, 20)
+        Me.txtColDsc.Size = New System.Drawing.Size(482, 22)
         Me.txtColDsc.TabIndex = 10
         '
         'txtItmDsc
         '
-        Me.txtItmDsc.Location = New System.Drawing.Point(175, 112)
+        Me.txtItmDsc.Location = New System.Drawing.Point(175, 103)
         Me.txtItmDsc.MaxLength = 5000
         Me.txtItmDsc.Name = "txtItmDsc"
-        Me.txtItmDsc.Size = New System.Drawing.Size(482, 20)
+        Me.txtItmDsc.Size = New System.Drawing.Size(482, 22)
         Me.txtItmDsc.TabIndex = 7
         '
         'cmdtlvencde
         '
-        Me.cmdtlvencde.Location = New System.Drawing.Point(689, 163)
+        Me.cmdtlvencde.Location = New System.Drawing.Point(663, 152)
         Me.cmdtlvencde.Name = "cmdtlvencde"
-        Me.cmdtlvencde.Size = New System.Drawing.Size(64, 24)
+        Me.cmdtlvencde.Size = New System.Drawing.Size(46, 22)
         Me.cmdtlvencde.TabIndex = 14
         Me.cmdtlvencde.Text = "＞＞"
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(82, 142)
+        Me.Label18.Location = New System.Drawing.Point(82, 131)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(87, 13)
+        Me.Label18.Size = New System.Drawing.Size(88, 12)
         Me.Label18.TabIndex = 197
         Me.Label18.Text = "Color Description"
         '
         'txtVencde
         '
-        Me.txtVencde.Location = New System.Drawing.Point(175, 166)
+        Me.txtVencde.Location = New System.Drawing.Point(175, 153)
         Me.txtVencde.MaxLength = 5000
         Me.txtVencde.Name = "txtVencde"
-        Me.txtVencde.Size = New System.Drawing.Size(482, 20)
+        Me.txtVencde.Size = New System.Drawing.Size(482, 22)
         Me.txtVencde.TabIndex = 13
         '
         'cmdShow
         '
-        Me.cmdShow.Location = New System.Drawing.Point(334, 494)
+        Me.cmdShow.Location = New System.Drawing.Point(300, 454)
         Me.cmdShow.Name = "cmdShow"
-        Me.cmdShow.Size = New System.Drawing.Size(133, 33)
+        Me.cmdShow.Size = New System.Drawing.Size(133, 30)
         Me.cmdShow.TabIndex = 45
         Me.cmdShow.Text = "Show Report"
         Me.cmdShow.UseVisualStyleBackColor = True
         '
         'cmdtlItmno
         '
-        Me.cmdtlItmno.Location = New System.Drawing.Point(689, 82)
+        Me.cmdtlItmno.Location = New System.Drawing.Point(663, 78)
         Me.cmdtlItmno.Name = "cmdtlItmno"
-        Me.cmdtlItmno.Size = New System.Drawing.Size(64, 24)
+        Me.cmdtlItmno.Size = New System.Drawing.Size(46, 22)
         Me.cmdtlItmno.TabIndex = 5
         Me.cmdtlItmno.Text = "＞＞"
         '
         'txtPrdLne
         '
-        Me.txtPrdLne.Location = New System.Drawing.Point(175, 58)
+        Me.txtPrdLne.Location = New System.Drawing.Point(175, 54)
         Me.txtPrdLne.MaxLength = 5000
         Me.txtPrdLne.Name = "txtPrdLne"
-        Me.txtPrdLne.Size = New System.Drawing.Size(482, 20)
+        Me.txtPrdLne.Size = New System.Drawing.Size(482, 22)
         Me.txtPrdLne.TabIndex = 1
         '
         'lbl_S_PriCust
         '
         Me.lbl_S_PriCust.AutoSize = True
-        Me.lbl_S_PriCust.Location = New System.Drawing.Point(122, 88)
+        Me.lbl_S_PriCust.Location = New System.Drawing.Point(122, 81)
         Me.lbl_S_PriCust.Name = "lbl_S_PriCust"
-        Me.lbl_S_PriCust.Size = New System.Drawing.Size(47, 13)
+        Me.lbl_S_PriCust.Size = New System.Drawing.Size(46, 12)
         Me.lbl_S_PriCust.TabIndex = 188
         Me.lbl_S_PriCust.Text = "Item No."
         '
         'lbl_S_CoCde
         '
         Me.lbl_S_CoCde.AutoSize = True
-        Me.lbl_S_CoCde.Location = New System.Drawing.Point(102, 61)
+        Me.lbl_S_CoCde.Location = New System.Drawing.Point(102, 56)
         Me.lbl_S_CoCde.Name = "lbl_S_CoCde"
-        Me.lbl_S_CoCde.Size = New System.Drawing.Size(67, 13)
+        Me.lbl_S_CoCde.Size = New System.Drawing.Size(65, 12)
         Me.lbl_S_CoCde.TabIndex = 187
         Me.lbl_S_CoCde.Text = "Product Line"
         '
@@ -261,145 +261,136 @@ Partial Class IMR00027
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label1.Location = New System.Drawing.Point(240, 9)
+        Me.Label1.Location = New System.Drawing.Point(207, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(351, 20)
         Me.Label1.TabIndex = 221
         Me.Label1.Text = "Export Item Image to Excel (With Barcode)"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(128, 14)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 13)
-        Me.Label2.TabIndex = 220
-        Me.Label2.Text = "IMR00027"
-        '
         'txtPrdGrp
         '
-        Me.txtPrdGrp.Location = New System.Drawing.Point(175, 246)
+        Me.txtPrdGrp.Location = New System.Drawing.Point(175, 227)
         Me.txtPrdGrp.MaxLength = 5000
         Me.txtPrdGrp.Name = "txtPrdGrp"
-        Me.txtPrdGrp.Size = New System.Drawing.Size(482, 20)
+        Me.txtPrdGrp.Size = New System.Drawing.Size(482, 22)
         Me.txtPrdGrp.TabIndex = 22
         '
         'txtMatL
         '
-        Me.txtMatL.Location = New System.Drawing.Point(175, 300)
+        Me.txtMatL.Location = New System.Drawing.Point(175, 277)
         Me.txtMatL.MaxLength = 5000
         Me.txtMatL.Name = "txtMatL"
-        Me.txtMatL.Size = New System.Drawing.Size(482, 20)
+        Me.txtMatL.Size = New System.Drawing.Size(482, 22)
         Me.txtMatL.TabIndex = 28
         '
         'txtPrdIcon
         '
-        Me.txtPrdIcon.Location = New System.Drawing.Point(175, 272)
+        Me.txtPrdIcon.Location = New System.Drawing.Point(175, 251)
         Me.txtPrdIcon.MaxLength = 5000
         Me.txtPrdIcon.Name = "txtPrdIcon"
-        Me.txtPrdIcon.Size = New System.Drawing.Size(482, 20)
+        Me.txtPrdIcon.Size = New System.Drawing.Size(482, 22)
         Me.txtPrdIcon.TabIndex = 25
         '
         'txtPrdsze
         '
-        Me.txtPrdsze.Location = New System.Drawing.Point(175, 219)
+        Me.txtPrdsze.Location = New System.Drawing.Point(175, 202)
         Me.txtPrdsze.MaxLength = 5000
         Me.txtPrdsze.Name = "txtPrdsze"
-        Me.txtPrdsze.Size = New System.Drawing.Size(482, 20)
+        Me.txtPrdsze.Size = New System.Drawing.Size(482, 22)
         Me.txtPrdsze.TabIndex = 19
         '
         'cmdtlMatL
         '
-        Me.cmdtlMatL.Location = New System.Drawing.Point(689, 296)
+        Me.cmdtlMatL.Location = New System.Drawing.Point(663, 275)
         Me.cmdtlMatL.Name = "cmdtlMatL"
-        Me.cmdtlMatL.Size = New System.Drawing.Size(64, 24)
+        Me.cmdtlMatL.Size = New System.Drawing.Size(46, 22)
         Me.cmdtlMatL.TabIndex = 29
         Me.cmdtlMatL.Text = "＞＞"
         '
         'cndtlPrdsze
         '
-        Me.cndtlPrdsze.Location = New System.Drawing.Point(689, 216)
+        Me.cndtlPrdsze.Location = New System.Drawing.Point(663, 201)
         Me.cndtlPrdsze.Name = "cndtlPrdsze"
-        Me.cndtlPrdsze.Size = New System.Drawing.Size(64, 23)
+        Me.cndtlPrdsze.Size = New System.Drawing.Size(46, 21)
         Me.cndtlPrdsze.TabIndex = 20
         Me.cndtlPrdsze.Text = "＞＞"
         '
         'cmdtlPrdGrp
         '
-        Me.cmdtlPrdGrp.Location = New System.Drawing.Point(689, 243)
+        Me.cmdtlPrdGrp.Location = New System.Drawing.Point(663, 226)
         Me.cmdtlPrdGrp.Name = "cmdtlPrdGrp"
-        Me.cmdtlPrdGrp.Size = New System.Drawing.Size(64, 24)
+        Me.cmdtlPrdGrp.Size = New System.Drawing.Size(46, 22)
         Me.cmdtlPrdGrp.TabIndex = 23
         Me.cmdtlPrdGrp.Text = "＞＞"
         '
         'cmdtlPrdIcon
         '
-        Me.cmdtlPrdIcon.Location = New System.Drawing.Point(689, 269)
+        Me.cmdtlPrdIcon.Location = New System.Drawing.Point(663, 250)
         Me.cmdtlPrdIcon.Name = "cmdtlPrdIcon"
-        Me.cmdtlPrdIcon.Size = New System.Drawing.Size(64, 24)
+        Me.cmdtlPrdIcon.Size = New System.Drawing.Size(46, 22)
         Me.cmdtlPrdIcon.TabIndex = 26
         Me.cmdtlPrdIcon.Text = "＞＞"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(125, 303)
+        Me.Label4.Location = New System.Drawing.Point(125, 280)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(44, 13)
+        Me.Label4.Size = New System.Drawing.Size(43, 12)
         Me.Label4.TabIndex = 231
         Me.Label4.Text = "Material"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(30, 439)
+        Me.Label5.Location = New System.Drawing.Point(30, 405)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(71, 13)
+        Me.Label5.Size = New System.Drawing.Size(68, 12)
         Me.Label5.TabIndex = 236
         Me.Label5.Text = "Product Type"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(33, 393)
+        Me.Label6.Location = New System.Drawing.Point(33, 363)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(68, 13)
+        Me.Label6.Size = New System.Drawing.Size(67, 12)
         Me.Label6.TabIndex = 235
         Me.Label6.Text = "Vendor Type"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(47, 415)
+        Me.Label7.Location = New System.Drawing.Point(47, 383)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(54, 13)
+        Me.Label7.Size = New System.Drawing.Size(53, 12)
         Me.Label7.TabIndex = 234
         Me.Label7.Text = "Item Type"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(27, 368)
+        Me.Label8.Location = New System.Drawing.Point(27, 340)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(74, 13)
+        Me.Label8.Size = New System.Drawing.Size(73, 12)
         Me.Label8.TabIndex = 233
         Me.Label8.Text = "Report Format"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(12, 344)
+        Me.Label9.Location = New System.Drawing.Point(12, 318)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(89, 13)
+        Me.Label9.Size = New System.Drawing.Size(87, 12)
         Me.Label9.TabIndex = 232
         Me.Label9.Text = "Image Resolution"
         '
         'optHighRel
         '
         Me.optHighRel.AutoSize = True
-        Me.optHighRel.Location = New System.Drawing.Point(107, 342)
+        Me.optHighRel.Location = New System.Drawing.Point(107, 316)
         Me.optHighRel.Name = "optHighRel"
-        Me.optHighRel.Size = New System.Drawing.Size(100, 17)
+        Me.optHighRel.Size = New System.Drawing.Size(99, 16)
         Me.optHighRel.TabIndex = 30
         Me.optHighRel.Text = "High Resolution"
         Me.optHighRel.UseVisualStyleBackColor = True
@@ -408,9 +399,9 @@ Partial Class IMR00027
         '
         Me.optLowRel.AutoSize = True
         Me.optLowRel.Checked = True
-        Me.optLowRel.Location = New System.Drawing.Point(211, 342)
+        Me.optLowRel.Location = New System.Drawing.Point(211, 316)
         Me.optLowRel.Name = "optLowRel"
-        Me.optLowRel.Size = New System.Drawing.Size(98, 17)
+        Me.optLowRel.Size = New System.Drawing.Size(97, 16)
         Me.optLowRel.TabIndex = 31
         Me.optLowRel.TabStop = True
         Me.optLowRel.Text = "Low Resolution"
@@ -419,17 +410,17 @@ Partial Class IMR00027
         'cmbImageOnly
         '
         Me.cmbImageOnly.FormattingEnabled = True
-        Me.cmbImageOnly.Location = New System.Drawing.Point(107, 365)
+        Me.cmbImageOnly.Location = New System.Drawing.Point(107, 337)
         Me.cmbImageOnly.Name = "cmbImageOnly"
-        Me.cmbImageOnly.Size = New System.Drawing.Size(121, 21)
+        Me.cmbImageOnly.Size = New System.Drawing.Size(121, 20)
         Me.cmbImageOnly.TabIndex = 32
         '
         'chkVT_I
         '
         Me.chkVT_I.AutoSize = True
-        Me.chkVT_I.Location = New System.Drawing.Point(107, 392)
+        Me.chkVT_I.Location = New System.Drawing.Point(107, 362)
         Me.chkVT_I.Name = "chkVT_I"
-        Me.chkVT_I.Size = New System.Drawing.Size(61, 17)
+        Me.chkVT_I.Size = New System.Drawing.Size(60, 16)
         Me.chkVT_I.TabIndex = 33
         Me.chkVT_I.Text = "Internal"
         Me.chkVT_I.UseVisualStyleBackColor = True
@@ -437,9 +428,9 @@ Partial Class IMR00027
         'chkVT_J
         '
         Me.chkVT_J.AutoSize = True
-        Me.chkVT_J.Location = New System.Drawing.Point(194, 392)
+        Me.chkVT_J.Location = New System.Drawing.Point(194, 362)
         Me.chkVT_J.Name = "chkVT_J"
-        Me.chkVT_J.Size = New System.Drawing.Size(88, 17)
+        Me.chkVT_J.Size = New System.Drawing.Size(86, 16)
         Me.chkVT_J.TabIndex = 34
         Me.chkVT_J.Text = "Joint Venture"
         Me.chkVT_J.UseVisualStyleBackColor = True
@@ -449,9 +440,9 @@ Partial Class IMR00027
         Me.chkPT_SR.AutoSize = True
         Me.chkPT_SR.Checked = True
         Me.chkPT_SR.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkPT_SR.Location = New System.Drawing.Point(107, 439)
+        Me.chkPT_SR.Location = New System.Drawing.Point(107, 405)
         Me.chkPT_SR.Name = "chkPT_SR"
-        Me.chkPT_SR.Size = New System.Drawing.Size(84, 17)
+        Me.chkPT_SR.Size = New System.Drawing.Size(82, 16)
         Me.chkPT_SR.TabIndex = 40
         Me.chkPT_SR.Text = "Show Room"
         Me.chkPT_SR.UseVisualStyleBackColor = True
@@ -461,9 +452,9 @@ Partial Class IMR00027
         Me.chkVT_E.AutoSize = True
         Me.chkVT_E.Checked = True
         Me.chkVT_E.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkVT_E.Location = New System.Drawing.Point(281, 392)
+        Me.chkVT_E.Location = New System.Drawing.Point(281, 362)
         Me.chkVT_E.Name = "chkVT_E"
-        Me.chkVT_E.Size = New System.Drawing.Size(64, 17)
+        Me.chkVT_E.Size = New System.Drawing.Size(63, 16)
         Me.chkVT_E.TabIndex = 35
         Me.chkVT_E.Text = "External"
         Me.chkVT_E.UseVisualStyleBackColor = True
@@ -473,9 +464,9 @@ Partial Class IMR00027
         Me.chkPT_OTH.AutoSize = True
         Me.chkPT_OTH.Checked = True
         Me.chkPT_OTH.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkPT_OTH.Location = New System.Drawing.Point(194, 462)
+        Me.chkPT_OTH.Location = New System.Drawing.Point(194, 426)
         Me.chkPT_OTH.Name = "chkPT_OTH"
-        Me.chkPT_OTH.Size = New System.Drawing.Size(57, 17)
+        Me.chkPT_OTH.Size = New System.Drawing.Size(54, 16)
         Me.chkPT_OTH.TabIndex = 44
         Me.chkPT_OTH.Text = "Others"
         Me.chkPT_OTH.UseVisualStyleBackColor = True
@@ -485,9 +476,9 @@ Partial Class IMR00027
         Me.chkPT_OEM.AutoSize = True
         Me.chkPT_OEM.Checked = True
         Me.chkPT_OEM.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkPT_OEM.Location = New System.Drawing.Point(194, 439)
+        Me.chkPT_OEM.Location = New System.Drawing.Point(194, 405)
         Me.chkPT_OEM.Name = "chkPT_OEM"
-        Me.chkPT_OEM.Size = New System.Drawing.Size(50, 17)
+        Me.chkPT_OEM.Size = New System.Drawing.Size(49, 16)
         Me.chkPT_OEM.TabIndex = 41
         Me.chkPT_OEM.Text = "OEM"
         Me.chkPT_OEM.UseVisualStyleBackColor = True
@@ -497,9 +488,9 @@ Partial Class IMR00027
         Me.chkPT_OEMSR.AutoSize = True
         Me.chkPT_OEMSR.Checked = True
         Me.chkPT_OEMSR.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkPT_OEMSR.Location = New System.Drawing.Point(107, 462)
+        Me.chkPT_OEMSR.Location = New System.Drawing.Point(107, 426)
         Me.chkPT_OEMSR.Name = "chkPT_OEMSR"
-        Me.chkPT_OEMSR.Size = New System.Drawing.Size(77, 17)
+        Me.chkPT_OEMSR.Size = New System.Drawing.Size(75, 16)
         Me.chkPT_OEMSR.TabIndex = 43
         Me.chkPT_OEMSR.Text = "OEM+S.R."
         Me.chkPT_OEMSR.UseVisualStyleBackColor = True
@@ -509,9 +500,9 @@ Partial Class IMR00027
         Me.chkPT_MD.AutoSize = True
         Me.chkPT_MD.Checked = True
         Me.chkPT_MD.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkPT_MD.Location = New System.Drawing.Point(281, 439)
+        Me.chkPT_MD.Location = New System.Drawing.Point(281, 405)
         Me.chkPT_MD.Name = "chkPT_MD"
-        Me.chkPT_MD.Size = New System.Drawing.Size(57, 17)
+        Me.chkPT_MD.Size = New System.Drawing.Size(59, 16)
         Me.chkPT_MD.TabIndex = 42
         Me.chkPT_MD.Text = "Modify"
         Me.chkPT_MD.UseVisualStyleBackColor = True
@@ -519,9 +510,9 @@ Partial Class IMR00027
         'chkIT_OTH
         '
         Me.chkIT_OTH.AutoSize = True
-        Me.chkIT_OTH.Location = New System.Drawing.Point(346, 416)
+        Me.chkIT_OTH.Location = New System.Drawing.Point(346, 384)
         Me.chkIT_OTH.Name = "chkIT_OTH"
-        Me.chkIT_OTH.Size = New System.Drawing.Size(57, 17)
+        Me.chkIT_OTH.Size = New System.Drawing.Size(54, 16)
         Me.chkIT_OTH.TabIndex = 39
         Me.chkIT_OTH.Text = "Others"
         Me.chkIT_OTH.UseVisualStyleBackColor = True
@@ -529,9 +520,9 @@ Partial Class IMR00027
         'chkIT_BOM
         '
         Me.chkIT_BOM.AutoSize = True
-        Me.chkIT_BOM.Location = New System.Drawing.Point(281, 416)
+        Me.chkIT_BOM.Location = New System.Drawing.Point(281, 384)
         Me.chkIT_BOM.Name = "chkIT_BOM"
-        Me.chkIT_BOM.Size = New System.Drawing.Size(50, 17)
+        Me.chkIT_BOM.Size = New System.Drawing.Size(50, 16)
         Me.chkIT_BOM.TabIndex = 38
         Me.chkIT_BOM.Text = "BOM"
         Me.chkIT_BOM.UseVisualStyleBackColor = True
@@ -541,9 +532,9 @@ Partial Class IMR00027
         Me.chkIT_ASS.AutoSize = True
         Me.chkIT_ASS.Checked = True
         Me.chkIT_ASS.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkIT_ASS.Location = New System.Drawing.Point(194, 415)
+        Me.chkIT_ASS.Location = New System.Drawing.Point(194, 383)
         Me.chkIT_ASS.Name = "chkIT_ASS"
-        Me.chkIT_ASS.Size = New System.Drawing.Size(78, 17)
+        Me.chkIT_ASS.Size = New System.Drawing.Size(76, 16)
         Me.chkIT_ASS.TabIndex = 37
         Me.chkIT_ASS.Text = "Assortment"
         Me.chkIT_ASS.UseVisualStyleBackColor = True
@@ -553,9 +544,9 @@ Partial Class IMR00027
         Me.chkIT_REG.AutoSize = True
         Me.chkIT_REG.Checked = True
         Me.chkIT_REG.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkIT_REG.Location = New System.Drawing.Point(107, 415)
+        Me.chkIT_REG.Location = New System.Drawing.Point(107, 383)
         Me.chkIT_REG.Name = "chkIT_REG"
-        Me.chkIT_REG.Size = New System.Drawing.Size(63, 17)
+        Me.chkIT_REG.Size = New System.Drawing.Size(61, 16)
         Me.chkIT_REG.TabIndex = 36
         Me.chkIT_REG.Text = "Regular"
         Me.chkIT_REG.UseVisualStyleBackColor = True
@@ -563,115 +554,115 @@ Partial Class IMR00027
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(102, 222)
+        Me.Label10.Location = New System.Drawing.Point(102, 205)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(67, 13)
+        Me.Label10.Size = New System.Drawing.Size(63, 12)
         Me.Label10.TabIndex = 252
         Me.Label10.Text = "Product Size"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(93, 248)
+        Me.Label11.Location = New System.Drawing.Point(93, 229)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(76, 13)
+        Me.Label11.Size = New System.Drawing.Size(74, 12)
         Me.Label11.TabIndex = 253
         Me.Label11.Text = "Product Group"
         '
         'cboAOPrdLne
         '
         Me.cboAOPrdLne.FormattingEnabled = True
-        Me.cboAOPrdLne.Location = New System.Drawing.Point(26, 57)
+        Me.cboAOPrdLne.Location = New System.Drawing.Point(26, 53)
         Me.cboAOPrdLne.Name = "cboAOPrdLne"
-        Me.cboAOPrdLne.Size = New System.Drawing.Size(46, 21)
+        Me.cboAOPrdLne.Size = New System.Drawing.Size(46, 20)
         Me.cboAOPrdLne.TabIndex = 0
         '
         'cboAOItmno
         '
         Me.cboAOItmno.FormattingEnabled = True
-        Me.cboAOItmno.Location = New System.Drawing.Point(26, 84)
+        Me.cboAOItmno.Location = New System.Drawing.Point(26, 78)
         Me.cboAOItmno.Name = "cboAOItmno"
-        Me.cboAOItmno.Size = New System.Drawing.Size(46, 21)
+        Me.cboAOItmno.Size = New System.Drawing.Size(46, 20)
         Me.cboAOItmno.TabIndex = 3
         '
         'cboAOColDsc
         '
         Me.cboAOColDsc.FormattingEnabled = True
-        Me.cboAOColDsc.Location = New System.Drawing.Point(26, 138)
+        Me.cboAOColDsc.Location = New System.Drawing.Point(26, 127)
         Me.cboAOColDsc.Name = "cboAOColDsc"
-        Me.cboAOColDsc.Size = New System.Drawing.Size(46, 21)
+        Me.cboAOColDsc.Size = New System.Drawing.Size(46, 20)
         Me.cboAOColDsc.TabIndex = 9
         '
         'cboAOItmDsc
         '
         Me.cboAOItmDsc.FormattingEnabled = True
-        Me.cboAOItmDsc.Location = New System.Drawing.Point(26, 111)
+        Me.cboAOItmDsc.Location = New System.Drawing.Point(26, 102)
         Me.cboAOItmDsc.Name = "cboAOItmDsc"
-        Me.cboAOItmDsc.Size = New System.Drawing.Size(46, 21)
+        Me.cboAOItmDsc.Size = New System.Drawing.Size(46, 20)
         Me.cboAOItmDsc.TabIndex = 6
         '
         'cboAOPrdGrp
         '
         Me.cboAOPrdGrp.FormattingEnabled = True
-        Me.cboAOPrdGrp.Location = New System.Drawing.Point(26, 245)
+        Me.cboAOPrdGrp.Location = New System.Drawing.Point(26, 226)
         Me.cboAOPrdGrp.Name = "cboAOPrdGrp"
-        Me.cboAOPrdGrp.Size = New System.Drawing.Size(46, 21)
+        Me.cboAOPrdGrp.Size = New System.Drawing.Size(46, 20)
         Me.cboAOPrdGrp.TabIndex = 21
         '
         'cboAOPrdsze
         '
         Me.cboAOPrdsze.FormattingEnabled = True
-        Me.cboAOPrdsze.Location = New System.Drawing.Point(26, 218)
+        Me.cboAOPrdsze.Location = New System.Drawing.Point(26, 201)
         Me.cboAOPrdsze.Name = "cboAOPrdsze"
-        Me.cboAOPrdsze.Size = New System.Drawing.Size(46, 21)
+        Me.cboAOPrdsze.Size = New System.Drawing.Size(46, 20)
         Me.cboAOPrdsze.TabIndex = 18
         '
         'cboAOItmNat
         '
         Me.cboAOItmNat.FormattingEnabled = True
-        Me.cboAOItmNat.Location = New System.Drawing.Point(26, 192)
+        Me.cboAOItmNat.Location = New System.Drawing.Point(26, 177)
         Me.cboAOItmNat.Name = "cboAOItmNat"
-        Me.cboAOItmNat.Size = New System.Drawing.Size(46, 21)
+        Me.cboAOItmNat.Size = New System.Drawing.Size(46, 20)
         Me.cboAOItmNat.TabIndex = 15
         '
         'cboAOVenno
         '
         Me.cboAOVenno.FormattingEnabled = True
-        Me.cboAOVenno.Location = New System.Drawing.Point(26, 165)
+        Me.cboAOVenno.Location = New System.Drawing.Point(26, 152)
         Me.cboAOVenno.Name = "cboAOVenno"
-        Me.cboAOVenno.Size = New System.Drawing.Size(46, 21)
+        Me.cboAOVenno.Size = New System.Drawing.Size(46, 20)
         Me.cboAOVenno.TabIndex = 12
         '
         'cboAOMatL
         '
         Me.cboAOMatL.FormattingEnabled = True
-        Me.cboAOMatL.Location = New System.Drawing.Point(26, 299)
+        Me.cboAOMatL.Location = New System.Drawing.Point(26, 276)
         Me.cboAOMatL.Name = "cboAOMatL"
-        Me.cboAOMatL.Size = New System.Drawing.Size(46, 21)
+        Me.cboAOMatL.Size = New System.Drawing.Size(46, 20)
         Me.cboAOMatL.TabIndex = 27
         '
         'cboAOPrdIcon
         '
         Me.cboAOPrdIcon.FormattingEnabled = True
-        Me.cboAOPrdIcon.Location = New System.Drawing.Point(26, 271)
+        Me.cboAOPrdIcon.Location = New System.Drawing.Point(26, 250)
         Me.cboAOPrdIcon.Name = "cboAOPrdIcon"
-        Me.cboAOPrdIcon.Size = New System.Drawing.Size(46, 21)
+        Me.cboAOPrdIcon.Size = New System.Drawing.Size(46, 20)
         Me.cboAOPrdIcon.TabIndex = 24
         '
         'lblNote
         '
-        Me.lblNote.Location = New System.Drawing.Point(582, 436)
+        Me.lblNote.Location = New System.Drawing.Point(473, 402)
         Me.lblNote.Name = "lblNote"
         Me.lblNote.ReadOnly = True
-        Me.lblNote.Size = New System.Drawing.Size(208, 125)
+        Me.lblNote.Size = New System.Drawing.Size(208, 116)
         Me.lblNote.TabIndex = 264
         Me.lblNote.Text = ""
         '
         'IMR00027
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(790, 559)
+        Me.ClientSize = New System.Drawing.Size(714, 521)
         Me.Controls.Add(Me.lblNote)
         Me.Controls.Add(Me.cboAOMatL)
         Me.Controls.Add(Me.cboAOPrdIcon)
@@ -715,7 +706,6 @@ Partial Class IMR00027
         Me.Controls.Add(Me.txtPrdIcon)
         Me.Controls.Add(Me.txtPrdsze)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.cmdtlItmnat)
         Me.Controls.Add(Me.lbl_S_PV)
         Me.Controls.Add(Me.txtItmnat)
@@ -736,10 +726,10 @@ Partial Class IMR00027
         Me.Controls.Add(Me.txtPrdLne)
         Me.Controls.Add(Me.lbl_S_PriCust)
         Me.Controls.Add(Me.lbl_S_CoCde)
-        Me.MaximumSize = New System.Drawing.Size(798, 593)
-        Me.MinimumSize = New System.Drawing.Size(798, 593)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "IMR00027"
-        Me.Text = "IMR00027"
+        Me.Text = "IMR00027 - Export Item Image to Excel (IMR27)"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -765,7 +755,6 @@ Partial Class IMR00027
     Friend WithEvents lbl_S_PriCust As System.Windows.Forms.Label
     Friend WithEvents lbl_S_CoCde As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtPrdGrp As System.Windows.Forms.TextBox
     Friend WithEvents txtMatL As System.Windows.Forms.TextBox
     Friend WithEvents txtPrdIcon As System.Windows.Forms.TextBox

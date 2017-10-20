@@ -39,16 +39,16 @@ Partial Class IMX00001
         'txtProcess
         '
         Me.txtProcess.BackColor = System.Drawing.Color.White
-        Me.txtProcess.Location = New System.Drawing.Point(13, 208)
+        Me.txtProcess.Location = New System.Drawing.Point(12, 280)
         Me.txtProcess.Multiline = True
         Me.txtProcess.Name = "txtProcess"
         Me.txtProcess.ReadOnly = True
-        Me.txtProcess.Size = New System.Drawing.Size(559, 119)
+        Me.txtProcess.Size = New System.Drawing.Size(619, 119)
         Me.txtProcess.TabIndex = 27
         '
         'cmdOK
         '
-        Me.cmdOK.Location = New System.Drawing.Point(497, 179)
+        Me.cmdOK.Location = New System.Drawing.Point(556, 251)
         Me.cmdOK.Name = "cmdOK"
         Me.cmdOK.Size = New System.Drawing.Size(75, 23)
         Me.cmdOK.TabIndex = 26
@@ -57,7 +57,7 @@ Partial Class IMX00001
         '
         'cmdRefresh
         '
-        Me.cmdRefresh.Location = New System.Drawing.Point(416, 179)
+        Me.cmdRefresh.Location = New System.Drawing.Point(475, 251)
         Me.cmdRefresh.Name = "cmdRefresh"
         Me.cmdRefresh.Size = New System.Drawing.Size(75, 23)
         Me.cmdRefresh.TabIndex = 25
@@ -68,7 +68,7 @@ Partial Class IMX00001
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(10, 184)
+        Me.Label3.Location = New System.Drawing.Point(10, 256)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(372, 12)
         Me.Label3.TabIndex = 24
@@ -77,7 +77,7 @@ Partial Class IMX00001
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 10)
+        Me.Label1.Location = New System.Drawing.Point(12, 8)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(73, 12)
         Me.Label1.TabIndex = 22
@@ -87,9 +87,9 @@ Partial Class IMX00001
         '
         Me.filSource.FormattingEnabled = True
         Me.filSource.ItemHeight = 12
-        Me.filSource.Location = New System.Drawing.Point(375, 26)
+        Me.filSource.Location = New System.Drawing.Point(417, 24)
         Me.filSource.Name = "filSource"
-        Me.filSource.Size = New System.Drawing.Size(197, 136)
+        Me.filSource.Size = New System.Drawing.Size(214, 220)
         Me.filSource.TabIndex = 21
         '
         'imgListFolders
@@ -102,7 +102,7 @@ Partial Class IMX00001
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(375, 10)
+        Me.Label2.Location = New System.Drawing.Point(417, 8)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(86, 12)
         Me.Label2.TabIndex = 23
@@ -112,24 +112,24 @@ Partial Class IMX00001
         '
         Me.dirSource.ImageIndex = 0
         Me.dirSource.ImageList = Me.imgListFolders
-        Me.dirSource.Location = New System.Drawing.Point(13, 53)
+        Me.dirSource.Location = New System.Drawing.Point(12, 51)
         Me.dirSource.Name = "dirSource"
         Me.dirSource.SelectedImageIndex = 1
-        Me.dirSource.Size = New System.Drawing.Size(356, 120)
+        Me.dirSource.Size = New System.Drawing.Size(399, 193)
         Me.dirSource.TabIndex = 20
         '
         'drvSource
         '
         Me.drvSource.FormattingEnabled = True
-        Me.drvSource.Location = New System.Drawing.Point(13, 26)
+        Me.drvSource.Location = New System.Drawing.Point(12, 24)
         Me.drvSource.Name = "drvSource"
-        Me.drvSource.Size = New System.Drawing.Size(356, 20)
+        Me.drvSource.Size = New System.Drawing.Size(399, 20)
         Me.drvSource.TabIndex = 19
         '
         'IMX00001
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
-        Me.ClientSize = New System.Drawing.Size(582, 337)
+        Me.ClientSize = New System.Drawing.Size(634, 411)
         Me.Controls.Add(Me.txtProcess)
         Me.Controls.Add(Me.cmdOK)
         Me.Controls.Add(Me.cmdRefresh)
@@ -140,9 +140,10 @@ Partial Class IMX00001
         Me.Controls.Add(Me.dirSource)
         Me.Controls.Add(Me.drvSource)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "IMX00001"
-        Me.Text = "IMX00001 - Item Excel File Upload (Internal & Joint Venture Item)"
+        Me.Text = "IMX00001 - Item Excel File Upload (Internal & Joint Venture Item (IMR01)"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

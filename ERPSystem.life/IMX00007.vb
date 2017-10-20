@@ -267,7 +267,7 @@ Public Class IMX00007
                         .Columns(i).HeaderText = "No."
                         .Columns(i).Width = 45
                         .Columns(i).ReadOnly = True
-                        .Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                        .Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
                     Case 1
                         .Columns(i).HeaderText = "Real Item No."
                         .Columns(i).Width = 120
@@ -280,12 +280,12 @@ Public Class IMX00007
                         .Columns(i).HeaderText = "Apr/Rej"
                         .Columns(i).Width = 65
                         .Columns(i).ReadOnly = True
-                        .Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                        .Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
                     Case Else
                         .Columns(i).Visible = False
                 End Select
             Next
-            .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
         End With
 
         dvInvalid = dsInvalid.Tables("INVALID").DefaultView
@@ -311,7 +311,7 @@ Public Class IMX00007
                         .Columns(i).Visible = False
                 End Select
             Next
-            .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
         End With
     End Sub
 

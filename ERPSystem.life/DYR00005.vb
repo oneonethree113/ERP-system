@@ -53,6 +53,7 @@ Public Class DYR00005
     Friend WithEvents rbVendorMaster As System.Windows.Forms.RadioButton
     Friend WithEvents TabPage7 As System.Windows.Forms.TabPage
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DYR00005))
         Me.StatusBar1 = New System.Windows.Forms.StatusBar
         Me.TabPage6 = New System.Windows.Forms.TabPage
         Me.TabPage7 = New System.Windows.Forms.TabPage
@@ -70,7 +71,7 @@ Public Class DYR00005
         '
         Me.StatusBar1.Location = New System.Drawing.Point(0, 166)
         Me.StatusBar1.Name = "StatusBar1"
-        Me.StatusBar1.Size = New System.Drawing.Size(650, 16)
+        Me.StatusBar1.Size = New System.Drawing.Size(714, 16)
         Me.StatusBar1.TabIndex = 1
         Me.StatusBar1.Text = "StatusBar1"
         '
@@ -90,9 +91,9 @@ Public Class DYR00005
         '
         'cmdShow
         '
-        Me.cmdShow.Location = New System.Drawing.Point(260, 120)
+        Me.cmdShow.Location = New System.Drawing.Point(312, 123)
         Me.cmdShow.Name = "cmdShow"
-        Me.cmdShow.Size = New System.Drawing.Size(133, 33)
+        Me.cmdShow.Size = New System.Drawing.Size(140, 22)
         Me.cmdShow.TabIndex = 162
         Me.cmdShow.Text = "Show Report"
         Me.cmdShow.UseVisualStyleBackColor = True
@@ -102,7 +103,7 @@ Public Class DYR00005
         Me.cboRptType.FormattingEnabled = True
         Me.cboRptType.Location = New System.Drawing.Point(130, 79)
         Me.cboRptType.Name = "cboRptType"
-        Me.cboRptType.Size = New System.Drawing.Size(470, 23)
+        Me.cboRptType.Size = New System.Drawing.Size(556, 20)
         Me.cboRptType.TabIndex = 163
         '
         'Label1
@@ -110,7 +111,7 @@ Public Class DYR00005
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(29, 79)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(71, 15)
+        Me.Label1.Size = New System.Drawing.Size(64, 12)
         Me.Label1.TabIndex = 164
         Me.Label1.Text = "Report Type"
         '
@@ -119,7 +120,7 @@ Public Class DYR00005
         Me.rbSYSETINF.AutoSize = True
         Me.rbSYSETINF.Location = New System.Drawing.Point(6, 25)
         Me.rbSYSETINF.Name = "rbSYSETINF"
-        Me.rbSYSETINF.Size = New System.Drawing.Size(92, 19)
+        Me.rbSYSETINF.Size = New System.Drawing.Size(85, 16)
         Me.rbSYSETINF.TabIndex = 165
         Me.rbSYSETINF.TabStop = True
         Me.rbSYSETINF.Text = "System Setup"
@@ -130,7 +131,7 @@ Public Class DYR00005
         Me.rbSYLNEINF.AutoSize = True
         Me.rbSYLNEINF.Location = New System.Drawing.Point(122, 25)
         Me.rbSYLNEINF.Name = "rbSYLNEINF"
-        Me.rbSYLNEINF.Size = New System.Drawing.Size(87, 19)
+        Me.rbSYLNEINF.Size = New System.Drawing.Size(83, 16)
         Me.rbSYLNEINF.TabIndex = 166
         Me.rbSYLNEINF.TabStop = True
         Me.rbSYLNEINF.Text = "Product Line"
@@ -143,7 +144,7 @@ Public Class DYR00005
         Me.GroupBox1.Controls.Add(Me.rbSYLNEINF)
         Me.GroupBox1.Location = New System.Drawing.Point(32, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(568, 47)
+        Me.GroupBox1.Size = New System.Drawing.Size(487, 47)
         Me.GroupBox1.TabIndex = 167
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Group Code"
@@ -153,7 +154,7 @@ Public Class DYR00005
         Me.rbVendorMaster.AutoSize = True
         Me.rbVendorMaster.Location = New System.Drawing.Point(243, 25)
         Me.rbVendorMaster.Name = "rbVendorMaster"
-        Me.rbVendorMaster.Size = New System.Drawing.Size(98, 19)
+        Me.rbVendorMaster.Size = New System.Drawing.Size(92, 16)
         Me.rbVendorMaster.TabIndex = 167
         Me.rbVendorMaster.TabStop = True
         Me.rbVendorMaster.Text = "Vendor Master"
@@ -161,16 +162,18 @@ Public Class DYR00005
         '
         'DYR00005
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 14)
-        Me.ClientSize = New System.Drawing.Size(650, 182)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 15)
+        Me.ClientSize = New System.Drawing.Size(714, 182)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cboRptType)
         Me.Controls.Add(Me.cmdShow)
         Me.Controls.Add(Me.StatusBar1)
-        Me.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "DYR00005"
-        Me.Text = "DYR00005 - Dynamic Report vw_SYSETINF"
+        Me.Text = "DYR00005 - Dynamic Report vw_SYSETINF (DYR05)"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)

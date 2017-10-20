@@ -22,6 +22,7 @@ Partial Class MSR00019
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MSR00019))
         Me.Label1 = New System.Windows.Forms.Label
         Me.cboCoCde = New System.Windows.Forms.ComboBox
         Me.Label2 = New System.Windows.Forms.Label
@@ -73,8 +74,6 @@ Partial Class MSR00019
         Me.Label5 = New System.Windows.Forms.Label
         Me.cmdShow = New System.Windows.Forms.Button
         Me.Label16 = New System.Windows.Forms.Label
-        Me.Label17 = New System.Windows.Forms.Label
-        Me.Label18 = New System.Windows.Forms.Label
         Me.grpSearch.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -85,9 +84,9 @@ Partial Class MSR00019
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label1.Location = New System.Drawing.Point(49, 63)
+        Me.Label1.Location = New System.Drawing.Point(49, 58)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 13)
+        Me.Label1.Size = New System.Drawing.Size(79, 12)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Company Code"
         '
@@ -95,27 +94,27 @@ Partial Class MSR00019
         '
         Me.cboCoCde.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCoCde.FormattingEnabled = True
-        Me.cboCoCde.Location = New System.Drawing.Point(134, 60)
+        Me.cboCoCde.Location = New System.Drawing.Point(134, 55)
         Me.cboCoCde.Name = "cboCoCde"
-        Me.cboCoCde.Size = New System.Drawing.Size(76, 21)
+        Me.cboCoCde.Size = New System.Drawing.Size(76, 20)
         Me.cboCoCde.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(227, 63)
+        Me.Label2.Location = New System.Drawing.Point(227, 58)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(82, 13)
+        Me.Label2.Size = New System.Drawing.Size(81, 12)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Company Name"
         '
         'txtCoNam
         '
-        Me.txtCoNam.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.txtCoNam.BackColor = System.Drawing.Color.White
         Me.txtCoNam.Enabled = False
-        Me.txtCoNam.Location = New System.Drawing.Point(315, 60)
+        Me.txtCoNam.Location = New System.Drawing.Point(315, 55)
         Me.txtCoNam.Name = "txtCoNam"
-        Me.txtCoNam.Size = New System.Drawing.Size(350, 20)
+        Me.txtCoNam.Size = New System.Drawing.Size(350, 22)
         Me.txtCoNam.TabIndex = 2
         '
         'grpSearch
@@ -154,9 +153,9 @@ Partial Class MSR00019
         Me.grpSearch.Controls.Add(Me.cboCustNoFm)
         Me.grpSearch.Controls.Add(Me.Label4)
         Me.grpSearch.Controls.Add(Me.Label5)
-        Me.grpSearch.Location = New System.Drawing.Point(42, 92)
+        Me.grpSearch.Location = New System.Drawing.Point(26, 85)
         Me.grpSearch.Name = "grpSearch"
-        Me.grpSearch.Size = New System.Drawing.Size(678, 313)
+        Me.grpSearch.Size = New System.Drawing.Size(662, 289)
         Me.grpSearch.TabIndex = 4
         Me.grpSearch.TabStop = False
         '
@@ -166,18 +165,18 @@ Partial Class MSR00019
         Me.GroupBox2.Controls.Add(Me.Label15)
         Me.GroupBox2.Controls.Add(Me.OptSC)
         Me.GroupBox2.Controls.Add(Me.OptCust)
-        Me.GroupBox2.Location = New System.Drawing.Point(7, 221)
+        Me.GroupBox2.Location = New System.Drawing.Point(7, 208)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(304, 43)
+        Me.GroupBox2.Size = New System.Drawing.Size(304, 40)
         Me.GroupBox2.TabIndex = 28
         Me.GroupBox2.TabStop = False
         '
         'OptShpDat
         '
         Me.OptShpDat.AutoSize = True
-        Me.OptShpDat.Location = New System.Drawing.Point(221, 15)
+        Me.OptShpDat.Location = New System.Drawing.Point(221, 14)
         Me.OptShpDat.Name = "OptShpDat"
-        Me.OptShpDat.Size = New System.Drawing.Size(72, 17)
+        Me.OptShpDat.Size = New System.Drawing.Size(68, 16)
         Me.OptShpDat.TabIndex = 19
         Me.OptShpDat.Text = "Ship Date"
         Me.OptShpDat.UseVisualStyleBackColor = True
@@ -185,19 +184,19 @@ Partial Class MSR00019
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(10, 15)
+        Me.Label15.Location = New System.Drawing.Point(10, 14)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(44, 13)
+        Me.Label15.Size = New System.Drawing.Size(41, 12)
         Me.Label15.TabIndex = 5
-        Me.Label15.Text = "Sort By:"
+        Me.Label15.Text = "Sort By"
         '
         'OptSC
         '
         Me.OptSC.AutoSize = True
         Me.OptSC.Checked = True
-        Me.OptSC.Location = New System.Drawing.Point(81, 15)
+        Me.OptSC.Location = New System.Drawing.Point(81, 14)
         Me.OptSC.Name = "OptSC"
-        Me.OptSC.Size = New System.Drawing.Size(59, 17)
+        Me.OptSC.Size = New System.Drawing.Size(57, 16)
         Me.OptSC.TabIndex = 17
         Me.OptSC.TabStop = True
         Me.OptSC.Text = "SC No."
@@ -206,9 +205,9 @@ Partial Class MSR00019
         'OptCust
         '
         Me.OptCust.AutoSize = True
-        Me.OptCust.Location = New System.Drawing.Point(146, 15)
+        Me.OptCust.Location = New System.Drawing.Point(146, 14)
         Me.OptCust.Name = "OptCust"
-        Me.OptCust.Size = New System.Drawing.Size(69, 17)
+        Me.OptCust.Size = New System.Drawing.Size(68, 16)
         Me.OptCust.TabIndex = 18
         Me.OptCust.Text = "Customer"
         Me.OptCust.UseVisualStyleBackColor = True
@@ -216,29 +215,29 @@ Partial Class MSR00019
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(433, 160)
+        Me.Label27.Location = New System.Drawing.Point(433, 148)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(23, 13)
+        Me.Label27.Size = New System.Drawing.Size(18, 12)
         Me.Label27.TabIndex = 478
-        Me.Label27.Text = "To:"
+        Me.Label27.Text = "To"
         '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.Label10)
         Me.GroupBox3.Controls.Add(Me.optPrintAmtY)
         Me.GroupBox3.Controls.Add(Me.optPrintAmtN)
-        Me.GroupBox3.Location = New System.Drawing.Point(421, 175)
+        Me.GroupBox3.Location = New System.Drawing.Point(421, 169)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(234, 40)
+        Me.GroupBox3.Size = New System.Drawing.Size(234, 37)
         Me.GroupBox3.TabIndex = 27
         Me.GroupBox3.TabStop = False
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(24, 16)
+        Me.Label10.Location = New System.Drawing.Point(24, 15)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(67, 13)
+        Me.Label10.Size = New System.Drawing.Size(68, 12)
         Me.Label10.TabIndex = 472
         Me.Label10.Text = "Print Amount"
         '
@@ -246,9 +245,9 @@ Partial Class MSR00019
         '
         Me.optPrintAmtY.AutoSize = True
         Me.optPrintAmtY.Checked = True
-        Me.optPrintAmtY.Location = New System.Drawing.Point(119, 14)
+        Me.optPrintAmtY.Location = New System.Drawing.Point(119, 13)
         Me.optPrintAmtY.Name = "optPrintAmtY"
-        Me.optPrintAmtY.Size = New System.Drawing.Size(43, 17)
+        Me.optPrintAmtY.Size = New System.Drawing.Size(40, 16)
         Me.optPrintAmtY.TabIndex = 15
         Me.optPrintAmtY.TabStop = True
         Me.optPrintAmtY.Text = "Yes"
@@ -257,9 +256,9 @@ Partial Class MSR00019
         'optPrintAmtN
         '
         Me.optPrintAmtN.AutoSize = True
-        Me.optPrintAmtN.Location = New System.Drawing.Point(187, 16)
+        Me.optPrintAmtN.Location = New System.Drawing.Point(187, 13)
         Me.optPrintAmtN.Name = "optPrintAmtN"
-        Me.optPrintAmtN.Size = New System.Drawing.Size(39, 17)
+        Me.optPrintAmtN.Size = New System.Drawing.Size(37, 16)
         Me.optPrintAmtN.TabIndex = 16
         Me.optPrintAmtN.Text = "No"
         Me.optPrintAmtN.UseVisualStyleBackColor = True
@@ -267,29 +266,29 @@ Partial Class MSR00019
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(433, 129)
+        Me.Label26.Location = New System.Drawing.Point(433, 119)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(23, 13)
+        Me.Label26.Size = New System.Drawing.Size(18, 12)
         Me.Label26.TabIndex = 477
-        Me.Label26.Text = "To:"
+        Me.Label26.Text = "To"
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.OptPayN)
         Me.GroupBox1.Controls.Add(Me.OptPayY)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 175)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 169)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(305, 40)
+        Me.GroupBox1.Size = New System.Drawing.Size(305, 37)
         Me.GroupBox1.TabIndex = 26
         Me.GroupBox1.TabStop = False
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(11, 16)
+        Me.Label9.Location = New System.Drawing.Point(11, 15)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(134, 13)
+        Me.Label9.Size = New System.Drawing.Size(131, 12)
         Me.Label9.TabIndex = 469
         Me.Label9.Text = "Payment Term / Ship Mark"
         '
@@ -297,9 +296,9 @@ Partial Class MSR00019
         '
         Me.OptPayN.AutoSize = True
         Me.OptPayN.Checked = True
-        Me.OptPayN.Location = New System.Drawing.Point(241, 12)
+        Me.OptPayN.Location = New System.Drawing.Point(241, 11)
         Me.OptPayN.Name = "OptPayN"
-        Me.OptPayN.Size = New System.Drawing.Size(39, 17)
+        Me.OptPayN.Size = New System.Drawing.Size(37, 16)
         Me.OptPayN.TabIndex = 14
         Me.OptPayN.TabStop = True
         Me.OptPayN.Text = "No"
@@ -308,268 +307,268 @@ Partial Class MSR00019
         'OptPayY
         '
         Me.OptPayY.AutoSize = True
-        Me.OptPayY.Location = New System.Drawing.Point(172, 12)
+        Me.OptPayY.Location = New System.Drawing.Point(172, 11)
         Me.OptPayY.Name = "OptPayY"
-        Me.OptPayY.Size = New System.Drawing.Size(43, 17)
+        Me.OptPayY.Size = New System.Drawing.Size(40, 16)
         Me.OptPayY.TabIndex = 13
         Me.OptPayY.Text = "Yes"
         Me.OptPayY.UseVisualStyleBackColor = True
         '
         'DtShpEnd
         '
-        Me.DtShpEnd.Location = New System.Drawing.Point(462, 157)
+        Me.DtShpEnd.Location = New System.Drawing.Point(462, 142)
         Me.DtShpEnd.Mask = "##/##/####"
         Me.DtShpEnd.Name = "DtShpEnd"
-        Me.DtShpEnd.Size = New System.Drawing.Size(187, 20)
+        Me.DtShpEnd.Size = New System.Drawing.Size(187, 22)
         Me.DtShpEnd.TabIndex = 12
         '
         'DtShpStr
         '
-        Me.DtShpStr.Location = New System.Drawing.Point(203, 154)
+        Me.DtShpStr.Location = New System.Drawing.Point(203, 142)
         Me.DtShpStr.Mask = "##/##/####"
         Me.DtShpStr.Name = "DtShpStr"
-        Me.DtShpStr.Size = New System.Drawing.Size(187, 20)
+        Me.DtShpStr.Size = New System.Drawing.Size(187, 22)
         Me.DtShpStr.TabIndex = 11
         '
         'txtDateTo
         '
-        Me.txtDateTo.Location = New System.Drawing.Point(462, 122)
+        Me.txtDateTo.Location = New System.Drawing.Point(462, 114)
         Me.txtDateTo.Mask = "##/##/####"
         Me.txtDateTo.Name = "txtDateTo"
-        Me.txtDateTo.Size = New System.Drawing.Size(187, 20)
+        Me.txtDateTo.Size = New System.Drawing.Size(187, 22)
         Me.txtDateTo.TabIndex = 10
         '
         'txtDateFrom
         '
-        Me.txtDateFrom.Location = New System.Drawing.Point(203, 123)
+        Me.txtDateFrom.Location = New System.Drawing.Point(203, 114)
         Me.txtDateFrom.Mask = "##/##/####"
         Me.txtDateFrom.Name = "txtDateFrom"
-        Me.txtDateFrom.Size = New System.Drawing.Size(187, 20)
+        Me.txtDateFrom.Size = New System.Drawing.Size(187, 22)
         Me.txtDateFrom.TabIndex = 9
         '
         'cboReportType
         '
         Me.cboReportType.FormattingEnabled = True
-        Me.cboReportType.Location = New System.Drawing.Point(124, 279)
+        Me.cboReportType.Location = New System.Drawing.Point(124, 258)
         Me.cboReportType.Name = "cboReportType"
-        Me.cboReportType.Size = New System.Drawing.Size(187, 21)
+        Me.cboReportType.Size = New System.Drawing.Size(187, 20)
         Me.cboReportType.TabIndex = 21
         Me.cboReportType.Text = "Cystal Report Format"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(11, 282)
+        Me.Label11.Location = New System.Drawing.Point(11, 260)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(66, 13)
+        Me.Label11.Size = New System.Drawing.Size(64, 12)
         Me.Label11.TabIndex = 476
         Me.Label11.Text = "Report Type"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(11, 154)
+        Me.Label6.Location = New System.Drawing.Point(11, 147)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(130, 13)
+        Me.Label6.Size = New System.Drawing.Size(127, 12)
         Me.Label6.TabIndex = 468
-        Me.Label6.Text = "Ship Date    (mm/dd/yyyy)"
+        Me.Label6.Text = "Ship Date   (mm/dd/yyyy)"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(366, 161)
+        Me.Label7.Location = New System.Drawing.Point(366, 149)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(20, 13)
+        Me.Label7.Size = New System.Drawing.Size(18, 12)
         Me.Label7.TabIndex = 467
         Me.Label7.Text = "To"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(157, 157)
+        Me.Label8.Location = New System.Drawing.Point(157, 148)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(33, 13)
+        Me.Label8.Size = New System.Drawing.Size(30, 12)
         Me.Label8.TabIndex = 466
-        Me.Label8.Text = "From:"
+        Me.Label8.Text = "From"
         '
         'txtSCTo
         '
-        Me.txtSCTo.Location = New System.Drawing.Point(462, 93)
+        Me.txtSCTo.Location = New System.Drawing.Point(462, 86)
         Me.txtSCTo.MaxLength = 20
         Me.txtSCTo.Name = "txtSCTo"
-        Me.txtSCTo.Size = New System.Drawing.Size(187, 20)
+        Me.txtSCTo.Size = New System.Drawing.Size(187, 22)
         Me.txtSCTo.TabIndex = 8
         '
         'txtSCFm
         '
-        Me.txtSCFm.Location = New System.Drawing.Point(203, 93)
+        Me.txtSCFm.Location = New System.Drawing.Point(203, 86)
         Me.txtSCFm.MaxLength = 20
         Me.txtSCFm.Name = "txtSCFm"
-        Me.txtSCFm.Size = New System.Drawing.Size(187, 20)
+        Me.txtSCFm.Size = New System.Drawing.Size(187, 22)
         Me.txtSCFm.TabIndex = 7
         '
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(433, 98)
+        Me.Label23.Location = New System.Drawing.Point(433, 90)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(23, 13)
+        Me.Label23.Size = New System.Drawing.Size(18, 12)
         Me.Label23.TabIndex = 462
-        Me.Label23.Text = "To:"
+        Me.Label23.Text = "To"
         '
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(157, 91)
+        Me.Label24.Location = New System.Drawing.Point(157, 89)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(33, 13)
+        Me.Label24.Size = New System.Drawing.Size(30, 12)
         Me.Label24.TabIndex = 460
-        Me.Label24.Text = "From:"
+        Me.Label24.Text = "From"
         '
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(11, 94)
+        Me.Label25.Location = New System.Drawing.Point(11, 89)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(46, 13)
+        Me.Label25.Size = New System.Drawing.Size(42, 12)
         Me.Label25.TabIndex = 459
         Me.Label25.Text = "S/C No."
         '
         'cboCustNo2To
         '
         Me.cboCustNo2To.FormattingEnabled = True
-        Me.cboCustNo2To.Location = New System.Drawing.Point(462, 60)
+        Me.cboCustNo2To.Location = New System.Drawing.Point(462, 55)
         Me.cboCustNo2To.Name = "cboCustNo2To"
-        Me.cboCustNo2To.Size = New System.Drawing.Size(187, 21)
+        Me.cboCustNo2To.Size = New System.Drawing.Size(187, 20)
         Me.cboCustNo2To.TabIndex = 6
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(433, 64)
+        Me.Label12.Location = New System.Drawing.Point(433, 59)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(23, 13)
+        Me.Label12.Size = New System.Drawing.Size(18, 12)
         Me.Label12.TabIndex = 457
-        Me.Label12.Text = "To:"
+        Me.Label12.Text = "To"
         '
         'cboCustNo2Fm
         '
         Me.cboCustNo2Fm.FormattingEnabled = True
-        Me.cboCustNo2Fm.Location = New System.Drawing.Point(203, 60)
+        Me.cboCustNo2Fm.Location = New System.Drawing.Point(203, 55)
         Me.cboCustNo2Fm.Name = "cboCustNo2Fm"
-        Me.cboCustNo2Fm.Size = New System.Drawing.Size(187, 21)
+        Me.cboCustNo2Fm.Size = New System.Drawing.Size(187, 20)
         Me.cboCustNo2Fm.TabIndex = 5
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(157, 61)
+        Me.Label13.Location = New System.Drawing.Point(157, 59)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(33, 13)
+        Me.Label13.Size = New System.Drawing.Size(30, 12)
         Me.Label13.TabIndex = 455
-        Me.Label13.Text = "From:"
+        Me.Label13.Text = "From"
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(11, 64)
+        Me.Label14.Location = New System.Drawing.Point(11, 59)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(93, 13)
+        Me.Label14.Size = New System.Drawing.Size(89, 12)
         Me.Label14.TabIndex = 454
         Me.Label14.Text = "Sec Customer No."
         '
         'cboScStatus
         '
         Me.cboScStatus.FormattingEnabled = True
-        Me.cboScStatus.Location = New System.Drawing.Point(462, 222)
+        Me.cboScStatus.Location = New System.Drawing.Point(462, 221)
         Me.cboScStatus.Name = "cboScStatus"
-        Me.cboScStatus.Size = New System.Drawing.Size(183, 21)
+        Me.cboScStatus.Size = New System.Drawing.Size(183, 20)
         Me.cboScStatus.TabIndex = 20
         '
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(384, 225)
+        Me.Label22.Location = New System.Drawing.Point(384, 224)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(65, 13)
+        Me.Label22.Size = New System.Drawing.Size(52, 12)
         Me.Label22.TabIndex = 452
-        Me.Label22.Text = "S/C Status :"
+        Me.Label22.Text = "S/C Status"
         '
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(11, 119)
+        Me.Label21.Location = New System.Drawing.Point(11, 117)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(128, 13)
+        Me.Label21.Size = New System.Drawing.Size(126, 12)
         Me.Label21.TabIndex = 451
         Me.Label21.Text = "Issue Date  (mm/dd/yyyy)"
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(366, 126)
+        Me.Label19.Location = New System.Drawing.Point(366, 116)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(20, 13)
+        Me.Label19.Size = New System.Drawing.Size(18, 12)
         Me.Label19.TabIndex = 450
         Me.Label19.Text = "To"
         '
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(157, 123)
+        Me.Label20.Location = New System.Drawing.Point(157, 119)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(33, 13)
+        Me.Label20.Size = New System.Drawing.Size(30, 12)
         Me.Label20.TabIndex = 449
-        Me.Label20.Text = "From:"
+        Me.Label20.Text = "From"
         '
         'cboCustNoTo
         '
         Me.cboCustNoTo.FormattingEnabled = True
-        Me.cboCustNoTo.Location = New System.Drawing.Point(462, 27)
+        Me.cboCustNoTo.Location = New System.Drawing.Point(462, 25)
         Me.cboCustNoTo.Name = "cboCustNoTo"
-        Me.cboCustNoTo.Size = New System.Drawing.Size(187, 21)
+        Me.cboCustNoTo.Size = New System.Drawing.Size(187, 20)
         Me.cboCustNoTo.TabIndex = 4
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(433, 27)
+        Me.Label3.Location = New System.Drawing.Point(433, 29)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(23, 13)
+        Me.Label3.Size = New System.Drawing.Size(18, 12)
         Me.Label3.TabIndex = 18
-        Me.Label3.Text = "To:"
+        Me.Label3.Text = "To"
         '
         'cboCustNoFm
         '
         Me.cboCustNoFm.FormattingEnabled = True
-        Me.cboCustNoFm.Location = New System.Drawing.Point(203, 27)
+        Me.cboCustNoFm.Location = New System.Drawing.Point(203, 25)
         Me.cboCustNoFm.Name = "cboCustNoFm"
-        Me.cboCustNoFm.Size = New System.Drawing.Size(187, 21)
+        Me.cboCustNoFm.Size = New System.Drawing.Size(187, 20)
         Me.cboCustNoFm.TabIndex = 3
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(157, 27)
+        Me.Label4.Location = New System.Drawing.Point(157, 28)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(33, 13)
+        Me.Label4.Size = New System.Drawing.Size(30, 12)
         Me.Label4.TabIndex = 16
-        Me.Label4.Text = "From:"
+        Me.Label4.Text = "From"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(11, 27)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(86, 13)
+        Me.Label5.Size = New System.Drawing.Size(86, 12)
         Me.Label5.TabIndex = 15
         Me.Label5.Text = "Pri Customer No."
         '
         'cmdShow
         '
-        Me.cmdShow.Location = New System.Drawing.Point(311, 422)
+        Me.cmdShow.Location = New System.Drawing.Point(299, 395)
         Me.cmdShow.Name = "cmdShow"
-        Me.cmdShow.Size = New System.Drawing.Size(117, 27)
+        Me.cmdShow.Size = New System.Drawing.Size(117, 25)
         Me.cmdShow.TabIndex = 22
         Me.cmdShow.Text = "&Show Report"
         Me.cmdShow.UseVisualStyleBackColor = True
@@ -578,41 +577,18 @@ Partial Class MSR00019
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.DarkBlue
-        Me.Label16.Location = New System.Drawing.Point(240, 3)
+        Me.Label16.ForeColor = System.Drawing.Color.Blue
+        Me.Label16.Location = New System.Drawing.Point(226, 9)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(251, 25)
         Me.Label16.TabIndex = 23
         Me.Label16.Text = "Sales Confirmation Index"
         '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.ForeColor = System.Drawing.Color.DarkBlue
-        Me.Label17.Location = New System.Drawing.Point(39, 18)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(61, 13)
-        Me.Label17.TabIndex = 24
-        Me.Label17.Text = "MSR00019"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.ForeColor = System.Drawing.Color.DarkBlue
-        Me.Label18.Location = New System.Drawing.Point(-9, 29)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(913, 13)
-        Me.Label18.TabIndex = 25
-        Me.Label18.Text = "_________________________________________________________________________________" & _
-            "______________________________________________________________________"
-        '
         'MSR00019
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(739, 468)
-        Me.Controls.Add(Me.Label18)
-        Me.Controls.Add(Me.Label17)
+        Me.ClientSize = New System.Drawing.Size(714, 432)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.cmdShow)
         Me.Controls.Add(Me.grpSearch)
@@ -620,8 +596,10 @@ Partial Class MSR00019
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.cboCoCde)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MSR00019"
-        Me.Text = "MSR00019 - Sales Confirmation Index"
+        Me.Text = "MSR0019 - Sales Confirmation Index (MSR29)"
         Me.grpSearch.ResumeLayout(False)
         Me.grpSearch.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -680,8 +658,6 @@ Partial Class MSR00019
     Friend WithEvents txtDateTo As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txtDateFrom As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents Label26 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox

@@ -377,4 +377,9 @@ Public Class IMR00021
 
         Me.Cursor = Windows.Forms.Cursors.Default
     End Sub
+
+    Private Sub IMR00021_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        Call Formstartup(Me.Name)
+    End Sub
 End Class

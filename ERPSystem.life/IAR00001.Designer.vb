@@ -22,6 +22,7 @@ Partial Class IAR00001
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IAR00001))
         Me.Label1 = New System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.txtItmNo = New System.Windows.Forms.TextBox
@@ -55,8 +56,8 @@ Partial Class IAR00001
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label1.Location = New System.Drawing.Point(173, 12)
+        Me.Label1.ForeColor = System.Drawing.Color.Blue
+        Me.Label1.Location = New System.Drawing.Point(223, 12)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(211, 25)
         Me.Label1.TabIndex = 0
@@ -87,7 +88,7 @@ Partial Class IAR00001
         Me.GroupBox1.Controls.Add(Me.chkAssort)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 47)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(535, 248)
+        Me.GroupBox1.Size = New System.Drawing.Size(610, 248)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Selection Criteria"
@@ -96,21 +97,21 @@ Partial Class IAR00001
         '
         Me.txtItmNo.Location = New System.Drawing.Point(187, 87)
         Me.txtItmNo.Name = "txtItmNo"
-        Me.txtItmNo.Size = New System.Drawing.Size(319, 22)
+        Me.txtItmNo.Size = New System.Drawing.Size(377, 22)
         Me.txtItmNo.TabIndex = 9
         '
         'txt_S_DV
         '
         Me.txt_S_DV.Location = New System.Drawing.Point(186, 173)
         Me.txt_S_DV.Name = "txt_S_DV"
-        Me.txt_S_DV.Size = New System.Drawing.Size(319, 22)
+        Me.txt_S_DV.Size = New System.Drawing.Size(377, 22)
         Me.txt_S_DV.TabIndex = 83
         '
         'cmd_S_DV
         '
         Me.cmd_S_DV.Location = New System.Drawing.Point(136, 173)
         Me.cmd_S_DV.Name = "cmd_S_DV"
-        Me.cmd_S_DV.Size = New System.Drawing.Size(45, 21)
+        Me.cmd_S_DV.Size = New System.Drawing.Size(45, 22)
         Me.cmd_S_DV.TabIndex = 82
         Me.cmd_S_DV.Text = "＞＞"
         Me.cmd_S_DV.UseVisualStyleBackColor = True
@@ -128,14 +129,14 @@ Partial Class IAR00001
         '
         Me.txt_S_SecCustAll.Location = New System.Drawing.Point(186, 146)
         Me.txt_S_SecCustAll.Name = "txt_S_SecCustAll"
-        Me.txt_S_SecCustAll.Size = New System.Drawing.Size(319, 22)
+        Me.txt_S_SecCustAll.Size = New System.Drawing.Size(377, 22)
         Me.txt_S_SecCustAll.TabIndex = 81
         '
         'cmd_S_SecCustAll
         '
         Me.cmd_S_SecCustAll.Location = New System.Drawing.Point(136, 146)
         Me.cmd_S_SecCustAll.Name = "cmd_S_SecCustAll"
-        Me.cmd_S_SecCustAll.Size = New System.Drawing.Size(45, 21)
+        Me.cmd_S_SecCustAll.Size = New System.Drawing.Size(45, 22)
         Me.cmd_S_SecCustAll.TabIndex = 80
         Me.cmd_S_SecCustAll.Text = "＞＞"
         '
@@ -143,14 +144,14 @@ Partial Class IAR00001
         '
         Me.txt_S_PriCustAll.Location = New System.Drawing.Point(186, 118)
         Me.txt_S_PriCustAll.Name = "txt_S_PriCustAll"
-        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(319, 22)
+        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(377, 22)
         Me.txt_S_PriCustAll.TabIndex = 79
         '
         'cmd_S_PriCustAll
         '
         Me.cmd_S_PriCustAll.Location = New System.Drawing.Point(136, 118)
         Me.cmd_S_PriCustAll.Name = "cmd_S_PriCustAll"
-        Me.cmd_S_PriCustAll.Size = New System.Drawing.Size(45, 21)
+        Me.cmd_S_PriCustAll.Size = New System.Drawing.Size(45, 22)
         Me.cmd_S_PriCustAll.TabIndex = 78
         Me.cmd_S_PriCustAll.Text = "＞＞"
         '
@@ -185,14 +186,14 @@ Partial Class IAR00001
         '
         Me.cmd_S_ItmNo.Location = New System.Drawing.Point(136, 87)
         Me.cmd_S_ItmNo.Name = "cmd_S_ItmNo"
-        Me.cmd_S_ItmNo.Size = New System.Drawing.Size(45, 21)
+        Me.cmd_S_ItmNo.Size = New System.Drawing.Size(45, 22)
         Me.cmd_S_ItmNo.TabIndex = 74
         Me.cmd_S_ItmNo.Text = "＞＞"
         '
         'lblTranDateTo
         '
         Me.lblTranDateTo.AutoSize = True
-        Me.lblTranDateTo.Location = New System.Drawing.Point(253, 53)
+        Me.lblTranDateTo.Location = New System.Drawing.Point(298, 57)
         Me.lblTranDateTo.Name = "lblTranDateTo"
         Me.lblTranDateTo.Size = New System.Drawing.Size(18, 12)
         Me.lblTranDateTo.TabIndex = 7
@@ -200,7 +201,7 @@ Partial Class IAR00001
         '
         'txtTranToDate
         '
-        Me.txtTranToDate.Location = New System.Drawing.Point(308, 50)
+        Me.txtTranToDate.Location = New System.Drawing.Point(353, 54)
         Me.txtTranToDate.Mask = "00/00/0000"
         Me.txtTranToDate.Name = "txtTranToDate"
         Me.txtTranToDate.Size = New System.Drawing.Size(78, 22)
@@ -209,7 +210,7 @@ Partial Class IAR00001
         '
         'txtTranFromDate
         '
-        Me.txtTranFromDate.Location = New System.Drawing.Point(142, 50)
+        Me.txtTranFromDate.Location = New System.Drawing.Point(186, 54)
         Me.txtTranFromDate.Mask = "00/00/0000"
         Me.txtTranFromDate.Name = "txtTranFromDate"
         Me.txtTranFromDate.Size = New System.Drawing.Size(78, 22)
@@ -219,7 +220,7 @@ Partial Class IAR00001
         'lblSearchParam
         '
         Me.lblSearchParam.AutoSize = True
-        Me.lblSearchParam.Location = New System.Drawing.Point(16, 53)
+        Me.lblSearchParam.Location = New System.Drawing.Point(8, 57)
         Me.lblSearchParam.Name = "lblSearchParam"
         Me.lblSearchParam.Size = New System.Drawing.Size(83, 12)
         Me.lblSearchParam.TabIndex = 4
@@ -240,7 +241,7 @@ Partial Class IAR00001
         'optItmMtr
         '
         Me.optItmMtr.AutoSize = True
-        Me.optItmMtr.Location = New System.Drawing.Point(411, 22)
+        Me.optItmMtr.Location = New System.Drawing.Point(469, 22)
         Me.optItmMtr.Name = "optItmMtr"
         Me.optItmMtr.Size = New System.Drawing.Size(95, 16)
         Me.optItmMtr.TabIndex = 2
@@ -251,7 +252,7 @@ Partial Class IAR00001
         'optByExcel_New
         '
         Me.optByExcel_New.AutoSize = True
-        Me.optByExcel_New.Location = New System.Drawing.Point(204, 22)
+        Me.optByExcel_New.Location = New System.Drawing.Point(262, 22)
         Me.optByExcel_New.Name = "optByExcel_New"
         Me.optByExcel_New.Size = New System.Drawing.Size(138, 16)
         Me.optByExcel_New.TabIndex = 1
@@ -262,7 +263,7 @@ Partial Class IAR00001
         'optByExcel
         '
         Me.optByExcel.AutoSize = True
-        Me.optByExcel.Location = New System.Drawing.Point(16, 22)
+        Me.optByExcel.Location = New System.Drawing.Point(74, 22)
         Me.optByExcel.Name = "optByExcel"
         Me.optByExcel.Size = New System.Drawing.Size(99, 16)
         Me.optByExcel.TabIndex = 0
@@ -273,7 +274,7 @@ Partial Class IAR00001
         'chkAssort
         '
         Me.chkAssort.AutoSize = True
-        Me.chkAssort.Location = New System.Drawing.Point(142, 52)
+        Me.chkAssort.Location = New System.Drawing.Point(187, 56)
         Me.chkAssort.Name = "chkAssort"
         Me.chkAssort.Size = New System.Drawing.Size(15, 14)
         Me.chkAssort.TabIndex = 10
@@ -282,7 +283,7 @@ Partial Class IAR00001
         'chkExcel
         '
         Me.chkExcel.AutoSize = True
-        Me.chkExcel.Location = New System.Drawing.Point(163, 306)
+        Me.chkExcel.Location = New System.Drawing.Point(213, 306)
         Me.chkExcel.Name = "chkExcel"
         Me.chkExcel.Size = New System.Drawing.Size(97, 16)
         Me.chkExcel.TabIndex = 2
@@ -292,7 +293,7 @@ Partial Class IAR00001
         '
         'cmdShowReport
         '
-        Me.cmdShowReport.Location = New System.Drawing.Point(288, 301)
+        Me.cmdShowReport.Location = New System.Drawing.Point(338, 301)
         Me.cmdShowReport.Name = "cmdShowReport"
         Me.cmdShowReport.Size = New System.Drawing.Size(108, 24)
         Me.cmdShowReport.TabIndex = 3
@@ -301,7 +302,7 @@ Partial Class IAR00001
         '
         'btnExExcel
         '
-        Me.btnExExcel.Location = New System.Drawing.Point(154, 301)
+        Me.btnExExcel.Location = New System.Drawing.Point(204, 301)
         Me.btnExExcel.Name = "btnExExcel"
         Me.btnExExcel.Size = New System.Drawing.Size(108, 24)
         Me.btnExExcel.TabIndex = 4
@@ -312,14 +313,16 @@ Partial Class IAR00001
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(559, 339)
+        Me.ClientSize = New System.Drawing.Size(634, 339)
         Me.Controls.Add(Me.btnExExcel)
         Me.Controls.Add(Me.cmdShowReport)
         Me.Controls.Add(Me.chkExcel)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "IAR00001"
-        Me.Text = "IAR00001 - Impact Analysis Report"
+        Me.Text = "IAR00001 - Impact Analysis Report (IAR01)"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)

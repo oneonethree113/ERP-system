@@ -1290,8 +1290,6 @@
 
         Me.Cursor = Windows.Forms.Cursors.Default
 
-        Me.Width = 780
-        Me.Height = 491
 
         '#If useMTS Then
         '        Set objBSGate = CreateObject("ucpBS_Gate.clsBSGate", serverName)
@@ -1342,6 +1340,8 @@
         cboQutSts.Text = "All Status"
 
 
+
+        Call Formstartup(Me.Name)
 
 
 

@@ -22,6 +22,7 @@ Partial Class IMR00013
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IMR00013))
         Me.Label3 = New System.Windows.Forms.Label
         Me.GroupBox3 = New System.Windows.Forms.GroupBox
         Me.cboReport = New System.Windows.Forms.ComboBox
@@ -57,7 +58,7 @@ Partial Class IMR00013
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label3.ForeColor = System.Drawing.Color.Blue
         Me.Label3.Location = New System.Drawing.Point(199, 8)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(224, 20)
@@ -132,18 +133,18 @@ Partial Class IMR00013
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(308, 17)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(24, 12)
+        Me.Label9.Size = New System.Drawing.Size(18, 12)
         Me.Label9.TabIndex = 41
-        Me.Label9.Text = "To :"
+        Me.Label9.Text = "To"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(27, 17)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(36, 12)
+        Me.Label7.Size = New System.Drawing.Size(30, 12)
         Me.Label7.TabIndex = 41
-        Me.Label7.Text = "From :"
+        Me.Label7.Text = "From"
         '
         'Label5
         '
@@ -197,18 +198,18 @@ Partial Class IMR00013
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(27, 17)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(36, 12)
+        Me.Label6.Size = New System.Drawing.Size(30, 12)
         Me.Label6.TabIndex = 40
-        Me.Label6.Text = "From :"
+        Me.Label6.Text = "From"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(308, 17)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(24, 12)
+        Me.Label8.Size = New System.Drawing.Size(18, 12)
         Me.Label8.TabIndex = 40
-        Me.Label8.Text = "To :"
+        Me.Label8.Text = "To"
         '
         'frSDate
         '
@@ -245,18 +246,18 @@ Partial Class IMR00013
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(308, 17)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(24, 12)
+        Me.Label1.Size = New System.Drawing.Size(18, 12)
         Me.Label1.TabIndex = 41
-        Me.Label1.Text = "To :"
+        Me.Label1.Text = "To"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(27, 17)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(36, 12)
+        Me.Label2.Size = New System.Drawing.Size(30, 12)
         Me.Label2.TabIndex = 41
-        Me.Label2.Text = "From :"
+        Me.Label2.Text = "From"
         '
         'Button1
         '
@@ -291,7 +292,7 @@ Partial Class IMR00013
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(627, 338)
+        Me.ClientSize = New System.Drawing.Size(634, 348)
         Me.Controls.Add(Me.btn_excel)
         Me.Controls.Add(Me.Chk_export2excel)
         Me.Controls.Add(Me.Button1)
@@ -300,10 +301,12 @@ Partial Class IMR00013
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label3)
-        Me.MaximumSize = New System.Drawing.Size(643, 377)
-        Me.MinimumSize = New System.Drawing.Size(643, 377)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximumSize = New System.Drawing.Size(640, 377)
+        Me.MinimumSize = New System.Drawing.Size(640, 377)
         Me.Name = "IMR00013"
-        Me.Text = "IMR00013 - Item Image Analyst Report"
+        Me.Text = "IMR00013 - Item Image Analyst Report (IMR13)"
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()

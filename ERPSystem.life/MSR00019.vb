@@ -911,8 +911,6 @@ Public Class MSR00019
     Private Sub MSR00019_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
 
-        Me.Width = 760
-        '        Me.Height = 516
 
         cboReportType.Items.Clear()
         cboReportType.Items.Add("Cystal Report Format")
@@ -1442,7 +1440,7 @@ Err_Handler:
 
     End Sub
 
-    Private Sub Label18_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label18.Click
+    Private Sub Label18_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 

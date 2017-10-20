@@ -2614,6 +2614,12 @@
     <Compile Include="SYM00040.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SYR00001.Designer.vb">
+      <DependentUpon>SYR00001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYR00001.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SYR00103.Designer.vb">
       <DependentUpon>SYR00103.vb</DependentUpon>
     </Compile>
@@ -2899,6 +2905,9 @@
     <EmbeddedResource Include="IMM00002.resx">
       <DependentUpon>IMM00002.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMM00004.resx">
+      <DependentUpon>IMM00004.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IMM00007.resx">
       <DependentUpon>IMM00007.vb</DependentUpon>
@@ -3977,6 +3986,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SYM00036.resx">
       <DependentUpon>SYM00036.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYR00001.resx">
+      <DependentUpon>SYR00001.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="SYR00103.resx">

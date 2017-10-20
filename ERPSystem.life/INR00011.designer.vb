@@ -22,11 +22,17 @@ Partial Class INR00011
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(INR00011))
         Me.Label1 = New System.Windows.Forms.Label
         Me.cboCoCde = New System.Windows.Forms.ComboBox
         Me.Label2 = New System.Windows.Forms.Label
         Me.txtCoNam = New System.Windows.Forms.TextBox
         Me.grpSearch = New System.Windows.Forms.GroupBox
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox
+        Me.ChkInt = New System.Windows.Forms.CheckBox
+        Me.ChkALL = New System.Windows.Forms.CheckBox
+        Me.Label9 = New System.Windows.Forms.Label
+        Me.lstVendorFrom = New System.Windows.Forms.ListBox
         Me.GroupBox9 = New System.Windows.Forms.GroupBox
         Me.Label18 = New System.Windows.Forms.Label
         Me.optPeriod0 = New System.Windows.Forms.RadioButton
@@ -65,17 +71,11 @@ Partial Class INR00011
         Me.chkCustAll = New System.Windows.Forms.CheckBox
         Me.lstCust = New System.Windows.Forms.ListBox
         Me.Label10 = New System.Windows.Forms.Label
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.ChkInt = New System.Windows.Forms.CheckBox
-        Me.ChkALL = New System.Windows.Forms.CheckBox
-        Me.Label9 = New System.Windows.Forms.Label
-        Me.lstVendorFrom = New System.Windows.Forms.ListBox
         Me.cmdShow = New System.Windows.Forms.Button
         Me.Label13 = New System.Windows.Forms.Label
-        Me.Label14 = New System.Windows.Forms.Label
-        Me.Label15 = New System.Windows.Forms.Label
         Me.Label22 = New System.Windows.Forms.Label
         Me.grpSearch.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
@@ -84,14 +84,13 @@ Partial Class INR00011
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label1.Location = New System.Drawing.Point(17, 47)
+        Me.Label1.Location = New System.Drawing.Point(33, 47)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(79, 12)
         Me.Label1.TabIndex = 0
@@ -102,7 +101,7 @@ Partial Class INR00011
         Me.cboCoCde.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCoCde.FormattingEnabled = True
         Me.cboCoCde.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.cboCoCde.Location = New System.Drawing.Point(102, 44)
+        Me.cboCoCde.Location = New System.Drawing.Point(121, 44)
         Me.cboCoCde.Name = "cboCoCde"
         Me.cboCoCde.Size = New System.Drawing.Size(76, 20)
         Me.cboCoCde.TabIndex = 1
@@ -110,7 +109,7 @@ Partial Class INR00011
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(195, 47)
+        Me.Label2.Location = New System.Drawing.Point(214, 47)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(81, 12)
         Me.Label2.TabIndex = 2
@@ -118,9 +117,9 @@ Partial Class INR00011
         '
         'txtCoNam
         '
-        Me.txtCoNam.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.txtCoNam.BackColor = System.Drawing.Color.White
         Me.txtCoNam.Enabled = False
-        Me.txtCoNam.Location = New System.Drawing.Point(283, 44)
+        Me.txtCoNam.Location = New System.Drawing.Point(302, 44)
         Me.txtCoNam.Name = "txtCoNam"
         Me.txtCoNam.Size = New System.Drawing.Size(350, 22)
         Me.txtCoNam.TabIndex = 2
@@ -136,21 +135,72 @@ Partial Class INR00011
         Me.grpSearch.Controls.Add(Me.GroupBox5)
         Me.grpSearch.Controls.Add(Me.GroupBox4)
         Me.grpSearch.Controls.Add(Me.GroupBox3)
-        Me.grpSearch.Location = New System.Drawing.Point(9, 65)
+        Me.grpSearch.Location = New System.Drawing.Point(19, 67)
         Me.grpSearch.Name = "grpSearch"
-        Me.grpSearch.Size = New System.Drawing.Size(649, 439)
+        Me.grpSearch.Size = New System.Drawing.Size(674, 439)
         Me.grpSearch.TabIndex = 2
         Me.grpSearch.TabStop = False
-        Me.grpSearch.Text = "Selection Criteria :"
+        Me.grpSearch.Text = "Selection Criteria"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.ChkInt)
+        Me.GroupBox2.Controls.Add(Me.ChkALL)
+        Me.GroupBox2.Controls.Add(Me.Label9)
+        Me.GroupBox2.Controls.Add(Me.lstVendorFrom)
+        Me.GroupBox2.Location = New System.Drawing.Point(352, 19)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(300, 151)
+        Me.GroupBox2.TabIndex = 3
+        Me.GroupBox2.TabStop = False
+        '
+        'ChkInt
+        '
+        Me.ChkInt.AutoSize = True
+        Me.ChkInt.Location = New System.Drawing.Point(8, 52)
+        Me.ChkInt.Name = "ChkInt"
+        Me.ChkInt.Size = New System.Drawing.Size(72, 16)
+        Me.ChkInt.TabIndex = 458
+        Me.ChkInt.Text = "Int and JV"
+        Me.ChkInt.UseVisualStyleBackColor = True
+        '
+        'ChkALL
+        '
+        Me.ChkALL.AutoSize = True
+        Me.ChkALL.Location = New System.Drawing.Point(8, 30)
+        Me.ChkALL.Name = "ChkALL"
+        Me.ChkALL.Size = New System.Drawing.Size(46, 16)
+        Me.ChkALL.TabIndex = 4
+        Me.ChkALL.Text = "ALL"
+        Me.ChkALL.UseVisualStyleBackColor = True
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(6, 15)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(85, 12)
+        Me.Label9.TabIndex = 457
+        Me.Label9.Text = "VendorNo. From"
+        '
+        'lstVendorFrom
+        '
+        Me.lstVendorFrom.FormattingEnabled = True
+        Me.lstVendorFrom.ItemHeight = 12
+        Me.lstVendorFrom.Location = New System.Drawing.Point(113, 15)
+        Me.lstVendorFrom.Name = "lstVendorFrom"
+        Me.lstVendorFrom.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
+        Me.lstVendorFrom.Size = New System.Drawing.Size(170, 124)
+        Me.lstVendorFrom.TabIndex = 5
         '
         'GroupBox9
         '
         Me.GroupBox9.Controls.Add(Me.Label18)
         Me.GroupBox9.Controls.Add(Me.optPeriod0)
         Me.GroupBox9.Controls.Add(Me.optPeriod1)
-        Me.GroupBox9.Location = New System.Drawing.Point(15, 332)
+        Me.GroupBox9.Location = New System.Drawing.Point(17, 330)
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(618, 41)
+        Me.GroupBox9.Size = New System.Drawing.Size(634, 41)
         Me.GroupBox9.TabIndex = 25
         Me.GroupBox9.TabStop = False
         '
@@ -178,7 +228,7 @@ Partial Class INR00011
         'optPeriod1
         '
         Me.optPeriod1.AutoSize = True
-        Me.optPeriod1.Location = New System.Drawing.Point(278, 17)
+        Me.optPeriod1.Location = New System.Drawing.Point(278, 15)
         Me.optPeriod1.Name = "optPeriod1"
         Me.optPeriod1.Size = New System.Drawing.Size(63, 16)
         Me.optPeriod1.TabIndex = 27
@@ -190,7 +240,7 @@ Partial Class INR00011
         Me.GroupBox8.Controls.Add(Me.Label12)
         Me.GroupBox8.Controls.Add(Me.optActShip0)
         Me.GroupBox8.Controls.Add(Me.optActShip1)
-        Me.GroupBox8.Location = New System.Drawing.Point(341, 289)
+        Me.GroupBox8.Location = New System.Drawing.Point(359, 287)
         Me.GroupBox8.Name = "GroupBox8"
         Me.GroupBox8.Size = New System.Drawing.Size(292, 41)
         Me.GroupBox8.TabIndex = 21
@@ -199,11 +249,11 @@ Partial Class INR00011
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(5, 17)
+        Me.Label12.Location = New System.Drawing.Point(5, 18)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(106, 12)
+        Me.Label12.Size = New System.Drawing.Size(91, 12)
         Me.Label12.TabIndex = 47
-        Me.Label12.Text = "Act  Shipped Qty      :"
+        Me.Label12.Text = "Act  Shipped Qty  "
         '
         'optActShip0
         '
@@ -232,7 +282,7 @@ Partial Class INR00011
         Me.GroupBox7.Controls.Add(Me.Label17)
         Me.GroupBox7.Controls.Add(Me.optYrTitle0)
         Me.GroupBox7.Controls.Add(Me.optYrTitle1)
-        Me.GroupBox7.Location = New System.Drawing.Point(15, 289)
+        Me.GroupBox7.Location = New System.Drawing.Point(17, 287)
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Size = New System.Drawing.Size(315, 41)
         Me.GroupBox7.TabIndex = 18
@@ -241,7 +291,7 @@ Partial Class INR00011
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(6, 17)
+        Me.Label17.Location = New System.Drawing.Point(6, 18)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(86, 12)
         Me.Label17.TabIndex = 47
@@ -251,7 +301,7 @@ Partial Class INR00011
         '
         Me.optYrTitle0.AutoSize = True
         Me.optYrTitle0.Checked = True
-        Me.optYrTitle0.Location = New System.Drawing.Point(130, 17)
+        Me.optYrTitle0.Location = New System.Drawing.Point(130, 16)
         Me.optYrTitle0.Name = "optYrTitle0"
         Me.optYrTitle0.Size = New System.Drawing.Size(40, 16)
         Me.optYrTitle0.TabIndex = 19
@@ -262,7 +312,7 @@ Partial Class INR00011
         'optYrTitle1
         '
         Me.optYrTitle1.AutoSize = True
-        Me.optYrTitle1.Location = New System.Drawing.Point(245, 17)
+        Me.optYrTitle1.Location = New System.Drawing.Point(245, 16)
         Me.optYrTitle1.Name = "optYrTitle1"
         Me.optYrTitle1.Size = New System.Drawing.Size(37, 16)
         Me.optYrTitle1.TabIndex = 20
@@ -277,9 +327,9 @@ Partial Class INR00011
         Me.GroupBox1.Controls.Add(Me.Label20)
         Me.GroupBox1.Controls.Add(Me.txtDateFrom)
         Me.GroupBox1.Controls.Add(Me.Label19)
-        Me.GroupBox1.Location = New System.Drawing.Point(15, 378)
+        Me.GroupBox1.Location = New System.Drawing.Point(17, 376)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(620, 56)
+        Me.GroupBox1.Size = New System.Drawing.Size(635, 56)
         Me.GroupBox1.TabIndex = 28
         Me.GroupBox1.TabStop = False
         '
@@ -296,7 +346,7 @@ Partial Class INR00011
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(6, 15)
+        Me.Label21.Location = New System.Drawing.Point(6, 19)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(59, 12)
         Me.Label21.TabIndex = 451
@@ -313,11 +363,11 @@ Partial Class INR00011
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(86, 15)
+        Me.Label20.Location = New System.Drawing.Point(86, 19)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(36, 12)
+        Me.Label20.Size = New System.Drawing.Size(30, 12)
         Me.Label20.TabIndex = 449
-        Me.Label20.Text = "From :"
+        Me.Label20.Text = "From"
         '
         'txtDateFrom
         '
@@ -330,11 +380,11 @@ Partial Class INR00011
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(350, 15)
+        Me.Label19.Location = New System.Drawing.Point(350, 20)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(24, 12)
+        Me.Label19.Size = New System.Drawing.Size(18, 12)
         Me.Label19.TabIndex = 450
-        Me.Label19.Text = "To :"
+        Me.Label19.Text = "To"
         '
         'GroupBox6
         '
@@ -343,9 +393,9 @@ Partial Class INR00011
         Me.GroupBox6.Controls.Add(Me.cboCatlevel_To)
         Me.GroupBox6.Controls.Add(Me.cboCatlevel_Fm)
         Me.GroupBox6.Controls.Add(Me.Label11)
-        Me.GroupBox6.Location = New System.Drawing.Point(15, 250)
+        Me.GroupBox6.Location = New System.Drawing.Point(17, 248)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(618, 37)
+        Me.GroupBox6.Size = New System.Drawing.Size(635, 37)
         Me.GroupBox6.TabIndex = 15
         Me.GroupBox6.TabStop = False
         '
@@ -354,9 +404,9 @@ Partial Class INR00011
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(85, 13)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(36, 12)
+        Me.Label4.Size = New System.Drawing.Size(30, 12)
         Me.Label4.TabIndex = 16
-        Me.Label4.Text = "From :"
+        Me.Label4.Text = "From"
         '
         'Label8
         '
@@ -388,17 +438,17 @@ Partial Class INR00011
         Me.Label11.AutoSize = True
         Me.Label11.Location = New System.Drawing.Point(350, 13)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(24, 12)
+        Me.Label11.Size = New System.Drawing.Size(18, 12)
         Me.Label11.TabIndex = 18
-        Me.Label11.Text = "To :"
+        Me.Label11.Text = "To"
         '
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.cboCatlevel)
         Me.GroupBox5.Controls.Add(Me.Label5)
-        Me.GroupBox5.Location = New System.Drawing.Point(15, 212)
+        Me.GroupBox5.Location = New System.Drawing.Point(17, 210)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(618, 36)
+        Me.GroupBox5.Size = New System.Drawing.Size(635, 36)
         Me.GroupBox5.TabIndex = 13
         Me.GroupBox5.TabStop = False
         '
@@ -415,9 +465,9 @@ Partial Class INR00011
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(6, 15)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(83, 12)
+        Me.Label5.Size = New System.Drawing.Size(80, 12)
         Me.Label5.TabIndex = 15
-        Me.Label5.Text = "Category Level :"
+        Me.Label5.Text = "Category Level "
         '
         'GroupBox4
         '
@@ -426,9 +476,9 @@ Partial Class INR00011
         Me.GroupBox4.Controls.Add(Me.cboSCTo)
         Me.GroupBox4.Controls.Add(Me.cboSCFm)
         Me.GroupBox4.Controls.Add(Me.Label3)
-        Me.GroupBox4.Location = New System.Drawing.Point(15, 174)
+        Me.GroupBox4.Location = New System.Drawing.Point(17, 172)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(618, 37)
+        Me.GroupBox4.Size = New System.Drawing.Size(635, 37)
         Me.GroupBox4.TabIndex = 10
         Me.GroupBox4.TabStop = False
         '
@@ -437,9 +487,9 @@ Partial Class INR00011
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(85, 14)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(36, 12)
+        Me.Label7.Size = New System.Drawing.Size(30, 12)
         Me.Label7.TabIndex = 16
-        Me.Label7.Text = "From :"
+        Me.Label7.Text = "From"
         '
         'Label6
         '
@@ -471,16 +521,16 @@ Partial Class INR00011
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(350, 14)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(24, 12)
+        Me.Label3.Size = New System.Drawing.Size(18, 12)
         Me.Label3.TabIndex = 18
-        Me.Label3.Text = "To :"
+        Me.Label3.Text = "To"
         '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.chkCustAll)
         Me.GroupBox3.Controls.Add(Me.lstCust)
         Me.GroupBox3.Controls.Add(Me.Label10)
-        Me.GroupBox3.Location = New System.Drawing.Point(15, 21)
+        Me.GroupBox3.Location = New System.Drawing.Point(17, 19)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(329, 151)
         Me.GroupBox3.TabIndex = 6
@@ -515,62 +565,11 @@ Partial Class INR00011
         Me.Label10.TabIndex = 16
         Me.Label10.Text = "Customer   From"
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.ChkInt)
-        Me.GroupBox2.Controls.Add(Me.ChkALL)
-        Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.lstVendorFrom)
-        Me.GroupBox2.Location = New System.Drawing.Point(350, 21)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(285, 151)
-        Me.GroupBox2.TabIndex = 3
-        Me.GroupBox2.TabStop = False
-        '
-        'ChkInt
-        '
-        Me.ChkInt.AutoSize = True
-        Me.ChkInt.Location = New System.Drawing.Point(8, 52)
-        Me.ChkInt.Name = "ChkInt"
-        Me.ChkInt.Size = New System.Drawing.Size(72, 16)
-        Me.ChkInt.TabIndex = 458
-        Me.ChkInt.Text = "Int and JV"
-        Me.ChkInt.UseVisualStyleBackColor = True
-        '
-        'ChkALL
-        '
-        Me.ChkALL.AutoSize = True
-        Me.ChkALL.Location = New System.Drawing.Point(8, 30)
-        Me.ChkALL.Name = "ChkALL"
-        Me.ChkALL.Size = New System.Drawing.Size(46, 16)
-        Me.ChkALL.TabIndex = 4
-        Me.ChkALL.Text = "ALL"
-        Me.ChkALL.UseVisualStyleBackColor = True
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(6, 15)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(91, 12)
-        Me.Label9.TabIndex = 457
-        Me.Label9.Text = "VendorNo. From :"
-        '
-        'lstVendorFrom
-        '
-        Me.lstVendorFrom.FormattingEnabled = True
-        Me.lstVendorFrom.ItemHeight = 12
-        Me.lstVendorFrom.Location = New System.Drawing.Point(105, 15)
-        Me.lstVendorFrom.Name = "lstVendorFrom"
-        Me.lstVendorFrom.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
-        Me.lstVendorFrom.Size = New System.Drawing.Size(170, 124)
-        Me.lstVendorFrom.TabIndex = 5
-        '
         'cmdShow
         '
-        Me.cmdShow.Location = New System.Drawing.Point(258, 508)
+        Me.cmdShow.Location = New System.Drawing.Point(285, 512)
         Me.cmdShow.Name = "cmdShow"
-        Me.cmdShow.Size = New System.Drawing.Size(111, 35)
+        Me.cmdShow.Size = New System.Drawing.Size(140, 22)
         Me.cmdShow.TabIndex = 31
         Me.cmdShow.Text = "&Show Report"
         Me.cmdShow.UseVisualStyleBackColor = True
@@ -579,36 +578,17 @@ Partial Class INR00011
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.DarkBlue
-        Me.Label13.Location = New System.Drawing.Point(142, 3)
+        Me.Label13.ForeColor = System.Drawing.Color.Blue
+        Me.Label13.Location = New System.Drawing.Point(178, 7)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(359, 25)
         Me.Label13.TabIndex = 18
         Me.Label13.Text = "Sales Confirmation Summary Report"
         '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(12, 9)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(55, 12)
-        Me.Label14.TabIndex = 20
-        Me.Label14.Text = "INR00011"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(-5, 27)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(833, 12)
-        Me.Label15.TabIndex = 21
-        Me.Label15.Text = "_________________________________________________________________________________" & _
-            "_________________________________________________________"
-        '
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(61, 494)
+        Me.Label22.Location = New System.Drawing.Point(80, 494)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(0, 12)
         Me.Label22.TabIndex = 486
@@ -617,10 +597,8 @@ Partial Class INR00011
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(670, 554)
+        Me.ClientSize = New System.Drawing.Size(714, 554)
         Me.Controls.Add(Me.Label22)
-        Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.grpSearch)
         Me.Controls.Add(Me.txtCoNam)
@@ -628,9 +606,14 @@ Partial Class INR00011
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.cboCoCde)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "INR00011"
-        Me.Text = "INR00011 - Sales Confirmation Summary Report"
+        Me.Text = "INR00011 - Sales Confirmation Summary Report (INR11)"
         Me.grpSearch.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox9.PerformLayout()
         Me.GroupBox8.ResumeLayout(False)
@@ -647,8 +630,6 @@ Partial Class INR00011
         Me.GroupBox4.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -669,8 +650,6 @@ Partial Class INR00011
     Friend WithEvents txtDateFrom As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txtDateTo As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
