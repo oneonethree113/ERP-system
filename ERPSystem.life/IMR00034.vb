@@ -1155,6 +1155,8 @@ Public Class IMR00034
         frmComSearch.cmdAllClear.Enabled = False
 
         frmComSearch.show_frmS(Me.cmd_S_ItmNoAll)
+
+      
     End Sub
 
     Private Sub cmd_S_PriCustAll_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_S_PriCustAll.Click
@@ -1191,4 +1193,17 @@ Public Class IMR00034
         sender.Focus()
         sender.SelectAll()
     End Sub
+
+    Private Sub cmd_S_ItmNo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_S_ItmNo.Click
+        frmItemList.strItem = txt_S_ItmNo.Text
+        'frmItemList.Show(vbModal)
+        Call frmItemList.getform("IMR00034")
+        frmItemList.ShowDialog()
+        txt_S_ItmNo.Text = frmItemList.strSel
+    End Sub
+
+    Public Function settxtItmno(ByVal strA As String)
+        ' Me.txt_S_ItmNo.Text = strA
+
+    End Function
 End Class

@@ -65,6 +65,7 @@ Partial Class IMR00034
         Me.lblPeriod = New System.Windows.Forms.Label
         Me.Label22 = New System.Windows.Forms.Label
         Me.cmd_S_DV = New System.Windows.Forms.Button
+        Me.cmd_S_ItmNo = New System.Windows.Forms.Button
         Me.SuspendLayout()
         '
         'Label1
@@ -89,7 +90,7 @@ Partial Class IMR00034
         '
         Me.txt_S_ItmNo.Location = New System.Drawing.Point(175, 15)
         Me.txt_S_ItmNo.Name = "txt_S_ItmNo"
-        Me.txt_S_ItmNo.Size = New System.Drawing.Size(443, 22)
+        Me.txt_S_ItmNo.Size = New System.Drawing.Size(392, 22)
         Me.txt_S_ItmNo.TabIndex = 2
         '
         'txt_S_PriCustAll
@@ -440,11 +441,20 @@ Partial Class IMR00034
         Me.cmd_S_DV.Text = "＞＞"
         Me.cmd_S_DV.UseVisualStyleBackColor = True
         '
+        'cmd_S_ItmNo
+        '
+        Me.cmd_S_ItmNo.Location = New System.Drawing.Point(573, 15)
+        Me.cmd_S_ItmNo.Name = "cmd_S_ItmNo"
+        Me.cmd_S_ItmNo.Size = New System.Drawing.Size(45, 22)
+        Me.cmd_S_ItmNo.TabIndex = 75
+        Me.cmd_S_ItmNo.Text = "..."
+        '
         'IMR00034
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(634, 411)
+        Me.Controls.Add(Me.cmd_S_ItmNo)
         Me.Controls.Add(Me.Label22)
         Me.Controls.Add(Me.lblPeriod)
         Me.Controls.Add(Me.ckbCon2PC)
@@ -538,4 +548,5 @@ Partial Class IMR00034
     Friend WithEvents lblPeriod As System.Windows.Forms.Label
     Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents cmd_S_DV As System.Windows.Forms.Button
+    Friend WithEvents cmd_S_ItmNo As System.Windows.Forms.Button
 End Class
