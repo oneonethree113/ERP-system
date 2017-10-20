@@ -11,6 +11,7 @@
     Public strModule As String
     Public keyName As String
 
+    Const EMPTY As String = "*EMPTY*"
 
     Public Sub show_frmSYM00018(ByVal frm As Form)
         frmS = frm
@@ -282,7 +283,7 @@
         opt3 = ""
         Dim dr_SYSCHCON() As DataRow
 
-        If cboCriteria1.Text <> "" Then
+        If cboCriteria1.Text <> "" And cboCriteria1.Text <> EMPTY Then
             dr_SYSCHCON = rs_SYSCHCON.Tables("RESULT").Select("ssc_display = '" & cboCriteria1.Text & "'")
             ItemSearch = check_ItemSearch(cboCriteria1.Text, dr_SYSCHCON(0))
             PriCusSearch = check_PriCustSearch(cboCriteria1.Text, dr_SYSCHCON(0))
@@ -291,7 +292,7 @@
             opt1 = combine_optstring(ItemSearch, PriCusSearch, SecCusSearch, RespPOSearch, 1, dr_SYSCHCON(0))
         End If
 
-        If cboCriteria2.Text <> "" Then
+        If cboCriteria2.Text <> "" And cboCriteria2.Text <> EMPTY Then
             dr_SYSCHCON = rs_SYSCHCON.Tables("RESULT").Select("ssc_display = '" & cboCriteria2.Text & "'")
             ItemSearch = check_ItemSearch(cboCriteria2.Text, dr_SYSCHCON(0))
             PriCusSearch = check_PriCustSearch(cboCriteria2.Text, dr_SYSCHCON(0))
@@ -300,7 +301,7 @@
             opt2 = combine_optstring(ItemSearch, PriCusSearch, SecCusSearch, RespPOSearch, 2, dr_SYSCHCON(0))
         End If
 
-        If cboCriteria3.Text <> "" Then
+        If cboCriteria3.Text <> "" And cboCriteria3.Text <> EMPTY Then
             dr_SYSCHCON = rs_SYSCHCON.Tables("RESULT").Select("ssc_display = '" & cboCriteria3.Text & "'")
             ItemSearch = check_ItemSearch(cboCriteria3.Text, dr_SYSCHCON(0))
             PriCusSearch = check_PriCustSearch(cboCriteria3.Text, dr_SYSCHCON(0))
@@ -359,8 +360,11 @@
                 End If
                 grdResult.DataSource = rs.Tables("RESULT").DefaultView
                 grdResult.Columns(0).Visible = False
+                If strModule = "IM" Then
+                    DisplayDataGrid1(sql)
+                End If
             End If
-            End If
+        End If
     End Sub
 
     Private Function showIMHisInfo(ByVal opt1 As String, ByVal opt2 As String, ByVal opt3 As String) As String
@@ -492,6 +496,11 @@
             cboCriteria3.Items.Add(rs_SYSCHCON.Tables("RESULT").Rows(i)("ssc_display"))
         Next
 
+        If strModule = "IM" Then
+            cboCriteria1.Items.Add(EMPTY)
+            cboCriteria2.Items.Add(EMPTY)
+            cboCriteria3.Items.Add(EMPTY)
+        End If
         cboCriteria1.SelectedIndex = -1
         cboCriteria2.SelectedIndex = -1
         cboCriteria3.SelectedIndex = -1
@@ -581,14 +590,16 @@
 
         InputIsValid = True
 
-        If cboCriteria1.Text = "" And cboCriteria2.Text = "" And cboCriteria3.Text = "" Then
+        If (cboCriteria1.Text = "" Or cboCriteria1.Text = EMPTY) _
+            And (cboCriteria2.Text = "" Or cboCriteria2.Text = EMPTY) _
+            And (cboCriteria3.Text = "" Or cboCriteria3.Text = EMPTY) Then
             MsgBox("Please select criteria first!")
             InputIsValid = False
             Exit Function
         End If
 
         'Check CboCriterial1
-        If cboCriteria1.Text <> "" Then
+        If cboCriteria1.Text <> "" And cboCriteria1.Text <> EMPTY Then
             If chkPartial1.Checked = True Then
                 If Trim(txtFrom1.Text) = "" Then
                     MsgBox("Please Input Value")
@@ -650,7 +661,7 @@
 
 
         'Check CboCriterial2
-        If cboCriteria2.Text <> "" Then
+        If cboCriteria2.Text <> "" And cboCriteria2.Text <> EMPTY Then
             If chkPartial2.Checked = True Then
                 If Trim(txtFrom2.Text) = "" Then
                     MsgBox("Please Input Value")
@@ -711,7 +722,7 @@
         End If
 
         'Check CboCriterial3
-        If cboCriteria3.Text <> "" Then
+        If cboCriteria3.Text <> "" And cboCriteria3.Text <> EMPTY Then
             If chkPartial3.Checked = True Then
                 If Trim(txtFrom3.Text) = "" Then
                     MsgBox("Please Input Value")
@@ -790,8 +801,8 @@
         Dim i As Integer
         i = 0
 
-        For i = 0 To tmpsqlstr.Length - 1
-            grdResult.Columns(i).Width = CLng(tmpsqlstr(i))
+        For i = 1 To tmpsqlstr.Length - 2
+            grdResult.Columns(i - 1).Width = CLng(tmpsqlstr(i))
         Next
     End Sub
 
