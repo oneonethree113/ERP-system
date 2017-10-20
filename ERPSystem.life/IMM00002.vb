@@ -698,6 +698,9 @@
 
         BomAssTab_grdOldRecord()
         BomAssTab_grdNewRecord()
+
+        DetailandBOMTab_RecordButtonSetting()
+
     End Sub
 
     Private Sub BomAssTab_grdOldRecord()
@@ -757,32 +760,48 @@
     End Sub
     Private Sub DetailTab()
 
-        DetailTab_RecordButtonSetting()
+        DetailandBOMTab_RecordButtonSetting()
         DetailTab_ContentDisplay()
     End Sub
-    Private Sub DetailTab_RecordButtonSetting()
+    Private Sub DetailandBOMTab_RecordButtonSetting()
         If Not rs_IMITMDAT Is Nothing Then
             If rs_IMITMDAT.Tables("RESULT").Rows.Count <= 1 Then
+                cmdFirst_BOM.Enabled = False
                 cmdFirst_dtl.Enabled = False
+                cmdPrev_BOM.Enabled = False
                 cmdPrev_dtl.Enabled = False
+                cmdNext_BOM.Enabled = False
                 cmdNext_dtl.Enabled = False
+                cmdLast_BOM.Enabled = False
                 cmdLast_dtl.Enabled = False
             Else
                 'more than one record
+                cmdFirst_BOM.Enabled = False
                 cmdFirst_dtl.Enabled = False
+                cmdPrev_BOM.Enabled = False
                 cmdPrev_dtl.Enabled = False
+                cmdNext_BOM.Enabled = False
                 cmdNext_dtl.Enabled = False
+                cmdLast_BOM.Enabled = False
                 cmdLast_dtl.Enabled = False
                 If selected_Rowno = 0 Then
+                    cmdNext_BOM.Enabled = True
                     cmdNext_dtl.Enabled = True
+                    cmdLast_BOM.Enabled = True
                     cmdLast_dtl.Enabled = True
                 ElseIf selected_Rowno = (rs_IMITMDAT.Tables("RESULT").Rows.Count - 1) Then
+                    cmdFirst_BOM.Enabled = True
                     cmdFirst_dtl.Enabled = True
+                    cmdPrev_BOM.Enabled = True
                     cmdPrev_dtl.Enabled = True
                 Else
+                    cmdFirst_BOM.Enabled = True
                     cmdFirst_dtl.Enabled = True
+                    cmdPrev_BOM.Enabled = True
                     cmdPrev_dtl.Enabled = True
+                    cmdNext_BOM.Enabled = True
                     cmdNext_dtl.Enabled = True
+                    cmdLast_BOM.Enabled = True
                     cmdLast_dtl.Enabled = True
                 End If
             End If
@@ -893,7 +912,7 @@
         End If
     End Sub
 
-    Private Sub cmdFirst_dtl_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFirst_dtl.Click
+    Private Sub cmdFirst_dtl_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFirst_dtl.Click, cmdFirst_BOM.Click
         If Not rs_IMITMDAT Is Nothing Then
             If (selected_Rowno > 0) Then
                 selected_Rowno = 0
@@ -902,7 +921,7 @@
         refreshTab()
     End Sub
 
-    Private Sub cmdPrev_dtl_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdPrev_dtl.Click
+    Private Sub cmdPrev_dtl_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdPrev_dtl.Click, cmdPrev_BOM.Click
         If Not rs_IMITMDAT Is Nothing Then
             If (selected_Rowno > 0) Then
                 selected_Rowno = selected_Rowno - 1
@@ -911,7 +930,7 @@
         refreshTab()
     End Sub
 
-    Private Sub cmdNext_dtl_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdNext_dtl.Click
+    Private Sub cmdNext_dtl_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdNext_dtl.Click, cmdNext_BOM.Click
         If Not rs_IMITMDAT Is Nothing Then
             If (selected_Rowno < Val(dv_listing.Count - 1)) Then
                 selected_Rowno = selected_Rowno + 1
@@ -920,7 +939,7 @@
         refreshTab()
     End Sub
 
-    Private Sub cmdLast_dtl_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdLast_dtl.Click
+    Private Sub cmdLast_dtl_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdLast_dtl.Click, cmdLast_BOM.Click
         If Not rs_IMITMDAT Is Nothing Then
             If (selected_Rowno < Val(dv_listing.Count - 1)) Then
                 selected_Rowno = dv_listing.Count - 1
@@ -1052,7 +1071,7 @@
     End Sub
 
     Private Sub Enable_IAR00001()
- 
+
         cmdIAR00001.Enabled = getEnquiryRightByFormName(IAR00001.Name.ToString)
     End Sub
 
@@ -1156,9 +1175,13 @@
             chkWait_dtl.Checked = False
             chkWait_dtl.Enabled = False
 
+            cmdFirst_BOM.Enabled = False
             cmdFirst_dtl.Enabled = False
+            cmdPrev_BOM.Enabled = False
             cmdPrev_dtl.Enabled = False
+            cmdNext_BOM.Enabled = False
             cmdNext_dtl.Enabled = False
+            cmdLast_BOM.Enabled = False
             cmdLast_dtl.Enabled = False
 
             txtUM_dtl.Text = ""
@@ -1206,9 +1229,13 @@
 
             mmdExit.Enabled = True
 
+            cmdFirst_BOM.Enabled = True
             cmdFirst_dtl.Enabled = True
+            cmdLast_BOM.Enabled = True
             cmdLast_dtl.Enabled = True
+            cmdNext_BOM.Enabled = True
             cmdNext_dtl.Enabled = True
+            cmdPrev_BOM.Enabled = True
             cmdPrev_dtl.Enabled = True
 
             cmdApply.Enabled = True
