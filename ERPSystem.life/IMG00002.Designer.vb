@@ -66,19 +66,21 @@ Partial Class IMG00002
         Me.statusBar = New System.Windows.Forms.StatusStrip
         Me.lblStatus = New System.Windows.Forms.ToolStripStatusLabel
         Me.lblFilname = New System.Windows.Forms.Label
+        Me.grpPreview = New System.Windows.Forms.GroupBox
         Me.grpFormat.SuspendLayout()
         CType(Me.pBxImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpFolders.SuspendLayout()
         Me.statusBar.SuspendLayout()
+        Me.grpPreview.SuspendLayout()
         Me.SuspendLayout()
         '
         'grpFormat
         '
         Me.grpFormat.Controls.Add(Me.cboImgNamFormat)
         Me.grpFormat.Controls.Add(Me.Label1)
-        Me.grpFormat.Location = New System.Drawing.Point(10, 3)
+        Me.grpFormat.Location = New System.Drawing.Point(10, 1)
         Me.grpFormat.Name = "grpFormat"
-        Me.grpFormat.Size = New System.Drawing.Size(193, 49)
+        Me.grpFormat.Size = New System.Drawing.Size(204, 49)
         Me.grpFormat.TabIndex = 0
         Me.grpFormat.TabStop = False
         '
@@ -88,7 +90,7 @@ Partial Class IMG00002
         Me.cboImgNamFormat.FormattingEnabled = True
         Me.cboImgNamFormat.Location = New System.Drawing.Point(78, 17)
         Me.cboImgNamFormat.Name = "cboImgNamFormat"
-        Me.cboImgNamFormat.Size = New System.Drawing.Size(109, 24)
+        Me.cboImgNamFormat.Size = New System.Drawing.Size(109, 20)
         Me.cboImgNamFormat.TabIndex = 1
         '
         'Label1
@@ -96,7 +98,7 @@ Partial Class IMG00002
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(7, 14)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(87, 34)
+        Me.Label1.Size = New System.Drawing.Size(64, 24)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Image Name" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Format"
         '
@@ -106,18 +108,18 @@ Partial Class IMG00002
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(217, 12)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 17)
+        Me.Label2.Size = New System.Drawing.Size(47, 13)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Source"
         '
         'filSource
         '
         Me.filSource.FormattingEnabled = True
-        Me.filSource.ItemHeight = 16
+        Me.filSource.ItemHeight = 12
         Me.filSource.Location = New System.Drawing.Point(220, 213)
         Me.filSource.Name = "filSource"
         Me.filSource.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.filSource.Size = New System.Drawing.Size(294, 132)
+        Me.filSource.Size = New System.Drawing.Size(294, 124)
         Me.filSource.TabIndex = 24
         '
         'dirSource
@@ -143,23 +145,23 @@ Partial Class IMG00002
         Me.drvSource.FormattingEnabled = True
         Me.drvSource.Location = New System.Drawing.Point(220, 31)
         Me.drvSource.Name = "drvSource"
-        Me.drvSource.Size = New System.Drawing.Size(294, 24)
+        Me.drvSource.Size = New System.Drawing.Size(294, 20)
         Me.drvSource.TabIndex = 22
         '
         'filDest
         '
-        Me.filDest.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.filDest.BackColor = System.Drawing.SystemColors.Window
         Me.filDest.FormattingEnabled = True
-        Me.filDest.ItemHeight = 16
+        Me.filDest.ItemHeight = 12
         Me.filDest.Location = New System.Drawing.Point(664, 213)
         Me.filDest.Name = "filDest"
         Me.filDest.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.filDest.Size = New System.Drawing.Size(281, 132)
+        Me.filDest.Size = New System.Drawing.Size(281, 124)
         Me.filDest.TabIndex = 28
         '
         'dirDest
         '
-        Me.dirDest.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.dirDest.BackColor = System.Drawing.SystemColors.Window
         Me.dirDest.ImageIndex = 0
         Me.dirDest.ImageList = Me.imgListFolders
         Me.dirDest.Location = New System.Drawing.Point(664, 58)
@@ -170,13 +172,13 @@ Partial Class IMG00002
         '
         'drvDest
         '
-        Me.drvDest.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.drvDest.BackColor = System.Drawing.SystemColors.Window
         Me.drvDest.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.drvDest.Enabled = False
         Me.drvDest.FormattingEnabled = True
         Me.drvDest.Location = New System.Drawing.Point(664, 31)
         Me.drvDest.Name = "drvDest"
-        Me.drvDest.Size = New System.Drawing.Size(281, 24)
+        Me.drvDest.Size = New System.Drawing.Size(281, 20)
         Me.drvDest.TabIndex = 26
         '
         'Label3
@@ -185,7 +187,7 @@ Partial Class IMG00002
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(664, 12)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(90, 17)
+        Me.Label3.Size = New System.Drawing.Size(71, 13)
         Me.Label3.TabIndex = 25
         Me.Label3.Text = "Destination"
         '
@@ -221,7 +223,7 @@ Partial Class IMG00002
         Me.chkOverwrite.AutoSize = True
         Me.chkOverwrite.Location = New System.Drawing.Point(544, 126)
         Me.chkOverwrite.Name = "chkOverwrite"
-        Me.chkOverwrite.Size = New System.Drawing.Size(120, 38)
+        Me.chkOverwrite.Size = New System.Drawing.Size(94, 28)
         Me.chkOverwrite.TabIndex = 32
         Me.chkOverwrite.Text = "Overwrite" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Existing Image"
         Me.chkOverwrite.UseVisualStyleBackColor = True
@@ -239,9 +241,9 @@ Partial Class IMG00002
         'chkView
         '
         Me.chkView.AutoSize = True
-        Me.chkView.Location = New System.Drawing.Point(661, 366)
+        Me.chkView.Location = New System.Drawing.Point(547, 361)
         Me.chkView.Name = "chkView"
-        Me.chkView.Size = New System.Drawing.Size(101, 21)
+        Me.chkView.Size = New System.Drawing.Size(80, 16)
         Me.chkView.TabIndex = 34
         Me.chkView.Text = "View Image"
         Me.chkView.UseVisualStyleBackColor = True
@@ -249,16 +251,16 @@ Partial Class IMG00002
         'chkViewCont
         '
         Me.chkViewCont.AutoSize = True
-        Me.chkViewCont.Location = New System.Drawing.Point(661, 386)
+        Me.chkViewCont.Location = New System.Drawing.Point(547, 381)
         Me.chkViewCont.Name = "chkViewCont"
-        Me.chkViewCont.Size = New System.Drawing.Size(112, 21)
+        Me.chkViewCont.Size = New System.Drawing.Size(88, 16)
         Me.chkViewCont.TabIndex = 35
         Me.chkViewCont.Text = "View Content"
         Me.chkViewCont.UseVisualStyleBackColor = True
         '
         'cmdSelectAll
         '
-        Me.cmdSelectAll.Location = New System.Drawing.Point(290, 357)
+        Me.cmdSelectAll.Location = New System.Drawing.Point(273, 351)
         Me.cmdSelectAll.Name = "cmdSelectAll"
         Me.cmdSelectAll.Size = New System.Drawing.Size(75, 23)
         Me.cmdSelectAll.TabIndex = 36
@@ -267,7 +269,7 @@ Partial Class IMG00002
         '
         'cmdRefreshLst
         '
-        Me.cmdRefreshLst.Location = New System.Drawing.Point(375, 357)
+        Me.cmdRefreshLst.Location = New System.Drawing.Point(358, 351)
         Me.cmdRefreshLst.Name = "cmdRefreshLst"
         Me.cmdRefreshLst.Size = New System.Drawing.Size(75, 23)
         Me.cmdRefreshLst.TabIndex = 37
@@ -277,16 +279,16 @@ Partial Class IMG00002
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(287, 387)
+        Me.Label4.Location = New System.Drawing.Point(273, 381)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(107, 17)
+        Me.Label4.Size = New System.Drawing.Size(80, 12)
         Me.Label4.TabIndex = 38
         Me.Label4.Text = "Number of Files"
         '
         'lblServerName
         '
         Me.lblServerName.AutoSize = True
-        Me.lblServerName.Location = New System.Drawing.Point(287, 407)
+        Me.lblServerName.Location = New System.Drawing.Point(273, 401)
         Me.lblServerName.MaximumSize = New System.Drawing.Size(160, 13)
         Me.lblServerName.MinimumSize = New System.Drawing.Size(160, 13)
         Me.lblServerName.Name = "lblServerName"
@@ -297,7 +299,7 @@ Partial Class IMG00002
         'lblNumFilSource
         '
         Me.lblNumFilSource.AutoSize = True
-        Me.lblNumFilSource.Location = New System.Drawing.Point(395, 387)
+        Me.lblNumFilSource.Location = New System.Drawing.Point(381, 381)
         Me.lblNumFilSource.MaximumSize = New System.Drawing.Size(50, 13)
         Me.lblNumFilSource.MinimumSize = New System.Drawing.Size(50, 13)
         Me.lblNumFilSource.Name = "lblNumFilSource"
@@ -309,16 +311,16 @@ Partial Class IMG00002
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(287, 427)
+        Me.Label5.Location = New System.Drawing.Point(273, 421)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(71, 17)
+        Me.Label5.Size = New System.Drawing.Size(54, 12)
         Me.Label5.TabIndex = 41
         Me.Label5.Text = "File Count"
         '
         'tmpCount
         '
         Me.tmpCount.AutoSize = True
-        Me.tmpCount.Location = New System.Drawing.Point(395, 427)
+        Me.tmpCount.Location = New System.Drawing.Point(381, 421)
         Me.tmpCount.MaximumSize = New System.Drawing.Size(50, 13)
         Me.tmpCount.MinimumSize = New System.Drawing.Size(50, 13)
         Me.tmpCount.Name = "tmpCount"
@@ -330,55 +332,55 @@ Partial Class IMG00002
         'txtLog
         '
         Me.txtLog.BackColor = System.Drawing.Color.White
-        Me.txtLog.Location = New System.Drawing.Point(13, 450)
+        Me.txtLog.Location = New System.Drawing.Point(10, 450)
         Me.txtLog.Multiline = True
         Me.txtLog.Name = "txtLog"
         Me.txtLog.ReadOnly = True
         Me.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtLog.Size = New System.Drawing.Size(945, 81)
+        Me.txtLog.Size = New System.Drawing.Size(935, 156)
         Me.txtLog.TabIndex = 43
         Me.txtLog.TabStop = False
         '
         'lblMessage
         '
         Me.lblMessage.AutoSize = True
-        Me.lblMessage.Location = New System.Drawing.Point(774, 362)
+        Me.lblMessage.Location = New System.Drawing.Point(747, 357)
         Me.lblMessage.Name = "lblMessage"
-        Me.lblMessage.Size = New System.Drawing.Size(155, 17)
+        Me.lblMessage.Size = New System.Drawing.Size(117, 12)
         Me.lblMessage.TabIndex = 44
         Me.lblMessage.Text = "Number of Copied Files"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(774, 382)
+        Me.Label7.Location = New System.Drawing.Point(747, 377)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(169, 17)
+        Me.Label7.Size = New System.Drawing.Size(126, 12)
         Me.Label7.TabIndex = 45
         Me.Label7.Text = "Number of Excepted Files"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(774, 402)
+        Me.Label8.Location = New System.Drawing.Point(747, 397)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(178, 17)
+        Me.Label8.Size = New System.Drawing.Size(133, 12)
         Me.Label8.TabIndex = 46
         Me.Label8.Text = "Number of Duplicated Files"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(774, 422)
+        Me.Label9.Location = New System.Drawing.Point(747, 417)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(147, 17)
+        Me.Label9.Size = New System.Drawing.Size(109, 12)
         Me.Label9.TabIndex = 47
         Me.Label9.Text = "Number of Other Files"
         '
         'lblNumFil
         '
         Me.lblNumFil.AutoSize = True
-        Me.lblNumFil.Location = New System.Drawing.Point(914, 366)
+        Me.lblNumFil.Location = New System.Drawing.Point(887, 358)
         Me.lblNumFil.MaximumSize = New System.Drawing.Size(40, 13)
         Me.lblNumFil.MinimumSize = New System.Drawing.Size(40, 13)
         Me.lblNumFil.Name = "lblNumFil"
@@ -390,7 +392,7 @@ Partial Class IMG00002
         'lblExcept
         '
         Me.lblExcept.AutoSize = True
-        Me.lblExcept.Location = New System.Drawing.Point(914, 387)
+        Me.lblExcept.Location = New System.Drawing.Point(887, 379)
         Me.lblExcept.MaximumSize = New System.Drawing.Size(40, 13)
         Me.lblExcept.MinimumSize = New System.Drawing.Size(40, 13)
         Me.lblExcept.Name = "lblExcept"
@@ -402,7 +404,7 @@ Partial Class IMG00002
         'lblDup
         '
         Me.lblDup.AutoSize = True
-        Me.lblDup.Location = New System.Drawing.Point(914, 407)
+        Me.lblDup.Location = New System.Drawing.Point(887, 399)
         Me.lblDup.MaximumSize = New System.Drawing.Size(40, 13)
         Me.lblDup.MinimumSize = New System.Drawing.Size(40, 13)
         Me.lblDup.Name = "lblDup"
@@ -414,7 +416,7 @@ Partial Class IMG00002
         'lblOther
         '
         Me.lblOther.AutoSize = True
-        Me.lblOther.Location = New System.Drawing.Point(914, 427)
+        Me.lblOther.Location = New System.Drawing.Point(887, 419)
         Me.lblOther.MaximumSize = New System.Drawing.Size(40, 13)
         Me.lblOther.MinimumSize = New System.Drawing.Size(40, 13)
         Me.lblOther.Name = "lblOther"
@@ -426,7 +428,7 @@ Partial Class IMG00002
         '
         'pBxImage
         '
-        Me.pBxImage.Location = New System.Drawing.Point(10, 134)
+        Me.pBxImage.Location = New System.Drawing.Point(4, 19)
         Me.pBxImage.MaximumSize = New System.Drawing.Size(193, 204)
         Me.pBxImage.Name = "pBxImage"
         Me.pBxImage.Size = New System.Drawing.Size(193, 204)
@@ -437,9 +439,9 @@ Partial Class IMG00002
         '
         Me.grpFolders.Controls.Add(Me.optExceptImgFolder)
         Me.grpFolders.Controls.Add(Me.optUploadImgFolder)
-        Me.grpFolders.Location = New System.Drawing.Point(10, 58)
+        Me.grpFolders.Location = New System.Drawing.Point(10, 56)
         Me.grpFolders.Name = "grpFolders"
-        Me.grpFolders.Size = New System.Drawing.Size(193, 69)
+        Me.grpFolders.Size = New System.Drawing.Size(204, 69)
         Me.grpFolders.TabIndex = 54
         Me.grpFolders.TabStop = False
         Me.grpFolders.Text = "Folders"
@@ -449,7 +451,7 @@ Partial Class IMG00002
         Me.optExceptImgFolder.AutoSize = True
         Me.optExceptImgFolder.Location = New System.Drawing.Point(24, 43)
         Me.optExceptImgFolder.Name = "optExceptImgFolder"
-        Me.optExceptImgFolder.Size = New System.Drawing.Size(176, 21)
+        Me.optExceptImgFolder.Size = New System.Drawing.Size(135, 16)
         Me.optExceptImgFolder.TabIndex = 1
         Me.optExceptImgFolder.TabStop = True
         Me.optExceptImgFolder.Text = "Exception Image Folder"
@@ -460,7 +462,7 @@ Partial Class IMG00002
         Me.optUploadImgFolder.AutoSize = True
         Me.optUploadImgFolder.Location = New System.Drawing.Point(24, 19)
         Me.optUploadImgFolder.Name = "optUploadImgFolder"
-        Me.optUploadImgFolder.Size = New System.Drawing.Size(160, 21)
+        Me.optUploadImgFolder.Size = New System.Drawing.Size(122, 16)
         Me.optUploadImgFolder.TabIndex = 0
         Me.optUploadImgFolder.TabStop = True
         Me.optUploadImgFolder.Text = "Upload Image Folder"
@@ -469,9 +471,9 @@ Partial Class IMG00002
         'statusBar
         '
         Me.statusBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblStatus})
-        Me.statusBar.Location = New System.Drawing.Point(0, 545)
+        Me.statusBar.Location = New System.Drawing.Point(0, 609)
         Me.statusBar.Name = "statusBar"
-        Me.statusBar.Size = New System.Drawing.Size(970, 22)
+        Me.statusBar.Size = New System.Drawing.Size(954, 22)
         Me.statusBar.TabIndex = 55
         Me.statusBar.Text = "StatusStrip1"
         '
@@ -484,7 +486,7 @@ Partial Class IMG00002
         '
         Me.lblFilname.AutoSize = True
         Me.lblFilname.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFilname.Location = New System.Drawing.Point(13, 426)
+        Me.lblFilname.Location = New System.Drawing.Point(10, 421)
         Me.lblFilname.MaximumSize = New System.Drawing.Size(190, 13)
         Me.lblFilname.MinimumSize = New System.Drawing.Size(190, 13)
         Me.lblFilname.Name = "lblFilname"
@@ -493,12 +495,22 @@ Partial Class IMG00002
         Me.lblFilname.Text = "Image Filename"
         Me.lblFilname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'grpPreview
+        '
+        Me.grpPreview.Controls.Add(Me.pBxImage)
+        Me.grpPreview.Location = New System.Drawing.Point(10, 126)
+        Me.grpPreview.Name = "grpPreview"
+        Me.grpPreview.Size = New System.Drawing.Size(204, 238)
+        Me.grpPreview.TabIndex = 93
+        Me.grpPreview.TabStop = False
+        Me.grpPreview.Text = "Preview Image"
+        '
         'IMG00002
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
-        Me.ClientSize = New System.Drawing.Size(970, 567)
+        Me.ClientSize = New System.Drawing.Size(954, 631)
+        Me.Controls.Add(Me.grpPreview)
         Me.Controls.Add(Me.lblFilname)
-        Me.Controls.Add(Me.pBxImage)
         Me.Controls.Add(Me.statusBar)
         Me.Controls.Add(Me.grpFolders)
         Me.Controls.Add(Me.lblOther)
@@ -534,9 +546,10 @@ Partial Class IMG00002
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.grpFormat)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "IMG00002"
-        Me.Text = "IMG00002 - Image Master Image Upload (External Item)"
+        Me.Text = "IMG00002 - Image Master Image Upload (External Item) (IMG02)"
         Me.grpFormat.ResumeLayout(False)
         Me.grpFormat.PerformLayout()
         CType(Me.pBxImage, System.ComponentModel.ISupportInitialize).EndInit()
@@ -544,6 +557,7 @@ Partial Class IMG00002
         Me.grpFolders.PerformLayout()
         Me.statusBar.ResumeLayout(False)
         Me.statusBar.PerformLayout()
+        Me.grpPreview.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -590,4 +604,5 @@ Partial Class IMG00002
     Friend WithEvents statusBar As System.Windows.Forms.StatusStrip
     Friend WithEvents lblStatus As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents lblFilname As System.Windows.Forms.Label
+    Friend WithEvents grpPreview As System.Windows.Forms.GroupBox
 End Class

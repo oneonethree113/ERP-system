@@ -554,6 +554,7 @@ Public Class ERP00000new
         Me.smiQCM06 = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripSeparator87 = New System.Windows.Forms.ToolStripSeparator
         Me.smiQCM07 = New System.Windows.Forms.ToolStripMenuItem
+        Me.smiQCM10 = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem465 = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem466 = New System.Windows.Forms.ToolStripMenuItem
         Me.smiIAR01 = New System.Windows.Forms.ToolStripMenuItem
@@ -632,7 +633,6 @@ Public Class ERP00000new
         Me.Button3 = New System.Windows.Forms.Button
         Me.btnToLong = New System.Windows.Forms.Button
         Me.btnToShort = New System.Windows.Forms.Button
-        Me.smiQCM10 = New System.Windows.Forms.ToolStripMenuItem
         Me.msMenuERP.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -1954,6 +1954,12 @@ Public Class ERP00000new
         Me.smiQCM07.Size = New System.Drawing.Size(317, 22)
         Me.smiQCM07.Text = "QCM07 - QC Report History Summary"
         '
+        'smiQCM10
+        '
+        Me.smiQCM10.Name = "smiQCM10"
+        Me.smiQCM10.Size = New System.Drawing.Size(317, 22)
+        Me.smiQCM10.Text = "QCM10 - QC Inspection Certificate Report"
+        '
         'ToolStripMenuItem465
         '
         Me.ToolStripMenuItem465.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem466, Me.ToolStripMenuItem476, Me.ToolStripSeparator4, Me.ToolStripMenuItem483, Me.ToolStripMenuItem489, Me.ToolStripMenuItem495, Me.smiINR132, Me.ToolStripMenuItem501, Me.ToolStripSeparator5, Me.ToolStripMenuItem503, Me.ToolStripSeparator88, Me.smiCOR01})
@@ -2477,12 +2483,6 @@ Public Class ERP00000new
         Me.btnToShort.Text = "Short name"
         Me.btnToShort.UseVisualStyleBackColor = True
         Me.btnToShort.Visible = False
-        '
-        'smiQCM10
-        '
-        Me.smiQCM10.Name = "smiQCM10"
-        Me.smiQCM10.Size = New System.Drawing.Size(317, 22)
-        Me.smiQCM10.Text = "QCM10 - QC Inspection Certificate Report"
         '
         'ERP00000new
         '

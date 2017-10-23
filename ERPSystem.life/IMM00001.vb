@@ -31,20 +31,6 @@ Public Class IMM00001
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    Friend WithEvents cmdAdd As System.Windows.Forms.Button
-    Friend WithEvents cmdSave As System.Windows.Forms.Button
-    Friend WithEvents cmdCancel As System.Windows.Forms.Button
-    Friend WithEvents cmdLast As System.Windows.Forms.Button
-    Friend WithEvents cmdPrevious As System.Windows.Forms.Button
-    Friend WithEvents cmdNext As System.Windows.Forms.Button
-    Friend WithEvents cmdFind As System.Windows.Forms.Button
-    Friend WithEvents cmdCopy As System.Windows.Forms.Button
-    Friend WithEvents cmdClear As System.Windows.Forms.Button
-    Friend WithEvents cmdExit As System.Windows.Forms.Button
-    Friend WithEvents cmdDelRow As System.Windows.Forms.Button
-    Friend WithEvents cmdFirst As System.Windows.Forms.Button
-    Friend WithEvents cmdInsRow As System.Windows.Forms.Button
-    Friend WithEvents cmdSearch As System.Windows.Forms.Button
     Friend WithEvents lblItmNo As System.Windows.Forms.Label
     Friend WithEvents txtItmNo As System.Windows.Forms.TextBox
     Friend WithEvents lblItmTyp As System.Windows.Forms.Label
@@ -171,7 +157,6 @@ Public Class IMM00001
     Friend WithEvents cboHstuEur As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents cmdDelete As System.Windows.Forms.Button
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents txtHstuEURDuty As System.Windows.Forms.TextBox
@@ -402,6 +387,45 @@ Public Class IMM00001
     Friend WithEvents txtItmRmk2 As System.Windows.Forms.TextBox
     Friend WithEvents txtSChnDsc As System.Windows.Forms.TextBox
     Friend WithEvents txtFtrRmk As System.Windows.Forms.RichTextBox
+    Friend WithEvents menuStrip As System.Windows.Forms.MenuStrip
+    Friend WithEvents mmdAdd As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdSave As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdDelete As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdCopy As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdFind As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdClear As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdSearch As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdInsRow As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdDelRow As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t4 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdPrint As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t5 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdAttach As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t6 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdFunction As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsiHldRel As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t7 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdLink As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t8 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdExit As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Label110 As System.Windows.Forms.Label
+    Friend WithEvents Label109 As System.Windows.Forms.Label
+    Friend WithEvents Label108 As System.Windows.Forms.Label
+    Friend WithEvents Label107 As System.Windows.Forms.Label
+    Friend WithEvents Label106 As System.Windows.Forms.Label
+    Friend WithEvents Label105 As System.Windows.Forms.Label
+    Friend WithEvents Label104 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
+    Friend WithEvents Label103 As System.Windows.Forms.Label
+    Friend WithEvents Label102 As System.Windows.Forms.Label
+    Friend WithEvents Label101 As System.Windows.Forms.Label
+    Friend WithEvents tsiPrintItmPrcRpt As System.Windows.Forms.ToolStripMenuItem
 
     Friend WithEvents StatusBar As System.Windows.Forms.StatusBar
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
@@ -410,33 +434,31 @@ Public Class IMM00001
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("(BOM) 3710060500C PC/0/2")
-        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("(REG) 12A001A001A01 PC/0/3", New System.Windows.Forms.TreeNode() {TreeNode1})
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("(BOM) 3710060500C PC/0/2")
+        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("(REG) 12A001A001A01 PC/0/3", New System.Windows.Forms.TreeNode() {TreeNode1})
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Me.cmdAdd = New System.Windows.Forms.Button
-        Me.cmdSave = New System.Windows.Forms.Button
-        Me.cmdCancel = New System.Windows.Forms.Button
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Me.StatusBar = New System.Windows.Forms.StatusBar
         Me.StatusBarPanel1 = New System.Windows.Forms.StatusBarPanel
         Me.StatusBarPanel2 = New System.Windows.Forms.StatusBarPanel
-        Me.cmdLast = New System.Windows.Forms.Button
-        Me.cmdPrevious = New System.Windows.Forms.Button
-        Me.cmdNext = New System.Windows.Forms.Button
-        Me.cmdFind = New System.Windows.Forms.Button
-        Me.cmdCopy = New System.Windows.Forms.Button
-        Me.cmdClear = New System.Windows.Forms.Button
-        Me.cmdExit = New System.Windows.Forms.Button
-        Me.cmdDelRow = New System.Windows.Forms.Button
-        Me.cmdFirst = New System.Windows.Forms.Button
-        Me.cmdInsRow = New System.Windows.Forms.Button
-        Me.cmdSearch = New System.Windows.Forms.Button
         Me.lblItmNo = New System.Windows.Forms.Label
         Me.txtItmNo = New System.Windows.Forms.TextBox
         Me.lblItmTyp = New System.Windows.Forms.Label
@@ -451,7 +473,6 @@ Public Class IMM00001
         Me.cbTmpItm = New System.Windows.Forms.CheckBox
         Me.cboItmTyp = New System.Windows.Forms.ComboBox
         Me.cboStatus = New System.Windows.Forms.ComboBox
-        Me.cmdDelete = New System.Windows.Forms.Button
         Me.cmdActivate = New System.Windows.Forms.Button
         Me.cbDiscontinue = New System.Windows.Forms.CheckBox
         Me.txtTmpItmNo = New System.Windows.Forms.TextBox
@@ -471,16 +492,32 @@ Public Class IMM00001
         Me.rbPanelAdd_REG = New System.Windows.Forms.RadioButton
         Me.cmdPanelAddAdd = New System.Windows.Forms.Button
         Me.cmdPanelAddCancel = New System.Windows.Forms.Button
-        Me.cmdBrowse = New System.Windows.Forms.Button
-        Me.cmdMapping = New System.Windows.Forms.Button
         Me.cmdRelItm = New System.Windows.Forms.Button
-        Me.TabPageMain = New ERPSystem.BaseTabControl
-        Me.TabPage1 = New System.Windows.Forms.TabPage
-        Me.txtFtrRmk = New System.Windows.Forms.RichTextBox
-        Me.txtSChnDsc = New System.Windows.Forms.TextBox
-        Me.txtItmRmk2 = New System.Windows.Forms.TextBox
-        Me.txtItmRmk = New System.Windows.Forms.RichTextBox
-        Me.cmdBatchUpdate = New System.Windows.Forms.Button
+        Me.menuStrip = New System.Windows.Forms.MenuStrip
+        Me.mmdAdd = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdSave = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdDelete = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdCopy = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdFind = New System.Windows.Forms.ToolStripMenuItem
+        Me.t1 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdClear = New System.Windows.Forms.ToolStripMenuItem
+        Me.t2 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdSearch = New System.Windows.Forms.ToolStripMenuItem
+        Me.t3 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdInsRow = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdDelRow = New System.Windows.Forms.ToolStripMenuItem
+        Me.t4 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdPrint = New System.Windows.Forms.ToolStripMenuItem
+        Me.tsiPrintItmPrcRpt = New System.Windows.Forms.ToolStripMenuItem
+        Me.t5 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdAttach = New System.Windows.Forms.ToolStripMenuItem
+        Me.t6 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdFunction = New System.Windows.Forms.ToolStripMenuItem
+        Me.tsiHldRel = New System.Windows.Forms.ToolStripMenuItem
+        Me.t7 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdLink = New System.Windows.Forms.ToolStripMenuItem
+        Me.t8 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdExit = New System.Windows.Forms.ToolStripMenuItem
         Me.PanelPacking = New System.Windows.Forms.Panel
         Me.Label97 = New System.Windows.Forms.Label
         Me.Label98 = New System.Windows.Forms.Label
@@ -539,88 +576,6 @@ Public Class IMM00001
         Me.Label8 = New System.Windows.Forms.Label
         Me.cmdPanPackUpdate = New System.Windows.Forms.Button
         Me.cmdPanPackCancel = New System.Windows.Forms.Button
-        Me.pbImage = New System.Windows.Forms.PictureBox
-        Me.lblItmRmk = New System.Windows.Forms.Label
-        Me.lblPacking = New System.Windows.Forms.Label
-        Me.dgPacking = New System.Windows.Forms.DataGridView
-        Me.dgColor = New System.Windows.Forms.DataGridView
-        Me.txtChnDsc = New System.Windows.Forms.RichTextBox
-        Me.lblColor = New System.Windows.Forms.Label
-        Me.txtEngDsc = New System.Windows.Forms.RichTextBox
-        Me.lblChnDsc = New System.Windows.Forms.Label
-        Me.lblEngDsc = New System.Windows.Forms.Label
-        Me.cmdCombineImage = New System.Windows.Forms.Button
-        Me.TabPage2 = New System.Windows.Forms.TabPage
-        Me.cmdCopyPV = New System.Windows.Forms.Button
-        Me.PanelPV = New System.Windows.Forms.Panel
-        Me.cmdPanPVInsert = New System.Windows.Forms.Button
-        Me.Label94 = New System.Windows.Forms.Label
-        Me.txtPanPVVenItm = New System.Windows.Forms.TextBox
-        Me.cboPanPVPV = New System.Windows.Forms.ComboBox
-        Me.Label99 = New System.Windows.Forms.Label
-        Me.cmdPanPVCancel = New System.Windows.Forms.Button
-        Me.lblPV = New System.Windows.Forms.Label
-        Me.cboEV = New System.Windows.Forms.ComboBox
-        Me.lblEV = New System.Windows.Forms.Label
-        Me.cboTV = New System.Windows.Forms.ComboBox
-        Me.lblTV = New System.Windows.Forms.Label
-        Me.cboCV = New System.Windows.Forms.ComboBox
-        Me.lblCV = New System.Windows.Forms.Label
-        Me.cboDV = New System.Windows.Forms.ComboBox
-        Me.lblDV = New System.Windows.Forms.Label
-        Me.dgPV = New System.Windows.Forms.DataGridView
-        Me.TabPage3 = New System.Windows.Forms.TabPage
-        Me.Label19 = New System.Windows.Forms.Label
-        Me.pbImage2 = New System.Windows.Forms.PictureBox
-        Me.Label11 = New System.Windows.Forms.Label
-        Me.cboCategory = New System.Windows.Forms.ComboBox
-        Me.Label10 = New System.Windows.Forms.Label
-        Me.cboPrdLne = New System.Windows.Forms.ComboBox
-        Me.cboItmVenTyp = New System.Windows.Forms.ComboBox
-        Me.lblItmVenTyp = New System.Windows.Forms.Label
-        Me.lblOEMCustomer = New System.Windows.Forms.Label
-        Me.dgOEMCustomer = New System.Windows.Forms.DataGridView
-        Me.cboYear = New System.Windows.Forms.ComboBox
-        Me.Label30 = New System.Windows.Forms.Label
-        Me.cboType = New System.Windows.Forms.ComboBox
-        Me.Label29 = New System.Windows.Forms.Label
-        Me.cboDevTeam = New System.Windows.Forms.ComboBox
-        Me.Label28 = New System.Windows.Forms.Label
-        Me.cboDesigner = New System.Windows.Forms.ComboBox
-        Me.Label27 = New System.Windows.Forms.Label
-        Me.cboSeason = New System.Windows.Forms.ComboBox
-        Me.Label26 = New System.Windows.Forms.Label
-        Me.Label25 = New System.Windows.Forms.Label
-        Me.Label24 = New System.Windows.Forms.Label
-        Me.Label23 = New System.Windows.Forms.Label
-        Me.cboPrdSizeTyp = New System.Windows.Forms.ComboBox
-        Me.cboPrdSizeUnit = New System.Windows.Forms.ComboBox
-        Me.Label22 = New System.Windows.Forms.Label
-        Me.cboPrdIcon = New System.Windows.Forms.ComboBox
-        Me.Label21 = New System.Windows.Forms.Label
-        Me.cboPrdGroup = New System.Windows.Forms.ComboBox
-        Me.txtPrdSizeValue = New System.Windows.Forms.TextBox
-        Me.txtDsgItmNo = New System.Windows.Forms.TextBox
-        Me.lblDsgItmNo = New System.Windows.Forms.Label
-        Me.cboPrdTyp = New System.Windows.Forms.ComboBox
-        Me.lblPrdTyp = New System.Windows.Forms.Label
-        Me.lblItmNature = New System.Windows.Forms.Label
-        Me.cboItmNature = New System.Windows.Forms.ComboBox
-        Me.lblMaterial = New System.Windows.Forms.Label
-        Me.cboMaterial = New System.Windows.Forms.ComboBox
-        Me.TabPage4 = New System.Windows.Forms.TabPage
-        Me.lbBOMColor = New System.Windows.Forms.ListBox
-        Me.lblBOMASS = New System.Windows.Forms.Label
-        Me.IMTreeView = New System.Windows.Forms.TreeView
-        Me.Label42 = New System.Windows.Forms.Label
-        Me.Label41 = New System.Windows.Forms.Label
-        Me.dgRelParentItem = New System.Windows.Forms.DataGridView
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox
-        Me.rbBOMASS_BOM = New System.Windows.Forms.RadioButton
-        Me.rbBOMASS_ASS = New System.Windows.Forms.RadioButton
-        Me.Label40 = New System.Windows.Forms.Label
-        Me.dgBOMASS = New System.Windows.Forms.DataGridView
-        Me.TabPage5 = New System.Windows.Forms.TabPage
         Me.PanelCostPrice = New System.Windows.Forms.Panel
         Me.txtPanCPFtyPrcE = New System.Windows.Forms.TextBox
         Me.txtPanCPMUE = New System.Windows.Forms.TextBox
@@ -714,6 +669,114 @@ Public Class IMM00001
         Me.Label54 = New System.Windows.Forms.Label
         Me.lblPanCPPacking = New System.Windows.Forms.Label
         Me.Label52 = New System.Windows.Forms.Label
+        Me.PanelMOQMOA = New System.Windows.Forms.Panel
+        Me.cmdPanMMInsert = New System.Windows.Forms.Button
+        Me.cmdPanMMUpdate = New System.Windows.Forms.Button
+        Me.cmdPanMMCancel = New System.Windows.Forms.Button
+        Me.cboPanMMMOQMOA = New System.Windows.Forms.ComboBox
+        Me.txtPanMMMOA = New System.Windows.Forms.TextBox
+        Me.txtPanMMMOQQty = New System.Windows.Forms.TextBox
+        Me.cboPanMMMOACur = New System.Windows.Forms.ComboBox
+        Me.Label92 = New System.Windows.Forms.Label
+        Me.cboPanMMMOQUM = New System.Windows.Forms.ComboBox
+        Me.Label93 = New System.Windows.Forms.Label
+        Me.rbPanMMTirtyp_Company = New System.Windows.Forms.RadioButton
+        Me.rbPanMMTirtyp_Standard = New System.Windows.Forms.RadioButton
+        Me.cboPanMMCus1no = New System.Windows.Forms.ComboBox
+        Me.cboPanMMCus2no = New System.Windows.Forms.ComboBox
+        Me.Label91 = New System.Windows.Forms.Label
+        Me.Label90 = New System.Windows.Forms.Label
+        Me.cmdBrowse = New System.Windows.Forms.Button
+        Me.cmdMapping = New System.Windows.Forms.Button
+        Me.TabPageMain = New ERPSystem.BaseTabControl
+        Me.TabPage1 = New System.Windows.Forms.TabPage
+        Me.txtFtrRmk = New System.Windows.Forms.RichTextBox
+        Me.txtSChnDsc = New System.Windows.Forms.TextBox
+        Me.txtItmRmk2 = New System.Windows.Forms.TextBox
+        Me.txtItmRmk = New System.Windows.Forms.RichTextBox
+        Me.cmdBatchUpdate = New System.Windows.Forms.Button
+        Me.pbImage = New System.Windows.Forms.PictureBox
+        Me.lblItmRmk = New System.Windows.Forms.Label
+        Me.lblPacking = New System.Windows.Forms.Label
+        Me.dgPacking = New System.Windows.Forms.DataGridView
+        Me.dgColor = New System.Windows.Forms.DataGridView
+        Me.txtChnDsc = New System.Windows.Forms.RichTextBox
+        Me.lblColor = New System.Windows.Forms.Label
+        Me.txtEngDsc = New System.Windows.Forms.RichTextBox
+        Me.lblChnDsc = New System.Windows.Forms.Label
+        Me.lblEngDsc = New System.Windows.Forms.Label
+        Me.cmdCombineImage = New System.Windows.Forms.Button
+        Me.TabPage2 = New System.Windows.Forms.TabPage
+        Me.PanelPV = New System.Windows.Forms.Panel
+        Me.cmdPanPVInsert = New System.Windows.Forms.Button
+        Me.Label94 = New System.Windows.Forms.Label
+        Me.txtPanPVVenItm = New System.Windows.Forms.TextBox
+        Me.cboPanPVPV = New System.Windows.Forms.ComboBox
+        Me.Label99 = New System.Windows.Forms.Label
+        Me.cmdPanPVCancel = New System.Windows.Forms.Button
+        Me.cmdCopyPV = New System.Windows.Forms.Button
+        Me.lblPV = New System.Windows.Forms.Label
+        Me.cboEV = New System.Windows.Forms.ComboBox
+        Me.lblEV = New System.Windows.Forms.Label
+        Me.cboTV = New System.Windows.Forms.ComboBox
+        Me.lblTV = New System.Windows.Forms.Label
+        Me.cboCV = New System.Windows.Forms.ComboBox
+        Me.lblCV = New System.Windows.Forms.Label
+        Me.cboDV = New System.Windows.Forms.ComboBox
+        Me.lblDV = New System.Windows.Forms.Label
+        Me.dgPV = New System.Windows.Forms.DataGridView
+        Me.TabPage3 = New System.Windows.Forms.TabPage
+        Me.Label19 = New System.Windows.Forms.Label
+        Me.Label11 = New System.Windows.Forms.Label
+        Me.cboCategory = New System.Windows.Forms.ComboBox
+        Me.Label10 = New System.Windows.Forms.Label
+        Me.cboPrdLne = New System.Windows.Forms.ComboBox
+        Me.cboItmVenTyp = New System.Windows.Forms.ComboBox
+        Me.lblItmVenTyp = New System.Windows.Forms.Label
+        Me.lblOEMCustomer = New System.Windows.Forms.Label
+        Me.dgOEMCustomer = New System.Windows.Forms.DataGridView
+        Me.cboYear = New System.Windows.Forms.ComboBox
+        Me.Label30 = New System.Windows.Forms.Label
+        Me.cboType = New System.Windows.Forms.ComboBox
+        Me.Label29 = New System.Windows.Forms.Label
+        Me.cboDevTeam = New System.Windows.Forms.ComboBox
+        Me.Label28 = New System.Windows.Forms.Label
+        Me.cboDesigner = New System.Windows.Forms.ComboBox
+        Me.Label27 = New System.Windows.Forms.Label
+        Me.cboSeason = New System.Windows.Forms.ComboBox
+        Me.Label26 = New System.Windows.Forms.Label
+        Me.Label25 = New System.Windows.Forms.Label
+        Me.Label24 = New System.Windows.Forms.Label
+        Me.Label23 = New System.Windows.Forms.Label
+        Me.cboPrdSizeTyp = New System.Windows.Forms.ComboBox
+        Me.cboPrdSizeUnit = New System.Windows.Forms.ComboBox
+        Me.Label22 = New System.Windows.Forms.Label
+        Me.cboPrdIcon = New System.Windows.Forms.ComboBox
+        Me.Label21 = New System.Windows.Forms.Label
+        Me.cboPrdGroup = New System.Windows.Forms.ComboBox
+        Me.txtPrdSizeValue = New System.Windows.Forms.TextBox
+        Me.txtDsgItmNo = New System.Windows.Forms.TextBox
+        Me.lblDsgItmNo = New System.Windows.Forms.Label
+        Me.cboPrdTyp = New System.Windows.Forms.ComboBox
+        Me.lblPrdTyp = New System.Windows.Forms.Label
+        Me.lblItmNature = New System.Windows.Forms.Label
+        Me.cboItmNature = New System.Windows.Forms.ComboBox
+        Me.lblMaterial = New System.Windows.Forms.Label
+        Me.cboMaterial = New System.Windows.Forms.ComboBox
+        Me.pbImage2 = New System.Windows.Forms.PictureBox
+        Me.TabPage4 = New System.Windows.Forms.TabPage
+        Me.lbBOMColor = New System.Windows.Forms.ListBox
+        Me.lblBOMASS = New System.Windows.Forms.Label
+        Me.IMTreeView = New System.Windows.Forms.TreeView
+        Me.Label42 = New System.Windows.Forms.Label
+        Me.Label41 = New System.Windows.Forms.Label
+        Me.dgRelParentItem = New System.Windows.Forms.DataGridView
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox
+        Me.rbBOMASS_BOM = New System.Windows.Forms.RadioButton
+        Me.rbBOMASS_ASS = New System.Windows.Forms.RadioButton
+        Me.Label40 = New System.Windows.Forms.Label
+        Me.dgBOMASS = New System.Windows.Forms.DataGridView
+        Me.TabPage5 = New System.Windows.Forms.TabPage
         Me.lblPriceStatus = New System.Windows.Forms.Label
         Me.gbPriceStatus = New System.Windows.Forms.GroupBox
         Me.rbPriceStatus_NA = New System.Windows.Forms.RadioButton
@@ -736,42 +799,6 @@ Public Class IMM00001
         Me.rbPriceView_S = New System.Windows.Forms.RadioButton
         Me.dgCostPrice = New System.Windows.Forms.DataGridView
         Me.TabPage6 = New System.Windows.Forms.TabPage
-        Me.PanelMOQMOA = New System.Windows.Forms.Panel
-        Me.cmdPanMMInsert = New System.Windows.Forms.Button
-        Me.cmdPanMMUpdate = New System.Windows.Forms.Button
-        Me.cmdPanMMCancel = New System.Windows.Forms.Button
-        Me.cboPanMMMOQMOA = New System.Windows.Forms.ComboBox
-        Me.txtPanMMMOA = New System.Windows.Forms.TextBox
-        Me.txtPanMMMOQQty = New System.Windows.Forms.TextBox
-        Me.cboPanMMMOACur = New System.Windows.Forms.ComboBox
-        Me.Label92 = New System.Windows.Forms.Label
-        Me.cboPanMMMOQUM = New System.Windows.Forms.ComboBox
-        Me.Label93 = New System.Windows.Forms.Label
-        Me.rbPanMMTirtyp_Company = New System.Windows.Forms.RadioButton
-        Me.rbPanMMTirtyp_Standard = New System.Windows.Forms.RadioButton
-        Me.cboPanMMCus1no = New System.Windows.Forms.ComboBox
-        Me.cboPanMMCus2no = New System.Windows.Forms.ComboBox
-        Me.Label91 = New System.Windows.Forms.Label
-        Me.Label90 = New System.Windows.Forms.Label
-        Me.dgTempItem = New System.Windows.Forms.DataGridView
-        Me.Label84 = New System.Windows.Forms.Label
-        Me.txtHstuEURDuty = New System.Windows.Forms.TextBox
-        Me.txtHstuUSADuty = New System.Windows.Forms.TextBox
-        Me.Label5 = New System.Windows.Forms.Label
-        Me.Label4 = New System.Windows.Forms.Label
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.cboHstuUSA = New System.Windows.Forms.ComboBox
-        Me.cboHstuEur = New System.Windows.Forms.ComboBox
-        Me.cboConstrMethod = New System.Windows.Forms.ComboBox
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.txtAlsitmcol = New System.Windows.Forms.TextBox
-        Me.Label14 = New System.Windows.Forms.Label
-        Me.txtAlsitmno = New System.Windows.Forms.TextBox
-        Me.gbAddreq = New System.Windows.Forms.GroupBox
-        Me.cbAddreq_ster = New System.Windows.Forms.CheckBox
-        Me.cbAddreq_ccib = New System.Windows.Forms.CheckBox
-        Me.cbAddreq_formA = New System.Windows.Forms.CheckBox
         Me.gbMOQMOA = New System.Windows.Forms.GroupBox
         Me.dgMOQMOA = New System.Windows.Forms.DataGridView
         Me.Label6 = New System.Windows.Forms.Label
@@ -786,9 +813,42 @@ Public Class IMM00001
         Me.Label35 = New System.Windows.Forms.Label
         Me.rbTier_CompDef = New System.Windows.Forms.RadioButton
         Me.rbTier_Standard = New System.Windows.Forms.RadioButton
+        Me.dgTempItem = New System.Windows.Forms.DataGridView
+        Me.Label110 = New System.Windows.Forms.Label
+        Me.Label84 = New System.Windows.Forms.Label
+        Me.txtHstuEURDuty = New System.Windows.Forms.TextBox
+        Me.txtHstuUSADuty = New System.Windows.Forms.TextBox
+        Me.Label109 = New System.Windows.Forms.Label
+        Me.Label5 = New System.Windows.Forms.Label
+        Me.Label108 = New System.Windows.Forms.Label
+        Me.Label4 = New System.Windows.Forms.Label
+        Me.Label107 = New System.Windows.Forms.Label
+        Me.Label3 = New System.Windows.Forms.Label
+        Me.Label106 = New System.Windows.Forms.Label
+        Me.Label2 = New System.Windows.Forms.Label
+        Me.cboHstuUSA = New System.Windows.Forms.ComboBox
+        Me.cboHstuEur = New System.Windows.Forms.ComboBox
+        Me.cboConstrMethod = New System.Windows.Forms.ComboBox
+        Me.Label105 = New System.Windows.Forms.Label
+        Me.Label1 = New System.Windows.Forms.Label
+        Me.txtAlsitmcol = New System.Windows.Forms.TextBox
+        Me.Label104 = New System.Windows.Forms.Label
+        Me.Label14 = New System.Windows.Forms.Label
+        Me.txtAlsitmno = New System.Windows.Forms.TextBox
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox
+        Me.gbAddreq = New System.Windows.Forms.GroupBox
+        Me.cbAddreq_ster = New System.Windows.Forms.CheckBox
+        Me.cbAddreq_ccib = New System.Windows.Forms.CheckBox
+        Me.cbAddreq_formA = New System.Windows.Forms.CheckBox
+        Me.Label103 = New System.Windows.Forms.Label
         Me.lblCusStyle = New System.Windows.Forms.Label
+        Me.Label102 = New System.Windows.Forms.Label
         Me.dgCusStyle = New System.Windows.Forms.DataGridView
         Me.lblExclCustomer = New System.Windows.Forms.Label
+        Me.Label101 = New System.Windows.Forms.Label
         Me.dgExclCustomer = New System.Windows.Forms.DataGridView
         Me.lblMatBreakdown = New System.Windows.Forms.Label
         Me.dgMatBreakdown = New System.Windows.Forms.DataGridView
@@ -798,9 +858,12 @@ Public Class IMM00001
         Me.gbIMTyp.SuspendLayout()
         Me.PanelCopy.SuspendLayout()
         Me.PanelAdd.SuspendLayout()
+        Me.menuStrip.SuspendLayout()
+        Me.PanelPacking.SuspendLayout()
+        Me.PanelCostPrice.SuspendLayout()
+        Me.PanelMOQMOA.SuspendLayout()
         Me.TabPageMain.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.PanelPacking.SuspendLayout()
         CType(Me.pbImage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgPacking, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgColor, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -808,63 +871,35 @@ Public Class IMM00001
         Me.PanelPV.SuspendLayout()
         CType(Me.dgPV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
-        CType(Me.pbImage2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgOEMCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbImage2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
         CType(Me.dgRelParentItem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
         CType(Me.dgBOMASS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
-        Me.PanelCostPrice.SuspendLayout()
         Me.gbPriceStatus.SuspendLayout()
         Me.gbPriceView.SuspendLayout()
         CType(Me.dgCostPrice, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage6.SuspendLayout()
-        Me.PanelMOQMOA.SuspendLayout()
-        CType(Me.dgTempItem, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.gbAddreq.SuspendLayout()
         Me.gbMOQMOA.SuspendLayout()
         CType(Me.dgMOQMOA, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgTempItem, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.gbAddreq.SuspendLayout()
         CType(Me.dgCusStyle, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgExclCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgMatBreakdown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'cmdAdd
-        '
-        Me.cmdAdd.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdAdd.Location = New System.Drawing.Point(0, -2)
-        Me.cmdAdd.Name = "cmdAdd"
-        Me.cmdAdd.Size = New System.Drawing.Size(60, 25)
-        Me.cmdAdd.TabIndex = 0
-        Me.cmdAdd.Text = "&Add"
-        '
-        'cmdSave
-        '
-        Me.cmdSave.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdSave.Location = New System.Drawing.Point(60, -2)
-        Me.cmdSave.Name = "cmdSave"
-        Me.cmdSave.Size = New System.Drawing.Size(60, 25)
-        Me.cmdSave.TabIndex = 1
-        Me.cmdSave.Text = "&Save"
-        '
-        'cmdCancel
-        '
-        Me.cmdCancel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdCancel.Location = New System.Drawing.Point(360, -2)
-        Me.cmdCancel.Name = "cmdCancel"
-        Me.cmdCancel.Size = New System.Drawing.Size(60, 25)
-        Me.cmdCancel.TabIndex = 6
-        Me.cmdCancel.Text = "Cancel"
-        '
         'StatusBar
         '
         Me.StatusBar.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StatusBar.Location = New System.Drawing.Point(0, 605)
+        Me.StatusBar.Location = New System.Drawing.Point(0, 615)
         Me.StatusBar.Name = "StatusBar"
         Me.StatusBar.Panels.AddRange(New System.Windows.Forms.StatusBarPanel() {Me.StatusBarPanel1, Me.StatusBarPanel2})
         Me.StatusBar.ShowPanels = True
-        Me.StatusBar.Size = New System.Drawing.Size(944, 16)
+        Me.StatusBar.Size = New System.Drawing.Size(954, 16)
         Me.StatusBar.TabIndex = 14
         Me.StatusBar.Text = "StatusBar"
         '
@@ -872,130 +907,30 @@ Public Class IMM00001
         '
         Me.StatusBarPanel1.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
         Me.StatusBarPanel1.Name = "StatusBarPanel1"
-        Me.StatusBarPanel1.Width = 463
+        Me.StatusBarPanel1.Width = 468
         '
         'StatusBarPanel2
         '
         Me.StatusBarPanel2.Alignment = System.Windows.Forms.HorizontalAlignment.Right
         Me.StatusBarPanel2.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
         Me.StatusBarPanel2.Name = "StatusBarPanel2"
-        Me.StatusBarPanel2.Width = 463
-        '
-        'cmdLast
-        '
-        Me.cmdLast.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdLast.Location = New System.Drawing.Point(820, -2)
-        Me.cmdLast.Name = "cmdLast"
-        Me.cmdLast.Size = New System.Drawing.Size(50, 25)
-        Me.cmdLast.TabIndex = 13
-        Me.cmdLast.Text = ">>|"
-        '
-        'cmdPrevious
-        '
-        Me.cmdPrevious.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdPrevious.Location = New System.Drawing.Point(720, -2)
-        Me.cmdPrevious.Name = "cmdPrevious"
-        Me.cmdPrevious.Size = New System.Drawing.Size(50, 25)
-        Me.cmdPrevious.TabIndex = 11
-        Me.cmdPrevious.Text = "<"
-        '
-        'cmdNext
-        '
-        Me.cmdNext.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdNext.Location = New System.Drawing.Point(770, -2)
-        Me.cmdNext.Name = "cmdNext"
-        Me.cmdNext.Size = New System.Drawing.Size(50, 25)
-        Me.cmdNext.TabIndex = 12
-        Me.cmdNext.Text = ">"
-        '
-        'cmdFind
-        '
-        Me.cmdFind.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdFind.Location = New System.Drawing.Point(240, -2)
-        Me.cmdFind.Name = "cmdFind"
-        Me.cmdFind.Size = New System.Drawing.Size(60, 25)
-        Me.cmdFind.TabIndex = 4
-        Me.cmdFind.Text = "&Find"
-        '
-        'cmdCopy
-        '
-        Me.cmdCopy.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdCopy.Location = New System.Drawing.Point(180, -2)
-        Me.cmdCopy.Name = "cmdCopy"
-        Me.cmdCopy.Size = New System.Drawing.Size(60, 25)
-        Me.cmdCopy.TabIndex = 3
-        Me.cmdCopy.Text = "&Copy"
-        '
-        'cmdClear
-        '
-        Me.cmdClear.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdClear.Location = New System.Drawing.Point(300, -2)
-        Me.cmdClear.Name = "cmdClear"
-        Me.cmdClear.Size = New System.Drawing.Size(60, 25)
-        Me.cmdClear.TabIndex = 5
-        Me.cmdClear.Text = "Cl&ear"
-        '
-        'cmdExit
-        '
-        Me.cmdExit.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdExit.Location = New System.Drawing.Point(894, -2)
-        Me.cmdExit.Name = "cmdExit"
-        Me.cmdExit.Size = New System.Drawing.Size(60, 25)
-        Me.cmdExit.TabIndex = 14
-        Me.cmdExit.Text = "E&xit"
-        '
-        'cmdDelRow
-        '
-        Me.cmdDelRow.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdDelRow.Location = New System.Drawing.Point(580, -2)
-        Me.cmdDelRow.Name = "cmdDelRow"
-        Me.cmdDelRow.Size = New System.Drawing.Size(60, 25)
-        Me.cmdDelRow.TabIndex = 9
-        Me.cmdDelRow.Text = "Del Ro&w"
-        '
-        'cmdFirst
-        '
-        Me.cmdFirst.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdFirst.Location = New System.Drawing.Point(670, -2)
-        Me.cmdFirst.Name = "cmdFirst"
-        Me.cmdFirst.Size = New System.Drawing.Size(50, 25)
-        Me.cmdFirst.TabIndex = 10
-        Me.cmdFirst.Text = "|<<"
-        '
-        'cmdInsRow
-        '
-        Me.cmdInsRow.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdInsRow.Location = New System.Drawing.Point(520, -2)
-        Me.cmdInsRow.Name = "cmdInsRow"
-        Me.cmdInsRow.Size = New System.Drawing.Size(60, 25)
-        Me.cmdInsRow.TabIndex = 8
-        Me.cmdInsRow.Text = "I&ns Row"
-        '
-        'cmdSearch
-        '
-        Me.cmdSearch.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdSearch.Location = New System.Drawing.Point(440, -3)
-        Me.cmdSearch.Name = "cmdSearch"
-        Me.cmdSearch.Size = New System.Drawing.Size(60, 25)
-        Me.cmdSearch.TabIndex = 7
-        Me.cmdSearch.Text = "Searc&h"
+        Me.StatusBarPanel2.Width = 468
         '
         'lblItmNo
         '
         Me.lblItmNo.AutoSize = True
-        Me.lblItmNo.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblItmNo.Location = New System.Drawing.Point(8, 31)
+        Me.lblItmNo.Location = New System.Drawing.Point(9, 30)
         Me.lblItmNo.Name = "lblItmNo"
-        Me.lblItmNo.Size = New System.Drawing.Size(48, 14)
+        Me.lblItmNo.Size = New System.Drawing.Size(46, 12)
         Me.lblItmNo.TabIndex = 16
-        Me.lblItmNo.Text = "Item No :"
+        Me.lblItmNo.Text = "Item No "
         '
         'txtItmNo
         '
         Me.txtItmNo.BackColor = System.Drawing.Color.White
         Me.txtItmNo.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtItmNo.ForeColor = System.Drawing.Color.Black
-        Me.txtItmNo.Location = New System.Drawing.Point(60, 28)
+        Me.txtItmNo.Location = New System.Drawing.Point(61, 27)
         Me.txtItmNo.MaxLength = 30
         Me.txtItmNo.Name = "txtItmNo"
         Me.txtItmNo.Size = New System.Drawing.Size(141, 20)
@@ -1005,12 +940,11 @@ Public Class IMM00001
         'lblItmTyp
         '
         Me.lblItmTyp.AutoSize = True
-        Me.lblItmTyp.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblItmTyp.Location = New System.Drawing.Point(710, 30)
+        Me.lblItmTyp.Location = New System.Drawing.Point(711, 30)
         Me.lblItmTyp.Name = "lblItmTyp"
-        Me.lblItmTyp.Size = New System.Drawing.Size(58, 14)
+        Me.lblItmTyp.Size = New System.Drawing.Size(56, 12)
         Me.lblItmTyp.TabIndex = 18
-        Me.lblItmTyp.Text = "Item Type :"
+        Me.lblItmTyp.Text = "Item Type "
         '
         'txtItmdsc
         '
@@ -1018,7 +952,7 @@ Public Class IMM00001
         Me.txtItmdsc.Enabled = False
         Me.txtItmdsc.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtItmdsc.ForeColor = System.Drawing.Color.Black
-        Me.txtItmdsc.Location = New System.Drawing.Point(268, 28)
+        Me.txtItmdsc.Location = New System.Drawing.Point(269, 27)
         Me.txtItmdsc.MaxLength = 500
         Me.txtItmdsc.Name = "txtItmdsc"
         Me.txtItmdsc.Size = New System.Drawing.Size(430, 20)
@@ -1028,19 +962,17 @@ Public Class IMM00001
         'lblStatus
         '
         Me.lblStatus.AutoSize = True
-        Me.lblStatus.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStatus.Location = New System.Drawing.Point(710, 58)
+        Me.lblStatus.Location = New System.Drawing.Point(711, 58)
         Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(44, 14)
+        Me.lblStatus.Size = New System.Drawing.Size(35, 12)
         Me.lblStatus.TabIndex = 53
-        Me.lblStatus.Text = "Status :"
+        Me.lblStatus.Text = "Status "
         '
         'gbIMStatus
         '
         Me.gbIMStatus.Controls.Add(Me.rbIMStatus_History)
         Me.gbIMStatus.Controls.Add(Me.rbIMStatus_Current)
-        Me.gbIMStatus.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbIMStatus.Location = New System.Drawing.Point(536, 48)
+        Me.gbIMStatus.Location = New System.Drawing.Point(537, 47)
         Me.gbIMStatus.Name = "gbIMStatus"
         Me.gbIMStatus.Size = New System.Drawing.Size(151, 35)
         Me.gbIMStatus.TabIndex = 55
@@ -1049,10 +981,9 @@ Public Class IMM00001
         'rbIMStatus_History
         '
         Me.rbIMStatus_History.AutoSize = True
-        Me.rbIMStatus_History.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbIMStatus_History.Location = New System.Drawing.Point(85, 11)
         Me.rbIMStatus_History.Name = "rbIMStatus_History"
-        Me.rbIMStatus_History.Size = New System.Drawing.Size(59, 18)
+        Me.rbIMStatus_History.Size = New System.Drawing.Size(57, 16)
         Me.rbIMStatus_History.TabIndex = 22
         Me.rbIMStatus_History.Text = "History"
         Me.rbIMStatus_History.UseVisualStyleBackColor = True
@@ -1060,10 +991,9 @@ Public Class IMM00001
         'rbIMStatus_Current
         '
         Me.rbIMStatus_Current.AutoSize = True
-        Me.rbIMStatus_Current.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbIMStatus_Current.Location = New System.Drawing.Point(6, 11)
         Me.rbIMStatus_Current.Name = "rbIMStatus_Current"
-        Me.rbIMStatus_Current.Size = New System.Drawing.Size(61, 18)
+        Me.rbIMStatus_Current.Size = New System.Drawing.Size(59, 16)
         Me.rbIMStatus_Current.TabIndex = 21
         Me.rbIMStatus_Current.Text = "Current"
         Me.rbIMStatus_Current.UseVisualStyleBackColor = True
@@ -1073,7 +1003,7 @@ Public Class IMM00001
         Me.gbIMTyp.Controls.Add(Me.rbIMTyp_PCIM)
         Me.gbIMTyp.Controls.Add(Me.rbIMTyp_IM)
         Me.gbIMTyp.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbIMTyp.Location = New System.Drawing.Point(2, 48)
+        Me.gbIMTyp.Location = New System.Drawing.Point(3, 47)
         Me.gbIMTyp.Name = "gbIMTyp"
         Me.gbIMTyp.Size = New System.Drawing.Size(33, 24)
         Me.gbIMTyp.TabIndex = 56
@@ -1105,10 +1035,9 @@ Public Class IMM00001
         'cbTmpItm
         '
         Me.cbTmpItm.AutoSize = True
-        Me.cbTmpItm.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbTmpItm.Location = New System.Drawing.Point(11, 59)
+        Me.cbTmpItm.Location = New System.Drawing.Point(12, 58)
         Me.cbTmpItm.Name = "cbTmpItm"
-        Me.cbTmpItm.Size = New System.Drawing.Size(73, 18)
+        Me.cbTmpItm.Size = New System.Drawing.Size(75, 16)
         Me.cbTmpItm.TabIndex = 17
         Me.cbTmpItm.Text = "Temp Item"
         Me.cbTmpItm.UseVisualStyleBackColor = True
@@ -1120,7 +1049,7 @@ Public Class IMM00001
         Me.cboItmTyp.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboItmTyp.ForeColor = System.Drawing.Color.Black
         Me.cboItmTyp.FormattingEnabled = True
-        Me.cboItmTyp.Location = New System.Drawing.Point(767, 27)
+        Me.cboItmTyp.Location = New System.Drawing.Point(768, 27)
         Me.cboItmTyp.Name = "cboItmTyp"
         Me.cboItmTyp.Size = New System.Drawing.Size(175, 22)
         Me.cboItmTyp.TabIndex = 23
@@ -1132,24 +1061,15 @@ Public Class IMM00001
         Me.cboStatus.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboStatus.ForeColor = System.Drawing.Color.Black
         Me.cboStatus.FormattingEnabled = True
-        Me.cboStatus.Location = New System.Drawing.Point(767, 55)
+        Me.cboStatus.Location = New System.Drawing.Point(768, 55)
         Me.cboStatus.Name = "cboStatus"
         Me.cboStatus.Size = New System.Drawing.Size(175, 22)
         Me.cboStatus.TabIndex = 24
         '
-        'cmdDelete
-        '
-        Me.cmdDelete.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdDelete.Location = New System.Drawing.Point(120, -2)
-        Me.cmdDelete.Name = "cmdDelete"
-        Me.cmdDelete.Size = New System.Drawing.Size(60, 25)
-        Me.cmdDelete.TabIndex = 2
-        Me.cmdDelete.Text = "&Delete"
-        '
         'cmdActivate
         '
         Me.cmdActivate.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.cmdActivate.Location = New System.Drawing.Point(441, 58)
+        Me.cmdActivate.Location = New System.Drawing.Point(442, 57)
         Me.cmdActivate.Name = "cmdActivate"
         Me.cmdActivate.Size = New System.Drawing.Size(75, 21)
         Me.cmdActivate.TabIndex = 20
@@ -1159,10 +1079,9 @@ Public Class IMM00001
         'cbDiscontinue
         '
         Me.cbDiscontinue.AutoSize = True
-        Me.cbDiscontinue.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbDiscontinue.Location = New System.Drawing.Point(331, 60)
+        Me.cbDiscontinue.Location = New System.Drawing.Point(332, 59)
         Me.cbDiscontinue.Name = "cbDiscontinue"
-        Me.cbDiscontinue.Size = New System.Drawing.Size(82, 18)
+        Me.cbDiscontinue.Size = New System.Drawing.Size(79, 16)
         Me.cbDiscontinue.TabIndex = 19
         Me.cbDiscontinue.Text = "Discontinue"
         Me.cbDiscontinue.UseVisualStyleBackColor = True
@@ -1173,7 +1092,7 @@ Public Class IMM00001
         Me.txtTmpItmNo.Enabled = False
         Me.txtTmpItmNo.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTmpItmNo.ForeColor = System.Drawing.Color.Black
-        Me.txtTmpItmNo.Location = New System.Drawing.Point(92, 57)
+        Me.txtTmpItmNo.Location = New System.Drawing.Point(93, 56)
         Me.txtTmpItmNo.Name = "txtTmpItmNo"
         Me.txtTmpItmNo.Size = New System.Drawing.Size(146, 20)
         Me.txtTmpItmNo.TabIndex = 18
@@ -1181,7 +1100,7 @@ Public Class IMM00001
         '
         'PanelCopy
         '
-        Me.PanelCopy.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.PanelCopy.BackColor = System.Drawing.Color.SkyBlue
         Me.PanelCopy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PanelCopy.Controls.Add(Me.cboPanCopyCategory)
         Me.PanelCopy.Controls.Add(Me.cboPanCopyPrdLne)
@@ -1191,7 +1110,7 @@ Public Class IMM00001
         Me.PanelCopy.Controls.Add(Me.txtPanCopyVenItmNo)
         Me.PanelCopy.Controls.Add(Me.Label80)
         Me.PanelCopy.Controls.Add(Me.cmdPanCopyCancel)
-        Me.PanelCopy.Location = New System.Drawing.Point(803, 76)
+        Me.PanelCopy.Location = New System.Drawing.Point(182, 24)
         Me.PanelCopy.Name = "PanelCopy"
         Me.PanelCopy.Size = New System.Drawing.Size(137, 51)
         Me.PanelCopy.TabIndex = 206
@@ -1275,7 +1194,7 @@ Public Class IMM00001
         '
         'PanelAdd
         '
-        Me.PanelAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.PanelAdd.BackColor = System.Drawing.Color.SkyBlue
         Me.PanelAdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PanelAdd.Controls.Add(Me.Label87)
         Me.PanelAdd.Controls.Add(Me.rbPanelAdd_BOM)
@@ -1283,7 +1202,7 @@ Public Class IMM00001
         Me.PanelAdd.Controls.Add(Me.rbPanelAdd_REG)
         Me.PanelAdd.Controls.Add(Me.cmdPanelAddAdd)
         Me.PanelAdd.Controls.Add(Me.cmdPanelAddCancel)
-        Me.PanelAdd.Location = New System.Drawing.Point(710, 76)
+        Me.PanelAdd.Location = New System.Drawing.Point(356, 51)
         Me.PanelAdd.Name = "PanelAdd"
         Me.PanelAdd.Size = New System.Drawing.Size(87, 51)
         Me.PanelAdd.TabIndex = 207
@@ -1354,136 +1273,199 @@ Public Class IMM00001
         Me.cmdPanelAddCancel.Text = "Cancel"
         Me.cmdPanelAddCancel.UseVisualStyleBackColor = True
         '
-        'cmdBrowse
-        '
-        Me.cmdBrowse.Image = CType(resources.GetObject("cmdBrowse.Image"), System.Drawing.Image)
-        Me.cmdBrowse.Location = New System.Drawing.Point(202, 25)
-        Me.cmdBrowse.Name = "cmdBrowse"
-        Me.cmdBrowse.Size = New System.Drawing.Size(25, 25)
-        Me.cmdBrowse.TabIndex = 208
-        Me.cmdBrowse.UseVisualStyleBackColor = True
-        '
-        'cmdMapping
-        '
-        Me.cmdMapping.Image = CType(resources.GetObject("cmdMapping.Image"), System.Drawing.Image)
-        Me.cmdMapping.Location = New System.Drawing.Point(229, 25)
-        Me.cmdMapping.Name = "cmdMapping"
-        Me.cmdMapping.Size = New System.Drawing.Size(25, 25)
-        Me.cmdMapping.TabIndex = 209
-        Me.cmdMapping.UseVisualStyleBackColor = True
-        '
         'cmdRelItm
         '
         Me.cmdRelItm.Enabled = False
         Me.cmdRelItm.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.cmdRelItm.Location = New System.Drawing.Point(244, 58)
+        Me.cmdRelItm.Location = New System.Drawing.Point(245, 56)
         Me.cmdRelItm.Name = "cmdRelItm"
         Me.cmdRelItm.Size = New System.Drawing.Size(75, 21)
         Me.cmdRelItm.TabIndex = 210
         Me.cmdRelItm.Text = "&Related Item"
         Me.cmdRelItm.UseVisualStyleBackColor = True
         '
-        'TabPageMain
+        'menuStrip
         '
-        Me.TabPageMain.Controls.Add(Me.TabPage1)
-        Me.TabPageMain.Controls.Add(Me.TabPage2)
-        Me.TabPageMain.Controls.Add(Me.TabPage3)
-        Me.TabPageMain.Controls.Add(Me.TabPage4)
-        Me.TabPageMain.Controls.Add(Me.TabPage5)
-        Me.TabPageMain.Controls.Add(Me.TabPage6)
-        Me.TabPageMain.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
-        Me.TabPageMain.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPageMain.ItemSize = New System.Drawing.Size(120, 19)
-        Me.TabPageMain.Location = New System.Drawing.Point(2, 83)
-        Me.TabPageMain.Name = "TabPageMain"
-        Me.TabPageMain.SelectedIndex = 0
-        Me.TabPageMain.Size = New System.Drawing.Size(950, 525)
-        Me.TabPageMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
-        Me.TabPageMain.TabIndex = 25
+        Me.menuStrip.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.menuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mmdAdd, Me.mmdSave, Me.mmdDelete, Me.mmdCopy, Me.mmdFind, Me.t1, Me.mmdClear, Me.t2, Me.mmdSearch, Me.t3, Me.mmdInsRow, Me.mmdDelRow, Me.t4, Me.mmdPrint, Me.t5, Me.mmdAttach, Me.t6, Me.mmdFunction, Me.t7, Me.mmdLink, Me.t8, Me.mmdExit})
+        Me.menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
+        Me.menuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.menuStrip.Name = "menuStrip"
+        Me.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.menuStrip.Size = New System.Drawing.Size(954, 24)
+        Me.menuStrip.TabIndex = 214
+        Me.menuStrip.Text = "MenuStrip1"
         '
-        'TabPage1
+        'mmdAdd
         '
-        Me.TabPage1.Controls.Add(Me.txtFtrRmk)
-        Me.TabPage1.Controls.Add(Me.txtSChnDsc)
-        Me.TabPage1.Controls.Add(Me.txtItmRmk2)
-        Me.TabPage1.Controls.Add(Me.txtItmRmk)
-        Me.TabPage1.Controls.Add(Me.cmdBatchUpdate)
-        Me.TabPage1.Controls.Add(Me.PanelPacking)
-        Me.TabPage1.Controls.Add(Me.pbImage)
-        Me.TabPage1.Controls.Add(Me.lblItmRmk)
-        Me.TabPage1.Controls.Add(Me.lblPacking)
-        Me.TabPage1.Controls.Add(Me.dgPacking)
-        Me.TabPage1.Controls.Add(Me.dgColor)
-        Me.TabPage1.Controls.Add(Me.txtChnDsc)
-        Me.TabPage1.Controls.Add(Me.lblColor)
-        Me.TabPage1.Controls.Add(Me.txtEngDsc)
-        Me.TabPage1.Controls.Add(Me.lblChnDsc)
-        Me.TabPage1.Controls.Add(Me.lblEngDsc)
-        Me.TabPage1.Controls.Add(Me.cmdCombineImage)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 23)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(942, 498)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "(1) Basic"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.mmdAdd.BackColor = System.Drawing.SystemColors.Control
+        Me.mmdAdd.Name = "mmdAdd"
+        Me.mmdAdd.Size = New System.Drawing.Size(40, 19)
+        Me.mmdAdd.Tag = "Add"
+        Me.mmdAdd.Text = "&Add"
         '
-        'txtFtrRmk
+        'mmdSave
         '
-        Me.txtFtrRmk.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.txtFtrRmk.Location = New System.Drawing.Point(168, 13)
-        Me.txtFtrRmk.Name = "txtFtrRmk"
-        Me.txtFtrRmk.Size = New System.Drawing.Size(33, 35)
-        Me.txtFtrRmk.TabIndex = 360
-        Me.txtFtrRmk.Text = ""
-        Me.txtFtrRmk.Visible = False
+        Me.mmdSave.Name = "mmdSave"
+        Me.mmdSave.Size = New System.Drawing.Size(46, 19)
+        Me.mmdSave.Text = "&Save"
         '
-        'txtSChnDsc
+        'mmdDelete
         '
-        Me.txtSChnDsc.BackColor = System.Drawing.Color.White
-        Me.txtSChnDsc.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSChnDsc.Location = New System.Drawing.Point(314, 250)
-        Me.txtSChnDsc.Multiline = True
-        Me.txtSChnDsc.Name = "txtSChnDsc"
-        Me.txtSChnDsc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtSChnDsc.Size = New System.Drawing.Size(277, 140)
-        Me.txtSChnDsc.TabIndex = 85
-        Me.txtSChnDsc.Visible = False
+        Me.mmdDelete.Name = "mmdDelete"
+        Me.mmdDelete.Size = New System.Drawing.Size(55, 19)
+        Me.mmdDelete.Text = "&Delete"
         '
-        'txtItmRmk2
+        'mmdCopy
         '
-        Me.txtItmRmk2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtItmRmk2.Location = New System.Drawing.Point(597, 239)
-        Me.txtItmRmk2.MaxLength = 800
-        Me.txtItmRmk2.Multiline = True
-        Me.txtItmRmk2.Name = "txtItmRmk2"
-        Me.txtItmRmk2.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.txtItmRmk2.Size = New System.Drawing.Size(238, 156)
-        Me.txtItmRmk2.TabIndex = 84
-        Me.txtItmRmk2.Visible = False
+        Me.mmdCopy.Name = "mmdCopy"
+        Me.mmdCopy.Size = New System.Drawing.Size(47, 19)
+        Me.mmdCopy.Text = "&Copy"
         '
-        'txtItmRmk
+        'mmdFind
         '
-        Me.txtItmRmk.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtItmRmk.Location = New System.Drawing.Point(538, 26)
-        Me.txtItmRmk.MaxLength = 800
-        Me.txtItmRmk.Name = "txtItmRmk"
-        Me.txtItmRmk.Size = New System.Drawing.Size(398, 156)
-        Me.txtItmRmk.TabIndex = 53
-        Me.txtItmRmk.Text = ""
+        Me.mmdFind.Name = "mmdFind"
+        Me.mmdFind.Size = New System.Drawing.Size(43, 19)
+        Me.mmdFind.Text = "&Find"
         '
-        'cmdBatchUpdate
+        't1
         '
-        Me.cmdBatchUpdate.Location = New System.Drawing.Point(606, 2)
-        Me.cmdBatchUpdate.Name = "cmdBatchUpdate"
-        Me.cmdBatchUpdate.Size = New System.Drawing.Size(92, 23)
-        Me.cmdBatchUpdate.TabIndex = 83
-        Me.cmdBatchUpdate.Text = "&Batch Update"
-        Me.cmdBatchUpdate.UseVisualStyleBackColor = True
+        Me.t1.AutoSize = False
+        Me.t1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.t1.Enabled = False
+        Me.t1.Name = "t1"
+        Me.t1.Size = New System.Drawing.Size(8, 20)
+        Me.t1.Text = "|"
+        '
+        'mmdClear
+        '
+        Me.mmdClear.Name = "mmdClear"
+        Me.mmdClear.Size = New System.Drawing.Size(49, 19)
+        Me.mmdClear.Text = "Cl&ear"
+        '
+        't2
+        '
+        Me.t2.AutoSize = False
+        Me.t2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.t2.Enabled = False
+        Me.t2.Name = "t2"
+        Me.t2.Size = New System.Drawing.Size(8, 20)
+        Me.t2.Text = "|"
+        '
+        'mmdSearch
+        '
+        Me.mmdSearch.Name = "mmdSearch"
+        Me.mmdSearch.Size = New System.Drawing.Size(58, 19)
+        Me.mmdSearch.Text = "Searc&h"
+        '
+        't3
+        '
+        Me.t3.AutoSize = False
+        Me.t3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.t3.Enabled = False
+        Me.t3.Name = "t3"
+        Me.t3.Size = New System.Drawing.Size(8, 20)
+        Me.t3.Text = "|"
+        '
+        'mmdInsRow
+        '
+        Me.mmdInsRow.Name = "mmdInsRow"
+        Me.mmdInsRow.Size = New System.Drawing.Size(64, 19)
+        Me.mmdInsRow.Text = "I&ns Row"
+        '
+        'mmdDelRow
+        '
+        Me.mmdDelRow.Name = "mmdDelRow"
+        Me.mmdDelRow.Size = New System.Drawing.Size(66, 19)
+        Me.mmdDelRow.Text = "Del Ro&w"
+        '
+        't4
+        '
+        Me.t4.AutoSize = False
+        Me.t4.Enabled = False
+        Me.t4.Name = "t4"
+        Me.t4.Size = New System.Drawing.Size(8, 20)
+        Me.t4.Text = "|"
+        '
+        'mmdPrint
+        '
+        Me.mmdPrint.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsiPrintItmPrcRpt})
+        Me.mmdPrint.Name = "mmdPrint"
+        Me.mmdPrint.Size = New System.Drawing.Size(44, 19)
+        Me.mmdPrint.Text = "&Print"
+        '
+        'tsiPrintItmPrcRpt
+        '
+        Me.tsiPrintItmPrcRpt.Name = "tsiPrintItmPrcRpt"
+        Me.tsiPrintItmPrcRpt.Size = New System.Drawing.Size(179, 22)
+        Me.tsiPrintItmPrcRpt.Text = "Item Pricing Report"
+        '
+        't5
+        '
+        Me.t5.AutoSize = False
+        Me.t5.Enabled = False
+        Me.t5.Name = "t5"
+        Me.t5.Size = New System.Drawing.Size(8, 20)
+        Me.t5.Text = "|"
+        '
+        'mmdAttach
+        '
+        Me.mmdAttach.Name = "mmdAttach"
+        Me.mmdAttach.Size = New System.Drawing.Size(52, 19)
+        Me.mmdAttach.Text = "Attach"
+        '
+        't6
+        '
+        Me.t6.AutoSize = False
+        Me.t6.Enabled = False
+        Me.t6.Name = "t6"
+        Me.t6.Size = New System.Drawing.Size(8, 20)
+        Me.t6.Text = "|"
+        '
+        'mmdFunction
+        '
+        Me.mmdFunction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsiHldRel})
+        Me.mmdFunction.Name = "mmdFunction"
+        Me.mmdFunction.Size = New System.Drawing.Size(66, 19)
+        Me.mmdFunction.Text = "Function"
+        '
+        'tsiHldRel
+        '
+        Me.tsiHldRel.Name = "tsiHldRel"
+        Me.tsiHldRel.Size = New System.Drawing.Size(183, 22)
+        Me.tsiHldRel.Text = "Hold / Release Item"
+        '
+        't7
+        '
+        Me.t7.AutoSize = False
+        Me.t7.Enabled = False
+        Me.t7.Name = "t7"
+        Me.t7.Size = New System.Drawing.Size(8, 20)
+        Me.t7.Text = "|"
+        '
+        'mmdLink
+        '
+        Me.mmdLink.Name = "mmdLink"
+        Me.mmdLink.Size = New System.Drawing.Size(42, 19)
+        Me.mmdLink.Text = "Link"
+        '
+        't8
+        '
+        Me.t8.AutoSize = False
+        Me.t8.Enabled = False
+        Me.t8.Name = "t8"
+        Me.t8.Size = New System.Drawing.Size(8, 20)
+        Me.t8.Text = "|"
+        '
+        'mmdExit
+        '
+        Me.mmdExit.Name = "mmdExit"
+        Me.mmdExit.Size = New System.Drawing.Size(38, 19)
+        Me.mmdExit.Text = "E&xit"
         '
         'PanelPacking
         '
-        Me.PanelPacking.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.PanelPacking.BackColor = System.Drawing.Color.SkyBlue
         Me.PanelPacking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PanelPacking.Controls.Add(Me.Label97)
         Me.PanelPacking.Controls.Add(Me.Label98)
@@ -1542,9 +1524,10 @@ Public Class IMM00001
         Me.PanelPacking.Controls.Add(Me.Label8)
         Me.PanelPacking.Controls.Add(Me.cmdPanPackUpdate)
         Me.PanelPacking.Controls.Add(Me.cmdPanPackCancel)
-        Me.PanelPacking.Location = New System.Drawing.Point(12, 116)
+        Me.PanelPacking.Font = New System.Drawing.Font("PMingLiU", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PanelPacking.Location = New System.Drawing.Point(61, 73)
         Me.PanelPacking.Name = "PanelPacking"
-        Me.PanelPacking.Size = New System.Drawing.Size(532, 369)
+        Me.PanelPacking.Size = New System.Drawing.Size(48, 35)
         Me.PanelPacking.TabIndex = 80
         Me.PanelPacking.Visible = False
         '
@@ -1553,7 +1536,7 @@ Public Class IMM00001
         Me.Label97.AutoSize = True
         Me.Label97.Location = New System.Drawing.Point(2, 39)
         Me.Label97.Name = "Label97"
-        Me.Label97.Size = New System.Drawing.Size(44, 14)
+        Me.Label97.Size = New System.Drawing.Size(39, 11)
         Me.Label97.TabIndex = 553
         Me.Label97.Text = "Pri Cust"
         '
@@ -1562,7 +1545,7 @@ Public Class IMM00001
         Me.Label98.AutoSize = True
         Me.Label98.Location = New System.Drawing.Point(2, 63)
         Me.Label98.Name = "Label98"
-        Me.Label98.Size = New System.Drawing.Size(51, 14)
+        Me.Label98.Size = New System.Drawing.Size(43, 11)
         Me.Label98.TabIndex = 552
         Me.Label98.Text = "Sec Cust"
         '
@@ -1571,7 +1554,7 @@ Public Class IMM00001
         Me.cboPanPackCus1no.FormattingEnabled = True
         Me.cboPanPackCus1no.Location = New System.Drawing.Point(56, 36)
         Me.cboPanPackCus1no.Name = "cboPanPackCus1no"
-        Me.cboPanPackCus1no.Size = New System.Drawing.Size(222, 22)
+        Me.cboPanPackCus1no.Size = New System.Drawing.Size(222, 19)
         Me.cboPanPackCus1no.TabIndex = 104
         '
         'cboPanPackCus2no
@@ -1579,7 +1562,7 @@ Public Class IMM00001
         Me.cboPanPackCus2no.FormattingEnabled = True
         Me.cboPanPackCus2no.Location = New System.Drawing.Point(56, 60)
         Me.cboPanPackCus2no.Name = "cboPanPackCus2no"
-        Me.cboPanPackCus2no.Size = New System.Drawing.Size(222, 22)
+        Me.cboPanPackCus2no.Size = New System.Drawing.Size(222, 19)
         Me.cboPanPackCus2no.TabIndex = 104
         '
         'txtPanPackMaterial
@@ -1594,10 +1577,9 @@ Public Class IMM00001
         'Label82
         '
         Me.Label82.AutoSize = True
-        Me.Label82.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label82.Location = New System.Drawing.Point(285, 226)
         Me.Label82.Name = "Label82"
-        Me.Label82.Size = New System.Drawing.Size(55, 14)
+        Me.Label82.Size = New System.Drawing.Size(49, 11)
         Me.Label82.TabIndex = 131
         Me.Label82.Text = "»²ÄÝ§÷®Æ"
         '
@@ -1613,10 +1595,9 @@ Public Class IMM00001
         'Label63
         '
         Me.Label63.AutoSize = True
-        Me.Label63.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label63.Location = New System.Drawing.Point(285, 116)
+        Me.Label63.Location = New System.Drawing.Point(285, 117)
         Me.Label63.Name = "Label63"
-        Me.Label63.Size = New System.Drawing.Size(75, 14)
+        Me.Label63.Size = New System.Drawing.Size(66, 11)
         Me.Label63.TabIndex = 129
         Me.Label63.Text = "¥~²°¤Ø½X(¤o)"
         '
@@ -1632,20 +1613,18 @@ Public Class IMM00001
         'Label43
         '
         Me.Label43.AutoSize = True
-        Me.Label43.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label43.Location = New System.Drawing.Point(285, 6)
         Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(75, 14)
+        Me.Label43.Size = New System.Drawing.Size(66, 11)
         Me.Label43.TabIndex = 127
         Me.Label43.Text = "¤º²°¤Ø½X(¤o)"
         '
         'Label79
         '
         Me.Label79.AutoSize = True
-        Me.Label79.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label79.Location = New System.Drawing.Point(4, 94)
+        Me.Label79.Location = New System.Drawing.Point(2, 95)
         Me.Label79.Name = "Label79"
-        Me.Label79.Size = New System.Drawing.Size(38, 14)
+        Me.Label79.Size = New System.Drawing.Size(32, 11)
         Me.Label79.TabIndex = 126
         Me.Label79.Text = "Factor"
         '
@@ -1654,7 +1633,7 @@ Public Class IMM00001
         Me.txtPanPackConFtr.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPanPackConFtr.Location = New System.Drawing.Point(47, 92)
         Me.txtPanPackConFtr.Name = "txtPanPackConFtr"
-        Me.txtPanPackConFtr.Size = New System.Drawing.Size(42, 20)
+        Me.txtPanPackConFtr.Size = New System.Drawing.Size(51, 20)
         Me.txtPanPackConFtr.TabIndex = 104
         '
         'txtPanPackPeriod
@@ -1662,7 +1641,7 @@ Public Class IMM00001
         Me.txtPanPackPeriod.Location = New System.Drawing.Point(47, 118)
         Me.txtPanPackPeriod.Mask = "0000-00"
         Me.txtPanPackPeriod.Name = "txtPanPackPeriod"
-        Me.txtPanPackPeriod.Size = New System.Drawing.Size(50, 20)
+        Me.txtPanPackPeriod.Size = New System.Drawing.Size(50, 21)
         Me.txtPanPackPeriod.TabIndex = 107
         '
         'cmdPanPackInsert
@@ -1678,26 +1657,25 @@ Public Class IMM00001
         'txtPanPackPackingInstruction
         '
         Me.txtPanPackPackingInstruction.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPanPackPackingInstruction.Location = New System.Drawing.Point(4, 258)
+        Me.txtPanPackPackingInstruction.Location = New System.Drawing.Point(3, 258)
         Me.txtPanPackPackingInstruction.Name = "txtPanPackPackingInstruction"
-        Me.txtPanPackPackingInstruction.Size = New System.Drawing.Size(274, 75)
+        Me.txtPanPackPackingInstruction.Size = New System.Drawing.Size(275, 75)
         Me.txtPanPackPackingInstruction.TabIndex = 122
         Me.txtPanPackPackingInstruction.Text = ""
         '
         'Label51
         '
         Me.Label51.AutoSize = True
-        Me.Label51.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label51.Location = New System.Drawing.Point(1, 241)
         Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(97, 14)
+        Me.Label51.Size = New System.Drawing.Size(86, 11)
         Me.Label51.TabIndex = 43
         Me.Label51.Text = "Packing Instruction"
         '
         'txtPanPackNW
         '
         Me.txtPanPackNW.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPanPackNW.Location = New System.Drawing.Point(224, 118)
+        Me.txtPanPackNW.Location = New System.Drawing.Point(223, 118)
         Me.txtPanPackNW.Name = "txtPanPackNW"
         Me.txtPanPackNW.Size = New System.Drawing.Size(55, 20)
         Me.txtPanPackNW.TabIndex = 109
@@ -1705,10 +1683,9 @@ Public Class IMM00001
         'Label49
         '
         Me.Label49.AutoSize = True
-        Me.Label49.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label49.Location = New System.Drawing.Point(195, 121)
+        Me.Label49.Location = New System.Drawing.Point(195, 123)
         Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(24, 14)
+        Me.Label49.Size = New System.Drawing.Size(22, 11)
         Me.Label49.TabIndex = 41
         Me.Label49.Text = "NW"
         '
@@ -1723,10 +1700,9 @@ Public Class IMM00001
         'Label50
         '
         Me.Label50.AutoSize = True
-        Me.Label50.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.Location = New System.Drawing.Point(103, 122)
+        Me.Label50.Location = New System.Drawing.Point(103, 123)
         Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(25, 14)
+        Me.Label50.Size = New System.Drawing.Size(22, 11)
         Me.Label50.TabIndex = 39
         Me.Label50.Text = "GW"
         '
@@ -1741,10 +1717,9 @@ Public Class IMM00001
         'Label46
         '
         Me.Label46.AutoSize = True
-        Me.Label46.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label46.Location = New System.Drawing.Point(2, 220)
         Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(103, 14)
+        Me.Label46.Size = New System.Drawing.Size(92, 11)
         Me.Label46.TabIndex = 37
         Me.Label46.Text = "Master (cm) LxWxH"
         '
@@ -1795,10 +1770,9 @@ Public Class IMM00001
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label34.Location = New System.Drawing.Point(2, 197)
         Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(94, 14)
+        Me.Label34.Size = New System.Drawing.Size(84, 11)
         Me.Label34.TabIndex = 31
         Me.Label34.Text = "Inner (cm) LxWxH"
         '
@@ -1849,10 +1823,9 @@ Public Class IMM00001
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label31.Location = New System.Drawing.Point(1, 174)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(109, 14)
+        Me.Label31.Size = New System.Drawing.Size(97, 11)
         Me.Label31.TabIndex = 25
         Me.Label31.Text = "Master (inch) LxWxH"
         '
@@ -1903,10 +1876,9 @@ Public Class IMM00001
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.Location = New System.Drawing.Point(2, 151)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(100, 14)
+        Me.Label17.Size = New System.Drawing.Size(89, 11)
         Me.Label17.TabIndex = 19
         Me.Label17.Text = "Inner (inch) LxWxH"
         '
@@ -1949,17 +1921,16 @@ Public Class IMM00001
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(4, 120)
+        Me.Label16.Location = New System.Drawing.Point(2, 123)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(37, 14)
+        Me.Label16.Size = New System.Drawing.Size(32, 11)
         Me.Label16.TabIndex = 13
         Me.Label16.Text = "Period"
         '
         'txtPanPackCBM
         '
         Me.txtPanPackCBM.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPanPackCBM.Location = New System.Drawing.Point(225, 91)
+        Me.txtPanPackCBM.Location = New System.Drawing.Point(223, 92)
         Me.txtPanPackCBM.Name = "txtPanPackCBM"
         Me.txtPanPackCBM.Size = New System.Drawing.Size(55, 20)
         Me.txtPanPackCBM.TabIndex = 106
@@ -1967,10 +1938,9 @@ Public Class IMM00001
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(190, 94)
+        Me.Label15.Location = New System.Drawing.Point(192, 95)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(29, 14)
+        Me.Label15.Size = New System.Drawing.Size(28, 11)
         Me.Label15.TabIndex = 11
         Me.Label15.Text = "CBM"
         '
@@ -1985,10 +1955,9 @@ Public Class IMM00001
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.Location = New System.Drawing.Point(103, 95)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(26, 14)
+        Me.Label13.Size = New System.Drawing.Size(24, 11)
         Me.Label13.TabIndex = 9
         Me.Label13.Text = "CFT"
         '
@@ -2003,7 +1972,7 @@ Public Class IMM00001
         'txtPanPackInner
         '
         Me.txtPanPackInner.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPanPackInner.Location = New System.Drawing.Point(146, 10)
+        Me.txtPanPackInner.Location = New System.Drawing.Point(142, 10)
         Me.txtPanPackInner.Name = "txtPanPackInner"
         Me.txtPanPackInner.Size = New System.Drawing.Size(42, 20)
         Me.txtPanPackInner.TabIndex = 102
@@ -2011,20 +1980,18 @@ Public Class IMM00001
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(191, 11)
+        Me.Label12.Location = New System.Drawing.Point(195, 14)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(40, 14)
+        Me.Label12.Size = New System.Drawing.Size(34, 11)
         Me.Label12.TabIndex = 6
         Me.Label12.Text = "Master"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(109, 12)
+        Me.Label9.Location = New System.Drawing.Point(105, 14)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(31, 14)
+        Me.Label9.Size = New System.Drawing.Size(26, 11)
         Me.Label9.TabIndex = 5
         Me.Label9.Text = "Inner"
         '
@@ -2040,10 +2007,9 @@ Public Class IMM00001
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(1, 13)
+        Me.Label8.Location = New System.Drawing.Point(1, 14)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(22, 14)
+        Me.Label8.Size = New System.Drawing.Size(21, 11)
         Me.Label8.TabIndex = 3
         Me.Label8.Text = "UM"
         '
@@ -2062,984 +2028,14 @@ Public Class IMM00001
         Me.cmdPanPackCancel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdPanPackCancel.Location = New System.Drawing.Point(459, 339)
         Me.cmdPanPackCancel.Name = "cmdPanPackCancel"
-        Me.cmdPanPackCancel.Size = New System.Drawing.Size(65, 22)
+        Me.cmdPanPackCancel.Size = New System.Drawing.Size(65, 21)
         Me.cmdPanPackCancel.TabIndex = 128
         Me.cmdPanPackCancel.Text = "&Quit"
         Me.cmdPanPackCancel.UseVisualStyleBackColor = True
         '
-        'pbImage
-        '
-        Me.pbImage.BackColor = System.Drawing.Color.White
-        Me.pbImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pbImage.InitialImage = Nothing
-        Me.pbImage.Location = New System.Drawing.Point(687, 188)
-        Me.pbImage.MaximumSize = New System.Drawing.Size(500, 500)
-        Me.pbImage.Name = "pbImage"
-        Me.pbImage.Size = New System.Drawing.Size(249, 304)
-        Me.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbImage.TabIndex = 82
-        Me.pbImage.TabStop = False
-        '
-        'lblItmRmk
-        '
-        Me.lblItmRmk.AutoSize = True
-        Me.lblItmRmk.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblItmRmk.Location = New System.Drawing.Point(535, 6)
-        Me.lblItmRmk.Name = "lblItmRmk"
-        Me.lblItmRmk.Size = New System.Drawing.Size(71, 14)
-        Me.lblItmRmk.TabIndex = 78
-        Me.lblItmRmk.Text = "Item Remark :"
-        '
-        'lblPacking
-        '
-        Me.lblPacking.AutoSize = True
-        Me.lblPacking.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPacking.ForeColor = System.Drawing.Color.Blue
-        Me.lblPacking.Location = New System.Drawing.Point(6, 301)
-        Me.lblPacking.Name = "lblPacking"
-        Me.lblPacking.Size = New System.Drawing.Size(50, 14)
-        Me.lblPacking.TabIndex = 77
-        Me.lblPacking.Text = "Packing :"
-        '
-        'dgPacking
-        '
-        Me.dgPacking.AllowUserToAddRows = False
-        Me.dgPacking.AllowUserToDeleteRows = False
-        Me.dgPacking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.NullValue = """"""
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgPacking.DefaultCellStyle = DataGridViewCellStyle1
-        Me.dgPacking.Location = New System.Drawing.Point(7, 317)
-        Me.dgPacking.Name = "dgPacking"
-        Me.dgPacking.RowHeadersWidth = 30
-        Me.dgPacking.RowTemplate.Height = 18
-        Me.dgPacking.Size = New System.Drawing.Size(674, 174)
-        Me.dgPacking.TabIndex = 55
-        '
-        'dgColor
-        '
-        Me.dgColor.AllowUserToAddRows = False
-        Me.dgColor.AllowUserToDeleteRows = False
-        Me.dgColor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.NullValue = """"""
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgColor.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dgColor.Location = New System.Drawing.Point(6, 205)
-        Me.dgColor.Name = "dgColor"
-        Me.dgColor.RowHeadersWidth = 30
-        Me.dgColor.RowTemplate.Height = 24
-        Me.dgColor.Size = New System.Drawing.Size(675, 93)
-        Me.dgColor.TabIndex = 54
-        '
-        'txtChnDsc
-        '
-        Me.txtChnDsc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtChnDsc.Location = New System.Drawing.Point(117, 94)
-        Me.txtChnDsc.MaxLength = 800
-        Me.txtChnDsc.Name = "txtChnDsc"
-        Me.txtChnDsc.Size = New System.Drawing.Size(414, 88)
-        Me.txtChnDsc.TabIndex = 52
-        Me.txtChnDsc.Text = "35""/ªáÝßªG³æªK¥[¶ì½¦¯]/RDD175"
-        '
-        'lblColor
-        '
-        Me.lblColor.AutoSize = True
-        Me.lblColor.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblColor.ForeColor = System.Drawing.Color.Blue
-        Me.lblColor.Location = New System.Drawing.Point(6, 188)
-        Me.lblColor.Name = "lblColor"
-        Me.lblColor.Size = New System.Drawing.Size(38, 14)
-        Me.lblColor.TabIndex = 71
-        Me.lblColor.Text = "Color :"
-        '
-        'txtEngDsc
-        '
-        Me.txtEngDsc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEngDsc.Location = New System.Drawing.Point(117, 3)
-        Me.txtEngDsc.MaxLength = 800
-        Me.txtEngDsc.Name = "txtEngDsc"
-        Me.txtEngDsc.Size = New System.Drawing.Size(414, 85)
-        Me.txtEngDsc.TabIndex = 51
-        Me.txtEngDsc.Text = "35""MOUNTAIN ASH STEM"
-        '
-        'lblChnDsc
-        '
-        Me.lblChnDsc.AutoSize = True
-        Me.lblChnDsc.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblChnDsc.Location = New System.Drawing.Point(1, 99)
-        Me.lblChnDsc.Name = "lblChnDsc"
-        Me.lblChnDsc.Size = New System.Drawing.Size(109, 14)
-        Me.lblChnDsc.TabIndex = 18
-        Me.lblChnDsc.Text = "Chinese Description :"
-        '
-        'lblEngDsc
-        '
-        Me.lblEngDsc.AutoSize = True
-        Me.lblEngDsc.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEngDsc.ForeColor = System.Drawing.Color.DarkGreen
-        Me.lblEngDsc.Location = New System.Drawing.Point(3, 6)
-        Me.lblEngDsc.Name = "lblEngDsc"
-        Me.lblEngDsc.Size = New System.Drawing.Size(104, 14)
-        Me.lblEngDsc.TabIndex = 17
-        Me.lblEngDsc.Text = "English Description :"
-        '
-        'cmdCombineImage
-        '
-        Me.cmdCombineImage.Location = New System.Drawing.Point(439, 298)
-        Me.cmdCombineImage.Name = "cmdCombineImage"
-        Me.cmdCombineImage.Size = New System.Drawing.Size(105, 20)
-        Me.cmdCombineImage.TabIndex = 81
-        Me.cmdCombineImage.Text = "Co&mbine Image"
-        Me.cmdCombineImage.UseVisualStyleBackColor = True
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Controls.Add(Me.cmdCopyPV)
-        Me.TabPage2.Controls.Add(Me.PanelPV)
-        Me.TabPage2.Controls.Add(Me.lblPV)
-        Me.TabPage2.Controls.Add(Me.cboEV)
-        Me.TabPage2.Controls.Add(Me.lblEV)
-        Me.TabPage2.Controls.Add(Me.cboTV)
-        Me.TabPage2.Controls.Add(Me.lblTV)
-        Me.TabPage2.Controls.Add(Me.cboCV)
-        Me.TabPage2.Controls.Add(Me.lblCV)
-        Me.TabPage2.Controls.Add(Me.cboDV)
-        Me.TabPage2.Controls.Add(Me.lblDV)
-        Me.TabPage2.Controls.Add(Me.dgPV)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 23)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(942, 498)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "(2) Vendor"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'cmdCopyPV
-        '
-        Me.cmdCopyPV.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.cmdCopyPV.Location = New System.Drawing.Point(547, 11)
-        Me.cmdCopyPV.Name = "cmdCopyPV"
-        Me.cmdCopyPV.Size = New System.Drawing.Size(145, 21)
-        Me.cmdCopyPV.TabIndex = 206
-        Me.cmdCopyPV.Text = "Apply Def PV to CV,TV,FA"
-        Me.cmdCopyPV.UseVisualStyleBackColor = True
-        '
-        'PanelPV
-        '
-        Me.PanelPV.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.PanelPV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PanelPV.Controls.Add(Me.cmdPanPVInsert)
-        Me.PanelPV.Controls.Add(Me.Label94)
-        Me.PanelPV.Controls.Add(Me.txtPanPVVenItm)
-        Me.PanelPV.Controls.Add(Me.cboPanPVPV)
-        Me.PanelPV.Controls.Add(Me.Label99)
-        Me.PanelPV.Controls.Add(Me.cmdPanPVCancel)
-        Me.PanelPV.Location = New System.Drawing.Point(275, 298)
-        Me.PanelPV.Name = "PanelPV"
-        Me.PanelPV.Size = New System.Drawing.Size(299, 98)
-        Me.PanelPV.TabIndex = 205
-        Me.PanelPV.Visible = False
-        '
-        'cmdPanPVInsert
-        '
-        Me.cmdPanPVInsert.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdPanPVInsert.Location = New System.Drawing.Point(187, 66)
-        Me.cmdPanPVInsert.Name = "cmdPanPVInsert"
-        Me.cmdPanPVInsert.Size = New System.Drawing.Size(49, 21)
-        Me.cmdPanPVInsert.TabIndex = 212
-        Me.cmdPanPVInsert.Text = "Insert"
-        Me.cmdPanPVInsert.UseVisualStyleBackColor = True
-        '
-        'Label94
-        '
-        Me.Label94.AutoSize = True
-        Me.Label94.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label94.Location = New System.Drawing.Point(6, 41)
-        Me.Label94.Name = "Label94"
-        Me.Label94.Size = New System.Drawing.Size(96, 14)
-        Me.Label94.TabIndex = 13
-        Me.Label94.Text = "Production Vendor"
-        '
-        'txtPanPVVenItm
-        '
-        Me.txtPanPVVenItm.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPanPVVenItm.Location = New System.Drawing.Point(125, 9)
-        Me.txtPanPVVenItm.Name = "txtPanPVVenItm"
-        Me.txtPanPVVenItm.Size = New System.Drawing.Size(161, 20)
-        Me.txtPanPVVenItm.TabIndex = 210
-        '
-        'cboPanPVPV
-        '
-        Me.cboPanPVPV.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboPanPVPV.FormattingEnabled = True
-        Me.cboPanPVPV.Location = New System.Drawing.Point(125, 38)
-        Me.cboPanPVPV.Name = "cboPanPVPV"
-        Me.cboPanPVPV.Size = New System.Drawing.Size(161, 22)
-        Me.cboPanPVPV.TabIndex = 211
-        '
-        'Label99
-        '
-        Me.Label99.AutoSize = True
-        Me.Label99.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label99.Location = New System.Drawing.Point(6, 12)
-        Me.Label99.Name = "Label99"
-        Me.Label99.Size = New System.Drawing.Size(104, 14)
-        Me.Label99.TabIndex = 3
-        Me.Label99.Text = "Vendor Item Number"
-        '
-        'cmdPanPVCancel
-        '
-        Me.cmdPanPVCancel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdPanPVCancel.Location = New System.Drawing.Point(238, 66)
-        Me.cmdPanPVCancel.Name = "cmdPanPVCancel"
-        Me.cmdPanPVCancel.Size = New System.Drawing.Size(48, 22)
-        Me.cmdPanPVCancel.TabIndex = 213
-        Me.cmdPanPVCancel.Text = "Cancel"
-        Me.cmdPanPVCancel.UseVisualStyleBackColor = True
-        '
-        'lblPV
-        '
-        Me.lblPV.AutoSize = True
-        Me.lblPV.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPV.ForeColor = System.Drawing.Color.Blue
-        Me.lblPV.Location = New System.Drawing.Point(8, 145)
-        Me.lblPV.Name = "lblPV"
-        Me.lblPV.Size = New System.Drawing.Size(102, 14)
-        Me.lblPV.TabIndex = 66
-        Me.lblPV.Text = "Production Vendor :"
-        '
-        'cboEV
-        '
-        Me.cboEV.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboEV.FormattingEnabled = True
-        Me.cboEV.Location = New System.Drawing.Point(96, 104)
-        Me.cboEV.Name = "cboEV"
-        Me.cboEV.Size = New System.Drawing.Size(445, 22)
-        Me.cboEV.TabIndex = 204
-        '
-        'lblEV
-        '
-        Me.lblEV.AutoSize = True
-        Me.lblEV.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEV.ForeColor = System.Drawing.Color.DarkGreen
-        Me.lblEV.Location = New System.Drawing.Point(8, 107)
-        Me.lblEV.Name = "lblEV"
-        Me.lblEV.Size = New System.Drawing.Size(77, 14)
-        Me.lblEV.TabIndex = 64
-        Me.lblEV.Text = "Factory Audit :"
-        '
-        'cboTV
-        '
-        Me.cboTV.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboTV.FormattingEnabled = True
-        Me.cboTV.Location = New System.Drawing.Point(96, 73)
-        Me.cboTV.Name = "cboTV"
-        Me.cboTV.Size = New System.Drawing.Size(445, 22)
-        Me.cboTV.TabIndex = 203
-        '
-        'lblTV
-        '
-        Me.lblTV.AutoSize = True
-        Me.lblTV.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTV.ForeColor = System.Drawing.Color.DarkGreen
-        Me.lblTV.Location = New System.Drawing.Point(8, 76)
-        Me.lblTV.Name = "lblTV"
-        Me.lblTV.Size = New System.Drawing.Size(87, 14)
-        Me.lblTV.TabIndex = 62
-        Me.lblTV.Text = "Trading Vendor :"
-        '
-        'cboCV
-        '
-        Me.cboCV.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboCV.FormattingEnabled = True
-        Me.cboCV.Location = New System.Drawing.Point(96, 42)
-        Me.cboCV.Name = "cboCV"
-        Me.cboCV.Size = New System.Drawing.Size(445, 22)
-        Me.cboCV.TabIndex = 202
-        '
-        'lblCV
-        '
-        Me.lblCV.AutoSize = True
-        Me.lblCV.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCV.ForeColor = System.Drawing.Color.DarkGreen
-        Me.lblCV.Location = New System.Drawing.Point(8, 45)
-        Me.lblCV.Name = "lblCV"
-        Me.lblCV.Size = New System.Drawing.Size(87, 14)
-        Me.lblCV.TabIndex = 60
-        Me.lblCV.Text = "Custom Vendor :"
-        '
-        'cboDV
-        '
-        Me.cboDV.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboDV.FormattingEnabled = True
-        Me.cboDV.Location = New System.Drawing.Point(96, 11)
-        Me.cboDV.Name = "cboDV"
-        Me.cboDV.Size = New System.Drawing.Size(445, 22)
-        Me.cboDV.TabIndex = 201
-        '
-        'lblDV
-        '
-        Me.lblDV.AutoSize = True
-        Me.lblDV.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDV.ForeColor = System.Drawing.Color.DarkGreen
-        Me.lblDV.Location = New System.Drawing.Point(8, 14)
-        Me.lblDV.Name = "lblDV"
-        Me.lblDV.Size = New System.Drawing.Size(84, 14)
-        Me.lblDV.TabIndex = 54
-        Me.lblDV.Text = "Design Vendor :"
-        '
-        'dgPV
-        '
-        Me.dgPV.AllowUserToAddRows = False
-        Me.dgPV.AllowUserToDeleteRows = False
-        Me.dgPV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.NullValue = """"""
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgPV.DefaultCellStyle = DataGridViewCellStyle3
-        Me.dgPV.Location = New System.Drawing.Point(8, 162)
-        Me.dgPV.Name = "dgPV"
-        Me.dgPV.RowHeadersWidth = 30
-        Me.dgPV.RowTemplate.Height = 24
-        Me.dgPV.Size = New System.Drawing.Size(926, 330)
-        Me.dgPV.TabIndex = 205
-        '
-        'TabPage3
-        '
-        Me.TabPage3.Controls.Add(Me.Label19)
-        Me.TabPage3.Controls.Add(Me.pbImage2)
-        Me.TabPage3.Controls.Add(Me.Label11)
-        Me.TabPage3.Controls.Add(Me.cboCategory)
-        Me.TabPage3.Controls.Add(Me.Label10)
-        Me.TabPage3.Controls.Add(Me.cboPrdLne)
-        Me.TabPage3.Controls.Add(Me.cboItmVenTyp)
-        Me.TabPage3.Controls.Add(Me.lblItmVenTyp)
-        Me.TabPage3.Controls.Add(Me.lblOEMCustomer)
-        Me.TabPage3.Controls.Add(Me.dgOEMCustomer)
-        Me.TabPage3.Controls.Add(Me.cboYear)
-        Me.TabPage3.Controls.Add(Me.Label30)
-        Me.TabPage3.Controls.Add(Me.cboType)
-        Me.TabPage3.Controls.Add(Me.Label29)
-        Me.TabPage3.Controls.Add(Me.cboDevTeam)
-        Me.TabPage3.Controls.Add(Me.Label28)
-        Me.TabPage3.Controls.Add(Me.cboDesigner)
-        Me.TabPage3.Controls.Add(Me.Label27)
-        Me.TabPage3.Controls.Add(Me.cboSeason)
-        Me.TabPage3.Controls.Add(Me.Label26)
-        Me.TabPage3.Controls.Add(Me.Label25)
-        Me.TabPage3.Controls.Add(Me.Label24)
-        Me.TabPage3.Controls.Add(Me.Label23)
-        Me.TabPage3.Controls.Add(Me.cboPrdSizeTyp)
-        Me.TabPage3.Controls.Add(Me.cboPrdSizeUnit)
-        Me.TabPage3.Controls.Add(Me.Label22)
-        Me.TabPage3.Controls.Add(Me.cboPrdIcon)
-        Me.TabPage3.Controls.Add(Me.Label21)
-        Me.TabPage3.Controls.Add(Me.cboPrdGroup)
-        Me.TabPage3.Controls.Add(Me.txtPrdSizeValue)
-        Me.TabPage3.Controls.Add(Me.txtDsgItmNo)
-        Me.TabPage3.Controls.Add(Me.lblDsgItmNo)
-        Me.TabPage3.Controls.Add(Me.cboPrdTyp)
-        Me.TabPage3.Controls.Add(Me.lblPrdTyp)
-        Me.TabPage3.Controls.Add(Me.lblItmNature)
-        Me.TabPage3.Controls.Add(Me.cboItmNature)
-        Me.TabPage3.Controls.Add(Me.lblMaterial)
-        Me.TabPage3.Controls.Add(Me.cboMaterial)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 23)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(942, 498)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "(3) Classification"
-        Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(33, 186)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(74, 14)
-        Me.Label19.TabIndex = 71
-        Me.Label19.Text = "Product Size :"
-        '
-        'pbImage2
-        '
-        Me.pbImage2.BackColor = System.Drawing.Color.White
-        Me.pbImage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pbImage2.InitialImage = Nothing
-        Me.pbImage2.Location = New System.Drawing.Point(740, 273)
-        Me.pbImage2.MaximumSize = New System.Drawing.Size(500, 500)
-        Me.pbImage2.Name = "pbImage2"
-        Me.pbImage2.Size = New System.Drawing.Size(175, 219)
-        Me.pbImage2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbImage2.TabIndex = 319
-        Me.pbImage2.TabStop = False
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(37, 56)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(57, 14)
-        Me.Label11.TabIndex = 98
-        Me.Label11.Text = "Category :"
-        '
-        'cboCategory
-        '
-        Me.cboCategory.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboCategory.FormattingEnabled = True
-        Me.cboCategory.Location = New System.Drawing.Point(138, 53)
-        Me.cboCategory.Name = "cboCategory"
-        Me.cboCategory.Size = New System.Drawing.Size(777, 22)
-        Me.cboCategory.TabIndex = 302
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(37, 23)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(73, 14)
-        Me.Label10.TabIndex = 96
-        Me.Label10.Text = "Product Line :"
-        '
-        'cboPrdLne
-        '
-        Me.cboPrdLne.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboPrdLne.FormattingEnabled = True
-        Me.cboPrdLne.Location = New System.Drawing.Point(138, 20)
-        Me.cboPrdLne.Name = "cboPrdLne"
-        Me.cboPrdLne.Size = New System.Drawing.Size(200, 22)
-        Me.cboPrdLne.TabIndex = 301
-        '
-        'cboItmVenTyp
-        '
-        Me.cboItmVenTyp.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboItmVenTyp.FormattingEnabled = True
-        Me.cboItmVenTyp.Location = New System.Drawing.Point(615, 20)
-        Me.cboItmVenTyp.Name = "cboItmVenTyp"
-        Me.cboItmVenTyp.Size = New System.Drawing.Size(178, 22)
-        Me.cboItmVenTyp.TabIndex = 303
-        '
-        'lblItmVenTyp
-        '
-        Me.lblItmVenTyp.AutoSize = True
-        Me.lblItmVenTyp.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblItmVenTyp.Location = New System.Drawing.Point(498, 23)
-        Me.lblItmVenTyp.Name = "lblItmVenTyp"
-        Me.lblItmVenTyp.Size = New System.Drawing.Size(96, 14)
-        Me.lblItmVenTyp.TabIndex = 93
-        Me.lblItmVenTyp.Text = "Item Vendor Type :"
-        '
-        'lblOEMCustomer
-        '
-        Me.lblOEMCustomer.AutoSize = True
-        Me.lblOEMCustomer.BackColor = System.Drawing.Color.Transparent
-        Me.lblOEMCustomer.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOEMCustomer.Location = New System.Drawing.Point(498, 115)
-        Me.lblOEMCustomer.Name = "lblOEMCustomer"
-        Me.lblOEMCustomer.Size = New System.Drawing.Size(78, 14)
-        Me.lblOEMCustomer.TabIndex = 92
-        Me.lblOEMCustomer.Text = "OEM Customer"
-        '
-        'dgOEMCustomer
-        '
-        Me.dgOEMCustomer.AllowUserToAddRows = False
-        Me.dgOEMCustomer.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.NullValue = """"""
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgOEMCustomer.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgOEMCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgOEMCustomer.Location = New System.Drawing.Point(501, 132)
-        Me.dgOEMCustomer.Name = "dgOEMCustomer"
-        Me.dgOEMCustomer.RowHeadersWidth = 30
-        Me.dgOEMCustomer.RowTemplate.Height = 24
-        Me.dgOEMCustomer.Size = New System.Drawing.Size(414, 135)
-        Me.dgOEMCustomer.TabIndex = 306
-        '
-        'cboYear
-        '
-        Me.cboYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboYear.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboYear.FormattingEnabled = True
-        Me.cboYear.Location = New System.Drawing.Point(137, 405)
-        Me.cboYear.Name = "cboYear"
-        Me.cboYear.Size = New System.Drawing.Size(340, 22)
-        Me.cboYear.TabIndex = 318
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(34, 407)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(36, 14)
-        Me.Label30.TabIndex = 89
-        Me.Label30.Text = "Year :"
-        '
-        'cboType
-        '
-        Me.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboType.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboType.FormattingEnabled = True
-        Me.cboType.Location = New System.Drawing.Point(137, 373)
-        Me.cboType.Name = "cboType"
-        Me.cboType.Size = New System.Drawing.Size(340, 22)
-        Me.cboType.TabIndex = 317
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(34, 375)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(36, 14)
-        Me.Label29.TabIndex = 87
-        Me.Label29.Text = "Type :"
-        '
-        'cboDevTeam
-        '
-        Me.cboDevTeam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboDevTeam.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboDevTeam.FormattingEnabled = True
-        Me.cboDevTeam.Location = New System.Drawing.Point(137, 341)
-        Me.cboDevTeam.Name = "cboDevTeam"
-        Me.cboDevTeam.Size = New System.Drawing.Size(340, 22)
-        Me.cboDevTeam.TabIndex = 316
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(34, 343)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(103, 14)
-        Me.Label28.TabIndex = 85
-        Me.Label28.Text = "Development Team :"
-        '
-        'cboDesigner
-        '
-        Me.cboDesigner.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboDesigner.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboDesigner.FormattingEnabled = True
-        Me.cboDesigner.Location = New System.Drawing.Point(137, 309)
-        Me.cboDesigner.Name = "cboDesigner"
-        Me.cboDesigner.Size = New System.Drawing.Size(340, 22)
-        Me.cboDesigner.TabIndex = 315
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(34, 309)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(56, 14)
-        Me.Label27.TabIndex = 83
-        Me.Label27.Text = "Designer :"
-        '
-        'cboSeason
-        '
-        Me.cboSeason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboSeason.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboSeason.FormattingEnabled = True
-        Me.cboSeason.Location = New System.Drawing.Point(137, 277)
-        Me.cboSeason.Name = "cboSeason"
-        Me.cboSeason.Size = New System.Drawing.Size(340, 22)
-        Me.cboSeason.TabIndex = 314
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(34, 277)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(50, 14)
-        Me.Label26.TabIndex = 81
-        Me.Label26.Text = "Season :"
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(388, 186)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(34, 14)
-        Me.Label25.TabIndex = 80
-        Me.Label25.Text = "Value"
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(254, 188)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(25, 14)
-        Me.Label24.TabIndex = 79
-        Me.Label24.Text = "Unit"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(103, 186)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(30, 14)
-        Me.Label23.TabIndex = 78
-        Me.Label23.Text = "Type"
-        '
-        'cboPrdSizeTyp
-        '
-        Me.cboPrdSizeTyp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboPrdSizeTyp.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboPrdSizeTyp.FormattingEnabled = True
-        Me.cboPrdSizeTyp.Location = New System.Drawing.Point(137, 183)
-        Me.cboPrdSizeTyp.Name = "cboPrdSizeTyp"
-        Me.cboPrdSizeTyp.Size = New System.Drawing.Size(109, 22)
-        Me.cboPrdSizeTyp.TabIndex = 309
-        '
-        'cboPrdSizeUnit
-        '
-        Me.cboPrdSizeUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboPrdSizeUnit.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboPrdSizeUnit.FormattingEnabled = True
-        Me.cboPrdSizeUnit.Location = New System.Drawing.Point(280, 183)
-        Me.cboPrdSizeUnit.Name = "cboPrdSizeUnit"
-        Me.cboPrdSizeUnit.Size = New System.Drawing.Size(102, 22)
-        Me.cboPrdSizeUnit.TabIndex = 310
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(34, 216)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(83, 14)
-        Me.Label22.TabIndex = 75
-        Me.Label22.Text = "Product Group :"
-        '
-        'cboPrdIcon
-        '
-        Me.cboPrdIcon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboPrdIcon.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboPrdIcon.FormattingEnabled = True
-        Me.cboPrdIcon.Location = New System.Drawing.Point(137, 245)
-        Me.cboPrdIcon.Name = "cboPrdIcon"
-        Me.cboPrdIcon.Size = New System.Drawing.Size(340, 22)
-        Me.cboPrdIcon.TabIndex = 313
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(34, 245)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(73, 14)
-        Me.Label21.TabIndex = 73
-        Me.Label21.Text = "Product Icon :"
-        '
-        'cboPrdGroup
-        '
-        Me.cboPrdGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboPrdGroup.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboPrdGroup.FormattingEnabled = True
-        Me.cboPrdGroup.Location = New System.Drawing.Point(137, 213)
-        Me.cboPrdGroup.Name = "cboPrdGroup"
-        Me.cboPrdGroup.Size = New System.Drawing.Size(340, 22)
-        Me.cboPrdGroup.TabIndex = 312
-        '
-        'txtPrdSizeValue
-        '
-        Me.txtPrdSizeValue.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrdSizeValue.Location = New System.Drawing.Point(423, 183)
-        Me.txtPrdSizeValue.Name = "txtPrdSizeValue"
-        Me.txtPrdSizeValue.Size = New System.Drawing.Size(54, 20)
-        Me.txtPrdSizeValue.TabIndex = 311
-        '
-        'txtDsgItmNo
-        '
-        Me.txtDsgItmNo.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDsgItmNo.Location = New System.Drawing.Point(137, 85)
-        Me.txtDsgItmNo.MaxLength = 50
-        Me.txtDsgItmNo.Name = "txtDsgItmNo"
-        Me.txtDsgItmNo.Size = New System.Drawing.Size(201, 20)
-        Me.txtDsgItmNo.TabIndex = 304
-        '
-        'lblDsgItmNo
-        '
-        Me.lblDsgItmNo.AutoSize = True
-        Me.lblDsgItmNo.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDsgItmNo.Location = New System.Drawing.Point(37, 88)
-        Me.lblDsgItmNo.Name = "lblDsgItmNo"
-        Me.lblDsgItmNo.Size = New System.Drawing.Size(84, 14)
-        Me.lblDsgItmNo.TabIndex = 69
-        Me.lblDsgItmNo.Text = "Design Item No :"
-        '
-        'cboPrdTyp
-        '
-        Me.cboPrdTyp.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboPrdTyp.FormattingEnabled = True
-        Me.cboPrdTyp.Location = New System.Drawing.Point(615, 85)
-        Me.cboPrdTyp.Name = "cboPrdTyp"
-        Me.cboPrdTyp.Size = New System.Drawing.Size(178, 22)
-        Me.cboPrdTyp.TabIndex = 305
-        '
-        'lblPrdTyp
-        '
-        Me.lblPrdTyp.AutoSize = True
-        Me.lblPrdTyp.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrdTyp.Location = New System.Drawing.Point(498, 88)
-        Me.lblPrdTyp.Name = "lblPrdTyp"
-        Me.lblPrdTyp.Size = New System.Drawing.Size(76, 14)
-        Me.lblPrdTyp.TabIndex = 66
-        Me.lblPrdTyp.Text = "Product Type :"
-        '
-        'lblItmNature
-        '
-        Me.lblItmNature.AutoSize = True
-        Me.lblItmNature.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblItmNature.Location = New System.Drawing.Point(37, 154)
-        Me.lblItmNature.Name = "lblItmNature"
-        Me.lblItmNature.Size = New System.Drawing.Size(67, 14)
-        Me.lblItmNature.TabIndex = 64
-        Me.lblItmNature.Text = "Item Nature :"
-        '
-        'cboItmNature
-        '
-        Me.cboItmNature.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboItmNature.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboItmNature.FormattingEnabled = True
-        Me.cboItmNature.Location = New System.Drawing.Point(137, 151)
-        Me.cboItmNature.Name = "cboItmNature"
-        Me.cboItmNature.Size = New System.Drawing.Size(340, 22)
-        Me.cboItmNature.TabIndex = 308
-        '
-        'lblMaterial
-        '
-        Me.lblMaterial.AutoSize = True
-        Me.lblMaterial.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMaterial.Location = New System.Drawing.Point(37, 120)
-        Me.lblMaterial.Name = "lblMaterial"
-        Me.lblMaterial.Size = New System.Drawing.Size(75, 14)
-        Me.lblMaterial.TabIndex = 62
-        Me.lblMaterial.Text = "Key Material : "
-        '
-        'cboMaterial
-        '
-        Me.cboMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboMaterial.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboMaterial.FormattingEnabled = True
-        Me.cboMaterial.Location = New System.Drawing.Point(137, 117)
-        Me.cboMaterial.Name = "cboMaterial"
-        Me.cboMaterial.Size = New System.Drawing.Size(340, 22)
-        Me.cboMaterial.TabIndex = 307
-        '
-        'TabPage4
-        '
-        Me.TabPage4.Controls.Add(Me.lbBOMColor)
-        Me.TabPage4.Controls.Add(Me.lblBOMASS)
-        Me.TabPage4.Controls.Add(Me.IMTreeView)
-        Me.TabPage4.Controls.Add(Me.Label42)
-        Me.TabPage4.Controls.Add(Me.Label41)
-        Me.TabPage4.Controls.Add(Me.dgRelParentItem)
-        Me.TabPage4.Controls.Add(Me.GroupBox6)
-        Me.TabPage4.Controls.Add(Me.Label40)
-        Me.TabPage4.Controls.Add(Me.dgBOMASS)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 23)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(942, 498)
-        Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "(4) BOM/Assortment"
-        Me.TabPage4.UseVisualStyleBackColor = True
-        '
-        'lbBOMColor
-        '
-        Me.lbBOMColor.FormattingEnabled = True
-        Me.lbBOMColor.ItemHeight = 14
-        Me.lbBOMColor.Location = New System.Drawing.Point(19, 140)
-        Me.lbBOMColor.Name = "lbBOMColor"
-        Me.lbBOMColor.Size = New System.Drawing.Size(122, 46)
-        Me.lbBOMColor.TabIndex = 64
-        Me.lbBOMColor.Visible = False
-        '
-        'lblBOMASS
-        '
-        Me.lblBOMASS.AutoSize = True
-        Me.lblBOMASS.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBOMASS.Location = New System.Drawing.Point(8, 11)
-        Me.lblBOMASS.Name = "lblBOMASS"
-        Me.lblBOMASS.Size = New System.Drawing.Size(94, 14)
-        Me.lblBOMASS.TabIndex = 63
-        Me.lblBOMASS.Text = "BOM / Assortment"
-        '
-        'IMTreeView
-        '
-        Me.IMTreeView.Location = New System.Drawing.Point(6, 255)
-        Me.IMTreeView.Name = "IMTreeView"
-        TreeNode1.Name = "Node4"
-        TreeNode1.Text = "(BOM) 3710060500C PC/0/2"
-        TreeNode2.Name = "Node0"
-        TreeNode2.Text = "(REG) 12A001A001A01 PC/0/3"
-        Me.IMTreeView.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode2})
-        Me.IMTreeView.Size = New System.Drawing.Size(265, 240)
-        Me.IMTreeView.TabIndex = 404
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.Location = New System.Drawing.Point(274, 238)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(99, 14)
-        Me.Label42.TabIndex = 61
-        Me.Label42.Text = "Related Parent Item"
-        '
-        'Label41
-        '
-        Me.Label41.AutoSize = True
-        Me.Label41.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label41.Location = New System.Drawing.Point(8, 238)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(80, 14)
-        Me.Label41.TabIndex = 60
-        Me.Label41.Text = "Item Tree View"
-        '
-        'dgRelParentItem
-        '
-        Me.dgRelParentItem.AllowUserToAddRows = False
-        Me.dgRelParentItem.AllowUserToDeleteRows = False
-        Me.dgRelParentItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.NullValue = """"""
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgRelParentItem.DefaultCellStyle = DataGridViewCellStyle5
-        Me.dgRelParentItem.Location = New System.Drawing.Point(277, 255)
-        Me.dgRelParentItem.Name = "dgRelParentItem"
-        Me.dgRelParentItem.RowHeadersWidth = 30
-        Me.dgRelParentItem.RowTemplate.Height = 24
-        Me.dgRelParentItem.Size = New System.Drawing.Size(662, 240)
-        Me.dgRelParentItem.TabIndex = 405
-        '
-        'GroupBox6
-        '
-        Me.GroupBox6.Controls.Add(Me.rbBOMASS_BOM)
-        Me.GroupBox6.Controls.Add(Me.rbBOMASS_ASS)
-        Me.GroupBox6.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox6.Location = New System.Drawing.Point(128, 0)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(212, 30)
-        Me.GroupBox6.TabIndex = 56
-        Me.GroupBox6.TabStop = False
-        '
-        'rbBOMASS_BOM
-        '
-        Me.rbBOMASS_BOM.AutoSize = True
-        Me.rbBOMASS_BOM.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbBOMASS_BOM.Location = New System.Drawing.Point(110, 9)
-        Me.rbBOMASS_BOM.Name = "rbBOMASS_BOM"
-        Me.rbBOMASS_BOM.Size = New System.Drawing.Size(48, 18)
-        Me.rbBOMASS_BOM.TabIndex = 402
-        Me.rbBOMASS_BOM.Text = "BOM"
-        Me.rbBOMASS_BOM.UseVisualStyleBackColor = True
-        '
-        'rbBOMASS_ASS
-        '
-        Me.rbBOMASS_ASS.AutoSize = True
-        Me.rbBOMASS_ASS.Checked = True
-        Me.rbBOMASS_ASS.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbBOMASS_ASS.Location = New System.Drawing.Point(6, 9)
-        Me.rbBOMASS_ASS.Name = "rbBOMASS_ASS"
-        Me.rbBOMASS_ASS.Size = New System.Drawing.Size(81, 18)
-        Me.rbBOMASS_ASS.TabIndex = 401
-        Me.rbBOMASS_ASS.TabStop = True
-        Me.rbBOMASS_ASS.Text = "Assortment"
-        Me.rbBOMASS_ASS.UseVisualStyleBackColor = True
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(4, 183)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(0, 14)
-        Me.Label40.TabIndex = 19
-        '
-        'dgBOMASS
-        '
-        Me.dgBOMASS.AllowUserToAddRows = False
-        Me.dgBOMASS.AllowUserToDeleteRows = False
-        Me.dgBOMASS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.NullValue = """"""
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgBOMASS.DefaultCellStyle = DataGridViewCellStyle6
-        Me.dgBOMASS.Location = New System.Drawing.Point(6, 33)
-        Me.dgBOMASS.Name = "dgBOMASS"
-        Me.dgBOMASS.RowHeadersWidth = 30
-        Me.dgBOMASS.RowTemplate.Height = 24
-        Me.dgBOMASS.Size = New System.Drawing.Size(933, 202)
-        Me.dgBOMASS.TabIndex = 403
-        '
-        'TabPage5
-        '
-        Me.TabPage5.Controls.Add(Me.PanelCostPrice)
-        Me.TabPage5.Controls.Add(Me.lblPriceStatus)
-        Me.TabPage5.Controls.Add(Me.gbPriceStatus)
-        Me.TabPage5.Controls.Add(Me.lblPricing)
-        Me.TabPage5.Controls.Add(Me.Label89)
-        Me.TabPage5.Controls.Add(Me.txtCstRmk)
-        Me.TabPage5.Controls.Add(Me.TextBox1)
-        Me.TabPage5.Controls.Add(Me.Label45)
-        Me.TabPage5.Controls.Add(Me.Label88)
-        Me.TabPage5.Controls.Add(Me.txtCstExpDat)
-        Me.TabPage5.Controls.Add(Me.Label7)
-        Me.TabPage5.Controls.Add(Me.Label44)
-        Me.TabPage5.Controls.Add(Me.lblCstRmk)
-        Me.TabPage5.Controls.Add(Me.gbPriceView)
-        Me.TabPage5.Controls.Add(Me.dgCostPrice)
-        Me.TabPage5.Location = New System.Drawing.Point(4, 23)
-        Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(942, 498)
-        Me.TabPage5.TabIndex = 4
-        Me.TabPage5.Text = "(5) Cost Price"
-        Me.TabPage5.UseVisualStyleBackColor = True
-        '
         'PanelCostPrice
         '
-        Me.PanelCostPrice.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.PanelCostPrice.BackColor = System.Drawing.Color.SkyBlue
         Me.PanelCostPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PanelCostPrice.Controls.Add(Me.txtPanCPFtyPrcE)
         Me.PanelCostPrice.Controls.Add(Me.txtPanCPMUE)
@@ -3133,9 +2129,9 @@ Public Class IMM00001
         Me.PanelCostPrice.Controls.Add(Me.Label54)
         Me.PanelCostPrice.Controls.Add(Me.lblPanCPPacking)
         Me.PanelCostPrice.Controls.Add(Me.Label52)
-        Me.PanelCostPrice.Location = New System.Drawing.Point(144, 50)
+        Me.PanelCostPrice.Location = New System.Drawing.Point(149, 71)
         Me.PanelCostPrice.Name = "PanelCostPrice"
-        Me.PanelCostPrice.Size = New System.Drawing.Size(553, 295)
+        Me.PanelCostPrice.Size = New System.Drawing.Size(60, 49)
         Me.PanelCostPrice.TabIndex = 89
         Me.PanelCostPrice.Visible = False
         '
@@ -3143,7 +2139,7 @@ Public Class IMM00001
         '
         Me.txtPanCPFtyPrcE.Location = New System.Drawing.Point(134, 228)
         Me.txtPanCPFtyPrcE.Name = "txtPanCPFtyPrcE"
-        Me.txtPanCPFtyPrcE.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPFtyPrcE.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPFtyPrcE.TabIndex = 589
         Me.txtPanCPFtyPrcE.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPanCPFtyPrcE.Visible = False
@@ -3152,7 +2148,7 @@ Public Class IMM00001
         '
         Me.txtPanCPMUE.Location = New System.Drawing.Point(84, 228)
         Me.txtPanCPMUE.Name = "txtPanCPMUE"
-        Me.txtPanCPMUE.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPMUE.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPMUE.TabIndex = 582
         Me.txtPanCPMUE.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPanCPMUE.Visible = False
@@ -3162,7 +2158,7 @@ Public Class IMM00001
         Me.Label100.AutoSize = True
         Me.Label100.Location = New System.Drawing.Point(4, 231)
         Me.Label100.Name = "Label100"
-        Me.Label100.Size = New System.Drawing.Size(13, 14)
+        Me.Label100.Size = New System.Drawing.Size(12, 12)
         Me.Label100.TabIndex = 594
         Me.Label100.Text = "E"
         '
@@ -3170,7 +2166,7 @@ Public Class IMM00001
         '
         Me.txtPanCPFtyCstE.Location = New System.Drawing.Point(34, 228)
         Me.txtPanCPFtyCstE.Name = "txtPanCPFtyCstE"
-        Me.txtPanCPFtyCstE.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPFtyCstE.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPFtyCstE.TabIndex = 575
         Me.txtPanCPFtyCstE.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -3179,7 +2175,7 @@ Public Class IMM00001
         Me.txtPanCPEstPrcRef.Location = New System.Drawing.Point(293, 207)
         Me.txtPanCPEstPrcRef.MaxLength = 50
         Me.txtPanCPEstPrcRef.Name = "txtPanCPEstPrcRef"
-        Me.txtPanCPEstPrcRef.Size = New System.Drawing.Size(105, 20)
+        Me.txtPanCPEstPrcRef.Size = New System.Drawing.Size(105, 22)
         Me.txtPanCPEstPrcRef.TabIndex = 592
         Me.txtPanCPEstPrcRef.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -3188,16 +2184,16 @@ Public Class IMM00001
         Me.Label96.AutoSize = True
         Me.Label96.Location = New System.Drawing.Point(296, 191)
         Me.Label96.Name = "Label96"
-        Me.Label96.Size = New System.Drawing.Size(83, 14)
+        Me.Label96.Size = New System.Drawing.Size(80, 12)
         Me.Label96.TabIndex = 593
         Me.Label96.Text = "Est. Prc Ref No."
         '
         'Label95
         '
         Me.Label95.AutoSize = True
-        Me.Label95.Location = New System.Drawing.Point(296, 145)
+        Me.Label95.Location = New System.Drawing.Point(296, 148)
         Me.Label95.Name = "Label95"
-        Me.Label95.Size = New System.Drawing.Size(44, 14)
+        Me.Label95.Size = New System.Drawing.Size(40, 12)
         Me.Label95.TabIndex = 591
         Me.Label95.Text = "Est. Prc"
         '
@@ -3205,9 +2201,9 @@ Public Class IMM00001
         '
         Me.cboPanCPEstPrcFlg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboPanCPEstPrcFlg.FormattingEnabled = True
-        Me.cboPanCPEstPrcFlg.Location = New System.Drawing.Point(293, 162)
+        Me.cboPanCPEstPrcFlg.Location = New System.Drawing.Point(293, 165)
         Me.cboPanCPEstPrcFlg.Name = "cboPanCPEstPrcFlg"
-        Me.cboPanCPEstPrcFlg.Size = New System.Drawing.Size(61, 22)
+        Me.cboPanCPEstPrcFlg.Size = New System.Drawing.Size(61, 20)
         Me.cboPanCPEstPrcFlg.TabIndex = 590
         '
         'lblOrgConftr
@@ -3215,7 +2211,7 @@ Public Class IMM00001
         Me.lblOrgConftr.AutoSize = True
         Me.lblOrgConftr.Location = New System.Drawing.Point(66, 5)
         Me.lblOrgConftr.Name = "lblOrgConftr"
-        Me.lblOrgConftr.Size = New System.Drawing.Size(65, 14)
+        Me.lblOrgConftr.Size = New System.Drawing.Size(66, 12)
         Me.lblOrgConftr.TabIndex = 589
         Me.lblOrgConftr.Text = "lblOrgConftr"
         Me.lblOrgConftr.Visible = False
@@ -3225,7 +2221,7 @@ Public Class IMM00001
         Me.txtPanCPExpDate.Location = New System.Drawing.Point(482, 190)
         Me.txtPanCPExpDate.Mask = "00/00/0000"
         Me.txtPanCPExpDate.Name = "txtPanCPExpDate"
-        Me.txtPanCPExpDate.Size = New System.Drawing.Size(66, 20)
+        Me.txtPanCPExpDate.Size = New System.Drawing.Size(66, 22)
         Me.txtPanCPExpDate.TabIndex = 567
         '
         'txtPanCPEffDate
@@ -3233,7 +2229,7 @@ Public Class IMM00001
         Me.txtPanCPEffDate.Location = New System.Drawing.Point(482, 167)
         Me.txtPanCPEffDate.Mask = "00/00/0000"
         Me.txtPanCPEffDate.Name = "txtPanCPEffDate"
-        Me.txtPanCPEffDate.Size = New System.Drawing.Size(65, 20)
+        Me.txtPanCPEffDate.Size = New System.Drawing.Size(65, 22)
         Me.txtPanCPEffDate.TabIndex = 566
         '
         'lblOrgTranTerm
@@ -3241,7 +2237,7 @@ Public Class IMM00001
         Me.lblOrgTranTerm.AutoSize = True
         Me.lblOrgTranTerm.Location = New System.Drawing.Point(290, 53)
         Me.lblOrgTranTerm.Name = "lblOrgTranTerm"
-        Me.lblOrgTranTerm.Size = New System.Drawing.Size(70, 14)
+        Me.lblOrgTranTerm.Size = New System.Drawing.Size(70, 12)
         Me.lblOrgTranTerm.TabIndex = 581
         Me.lblOrgTranTerm.Text = "OrgTranTerm"
         Me.lblOrgTranTerm.Visible = False
@@ -3251,7 +2247,7 @@ Public Class IMM00001
         Me.lblOrgHKTerm.AutoSize = True
         Me.lblOrgHKTerm.Location = New System.Drawing.Point(221, 53)
         Me.lblOrgHKTerm.Name = "lblOrgHKTerm"
-        Me.lblOrgHKTerm.Size = New System.Drawing.Size(62, 14)
+        Me.lblOrgHKTerm.Size = New System.Drawing.Size(64, 12)
         Me.lblOrgHKTerm.TabIndex = 580
         Me.lblOrgHKTerm.Text = "OrgHKTerm"
         Me.lblOrgHKTerm.Visible = False
@@ -3261,7 +2257,7 @@ Public Class IMM00001
         Me.lblOrgFtyTerm.AutoSize = True
         Me.lblOrgFtyTerm.Location = New System.Drawing.Point(147, 53)
         Me.lblOrgFtyTerm.Name = "lblOrgFtyTerm"
-        Me.lblOrgFtyTerm.Size = New System.Drawing.Size(63, 14)
+        Me.lblOrgFtyTerm.Size = New System.Drawing.Size(63, 12)
         Me.lblOrgFtyTerm.TabIndex = 579
         Me.lblOrgFtyTerm.Text = "OrgFtyTerm"
         Me.lblOrgFtyTerm.Visible = False
@@ -3271,7 +2267,7 @@ Public Class IMM00001
         Me.lblOrgCus2No.AutoSize = True
         Me.lblOrgCus2No.Location = New System.Drawing.Point(78, 53)
         Me.lblOrgCus2No.Name = "lblOrgCus2No"
-        Me.lblOrgCus2No.Size = New System.Drawing.Size(63, 14)
+        Me.lblOrgCus2No.Size = New System.Drawing.Size(61, 12)
         Me.lblOrgCus2No.TabIndex = 578
         Me.lblOrgCus2No.Text = "OrgCus2No"
         Me.lblOrgCus2No.Visible = False
@@ -3281,7 +2277,7 @@ Public Class IMM00001
         Me.lblOrgCus1No.AutoSize = True
         Me.lblOrgCus1No.Location = New System.Drawing.Point(6, 53)
         Me.lblOrgCus1No.Name = "lblOrgCus1No"
-        Me.lblOrgCus1No.Size = New System.Drawing.Size(63, 14)
+        Me.lblOrgCus1No.Size = New System.Drawing.Size(61, 12)
         Me.lblOrgCus1No.TabIndex = 577
         Me.lblOrgCus1No.Text = "OrgCus1No"
         Me.lblOrgCus1No.Visible = False
@@ -3291,15 +2287,15 @@ Public Class IMM00001
         Me.cboPanCPFmlHK.FormattingEnabled = True
         Me.cboPanCPFmlHK.Location = New System.Drawing.Point(284, 110)
         Me.cboPanCPFmlHK.Name = "cboPanCPFmlHK"
-        Me.cboPanCPFmlHK.Size = New System.Drawing.Size(114, 22)
+        Me.cboPanCPFmlHK.Size = New System.Drawing.Size(111, 20)
         Me.cboPanCPFmlHK.TabIndex = 561
         '
         'lblPanCPFCurcde4
         '
         Me.lblPanCPFCurcde4.AutoSize = True
-        Me.lblPanCPFCurcde4.Location = New System.Drawing.Point(235, 147)
+        Me.lblPanCPFCurcde4.Location = New System.Drawing.Point(239, 148)
         Me.lblPanCPFCurcde4.Name = "lblPanCPFCurcde4"
-        Me.lblPanCPFCurcde4.Size = New System.Drawing.Size(36, 14)
+        Me.lblPanCPFCurcde4.Size = New System.Drawing.Size(37, 12)
         Me.lblPanCPFCurcde4.TabIndex = 575
         Me.lblPanCPFCurcde4.Text = "(HKD)"
         '
@@ -3307,7 +2303,7 @@ Public Class IMM00001
         '
         Me.lblPanCPBCurcde.AutoSize = True
         Me.lblPanCPBCurcde.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPanCPBCurcde.Location = New System.Drawing.Point(499, 93)
+        Me.lblPanCPBCurcde.Location = New System.Drawing.Point(497, 93)
         Me.lblPanCPBCurcde.Name = "lblPanCPBCurcde"
         Me.lblPanCPBCurcde.Size = New System.Drawing.Size(36, 14)
         Me.lblPanCPBCurcde.TabIndex = 574
@@ -3316,18 +2312,18 @@ Public Class IMM00001
         'lblPanCPBCurcde1
         '
         Me.lblPanCPBCurcde1.AutoSize = True
-        Me.lblPanCPBCurcde1.Location = New System.Drawing.Point(450, 93)
+        Me.lblPanCPBCurcde1.Location = New System.Drawing.Point(446, 93)
         Me.lblPanCPBCurcde1.Name = "lblPanCPBCurcde1"
-        Me.lblPanCPBCurcde1.Size = New System.Drawing.Size(36, 14)
+        Me.lblPanCPBCurcde1.Size = New System.Drawing.Size(35, 12)
         Me.lblPanCPBCurcde1.TabIndex = 573
         Me.lblPanCPBCurcde1.Text = "(USD)"
         '
         'lblPanCPBCurcde2
         '
         Me.lblPanCPBCurcde2.AutoSize = True
-        Me.lblPanCPBCurcde2.Location = New System.Drawing.Point(400, 93)
+        Me.lblPanCPBCurcde2.Location = New System.Drawing.Point(396, 93)
         Me.lblPanCPBCurcde2.Name = "lblPanCPBCurcde2"
-        Me.lblPanCPBCurcde2.Size = New System.Drawing.Size(36, 14)
+        Me.lblPanCPBCurcde2.Size = New System.Drawing.Size(35, 12)
         Me.lblPanCPBCurcde2.TabIndex = 572
         Me.lblPanCPBCurcde2.Text = "(USD)"
         '
@@ -3336,7 +2332,7 @@ Public Class IMM00001
         Me.lblPanCPFCurcde3.AutoSize = True
         Me.lblPanCPFCurcde3.Location = New System.Drawing.Point(232, 93)
         Me.lblPanCPFCurcde3.Name = "lblPanCPFCurcde3"
-        Me.lblPanCPFCurcde3.Size = New System.Drawing.Size(36, 14)
+        Me.lblPanCPFCurcde3.Size = New System.Drawing.Size(37, 12)
         Me.lblPanCPFCurcde3.TabIndex = 571
         Me.lblPanCPFCurcde3.Text = "(HKD)"
         '
@@ -3345,7 +2341,7 @@ Public Class IMM00001
         Me.lblPanCPFCurcde2.AutoSize = True
         Me.lblPanCPFCurcde2.Location = New System.Drawing.Point(181, 93)
         Me.lblPanCPFCurcde2.Name = "lblPanCPFCurcde2"
-        Me.lblPanCPFCurcde2.Size = New System.Drawing.Size(36, 14)
+        Me.lblPanCPFCurcde2.Size = New System.Drawing.Size(37, 12)
         Me.lblPanCPFCurcde2.TabIndex = 570
         Me.lblPanCPFCurcde2.Text = "(HKD)"
         '
@@ -3354,7 +2350,7 @@ Public Class IMM00001
         Me.Label83.AutoSize = True
         Me.Label83.Location = New System.Drawing.Point(134, 78)
         Me.Label83.Name = "Label83"
-        Me.Label83.Size = New System.Drawing.Size(38, 14)
+        Me.Label83.Size = New System.Drawing.Size(35, 12)
         Me.Label83.TabIndex = 569
         Me.Label83.Text = "FtyPrc"
         '
@@ -3363,7 +2359,7 @@ Public Class IMM00001
         Me.lblPanCPFCurcde.AutoSize = True
         Me.lblPanCPFCurcde.Location = New System.Drawing.Point(33, 93)
         Me.lblPanCPFCurcde.Name = "lblPanCPFCurcde"
-        Me.lblPanCPFCurcde.Size = New System.Drawing.Size(36, 14)
+        Me.lblPanCPFCurcde.Size = New System.Drawing.Size(37, 12)
         Me.lblPanCPFCurcde.TabIndex = 568
         Me.lblPanCPFCurcde.Text = "(HKD)"
         '
@@ -3372,16 +2368,16 @@ Public Class IMM00001
         Me.txtPanCPNegPrc.Location = New System.Drawing.Point(235, 164)
         Me.txtPanCPNegPrc.Name = "txtPanCPNegPrc"
         Me.txtPanCPNegPrc.ReadOnly = True
-        Me.txtPanCPNegPrc.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPNegPrc.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPNegPrc.TabIndex = 560
         Me.txtPanCPNegPrc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label81
         '
         Me.Label81.AutoSize = True
-        Me.Label81.Location = New System.Drawing.Point(235, 133)
+        Me.Label81.Location = New System.Drawing.Point(239, 134)
         Me.Label81.Name = "Label81"
-        Me.Label81.Size = New System.Drawing.Size(45, 14)
+        Me.Label81.Size = New System.Drawing.Size(42, 12)
         Me.Label81.TabIndex = 566
         Me.Label81.Text = "Neg Prc"
         '
@@ -3390,7 +2386,7 @@ Public Class IMM00001
         Me.Label78.AutoSize = True
         Me.Label78.Location = New System.Drawing.Point(422, 145)
         Me.Label78.Name = "Label78"
-        Me.Label78.Size = New System.Drawing.Size(38, 14)
+        Me.Label78.Size = New System.Drawing.Size(32, 12)
         Me.Label78.TabIndex = 143
         Me.Label78.Text = "Status"
         '
@@ -3399,7 +2395,7 @@ Public Class IMM00001
         Me.cboPanCPStatus.FormattingEnabled = True
         Me.cboPanCPStatus.Location = New System.Drawing.Point(482, 142)
         Me.cboPanCPStatus.Name = "cboPanCPStatus"
-        Me.cboPanCPStatus.Size = New System.Drawing.Size(65, 22)
+        Me.cboPanCPStatus.Size = New System.Drawing.Size(65, 20)
         Me.cboPanCPStatus.TabIndex = 565
         '
         'Label76
@@ -3407,7 +2403,7 @@ Public Class IMM00001
         Me.Label76.AutoSize = True
         Me.Label76.Location = New System.Drawing.Point(177, 8)
         Me.Label76.Name = "Label76"
-        Me.Label76.Size = New System.Drawing.Size(44, 14)
+        Me.Label76.Size = New System.Drawing.Size(42, 12)
         Me.Label76.TabIndex = 141
         Me.Label76.Text = "Pri Cust"
         '
@@ -3416,7 +2412,7 @@ Public Class IMM00001
         Me.Label77.AutoSize = True
         Me.Label77.Location = New System.Drawing.Point(177, 32)
         Me.Label77.Name = "Label77"
-        Me.Label77.Size = New System.Drawing.Size(51, 14)
+        Me.Label77.Size = New System.Drawing.Size(45, 12)
         Me.Label77.TabIndex = 140
         Me.Label77.Text = "Sec Cust"
         '
@@ -3425,7 +2421,7 @@ Public Class IMM00001
         Me.cboPanCPCus1no.FormattingEnabled = True
         Me.cboPanCPCus1no.Location = New System.Drawing.Point(234, 5)
         Me.cboPanCPCus1no.Name = "cboPanCPCus1no"
-        Me.cboPanCPCus1no.Size = New System.Drawing.Size(185, 22)
+        Me.cboPanCPCus1no.Size = New System.Drawing.Size(185, 20)
         Me.cboPanCPCus1no.TabIndex = 550
         '
         'cboPanCPCus2no
@@ -3433,7 +2429,7 @@ Public Class IMM00001
         Me.cboPanCPCus2no.FormattingEnabled = True
         Me.cboPanCPCus2no.Location = New System.Drawing.Point(234, 29)
         Me.cboPanCPCus2no.Name = "cboPanCPCus2no"
-        Me.cboPanCPCus2no.Size = New System.Drawing.Size(185, 22)
+        Me.cboPanCPCus2no.Size = New System.Drawing.Size(185, 20)
         Me.cboPanCPCus2no.TabIndex = 551
         '
         'Label75
@@ -3441,7 +2437,7 @@ Public Class IMM00001
         Me.Label75.AutoSize = True
         Me.Label75.Location = New System.Drawing.Point(425, 10)
         Me.Label75.Name = "Label75"
-        Me.Label75.Size = New System.Drawing.Size(48, 14)
+        Me.Label75.Size = New System.Drawing.Size(48, 12)
         Me.Label75.TabIndex = 137
         Me.Label75.Text = "Fty Term"
         '
@@ -3450,7 +2446,7 @@ Public Class IMM00001
         Me.Label74.AutoSize = True
         Me.Label74.Location = New System.Drawing.Point(425, 32)
         Me.Label74.Name = "Label74"
-        Me.Label74.Size = New System.Drawing.Size(47, 14)
+        Me.Label74.Size = New System.Drawing.Size(49, 12)
         Me.Label74.TabIndex = 136
         Me.Label74.Text = "HK Term"
         '
@@ -3459,7 +2455,7 @@ Public Class IMM00001
         Me.cboPanCPPrcTrmFty.FormattingEnabled = True
         Me.cboPanCPPrcTrmFty.Location = New System.Drawing.Point(483, 5)
         Me.cboPanCPPrcTrmFty.Name = "cboPanCPPrcTrmFty"
-        Me.cboPanCPPrcTrmFty.Size = New System.Drawing.Size(65, 22)
+        Me.cboPanCPPrcTrmFty.Size = New System.Drawing.Size(65, 20)
         Me.cboPanCPPrcTrmFty.TabIndex = 552
         '
         'Label73
@@ -3467,7 +2463,7 @@ Public Class IMM00001
         Me.Label73.AutoSize = True
         Me.Label73.Location = New System.Drawing.Point(423, 56)
         Me.Label73.Name = "Label73"
-        Me.Label73.Size = New System.Drawing.Size(55, 14)
+        Me.Label73.Size = New System.Drawing.Size(55, 12)
         Me.Label73.TabIndex = 134
         Me.Label73.Text = "Tran Term"
         '
@@ -3476,7 +2472,7 @@ Public Class IMM00001
         Me.cboPanCPPrcTrmHK.FormattingEnabled = True
         Me.cboPanCPPrcTrmHK.Location = New System.Drawing.Point(483, 29)
         Me.cboPanCPPrcTrmHK.Name = "cboPanCPPrcTrmHK"
-        Me.cboPanCPPrcTrmHK.Size = New System.Drawing.Size(65, 22)
+        Me.cboPanCPPrcTrmHK.Size = New System.Drawing.Size(65, 20)
         Me.cboPanCPPrcTrmHK.TabIndex = 553
         '
         'cboPanCPTranTrm
@@ -3484,7 +2480,7 @@ Public Class IMM00001
         Me.cboPanCPTranTrm.FormattingEnabled = True
         Me.cboPanCPTranTrm.Location = New System.Drawing.Point(483, 53)
         Me.cboPanCPTranTrm.Name = "cboPanCPTranTrm"
-        Me.cboPanCPTranTrm.Size = New System.Drawing.Size(64, 22)
+        Me.cboPanCPTranTrm.Size = New System.Drawing.Size(64, 20)
         Me.cboPanCPTranTrm.TabIndex = 554
         '
         'Label72
@@ -3492,7 +2488,7 @@ Public Class IMM00001
         Me.Label72.AutoSize = True
         Me.Label72.Location = New System.Drawing.Point(422, 193)
         Me.Label72.Name = "Label72"
-        Me.Label72.Size = New System.Drawing.Size(50, 14)
+        Me.Label72.Size = New System.Drawing.Size(48, 12)
         Me.Label72.TabIndex = 131
         Me.Label72.Text = "Exp Date"
         '
@@ -3501,7 +2497,7 @@ Public Class IMM00001
         Me.Label53.AutoSize = True
         Me.Label53.Location = New System.Drawing.Point(422, 170)
         Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(46, 14)
+        Me.Label53.Size = New System.Drawing.Size(44, 12)
         Me.Label53.TabIndex = 130
         Me.Label53.Text = "Eff Date"
         '
@@ -3530,7 +2526,7 @@ Public Class IMM00001
         Me.cmdPanCPCancel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdPanCPCancel.Location = New System.Drawing.Point(501, 268)
         Me.cmdPanCPCancel.Name = "cmdPanCPCancel"
-        Me.cmdPanCPCancel.Size = New System.Drawing.Size(48, 22)
+        Me.cmdPanCPCancel.Size = New System.Drawing.Size(48, 21)
         Me.cmdPanCPCancel.TabIndex = 570
         Me.cmdPanCPCancel.Text = "&Quit"
         Me.cmdPanCPCancel.UseVisualStyleBackColor = True
@@ -3539,7 +2535,7 @@ Public Class IMM00001
         '
         Me.txtPanCPBasicPrc.Location = New System.Drawing.Point(500, 110)
         Me.txtPanCPBasicPrc.Name = "txtPanCPBasicPrc"
-        Me.txtPanCPBasicPrc.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPBasicPrc.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPBasicPrc.TabIndex = 564
         Me.txtPanCPBasicPrc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -3547,7 +2543,7 @@ Public Class IMM00001
         '
         Me.Label71.AutoSize = True
         Me.Label71.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label71.Location = New System.Drawing.Point(494, 78)
+        Me.Label71.Location = New System.Drawing.Point(494, 77)
         Me.Label71.Name = "Label71"
         Me.Label71.Size = New System.Drawing.Size(57, 14)
         Me.Label71.TabIndex = 47
@@ -3555,35 +2551,35 @@ Public Class IMM00001
         '
         'txtPanCPBOMPrc
         '
-        Me.txtPanCPBOMPrc.Location = New System.Drawing.Point(450, 110)
+        Me.txtPanCPBOMPrc.Location = New System.Drawing.Point(446, 110)
         Me.txtPanCPBOMPrc.Name = "txtPanCPBOMPrc"
-        Me.txtPanCPBOMPrc.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPBOMPrc.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPBOMPrc.TabIndex = 563
         Me.txtPanCPBOMPrc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label70
         '
         Me.Label70.AutoSize = True
-        Me.Label70.Location = New System.Drawing.Point(450, 78)
+        Me.Label70.Location = New System.Drawing.Point(446, 78)
         Me.Label70.Name = "Label70"
-        Me.Label70.Size = New System.Drawing.Size(49, 14)
+        Me.Label70.Size = New System.Drawing.Size(49, 12)
         Me.Label70.TabIndex = 45
         Me.Label70.Text = "BOM Prc"
         '
         'txtPanCPItmPrc
         '
-        Me.txtPanCPItmPrc.Location = New System.Drawing.Point(400, 110)
+        Me.txtPanCPItmPrc.Location = New System.Drawing.Point(396, 110)
         Me.txtPanCPItmPrc.Name = "txtPanCPItmPrc"
-        Me.txtPanCPItmPrc.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPItmPrc.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPItmPrc.TabIndex = 562
         Me.txtPanCPItmPrc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label69
         '
         Me.Label69.AutoSize = True
-        Me.Label69.Location = New System.Drawing.Point(400, 78)
+        Me.Label69.Location = New System.Drawing.Point(396, 78)
         Me.Label69.Name = "Label69"
-        Me.Label69.Size = New System.Drawing.Size(39, 14)
+        Me.Label69.Size = New System.Drawing.Size(39, 12)
         Me.Label69.TabIndex = 43
         Me.Label69.Text = "Itm Prc"
         '
@@ -3591,7 +2587,7 @@ Public Class IMM00001
         '
         Me.txtPanCPAdjPer.Location = New System.Drawing.Point(241, 228)
         Me.txtPanCPAdjPer.Name = "txtPanCPAdjPer"
-        Me.txtPanCPAdjPer.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPAdjPer.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPAdjPer.TabIndex = 561
         Me.txtPanCPAdjPer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPanCPAdjPer.Visible = False
@@ -3599,9 +2595,9 @@ Public Class IMM00001
         'Label68
         '
         Me.Label68.AutoSize = True
-        Me.Label68.Location = New System.Drawing.Point(246, 211)
+        Me.Label68.Location = New System.Drawing.Point(246, 213)
         Me.Label68.Name = "Label68"
-        Me.Label68.Size = New System.Drawing.Size(36, 14)
+        Me.Label68.Size = New System.Drawing.Size(34, 12)
         Me.Label68.TabIndex = 41
         Me.Label68.Text = "Adj %"
         Me.Label68.Visible = False
@@ -3611,7 +2607,7 @@ Public Class IMM00001
         Me.Label67.AutoSize = True
         Me.Label67.Location = New System.Drawing.Point(286, 93)
         Me.Label67.Name = "Label67"
-        Me.Label67.Size = New System.Drawing.Size(45, 14)
+        Me.Label67.Size = New System.Drawing.Size(44, 12)
         Me.Label67.TabIndex = 39
         Me.Label67.Text = "Formula"
         '
@@ -3619,7 +2615,7 @@ Public Class IMM00001
         '
         Me.txtPanCPNegCst.Location = New System.Drawing.Point(191, 228)
         Me.txtPanCPNegCst.Name = "txtPanCPNegCst"
-        Me.txtPanCPNegCst.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPNegCst.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPNegCst.TabIndex = 560
         Me.txtPanCPNegCst.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPanCPNegCst.Visible = False
@@ -3629,7 +2625,7 @@ Public Class IMM00001
         Me.Label66.AutoSize = True
         Me.Label66.Location = New System.Drawing.Point(191, 213)
         Me.Label66.Name = "Label66"
-        Me.Label66.Size = New System.Drawing.Size(45, 14)
+        Me.Label66.Size = New System.Drawing.Size(42, 12)
         Me.Label66.TabIndex = 37
         Me.Label66.Text = "Neg Cst"
         Me.Label66.Visible = False
@@ -3638,7 +2634,7 @@ Public Class IMM00001
         '
         Me.txtPanCPTtlCst.Location = New System.Drawing.Point(234, 110)
         Me.txtPanCPTtlCst.Name = "txtPanCPTtlCst"
-        Me.txtPanCPTtlCst.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPTtlCst.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPTtlCst.TabIndex = 559
         Me.txtPanCPTtlCst.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -3647,7 +2643,7 @@ Public Class IMM00001
         Me.Label65.AutoSize = True
         Me.Label65.Location = New System.Drawing.Point(232, 78)
         Me.Label65.Name = "Label65"
-        Me.Label65.Size = New System.Drawing.Size(37, 14)
+        Me.Label65.Size = New System.Drawing.Size(36, 12)
         Me.Label65.TabIndex = 35
         Me.Label65.Text = "Ttl Cst"
         '
@@ -3655,7 +2651,7 @@ Public Class IMM00001
         '
         Me.txtPanCPBOMCst.Location = New System.Drawing.Point(184, 110)
         Me.txtPanCPBOMCst.Name = "txtPanCPBOMCst"
-        Me.txtPanCPBOMCst.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPBOMCst.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPBOMCst.TabIndex = 558
         Me.txtPanCPBOMCst.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -3664,7 +2660,7 @@ Public Class IMM00001
         Me.Label64.AutoSize = True
         Me.Label64.Location = New System.Drawing.Point(181, 78)
         Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(49, 14)
+        Me.Label64.Size = New System.Drawing.Size(49, 12)
         Me.Label64.TabIndex = 33
         Me.Label64.Text = "BOM Cst"
         '
@@ -3672,7 +2668,7 @@ Public Class IMM00001
         '
         Me.txtPanCPFtyPrcPack.Location = New System.Drawing.Point(134, 270)
         Me.txtPanCPFtyPrcPack.Name = "txtPanCPFtyPrcPack"
-        Me.txtPanCPFtyPrcPack.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPFtyPrcPack.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPFtyPrcPack.TabIndex = 591
         Me.txtPanCPFtyPrcPack.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPanCPFtyPrcPack.Visible = False
@@ -3681,7 +2677,7 @@ Public Class IMM00001
         '
         Me.txtPanCPFtyPrcTran.Location = New System.Drawing.Point(134, 249)
         Me.txtPanCPFtyPrcTran.Name = "txtPanCPFtyPrcTran"
-        Me.txtPanCPFtyPrcTran.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPFtyPrcTran.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPFtyPrcTran.TabIndex = 590
         Me.txtPanCPFtyPrcTran.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPanCPFtyPrcTran.Visible = False
@@ -3690,7 +2686,7 @@ Public Class IMM00001
         '
         Me.txtPanCPFtyPrcD.Location = New System.Drawing.Point(134, 207)
         Me.txtPanCPFtyPrcD.Name = "txtPanCPFtyPrcD"
-        Me.txtPanCPFtyPrcD.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPFtyPrcD.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPFtyPrcD.TabIndex = 588
         Me.txtPanCPFtyPrcD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPanCPFtyPrcD.Visible = False
@@ -3699,7 +2695,7 @@ Public Class IMM00001
         '
         Me.txtPanCPFtyPrcC.Location = New System.Drawing.Point(134, 186)
         Me.txtPanCPFtyPrcC.Name = "txtPanCPFtyPrcC"
-        Me.txtPanCPFtyPrcC.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPFtyPrcC.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPFtyPrcC.TabIndex = 587
         Me.txtPanCPFtyPrcC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPanCPFtyPrcC.Visible = False
@@ -3708,7 +2704,7 @@ Public Class IMM00001
         '
         Me.txtPanCPFtyPrcB.Location = New System.Drawing.Point(134, 165)
         Me.txtPanCPFtyPrcB.Name = "txtPanCPFtyPrcB"
-        Me.txtPanCPFtyPrcB.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPFtyPrcB.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPFtyPrcB.TabIndex = 586
         Me.txtPanCPFtyPrcB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPanCPFtyPrcB.Visible = False
@@ -3717,7 +2713,7 @@ Public Class IMM00001
         '
         Me.txtPanCPFtyPrcA.Location = New System.Drawing.Point(134, 144)
         Me.txtPanCPFtyPrcA.Name = "txtPanCPFtyPrcA"
-        Me.txtPanCPFtyPrcA.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPFtyPrcA.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPFtyPrcA.TabIndex = 585
         Me.txtPanCPFtyPrcA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPanCPFtyPrcA.Visible = False
@@ -3726,7 +2722,7 @@ Public Class IMM00001
         '
         Me.txtPanCPFtyPrc.Location = New System.Drawing.Point(134, 110)
         Me.txtPanCPFtyPrc.Name = "txtPanCPFtyPrc"
-        Me.txtPanCPFtyPrc.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPFtyPrc.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPFtyPrc.TabIndex = 557
         Me.txtPanCPFtyPrc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -3735,7 +2731,7 @@ Public Class IMM00001
         Me.lblPanCPFCurcde1.AutoSize = True
         Me.lblPanCPFCurcde1.Location = New System.Drawing.Point(134, 93)
         Me.lblPanCPFCurcde1.Name = "lblPanCPFCurcde1"
-        Me.lblPanCPFCurcde1.Size = New System.Drawing.Size(36, 14)
+        Me.lblPanCPFCurcde1.Size = New System.Drawing.Size(37, 12)
         Me.lblPanCPFCurcde1.TabIndex = 25
         Me.lblPanCPFCurcde1.Text = "(HKD)"
         '
@@ -3743,7 +2739,7 @@ Public Class IMM00001
         '
         Me.txtPanCPMUPack.Location = New System.Drawing.Point(84, 270)
         Me.txtPanCPMUPack.Name = "txtPanCPMUPack"
-        Me.txtPanCPMUPack.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPMUPack.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPMUPack.TabIndex = 584
         Me.txtPanCPMUPack.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPanCPMUPack.Visible = False
@@ -3752,7 +2748,7 @@ Public Class IMM00001
         '
         Me.txtPanCPMUTran.Location = New System.Drawing.Point(84, 249)
         Me.txtPanCPMUTran.Name = "txtPanCPMUTran"
-        Me.txtPanCPMUTran.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPMUTran.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPMUTran.TabIndex = 583
         Me.txtPanCPMUTran.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPanCPMUTran.Visible = False
@@ -3761,7 +2757,7 @@ Public Class IMM00001
         '
         Me.txtPanCPMUD.Location = New System.Drawing.Point(84, 207)
         Me.txtPanCPMUD.Name = "txtPanCPMUD"
-        Me.txtPanCPMUD.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPMUD.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPMUD.TabIndex = 581
         Me.txtPanCPMUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPanCPMUD.Visible = False
@@ -3770,7 +2766,7 @@ Public Class IMM00001
         '
         Me.txtPanCPMUC.Location = New System.Drawing.Point(84, 186)
         Me.txtPanCPMUC.Name = "txtPanCPMUC"
-        Me.txtPanCPMUC.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPMUC.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPMUC.TabIndex = 580
         Me.txtPanCPMUC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPanCPMUC.Visible = False
@@ -3779,7 +2775,7 @@ Public Class IMM00001
         '
         Me.txtPanCPMUB.Location = New System.Drawing.Point(84, 165)
         Me.txtPanCPMUB.Name = "txtPanCPMUB"
-        Me.txtPanCPMUB.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPMUB.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPMUB.TabIndex = 579
         Me.txtPanCPMUB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPanCPMUB.Visible = False
@@ -3788,7 +2784,7 @@ Public Class IMM00001
         '
         Me.txtPanCPMUA.Location = New System.Drawing.Point(84, 144)
         Me.txtPanCPMUA.Name = "txtPanCPMUA"
-        Me.txtPanCPMUA.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPMUA.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPMUA.TabIndex = 578
         Me.txtPanCPMUA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPanCPMUA.Visible = False
@@ -3797,7 +2793,7 @@ Public Class IMM00001
         '
         Me.txtPanCPMU.Location = New System.Drawing.Point(84, 110)
         Me.txtPanCPMU.Name = "txtPanCPMU"
-        Me.txtPanCPMU.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPMU.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPMU.TabIndex = 556
         Me.txtPanCPMU.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -3806,7 +2802,7 @@ Public Class IMM00001
         Me.Label62.AutoSize = True
         Me.Label62.Location = New System.Drawing.Point(84, 93)
         Me.Label62.Name = "Label62"
-        Me.Label62.Size = New System.Drawing.Size(35, 14)
+        Me.Label62.Size = New System.Drawing.Size(35, 12)
         Me.Label62.TabIndex = 17
         Me.Label62.Text = "MU %"
         '
@@ -3815,7 +2811,7 @@ Public Class IMM00001
         Me.Label61.AutoSize = True
         Me.Label61.Location = New System.Drawing.Point(4, 273)
         Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(30, 14)
+        Me.Label61.Size = New System.Drawing.Size(27, 12)
         Me.Label61.TabIndex = 16
         Me.Label61.Text = "Pack"
         '
@@ -3824,7 +2820,7 @@ Public Class IMM00001
         Me.Label60.AutoSize = True
         Me.Label60.Location = New System.Drawing.Point(4, 252)
         Me.Label60.Name = "Label60"
-        Me.Label60.Size = New System.Drawing.Size(29, 14)
+        Me.Label60.Size = New System.Drawing.Size(27, 12)
         Me.Label60.TabIndex = 15
         Me.Label60.Text = "Tran"
         '
@@ -3833,7 +2829,7 @@ Public Class IMM00001
         Me.Label59.AutoSize = True
         Me.Label59.Location = New System.Drawing.Point(4, 210)
         Me.Label59.Name = "Label59"
-        Me.Label59.Size = New System.Drawing.Size(14, 14)
+        Me.Label59.Size = New System.Drawing.Size(13, 12)
         Me.Label59.TabIndex = 14
         Me.Label59.Text = "D"
         '
@@ -3842,7 +2838,7 @@ Public Class IMM00001
         Me.Label58.AutoSize = True
         Me.Label58.Location = New System.Drawing.Point(4, 189)
         Me.Label58.Name = "Label58"
-        Me.Label58.Size = New System.Drawing.Size(14, 14)
+        Me.Label58.Size = New System.Drawing.Size(13, 12)
         Me.Label58.TabIndex = 13
         Me.Label58.Text = "C"
         '
@@ -3851,7 +2847,7 @@ Public Class IMM00001
         Me.Label57.AutoSize = True
         Me.Label57.Location = New System.Drawing.Point(4, 168)
         Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(14, 14)
+        Me.Label57.Size = New System.Drawing.Size(13, 12)
         Me.Label57.TabIndex = 12
         Me.Label57.Text = "B"
         '
@@ -3860,7 +2856,7 @@ Public Class IMM00001
         Me.Label56.AutoSize = True
         Me.Label56.Location = New System.Drawing.Point(4, 147)
         Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(15, 14)
+        Me.Label56.Size = New System.Drawing.Size(13, 12)
         Me.Label56.TabIndex = 11
         Me.Label56.Text = "A"
         '
@@ -3868,7 +2864,7 @@ Public Class IMM00001
         '
         Me.txtPanCPFtyCstPack.Location = New System.Drawing.Point(34, 270)
         Me.txtPanCPFtyCstPack.Name = "txtPanCPFtyCstPack"
-        Me.txtPanCPFtyCstPack.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPFtyCstPack.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPFtyCstPack.TabIndex = 577
         Me.txtPanCPFtyCstPack.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -3876,7 +2872,7 @@ Public Class IMM00001
         '
         Me.txtPanCPFtyCstTran.Location = New System.Drawing.Point(34, 249)
         Me.txtPanCPFtyCstTran.Name = "txtPanCPFtyCstTran"
-        Me.txtPanCPFtyCstTran.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPFtyCstTran.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPFtyCstTran.TabIndex = 576
         Me.txtPanCPFtyCstTran.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -3884,7 +2880,7 @@ Public Class IMM00001
         '
         Me.txtPanCPFtyCstD.Location = New System.Drawing.Point(34, 207)
         Me.txtPanCPFtyCstD.Name = "txtPanCPFtyCstD"
-        Me.txtPanCPFtyCstD.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPFtyCstD.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPFtyCstD.TabIndex = 574
         Me.txtPanCPFtyCstD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -3892,7 +2888,7 @@ Public Class IMM00001
         '
         Me.txtPanCPFtyCstC.Location = New System.Drawing.Point(34, 186)
         Me.txtPanCPFtyCstC.Name = "txtPanCPFtyCstC"
-        Me.txtPanCPFtyCstC.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPFtyCstC.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPFtyCstC.TabIndex = 573
         Me.txtPanCPFtyCstC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -3900,7 +2896,7 @@ Public Class IMM00001
         '
         Me.txtPanCPFtyCstB.Location = New System.Drawing.Point(34, 165)
         Me.txtPanCPFtyCstB.Name = "txtPanCPFtyCstB"
-        Me.txtPanCPFtyCstB.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPFtyCstB.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPFtyCstB.TabIndex = 572
         Me.txtPanCPFtyCstB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -3908,7 +2904,7 @@ Public Class IMM00001
         '
         Me.txtPanCPFtyCstA.Location = New System.Drawing.Point(34, 144)
         Me.txtPanCPFtyCstA.Name = "txtPanCPFtyCstA"
-        Me.txtPanCPFtyCstA.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPFtyCstA.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPFtyCstA.TabIndex = 571
         Me.txtPanCPFtyCstA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -3916,7 +2912,7 @@ Public Class IMM00001
         '
         Me.txtPanCPFtyCst.Location = New System.Drawing.Point(34, 110)
         Me.txtPanCPFtyCst.Name = "txtPanCPFtyCst"
-        Me.txtPanCPFtyCst.Size = New System.Drawing.Size(49, 20)
+        Me.txtPanCPFtyCst.Size = New System.Drawing.Size(49, 22)
         Me.txtPanCPFtyCst.TabIndex = 555
         Me.txtPanCPFtyCst.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -3925,7 +2921,7 @@ Public Class IMM00001
         Me.Label55.AutoSize = True
         Me.Label55.Location = New System.Drawing.Point(4, 113)
         Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(18, 14)
+        Me.Label55.Size = New System.Drawing.Size(18, 12)
         Me.Label55.TabIndex = 3
         Me.Label55.Text = "Ttl"
         '
@@ -3934,7 +2930,7 @@ Public Class IMM00001
         Me.Label54.AutoSize = True
         Me.Label54.Location = New System.Drawing.Point(33, 78)
         Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(38, 14)
+        Me.Label54.Size = New System.Drawing.Size(35, 12)
         Me.Label54.TabIndex = 2
         Me.Label54.Text = "FtyCst"
         '
@@ -3958,283 +2954,9 @@ Public Class IMM00001
         Me.Label52.TabIndex = 0
         Me.Label52.Text = "Packing :"
         '
-        'lblPriceStatus
-        '
-        Me.lblPriceStatus.AutoSize = True
-        Me.lblPriceStatus.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPriceStatus.Location = New System.Drawing.Point(654, 13)
-        Me.lblPriceStatus.Name = "lblPriceStatus"
-        Me.lblPriceStatus.Size = New System.Drawing.Size(73, 14)
-        Me.lblPriceStatus.TabIndex = 88
-        Me.lblPriceStatus.Text = "Pricing Status"
-        '
-        'gbPriceStatus
-        '
-        Me.gbPriceStatus.Controls.Add(Me.rbPriceStatus_NA)
-        Me.gbPriceStatus.Controls.Add(Me.rbPriceStatus_INA)
-        Me.gbPriceStatus.Controls.Add(Me.rbPriceStatus_ACT)
-        Me.gbPriceStatus.Controls.Add(Me.rbPriceStatus_All)
-        Me.gbPriceStatus.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbPriceStatus.Location = New System.Drawing.Point(733, 0)
-        Me.gbPriceStatus.Name = "gbPriceStatus"
-        Me.gbPriceStatus.Size = New System.Drawing.Size(196, 35)
-        Me.gbPriceStatus.TabIndex = 87
-        Me.gbPriceStatus.TabStop = False
-        '
-        'rbPriceStatus_NA
-        '
-        Me.rbPriceStatus_NA.AutoSize = True
-        Me.rbPriceStatus_NA.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbPriceStatus_NA.Location = New System.Drawing.Point(148, 11)
-        Me.rbPriceStatus_NA.Name = "rbPriceStatus_NA"
-        Me.rbPriceStatus_NA.Size = New System.Drawing.Size(45, 18)
-        Me.rbPriceStatus_NA.TabIndex = 507
-        Me.rbPriceStatus_NA.Text = "TBC"
-        Me.rbPriceStatus_NA.UseVisualStyleBackColor = True
-        '
-        'rbPriceStatus_INA
-        '
-        Me.rbPriceStatus_INA.AutoSize = True
-        Me.rbPriceStatus_INA.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbPriceStatus_INA.Location = New System.Drawing.Point(101, 11)
-        Me.rbPriceStatus_INA.Name = "rbPriceStatus_INA"
-        Me.rbPriceStatus_INA.Size = New System.Drawing.Size(42, 18)
-        Me.rbPriceStatus_INA.TabIndex = 506
-        Me.rbPriceStatus_INA.Text = "INA"
-        Me.rbPriceStatus_INA.UseVisualStyleBackColor = True
-        '
-        'rbPriceStatus_ACT
-        '
-        Me.rbPriceStatus_ACT.AutoSize = True
-        Me.rbPriceStatus_ACT.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbPriceStatus_ACT.Location = New System.Drawing.Point(49, 11)
-        Me.rbPriceStatus_ACT.Name = "rbPriceStatus_ACT"
-        Me.rbPriceStatus_ACT.Size = New System.Drawing.Size(46, 18)
-        Me.rbPriceStatus_ACT.TabIndex = 505
-        Me.rbPriceStatus_ACT.Text = "ACT"
-        Me.rbPriceStatus_ACT.UseVisualStyleBackColor = True
-        '
-        'rbPriceStatus_All
-        '
-        Me.rbPriceStatus_All.AutoSize = True
-        Me.rbPriceStatus_All.Checked = True
-        Me.rbPriceStatus_All.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbPriceStatus_All.Location = New System.Drawing.Point(6, 11)
-        Me.rbPriceStatus_All.Name = "rbPriceStatus_All"
-        Me.rbPriceStatus_All.Size = New System.Drawing.Size(37, 18)
-        Me.rbPriceStatus_All.TabIndex = 504
-        Me.rbPriceStatus_All.TabStop = True
-        Me.rbPriceStatus_All.Text = "All"
-        Me.rbPriceStatus_All.UseVisualStyleBackColor = True
-        '
-        'lblPricing
-        '
-        Me.lblPricing.AutoSize = True
-        Me.lblPricing.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPricing.Location = New System.Drawing.Point(6, 13)
-        Me.lblPricing.Name = "lblPricing"
-        Me.lblPricing.Size = New System.Drawing.Size(61, 14)
-        Me.lblPricing.TabIndex = 86
-        Me.lblPricing.Text = "Item Pricing"
-        '
-        'Label89
-        '
-        Me.Label89.AutoSize = True
-        Me.Label89.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label89.Location = New System.Drawing.Point(846, 452)
-        Me.Label89.Name = "Label89"
-        Me.Label89.Size = New System.Drawing.Size(83, 14)
-        Me.Label89.TabIndex = 84
-        Me.Label89.Text = "(MM/DD/YYYY)"
-        Me.Label89.Visible = False
-        '
-        'txtCstRmk
-        '
-        Me.txtCstRmk.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCstRmk.Location = New System.Drawing.Point(80, 409)
-        Me.txtCstRmk.MaxLength = 2000
-        Me.txtCstRmk.Name = "txtCstRmk"
-        Me.txtCstRmk.Size = New System.Drawing.Size(756, 82)
-        Me.txtCstRmk.TabIndex = 509
-        Me.txtCstRmk.Text = ""
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(845, 429)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(68, 20)
-        Me.TextBox1.TabIndex = 83
-        Me.TextBox1.Text = "__/__/____"
-        Me.TextBox1.Visible = False
-        '
-        'Label45
-        '
-        Me.Label45.AutoSize = True
-        Me.Label45.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.Location = New System.Drawing.Point(846, 452)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(83, 14)
-        Me.Label45.TabIndex = 84
-        Me.Label45.Text = "(MM/DD/YYYY)"
-        Me.Label45.Visible = False
-        '
-        'Label88
-        '
-        Me.Label88.AutoSize = True
-        Me.Label88.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label88.Location = New System.Drawing.Point(842, 409)
-        Me.Label88.Name = "Label88"
-        Me.Label88.Size = New System.Drawing.Size(93, 14)
-        Me.Label88.TabIndex = 82
-        Me.Label88.Text = "Cost Expiry Date :"
-        Me.Label88.Visible = False
-        '
-        'txtCstExpDat
-        '
-        Me.txtCstExpDat.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCstExpDat.Location = New System.Drawing.Point(845, 429)
-        Me.txtCstExpDat.Name = "txtCstExpDat"
-        Me.txtCstExpDat.Size = New System.Drawing.Size(68, 20)
-        Me.txtCstExpDat.TabIndex = 83
-        Me.txtCstExpDat.Text = "__/__/____"
-        Me.txtCstExpDat.Visible = False
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(2, 414)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(80, 14)
-        Me.Label7.TabIndex = 81
-        Me.Label7.Text = "Cost Remarks :"
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(842, 409)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(93, 14)
-        Me.Label44.TabIndex = 82
-        Me.Label44.Text = "Cost Expiry Date :"
-        Me.Label44.Visible = False
-        '
-        'lblCstRmk
-        '
-        Me.lblCstRmk.AutoSize = True
-        Me.lblCstRmk.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCstRmk.Location = New System.Drawing.Point(0, 414)
-        Me.lblCstRmk.Name = "lblCstRmk"
-        Me.lblCstRmk.Size = New System.Drawing.Size(80, 14)
-        Me.lblCstRmk.TabIndex = 81
-        Me.lblCstRmk.Text = "Cost Remarks :"
-        '
-        'gbPriceView
-        '
-        Me.gbPriceView.Controls.Add(Me.rbPriceView_P)
-        Me.gbPriceView.Controls.Add(Me.rbPriceView_F)
-        Me.gbPriceView.Controls.Add(Me.rbPriceView_S)
-        Me.gbPriceView.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbPriceView.Location = New System.Drawing.Point(96, 0)
-        Me.gbPriceView.Name = "gbPriceView"
-        Me.gbPriceView.Size = New System.Drawing.Size(213, 35)
-        Me.gbPriceView.TabIndex = 57
-        Me.gbPriceView.TabStop = False
-        '
-        'rbPriceView_P
-        '
-        Me.rbPriceView_P.AutoSize = True
-        Me.rbPriceView_P.Checked = True
-        Me.rbPriceView_P.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbPriceView_P.Location = New System.Drawing.Point(128, 11)
-        Me.rbPriceView_P.Name = "rbPriceView_P"
-        Me.rbPriceView_P.Size = New System.Drawing.Size(74, 18)
-        Me.rbPriceView_P.TabIndex = 503
-        Me.rbPriceView_P.TabStop = True
-        Me.rbPriceView_P.Text = "Price Only"
-        Me.rbPriceView_P.UseVisualStyleBackColor = True
-        '
-        'rbPriceView_F
-        '
-        Me.rbPriceView_F.AutoSize = True
-        Me.rbPriceView_F.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbPriceView_F.Location = New System.Drawing.Point(81, 11)
-        Me.rbPriceView_F.Name = "rbPriceView_F"
-        Me.rbPriceView_F.Size = New System.Drawing.Size(41, 18)
-        Me.rbPriceView_F.TabIndex = 502
-        Me.rbPriceView_F.Text = "Full"
-        Me.rbPriceView_F.UseVisualStyleBackColor = True
-        '
-        'rbPriceView_S
-        '
-        Me.rbPriceView_S.AutoSize = True
-        Me.rbPriceView_S.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbPriceView_S.Location = New System.Drawing.Point(6, 11)
-        Me.rbPriceView_S.Name = "rbPriceView_S"
-        Me.rbPriceView_S.Size = New System.Drawing.Size(69, 18)
-        Me.rbPriceView_S.TabIndex = 501
-        Me.rbPriceView_S.Text = "Standard"
-        Me.rbPriceView_S.UseVisualStyleBackColor = True
-        '
-        'dgCostPrice
-        '
-        Me.dgCostPrice.AllowUserToAddRows = False
-        Me.dgCostPrice.AllowUserToDeleteRows = False
-        Me.dgCostPrice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle7.NullValue = """"""
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgCostPrice.DefaultCellStyle = DataGridViewCellStyle7
-        Me.dgCostPrice.Location = New System.Drawing.Point(3, 41)
-        Me.dgCostPrice.Name = "dgCostPrice"
-        Me.dgCostPrice.RowHeadersWidth = 30
-        Me.dgCostPrice.RowTemplate.Height = 24
-        Me.dgCostPrice.Size = New System.Drawing.Size(932, 362)
-        Me.dgCostPrice.TabIndex = 508
-        '
-        'TabPage6
-        '
-        Me.TabPage6.Controls.Add(Me.PanelMOQMOA)
-        Me.TabPage6.Controls.Add(Me.dgTempItem)
-        Me.TabPage6.Controls.Add(Me.Label84)
-        Me.TabPage6.Controls.Add(Me.txtHstuEURDuty)
-        Me.TabPage6.Controls.Add(Me.txtHstuUSADuty)
-        Me.TabPage6.Controls.Add(Me.Label5)
-        Me.TabPage6.Controls.Add(Me.Label4)
-        Me.TabPage6.Controls.Add(Me.Label3)
-        Me.TabPage6.Controls.Add(Me.Label2)
-        Me.TabPage6.Controls.Add(Me.cboHstuUSA)
-        Me.TabPage6.Controls.Add(Me.cboHstuEur)
-        Me.TabPage6.Controls.Add(Me.cboConstrMethod)
-        Me.TabPage6.Controls.Add(Me.Label1)
-        Me.TabPage6.Controls.Add(Me.txtAlsitmcol)
-        Me.TabPage6.Controls.Add(Me.Label14)
-        Me.TabPage6.Controls.Add(Me.txtAlsitmno)
-        Me.TabPage6.Controls.Add(Me.gbAddreq)
-        Me.TabPage6.Controls.Add(Me.gbMOQMOA)
-        Me.TabPage6.Controls.Add(Me.lblCusStyle)
-        Me.TabPage6.Controls.Add(Me.dgCusStyle)
-        Me.TabPage6.Controls.Add(Me.lblExclCustomer)
-        Me.TabPage6.Controls.Add(Me.dgExclCustomer)
-        Me.TabPage6.Controls.Add(Me.lblMatBreakdown)
-        Me.TabPage6.Controls.Add(Me.dgMatBreakdown)
-        Me.TabPage6.Location = New System.Drawing.Point(4, 23)
-        Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(942, 498)
-        Me.TabPage6.TabIndex = 5
-        Me.TabPage6.Text = "(6) Additional Info"
-        Me.TabPage6.UseVisualStyleBackColor = True
-        '
         'PanelMOQMOA
         '
-        Me.PanelMOQMOA.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.PanelMOQMOA.BackColor = System.Drawing.Color.SkyBlue
         Me.PanelMOQMOA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PanelMOQMOA.Controls.Add(Me.cmdPanMMInsert)
         Me.PanelMOQMOA.Controls.Add(Me.cmdPanMMUpdate)
@@ -4252,9 +2974,9 @@ Public Class IMM00001
         Me.PanelMOQMOA.Controls.Add(Me.cboPanMMCus2no)
         Me.PanelMOQMOA.Controls.Add(Me.Label91)
         Me.PanelMOQMOA.Controls.Add(Me.Label90)
-        Me.PanelMOQMOA.Location = New System.Drawing.Point(463, 45)
+        Me.PanelMOQMOA.Location = New System.Drawing.Point(197, 64)
         Me.PanelMOQMOA.Name = "PanelMOQMOA"
-        Me.PanelMOQMOA.Size = New System.Drawing.Size(409, 162)
+        Me.PanelMOQMOA.Size = New System.Drawing.Size(42, 35)
         Me.PanelMOQMOA.TabIndex = 623
         Me.PanelMOQMOA.Visible = False
         '
@@ -4283,7 +3005,7 @@ Public Class IMM00001
         Me.cmdPanMMCancel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdPanMMCancel.Location = New System.Drawing.Point(351, 130)
         Me.cmdPanMMCancel.Name = "cmdPanMMCancel"
-        Me.cmdPanMMCancel.Size = New System.Drawing.Size(48, 22)
+        Me.cmdPanMMCancel.Size = New System.Drawing.Size(48, 21)
         Me.cmdPanMMCancel.TabIndex = 620
         Me.cmdPanMMCancel.Text = "&Quit"
         Me.cmdPanMMCancel.UseVisualStyleBackColor = True
@@ -4371,7 +3093,7 @@ Public Class IMM00001
         Me.rbPanMMTirtyp_Company.AutoSize = True
         Me.rbPanMMTirtyp_Company.Location = New System.Drawing.Point(276, 35)
         Me.rbPanMMTirtyp_Company.Name = "rbPanMMTirtyp_Company"
-        Me.rbPanMMTirtyp_Company.Size = New System.Drawing.Size(110, 18)
+        Me.rbPanMMTirtyp_Company.Size = New System.Drawing.Size(109, 16)
         Me.rbPanMMTirtyp_Company.TabIndex = 608
         Me.rbPanMMTirtyp_Company.Text = "Company Defined"
         Me.rbPanMMTirtyp_Company.UseVisualStyleBackColor = True
@@ -4382,7 +3104,7 @@ Public Class IMM00001
         Me.rbPanMMTirtyp_Standard.Checked = True
         Me.rbPanMMTirtyp_Standard.Location = New System.Drawing.Point(276, 14)
         Me.rbPanMMTirtyp_Standard.Name = "rbPanMMTirtyp_Standard"
-        Me.rbPanMMTirtyp_Standard.Size = New System.Drawing.Size(90, 18)
+        Me.rbPanMMTirtyp_Standard.Size = New System.Drawing.Size(86, 16)
         Me.rbPanMMTirtyp_Standard.TabIndex = 607
         Me.rbPanMMTirtyp_Standard.TabStop = True
         Me.rbPanMMTirtyp_Standard.Text = "Standard Tier"
@@ -4395,7 +3117,7 @@ Public Class IMM00001
         Me.cboPanMMCus1no.FormattingEnabled = True
         Me.cboPanMMCus1no.Location = New System.Drawing.Point(74, 10)
         Me.cboPanMMCus1no.Name = "cboPanMMCus1no"
-        Me.cboPanMMCus1no.Size = New System.Drawing.Size(185, 22)
+        Me.cboPanMMCus1no.Size = New System.Drawing.Size(185, 20)
         Me.cboPanMMCus1no.TabIndex = 552
         '
         'cboPanMMCus2no
@@ -4405,7 +3127,7 @@ Public Class IMM00001
         Me.cboPanMMCus2no.FormattingEnabled = True
         Me.cboPanMMCus2no.Location = New System.Drawing.Point(74, 34)
         Me.cboPanMMCus2no.Name = "cboPanMMCus2no"
-        Me.cboPanMMCus2no.Size = New System.Drawing.Size(185, 22)
+        Me.cboPanMMCus2no.Size = New System.Drawing.Size(185, 20)
         Me.cboPanMMCus2no.TabIndex = 553
         '
         'Label91
@@ -4413,7 +3135,7 @@ Public Class IMM00001
         Me.Label91.AutoSize = True
         Me.Label91.Location = New System.Drawing.Point(17, 37)
         Me.Label91.Name = "Label91"
-        Me.Label91.Size = New System.Drawing.Size(51, 14)
+        Me.Label91.Size = New System.Drawing.Size(45, 12)
         Me.Label91.TabIndex = 1
         Me.Label91.Text = "Sec Cust"
         '
@@ -4422,220 +3144,1396 @@ Public Class IMM00001
         Me.Label90.AutoSize = True
         Me.Label90.Location = New System.Drawing.Point(17, 13)
         Me.Label90.Name = "Label90"
-        Me.Label90.Size = New System.Drawing.Size(44, 14)
+        Me.Label90.Size = New System.Drawing.Size(42, 12)
         Me.Label90.TabIndex = 0
         Me.Label90.Text = "Pri Cust"
         '
-        'dgTempItem
+        'cmdBrowse
         '
-        Me.dgTempItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.cmdBrowse.Image = CType(resources.GetObject("cmdBrowse.Image"), System.Drawing.Image)
+        Me.cmdBrowse.Location = New System.Drawing.Point(203, 24)
+        Me.cmdBrowse.Name = "cmdBrowse"
+        Me.cmdBrowse.Size = New System.Drawing.Size(25, 25)
+        Me.cmdBrowse.TabIndex = 208
+        Me.cmdBrowse.UseVisualStyleBackColor = True
+        '
+        'cmdMapping
+        '
+        Me.cmdMapping.Image = CType(resources.GetObject("cmdMapping.Image"), System.Drawing.Image)
+        Me.cmdMapping.Location = New System.Drawing.Point(230, 24)
+        Me.cmdMapping.Name = "cmdMapping"
+        Me.cmdMapping.Size = New System.Drawing.Size(25, 25)
+        Me.cmdMapping.TabIndex = 209
+        Me.cmdMapping.UseVisualStyleBackColor = True
+        '
+        'TabPageMain
+        '
+        Me.TabPageMain.Controls.Add(Me.TabPage1)
+        Me.TabPageMain.Controls.Add(Me.TabPage2)
+        Me.TabPageMain.Controls.Add(Me.TabPage3)
+        Me.TabPageMain.Controls.Add(Me.TabPage4)
+        Me.TabPageMain.Controls.Add(Me.TabPage5)
+        Me.TabPageMain.Controls.Add(Me.TabPage6)
+        Me.TabPageMain.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
+        Me.TabPageMain.ItemSize = New System.Drawing.Size(120, 19)
+        Me.TabPageMain.Location = New System.Drawing.Point(3, 82)
+        Me.TabPageMain.Name = "TabPageMain"
+        Me.TabPageMain.SelectedIndex = 0
+        Me.TabPageMain.Size = New System.Drawing.Size(950, 525)
+        Me.TabPageMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
+        Me.TabPageMain.TabIndex = 25
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.txtFtrRmk)
+        Me.TabPage1.Controls.Add(Me.txtSChnDsc)
+        Me.TabPage1.Controls.Add(Me.txtItmRmk2)
+        Me.TabPage1.Controls.Add(Me.txtItmRmk)
+        Me.TabPage1.Controls.Add(Me.cmdBatchUpdate)
+        Me.TabPage1.Controls.Add(Me.pbImage)
+        Me.TabPage1.Controls.Add(Me.lblItmRmk)
+        Me.TabPage1.Controls.Add(Me.lblPacking)
+        Me.TabPage1.Controls.Add(Me.dgPacking)
+        Me.TabPage1.Controls.Add(Me.dgColor)
+        Me.TabPage1.Controls.Add(Me.txtChnDsc)
+        Me.TabPage1.Controls.Add(Me.lblColor)
+        Me.TabPage1.Controls.Add(Me.txtEngDsc)
+        Me.TabPage1.Controls.Add(Me.lblChnDsc)
+        Me.TabPage1.Controls.Add(Me.lblEngDsc)
+        Me.TabPage1.Controls.Add(Me.cmdCombineImage)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 23)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(942, 498)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "(1) Basic"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'txtFtrRmk
+        '
+        Me.txtFtrRmk.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.txtFtrRmk.Location = New System.Drawing.Point(814, 454)
+        Me.txtFtrRmk.Name = "txtFtrRmk"
+        Me.txtFtrRmk.Size = New System.Drawing.Size(23, 23)
+        Me.txtFtrRmk.TabIndex = 360
+        Me.txtFtrRmk.Text = ""
+        Me.txtFtrRmk.Visible = False
+        '
+        'txtSChnDsc
+        '
+        Me.txtSChnDsc.BackColor = System.Drawing.Color.White
+        Me.txtSChnDsc.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSChnDsc.Location = New System.Drawing.Point(880, 462)
+        Me.txtSChnDsc.Multiline = True
+        Me.txtSChnDsc.Name = "txtSChnDsc"
+        Me.txtSChnDsc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtSChnDsc.Size = New System.Drawing.Size(29, 15)
+        Me.txtSChnDsc.TabIndex = 85
+        Me.txtSChnDsc.Visible = False
+        '
+        'txtItmRmk2
+        '
+        Me.txtItmRmk2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtItmRmk2.Location = New System.Drawing.Point(843, 454)
+        Me.txtItmRmk2.MaxLength = 800
+        Me.txtItmRmk2.Multiline = True
+        Me.txtItmRmk2.Name = "txtItmRmk2"
+        Me.txtItmRmk2.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.txtItmRmk2.Size = New System.Drawing.Size(21, 20)
+        Me.txtItmRmk2.TabIndex = 84
+        Me.txtItmRmk2.Visible = False
+        '
+        'txtItmRmk
+        '
+        Me.txtItmRmk.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtItmRmk.Location = New System.Drawing.Point(538, 26)
+        Me.txtItmRmk.MaxLength = 800
+        Me.txtItmRmk.Name = "txtItmRmk"
+        Me.txtItmRmk.Size = New System.Drawing.Size(398, 156)
+        Me.txtItmRmk.TabIndex = 53
+        Me.txtItmRmk.Text = ""
+        '
+        'cmdBatchUpdate
+        '
+        Me.cmdBatchUpdate.Location = New System.Drawing.Point(606, 2)
+        Me.cmdBatchUpdate.Name = "cmdBatchUpdate"
+        Me.cmdBatchUpdate.Size = New System.Drawing.Size(92, 23)
+        Me.cmdBatchUpdate.TabIndex = 83
+        Me.cmdBatchUpdate.Text = "&Batch Update"
+        Me.cmdBatchUpdate.UseVisualStyleBackColor = True
+        '
+        'pbImage
+        '
+        Me.pbImage.BackColor = System.Drawing.Color.White
+        Me.pbImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.pbImage.InitialImage = Nothing
+        Me.pbImage.Location = New System.Drawing.Point(687, 188)
+        Me.pbImage.MaximumSize = New System.Drawing.Size(500, 500)
+        Me.pbImage.Name = "pbImage"
+        Me.pbImage.Size = New System.Drawing.Size(249, 304)
+        Me.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbImage.TabIndex = 82
+        Me.pbImage.TabStop = False
+        '
+        'lblItmRmk
+        '
+        Me.lblItmRmk.AutoSize = True
+        Me.lblItmRmk.Location = New System.Drawing.Point(535, 6)
+        Me.lblItmRmk.Name = "lblItmRmk"
+        Me.lblItmRmk.Size = New System.Drawing.Size(69, 12)
+        Me.lblItmRmk.TabIndex = 78
+        Me.lblItmRmk.Text = "Item Remark "
+        '
+        'lblPacking
+        '
+        Me.lblPacking.AutoSize = True
+        Me.lblPacking.ForeColor = System.Drawing.Color.Blue
+        Me.lblPacking.Location = New System.Drawing.Point(6, 301)
+        Me.lblPacking.Name = "lblPacking"
+        Me.lblPacking.Size = New System.Drawing.Size(45, 12)
+        Me.lblPacking.TabIndex = 77
+        Me.lblPacking.Text = "Packing "
+        '
+        'dgPacking
+        '
+        Me.dgPacking.AllowUserToAddRows = False
+        Me.dgPacking.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgPacking.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgPacking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.NullValue = """"""
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgPacking.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dgPacking.Location = New System.Drawing.Point(7, 317)
+        Me.dgPacking.Name = "dgPacking"
+        Me.dgPacking.RowHeadersWidth = 30
+        Me.dgPacking.RowTemplate.Height = 18
+        Me.dgPacking.Size = New System.Drawing.Size(674, 174)
+        Me.dgPacking.TabIndex = 55
+        '
+        'dgColor
+        '
+        Me.dgColor.AllowUserToAddRows = False
+        Me.dgColor.AllowUserToDeleteRows = False
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgColor.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgColor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.NullValue = """"""
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgColor.DefaultCellStyle = DataGridViewCellStyle4
+        Me.dgColor.Location = New System.Drawing.Point(6, 205)
+        Me.dgColor.Name = "dgColor"
+        Me.dgColor.RowHeadersWidth = 30
+        Me.dgColor.RowTemplate.Height = 24
+        Me.dgColor.Size = New System.Drawing.Size(675, 93)
+        Me.dgColor.TabIndex = 54
+        '
+        'txtChnDsc
+        '
+        Me.txtChnDsc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtChnDsc.Location = New System.Drawing.Point(117, 94)
+        Me.txtChnDsc.MaxLength = 800
+        Me.txtChnDsc.Name = "txtChnDsc"
+        Me.txtChnDsc.Size = New System.Drawing.Size(414, 88)
+        Me.txtChnDsc.TabIndex = 52
+        Me.txtChnDsc.Text = "35""/ªáÝßªG³æªK¥[¶ì½¦¯]/RDD175"
+        '
+        'lblColor
+        '
+        Me.lblColor.AutoSize = True
+        Me.lblColor.ForeColor = System.Drawing.Color.Blue
+        Me.lblColor.Location = New System.Drawing.Point(6, 188)
+        Me.lblColor.Name = "lblColor"
+        Me.lblColor.Size = New System.Drawing.Size(35, 12)
+        Me.lblColor.TabIndex = 71
+        Me.lblColor.Text = "Color "
+        '
+        'txtEngDsc
+        '
+        Me.txtEngDsc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEngDsc.Location = New System.Drawing.Point(117, 3)
+        Me.txtEngDsc.MaxLength = 800
+        Me.txtEngDsc.Name = "txtEngDsc"
+        Me.txtEngDsc.Size = New System.Drawing.Size(414, 85)
+        Me.txtEngDsc.TabIndex = 51
+        Me.txtEngDsc.Text = "35""MOUNTAIN ASH STEM"
+        '
+        'lblChnDsc
+        '
+        Me.lblChnDsc.AutoSize = True
+        Me.lblChnDsc.Location = New System.Drawing.Point(1, 99)
+        Me.lblChnDsc.Name = "lblChnDsc"
+        Me.lblChnDsc.Size = New System.Drawing.Size(101, 12)
+        Me.lblChnDsc.TabIndex = 18
+        Me.lblChnDsc.Text = "Chinese Description "
+        '
+        'lblEngDsc
+        '
+        Me.lblEngDsc.AutoSize = True
+        Me.lblEngDsc.ForeColor = System.Drawing.Color.DarkGreen
+        Me.lblEngDsc.Location = New System.Drawing.Point(3, 6)
+        Me.lblEngDsc.Name = "lblEngDsc"
+        Me.lblEngDsc.Size = New System.Drawing.Size(99, 12)
+        Me.lblEngDsc.TabIndex = 17
+        Me.lblEngDsc.Text = "English Description "
+        '
+        'cmdCombineImage
+        '
+        Me.cmdCombineImage.Location = New System.Drawing.Point(439, 298)
+        Me.cmdCombineImage.Name = "cmdCombineImage"
+        Me.cmdCombineImage.Size = New System.Drawing.Size(105, 20)
+        Me.cmdCombineImage.TabIndex = 81
+        Me.cmdCombineImage.Text = "Co&mbine Image"
+        Me.cmdCombineImage.UseVisualStyleBackColor = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.PanelPV)
+        Me.TabPage2.Controls.Add(Me.cmdCopyPV)
+        Me.TabPage2.Controls.Add(Me.lblPV)
+        Me.TabPage2.Controls.Add(Me.cboEV)
+        Me.TabPage2.Controls.Add(Me.lblEV)
+        Me.TabPage2.Controls.Add(Me.cboTV)
+        Me.TabPage2.Controls.Add(Me.lblTV)
+        Me.TabPage2.Controls.Add(Me.cboCV)
+        Me.TabPage2.Controls.Add(Me.lblCV)
+        Me.TabPage2.Controls.Add(Me.cboDV)
+        Me.TabPage2.Controls.Add(Me.lblDV)
+        Me.TabPage2.Controls.Add(Me.dgPV)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 23)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(942, 498)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "(2) Vendor"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'PanelPV
+        '
+        Me.PanelPV.BackColor = System.Drawing.Color.SkyBlue
+        Me.PanelPV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelPV.Controls.Add(Me.cmdPanPVInsert)
+        Me.PanelPV.Controls.Add(Me.Label94)
+        Me.PanelPV.Controls.Add(Me.txtPanPVVenItm)
+        Me.PanelPV.Controls.Add(Me.cboPanPVPV)
+        Me.PanelPV.Controls.Add(Me.Label99)
+        Me.PanelPV.Controls.Add(Me.cmdPanPVCancel)
+        Me.PanelPV.Location = New System.Drawing.Point(332, 358)
+        Me.PanelPV.Name = "PanelPV"
+        Me.PanelPV.Size = New System.Drawing.Size(299, 98)
+        Me.PanelPV.TabIndex = 205
+        Me.PanelPV.Visible = False
+        '
+        'cmdPanPVInsert
+        '
+        Me.cmdPanPVInsert.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdPanPVInsert.Location = New System.Drawing.Point(187, 66)
+        Me.cmdPanPVInsert.Name = "cmdPanPVInsert"
+        Me.cmdPanPVInsert.Size = New System.Drawing.Size(49, 21)
+        Me.cmdPanPVInsert.TabIndex = 212
+        Me.cmdPanPVInsert.Text = "Insert"
+        Me.cmdPanPVInsert.UseVisualStyleBackColor = True
+        '
+        'Label94
+        '
+        Me.Label94.AutoSize = True
+        Me.Label94.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label94.Location = New System.Drawing.Point(6, 41)
+        Me.Label94.Name = "Label94"
+        Me.Label94.Size = New System.Drawing.Size(96, 14)
+        Me.Label94.TabIndex = 13
+        Me.Label94.Text = "Production Vendor"
+        '
+        'txtPanPVVenItm
+        '
+        Me.txtPanPVVenItm.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPanPVVenItm.Location = New System.Drawing.Point(125, 9)
+        Me.txtPanPVVenItm.Name = "txtPanPVVenItm"
+        Me.txtPanPVVenItm.Size = New System.Drawing.Size(161, 20)
+        Me.txtPanPVVenItm.TabIndex = 210
+        '
+        'cboPanPVPV
+        '
+        Me.cboPanPVPV.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboPanPVPV.FormattingEnabled = True
+        Me.cboPanPVPV.Location = New System.Drawing.Point(125, 38)
+        Me.cboPanPVPV.Name = "cboPanPVPV"
+        Me.cboPanPVPV.Size = New System.Drawing.Size(161, 22)
+        Me.cboPanPVPV.TabIndex = 211
+        '
+        'Label99
+        '
+        Me.Label99.AutoSize = True
+        Me.Label99.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label99.Location = New System.Drawing.Point(6, 12)
+        Me.Label99.Name = "Label99"
+        Me.Label99.Size = New System.Drawing.Size(104, 14)
+        Me.Label99.TabIndex = 3
+        Me.Label99.Text = "Vendor Item Number"
+        '
+        'cmdPanPVCancel
+        '
+        Me.cmdPanPVCancel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdPanPVCancel.Location = New System.Drawing.Point(238, 66)
+        Me.cmdPanPVCancel.Name = "cmdPanPVCancel"
+        Me.cmdPanPVCancel.Size = New System.Drawing.Size(48, 21)
+        Me.cmdPanPVCancel.TabIndex = 213
+        Me.cmdPanPVCancel.Text = "Cancel"
+        Me.cmdPanPVCancel.UseVisualStyleBackColor = True
+        '
+        'cmdCopyPV
+        '
+        Me.cmdCopyPV.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.cmdCopyPV.Location = New System.Drawing.Point(547, 11)
+        Me.cmdCopyPV.Name = "cmdCopyPV"
+        Me.cmdCopyPV.Size = New System.Drawing.Size(145, 21)
+        Me.cmdCopyPV.TabIndex = 206
+        Me.cmdCopyPV.Text = "Apply Def PV to CV,TV,FA"
+        Me.cmdCopyPV.UseVisualStyleBackColor = True
+        '
+        'lblPV
+        '
+        Me.lblPV.AutoSize = True
+        Me.lblPV.ForeColor = System.Drawing.Color.Blue
+        Me.lblPV.Location = New System.Drawing.Point(8, 145)
+        Me.lblPV.Name = "lblPV"
+        Me.lblPV.Size = New System.Drawing.Size(97, 12)
+        Me.lblPV.TabIndex = 66
+        Me.lblPV.Text = "Production Vendor "
+        '
+        'cboEV
+        '
+        Me.cboEV.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboEV.FormattingEnabled = True
+        Me.cboEV.Location = New System.Drawing.Point(96, 104)
+        Me.cboEV.Name = "cboEV"
+        Me.cboEV.Size = New System.Drawing.Size(445, 22)
+        Me.cboEV.TabIndex = 204
+        '
+        'lblEV
+        '
+        Me.lblEV.AutoSize = True
+        Me.lblEV.ForeColor = System.Drawing.Color.DarkGreen
+        Me.lblEV.Location = New System.Drawing.Point(8, 107)
+        Me.lblEV.Name = "lblEV"
+        Me.lblEV.Size = New System.Drawing.Size(72, 12)
+        Me.lblEV.TabIndex = 64
+        Me.lblEV.Text = "Factory Audit "
+        '
+        'cboTV
+        '
+        Me.cboTV.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboTV.FormattingEnabled = True
+        Me.cboTV.Location = New System.Drawing.Point(96, 73)
+        Me.cboTV.Name = "cboTV"
+        Me.cboTV.Size = New System.Drawing.Size(445, 22)
+        Me.cboTV.TabIndex = 203
+        '
+        'lblTV
+        '
+        Me.lblTV.AutoSize = True
+        Me.lblTV.ForeColor = System.Drawing.Color.DarkGreen
+        Me.lblTV.Location = New System.Drawing.Point(8, 76)
+        Me.lblTV.Name = "lblTV"
+        Me.lblTV.Size = New System.Drawing.Size(83, 12)
+        Me.lblTV.TabIndex = 62
+        Me.lblTV.Text = "Trading Vendor "
+        '
+        'cboCV
+        '
+        Me.cboCV.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboCV.FormattingEnabled = True
+        Me.cboCV.Location = New System.Drawing.Point(96, 42)
+        Me.cboCV.Name = "cboCV"
+        Me.cboCV.Size = New System.Drawing.Size(445, 22)
+        Me.cboCV.TabIndex = 202
+        '
+        'lblCV
+        '
+        Me.lblCV.AutoSize = True
+        Me.lblCV.ForeColor = System.Drawing.Color.DarkGreen
+        Me.lblCV.Location = New System.Drawing.Point(8, 45)
+        Me.lblCV.Name = "lblCV"
+        Me.lblCV.Size = New System.Drawing.Size(82, 12)
+        Me.lblCV.TabIndex = 60
+        Me.lblCV.Text = "Custom Vendor "
+        '
+        'cboDV
+        '
+        Me.cboDV.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboDV.FormattingEnabled = True
+        Me.cboDV.Location = New System.Drawing.Point(96, 11)
+        Me.cboDV.Name = "cboDV"
+        Me.cboDV.Size = New System.Drawing.Size(445, 22)
+        Me.cboDV.TabIndex = 201
+        '
+        'lblDV
+        '
+        Me.lblDV.AutoSize = True
+        Me.lblDV.ForeColor = System.Drawing.Color.DarkGreen
+        Me.lblDV.Location = New System.Drawing.Point(8, 14)
+        Me.lblDV.Name = "lblDV"
+        Me.lblDV.Size = New System.Drawing.Size(78, 12)
+        Me.lblDV.TabIndex = 54
+        Me.lblDV.Text = "Design Vendor "
+        '
+        'dgPV
+        '
+        Me.dgPV.AllowUserToAddRows = False
+        Me.dgPV.AllowUserToDeleteRows = False
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgPV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgPV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.NullValue = """"""
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgPV.DefaultCellStyle = DataGridViewCellStyle6
+        Me.dgPV.Location = New System.Drawing.Point(8, 162)
+        Me.dgPV.Name = "dgPV"
+        Me.dgPV.RowHeadersWidth = 30
+        Me.dgPV.RowTemplate.Height = 24
+        Me.dgPV.Size = New System.Drawing.Size(926, 330)
+        Me.dgPV.TabIndex = 205
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.Label19)
+        Me.TabPage3.Controls.Add(Me.Label11)
+        Me.TabPage3.Controls.Add(Me.cboCategory)
+        Me.TabPage3.Controls.Add(Me.Label10)
+        Me.TabPage3.Controls.Add(Me.cboPrdLne)
+        Me.TabPage3.Controls.Add(Me.cboItmVenTyp)
+        Me.TabPage3.Controls.Add(Me.lblItmVenTyp)
+        Me.TabPage3.Controls.Add(Me.lblOEMCustomer)
+        Me.TabPage3.Controls.Add(Me.dgOEMCustomer)
+        Me.TabPage3.Controls.Add(Me.cboYear)
+        Me.TabPage3.Controls.Add(Me.Label30)
+        Me.TabPage3.Controls.Add(Me.cboType)
+        Me.TabPage3.Controls.Add(Me.Label29)
+        Me.TabPage3.Controls.Add(Me.cboDevTeam)
+        Me.TabPage3.Controls.Add(Me.Label28)
+        Me.TabPage3.Controls.Add(Me.cboDesigner)
+        Me.TabPage3.Controls.Add(Me.Label27)
+        Me.TabPage3.Controls.Add(Me.cboSeason)
+        Me.TabPage3.Controls.Add(Me.Label26)
+        Me.TabPage3.Controls.Add(Me.Label25)
+        Me.TabPage3.Controls.Add(Me.Label24)
+        Me.TabPage3.Controls.Add(Me.Label23)
+        Me.TabPage3.Controls.Add(Me.cboPrdSizeTyp)
+        Me.TabPage3.Controls.Add(Me.cboPrdSizeUnit)
+        Me.TabPage3.Controls.Add(Me.Label22)
+        Me.TabPage3.Controls.Add(Me.cboPrdIcon)
+        Me.TabPage3.Controls.Add(Me.Label21)
+        Me.TabPage3.Controls.Add(Me.cboPrdGroup)
+        Me.TabPage3.Controls.Add(Me.txtPrdSizeValue)
+        Me.TabPage3.Controls.Add(Me.txtDsgItmNo)
+        Me.TabPage3.Controls.Add(Me.lblDsgItmNo)
+        Me.TabPage3.Controls.Add(Me.cboPrdTyp)
+        Me.TabPage3.Controls.Add(Me.lblPrdTyp)
+        Me.TabPage3.Controls.Add(Me.lblItmNature)
+        Me.TabPage3.Controls.Add(Me.cboItmNature)
+        Me.TabPage3.Controls.Add(Me.lblMaterial)
+        Me.TabPage3.Controls.Add(Me.cboMaterial)
+        Me.TabPage3.Controls.Add(Me.pbImage2)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 23)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(942, 498)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "(3) Classification"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(33, 186)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(66, 12)
+        Me.Label19.TabIndex = 71
+        Me.Label19.Text = "Product Size "
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(37, 56)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(51, 12)
+        Me.Label11.TabIndex = 98
+        Me.Label11.Text = "Category "
+        '
+        'cboCategory
+        '
+        Me.cboCategory.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboCategory.FormattingEnabled = True
+        Me.cboCategory.Location = New System.Drawing.Point(138, 53)
+        Me.cboCategory.Name = "cboCategory"
+        Me.cboCategory.Size = New System.Drawing.Size(777, 22)
+        Me.cboCategory.TabIndex = 302
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(37, 23)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(68, 12)
+        Me.Label10.TabIndex = 96
+        Me.Label10.Text = "Product Line "
+        '
+        'cboPrdLne
+        '
+        Me.cboPrdLne.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboPrdLne.FormattingEnabled = True
+        Me.cboPrdLne.Location = New System.Drawing.Point(138, 20)
+        Me.cboPrdLne.Name = "cboPrdLne"
+        Me.cboPrdLne.Size = New System.Drawing.Size(200, 22)
+        Me.cboPrdLne.TabIndex = 301
+        '
+        'cboItmVenTyp
+        '
+        Me.cboItmVenTyp.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboItmVenTyp.FormattingEnabled = True
+        Me.cboItmVenTyp.Location = New System.Drawing.Point(615, 20)
+        Me.cboItmVenTyp.Name = "cboItmVenTyp"
+        Me.cboItmVenTyp.Size = New System.Drawing.Size(178, 22)
+        Me.cboItmVenTyp.TabIndex = 303
+        '
+        'lblItmVenTyp
+        '
+        Me.lblItmVenTyp.AutoSize = True
+        Me.lblItmVenTyp.Location = New System.Drawing.Point(498, 23)
+        Me.lblItmVenTyp.Name = "lblItmVenTyp"
+        Me.lblItmVenTyp.Size = New System.Drawing.Size(94, 12)
+        Me.lblItmVenTyp.TabIndex = 93
+        Me.lblItmVenTyp.Text = "Item Vendor Type "
+        '
+        'lblOEMCustomer
+        '
+        Me.lblOEMCustomer.AutoSize = True
+        Me.lblOEMCustomer.BackColor = System.Drawing.Color.Transparent
+        Me.lblOEMCustomer.Location = New System.Drawing.Point(498, 115)
+        Me.lblOEMCustomer.Name = "lblOEMCustomer"
+        Me.lblOEMCustomer.Size = New System.Drawing.Size(78, 12)
+        Me.lblOEMCustomer.TabIndex = 92
+        Me.lblOEMCustomer.Text = "OEM Customer"
+        '
+        'dgOEMCustomer
+        '
+        Me.dgOEMCustomer.AllowUserToAddRows = False
+        Me.dgOEMCustomer.AllowUserToDeleteRows = False
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.NullValue = """"""
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgOEMCustomer.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        Me.dgOEMCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Arial", 8.25!)
         DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.NullValue = """"""
         DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgTempItem.DefaultCellStyle = DataGridViewCellStyle8
-        Me.dgTempItem.Location = New System.Drawing.Point(19, 324)
-        Me.dgTempItem.Name = "dgTempItem"
-        Me.dgTempItem.RowHeadersWidth = 30
-        Me.dgTempItem.RowTemplate.Height = 24
-        Me.dgTempItem.Size = New System.Drawing.Size(380, 86)
-        Me.dgTempItem.TabIndex = 616
+        Me.dgOEMCustomer.DefaultCellStyle = DataGridViewCellStyle8
+        Me.dgOEMCustomer.Location = New System.Drawing.Point(501, 132)
+        Me.dgOEMCustomer.Name = "dgOEMCustomer"
+        Me.dgOEMCustomer.RowHeadersWidth = 30
+        Me.dgOEMCustomer.RowTemplate.Height = 24
+        Me.dgOEMCustomer.Size = New System.Drawing.Size(414, 135)
+        Me.dgOEMCustomer.TabIndex = 306
         '
-        'Label84
+        'cboYear
         '
-        Me.Label84.AutoSize = True
-        Me.Label84.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label84.Location = New System.Drawing.Point(19, 307)
-        Me.Label84.Name = "Label84"
-        Me.Label84.Size = New System.Drawing.Size(100, 14)
-        Me.Label84.TabIndex = 116
-        Me.Label84.Text = "Temp Item Number :"
+        Me.cboYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboYear.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboYear.FormattingEnabled = True
+        Me.cboYear.Location = New System.Drawing.Point(137, 405)
+        Me.cboYear.Name = "cboYear"
+        Me.cboYear.Size = New System.Drawing.Size(340, 22)
+        Me.cboYear.TabIndex = 318
         '
-        'txtHstuEURDuty
+        'Label30
         '
-        Me.txtHstuEURDuty.BackColor = System.Drawing.Color.White
-        Me.txtHstuEURDuty.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHstuEURDuty.ForeColor = System.Drawing.Color.Black
-        Me.txtHstuEURDuty.Location = New System.Drawing.Point(815, 458)
-        Me.txtHstuEURDuty.Name = "txtHstuEURDuty"
-        Me.txtHstuEURDuty.Size = New System.Drawing.Size(89, 20)
-        Me.txtHstuEURDuty.TabIndex = 622
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(34, 407)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(30, 12)
+        Me.Label30.TabIndex = 89
+        Me.Label30.Text = "Year "
         '
-        'txtHstuUSADuty
+        'cboType
         '
-        Me.txtHstuUSADuty.BackColor = System.Drawing.Color.White
-        Me.txtHstuUSADuty.Enabled = False
-        Me.txtHstuUSADuty.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHstuUSADuty.ForeColor = System.Drawing.Color.Black
-        Me.txtHstuUSADuty.Location = New System.Drawing.Point(815, 430)
-        Me.txtHstuUSADuty.Name = "txtHstuUSADuty"
-        Me.txtHstuUSADuty.Size = New System.Drawing.Size(89, 20)
-        Me.txtHstuUSADuty.TabIndex = 620
+        Me.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboType.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboType.FormattingEnabled = True
+        Me.cboType.Location = New System.Drawing.Point(137, 373)
+        Me.cboType.Name = "cboType"
+        Me.cboType.Size = New System.Drawing.Size(340, 22)
+        Me.cboType.TabIndex = 317
         '
-        'Label5
+        'Label29
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(782, 461)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(32, 14)
-        Me.Label5.TabIndex = 112
-        Me.Label5.Text = "Duty:"
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(34, 375)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(32, 12)
+        Me.Label29.TabIndex = 87
+        Me.Label29.Text = "Type "
         '
-        'Label4
+        'cboDevTeam
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(782, 433)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(32, 14)
-        Me.Label4.TabIndex = 111
-        Me.Label4.Text = "Duty:"
+        Me.cboDevTeam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboDevTeam.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboDevTeam.FormattingEnabled = True
+        Me.cboDevTeam.Location = New System.Drawing.Point(137, 341)
+        Me.cboDevTeam.Name = "cboDevTeam"
+        Me.cboDevTeam.Size = New System.Drawing.Size(340, 22)
+        Me.cboDevTeam.TabIndex = 316
         '
-        'Label3
+        'Label28
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(16, 461)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(101, 14)
-        Me.Label3.TabIndex = 110
-        Me.Label3.Text = "Tariff # for Europe :"
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(34, 343)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(99, 12)
+        Me.Label28.TabIndex = 85
+        Me.Label28.Text = "Development Team "
         '
-        'Label2
+        'cboDesigner
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(16, 433)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(90, 14)
-        Me.Label2.TabIndex = 109
-        Me.Label2.Text = "HSTU # for USA :"
+        Me.cboDesigner.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboDesigner.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboDesigner.FormattingEnabled = True
+        Me.cboDesigner.Location = New System.Drawing.Point(137, 309)
+        Me.cboDesigner.Name = "cboDesigner"
+        Me.cboDesigner.Size = New System.Drawing.Size(340, 22)
+        Me.cboDesigner.TabIndex = 315
         '
-        'cboHstuUSA
+        'Label27
         '
-        Me.cboHstuUSA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboHstuUSA.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboHstuUSA.FormattingEnabled = True
-        Me.cboHstuUSA.Location = New System.Drawing.Point(120, 430)
-        Me.cboHstuUSA.Name = "cboHstuUSA"
-        Me.cboHstuUSA.Size = New System.Drawing.Size(644, 22)
-        Me.cboHstuUSA.TabIndex = 619
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(34, 309)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(49, 12)
+        Me.Label27.TabIndex = 83
+        Me.Label27.Text = "Designer "
         '
-        'cboHstuEur
+        'cboSeason
         '
-        Me.cboHstuEur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboHstuEur.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboHstuEur.FormattingEnabled = True
-        Me.cboHstuEur.Location = New System.Drawing.Point(120, 458)
-        Me.cboHstuEur.Name = "cboHstuEur"
-        Me.cboHstuEur.Size = New System.Drawing.Size(644, 22)
-        Me.cboHstuEur.TabIndex = 621
+        Me.cboSeason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboSeason.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSeason.FormattingEnabled = True
+        Me.cboSeason.Location = New System.Drawing.Point(137, 277)
+        Me.cboSeason.Name = "cboSeason"
+        Me.cboSeason.Size = New System.Drawing.Size(340, 22)
+        Me.cboSeason.TabIndex = 314
         '
-        'cboConstrMethod
+        'Label26
         '
-        Me.cboConstrMethod.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboConstrMethod.FormattingEnabled = True
-        Me.cboConstrMethod.Location = New System.Drawing.Point(132, 145)
-        Me.cboConstrMethod.Name = "cboConstrMethod"
-        Me.cboConstrMethod.Size = New System.Drawing.Size(267, 22)
-        Me.cboConstrMethod.TabIndex = 602
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(34, 277)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(40, 12)
+        Me.Label26.TabIndex = 81
+        Me.Label26.Text = "Season "
         '
-        'Label1
+        'Label25
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(16, 148)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(106, 14)
-        Me.Label1.TabIndex = 105
-        Me.Label1.Text = "Construction Method"
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(388, 187)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(32, 12)
+        Me.Label25.TabIndex = 80
+        Me.Label25.Text = "Value"
         '
-        'txtAlsitmcol
+        'Label24
         '
-        Me.txtAlsitmcol.BackColor = System.Drawing.Color.White
-        Me.txtAlsitmcol.Enabled = False
-        Me.txtAlsitmcol.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAlsitmcol.ForeColor = System.Drawing.Color.Black
-        Me.txtAlsitmcol.Location = New System.Drawing.Point(269, 279)
-        Me.txtAlsitmcol.Name = "txtAlsitmcol"
-        Me.txtAlsitmcol.Size = New System.Drawing.Size(130, 20)
-        Me.txtAlsitmcol.TabIndex = 618
-        Me.txtAlsitmcol.Text = "N/A"
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(254, 187)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(25, 12)
+        Me.Label24.TabIndex = 79
+        Me.Label24.Text = "Unit"
         '
-        'Label14
+        'Label23
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(16, 282)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(108, 14)
-        Me.Label14.TabIndex = 103
-        Me.Label14.Text = "Alias Item and Color :"
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(103, 186)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(29, 12)
+        Me.Label23.TabIndex = 78
+        Me.Label23.Text = "Type"
         '
-        'txtAlsitmno
+        'cboPrdSizeTyp
         '
-        Me.txtAlsitmno.BackColor = System.Drawing.Color.White
-        Me.txtAlsitmno.Enabled = False
-        Me.txtAlsitmno.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAlsitmno.ForeColor = System.Drawing.Color.Black
-        Me.txtAlsitmno.Location = New System.Drawing.Point(143, 279)
-        Me.txtAlsitmno.Name = "txtAlsitmno"
-        Me.txtAlsitmno.Size = New System.Drawing.Size(120, 20)
-        Me.txtAlsitmno.TabIndex = 617
-        Me.txtAlsitmno.Text = "01A001A001A01"
+        Me.cboPrdSizeTyp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboPrdSizeTyp.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboPrdSizeTyp.FormattingEnabled = True
+        Me.cboPrdSizeTyp.Location = New System.Drawing.Point(137, 183)
+        Me.cboPrdSizeTyp.Name = "cboPrdSizeTyp"
+        Me.cboPrdSizeTyp.Size = New System.Drawing.Size(109, 22)
+        Me.cboPrdSizeTyp.TabIndex = 309
         '
-        'gbAddreq
+        'cboPrdSizeUnit
         '
-        Me.gbAddreq.Controls.Add(Me.cbAddreq_ster)
-        Me.gbAddreq.Controls.Add(Me.cbAddreq_ccib)
-        Me.gbAddreq.Controls.Add(Me.cbAddreq_formA)
-        Me.gbAddreq.Location = New System.Drawing.Point(435, 259)
-        Me.gbAddreq.Name = "gbAddreq"
-        Me.gbAddreq.Size = New System.Drawing.Size(469, 40)
-        Me.gbAddreq.TabIndex = 60
-        Me.gbAddreq.TabStop = False
-        Me.gbAddreq.Text = "Additional Process Requirement"
+        Me.cboPrdSizeUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboPrdSizeUnit.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboPrdSizeUnit.FormattingEnabled = True
+        Me.cboPrdSizeUnit.Location = New System.Drawing.Point(280, 183)
+        Me.cboPrdSizeUnit.Name = "cboPrdSizeUnit"
+        Me.cboPrdSizeUnit.Size = New System.Drawing.Size(102, 22)
+        Me.cboPrdSizeUnit.TabIndex = 310
         '
-        'cbAddreq_ster
+        'Label22
         '
-        Me.cbAddreq_ster.AutoSize = True
-        Me.cbAddreq_ster.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbAddreq_ster.Location = New System.Drawing.Point(339, 16)
-        Me.cbAddreq_ster.Name = "cbAddreq_ster"
-        Me.cbAddreq_ster.Size = New System.Drawing.Size(70, 18)
-        Me.cbAddreq_ster.TabIndex = 614
-        Me.cbAddreq_ster.Text = "Sterilized"
-        Me.cbAddreq_ster.UseVisualStyleBackColor = True
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(34, 216)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(77, 12)
+        Me.Label22.TabIndex = 75
+        Me.Label22.Text = "Product Group "
         '
-        'cbAddreq_ccib
+        'cboPrdIcon
         '
-        Me.cbAddreq_ccib.AutoSize = True
-        Me.cbAddreq_ccib.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbAddreq_ccib.Location = New System.Drawing.Point(214, 16)
-        Me.cbAddreq_ccib.Name = "cbAddreq_ccib"
-        Me.cbAddreq_ccib.Size = New System.Drawing.Size(49, 18)
-        Me.cbAddreq_ccib.TabIndex = 613
-        Me.cbAddreq_ccib.Text = "CCIB"
-        Me.cbAddreq_ccib.UseVisualStyleBackColor = True
+        Me.cboPrdIcon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboPrdIcon.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboPrdIcon.FormattingEnabled = True
+        Me.cboPrdIcon.Location = New System.Drawing.Point(137, 245)
+        Me.cboPrdIcon.Name = "cboPrdIcon"
+        Me.cboPrdIcon.Size = New System.Drawing.Size(340, 22)
+        Me.cboPrdIcon.TabIndex = 313
         '
-        'cbAddreq_formA
+        'Label21
         '
-        Me.cbAddreq_formA.AutoSize = True
-        Me.cbAddreq_formA.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbAddreq_formA.Location = New System.Drawing.Point(71, 16)
-        Me.cbAddreq_formA.Name = "cbAddreq_formA"
-        Me.cbAddreq_formA.Size = New System.Drawing.Size(60, 18)
-        Me.cbAddreq_formA.TabIndex = 612
-        Me.cbAddreq_formA.Text = "Form A"
-        Me.cbAddreq_formA.UseVisualStyleBackColor = True
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(34, 245)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(68, 12)
+        Me.Label21.TabIndex = 73
+        Me.Label21.Text = "Product Icon "
+        '
+        'cboPrdGroup
+        '
+        Me.cboPrdGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboPrdGroup.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboPrdGroup.FormattingEnabled = True
+        Me.cboPrdGroup.Location = New System.Drawing.Point(137, 213)
+        Me.cboPrdGroup.Name = "cboPrdGroup"
+        Me.cboPrdGroup.Size = New System.Drawing.Size(340, 22)
+        Me.cboPrdGroup.TabIndex = 312
+        '
+        'txtPrdSizeValue
+        '
+        Me.txtPrdSizeValue.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPrdSizeValue.Location = New System.Drawing.Point(423, 183)
+        Me.txtPrdSizeValue.Name = "txtPrdSizeValue"
+        Me.txtPrdSizeValue.Size = New System.Drawing.Size(54, 20)
+        Me.txtPrdSizeValue.TabIndex = 311
+        '
+        'txtDsgItmNo
+        '
+        Me.txtDsgItmNo.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDsgItmNo.Location = New System.Drawing.Point(137, 85)
+        Me.txtDsgItmNo.MaxLength = 50
+        Me.txtDsgItmNo.Name = "txtDsgItmNo"
+        Me.txtDsgItmNo.Size = New System.Drawing.Size(201, 20)
+        Me.txtDsgItmNo.TabIndex = 304
+        '
+        'lblDsgItmNo
+        '
+        Me.lblDsgItmNo.AutoSize = True
+        Me.lblDsgItmNo.Location = New System.Drawing.Point(37, 88)
+        Me.lblDsgItmNo.Name = "lblDsgItmNo"
+        Me.lblDsgItmNo.Size = New System.Drawing.Size(81, 12)
+        Me.lblDsgItmNo.TabIndex = 69
+        Me.lblDsgItmNo.Text = "Design Item No "
+        '
+        'cboPrdTyp
+        '
+        Me.cboPrdTyp.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboPrdTyp.FormattingEnabled = True
+        Me.cboPrdTyp.Location = New System.Drawing.Point(615, 85)
+        Me.cboPrdTyp.Name = "cboPrdTyp"
+        Me.cboPrdTyp.Size = New System.Drawing.Size(178, 22)
+        Me.cboPrdTyp.TabIndex = 305
+        '
+        'lblPrdTyp
+        '
+        Me.lblPrdTyp.AutoSize = True
+        Me.lblPrdTyp.Location = New System.Drawing.Point(498, 88)
+        Me.lblPrdTyp.Name = "lblPrdTyp"
+        Me.lblPrdTyp.Size = New System.Drawing.Size(71, 12)
+        Me.lblPrdTyp.TabIndex = 66
+        Me.lblPrdTyp.Text = "Product Type "
+        '
+        'lblItmNature
+        '
+        Me.lblItmNature.AutoSize = True
+        Me.lblItmNature.Location = New System.Drawing.Point(35, 154)
+        Me.lblItmNature.Name = "lblItmNature"
+        Me.lblItmNature.Size = New System.Drawing.Size(63, 12)
+        Me.lblItmNature.TabIndex = 64
+        Me.lblItmNature.Text = "Item Nature "
+        '
+        'cboItmNature
+        '
+        Me.cboItmNature.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboItmNature.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboItmNature.FormattingEnabled = True
+        Me.cboItmNature.Location = New System.Drawing.Point(137, 151)
+        Me.cboItmNature.Name = "cboItmNature"
+        Me.cboItmNature.Size = New System.Drawing.Size(340, 22)
+        Me.cboItmNature.TabIndex = 308
+        '
+        'lblMaterial
+        '
+        Me.lblMaterial.AutoSize = True
+        Me.lblMaterial.Location = New System.Drawing.Point(37, 120)
+        Me.lblMaterial.Name = "lblMaterial"
+        Me.lblMaterial.Size = New System.Drawing.Size(68, 12)
+        Me.lblMaterial.TabIndex = 62
+        Me.lblMaterial.Text = "Key Material "
+        '
+        'cboMaterial
+        '
+        Me.cboMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboMaterial.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboMaterial.FormattingEnabled = True
+        Me.cboMaterial.Location = New System.Drawing.Point(137, 117)
+        Me.cboMaterial.Name = "cboMaterial"
+        Me.cboMaterial.Size = New System.Drawing.Size(340, 22)
+        Me.cboMaterial.TabIndex = 307
+        '
+        'pbImage2
+        '
+        Me.pbImage2.BackColor = System.Drawing.Color.White
+        Me.pbImage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.pbImage2.InitialImage = Nothing
+        Me.pbImage2.Location = New System.Drawing.Point(740, 273)
+        Me.pbImage2.MaximumSize = New System.Drawing.Size(500, 500)
+        Me.pbImage2.Name = "pbImage2"
+        Me.pbImage2.Size = New System.Drawing.Size(175, 219)
+        Me.pbImage2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbImage2.TabIndex = 319
+        Me.pbImage2.TabStop = False
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.lbBOMColor)
+        Me.TabPage4.Controls.Add(Me.lblBOMASS)
+        Me.TabPage4.Controls.Add(Me.IMTreeView)
+        Me.TabPage4.Controls.Add(Me.Label42)
+        Me.TabPage4.Controls.Add(Me.Label41)
+        Me.TabPage4.Controls.Add(Me.dgRelParentItem)
+        Me.TabPage4.Controls.Add(Me.GroupBox6)
+        Me.TabPage4.Controls.Add(Me.Label40)
+        Me.TabPage4.Controls.Add(Me.dgBOMASS)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 23)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Size = New System.Drawing.Size(942, 498)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "(4) BOM/Assortment"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'lbBOMColor
+        '
+        Me.lbBOMColor.FormattingEnabled = True
+        Me.lbBOMColor.ItemHeight = 12
+        Me.lbBOMColor.Location = New System.Drawing.Point(19, 140)
+        Me.lbBOMColor.Name = "lbBOMColor"
+        Me.lbBOMColor.Size = New System.Drawing.Size(122, 28)
+        Me.lbBOMColor.TabIndex = 64
+        Me.lbBOMColor.Visible = False
+        '
+        'lblBOMASS
+        '
+        Me.lblBOMASS.AutoSize = True
+        Me.lblBOMASS.Location = New System.Drawing.Point(8, 11)
+        Me.lblBOMASS.Name = "lblBOMASS"
+        Me.lblBOMASS.Size = New System.Drawing.Size(92, 12)
+        Me.lblBOMASS.TabIndex = 63
+        Me.lblBOMASS.Text = "BOM / Assortment"
+        '
+        'IMTreeView
+        '
+        Me.IMTreeView.Location = New System.Drawing.Point(6, 255)
+        Me.IMTreeView.Name = "IMTreeView"
+        TreeNode1.Name = "Node4"
+        TreeNode1.Text = "(BOM) 3710060500C PC/0/2"
+        TreeNode2.Name = "Node0"
+        TreeNode2.Text = "(REG) 12A001A001A01 PC/0/3"
+        Me.IMTreeView.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode2})
+        Me.IMTreeView.Size = New System.Drawing.Size(265, 240)
+        Me.IMTreeView.TabIndex = 404
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Location = New System.Drawing.Point(274, 238)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(96, 12)
+        Me.Label42.TabIndex = 61
+        Me.Label42.Text = "Related Parent Item"
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Location = New System.Drawing.Point(8, 238)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(77, 12)
+        Me.Label41.TabIndex = 60
+        Me.Label41.Text = "Item Tree View"
+        '
+        'dgRelParentItem
+        '
+        Me.dgRelParentItem.AllowUserToAddRows = False
+        Me.dgRelParentItem.AllowUserToDeleteRows = False
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgRelParentItem.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
+        Me.dgRelParentItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle10.NullValue = """"""
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgRelParentItem.DefaultCellStyle = DataGridViewCellStyle10
+        Me.dgRelParentItem.Location = New System.Drawing.Point(277, 255)
+        Me.dgRelParentItem.Name = "dgRelParentItem"
+        Me.dgRelParentItem.RowHeadersWidth = 30
+        Me.dgRelParentItem.RowTemplate.Height = 24
+        Me.dgRelParentItem.Size = New System.Drawing.Size(662, 240)
+        Me.dgRelParentItem.TabIndex = 405
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.rbBOMASS_BOM)
+        Me.GroupBox6.Controls.Add(Me.rbBOMASS_ASS)
+        Me.GroupBox6.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox6.Location = New System.Drawing.Point(128, 0)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(212, 30)
+        Me.GroupBox6.TabIndex = 56
+        Me.GroupBox6.TabStop = False
+        '
+        'rbBOMASS_BOM
+        '
+        Me.rbBOMASS_BOM.AutoSize = True
+        Me.rbBOMASS_BOM.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbBOMASS_BOM.Location = New System.Drawing.Point(110, 9)
+        Me.rbBOMASS_BOM.Name = "rbBOMASS_BOM"
+        Me.rbBOMASS_BOM.Size = New System.Drawing.Size(48, 18)
+        Me.rbBOMASS_BOM.TabIndex = 402
+        Me.rbBOMASS_BOM.Text = "BOM"
+        Me.rbBOMASS_BOM.UseVisualStyleBackColor = True
+        '
+        'rbBOMASS_ASS
+        '
+        Me.rbBOMASS_ASS.AutoSize = True
+        Me.rbBOMASS_ASS.Checked = True
+        Me.rbBOMASS_ASS.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbBOMASS_ASS.Location = New System.Drawing.Point(6, 9)
+        Me.rbBOMASS_ASS.Name = "rbBOMASS_ASS"
+        Me.rbBOMASS_ASS.Size = New System.Drawing.Size(81, 18)
+        Me.rbBOMASS_ASS.TabIndex = 401
+        Me.rbBOMASS_ASS.TabStop = True
+        Me.rbBOMASS_ASS.Text = "Assortment"
+        Me.rbBOMASS_ASS.UseVisualStyleBackColor = True
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Location = New System.Drawing.Point(4, 183)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(0, 12)
+        Me.Label40.TabIndex = 19
+        '
+        'dgBOMASS
+        '
+        Me.dgBOMASS.AllowUserToAddRows = False
+        Me.dgBOMASS.AllowUserToDeleteRows = False
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgBOMASS.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        Me.dgBOMASS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle12.NullValue = """"""
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgBOMASS.DefaultCellStyle = DataGridViewCellStyle12
+        Me.dgBOMASS.Location = New System.Drawing.Point(6, 33)
+        Me.dgBOMASS.Name = "dgBOMASS"
+        Me.dgBOMASS.RowHeadersWidth = 30
+        Me.dgBOMASS.RowTemplate.Height = 24
+        Me.dgBOMASS.Size = New System.Drawing.Size(933, 202)
+        Me.dgBOMASS.TabIndex = 403
+        '
+        'TabPage5
+        '
+        Me.TabPage5.Controls.Add(Me.lblPriceStatus)
+        Me.TabPage5.Controls.Add(Me.gbPriceStatus)
+        Me.TabPage5.Controls.Add(Me.lblPricing)
+        Me.TabPage5.Controls.Add(Me.Label89)
+        Me.TabPage5.Controls.Add(Me.txtCstRmk)
+        Me.TabPage5.Controls.Add(Me.TextBox1)
+        Me.TabPage5.Controls.Add(Me.Label45)
+        Me.TabPage5.Controls.Add(Me.Label88)
+        Me.TabPage5.Controls.Add(Me.txtCstExpDat)
+        Me.TabPage5.Controls.Add(Me.Label7)
+        Me.TabPage5.Controls.Add(Me.Label44)
+        Me.TabPage5.Controls.Add(Me.lblCstRmk)
+        Me.TabPage5.Controls.Add(Me.gbPriceView)
+        Me.TabPage5.Controls.Add(Me.dgCostPrice)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 23)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Size = New System.Drawing.Size(942, 498)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "(5) Cost Price"
+        Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'lblPriceStatus
+        '
+        Me.lblPriceStatus.AutoSize = True
+        Me.lblPriceStatus.Location = New System.Drawing.Point(654, 14)
+        Me.lblPriceStatus.Name = "lblPriceStatus"
+        Me.lblPriceStatus.Size = New System.Drawing.Size(68, 12)
+        Me.lblPriceStatus.TabIndex = 88
+        Me.lblPriceStatus.Text = "Pricing Status"
+        '
+        'gbPriceStatus
+        '
+        Me.gbPriceStatus.Controls.Add(Me.rbPriceStatus_NA)
+        Me.gbPriceStatus.Controls.Add(Me.rbPriceStatus_INA)
+        Me.gbPriceStatus.Controls.Add(Me.rbPriceStatus_ACT)
+        Me.gbPriceStatus.Controls.Add(Me.rbPriceStatus_All)
+        Me.gbPriceStatus.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbPriceStatus.Location = New System.Drawing.Point(733, 0)
+        Me.gbPriceStatus.Name = "gbPriceStatus"
+        Me.gbPriceStatus.Size = New System.Drawing.Size(196, 35)
+        Me.gbPriceStatus.TabIndex = 87
+        Me.gbPriceStatus.TabStop = False
+        '
+        'rbPriceStatus_NA
+        '
+        Me.rbPriceStatus_NA.AutoSize = True
+        Me.rbPriceStatus_NA.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbPriceStatus_NA.Location = New System.Drawing.Point(148, 11)
+        Me.rbPriceStatus_NA.Name = "rbPriceStatus_NA"
+        Me.rbPriceStatus_NA.Size = New System.Drawing.Size(45, 18)
+        Me.rbPriceStatus_NA.TabIndex = 507
+        Me.rbPriceStatus_NA.Text = "TBC"
+        Me.rbPriceStatus_NA.UseVisualStyleBackColor = True
+        '
+        'rbPriceStatus_INA
+        '
+        Me.rbPriceStatus_INA.AutoSize = True
+        Me.rbPriceStatus_INA.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbPriceStatus_INA.Location = New System.Drawing.Point(101, 11)
+        Me.rbPriceStatus_INA.Name = "rbPriceStatus_INA"
+        Me.rbPriceStatus_INA.Size = New System.Drawing.Size(42, 18)
+        Me.rbPriceStatus_INA.TabIndex = 506
+        Me.rbPriceStatus_INA.Text = "INA"
+        Me.rbPriceStatus_INA.UseVisualStyleBackColor = True
+        '
+        'rbPriceStatus_ACT
+        '
+        Me.rbPriceStatus_ACT.AutoSize = True
+        Me.rbPriceStatus_ACT.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbPriceStatus_ACT.Location = New System.Drawing.Point(49, 11)
+        Me.rbPriceStatus_ACT.Name = "rbPriceStatus_ACT"
+        Me.rbPriceStatus_ACT.Size = New System.Drawing.Size(46, 18)
+        Me.rbPriceStatus_ACT.TabIndex = 505
+        Me.rbPriceStatus_ACT.Text = "ACT"
+        Me.rbPriceStatus_ACT.UseVisualStyleBackColor = True
+        '
+        'rbPriceStatus_All
+        '
+        Me.rbPriceStatus_All.AutoSize = True
+        Me.rbPriceStatus_All.Checked = True
+        Me.rbPriceStatus_All.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbPriceStatus_All.Location = New System.Drawing.Point(6, 11)
+        Me.rbPriceStatus_All.Name = "rbPriceStatus_All"
+        Me.rbPriceStatus_All.Size = New System.Drawing.Size(37, 18)
+        Me.rbPriceStatus_All.TabIndex = 504
+        Me.rbPriceStatus_All.TabStop = True
+        Me.rbPriceStatus_All.Text = "All"
+        Me.rbPriceStatus_All.UseVisualStyleBackColor = True
+        '
+        'lblPricing
+        '
+        Me.lblPricing.AutoSize = True
+        Me.lblPricing.Location = New System.Drawing.Point(6, 14)
+        Me.lblPricing.Name = "lblPricing"
+        Me.lblPricing.Size = New System.Drawing.Size(62, 12)
+        Me.lblPricing.TabIndex = 86
+        Me.lblPricing.Text = "Item Pricing"
+        '
+        'Label89
+        '
+        Me.Label89.AutoSize = True
+        Me.Label89.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label89.Location = New System.Drawing.Point(846, 452)
+        Me.Label89.Name = "Label89"
+        Me.Label89.Size = New System.Drawing.Size(83, 14)
+        Me.Label89.TabIndex = 84
+        Me.Label89.Text = "(MM/DD/YYYY)"
+        Me.Label89.Visible = False
+        '
+        'txtCstRmk
+        '
+        Me.txtCstRmk.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCstRmk.Location = New System.Drawing.Point(80, 409)
+        Me.txtCstRmk.MaxLength = 2000
+        Me.txtCstRmk.Name = "txtCstRmk"
+        Me.txtCstRmk.Size = New System.Drawing.Size(756, 82)
+        Me.txtCstRmk.TabIndex = 509
+        Me.txtCstRmk.Text = ""
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(845, 429)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(68, 20)
+        Me.TextBox1.TabIndex = 83
+        Me.TextBox1.Text = "__/__/____"
+        Me.TextBox1.Visible = False
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.Location = New System.Drawing.Point(846, 452)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(83, 14)
+        Me.Label45.TabIndex = 84
+        Me.Label45.Text = "(MM/DD/YYYY)"
+        Me.Label45.Visible = False
+        '
+        'Label88
+        '
+        Me.Label88.AutoSize = True
+        Me.Label88.Location = New System.Drawing.Point(842, 409)
+        Me.Label88.Name = "Label88"
+        Me.Label88.Size = New System.Drawing.Size(88, 12)
+        Me.Label88.TabIndex = 82
+        Me.Label88.Text = "Cost Expiry Date "
+        Me.Label88.Visible = False
+        '
+        'txtCstExpDat
+        '
+        Me.txtCstExpDat.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCstExpDat.Location = New System.Drawing.Point(845, 429)
+        Me.txtCstExpDat.Name = "txtCstExpDat"
+        Me.txtCstExpDat.Size = New System.Drawing.Size(68, 20)
+        Me.txtCstExpDat.TabIndex = 83
+        Me.txtCstExpDat.Text = "__/__/____"
+        Me.txtCstExpDat.Visible = False
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(2, 414)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(73, 12)
+        Me.Label7.TabIndex = 81
+        Me.Label7.Text = "Cost Remarks "
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.Location = New System.Drawing.Point(842, 409)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(93, 14)
+        Me.Label44.TabIndex = 82
+        Me.Label44.Text = "Cost Expiry Date :"
+        Me.Label44.Visible = False
+        '
+        'lblCstRmk
+        '
+        Me.lblCstRmk.AutoSize = True
+        Me.lblCstRmk.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCstRmk.Location = New System.Drawing.Point(0, 414)
+        Me.lblCstRmk.Name = "lblCstRmk"
+        Me.lblCstRmk.Size = New System.Drawing.Size(80, 14)
+        Me.lblCstRmk.TabIndex = 81
+        Me.lblCstRmk.Text = "Cost Remarks :"
+        '
+        'gbPriceView
+        '
+        Me.gbPriceView.Controls.Add(Me.rbPriceView_P)
+        Me.gbPriceView.Controls.Add(Me.rbPriceView_F)
+        Me.gbPriceView.Controls.Add(Me.rbPriceView_S)
+        Me.gbPriceView.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbPriceView.Location = New System.Drawing.Point(96, 0)
+        Me.gbPriceView.Name = "gbPriceView"
+        Me.gbPriceView.Size = New System.Drawing.Size(213, 35)
+        Me.gbPriceView.TabIndex = 57
+        Me.gbPriceView.TabStop = False
+        '
+        'rbPriceView_P
+        '
+        Me.rbPriceView_P.AutoSize = True
+        Me.rbPriceView_P.Checked = True
+        Me.rbPriceView_P.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbPriceView_P.Location = New System.Drawing.Point(128, 11)
+        Me.rbPriceView_P.Name = "rbPriceView_P"
+        Me.rbPriceView_P.Size = New System.Drawing.Size(74, 18)
+        Me.rbPriceView_P.TabIndex = 503
+        Me.rbPriceView_P.TabStop = True
+        Me.rbPriceView_P.Text = "Price Only"
+        Me.rbPriceView_P.UseVisualStyleBackColor = True
+        '
+        'rbPriceView_F
+        '
+        Me.rbPriceView_F.AutoSize = True
+        Me.rbPriceView_F.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbPriceView_F.Location = New System.Drawing.Point(81, 11)
+        Me.rbPriceView_F.Name = "rbPriceView_F"
+        Me.rbPriceView_F.Size = New System.Drawing.Size(41, 18)
+        Me.rbPriceView_F.TabIndex = 502
+        Me.rbPriceView_F.Text = "Full"
+        Me.rbPriceView_F.UseVisualStyleBackColor = True
+        '
+        'rbPriceView_S
+        '
+        Me.rbPriceView_S.AutoSize = True
+        Me.rbPriceView_S.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbPriceView_S.Location = New System.Drawing.Point(6, 11)
+        Me.rbPriceView_S.Name = "rbPriceView_S"
+        Me.rbPriceView_S.Size = New System.Drawing.Size(69, 18)
+        Me.rbPriceView_S.TabIndex = 501
+        Me.rbPriceView_S.Text = "Standard"
+        Me.rbPriceView_S.UseVisualStyleBackColor = True
+        '
+        'dgCostPrice
+        '
+        Me.dgCostPrice.AllowUserToAddRows = False
+        Me.dgCostPrice.AllowUserToDeleteRows = False
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgCostPrice.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
+        Me.dgCostPrice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle14.NullValue = """"""
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgCostPrice.DefaultCellStyle = DataGridViewCellStyle14
+        Me.dgCostPrice.Location = New System.Drawing.Point(3, 41)
+        Me.dgCostPrice.Name = "dgCostPrice"
+        Me.dgCostPrice.RowHeadersWidth = 30
+        Me.dgCostPrice.RowTemplate.Height = 24
+        Me.dgCostPrice.Size = New System.Drawing.Size(932, 362)
+        Me.dgCostPrice.TabIndex = 508
+        '
+        'TabPage6
+        '
+        Me.TabPage6.Controls.Add(Me.gbMOQMOA)
+        Me.TabPage6.Controls.Add(Me.dgTempItem)
+        Me.TabPage6.Controls.Add(Me.Label110)
+        Me.TabPage6.Controls.Add(Me.Label84)
+        Me.TabPage6.Controls.Add(Me.txtHstuEURDuty)
+        Me.TabPage6.Controls.Add(Me.txtHstuUSADuty)
+        Me.TabPage6.Controls.Add(Me.Label109)
+        Me.TabPage6.Controls.Add(Me.Label5)
+        Me.TabPage6.Controls.Add(Me.Label108)
+        Me.TabPage6.Controls.Add(Me.Label4)
+        Me.TabPage6.Controls.Add(Me.Label107)
+        Me.TabPage6.Controls.Add(Me.Label3)
+        Me.TabPage6.Controls.Add(Me.Label106)
+        Me.TabPage6.Controls.Add(Me.Label2)
+        Me.TabPage6.Controls.Add(Me.cboHstuUSA)
+        Me.TabPage6.Controls.Add(Me.cboHstuEur)
+        Me.TabPage6.Controls.Add(Me.cboConstrMethod)
+        Me.TabPage6.Controls.Add(Me.Label105)
+        Me.TabPage6.Controls.Add(Me.Label1)
+        Me.TabPage6.Controls.Add(Me.txtAlsitmcol)
+        Me.TabPage6.Controls.Add(Me.Label104)
+        Me.TabPage6.Controls.Add(Me.Label14)
+        Me.TabPage6.Controls.Add(Me.txtAlsitmno)
+        Me.TabPage6.Controls.Add(Me.GroupBox1)
+        Me.TabPage6.Controls.Add(Me.gbAddreq)
+        Me.TabPage6.Controls.Add(Me.Label103)
+        Me.TabPage6.Controls.Add(Me.lblCusStyle)
+        Me.TabPage6.Controls.Add(Me.Label102)
+        Me.TabPage6.Controls.Add(Me.dgCusStyle)
+        Me.TabPage6.Controls.Add(Me.lblExclCustomer)
+        Me.TabPage6.Controls.Add(Me.Label101)
+        Me.TabPage6.Controls.Add(Me.dgExclCustomer)
+        Me.TabPage6.Controls.Add(Me.lblMatBreakdown)
+        Me.TabPage6.Controls.Add(Me.dgMatBreakdown)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 23)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Size = New System.Drawing.Size(942, 498)
+        Me.TabPage6.TabIndex = 5
+        Me.TabPage6.Text = "(6) Additional Info"
+        Me.TabPage6.UseVisualStyleBackColor = True
         '
         'gbMOQMOA
         '
@@ -4654,7 +4552,7 @@ Public Class IMM00001
         Me.gbMOQMOA.Controls.Add(Me.rbTier_Standard)
         Me.gbMOQMOA.Location = New System.Drawing.Point(434, 14)
         Me.gbMOQMOA.Name = "gbMOQMOA"
-        Me.gbMOQMOA.Size = New System.Drawing.Size(470, 239)
+        Me.gbMOQMOA.Size = New System.Drawing.Size(501, 239)
         Me.gbMOQMOA.TabIndex = 604
         Me.gbMOQMOA.TabStop = False
         Me.gbMOQMOA.Text = "MOQ / MOA"
@@ -4663,32 +4561,39 @@ Public Class IMM00001
         '
         Me.dgMOQMOA.AllowUserToAddRows = False
         Me.dgMOQMOA.AllowUserToDeleteRows = False
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgMOQMOA.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle15
         Me.dgMOQMOA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle9.NullValue = """"""
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgMOQMOA.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle16.NullValue = """"""
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgMOQMOA.DefaultCellStyle = DataGridViewCellStyle16
         Me.dgMOQMOA.Location = New System.Drawing.Point(13, 101)
         Me.dgMOQMOA.Name = "dgMOQMOA"
         Me.dgMOQMOA.RowHeadersWidth = 30
         Me.dgMOQMOA.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
         Me.dgMOQMOA.RowTemplate.Height = 24
-        Me.dgMOQMOA.Size = New System.Drawing.Size(442, 132)
+        Me.dgMOQMOA.Size = New System.Drawing.Size(482, 132)
         Me.dgMOQMOA.TabIndex = 613
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.WindowText
         Me.Label6.Location = New System.Drawing.Point(10, 74)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(50, 14)
+        Me.Label6.Size = New System.Drawing.Size(44, 12)
         Me.Label6.TabIndex = 88
         Me.Label6.Text = "Wastage"
         '
@@ -4717,11 +4622,10 @@ Public Class IMM00001
         'Label37
         '
         Me.Label37.AutoSize = True
-        Me.Label37.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label37.ForeColor = System.Drawing.SystemColors.WindowText
         Me.Label37.Location = New System.Drawing.Point(267, 74)
         Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(81, 14)
+        Me.Label37.Size = New System.Drawing.Size(82, 12)
         Me.Label37.TabIndex = 84
         Me.Label37.Text = "Per Multiple Qty"
         '
@@ -4759,11 +4663,10 @@ Public Class IMM00001
         'Label36
         '
         Me.Label36.AutoSize = True
-        Me.Label36.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label36.ForeColor = System.Drawing.SystemColors.WindowText
         Me.Label36.Location = New System.Drawing.Point(180, 48)
         Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(31, 14)
+        Me.Label36.Size = New System.Drawing.Size(31, 12)
         Me.Label36.TabIndex = 80
         Me.Label36.Text = "MOA"
         '
@@ -4779,11 +4682,10 @@ Public Class IMM00001
         'Label35
         '
         Me.Label35.AutoSize = True
-        Me.Label35.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label35.ForeColor = System.Drawing.SystemColors.WindowText
         Me.Label35.Location = New System.Drawing.Point(180, 22)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(84, 14)
+        Me.Label35.Size = New System.Drawing.Size(82, 12)
         Me.Label35.TabIndex = 78
         Me.Label35.Text = "MOQ for Master"
         '
@@ -4792,7 +4694,7 @@ Public Class IMM00001
         Me.rbTier_CompDef.AutoSize = True
         Me.rbTier_CompDef.Location = New System.Drawing.Point(13, 44)
         Me.rbTier_CompDef.Name = "rbTier_CompDef"
-        Me.rbTier_CompDef.Size = New System.Drawing.Size(110, 18)
+        Me.rbTier_CompDef.Size = New System.Drawing.Size(109, 16)
         Me.rbTier_CompDef.TabIndex = 606
         Me.rbTier_CompDef.TabStop = True
         Me.rbTier_CompDef.Text = "Company Defined"
@@ -4803,11 +4705,348 @@ Public Class IMM00001
         Me.rbTier_Standard.AutoSize = True
         Me.rbTier_Standard.Location = New System.Drawing.Point(13, 18)
         Me.rbTier_Standard.Name = "rbTier_Standard"
-        Me.rbTier_Standard.Size = New System.Drawing.Size(90, 18)
+        Me.rbTier_Standard.Size = New System.Drawing.Size(86, 16)
         Me.rbTier_Standard.TabIndex = 605
         Me.rbTier_Standard.TabStop = True
         Me.rbTier_Standard.Text = "Standard Tier"
         Me.rbTier_Standard.UseVisualStyleBackColor = True
+        '
+        'dgTempItem
+        '
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgTempItem.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
+        Me.dgTempItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle18.NullValue = """"""
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgTempItem.DefaultCellStyle = DataGridViewCellStyle18
+        Me.dgTempItem.Location = New System.Drawing.Point(19, 324)
+        Me.dgTempItem.Name = "dgTempItem"
+        Me.dgTempItem.RowHeadersWidth = 30
+        Me.dgTempItem.RowTemplate.Height = 24
+        Me.dgTempItem.Size = New System.Drawing.Size(380, 86)
+        Me.dgTempItem.TabIndex = 616
+        '
+        'Label110
+        '
+        Me.Label110.AutoSize = True
+        Me.Label110.Location = New System.Drawing.Point(19, 307)
+        Me.Label110.Name = "Label110"
+        Me.Label110.Size = New System.Drawing.Size(100, 12)
+        Me.Label110.TabIndex = 116
+        Me.Label110.Text = "Temp Item Number "
+        '
+        'Label84
+        '
+        Me.Label84.AutoSize = True
+        Me.Label84.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label84.Location = New System.Drawing.Point(19, 307)
+        Me.Label84.Name = "Label84"
+        Me.Label84.Size = New System.Drawing.Size(100, 14)
+        Me.Label84.TabIndex = 116
+        Me.Label84.Text = "Temp Item Number :"
+        '
+        'txtHstuEURDuty
+        '
+        Me.txtHstuEURDuty.BackColor = System.Drawing.Color.White
+        Me.txtHstuEURDuty.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtHstuEURDuty.ForeColor = System.Drawing.Color.Black
+        Me.txtHstuEURDuty.Location = New System.Drawing.Point(845, 458)
+        Me.txtHstuEURDuty.Name = "txtHstuEURDuty"
+        Me.txtHstuEURDuty.Size = New System.Drawing.Size(89, 20)
+        Me.txtHstuEURDuty.TabIndex = 622
+        '
+        'txtHstuUSADuty
+        '
+        Me.txtHstuUSADuty.BackColor = System.Drawing.Color.White
+        Me.txtHstuUSADuty.Enabled = False
+        Me.txtHstuUSADuty.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtHstuUSADuty.ForeColor = System.Drawing.Color.Black
+        Me.txtHstuUSADuty.Location = New System.Drawing.Point(845, 430)
+        Me.txtHstuUSADuty.Name = "txtHstuUSADuty"
+        Me.txtHstuUSADuty.Size = New System.Drawing.Size(89, 20)
+        Me.txtHstuUSADuty.TabIndex = 620
+        '
+        'Label109
+        '
+        Me.Label109.AutoSize = True
+        Me.Label109.Location = New System.Drawing.Point(812, 461)
+        Me.Label109.Name = "Label109"
+        Me.Label109.Size = New System.Drawing.Size(28, 12)
+        Me.Label109.TabIndex = 112
+        Me.Label109.Text = "Duty"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(812, 461)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(32, 14)
+        Me.Label5.TabIndex = 112
+        Me.Label5.Text = "Duty:"
+        '
+        'Label108
+        '
+        Me.Label108.AutoSize = True
+        Me.Label108.Location = New System.Drawing.Point(812, 433)
+        Me.Label108.Name = "Label108"
+        Me.Label108.Size = New System.Drawing.Size(28, 12)
+        Me.Label108.TabIndex = 111
+        Me.Label108.Text = "Duty"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(812, 433)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(32, 14)
+        Me.Label4.TabIndex = 111
+        Me.Label4.Text = "Duty:"
+        '
+        'Label107
+        '
+        Me.Label107.AutoSize = True
+        Me.Label107.BackColor = System.Drawing.Color.Transparent
+        Me.Label107.Location = New System.Drawing.Point(16, 461)
+        Me.Label107.Name = "Label107"
+        Me.Label107.Size = New System.Drawing.Size(109, 12)
+        Me.Label107.TabIndex = 110
+        Me.Label107.Text = "Tariff No. for Europe "
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(16, 461)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(111, 14)
+        Me.Label3.TabIndex = 110
+        Me.Label3.Text = "Tariff No. for Europe :"
+        '
+        'Label106
+        '
+        Me.Label106.AutoSize = True
+        Me.Label106.BackColor = System.Drawing.Color.Transparent
+        Me.Label106.Location = New System.Drawing.Point(16, 433)
+        Me.Label106.Name = "Label106"
+        Me.Label106.Size = New System.Drawing.Size(99, 12)
+        Me.Label106.TabIndex = 109
+        Me.Label106.Text = "HSTU No. for USA "
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(16, 433)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(100, 14)
+        Me.Label2.TabIndex = 109
+        Me.Label2.Text = "HSTU No. for USA :"
+        '
+        'cboHstuUSA
+        '
+        Me.cboHstuUSA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboHstuUSA.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboHstuUSA.FormattingEnabled = True
+        Me.cboHstuUSA.Location = New System.Drawing.Point(133, 430)
+        Me.cboHstuUSA.Name = "cboHstuUSA"
+        Me.cboHstuUSA.Size = New System.Drawing.Size(644, 22)
+        Me.cboHstuUSA.TabIndex = 619
+        '
+        'cboHstuEur
+        '
+        Me.cboHstuEur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboHstuEur.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboHstuEur.FormattingEnabled = True
+        Me.cboHstuEur.Location = New System.Drawing.Point(133, 458)
+        Me.cboHstuEur.Name = "cboHstuEur"
+        Me.cboHstuEur.Size = New System.Drawing.Size(644, 22)
+        Me.cboHstuEur.TabIndex = 621
+        '
+        'cboConstrMethod
+        '
+        Me.cboConstrMethod.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboConstrMethod.FormattingEnabled = True
+        Me.cboConstrMethod.Location = New System.Drawing.Point(132, 145)
+        Me.cboConstrMethod.Name = "cboConstrMethod"
+        Me.cboConstrMethod.Size = New System.Drawing.Size(267, 22)
+        Me.cboConstrMethod.TabIndex = 602
+        '
+        'Label105
+        '
+        Me.Label105.AutoSize = True
+        Me.Label105.BackColor = System.Drawing.Color.Transparent
+        Me.Label105.Location = New System.Drawing.Point(16, 148)
+        Me.Label105.Name = "Label105"
+        Me.Label105.Size = New System.Drawing.Size(104, 12)
+        Me.Label105.TabIndex = 105
+        Me.Label105.Text = "Construction Method"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(16, 148)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(106, 14)
+        Me.Label1.TabIndex = 105
+        Me.Label1.Text = "Construction Method"
+        '
+        'txtAlsitmcol
+        '
+        Me.txtAlsitmcol.BackColor = System.Drawing.Color.White
+        Me.txtAlsitmcol.Enabled = False
+        Me.txtAlsitmcol.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAlsitmcol.ForeColor = System.Drawing.Color.Black
+        Me.txtAlsitmcol.Location = New System.Drawing.Point(269, 279)
+        Me.txtAlsitmcol.Name = "txtAlsitmcol"
+        Me.txtAlsitmcol.Size = New System.Drawing.Size(130, 20)
+        Me.txtAlsitmcol.TabIndex = 618
+        Me.txtAlsitmcol.Text = "N/A"
+        '
+        'Label104
+        '
+        Me.Label104.AutoSize = True
+        Me.Label104.Location = New System.Drawing.Point(16, 282)
+        Me.Label104.Name = "Label104"
+        Me.Label104.Size = New System.Drawing.Size(105, 12)
+        Me.Label104.TabIndex = 103
+        Me.Label104.Text = "Alias Item and Color "
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(16, 282)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(108, 14)
+        Me.Label14.TabIndex = 103
+        Me.Label14.Text = "Alias Item and Color :"
+        '
+        'txtAlsitmno
+        '
+        Me.txtAlsitmno.BackColor = System.Drawing.Color.White
+        Me.txtAlsitmno.Enabled = False
+        Me.txtAlsitmno.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAlsitmno.ForeColor = System.Drawing.Color.Black
+        Me.txtAlsitmno.Location = New System.Drawing.Point(143, 279)
+        Me.txtAlsitmno.Name = "txtAlsitmno"
+        Me.txtAlsitmno.Size = New System.Drawing.Size(120, 20)
+        Me.txtAlsitmno.TabIndex = 617
+        Me.txtAlsitmno.Text = "01A001A001A01"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.CheckBox1)
+        Me.GroupBox1.Controls.Add(Me.CheckBox2)
+        Me.GroupBox1.Controls.Add(Me.CheckBox3)
+        Me.GroupBox1.Location = New System.Drawing.Point(435, 259)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(500, 40)
+        Me.GroupBox1.TabIndex = 60
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Additional Process Requirement"
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(339, 16)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(67, 16)
+        Me.CheckBox1.TabIndex = 614
+        Me.CheckBox1.Text = "Sterilized"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(214, 16)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(52, 16)
+        Me.CheckBox2.TabIndex = 613
+        Me.CheckBox2.Text = "CCIB"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(71, 16)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(60, 16)
+        Me.CheckBox3.TabIndex = 612
+        Me.CheckBox3.Text = "Form A"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'gbAddreq
+        '
+        Me.gbAddreq.Controls.Add(Me.cbAddreq_ster)
+        Me.gbAddreq.Controls.Add(Me.cbAddreq_ccib)
+        Me.gbAddreq.Controls.Add(Me.cbAddreq_formA)
+        Me.gbAddreq.Location = New System.Drawing.Point(435, 259)
+        Me.gbAddreq.Name = "gbAddreq"
+        Me.gbAddreq.Size = New System.Drawing.Size(500, 40)
+        Me.gbAddreq.TabIndex = 60
+        Me.gbAddreq.TabStop = False
+        Me.gbAddreq.Text = "Additional Process Requirement"
+        '
+        'cbAddreq_ster
+        '
+        Me.cbAddreq_ster.AutoSize = True
+        Me.cbAddreq_ster.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbAddreq_ster.Location = New System.Drawing.Point(339, 16)
+        Me.cbAddreq_ster.Name = "cbAddreq_ster"
+        Me.cbAddreq_ster.Size = New System.Drawing.Size(70, 18)
+        Me.cbAddreq_ster.TabIndex = 614
+        Me.cbAddreq_ster.Text = "Sterilized"
+        Me.cbAddreq_ster.UseVisualStyleBackColor = True
+        '
+        'cbAddreq_ccib
+        '
+        Me.cbAddreq_ccib.AutoSize = True
+        Me.cbAddreq_ccib.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbAddreq_ccib.Location = New System.Drawing.Point(214, 16)
+        Me.cbAddreq_ccib.Name = "cbAddreq_ccib"
+        Me.cbAddreq_ccib.Size = New System.Drawing.Size(49, 18)
+        Me.cbAddreq_ccib.TabIndex = 613
+        Me.cbAddreq_ccib.Text = "CCIB"
+        Me.cbAddreq_ccib.UseVisualStyleBackColor = True
+        '
+        'cbAddreq_formA
+        '
+        Me.cbAddreq_formA.AutoSize = True
+        Me.cbAddreq_formA.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbAddreq_formA.Location = New System.Drawing.Point(71, 16)
+        Me.cbAddreq_formA.Name = "cbAddreq_formA"
+        Me.cbAddreq_formA.Size = New System.Drawing.Size(60, 18)
+        Me.cbAddreq_formA.TabIndex = 612
+        Me.cbAddreq_formA.Text = "Form A"
+        Me.cbAddreq_formA.UseVisualStyleBackColor = True
+        '
+        'Label103
+        '
+        Me.Label103.AutoSize = True
+        Me.Label103.BackColor = System.Drawing.Color.Transparent
+        Me.Label103.Location = New System.Drawing.Point(437, 307)
+        Me.Label103.Name = "Label103"
+        Me.Label103.Size = New System.Drawing.Size(117, 12)
+        Me.Label103.TabIndex = 58
+        Me.Label103.Text = "Customer Style Number"
         '
         'lblCusStyle
         '
@@ -4820,23 +5059,41 @@ Public Class IMM00001
         Me.lblCusStyle.TabIndex = 58
         Me.lblCusStyle.Text = "Customer Style Number"
         '
+        'Label102
+        '
+        Me.Label102.AutoSize = True
+        Me.Label102.BackColor = System.Drawing.Color.Transparent
+        Me.Label102.Location = New System.Drawing.Point(19, 14)
+        Me.Label102.Name = "Label102"
+        Me.Label102.Size = New System.Drawing.Size(98, 12)
+        Me.Label102.TabIndex = 56
+        Me.Label102.Text = "Exclusive Customer"
+        '
         'dgCusStyle
         '
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgCusStyle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle19
         Me.dgCusStyle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle10.NullValue = """"""
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgCusStyle.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle20.NullValue = """"""
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgCusStyle.DefaultCellStyle = DataGridViewCellStyle20
         Me.dgCusStyle.Location = New System.Drawing.Point(437, 324)
         Me.dgCusStyle.Name = "dgCusStyle"
         Me.dgCusStyle.RowHeadersWidth = 30
         Me.dgCusStyle.RowTemplate.Height = 24
-        Me.dgCusStyle.Size = New System.Drawing.Size(467, 86)
+        Me.dgCusStyle.Size = New System.Drawing.Size(498, 86)
         Me.dgCusStyle.TabIndex = 615
         '
         'lblExclCustomer
@@ -4850,18 +5107,36 @@ Public Class IMM00001
         Me.lblExclCustomer.TabIndex = 56
         Me.lblExclCustomer.Text = "Exclusive Customer"
         '
+        'Label101
+        '
+        Me.Label101.AutoSize = True
+        Me.Label101.BackColor = System.Drawing.Color.Transparent
+        Me.Label101.Location = New System.Drawing.Point(17, 131)
+        Me.Label101.Name = "Label101"
+        Me.Label101.Size = New System.Drawing.Size(100, 12)
+        Me.Label101.TabIndex = 54
+        Me.Label101.Text = "Material Breakdown"
+        '
         'dgExclCustomer
         '
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgExclCustomer.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle21
         Me.dgExclCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle11.NullValue = """"""
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgExclCustomer.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle22.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle22.NullValue = """"""
+        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgExclCustomer.DefaultCellStyle = DataGridViewCellStyle22
         Me.dgExclCustomer.Location = New System.Drawing.Point(19, 31)
         Me.dgExclCustomer.Name = "dgExclCustomer"
         Me.dgExclCustomer.RowHeadersWidth = 30
@@ -4882,16 +5157,24 @@ Public Class IMM00001
         '
         'dgMatBreakdown
         '
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgMatBreakdown.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
         Me.dgMatBreakdown.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle12.NullValue = """"""
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgMatBreakdown.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Arial", 8.25!)
+        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle24.NullValue = """"""
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgMatBreakdown.DefaultCellStyle = DataGridViewCellStyle24
         Me.dgMatBreakdown.Location = New System.Drawing.Point(19, 173)
         Me.dgMatBreakdown.Name = "dgMatBreakdown"
         Me.dgMatBreakdown.RowHeadersWidth = 30
@@ -4901,49 +5184,37 @@ Public Class IMM00001
         '
         'IMM00001
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(6, 15)
-        Me.ClientSize = New System.Drawing.Size(944, 621)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 15)
+        Me.ClientSize = New System.Drawing.Size(954, 631)
+        Me.Controls.Add(Me.PanelMOQMOA)
+        Me.Controls.Add(Me.PanelCostPrice)
+        Me.Controls.Add(Me.PanelPacking)
+        Me.Controls.Add(Me.menuStrip)
         Me.Controls.Add(Me.cmdRelItm)
         Me.Controls.Add(Me.PanelCopy)
         Me.Controls.Add(Me.PanelAdd)
         Me.Controls.Add(Me.cmdBrowse)
         Me.Controls.Add(Me.cmdMapping)
-        Me.Controls.Add(Me.cmdDelete)
         Me.Controls.Add(Me.cboStatus)
         Me.Controls.Add(Me.cboItmTyp)
         Me.Controls.Add(Me.cbTmpItm)
         Me.Controls.Add(Me.gbIMTyp)
         Me.Controls.Add(Me.gbIMStatus)
         Me.Controls.Add(Me.lblStatus)
-        Me.Controls.Add(Me.TabPageMain)
         Me.Controls.Add(Me.txtItmdsc)
         Me.Controls.Add(Me.lblItmTyp)
         Me.Controls.Add(Me.txtItmNo)
         Me.Controls.Add(Me.lblItmNo)
         Me.Controls.Add(Me.StatusBar)
-        Me.Controls.Add(Me.cmdCancel)
-        Me.Controls.Add(Me.cmdSave)
-        Me.Controls.Add(Me.cmdAdd)
-        Me.Controls.Add(Me.cmdLast)
-        Me.Controls.Add(Me.cmdPrevious)
-        Me.Controls.Add(Me.cmdNext)
-        Me.Controls.Add(Me.cmdFind)
-        Me.Controls.Add(Me.cmdCopy)
-        Me.Controls.Add(Me.cmdClear)
-        Me.Controls.Add(Me.cmdExit)
-        Me.Controls.Add(Me.cmdDelRow)
-        Me.Controls.Add(Me.cmdFirst)
-        Me.Controls.Add(Me.cmdInsRow)
-        Me.Controls.Add(Me.cmdSearch)
         Me.Controls.Add(Me.cbDiscontinue)
         Me.Controls.Add(Me.cmdActivate)
         Me.Controls.Add(Me.txtTmpItmNo)
-        Me.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Controls.Add(Me.TabPageMain)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(960, 660)
-        Me.MinimumSize = New System.Drawing.Size(960, 660)
         Me.Name = "IMM00001"
-        Me.Text = "IMM00001 - Item Master Maintenance"
+        Me.Text = "IMM00001 - Item Master Maintenance (IMM01)"
         CType(Me.StatusBarPanel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StatusBarPanel2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbIMStatus.ResumeLayout(False)
@@ -4954,11 +5225,17 @@ Public Class IMM00001
         Me.PanelCopy.PerformLayout()
         Me.PanelAdd.ResumeLayout(False)
         Me.PanelAdd.PerformLayout()
+        Me.menuStrip.ResumeLayout(False)
+        Me.menuStrip.PerformLayout()
+        Me.PanelPacking.ResumeLayout(False)
+        Me.PanelPacking.PerformLayout()
+        Me.PanelCostPrice.ResumeLayout(False)
+        Me.PanelCostPrice.PerformLayout()
+        Me.PanelMOQMOA.ResumeLayout(False)
+        Me.PanelMOQMOA.PerformLayout()
         Me.TabPageMain.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        Me.PanelPacking.ResumeLayout(False)
-        Me.PanelPacking.PerformLayout()
         CType(Me.pbImage, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgPacking, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgColor, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4969,8 +5246,8 @@ Public Class IMM00001
         CType(Me.dgPV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
-        CType(Me.pbImage2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgOEMCustomer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbImage2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
         CType(Me.dgRelParentItem, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4979,8 +5256,6 @@ Public Class IMM00001
         CType(Me.dgBOMASS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
-        Me.PanelCostPrice.ResumeLayout(False)
-        Me.PanelCostPrice.PerformLayout()
         Me.gbPriceStatus.ResumeLayout(False)
         Me.gbPriceStatus.PerformLayout()
         Me.gbPriceView.ResumeLayout(False)
@@ -4988,14 +5263,14 @@ Public Class IMM00001
         CType(Me.dgCostPrice, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage6.ResumeLayout(False)
         Me.TabPage6.PerformLayout()
-        Me.PanelMOQMOA.ResumeLayout(False)
-        Me.PanelMOQMOA.PerformLayout()
-        CType(Me.dgTempItem, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.gbAddreq.ResumeLayout(False)
-        Me.gbAddreq.PerformLayout()
         Me.gbMOQMOA.ResumeLayout(False)
         Me.gbMOQMOA.PerformLayout()
         CType(Me.dgMOQMOA, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgTempItem, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.gbAddreq.ResumeLayout(False)
+        Me.gbAddreq.PerformLayout()
         CType(Me.dgCusStyle, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgExclCustomer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgMatBreakdown, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5027,6 +5302,8 @@ Public Class IMM00001
 
     Dim Enq_right_local As Boolean
     Dim Del_right_local As Boolean
+    Dim IMR35_right_local As Boolean = False
+    Dim IMM04_right_local As Boolean = False
 
     Dim Got_Focus_Grid As String
 
@@ -5094,6 +5371,25 @@ Public Class IMM00001
     Dim rs_IMPCPCKINF As New DataSet
     Dim rs_IMPCPRCINF As New DataSet
 
+    Dim dispCopyFlag As Boolean
+    Dim dispInsFlag As Boolean
+    Dim dispSaveFlag As Boolean
+    Dim dispDeleteFlag As Boolean
+    Dim dispClearFlag As Boolean
+    Dim dispDelFlag As Boolean
+    Dim dispExitFlag As Boolean
+
+    Dim dispCmdMappingFlag As Boolean
+    Dim dispCbTmpItmFlag As Boolean
+    Dim dispCmdRelItmFlag As Boolean
+    Dim dispCbDiscontinueFlag As Boolean
+    Dim dispCmdActivateFlag As Boolean
+    Dim dispgbIMStatusFlag As Boolean
+
+    Dim dispPrintFlag As Boolean
+    Dim dispAttachFlag As Boolean
+    Dim dispFunctionFlag As Boolean
+    Dim dispLinkFlag As Boolean
 #Region " Datagrid Variable "
     'dgBOMASS
     Dim dgBOMASS_iba_status As Integer
@@ -5307,17 +5603,20 @@ Public Class IMM00001
         End If
     End Sub
 
-    Private Sub IMM00101_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub IMM00001_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call Formstartup(Me.Name)
 
         Call AccessRight(Me.Name)
         Enq_right_local = Enq_right
         Del_right_local = Del_right
 
+        IMR35_right_local = False 'getEnquiryRightByFormName(IMR00035.Name.ToString)
+        IMM04_right_local = False 'getEnquiryRightByFormName(IMM00004.Name.ToString)
+
         format_cboItmTyp()
         format_cboStatus()
 
-        gspStr = "sp_list_VNBASINF_NOT_PD ''"
+        gspStr = "sp_list_VNBASINF ''"
         rtnLong = execute_SQLStatement(gspStr, rs_VNBASINF, rtnStr)
         If rtnLong <> RC_SUCCESS Then
             MsgBox("Error on loading IMM00001_Load sp_list_VNBASINF :" & rtnStr)
@@ -5513,9 +5812,22 @@ Public Class IMM00001
         mode = "INIT"
         Call formInit(mode)
         txtItmNo.Select()
+
+
+        panelMoveTimer = New Timer()
+        panelMoveTimer.Interval = 2
+        panelMoveTimer.Enabled = True
+
+
+        AddHandler panelMoveTimer.Tick, AddressOf panelMoveTimer_Tick
+        setupMovablePanel(PanelPacking, "Packing Infomation", Nothing)
+        setupMovablePanel(PanelCostPrice, "Cost/Price Infomation", Nothing)
+
+        setupMovablePanel(PanelMOQMOA, "MOQ/MOA", Nothing)
     End Sub
 
-    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdExit.Click
+    Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
+        If checkFocus(Me) Then Exit Sub
         If Recordstatus = True Then
             cmdClear_Click(sender, e)
         End If
@@ -5585,78 +5897,72 @@ Public Class IMM00001
     Private Sub resetcmdButton(ByVal m As String)
         If m = "INIT" Then
             If Enq_right_local = True Then
-                Me.cmdAdd.Enabled = True
+                Me.mmdAdd.Enabled = True
             Else
-                Me.cmdAdd.Enabled = False
+                Me.mmdAdd.Enabled = False
             End If
-            Me.cmdSave.Enabled = False
-            Me.cmdDelete.Enabled = False
-            Me.cmdCancel.Enabled = False
-            Me.cmdCopy.Enabled = False
-            Me.cmdFind.Enabled = True
-            Me.cmdClear.Enabled = False
+            Me.mmdSave.Enabled = False
+            Me.mmdDelete.Enabled = False
+            Me.mmdFind.Enabled = True
+            Me.mmdClear.Enabled = False
 
-            Me.cmdSearch.Enabled = True
+            Me.mmdCopy.Enabled = False
+            Me.mmdSearch.Enabled = True
 
-            Me.cmdInsRow.Enabled = False
-            Me.cmdDelRow.Enabled = False
-            Me.cmdFirst.Enabled = False
-            Me.cmdPrevious.Enabled = False
-            Me.cmdNext.Enabled = False
-            Me.cmdLast.Enabled = False
-
+            Me.mmdInsRow.Enabled = False
+            Me.mmdDelRow.Enabled = False
             Me.cmdCombineImage.Enabled = False
             Me.cmdActivate.Enabled = False
             Me.cmdRelItm.Enabled = False
             Me.cbDiscontinue.Enabled = False
             Me.cmdBatchUpdate.Enabled = False
 
+            Me.mmdPrint.Enabled = False
+            Me.mmdAttach.Enabled = False
+            Me.mmdFunction.Enabled = False
+            Me.mmdLink.Enabled = False
             Me.cmdBrowse.Enabled = True
             Me.cmdMapping.Enabled = False
             Me.cmdCopyPV.Enabled = True
-            Me.cmdExit.Enabled = True
+            Me.mmdExit.Enabled = True
 
         ElseIf m = "ADD" Then
-            Me.cmdAdd.Enabled = False
-            Me.cmdSave.Enabled = True
-            Me.cmdDelete.Enabled = False
-            Me.cmdCancel.Enabled = False
-            Me.cmdCopy.Enabled = False
-            Me.cmdFind.Enabled = False
-            Me.cmdClear.Enabled = True
+            Me.mmdAdd.Enabled = False
+            Me.mmdSave.Enabled = True
+            Me.mmdDelete.Enabled = False
+            Me.mmdCopy.Enabled = False
+            Me.mmdFind.Enabled = False
+            Me.mmdClear.Enabled = True
 
-            Me.cmdSearch.Enabled = False
+            Me.mmdSearch.Enabled = False
 
-            Me.cmdInsRow.Enabled = True
-            Me.cmdDelRow.Enabled = True
-            Me.cmdFirst.Enabled = False
-            Me.cmdPrevious.Enabled = False
-            Me.cmdNext.Enabled = False
-            Me.cmdLast.Enabled = False
+            Me.mmdInsRow.Enabled = True
+            Me.mmdDelRow.Enabled = True
 
             Me.cmdBrowse.Enabled = False
             Me.cmdMapping.Enabled = False
             Me.cmdBatchUpdate.Enabled = False
             Me.cmdCopyPV.Enabled = True
 
-            Me.cmdExit.Enabled = True
+            Me.mmdExit.Enabled = True
         ElseIf m = "UPDATE" Then
-            Me.cmdAdd.Enabled = False
-            Me.cmdSave.Enabled = True
-            Me.cmdDelete.Enabled = True
-            Me.cmdCancel.Enabled = False
-            Me.cmdCopy.Enabled = True
-            Me.cmdFind.Enabled = False
-            Me.cmdClear.Enabled = True
+            Me.mmdAdd.Enabled = False
+            Me.mmdSave.Enabled = True
+            Me.mmdDelete.Enabled = True
+            Me.mmdCopy.Enabled = True
+            Me.mmdFind.Enabled = False
+            Me.mmdClear.Enabled = True
 
-            Me.cmdSearch.Enabled = False
+            Me.mmdSearch.Enabled = False
 
-            Me.cmdInsRow.Enabled = True
-            Me.cmdDelRow.Enabled = True
-            Me.cmdFirst.Enabled = False
-            Me.cmdPrevious.Enabled = False
-            Me.cmdNext.Enabled = False
-            Me.cmdLast.Enabled = False
+            Me.mmdInsRow.Enabled = True
+            Me.mmdDelRow.Enabled = True
+
+            Me.mmdPrint.Enabled = False
+            Me.tsiPrintItmPrcRpt.Enabled = IMR35_right_local
+            Me.mmdFunction.Enabled = False
+            Me.tsiHldRel.Enabled = IMM04_right_local
+
 
             Me.cmdBrowse.Enabled = False
             Me.cmdMapping.Enabled = True
@@ -5664,24 +5970,24 @@ Public Class IMM00001
             Me.cmdBatchUpdate.Enabled = True
             Me.cmdCopyPV.Enabled = True
 
-            Me.cmdExit.Enabled = True
+            Me.mmdExit.Enabled = True
         ElseIf m = "READ" Then
-            Me.cmdAdd.Enabled = False
-            Me.cmdSave.Enabled = False
-            Me.cmdDelete.Enabled = False
-            Me.cmdCancel.Enabled = False
-            Me.cmdCopy.Enabled = False
-            Me.cmdFind.Enabled = False
-            Me.cmdClear.Enabled = True
+            Me.mmdAdd.Enabled = False
+            Me.mmdSave.Enabled = False
+            Me.mmdDelete.Enabled = False
+            Me.mmdCopy.Enabled = False
+            Me.mmdFind.Enabled = False
+            Me.mmdClear.Enabled = True
 
-            Me.cmdSearch.Enabled = False
+            Me.mmdSearch.Enabled = False
 
-            Me.cmdInsRow.Enabled = False
-            Me.cmdDelRow.Enabled = False
-            Me.cmdFirst.Enabled = False
-            Me.cmdPrevious.Enabled = False
-            Me.cmdNext.Enabled = False
-            Me.cmdLast.Enabled = False
+            Me.mmdInsRow.Enabled = False
+            Me.mmdDelRow.Enabled = False
+
+            Me.mmdPrint.Enabled = False
+            Me.tsiPrintItmPrcRpt.Enabled = IMR35_right_local
+            Me.mmdFunction.Enabled = False
+            Me.tsiHldRel.Enabled = IMM04_right_local
 
             Me.cmdBrowse.Enabled = False
             Me.cmdMapping.Enabled = True
@@ -5690,24 +5996,19 @@ Public Class IMM00001
             Me.cmdBatchUpdate.Enabled = False
 
 
-            Me.cmdExit.Enabled = True
+            Me.mmdExit.Enabled = True
         ElseIf m = "DisableAll" Then
-            Me.cmdAdd.Enabled = False
-            Me.cmdSave.Enabled = False
-            Me.cmdDelete.Enabled = False
-            Me.cmdCancel.Enabled = False
-            Me.cmdCopy.Enabled = False
-            Me.cmdFind.Enabled = False
-            Me.cmdClear.Enabled = False
+            Me.mmdAdd.Enabled = False
+            Me.mmdSave.Enabled = False
+            Me.mmdDelete.Enabled = False
+            Me.mmdCopy.Enabled = False
+            Me.mmdFind.Enabled = False
+            Me.mmdClear.Enabled = False
 
-            Me.cmdSearch.Enabled = False
+            Me.mmdSearch.Enabled = False
 
-            Me.cmdInsRow.Enabled = False
-            Me.cmdDelRow.Enabled = False
-            Me.cmdFirst.Enabled = False
-            Me.cmdPrevious.Enabled = False
-            Me.cmdNext.Enabled = False
-            Me.cmdLast.Enabled = False
+            Me.mmdInsRow.Enabled = False
+            Me.mmdDelRow.Enabled = False
             Me.cmdCopyPV.Enabled = False
 
             Me.cmdBrowse.Enabled = False
@@ -5716,7 +6017,7 @@ Public Class IMM00001
             Me.cmdBatchUpdate.Enabled = False
 
 
-            Me.cmdExit.Enabled = True
+            Me.mmdExit.Enabled = True
         End If
 
     End Sub
@@ -6060,7 +6361,6 @@ Public Class IMM00001
         cboPrdTyp.Items.Add("MODIFY - MODIFY")
         cboPrdTyp.Items.Add("ODM - OEM + SHOWROOM")
 
-        'cboPrdTyp.Text = ""
     End Sub
 
 
@@ -6171,10 +6471,8 @@ Public Class IMM00001
 
     Private Sub format_cboPanCus2no(ByVal cus1no As String)
         cboPanCPCus2no.Items.Clear()
-        'cboPanCPCus2no.Items.Add("")
 
         cboPanMMCus2no.Items.Clear()
-        'cboPanMMCus2no.Items.Add("")
 
         cboPanPackCus2no.Items.Clear()
 
@@ -6522,7 +6820,7 @@ Public Class IMM00001
         dgColor.Columns(i).Visible = False
         i = i + 1 '9
         dgColor_icf_ucpcde = i
-        dgColor.Columns(i).HeaderText = "UPC #"
+        dgColor.Columns(i).HeaderText = "UPC No."
         dgColor.Columns(i).Width = 100
         If mode = "UPDATE" Or mode = "ADD" Then
             dgColor.Columns(i).ReadOnly = False
@@ -6531,7 +6829,7 @@ Public Class IMM00001
         End If
         i = i + 1 '10
         dgColor_icf_eancde = i
-        dgColor.Columns(i).HeaderText = "EAN #"
+        dgColor.Columns(i).HeaderText = "EAN No."
         dgColor.Columns(i).Width = 100
         If mode = "UPDATE" Or mode = "ADD" Then
             dgColor.Columns(i).ReadOnly = False
@@ -6623,16 +6921,19 @@ Public Class IMM00001
         dgPacking.Columns(i).HeaderText = "UM"
         dgPacking.Columns(i).Width = 40
         dgPacking.Columns(i).ReadOnly = True
+
         i = i + 1 '7
         dgPacking_ipi_inrqty = i
         dgPacking.Columns(i).HeaderText = "Inner"
-        dgPacking.Columns(i).Width = 40
+        dgPacking.Columns(i).Width = 45
         dgPacking.Columns(i).ReadOnly = True
+        dgPacking.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1 '8
         dgPacking_ipi_mtrqty = i
         dgPacking.Columns(i).HeaderText = "Master"
-        dgPacking.Columns(i).Width = 40
+        dgPacking.Columns(i).Width = 45
         dgPacking.Columns(i).ReadOnly = True
+        dgPacking.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1
         dgPacking_ipi_cus1no = i
         dgPacking.Columns(i).HeaderText = "Pri Cust."
@@ -6649,6 +6950,7 @@ Public Class IMM00001
         dgPacking_ipi_cft = i
         dgPacking.Columns(i).HeaderText = "CFT"
         dgPacking.Columns(i).Width = 45
+        dgPacking.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         If mode = "UPDATE" Or mode = "ADD" Then
             dgPacking.Columns(i).ReadOnly = False
         Else
@@ -6658,6 +6960,7 @@ Public Class IMM00001
         dgPacking_ipi_cbm = i
         dgPacking.Columns(i).HeaderText = "CBM"
         dgPacking.Columns(i).Width = 45
+        dgPacking.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         If mode = "UPDATE" Or mode = "ADD" Then
             dgPacking.Columns(i).ReadOnly = False
         Else
@@ -6704,6 +7007,7 @@ Public Class IMM00001
         dgPacking.Columns(i).HeaderText = "G.W."
         dgPacking.Columns(i).Width = 50
         dgPacking.Columns(i).DisplayIndex = 17
+        dgPacking.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         If mode = "UPDATE" Or mode = "ADD" Then
             dgPacking.Columns(i).ReadOnly = False
         Else
@@ -6714,6 +7018,7 @@ Public Class IMM00001
         dgPacking.Columns(i).HeaderText = "N.W."
         dgPacking.Columns(i).Width = 50
         dgPacking.Columns(i).DisplayIndex = 18
+        dgPacking.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         If mode = "UPDATE" Or mode = "ADD" Then
             dgPacking.Columns(i).ReadOnly = False
         Else
@@ -6735,6 +7040,7 @@ Public Class IMM00001
         dgPacking.Columns(i).Width = 30
         dgPacking.Columns(i).DisplayIndex = 9
         dgPacking.Columns(i).ReadOnly = True
+        dgPacking.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1 '19
         dgPacking_ipi_cusno = i
         dgPacking.Columns(i).HeaderText = "Cus No"
@@ -7262,9 +7568,9 @@ Public Class IMM00001
         i = i + 1 '3
         dgBOMASS_iba_assitm = i
         If bomass = "BOM" Then
-            dgBOMASS.Columns(i).HeaderText = "BOM Item#"
+            dgBOMASS.Columns(i).HeaderText = "BOM Item No."
         Else
-            dgBOMASS.Columns(i).HeaderText = "Assorted Item#"
+            dgBOMASS.Columns(i).HeaderText = "Assorted Item No."
         End If
         dgBOMASS.Columns(i).Width = 100
         If mode = "UPDATE" Or mode = "ADD" Then
@@ -7275,9 +7581,9 @@ Public Class IMM00001
         i = i + 1 '4
         dgBOMASS_iba_altitmno = i
         If bomass = "BOM" Then
-            dgBOMASS.Columns(i).HeaderText = "Alt BOM Item#"
+            dgBOMASS.Columns(i).HeaderText = "Alt BOM Item No."
         Else
-            dgBOMASS.Columns(i).HeaderText = "Alt Assorted Item#"
+            dgBOMASS.Columns(i).HeaderText = "Alt Assorted Item No."
         End If
         dgBOMASS.Columns(i).Width = 90
         i = i + 1 '5
@@ -7290,11 +7596,11 @@ Public Class IMM00001
         i = i + 1 '7
         dgBOMASS_ibi_engdsc = i
         dgBOMASS.Columns(i).HeaderText = "Item Description"
-        dgBOMASS.Columns(i).Width = 130
+        dgBOMASS.Columns(i).Width = 140
         i = i + 1 '8
         dgBOMASS_vbi_vensna = i
-        dgBOMASS.Columns(i).HeaderText = "Vendor"
-        dgBOMASS.Columns(i).Width = 60
+        dgBOMASS.Columns(i).HeaderText = "Default PV"
+        dgBOMASS.Columns(i).Width = 70
         i = i + 1 '9
         dgBOMASS_iba_period = i
         If bomass = "BOM" Then
@@ -7590,7 +7896,7 @@ Public Class IMM00001
         i = i + 1 '6
         dgCostPrice_imu_packing = i
         dgCostPrice.Columns(i).HeaderText = "Packing"
-        dgCostPrice.Columns(i).Width = 105
+        dgCostPrice.Columns(i).Width = 120
         dgCostPrice.Columns(i).ReadOnly = True
         i = i + 1 '7
         dgCostPrice_imu_pckunt = i
@@ -7630,18 +7936,18 @@ Public Class IMM00001
         dgCostPrice.Columns(i).ReadOnly = True
         i = i + 1 '14
         dgCostPrice_imu_ftyprctrm = i
-        dgCostPrice.Columns(i).HeaderText = "FtyPriceTerm"
-        dgCostPrice.Columns(i).Width = 50
+        dgCostPrice.Columns(i).HeaderText = "Fty Term"
+        dgCostPrice.Columns(i).Width = 60
         dgCostPrice.Columns(i).ReadOnly = True
         i = i + 1 '15
         dgCostPrice_imu_hkprctrm = i
-        dgCostPrice.Columns(i).HeaderText = "HKPriceTerm"
-        dgCostPrice.Columns(i).Width = 50
+        dgCostPrice.Columns(i).HeaderText = "HK Term"
+        dgCostPrice.Columns(i).Width = 60
         dgCostPrice.Columns(i).ReadOnly = True
         i = i + 1 '16
         dgCostPrice_imu_trantrm = i
-        dgCostPrice.Columns(i).HeaderText = "TranTerm"
-        dgCostPrice.Columns(i).Width = 35
+        dgCostPrice.Columns(i).HeaderText = "Tran Term"
+        dgCostPrice.Columns(i).Width = 70
         dgCostPrice.Columns(i).ReadOnly = True
         i = i + 1 '17
         dgCostPrice_imu_effdat = i
@@ -7664,7 +7970,7 @@ Public Class IMM00001
         i = i + 1 '19
         dgCostPrice_imu_status = i
         dgCostPrice.Columns(i).HeaderText = "Status"
-        dgCostPrice.Columns(i).Width = 35
+        dgCostPrice.Columns(i).Width = 45
         dgCostPrice.Columns(i).ReadOnly = True
         i = i + 1 '20
         dgCostPrice_imu_curcde = i
@@ -8141,7 +8447,7 @@ Public Class IMM00001
         dgCostPrice_imu_fmlopt = i
         If view = "Standard" Or view = "Full" Then
             dgCostPrice.Columns(i).HeaderText = "Fml"
-            dgCostPrice.Columns(i).Width = 50
+            dgCostPrice.Columns(i).Width = 80
             dgCostPrice.Columns(i).Visible = True
         Else
             dgCostPrice.Columns(i).Visible = False
@@ -8156,7 +8462,7 @@ Public Class IMM00001
         dgCostPrice_imu_itmprc = i
         If view = "Standard" Or view = "Full" Then
             dgCostPrice.Columns(i).HeaderText = "Item Prc"
-            dgCostPrice.Columns(i).Width = 50
+            dgCostPrice.Columns(i).Width = 55
             dgCostPrice.Columns(i).Visible = True
             dgCostPrice.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         Else
@@ -8177,18 +8483,18 @@ Public Class IMM00001
         i = i + 1 '62
         dgCostPrice_imu_basprc = i
         dgCostPrice.Columns(i).HeaderText = "Basic Prc"
-        dgCostPrice.Columns(i).Width = 50
+        dgCostPrice.Columns(i).Width = 60
         dgCostPrice.Columns(i).ReadOnly = True
         dgCostPrice.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         i = i + 1 '63
         dgCostPrice_imu_sysgen = i
         dgCostPrice.Columns(i).HeaderText = "Sys Gen"
-        dgCostPrice.Columns(i).Width = 25
+        dgCostPrice.Columns(i).Width = 55
         dgCostPrice.Columns(i).ReadOnly = True
         i = i + 1 '64
         dgCostPrice_imu_estprcflg = i
         dgCostPrice.Columns(i).HeaderText = "Est. Prc"
-        dgCostPrice.Columns(i).Width = 25
+        dgCostPrice.Columns(i).Width = 50
         dgCostPrice.Columns(i).ReadOnly = True
         i = i + 1 '65
         dgCostPrice_imu_estprcref = i
@@ -8410,7 +8716,7 @@ Public Class IMM00001
     End Sub
 
 
-    Public Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFind.Click
+    Public Sub mmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFind.Click
         Me.Cursor = Cursors.WaitCursor
         txtItmNo.Text = UCase(txtItmNo.Text)
 
@@ -9204,14 +9510,15 @@ Public Class IMM00001
         End If
     End Sub
 
-    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
+    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
+        If checkFocus(Me) Then Exit Sub
         Dim tmp_itmno As String
 
         If Recordstatus = True Then
             Select Case MsgBox("Record has been modified. Do you want to save before clear the screen?", MsgBoxStyle.YesNoCancel)
                 Case MsgBoxResult.Yes
                     If Enq_right_local Then
-                        Call cmdSave_Click(sender, e)
+                        Call mmdSave_Click(sender, e)
                     Else
                         MsgBox("You have no Save record rights!")
                     End If
@@ -9237,7 +9544,7 @@ Public Class IMM00001
 
     Private Sub txtItmNo_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtItmNo.KeyPress
         If e.KeyChar.Equals(Chr(13)) Then
-            Call cmdFind_Click(sender, e)
+            Call mmdFind_Click(sender, e)
         End If
     End Sub
 
@@ -9312,7 +9619,7 @@ Public Class IMM00001
             Dim curvalue As String
             curvalue = dgColor.CurrentCell.Value
 
-            If dgColor.CurrentCell.ColumnIndex = dgColor_icf_cocde Then
+            If dgColor.SelectedRows.Count = 0 And dgColor.CurrentCell.ColumnIndex = dgColor_icf_cocde Then
                 If Trim(curvalue) = "" Then
                     Dim i As Integer
                     Dim counter As Integer
@@ -9444,7 +9751,8 @@ Public Class IMM00001
 
     End Function
 
-    Private Sub cmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSave.Click
+    Private Sub mmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
+        If checkFocus(Me) Then Exit Sub
         If Recordstatus = False Then
             MsgBox("No update for the item, item not saved!")
             Exit Sub
@@ -11247,14 +11555,7 @@ Public Class IMM00001
         e.CellStyle.BackColor = Color.White
 
         Select Case dgPacking.CurrentCell.ColumnIndex
-            'Case dgPacking_ipi_pckunt
-            '    If TypeOf (e.Control) Is DataGridViewComboBoxEditingControl Then
-            '        Dim cboBox As ComboBox = CType(e.Control, ComboBox)
-            '        If Not cboBox Is Nothing Then
-            '            RemoveHandler cboBox.SelectedIndexChanged, AddressOf cbopckunt_dgPacking_SelectedIndexChanged
-            '            AddHandler cboBox.SelectedIndexChanged, AddressOf cbopckunt_dgPacking_SelectedIndexChanged
-            '        End If
-            '    End If
+         
 
             Case dgPacking_ipi_cbm, dgPacking_ipi_cft, dgPacking_inner_in, dgPacking_inner_cm, dgPacking_master_in, dgPacking_master_cm, dgPacking_ipi_grswgt, dgPacking_ipi_netwgt
                 Dim txtbox As TextBox = CType(e.Control, TextBox)
@@ -11271,10 +11572,6 @@ Public Class IMM00001
             If CREUSR <> "~*ADD*~" Then
                 dgPacking.Item(dgPacking_ipi_creusr, dgPacking.CurrentCell.RowIndex).Value = "~*UPD*~"
             End If
-            'Dim CREUSR As String = rs_IMPCKINF.Tables("RESULT").Rows(dgPacking.CurrentCell.RowIndex).Item("ipi_creusr")
-            'If CREUSR <> "~*ADD*~" And CREUSR <> "~*UPD*~" And CREUSR <> "~*DEL*~" And CREUSR <> "~*NEW*~" Then
-            '    rs_IMPCKINF.Tables("RESULT").Rows(dgPacking.CurrentCell.RowIndex).Item("ipi_creusr") = "~*UPD*~"
-            'End If
         End If
     End Sub
 
@@ -11432,17 +11729,10 @@ Public Class IMM00001
 
     Private Sub dgPacking_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgPacking.LostFocus
         lblPacking.ForeColor = Color.Blue
-        'Got_Focus_Grid = ""
-        'PanelPacking.Visible = False
     End Sub
 
     Private Sub dgPV_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgPV.CellClick
-        'If dgPV.Item(9, dgPV.CurrentCell.RowIndex).Value <> "~*ADD*~" Then
-        '    Exit Sub
-        'End If
-        'If dgPV.CurrentCell.ColumnIndex = 4 Then
-        '    Call comboBoxCell(dgPV, "Vendor")
-        'End If
+       
     End Sub
 
     Private Sub dgPV_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgPV.CellDoubleClick
@@ -12891,15 +13181,15 @@ Public Class IMM00001
         '        Got_Focus_Grid = ""
     End Sub
 
-    Private Sub cmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdInsRow.Click
+    Private Sub mmdInsRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdInsRow.Click
         Select Case Got_Focus_Grid
             Case "dgPacking"
                 TabPageMain.SelectedIndex = 0
-                freeze_TabControl(0)
                 Call add_Packing()
             Case "dgPV"
                 TabPageMain.SelectedIndex = 1
-                freeze_TabControl(1)
+                all_cmd_dis()
+                freeze_TabControl(-1)
                 Call add_PV()
             Case "dgOEMCustomer"
                 TabPageMain.SelectedIndex = 2
@@ -13061,20 +13351,12 @@ Public Class IMM00001
         If PanelPacking.Visible = True Then
             Exit Sub
         End If
+        all_cmd_dis()
+        freeze_TabControl(-1)
 
-        'If Split(cboItmTyp.Text, " - ")(0) = "ASS" Or Split(cboItmTyp.Text, " - ")(0) = "BOM" Then
-        '    If mode = "UPDATE" Then
-        '        MsgBox("Assortment/BOM item is not allowed to add packing!")
-        '        Exit Sub
-        '    ElseIf mode = "ADD" Then
-        '        If rs_IMPCKINF.Tables("RESULT").Rows.Count >= 1 Then
-        '            MsgBox("Assortment/BOM item is not allowed to add packing!")
-        '            Exit Sub
-        '        End If
-        '    End If
-        'End If
-
+        PanelPacking.Size = New System.Drawing.Size(532, 369)
         PanelPacking.Visible = True
+
         If Split(cboItmTyp.Text, " - ")(0) = "ASS" Then
             If mode = "ADD" Then
                 If rs_IMPCKINF.Tables("RESULT").Rows.Count = 0 Then
@@ -13106,8 +13388,11 @@ Public Class IMM00001
     End Sub
 
     Private Sub dgPacking_RowHeaderMouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles dgPacking.RowHeaderMouseDoubleClick
-        freeze_TabControl(0)
+        freeze_TabControl(-1)
+        all_cmd_dis()
+        PanelPacking.Size = New System.Drawing.Size(532, 369)
         PanelPacking.Visible = True
+        PanelPacking.BringToFront()
         If mode = "UPDATE" Or mode = "ADD" Then
             If mode = "ADD" And Split(cboItmTyp.Text, " - ")(0) = "ASS" Then
                 Call display_PanelPacking("PACK_UPDATE2")
@@ -13400,6 +13685,7 @@ Public Class IMM00001
 
     Private Sub cmdPanPackCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdPanPackCancel.Click
         PanelPacking.Visible = False
+        all_cmd_en()
         release_TabControl()
         format_TabControl("IM", Split(cboItmTyp.Text, " - ")(0))
     End Sub
@@ -13788,6 +14074,7 @@ Public Class IMM00001
             Next i
 
             PanelPacking.Visible = False
+            all_cmd_en()
             release_TabControl()
             format_TabControl("IM", Split(cboItmTyp.Text, " - ")(0))
         End If
@@ -13897,6 +14184,7 @@ Public Class IMM00001
             End If
 
             PanelPacking.Visible = False
+            all_cmd_en()
             release_TabControl()
             format_TabControl("IM", Split(cboItmTyp.Text, " - ")(0))
         End If
@@ -13918,7 +14206,7 @@ Public Class IMM00001
                 End If
             End If
         End If
-
+        PanelPV.Size = New System.Drawing.Size(299, 98)
         PanelPV.Visible = True
         txtPanPVVenItm.Text = ""
         cboPanPVPV.Text = ""
@@ -14195,6 +14483,7 @@ Public Class IMM00001
         End If
 
         PanelPV.Visible = False
+        all_cmd_en()
         release_TabControl()
         format_TabControl("IM", Split(cboItmTyp.Text, " - ")(0))
 
@@ -14202,6 +14491,7 @@ Public Class IMM00001
 
     Private Sub cmdPanPVCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdPanPVCancel.Click
         PanelPV.Visible = False
+        all_cmd_en()
         release_TabControl()
         format_TabControl("IM", Split(cboItmTyp.Text, " - ")(0))
     End Sub
@@ -14452,8 +14742,11 @@ Public Class IMM00001
         '    Exit Sub
         'End If
 
-        freeze_TabControl(4)
+        freeze_TabControl(-1)
+        all_cmd_dis()
+        Me.PanelCostPrice.Size = New System.Drawing.Size(553, 295)
         PanelCostPrice.Visible = True
+        PanelCostPrice.BringToFront()
         If mode = "UPDATE" Or mode = "ADD" Then
             Dim curvalue As String
             curvalue = dgCostPrice.Item(dgCostPrice_imu_cocde, dgCostPrice.CurrentCell.RowIndex).Value
@@ -14797,6 +15090,7 @@ Public Class IMM00001
 
     Private Sub cmdPanCPCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdPanCPCancel.Click
         PanelCostPrice.Visible = False
+        all_cmd_en()
         release_TabControl()
         format_TabControl("IM", Split(cboItmTyp.Text, " - ")(0))
 
@@ -14987,6 +15281,7 @@ Public Class IMM00001
         End If
 
         PanelCostPrice.Visible = False
+        all_cmd_en()
         release_TabControl()
         format_TabControl("IM", Split(cboItmTyp.Text, " - ")(0))
 
@@ -15398,6 +15693,7 @@ Public Class IMM00001
             End If
 
             PanelCostPrice.Visible = False
+            all_cmd_en()
             release_TabControl()
             format_TabControl("IM", Split(cboItmTyp.Text, " - ")(0))
 
@@ -16005,7 +16301,7 @@ Public Class IMM00001
         End If
     End Sub
 
-    Private Sub cmdCopy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCopy.Click
+    Private Sub cmdCopy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdCopy.Click
         If Recordstatus = True Then
             MsgBox("Item has been modified, please save it before Copy")
             Me.Cursor = Cursors.Default
@@ -16043,9 +16339,9 @@ Public Class IMM00001
         display_combo(Split(cboCategory.Text, " - ")(0), cboPanCopyCategory)
         PanelCopy.Height = 97
         PanelCopy.Width = 257
-        PanelCopy.Top = 12
+        PanelCopy.Top = 30
         PanelCopy.Left = 167
-
+        PanelCopy.BringToFront()
         PanelCopy.Visible = True
     End Sub
 
@@ -16245,7 +16541,7 @@ Public Class IMM00001
         PanelCopy.Visible = False
     End Sub
 
-    Private Sub cmdDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdDelete.Click
+    Private Sub cmdDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdDelete.Click
         Me.Cursor = Cursors.WaitCursor
 
 
@@ -16335,7 +16631,7 @@ Public Class IMM00001
         Me.Cursor = Cursors.Default
     End Sub
 
-    Private Sub cmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAdd.Click
+    Private Sub cmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdAdd.Click
         freeze_TabControl(-1)
         resetcmdButton("DisableAll")
 
@@ -16345,6 +16641,8 @@ Public Class IMM00001
         PanelAdd.Left = 31
 
         PanelAdd.Visible = True
+        PanelAdd.BringToFront()
+
     End Sub
 
     Private Sub cmdPanelAddCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdPanelAddCancel.Click
@@ -17724,7 +18022,7 @@ Public Class IMM00001
                 display_dgMatBreakdown("IM")
                 display_dgPV("IM")
                 display_dgTempItem()
-                cmdSave.Enabled = True
+                mmdSave.Enabled = True
             Else
                 cbDiscontinue.Checked = False
             End If
@@ -17775,6 +18073,11 @@ Public Class IMM00001
                 End If
             End If
         End If
+
+        'If rs_IMBASINF.Tables("RESULT").Rows(0).Item("ibi_imgpth") = "" Then
+        ' Exit Sub
+        'End If
+
         'For the programmers IN THE FUTURE who are fixing the frmImage problem in QUM01, PGM01, PGM02, IMG01 and PGM02:
         'How to break the photo form:
         '1:open the photo
@@ -17789,7 +18092,7 @@ Public Class IMM00001
         'A better coding style (and the method to fix ) is create a object with frmImage class but not control the class directly.
         '
         'More detail about this bug:
-        'Firstly, when user moves the scoll bar of panel, the true opertion is the panel move all objects
+        'Firstly, when user moves the scoll bar of panel, the real opertion is the panel move all objects
         'in the panel on the opposite direction
         'Then the image box location of the form CLASS is changed
         'So after closing the form, the iamge box position is still moved.
@@ -18107,7 +18410,7 @@ Public Class IMM00001
         End If
     End Sub
 
-    Private Sub cbAddreq_formA_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbAddreq_formA.CheckedChanged
+    Private Sub cbAddreq_formA_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbAddreq_formA.CheckedChanged, CheckBox3.CheckedChanged
         If rs_IMBASINF.Tables("RESULT").Rows.Count = 1 Then
             If mode = "UPDATE" Then
                 Dim tmpstr As String
@@ -18124,7 +18427,7 @@ Public Class IMM00001
         End If
     End Sub
 
-    Private Sub cbAddreq_ccib_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbAddreq_ccib.CheckedChanged
+    Private Sub cbAddreq_ccib_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbAddreq_ccib.CheckedChanged, CheckBox2.CheckedChanged
         If rs_IMBASINF.Tables("RESULT").Rows.Count = 1 Then
             If mode = "UPDATE" Then
                 Dim tmpstr As String
@@ -18143,7 +18446,7 @@ Public Class IMM00001
 
 
 
-    Private Sub cbAddreq_ster_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbAddreq_ster.CheckedChanged
+    Private Sub cbAddreq_ster_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbAddreq_ster.CheckedChanged, CheckBox1.CheckedChanged
         If rs_IMBASINF.Tables("RESULT").Rows.Count = 1 Then
             If mode = "UPDATE" Then
                 Dim tmpstr As String
@@ -18204,7 +18507,7 @@ Public Class IMM00001
         MsgBox("Item Activated!")
         cmdClear_Click(sender, e)
         txtItmNo.Text = itmno
-        cmdFind_Click(sender, e)
+        mmdFind_Click(sender, e)
     End Sub
 
     Private Sub dgPacking_CellValidating(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellValidatingEventArgs) Handles dgPacking.CellValidating
@@ -18902,7 +19205,7 @@ Public Class IMM00001
 
     End Sub
 
-    Private Sub cmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSearch.Click
+    Private Sub mmdSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSearch.Click
         Dim frmSYM00018 As New SYM00018
 
         frmSYM00018.keyName = txtItmNo.Name
@@ -18981,7 +19284,7 @@ Public Class IMM00001
     End Sub
 
     Private Sub dgMOQMOA_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgMOQMOA.CellClick
-        If cmdSave.Enabled = False Then
+        If mmdSave.Enabled = False Then
             Exit Sub
         End If
 
@@ -19023,7 +19326,8 @@ Public Class IMM00001
             MsgBox("BOM item is not allowed to add MOQMOA")
             Exit Sub
         End If
-
+        all_cmd_dis()
+        PanelMOQMOA.Size = New System.Drawing.Size(409, 162)
         PanelMOQMOA.Visible = True
         display_PanelMOQMOA("MOQMOA_INSERT")
     End Sub
@@ -19203,6 +19507,7 @@ Public Class IMM00001
 
     Private Sub cmdPanMMCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdPanMMCancel.Click
         PanelMOQMOA.Visible = False
+        all_cmd_en()
         release_TabControl()
         format_TabControl("IM", Split(cboItmTyp.Text, " - ")(0))
     End Sub
@@ -19240,6 +19545,7 @@ Public Class IMM00001
         Next
 
         Recordstatus = True
+        all_cmd_en()
         cmdPanMMCancel.PerformClick()
     End Sub
 
@@ -19269,7 +19575,7 @@ Public Class IMM00001
         For i As Integer = 0 To imm_moa
             rs_IMMOQMOA.Tables("RESULT").Columns(i).ReadOnly = True
         Next
-
+        all_cmd_en()
         Recordstatus = True
         cmdPanMMCancel.PerformClick()
     End Sub
@@ -19459,8 +19765,10 @@ Public Class IMM00001
         If Split(cboItmTyp.Text, " - ")(0) = "BOM" Then
             Exit Sub
         End If
-
+        all_cmd_dis()
         freeze_TabControl(5)
+
+        PanelMOQMOA.Size = New System.Drawing.Size(409, 162)
         PanelMOQMOA.Visible = True
         If mode = "UPDATE" Or mode = "ADD" Then
             Dim curvalue As String = dgMOQMOA.CurrentRow.Cells(imm_status).Value
@@ -19699,4 +20007,195 @@ Public Class IMM00001
     End Sub
 
     Dim flag_grdcontrol As String
+#Region "Movable Panel"
+
+    Dim ProgramPosition, CursorPoint As Point
+    Dim movePanel As Panel = Nothing
+    Dim panelMoveTimer As Timer
+    Private setM
+
+    Private Sub setupMovablePanel(ByRef panel As Panel, ByVal title As String, ByVal custTitle As Label)
+        For Each ctrl As Control In panel.Controls
+            ctrl.Location = New Point(ctrl.Location.X, ctrl.Location.Y + 20)
+        Next
+
+        Dim panelTitle As Label = New Label
+        If custTitle Is Nothing Then
+            panelTitle.AutoSize = False
+            panelTitle.Dock = DockStyle.Top
+            panelTitle.TextAlign = ContentAlignment.MiddleCenter
+            panelTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            panelTitle.Height = 20
+            panelTitle.BackColor = Color.DeepSkyBlue
+            panelTitle.Text = title
+        Else
+            panelTitle = custTitle
+        End If
+
+        AddHandler panel.VisibleChanged, AddressOf movablePanel_VisibleChanged
+
+        AddHandler panelTitle.MouseUp, AddressOf movablePanelHeader_MouseUp
+        AddHandler panelTitle.MouseDown, AddressOf movablePanelHeader_MouseDown
+        panel.Controls.Add(panelTitle)
+    End Sub
+
+    Private Sub RenewPanel(ByVal panel As Panel)
+        ProgramPosition = panel.Location
+        CursorPoint = Cursor.Position
+    End Sub
+
+    Private Sub SetPanelPosition(ByVal panel As Panel)
+        Dim X As Integer = 0
+        Dim Y As Integer = 0
+
+
+        Dim Xlimit As Integer
+        Dim Ylimit As Integer
+        ' If Me.FormBorderStyle = FormBorderStyle.FixedDialog Then
+
+        ' Xlimit = Me.Width - panel.Width - SystemInformation.HorizontalResizeBorderThickness
+        ' Ylimit = Me.Height - panel.Height - SystemInformation.VerticalResizeBorderThickness - SystemInformation.MenuHeight - SystemInformation.VerticalFocusThickness * 3
+        ' Else
+        ' Xlimit = Me.Width - panel.Width - SystemInformation.HorizontalResizeBorderThickness * 2
+        ' Ylimit = Me.Height - panel.Height - SystemInformation.VerticalResizeBorderThickness * 2 - SystemInformation.MenuHeight - SystemInformation.VerticalFocusThickness * 3
+
+        ' End If
+
+        Xlimit = Me.ClientSize.Width - panel.Width
+        Ylimit = Me.ClientSize.Height - panel.Height
+
+        If (ProgramPosition - CursorPoint + Cursor.Position).X > 0 And (ProgramPosition - CursorPoint + Cursor.Position).X < Xlimit Then
+            X = (ProgramPosition - CursorPoint + Cursor.Position).X
+        ElseIf (ProgramPosition - CursorPoint + Cursor.Position).X <= 0 Then
+            X = 0
+        Else
+            X = Xlimit
+        End If
+
+        If (ProgramPosition - CursorPoint + Cursor.Position).Y > 0 And (ProgramPosition - CursorPoint + Cursor.Position).Y < Ylimit Then
+            Y = (ProgramPosition - CursorPoint + Cursor.Position).Y
+        ElseIf (ProgramPosition - CursorPoint + Cursor.Position).Y <= 0 Then
+            Y = 0
+        Else
+            Y = Ylimit
+        End If
+
+        panel.Location = New Point(X, Y)
+    End Sub
+
+    Private Sub panelMoveTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Dim X As Integer = 0
+        Dim Y As Integer = 0
+        If Not (movePanel Is Nothing) Then
+            SetPanelPosition(movePanel)
+        End If
+
+
+
+    End Sub
+
+    Private Sub movablePanelHeader_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
+        Dim panel As Label = sender
+        movePanel = panel.Parent
+        panelMoveTimer.Enabled = True
+        panelMoveTimer.Start()
+        RenewPanel(movePanel)
+    End Sub
+
+    Private Sub movablePanelHeader_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
+        panelMoveTimer.Stop()
+        RenewPanel(movePanel)
+        movePanel = Nothing
+    End Sub
+
+    Private Sub movablePanel_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Dim panel As Panel = sender
+        panel.Height = panel.Height + 20
+    End Sub
+#End Region
+
+
+    Private Sub tsiPrintItmPrcRpt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsiPrintItmPrcRpt.Click
+        If Recordstatus = True Then
+            MessageBox.Show("Item has been changed. Please save before printing.")
+            Exit Sub
+        Else
+            Dim IMR00035 As New IMR00035
+            IMR00035.callByIMM01(txtItmNo.Text)
+
+        End If
+    End Sub
+
+    Private Sub tsiHldRel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsiHldRel.Click
+        If Recordstatus = True Then
+            MessageBox.Show("Item has been changed. Please save before printing.")
+            Exit Sub
+        Else
+            Dim IMM00004 As New IMM00004
+            IMM00004.callByIMM01(txtItmNo.Text, Me.Name.ToString)
+
+        End If
+    End Sub
+
+    Function all_cmd_dis()
+        dispSaveFlag = mmdSave.Enabled
+        dispDeleteFlag = mmdDelete.Enabled
+        dispCopyFlag = mmdCopy.Enabled
+        dispClearFlag = mmdClear.Enabled
+        dispInsFlag = mmdInsRow.Enabled
+        dispDelFlag = mmdDelRow.Enabled
+        dispExitFlag = mmdExit.Enabled
+        dispPrintFlag = mmdPrint.Enabled
+        dispAttachFlag = mmdAttach.Enabled
+        dispFunctionFlag = mmdFunction.Enabled
+        dispLinkFlag = mmdLink.Enabled
+
+        dispCbTmpItmFlag = cbTmpItm.Enabled
+        dispCmdRelItmFlag = cmdRelItm.Enabled
+        dispCbDiscontinueFlag = cbDiscontinue.Enabled
+        dispCmdActivateFlag = cmdActivate.Enabled
+        dispgbIMStatusFlag = gbIMStatus.Enabled
+        dispCmdMappingFlag = cmdMapping.Enabled
+
+
+        mmdSave.Enabled = False
+        mmdDelete.Enabled = False
+        mmdCopy.Enabled = False
+        mmdClear.Enabled = False
+        mmdInsRow.Enabled = False
+        mmdDelRow.Enabled = False
+        mmdExit.Enabled = False
+        mmdPrint.Enabled = False
+        mmdAttach.Enabled = False
+        mmdFunction.Enabled = False
+        mmdLink.Enabled = False
+
+        cmdMapping.Enabled = False
+        cbTmpItm.Enabled = False
+        cmdRelItm.Enabled = False
+        cbDiscontinue.Enabled = False
+        cmdActivate.Enabled = False
+        gbIMStatus.Enabled = False
+    End Function
+
+    Function all_cmd_en()
+        mmdSave.Enabled = dispSaveFlag
+        mmdDelete.Enabled = dispDeleteFlag
+        mmdCopy.Enabled = dispCopyFlag
+        mmdClear.Enabled = dispClearFlag
+        mmdInsRow.Enabled = dispInsFlag
+        mmdDelRow.Enabled = dispDelFlag
+        mmdExit.Enabled = dispExitFlag
+        mmdPrint.Enabled = dispPrintFlag
+        mmdAttach.Enabled = dispAttachFlag
+        mmdFunction.Enabled = dispFunctionFlag
+        mmdLink.Enabled = dispLinkFlag
+
+        cmdMapping.Enabled = dispCmdMappingFlag
+        cbTmpItm.Enabled = dispCbTmpItmFlag
+        cmdRelItm.Enabled = dispCmdRelItmFlag
+        cbDiscontinue.Enabled = dispCbDiscontinueFlag
+        cmdActivate.Enabled = dispCmdActivateFlag
+        gbIMStatus.Enabled = dispgbIMStatusFlag
+    End Function
 End Class

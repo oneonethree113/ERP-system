@@ -32,20 +32,21 @@ Public Class BJR00001
 
     Private Sub setStatus(ByVal mode As String)
         If mode = "INIT" Then
-            cmdAdd.Enabled = True
-            cmdSave.Enabled = False
-            cmdDelete.Enabled = False
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = True
-            cmdClear.Enabled = True
-            cmdSearch.Enabled = False
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
-            cmdFirst.Enabled = False
-            cmdPrevious.Enabled = False
-            cmdNext.Enabled = False
-            cmdLast.Enabled = False
-            cmdExit.Enabled = True
+            mmdAdd.Enabled = True
+            mmdSave.Enabled = False
+            mmdDelete.Enabled = False
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = True
+            mmdClear.Enabled = True
+            mmdSearch.Enabled = False
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
+            mmdExit.Enabled = True
+
+            Me.mmdPrint.Enabled = False
+            Me.mmdAttach.Enabled = False
+            Me.mmdFunction.Enabled = False
+            Me.mmdLink.Enabled = False
 
             cboCoCde.Enabled = True
             txtCoNam.Enabled = True
@@ -70,20 +71,16 @@ Public Class BJR00001
             recordStatus = False
             clearScreen()
         ElseIf mode = "ADD" Then
-            cmdAdd.Enabled = False
-            cmdSave.Enabled = True
-            cmdDelete.Enabled = False
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = False
-            cmdClear.Enabled = True
-            cmdSearch.Enabled = False
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
-            cmdFirst.Enabled = False
-            cmdPrevious.Enabled = False
-            cmdNext.Enabled = False
-            cmdLast.Enabled = False
-            cmdExit.Enabled = True
+            mmdAdd.Enabled = False
+            mmdSave.Enabled = True
+            mmdDelete.Enabled = False
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = False
+            mmdClear.Enabled = True
+            mmdSearch.Enabled = False
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
+            mmdExit.Enabled = True
 
             cboCoCde.Enabled = False
             txtCoNam.Enabled = True
@@ -107,20 +104,16 @@ Public Class BJR00001
             clearScreen()
             txtBJNo.Text = ""
         ElseIf mode = "UPDATE" Then
-            cmdAdd.Enabled = False
-            cmdSave.Enabled = True
-            cmdDelete.Enabled = False
-            cmdCopy.Enabled = False
-            cmdFind.Enabled = False
-            cmdClear.Enabled = True
-            cmdSearch.Enabled = False
-            cmdInsRow.Enabled = False
-            cmdDelRow.Enabled = False
-            cmdFirst.Enabled = False
-            cmdPrevious.Enabled = False
-            cmdNext.Enabled = False
-            cmdLast.Enabled = False
-            cmdExit.Enabled = True
+            mmdAdd.Enabled = False
+            mmdSave.Enabled = True
+            mmdDelete.Enabled = False
+            mmdCopy.Enabled = False
+            mmdFind.Enabled = False
+            mmdClear.Enabled = True
+            mmdSearch.Enabled = False
+            mmdInsRow.Enabled = False
+            mmdDelRow.Enabled = False
+            mmdExit.Enabled = True
 
             cboCoCde.Enabled = False
             txtCoNam.Enabled = True
@@ -161,7 +154,7 @@ Public Class BJR00001
 
     Private Sub txtBJNo_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtBJNo.KeyPress
         If Asc(e.KeyChar) = 13 Then
-            cmdFind.PerformClick()
+            mmdFind.PerformClick()
         End If
     End Sub
 
@@ -251,12 +244,12 @@ Public Class BJR00001
         End If
     End Sub
 
-    Private Sub cmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAdd.Click
+    Private Sub mmdAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdAdd.Click
         setStatus("ADD")
         txtRunNoFrm.Focus()
     End Sub
 
-    Private Sub cmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdSave.Click
+    Private Sub mmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
         Dim rs As DataSet
 
         If rs_BJR00001 Is Nothing Then
@@ -332,7 +325,7 @@ Public Class BJR00001
         txtBJNo.SelectAll()
     End Sub
 
-    Private Sub cmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdFind.Click
+    Private Sub mmdFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdFind.Click
         Dim rs As New DataSet
 
         gspStr = "sp_select_PJDHONG '" & cboCoCde.Text & "','" & txtBJNo.Text & "','" & LCase(gsUsrID) & "'"
@@ -369,7 +362,7 @@ Public Class BJR00001
 
     End Sub
 
-    Private Sub cmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClear.Click
+    Private Sub mmdClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdClear.Click
         If recordStatus = True Then
             If MsgBox("Changes have been made." & Environment.NewLine & "Are you sure you want to clear without saving?", MsgBoxStyle.YesNo, "BJR00001 - Clear Data") = MsgBoxResult.No Then
                 Exit Sub
@@ -381,7 +374,7 @@ Public Class BJR00001
         txtBJNo.Focus()
     End Sub
 
-    Private Sub cmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdExit.Click
+    Private Sub mmdExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdExit.Click
         If recordStatus = True Then
             If MsgBox("Changes have been made." & Environment.NewLine & "Are you sure you want to exit without saving?", MsgBoxStyle.YesNo, "BJR00001 - Exit Program") = MsgBoxResult.No Then
                 Exit Sub
@@ -599,7 +592,7 @@ Public Class BJR00001
                     Next
                     .Range(.Cells(hdrRow + i + 1, 1), .Cells(hdrRow + i + 1, rs_Report.Tables("RESULT").Columns.Count)).Value = entry
                 Next
-                
+
                 'Delete Company Name Column
                 .Range(.Cells(hdrRow, 9), .Cells(hdrRow, 9)).EntireColumn.Delete()
 
@@ -705,3 +698,4 @@ Public Class BJR00001
         Me.Cursor = Windows.Forms.Cursors.Default
     End Sub
 End Class
+

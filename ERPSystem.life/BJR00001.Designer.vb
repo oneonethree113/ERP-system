@@ -22,20 +22,7 @@ Partial Class BJR00001
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.cmdExit = New System.Windows.Forms.Button
-        Me.cmdInsRow = New System.Windows.Forms.Button
-        Me.cmdDelete = New System.Windows.Forms.Button
-        Me.cmdSave = New System.Windows.Forms.Button
-        Me.cmdLast = New System.Windows.Forms.Button
-        Me.cmdPrevious = New System.Windows.Forms.Button
-        Me.cmdAdd = New System.Windows.Forms.Button
-        Me.cmdNext = New System.Windows.Forms.Button
-        Me.cmdFind = New System.Windows.Forms.Button
-        Me.cmdCopy = New System.Windows.Forms.Button
-        Me.cmdClear = New System.Windows.Forms.Button
-        Me.cmdDelRow = New System.Windows.Forms.Button
-        Me.cmdFirst = New System.Windows.Forms.Button
-        Me.cmdSearch = New System.Windows.Forms.Button
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BJR00001))
         Me.cboCoCde = New System.Windows.Forms.ComboBox
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
@@ -54,277 +41,162 @@ Partial Class BJR00001
         Me.cmdApply = New System.Windows.Forms.Button
         Me.cmdPrint = New System.Windows.Forms.Button
         Me.grpOutFmt = New System.Windows.Forms.GroupBox
-        Me.optPDF = New System.Windows.Forms.RadioButton
         Me.optExcel = New System.Windows.Forms.RadioButton
+        Me.optPDF = New System.Windows.Forms.RadioButton
         Me.dgBatchJob = New System.Windows.Forms.DataGridView
         Me.txtCount = New System.Windows.Forms.TextBox
         Me.Label9 = New System.Windows.Forms.Label
         Me.txtCoNam = New System.Windows.Forms.TextBox
+        Me.menuStrip = New System.Windows.Forms.MenuStrip
+        Me.mmdAdd = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdSave = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdDelete = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdCopy = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdFind = New System.Windows.Forms.ToolStripMenuItem
+        Me.t1 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdClear = New System.Windows.Forms.ToolStripMenuItem
+        Me.t2 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdSearch = New System.Windows.Forms.ToolStripMenuItem
+        Me.t3 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdInsRow = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdDelRow = New System.Windows.Forms.ToolStripMenuItem
+        Me.t4 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdPrint = New System.Windows.Forms.ToolStripMenuItem
+        Me.tsiPrintItmPrcRpt = New System.Windows.Forms.ToolStripMenuItem
+        Me.t5 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdAttach = New System.Windows.Forms.ToolStripMenuItem
+        Me.t6 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdFunction = New System.Windows.Forms.ToolStripMenuItem
+        Me.tsiHldRel = New System.Windows.Forms.ToolStripMenuItem
+        Me.t7 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdLink = New System.Windows.Forms.ToolStripMenuItem
+        Me.t8 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mmdExit = New System.Windows.Forms.ToolStripMenuItem
         Me.grpOutFmt.SuspendLayout()
         CType(Me.dgBatchJob, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.menuStrip.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'cmdExit
-        '
-        Me.cmdExit.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdExit.Location = New System.Drawing.Point(894, 0)
-        Me.cmdExit.Name = "cmdExit"
-        Me.cmdExit.Size = New System.Drawing.Size(60, 25)
-        Me.cmdExit.TabIndex = 68
-        Me.cmdExit.Text = "E&xit"
-        '
-        'cmdInsRow
-        '
-        Me.cmdInsRow.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdInsRow.Location = New System.Drawing.Point(520, 0)
-        Me.cmdInsRow.Name = "cmdInsRow"
-        Me.cmdInsRow.Size = New System.Drawing.Size(65, 25)
-        Me.cmdInsRow.TabIndex = 62
-        Me.cmdInsRow.TabStop = False
-        Me.cmdInsRow.Text = "I&ns Row"
-        Me.cmdInsRow.UseVisualStyleBackColor = True
-        '
-        'cmdDelete
-        '
-        Me.cmdDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdDelete.Location = New System.Drawing.Point(130, 0)
-        Me.cmdDelete.Name = "cmdDelete"
-        Me.cmdDelete.Size = New System.Drawing.Size(65, 25)
-        Me.cmdDelete.TabIndex = 57
-        Me.cmdDelete.TabStop = False
-        Me.cmdDelete.Text = "&Delete"
-        '
-        'cmdSave
-        '
-        Me.cmdSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdSave.Location = New System.Drawing.Point(65, 0)
-        Me.cmdSave.Name = "cmdSave"
-        Me.cmdSave.Size = New System.Drawing.Size(65, 25)
-        Me.cmdSave.TabIndex = 56
-        Me.cmdSave.TabStop = False
-        Me.cmdSave.Text = "&Save"
-        '
-        'cmdLast
-        '
-        Me.cmdLast.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdLast.Location = New System.Drawing.Point(820, 0)
-        Me.cmdLast.Name = "cmdLast"
-        Me.cmdLast.Size = New System.Drawing.Size(50, 25)
-        Me.cmdLast.TabIndex = 67
-        Me.cmdLast.TabStop = False
-        Me.cmdLast.Text = ">>|"
-        '
-        'cmdPrevious
-        '
-        Me.cmdPrevious.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdPrevious.Location = New System.Drawing.Point(720, 0)
-        Me.cmdPrevious.Name = "cmdPrevious"
-        Me.cmdPrevious.Size = New System.Drawing.Size(50, 25)
-        Me.cmdPrevious.TabIndex = 65
-        Me.cmdPrevious.TabStop = False
-        Me.cmdPrevious.Text = "<"
-        '
-        'cmdAdd
-        '
-        Me.cmdAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdAdd.Location = New System.Drawing.Point(0, 0)
-        Me.cmdAdd.Name = "cmdAdd"
-        Me.cmdAdd.Size = New System.Drawing.Size(65, 25)
-        Me.cmdAdd.TabIndex = 55
-        Me.cmdAdd.TabStop = False
-        Me.cmdAdd.Text = "&Add"
-        '
-        'cmdNext
-        '
-        Me.cmdNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdNext.Location = New System.Drawing.Point(770, 0)
-        Me.cmdNext.Name = "cmdNext"
-        Me.cmdNext.Size = New System.Drawing.Size(50, 25)
-        Me.cmdNext.TabIndex = 66
-        Me.cmdNext.TabStop = False
-        Me.cmdNext.Text = ">"
-        '
-        'cmdFind
-        '
-        Me.cmdFind.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdFind.Location = New System.Drawing.Point(260, 0)
-        Me.cmdFind.Name = "cmdFind"
-        Me.cmdFind.Size = New System.Drawing.Size(65, 25)
-        Me.cmdFind.TabIndex = 59
-        Me.cmdFind.TabStop = False
-        Me.cmdFind.Text = "&Find"
-        '
-        'cmdCopy
-        '
-        Me.cmdCopy.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdCopy.Location = New System.Drawing.Point(195, 0)
-        Me.cmdCopy.Name = "cmdCopy"
-        Me.cmdCopy.Size = New System.Drawing.Size(65, 25)
-        Me.cmdCopy.TabIndex = 58
-        Me.cmdCopy.TabStop = False
-        Me.cmdCopy.Text = "&Copy"
-        '
-        'cmdClear
-        '
-        Me.cmdClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdClear.Location = New System.Drawing.Point(325, 0)
-        Me.cmdClear.Name = "cmdClear"
-        Me.cmdClear.Size = New System.Drawing.Size(65, 25)
-        Me.cmdClear.TabIndex = 60
-        Me.cmdClear.TabStop = False
-        Me.cmdClear.Text = "Cl&ear"
-        '
-        'cmdDelRow
-        '
-        Me.cmdDelRow.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdDelRow.Location = New System.Drawing.Point(585, 0)
-        Me.cmdDelRow.Name = "cmdDelRow"
-        Me.cmdDelRow.Size = New System.Drawing.Size(65, 25)
-        Me.cmdDelRow.TabIndex = 63
-        Me.cmdDelRow.TabStop = False
-        Me.cmdDelRow.Text = "Del Ro&w"
-        '
-        'cmdFirst
-        '
-        Me.cmdFirst.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdFirst.Location = New System.Drawing.Point(670, 0)
-        Me.cmdFirst.Name = "cmdFirst"
-        Me.cmdFirst.Size = New System.Drawing.Size(50, 25)
-        Me.cmdFirst.TabIndex = 64
-        Me.cmdFirst.TabStop = False
-        Me.cmdFirst.Text = "|<<"
-        '
-        'cmdSearch
-        '
-        Me.cmdSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdSearch.Location = New System.Drawing.Point(420, 0)
-        Me.cmdSearch.Name = "cmdSearch"
-        Me.cmdSearch.Size = New System.Drawing.Size(65, 25)
-        Me.cmdSearch.TabIndex = 61
-        Me.cmdSearch.TabStop = False
-        Me.cmdSearch.Text = "Searc&h"
         '
         'cboCoCde
         '
         Me.cboCoCde.BackColor = System.Drawing.Color.White
         Me.cboCoCde.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCoCde.FormattingEnabled = True
-        Me.cboCoCde.Location = New System.Drawing.Point(109, 34)
+        Me.cboCoCde.Location = New System.Drawing.Point(109, 27)
         Me.cboCoCde.Name = "cboCoCde"
-        Me.cboCoCde.Size = New System.Drawing.Size(81, 21)
+        Me.cboCoCde.Size = New System.Drawing.Size(81, 20)
         Me.cboCoCde.TabIndex = 259
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Blue
-        Me.Label1.Location = New System.Drawing.Point(6, 37)
+        Me.Label1.Location = New System.Drawing.Point(6, 30)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 13)
+        Me.Label1.Size = New System.Drawing.Size(79, 12)
         Me.Label1.TabIndex = 260
         Me.Label1.Text = "Company Code"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 64)
+        Me.Label2.Location = New System.Drawing.Point(6, 55)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(75, 13)
+        Me.Label2.Size = New System.Drawing.Size(71, 12)
         Me.Label2.TabIndex = 261
         Me.Label2.Text = "Batch Job No."
         '
         'txtBJNo
         '
         Me.txtBJNo.BackColor = System.Drawing.Color.White
-        Me.txtBJNo.Location = New System.Drawing.Point(109, 61)
+        Me.txtBJNo.Location = New System.Drawing.Point(109, 52)
         Me.txtBJNo.Name = "txtBJNo"
-        Me.txtBJNo.Size = New System.Drawing.Size(150, 20)
+        Me.txtBJNo.Size = New System.Drawing.Size(150, 22)
         Me.txtBJNo.TabIndex = 262
         '
         'txtRunNoFrm
         '
         Me.txtRunNoFrm.BackColor = System.Drawing.Color.White
-        Me.txtRunNoFrm.Location = New System.Drawing.Point(109, 87)
+        Me.txtRunNoFrm.Location = New System.Drawing.Point(109, 76)
         Me.txtRunNoFrm.Name = "txtRunNoFrm"
-        Me.txtRunNoFrm.Size = New System.Drawing.Size(150, 20)
+        Me.txtRunNoFrm.Size = New System.Drawing.Size(150, 22)
         Me.txtRunNoFrm.TabIndex = 264
         '
         'txtRunNoTo
         '
         Me.txtRunNoTo.BackColor = System.Drawing.Color.White
-        Me.txtRunNoTo.Location = New System.Drawing.Point(291, 87)
+        Me.txtRunNoTo.Location = New System.Drawing.Point(291, 76)
         Me.txtRunNoTo.Name = "txtRunNoTo"
-        Me.txtRunNoTo.Size = New System.Drawing.Size(150, 20)
+        Me.txtRunNoTo.Size = New System.Drawing.Size(150, 22)
         Me.txtRunNoTo.TabIndex = 266
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(265, 90)
+        Me.Label4.Location = New System.Drawing.Point(265, 79)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(20, 13)
+        Me.Label4.Size = New System.Drawing.Size(18, 12)
         Me.Label4.TabIndex = 265
         Me.Label4.Text = "To"
         '
         'txtJobOrdTo
         '
         Me.txtJobOrdTo.BackColor = System.Drawing.Color.White
-        Me.txtJobOrdTo.Location = New System.Drawing.Point(291, 113)
+        Me.txtJobOrdTo.Location = New System.Drawing.Point(291, 100)
         Me.txtJobOrdTo.Name = "txtJobOrdTo"
-        Me.txtJobOrdTo.Size = New System.Drawing.Size(150, 20)
+        Me.txtJobOrdTo.Size = New System.Drawing.Size(150, 22)
         Me.txtJobOrdTo.TabIndex = 270
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(265, 116)
+        Me.Label5.Location = New System.Drawing.Point(265, 103)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(20, 13)
+        Me.Label5.Size = New System.Drawing.Size(18, 12)
         Me.Label5.TabIndex = 269
         Me.Label5.Text = "To"
         '
         'txtJobOrdFrm
         '
         Me.txtJobOrdFrm.BackColor = System.Drawing.Color.White
-        Me.txtJobOrdFrm.Location = New System.Drawing.Point(109, 113)
+        Me.txtJobOrdFrm.Location = New System.Drawing.Point(109, 100)
         Me.txtJobOrdFrm.Name = "txtJobOrdFrm"
-        Me.txtJobOrdFrm.Size = New System.Drawing.Size(150, 20)
+        Me.txtJobOrdFrm.Size = New System.Drawing.Size(150, 22)
         Me.txtJobOrdFrm.TabIndex = 268
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 116)
+        Me.Label6.Location = New System.Drawing.Point(6, 103)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(44, 13)
+        Me.Label6.Size = New System.Drawing.Size(41, 12)
         Me.Label6.TabIndex = 267
         Me.Label6.Text = "Job No."
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 90)
+        Me.Label3.Location = New System.Drawing.Point(6, 79)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(67, 13)
+        Me.Label3.Size = New System.Drawing.Size(66, 12)
         Me.Label3.TabIndex = 263
         Me.Label3.Text = "Running No."
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(73, 90)
+        Me.Label7.Location = New System.Drawing.Point(73, 79)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(30, 13)
+        Me.Label7.Size = New System.Drawing.Size(30, 12)
         Me.Label7.TabIndex = 271
         Me.Label7.Text = "From"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(73, 116)
+        Me.Label8.Location = New System.Drawing.Point(73, 103)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(30, 13)
+        Me.Label8.Size = New System.Drawing.Size(30, 12)
         Me.Label8.TabIndex = 272
         Me.Label8.Text = "From"
         '
@@ -333,25 +205,25 @@ Partial Class BJR00001
         Me.cboRptFmt.BackColor = System.Drawing.Color.White
         Me.cboRptFmt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboRptFmt.FormattingEnabled = True
-        Me.cboRptFmt.Location = New System.Drawing.Point(620, 34)
+        Me.cboRptFmt.Location = New System.Drawing.Point(620, 27)
         Me.cboRptFmt.Name = "cboRptFmt"
-        Me.cboRptFmt.Size = New System.Drawing.Size(200, 21)
+        Me.cboRptFmt.Size = New System.Drawing.Size(200, 20)
         Me.cboRptFmt.TabIndex = 273
         '
         'cmdApply
         '
-        Me.cmdApply.Location = New System.Drawing.Point(620, 111)
+        Me.cmdApply.Location = New System.Drawing.Point(620, 98)
         Me.cmdApply.Name = "cmdApply"
-        Me.cmdApply.Size = New System.Drawing.Size(85, 23)
+        Me.cmdApply.Size = New System.Drawing.Size(85, 21)
         Me.cmdApply.TabIndex = 274
         Me.cmdApply.Text = "Apply"
         Me.cmdApply.UseVisualStyleBackColor = True
         '
         'cmdPrint
         '
-        Me.cmdPrint.Location = New System.Drawing.Point(735, 111)
+        Me.cmdPrint.Location = New System.Drawing.Point(735, 98)
         Me.cmdPrint.Name = "cmdPrint"
-        Me.cmdPrint.Size = New System.Drawing.Size(85, 23)
+        Me.cmdPrint.Size = New System.Drawing.Size(85, 21)
         Me.cmdPrint.TabIndex = 275
         Me.cmdPrint.Text = "Print"
         Me.cmdPrint.UseVisualStyleBackColor = True
@@ -360,77 +232,258 @@ Partial Class BJR00001
         '
         Me.grpOutFmt.Controls.Add(Me.optExcel)
         Me.grpOutFmt.Controls.Add(Me.optPDF)
-        Me.grpOutFmt.Location = New System.Drawing.Point(620, 58)
+        Me.grpOutFmt.Location = New System.Drawing.Point(620, 50)
         Me.grpOutFmt.Name = "grpOutFmt"
-        Me.grpOutFmt.Size = New System.Drawing.Size(200, 46)
+        Me.grpOutFmt.Size = New System.Drawing.Size(200, 42)
         Me.grpOutFmt.TabIndex = 276
         Me.grpOutFmt.TabStop = False
         Me.grpOutFmt.Text = "Output Format"
         '
-        'optPDF
-        '
-        Me.optPDF.AutoSize = True
-        Me.optPDF.Location = New System.Drawing.Point(39, 20)
-        Me.optPDF.Name = "optPDF"
-        Me.optPDF.Size = New System.Drawing.Size(46, 17)
-        Me.optPDF.TabIndex = 0
-        Me.optPDF.TabStop = True
-        Me.optPDF.Text = "PDF"
-        Me.optPDF.UseVisualStyleBackColor = True
-        '
         'optExcel
         '
         Me.optExcel.AutoSize = True
-        Me.optExcel.Location = New System.Drawing.Point(111, 20)
+        Me.optExcel.Location = New System.Drawing.Point(111, 18)
         Me.optExcel.Name = "optExcel"
-        Me.optExcel.Size = New System.Drawing.Size(51, 17)
+        Me.optExcel.Size = New System.Drawing.Size(49, 16)
         Me.optExcel.TabIndex = 1
         Me.optExcel.TabStop = True
         Me.optExcel.Text = "Excel"
         Me.optExcel.UseVisualStyleBackColor = True
+        '
+        'optPDF
+        '
+        Me.optPDF.AutoSize = True
+        Me.optPDF.Location = New System.Drawing.Point(39, 18)
+        Me.optPDF.Name = "optPDF"
+        Me.optPDF.Size = New System.Drawing.Size(43, 16)
+        Me.optPDF.TabIndex = 0
+        Me.optPDF.TabStop = True
+        Me.optPDF.Text = "PDF"
+        Me.optPDF.UseVisualStyleBackColor = True
         '
         'dgBatchJob
         '
         Me.dgBatchJob.AllowUserToAddRows = False
         Me.dgBatchJob.AllowUserToDeleteRows = False
         Me.dgBatchJob.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgBatchJob.Location = New System.Drawing.Point(12, 149)
+        Me.dgBatchJob.Location = New System.Drawing.Point(12, 141)
         Me.dgBatchJob.Name = "dgBatchJob"
         Me.dgBatchJob.ReadOnly = True
-        Me.dgBatchJob.Size = New System.Drawing.Size(930, 341)
+        Me.dgBatchJob.RowTemplate.Height = 24
+        Me.dgBatchJob.Size = New System.Drawing.Size(930, 450)
         Me.dgBatchJob.TabIndex = 277
         '
         'txtCount
         '
         Me.txtCount.BackColor = System.Drawing.Color.White
-        Me.txtCount.Location = New System.Drawing.Point(843, 496)
+        Me.txtCount.Location = New System.Drawing.Point(843, 597)
         Me.txtCount.Name = "txtCount"
-        Me.txtCount.Size = New System.Drawing.Size(99, 20)
+        Me.txtCount.Size = New System.Drawing.Size(99, 22)
         Me.txtCount.TabIndex = 279
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(764, 499)
+        Me.Label9.Location = New System.Drawing.Point(764, 600)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(73, 13)
+        Me.Label9.Size = New System.Drawing.Size(71, 12)
         Me.Label9.TabIndex = 278
         Me.Label9.Text = "Record Count"
         '
         'txtCoNam
         '
         Me.txtCoNam.BackColor = System.Drawing.Color.White
-        Me.txtCoNam.Location = New System.Drawing.Point(196, 34)
+        Me.txtCoNam.Location = New System.Drawing.Point(196, 27)
         Me.txtCoNam.Name = "txtCoNam"
         Me.txtCoNam.ReadOnly = True
-        Me.txtCoNam.Size = New System.Drawing.Size(389, 20)
+        Me.txtCoNam.Size = New System.Drawing.Size(389, 22)
         Me.txtCoNam.TabIndex = 280
+        '
+        'menuStrip
+        '
+        Me.menuStrip.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.menuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mmdAdd, Me.mmdSave, Me.mmdDelete, Me.mmdCopy, Me.mmdFind, Me.t1, Me.mmdClear, Me.t2, Me.mmdSearch, Me.t3, Me.mmdInsRow, Me.mmdDelRow, Me.t4, Me.mmdPrint, Me.t5, Me.mmdAttach, Me.t6, Me.mmdFunction, Me.t7, Me.mmdLink, Me.t8, Me.mmdExit})
+        Me.menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
+        Me.menuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.menuStrip.Name = "menuStrip"
+        Me.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.menuStrip.Size = New System.Drawing.Size(954, 24)
+        Me.menuStrip.TabIndex = 779
+        Me.menuStrip.Text = "MenuStrip1"
+        '
+        'mmdAdd
+        '
+        Me.mmdAdd.BackColor = System.Drawing.SystemColors.Control
+        Me.mmdAdd.Name = "mmdAdd"
+        Me.mmdAdd.Size = New System.Drawing.Size(40, 19)
+        Me.mmdAdd.Tag = "Add"
+        Me.mmdAdd.Text = "&Add"
+        '
+        'mmdSave
+        '
+        Me.mmdSave.Name = "mmdSave"
+        Me.mmdSave.Size = New System.Drawing.Size(46, 19)
+        Me.mmdSave.Text = "&Save"
+        '
+        'mmdDelete
+        '
+        Me.mmdDelete.Name = "mmdDelete"
+        Me.mmdDelete.Size = New System.Drawing.Size(55, 19)
+        Me.mmdDelete.Text = "&Delete"
+        '
+        'mmdCopy
+        '
+        Me.mmdCopy.Name = "mmdCopy"
+        Me.mmdCopy.Size = New System.Drawing.Size(47, 19)
+        Me.mmdCopy.Text = "&Copy"
+        '
+        'mmdFind
+        '
+        Me.mmdFind.Name = "mmdFind"
+        Me.mmdFind.Size = New System.Drawing.Size(43, 19)
+        Me.mmdFind.Text = "&Find"
+        '
+        't1
+        '
+        Me.t1.AutoSize = False
+        Me.t1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.t1.Enabled = False
+        Me.t1.Name = "t1"
+        Me.t1.Size = New System.Drawing.Size(8, 20)
+        Me.t1.Text = "|"
+        '
+        'mmdClear
+        '
+        Me.mmdClear.Name = "mmdClear"
+        Me.mmdClear.Size = New System.Drawing.Size(49, 19)
+        Me.mmdClear.Text = "Cl&ear"
+        '
+        't2
+        '
+        Me.t2.AutoSize = False
+        Me.t2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.t2.Enabled = False
+        Me.t2.Name = "t2"
+        Me.t2.Size = New System.Drawing.Size(8, 20)
+        Me.t2.Text = "|"
+        '
+        'mmdSearch
+        '
+        Me.mmdSearch.Name = "mmdSearch"
+        Me.mmdSearch.Size = New System.Drawing.Size(58, 19)
+        Me.mmdSearch.Text = "Searc&h"
+        '
+        't3
+        '
+        Me.t3.AutoSize = False
+        Me.t3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.t3.Enabled = False
+        Me.t3.Name = "t3"
+        Me.t3.Size = New System.Drawing.Size(8, 20)
+        Me.t3.Text = "|"
+        '
+        'mmdInsRow
+        '
+        Me.mmdInsRow.Name = "mmdInsRow"
+        Me.mmdInsRow.Size = New System.Drawing.Size(64, 19)
+        Me.mmdInsRow.Text = "I&ns Row"
+        '
+        'mmdDelRow
+        '
+        Me.mmdDelRow.Name = "mmdDelRow"
+        Me.mmdDelRow.Size = New System.Drawing.Size(66, 19)
+        Me.mmdDelRow.Text = "Del Ro&w"
+        '
+        't4
+        '
+        Me.t4.AutoSize = False
+        Me.t4.Enabled = False
+        Me.t4.Name = "t4"
+        Me.t4.Size = New System.Drawing.Size(8, 20)
+        Me.t4.Text = "|"
+        '
+        'mmdPrint
+        '
+        Me.mmdPrint.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsiPrintItmPrcRpt})
+        Me.mmdPrint.Name = "mmdPrint"
+        Me.mmdPrint.Size = New System.Drawing.Size(44, 19)
+        Me.mmdPrint.Text = "&Print"
+        '
+        'tsiPrintItmPrcRpt
+        '
+        Me.tsiPrintItmPrcRpt.Name = "tsiPrintItmPrcRpt"
+        Me.tsiPrintItmPrcRpt.Size = New System.Drawing.Size(179, 22)
+        Me.tsiPrintItmPrcRpt.Text = "Item Pricing Report"
+        '
+        't5
+        '
+        Me.t5.AutoSize = False
+        Me.t5.Enabled = False
+        Me.t5.Name = "t5"
+        Me.t5.Size = New System.Drawing.Size(8, 20)
+        Me.t5.Text = "|"
+        '
+        'mmdAttach
+        '
+        Me.mmdAttach.Name = "mmdAttach"
+        Me.mmdAttach.Size = New System.Drawing.Size(52, 19)
+        Me.mmdAttach.Text = "Attach"
+        '
+        't6
+        '
+        Me.t6.AutoSize = False
+        Me.t6.Enabled = False
+        Me.t6.Name = "t6"
+        Me.t6.Size = New System.Drawing.Size(8, 20)
+        Me.t6.Text = "|"
+        '
+        'mmdFunction
+        '
+        Me.mmdFunction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsiHldRel})
+        Me.mmdFunction.Name = "mmdFunction"
+        Me.mmdFunction.Size = New System.Drawing.Size(66, 19)
+        Me.mmdFunction.Text = "Function"
+        '
+        'tsiHldRel
+        '
+        Me.tsiHldRel.Name = "tsiHldRel"
+        Me.tsiHldRel.Size = New System.Drawing.Size(183, 22)
+        Me.tsiHldRel.Text = "Hold / Release Item"
+        '
+        't7
+        '
+        Me.t7.AutoSize = False
+        Me.t7.Enabled = False
+        Me.t7.Name = "t7"
+        Me.t7.Size = New System.Drawing.Size(8, 20)
+        Me.t7.Text = "|"
+        '
+        'mmdLink
+        '
+        Me.mmdLink.Name = "mmdLink"
+        Me.mmdLink.Size = New System.Drawing.Size(42, 19)
+        Me.mmdLink.Text = "Link"
+        '
+        't8
+        '
+        Me.t8.AutoSize = False
+        Me.t8.Enabled = False
+        Me.t8.Name = "t8"
+        Me.t8.Size = New System.Drawing.Size(8, 20)
+        Me.t8.Text = "|"
+        '
+        'mmdExit
+        '
+        Me.mmdExit.Name = "mmdExit"
+        Me.mmdExit.Size = New System.Drawing.Size(38, 19)
+        Me.mmdExit.Text = "E&xit"
         '
         'BJR00001
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(954, 530)
+        Me.ClientSize = New System.Drawing.Size(954, 631)
+        Me.Controls.Add(Me.menuStrip)
         Me.Controls.Add(Me.txtCoNam)
         Me.Controls.Add(Me.txtCount)
         Me.Controls.Add(Me.Label9)
@@ -453,44 +506,20 @@ Partial Class BJR00001
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.cboCoCde)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.cmdExit)
-        Me.Controls.Add(Me.cmdInsRow)
-        Me.Controls.Add(Me.cmdDelete)
-        Me.Controls.Add(Me.cmdSave)
-        Me.Controls.Add(Me.cmdLast)
-        Me.Controls.Add(Me.cmdPrevious)
-        Me.Controls.Add(Me.cmdAdd)
-        Me.Controls.Add(Me.cmdNext)
-        Me.Controls.Add(Me.cmdFind)
-        Me.Controls.Add(Me.cmdCopy)
-        Me.Controls.Add(Me.cmdClear)
-        Me.Controls.Add(Me.cmdDelRow)
-        Me.Controls.Add(Me.cmdFirst)
-        Me.Controls.Add(Me.cmdSearch)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "BJR00001"
-        Me.Text = "BJR00001 - Batch Job Entry"
+        Me.Text = "BJR00001 - Batch Job Entry (BJR01)"
         Me.grpOutFmt.ResumeLayout(False)
         Me.grpOutFmt.PerformLayout()
         CType(Me.dgBatchJob, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.menuStrip.ResumeLayout(False)
+        Me.menuStrip.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents cmdExit As System.Windows.Forms.Button
-    Friend WithEvents cmdInsRow As System.Windows.Forms.Button
-    Friend WithEvents cmdDelete As System.Windows.Forms.Button
-    Friend WithEvents cmdSave As System.Windows.Forms.Button
-    Friend WithEvents cmdLast As System.Windows.Forms.Button
-    Friend WithEvents cmdPrevious As System.Windows.Forms.Button
-    Friend WithEvents cmdAdd As System.Windows.Forms.Button
-    Friend WithEvents cmdNext As System.Windows.Forms.Button
-    Friend WithEvents cmdFind As System.Windows.Forms.Button
-    Friend WithEvents cmdCopy As System.Windows.Forms.Button
-    Friend WithEvents cmdClear As System.Windows.Forms.Button
-    Friend WithEvents cmdDelRow As System.Windows.Forms.Button
-    Friend WithEvents cmdFirst As System.Windows.Forms.Button
-    Friend WithEvents cmdSearch As System.Windows.Forms.Button
     Friend WithEvents cboCoCde As System.Windows.Forms.ComboBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
@@ -515,4 +544,29 @@ Partial Class BJR00001
     Friend WithEvents txtCount As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents txtCoNam As System.Windows.Forms.TextBox
+    Friend WithEvents menuStrip As System.Windows.Forms.MenuStrip
+    Friend WithEvents mmdAdd As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdSave As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdDelete As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdCopy As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdFind As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdClear As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdSearch As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdInsRow As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdDelRow As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t4 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdPrint As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsiPrintItmPrcRpt As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t5 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdAttach As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t6 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdFunction As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsiHldRel As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t7 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdLink As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents t8 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mmdExit As System.Windows.Forms.ToolStripMenuItem
 End Class
