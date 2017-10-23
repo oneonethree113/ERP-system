@@ -13,6 +13,7 @@ Public Class IAR00001
     Dim rs_IAR00002 As New DataSet
     Dim rs_IAR00002SUB As New DataSet
     Dim rs_IAR00003 As New DataSet
+    Dim rs_IAR00001_ItemPriceHistory As New DataSet
     'Search Tab Related
     Dim textboxlist As New Collection() 'a dictionary storing the index and the textbox object
     Private Sub IAR00001_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -30,6 +31,36 @@ Public Class IAR00001
 
     End Sub
 
+    Private Sub AddSearchBtnHandler()
+        textboxlist.Add(txt_S_PriCustAll, "cmd_S_PriCustAll")
+        textboxlist.Add(txt_S_SecCustAll, "cmd_S_SecCustAll")
+        textboxlist.Add(txt_S_DV, "cmd_S_DV")
+        textboxlist.Add(txtItmNo, "cmd_S_ItmNo")
+
+        AddHandler cmd_S_PriCustAll.Click, AddressOf cmd_S_Click
+        AddHandler cmd_S_SecCustAll.Click, AddressOf cmd_S_Click
+        AddHandler cmd_S_DV.Click, AddressOf cmd_S_Click
+
+
+    End Sub
+    Private Sub cmd_S_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Dim trigger_btn As Button = CType(sender, Button)
+        Dim btn_name As String = trigger_btn.Name
+        Dim frmComSearch As New frmComSearch
+
+        frmComSearch.callFmForm = Me.Name
+        frmComSearch.callFmCriteria = textboxlist(btn_name).Name
+        frmComSearch.callFmString = textboxlist(btn_name).Text
+        frmComSearch.show_frmS(trigger_btn)
+    End Sub
+
+    Private Sub cmd_S_ItmNo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_S_ItmNo.Click
+        frmItemList.strItem = txtItmNo.Text
+        'frmItemList.Show(vbModal)
+        Call frmItemList.getform("IAR00001")
+        frmItemList.ShowDialog()
+        txtItmNo.Text = frmItemList.strSel
+    End Sub
     Private Sub cmdShowReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdShowReport.Click
 
         If Not IsDate(txtTranFromDate.Text) And (optByExcel.Checked = True Or optByExcel_New.Checked = True) Then
@@ -58,10 +89,6 @@ Public Class IAR00001
 
         If (Trim(txtItmNo.Text).Length = 0) Then
             txtItmNo.Text = ""
-            'MsgBox("Please Enter " & IIf(optBOMItm.Checked = True, "BOM ", "") & "Item No.", MsgBoxStyle.Information, "Missing Input Parameter")
-            'txtItmNo.Focus()
-            'txtItmNo.SelectAll()
-            'Exit Sub
         End If
 
         Dim itmList As String = ""
@@ -77,7 +104,6 @@ Public Class IAR00001
         cus2no = cus2no.Replace("'", "''")
         venno = txt_S_DV.Text
         venno = venno.Replace("'", "''")
-        'txtItmNo.Text = Replace(Replace(txtItmNo.Text, Chr(10), ""), Chr(13), "")
         txtItmNo.Text = txtItmNo.Text.Replace(Chr(10), "").Replace(Chr(13), "")
 
         ttl = UBound(Split(txtItmNo.Text, "*"))
@@ -109,8 +135,7 @@ Public Class IAR00001
 
         Me.Cursor = Windows.Forms.Cursors.WaitCursor
 
-        If optItmMtr.Checked = True Then
-            'gspStr = "sp_select_IAR00002 'UCPP','" & itmList & "','" & cus1no & "'"
+        If optItmPrcHis.Checked = True Then
             gspStr = "sp_select_IAR00002 'UCPP','" & itmList & "','" & cus1no & "','" & cus2no & "','" & venno & "'"
             rtnLong = execute_SQLStatement(gspStr, rs_IAR00002, rtnStr)
             If rtnLong <> RC_SUCCESS Then
@@ -143,14 +168,14 @@ Public Class IAR00001
                     MsgBox("Error on loading IAR00001 sp_select_IAR00001_new : " & rtnStr)
                     Exit Sub
                 End If
-            ElseIf optBOMItm.Checked = True Then
-                gspStr = "sp_select_IAR00003 'UCPP','" & Trim(txtItmNo.Text) & "','" & cus1no & "','" & cus2no & "','" & venno & "','" & chkAssort.Checked & "'"
-                rtnLong = execute_SQLStatement(gspStr, rs_IAR00003, rtnStr)
-                If rtnLong <> RC_SUCCESS Then
-                    Me.Cursor = Windows.Forms.Cursors.Default
-                    MsgBox("Error on loading IAR00001 sp_select_IAR00003 : " & rtnStr)
-                    Exit Sub
-                End If
+                'ElseIf optBOMItm.Checked = True Then
+                '    gspStr = "sp_select_IAR00003 'UCPP','" & Trim(txtItmNo.Text) & "','" & cus1no & "','" & cus2no & "','" & venno & "','" & chkAssort.Checked & "'"
+                '    rtnLong = execute_SQLStatement(gspStr, rs_IAR00003, rtnStr)
+                '    If rtnLong <> RC_SUCCESS Then
+                '        Me.Cursor = Windows.Forms.Cursors.Default
+                '        MsgBox("Error on loading IAR00001 sp_select_IAR00003 : " & rtnStr)
+                '        Exit Sub
+                '    End If
             Else
                 MsgBox("Please select a search method", MsgBoxStyle.Information, "Missing Search Parameter")
                 optByExcel.Focus()
@@ -188,7 +213,7 @@ Public Class IAR00001
                     frmReportView.Show()
                 End If
             End If
-        ElseIf optItmMtr.Checked = True Then
+        ElseIf optItmPrcHis.Checked = True Then
             If rs_IAR00002.Tables("RESULT").Rows.Count = 0 Then
                 MsgBox("No Record Found", MsgBoxStyle.Information)
                 Exit Sub
@@ -212,27 +237,27 @@ Public Class IAR00001
                     frmReportView.Show()
                 End If
             End If
-        ElseIf optBOMItm.Checked = True Then
-            If rs_IAR00003.Tables("RESULT").Rows.Count = 0 Then
-                MsgBox("No Record Found", MsgBoxStyle.Information)
-                Exit Sub
-            Else
-                If chkExcel.Checked = True Then
-                    If rs_IAR00003.Tables("RESULT").Rows.Count > 30000 Then
-                        answer = MsgBox("Number of records are over 30000! Only the first 30000 records will be shown.", MsgBoxStyle.YesNo, "Exceeding Maximum Allowable Lines")
-                        If answer = Windows.Forms.DialogResult.No Then
-                            Exit Sub
-                        End If
-                        exportExcel_IAR00003(rs_IAR00003)
-                    End If
-                Else
-                    Dim objRpt As New IAR00003Rpt
-                    objRpt.SetDataSource(rs_IAR00003.Tables("RESULT"))
-                    Dim frmReportView As New frmReport
-                    frmReportView.CrystalReportViewer.ReportSource = objRpt
-                    frmReportView.Show()
-                End If
-            End If
+            'ElseIf optBOMItm.Checked = True Then
+            'If rs_IAR00003.Tables("RESULT").Rows.Count = 0 Then
+            '    MsgBox("No Record Found", MsgBoxStyle.Information)
+            '    Exit Sub
+            'Else
+            '    If chkExcel.Checked = True Then
+            '        If rs_IAR00003.Tables("RESULT").Rows.Count > 30000 Then
+            '            answer = MsgBox("Number of records are over 30000! Only the first 30000 records will be shown.", MsgBoxStyle.YesNo, "Exceeding Maximum Allowable Lines")
+            '            If answer = Windows.Forms.DialogResult.No Then
+            '                Exit Sub
+            '            End If
+            '            exportExcel_IAR00003(rs_IAR00003)
+            '        End If
+            '    Else
+            '        Dim objRpt As New IAR00003Rpt
+            '        objRpt.SetDataSource(rs_IAR00003.Tables("RESULT"))
+            '        Dim frmReportView As New frmReport
+            '        frmReportView.CrystalReportViewer.ReportSource = objRpt
+            '        frmReportView.Show()
+            '    End If
+            'End If
         End If
 
     End Sub
@@ -1092,7 +1117,7 @@ Public Class IAR00001
 
     End Sub
 
-    Private Sub optPressed(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optByExcel.CheckedChanged, optByExcel_New.CheckedChanged, optItmMtr.CheckedChanged, optBOMItm.CheckedChanged
+    Private Sub optPressed(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optByExcel.CheckedChanged, optByExcel_New.CheckedChanged, optItmPrcHis.CheckedChanged
         If optByExcel.Checked = True Then
             lblSearchParam.Visible = True
             lblSearchParam.Text = "Transaction Date"
@@ -1109,22 +1134,23 @@ Public Class IAR00001
             txtTranToDate.Visible = True
             chkAssort.Visible = False
             btnExExcel.Enabled = False
-        ElseIf optItmMtr.Checked = True Then
-            lblSearchParam.Visible = False
-            txtTranFromDate.Visible = False
-            lblTranDateTo.Visible = False
-            txtTranToDate.Visible = False
+        ElseIf optItmPrcHis.Checked = True Then
+            lblSearchParam.Visible = True
+            txtTranFromDate.Visible = True
+            lblSearchParam.Text = "Price change date"
+            lblTranDateTo.Visible = True
+            txtTranToDate.Visible = True
             chkAssort.Visible = False
             btnExExcel.Enabled = True
-        ElseIf optBOMItm.Checked = True Then
-            lblSearchParam.Visible = True
-            lblSearchParam.Text = "Show Assortment Item"
-            txtTranFromDate.Visible = False
-            lblTranDateTo.Visible = False
-            txtTranToDate.Visible = False
-            chkAssort.Visible = True
-            chkAssort.Checked = True
-            btnExExcel.Enabled = True
+            'ElseIf optBOMItm.Checked = True Then
+            '    lblSearchParam.Visible = True
+            '    lblSearchParam.Text = "Show Assortment Item"
+            '    txtTranFromDate.Visible = False
+            '    lblTranDateTo.Visible = False
+            '    txtTranToDate.Visible = False
+            '    chkAssort.Visible = True
+            '    chkAssort.Checked = True
+            '    btnExExcel.Enabled = True
         End If
     End Sub
 
@@ -1141,53 +1167,344 @@ Public Class IAR00001
     Private Sub btnExExcel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExExcel.Click
         'in the past, to export the excel the user need to check a checkbox call chkExcel and press cmdShowReport bottom
         'if you concern about where the chkExcelis,  it is at the behind the btnExExcel button
+        If optItmPrcHis.Checked = True Then
+            exportItemPriceHistory()
+        Else
 
-        chkExcel.Checked = True
-        cmdShowReport_Click(sender, e)
-        chkExcel.Checked = False
-
-    End Sub
-
-    Private Sub AddSearchBtnHandler()
-        textboxlist.Add(txt_S_PriCustAll, "cmd_S_PriCustAll")
-        textboxlist.Add(txt_S_SecCustAll, "cmd_S_SecCustAll")
-        textboxlist.Add(txt_S_DV, "cmd_S_DV")
-        'textboxlist.Add(txt_S_CV, "cmd_S_CV")
-        'textboxlist.Add(txt_S_FA, "cmd_S_FA")
-        'textboxlist.Add(txt_S_SCNo, "cmd_S_SCNo")
-        'textboxlist.Add(txt_S_PONo, "cmd_S_PONo")
-        'textboxlist.Add(txt_S_CustPONo, "cmd_S_CustPONo")
-        textboxlist.Add(txtItmNo, "cmd_S_ItmNo")
-
-        AddHandler cmd_S_PriCustAll.Click, AddressOf cmd_S_Click
-        AddHandler cmd_S_SecCustAll.Click, AddressOf cmd_S_Click
-        AddHandler cmd_S_DV.Click, AddressOf cmd_S_Click
-        'AddHandler cmd_S_CV.Click, AddressOf cmd_S_Click
-        'AddHandler cmd_S_FA.Click, AddressOf cmd_S_Click
-        'AddHandler cmd_S_SCNo.Click, AddressOf cmd_S_Click
-        'AddHandler cmd_S_PONo.Click, AddressOf cmd_S_Click
-        'AddHandler cmd_S_CustPONo.Click, AddressOf cmd_S_Click
-        'AddHandler cmd_S_ItmNo.Click, AddressOf cmd_S_Click
-
+            chkExcel.Checked = True
+            cmdShowReport_Click(sender, e)
+            chkExcel.Checked = False
+        End If
 
     End Sub
 
-    Private Sub cmd_S_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Dim trigger_btn As Button = CType(sender, Button)
-        Dim btn_name As String = trigger_btn.Name
-        Dim frmComSearch As New frmComSearch
 
-        frmComSearch.callFmForm = Me.Name
-        frmComSearch.callFmCriteria = textboxlist(btn_name).Name
-        frmComSearch.callFmString = textboxlist(btn_name).Text
-        frmComSearch.show_frmS(trigger_btn)
+    Private Sub exportItemPriceHistory()
+
+        If Len(Trim(txtItmNo.Text)) > 1000 Then
+            MsgBox("Item Number list exceeds maximum allowable length (1000 Characters).", MsgBoxStyle.Exclamation, "Invalid Input")
+            txtItmNo.Focus()
+            txtItmNo.SelectAll()
+            Exit Sub
+        End If
+
+        If txtTranFromDate.Text <> "  /  /" Then
+            If IsDate(txtTranFromDate) Then
+                MsgBox("Invalid Start Date", MsgBoxStyle.Exclamation, "Invalid Input")
+                txtTranFromDate.Focus()
+                txtTranFromDate.SelectAll()
+                Exit Sub
+            End If
+        End If
+
+        If txtTranToDate.Text <> "  /  /" Then
+            If IsDate(txtTranToDate) Then
+                MsgBox("Invalid End Date", MsgBoxStyle.Exclamation, "Invalid Input")
+                txtTranToDate.Focus()
+                txtTranToDate.SelectAll()
+                Exit Sub
+            End If
+        End If
+
+        If Mid(txtTranFromDate.Text, 7) > Mid(txtTranToDate.Text, 7) Then
+            MsgBox("Create Date: End Date < Start Date (YY)", MsgBoxStyle.Exclamation, "Invalid Input")
+            txtTranFromDate.Focus()
+            txtTranFromDate.Select(6, 4)
+            Exit Sub
+        ElseIf Mid(txtTranFromDate.Text, 7) = Mid(txtTranToDate.Text, 7) Then
+            If txtTranFromDate.Text.Substring(0, 2) > txtTranToDate.Text.Substring(0, 2) Then
+                MsgBox("Create Date: End Date < Start Date (MM)", MsgBoxStyle.Exclamation, "Invalid Input")
+                txtTranFromDate.Focus()
+                txtTranFromDate.Select(0, 2)
+                Exit Sub
+            ElseIf txtTranFromDate.Text.Substring(0, 2) = txtTranToDate.Text.Substring(0, 2) Then
+                If txtTranFromDate.Text.Substring(3, 2) > txtTranToDate.Text.Substring(3, 2) Then
+                    MsgBox("Create Date: End Date < Start Date (DD)", MsgBoxStyle.Exclamation, "Invalid Input")
+                    txtTranFromDate.Focus()
+                    txtTranFromDate.Select(3, 2)
+                    Exit Sub
+                End If
+            End If
+        End If
+
+        Dim itmno As String
+        Dim upldatto As String
+        Dim upldatFrom As String
+        Dim Pricuslist As String
+        Dim Seccuslist As String
+        Dim DVlist As String
+
+        itmno = txtItmNo.Text
+        itmno = itmno.Replace("'", "''")
+
+        Pricuslist = txt_S_PriCustAll.Text
+        Pricuslist = Pricuslist.Replace("'", "''")
+
+        Seccuslist = txt_S_SecCustAll.Text
+        Seccuslist = Seccuslist.Replace("'", "''")
+
+        DVlist = txt_S_DV.Text
+        DVlist = DVlist.Replace("'", "''")
+
+        If txtTranFromDate.Text = "  /  /" Then
+            upldatFrom = "01/01/1900"
+        Else
+            upldatFrom = txtTranFromDate.Text
+        End If
+
+        If txtTranToDate.Text = "  /  /" Then
+            upldatto = "01/01/1900"
+        Else
+            upldatto = txtTranToDate.Text
+        End If
+
+        If upldatFrom = "01/01/1900" And upldatto = "01/01/1900" Then
+            MsgBox("Create Date must have values!", MsgBoxStyle.Exclamation, "Invalid Input")
+            txtTranFromDate.Focus()
+            txtTranFromDate.SelectAll()
+            Exit Sub
+        End If
+
+
+        gspStr = "sp_select_IAR00001PrcHis 'UCPP','" & itmno & "','" & upldatFrom & "','" & upldatto & "','" & Pricuslist & "','" & Seccuslist & "','" & DVlist & "','" & gsUsrID & "'"
+       
+        Me.Cursor = Windows.Forms.Cursors.WaitCursor
+
+        rtnLong = execute_SQLStatement(gspStr, rs_IAR00001_ItemPriceHistory, rtnStr)
+
+        Me.Cursor = Windows.Forms.Cursors.Default
+
+        If rtnLong <> RC_SUCCESS Then
+            MsgBox("Error on loading IMR00035 sp_list_IMR00035 : " & rtnStr)
+            Exit Sub
+        End If
+
+        If rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows.Count = 0 Then
+            MsgBox("No Record Found!", MsgBoxStyle.Information, "Information")
+        Else
+            ExportExcel()
+        End If
     End Sub
 
-    Private Sub cmd_S_ItmNo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_S_ItmNo.Click
-        frmItemList.strItem = txtItmNo.Text
-        'frmItemList.Show(vbModal)
-        Call frmItemList.getform("IAR00001")
-        frmItemList.ShowDialog()
-        txtItmNo.Text = frmItemList.strSel
+    Private Sub ExportExcel()
+        If rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows.Count >= 65535 Then
+            MsgBox("There are more than 65535 records!")
+            Exit Sub
+        End If
+
+        Dim xlsApp As New Excel.ApplicationClass
+        Dim xlsWB As Excel.Workbook = Nothing
+        Dim xlsWS As Excel.Worksheet = Nothing
+
+        Dim strCompany As String
+        Dim strTitle As String
+
+        Me.Cursor = Windows.Forms.Cursors.WaitCursor
+
+        strCompany = "UNITED CHINESE GROUP"
+        strTitle = "PRICE CHANGE REPORT"
+
+        xlsApp = New Excel.Application
+        xlsApp.Visible = False
+        xlsApp.UserControl = True
+
+        Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
+
+        xlsWB = xlsApp.Workbooks.Add()
+        xlsWS = xlsWB.ActiveSheet
+
+        With xlsApp
+            'Header Initialization
+            .Range(.Cells(1, 1), .Cells(2, 1)).MergeCells = True
+            .Range(.Cells(1, 1), .Cells(2, 1)).VerticalAlignment = Excel.Constants.xlCenter
+            .Range(.Cells(1, 1), .Cells(2, 1)).Value = "Item No."
+            .Range(.Cells(1, 2), .Cells(2, 2)).MergeCells = True
+            .Range(.Cells(1, 2), .Cells(2, 2)).VerticalAlignment = Excel.Constants.xlCenter
+            .Range(.Cells(1, 2), .Cells(2, 2)).Value = "Item Type"
+            .Range(.Cells(1, 3), .Cells(2, 3)).MergeCells = True
+            .Range(.Cells(1, 3), .Cells(2, 3)).VerticalAlignment = Excel.Constants.xlCenter
+            .Range(.Cells(1, 3), .Cells(2, 3)).Value = "DV"
+            .Range(.Cells(1, 4), .Cells(2, 4)).MergeCells = True
+            .Range(.Cells(1, 4), .Cells(2, 4)).VerticalAlignment = Excel.Constants.xlCenter
+            .Range(.Cells(1, 4), .Cells(2, 4)).Value = "PV"
+            .Range(.Cells(1, 5), .Cells(2, 5)).MergeCells = True
+            .Range(.Cells(1, 5), .Cells(2, 5)).VerticalAlignment = Excel.Constants.xlCenter
+            .Range(.Cells(1, 5), .Cells(2, 5)).Value = "UM"
+            .Range(.Cells(1, 6), .Cells(2, 6)).MergeCells = True
+            .Range(.Cells(1, 6), .Cells(2, 6)).VerticalAlignment = Excel.Constants.xlCenter
+            .Range(.Cells(1, 6), .Cells(2, 6)).Value = "Inr"
+            .Range(.Cells(1, 7), .Cells(2, 7)).MergeCells = True
+            .Range(.Cells(1, 7), .Cells(2, 7)).VerticalAlignment = Excel.Constants.xlCenter
+            .Range(.Cells(1, 7), .Cells(2, 7)).Value = "Mtr"
+            .Range(.Cells(1, 8), .Cells(2, 8)).MergeCells = True
+            .Range(.Cells(1, 8), .Cells(2, 8)).VerticalAlignment = Excel.Constants.xlCenter
+            .Range(.Cells(1, 8), .Cells(2, 8)).Value = "CFT"
+            .Range(.Cells(1, 9), .Cells(2, 9)).MergeCells = True
+            .Range(.Cells(1, 9), .Cells(2, 9)).VerticalAlignment = Excel.Constants.xlCenter
+            .Range(.Cells(1, 9), .Cells(2, 9)).Value = "Pri Cus"
+            .Range(.Cells(1, 10), .Cells(2, 10)).MergeCells = True
+            .Range(.Cells(1, 10), .Cells(2, 10)).VerticalAlignment = Excel.Constants.xlCenter
+            .Range(.Cells(1, 10), .Cells(2, 10)).Value = "Sec Cus"
+            .Range(.Cells(1, 11), .Cells(2, 11)).MergeCells = True
+            .Range(.Cells(1, 11), .Cells(2, 11)).VerticalAlignment = Excel.Constants.xlCenter
+            .Range(.Cells(1, 11), .Cells(2, 11)).WrapText = True
+            .Range(.Cells(1, 11), .Cells(2, 11)).Value = "FTY Price Term"
+            .Range(.Cells(1, 12), .Cells(2, 12)).MergeCells = True
+            .Range(.Cells(1, 12), .Cells(2, 12)).VerticalAlignment = Excel.Constants.xlCenter
+            .Range(.Cells(1, 12), .Cells(2, 12)).WrapText = True
+            .Range(.Cells(1, 12), .Cells(2, 12)).Value = "HK Price Term"
+
+            .Range(.Cells(1, 13), .Cells(2, 13)).MergeCells = True
+            .Range(.Cells(1, 13), .Cells(2, 13)).VerticalAlignment = Excel.Constants.xlCenter
+            .Range(.Cells(1, 13), .Cells(2, 13)).WrapText = True
+            .Range(.Cells(1, 13), .Cells(2, 13)).Value = "Transport" & Environment.NewLine & "Term"
+
+            .Range(.Cells(1, 14), .Cells(2, 14)).MergeCells = True
+            .Range(.Cells(1, 14), .Cells(2, 14)).VerticalAlignment = Excel.Constants.xlCenter
+            .Range(.Cells(1, 14), .Cells(2, 14)).WrapText = True
+            .Range(.Cells(1, 14), .Cells(2, 14)).Value = "Price Change Date"
+            .Range(.Cells(1, 15), .Cells(2, 15)).MergeCells = True
+            .Range(.Cells(1, 15), .Cells(2, 15)).VerticalAlignment = Excel.Constants.xlCenter
+            .Range(.Cells(1, 15), .Cells(2, 15)).WrapText = True
+            .Range(.Cells(1, 15), .Cells(2, 15)).Value = "Price Change Reason"
+
+
+
+            .Range(.Cells(1, 16), .Cells(1, 44)).MergeCells = True
+            .Range(.Cells(1, 16), .Cells(1, 44)).Value = "Before"
+            .Cells(2, 16) = "Effective Date"
+            .Cells(2, 17) = "Expiry Date"
+            .Cells(2, 18) = "CCY"
+            .Cells(2, 19) = "FTY Cst TTL"
+            .Cells(2, 20) = "FTY Cst A"
+            .Cells(2, 21) = "FTY Cst B"
+            .Cells(2, 22) = "FTY Cst C"
+            .Cells(2, 23) = "FTY Cst D"
+            .Cells(2, 24) = "FTY Cst E"
+            .Cells(2, 25) = "FTY Cst Tran"
+            .Cells(2, 26) = "FTY Cst Pack"
+            .Cells(2, 27) = "FTY Prc TTL"
+            .Cells(2, 28) = "BOM Cst"
+            .Cells(2, 29) = "TTL Cst"
+            .Cells(2, 30) = "Neg Prc"
+            .Cells(2, 31) = "Markup"
+            .Cells(2, 32) = "Basic CCY"
+            .Cells(2, 33) = "Item Prc"
+            .Cells(2, 34) = "BOM Prc"
+            .Cells(2, 35) = "Basic Prc"
+            .Cells(2, 36) = "Period"
+            .Cells(2, 37) = "Cost Change Date"
+            .Range(.Cells(1, 38), .Cells(1, 73)).MergeCells = True
+            .Range(.Cells(1, 38), .Cells(1, 73)).Value = "After"
+            .Cells(2, 38) = "Effective Date"
+            .Cells(2, 39) = "Expiry Date"
+            .Cells(2, 40) = "CCY"
+            .Cells(2, 41) = "FTY Cst TTL"
+            .Cells(2, 42) = "FTY Cst A"
+            .Cells(2, 43) = "FTY Cst B"
+            .Cells(2, 44) = "FTY Cst C"
+            .Cells(2, 45) = "FTY Cst D"
+            .Cells(2, 46) = "FTY Cst E"
+            .Cells(2, 47) = "FTY Cst Tran"
+            .Cells(2, 48) = "FTY Cst Pack"
+            .Cells(2, 49) = "FTY Prc TTL"
+            .Cells(2, 50) = "BOM Cst"
+            .Cells(2, 51) = "TTL Cst"
+            .Cells(2, 52) = "Neg Prc"
+            .Cells(2, 53) = "Markup"
+            .Cells(2, 54) = "Basic CCY"
+            .Cells(2, 55) = "Item Prc"
+            .Cells(2, 56) = "BOM Prc"
+            .Cells(2, 57) = "Basic Prc"
+            .Cells(2, 58) = "Period"
+            .Cells(2, 59) = "Cost Change Date"
+        End With
+
+        With xlsApp
+            For i As Integer = 0 To rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows.Count - 1
+
+                .Cells(3 + i, 1) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_itmno").ToString
+                .Cells(3 + i, 2) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_typ").ToString
+                .Cells(3 + i, 3) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_venno").ToString
+                .Cells(3 + i, 4) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_prdven").ToString
+                .Cells(3 + i, 5) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_pckunt").ToString
+                .Cells(3 + i, 6) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_inrqty").ToString
+                .Cells(3 + i, 7) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_mtrqty").ToString
+                .Cells(3 + i, 8) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cft").ToString
+                .Cells(3 + i, 9) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cus1no").ToString
+                .Cells(3 + i, 10) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cus2no").ToString
+                .Cells(3 + i, 11) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyprctrm").ToString
+                .Cells(3 + i, 12) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_hkprctrm").ToString
+                .Cells(3 + i, 13) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_trantrm").ToString
+                .Cells(3 + i, 14) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_chgdat").ToString
+                .Cells(3 + i, 15) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_chgreason").ToString
+                .Cells(3 + i, 16) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_effdat_before").ToString
+                .Cells(3 + i, 17) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_expdat_before").ToString
+                .Cells(3 + i, 18) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_curcde_before").ToString
+                .Cells(3 + i, 19) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycst_before").ToString
+                .Cells(3 + i, 20) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstA_before").ToString
+                .Cells(3 + i, 21) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstB_before").ToString
+                .Cells(3 + i, 22) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstC_before").ToString
+                .Cells(3 + i, 23) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstD_before").ToString
+                .Cells(3 + i, 24) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstE_before").ToString
+                .Cells(3 + i, 25) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstTran_before").ToString
+                .Cells(3 + i, 26) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstPack_before").ToString
+                .Cells(3 + i, 27) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyprc_before").ToString
+                .Cells(3 + i, 28) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_bomcst_before").ToString
+                .Cells(3 + i, 29) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ttlcst_before").ToString
+                .Cells(3 + i, 30) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_negprc_before").ToString
+                .Cells(3 + i, 31) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_fmlopt_before").ToString
+                .Cells(3 + i, 32) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_bcurcde_before").ToString
+                .Cells(3 + i, 33) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_itmprc_before").ToString
+                .Cells(3 + i, 34) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_bomprc_before").ToString
+                .Cells(3 + i, 35) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_basprc_before").ToString
+                .Cells(3 + i, 36) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_period_before").ToString
+                .Cells(3 + i, 37) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cstchgdat_before").ToString
+                .Cells(3 + i, 38) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_effdat_after").ToString
+                .Cells(3 + i, 39) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_expdat_after").ToString
+                .Cells(3 + i, 40) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_curcde_after").ToString
+                .Cells(3 + i, 41) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycst_after").ToString
+                .Cells(3 + i, 42) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstA_after").ToString
+                .Cells(3 + i, 43) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstB_after").ToString
+                .Cells(3 + i, 44) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstC_after").ToString
+                .Cells(3 + i, 45) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstD_after").ToString
+                .Cells(3 + i, 46) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstE_after").ToString
+                .Cells(3 + i, 47) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstTran_after").ToString
+                .Cells(3 + i, 48) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstPack_after").ToString
+                .Cells(3 + i, 49) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyprc_after").ToString
+                .Cells(3 + i, 50) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_bomcst_after").ToString
+                .Cells(3 + i, 51) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ttlcst_after").ToString
+                .Cells(3 + i, 52) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_negprc_after").ToString
+                .Cells(3 + i, 53) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_fmlopt_after").ToString
+                .Cells(3 + i, 54) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_bcurcde_after").ToString
+                .Cells(3 + i, 55) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_itmprc_after").ToString
+                .Cells(3 + i, 56) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_bomprc_after").ToString
+                .Cells(3 + i, 57) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_basprc_after").ToString
+                .Cells(3 + i, 58) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_period_after").ToString
+                .Cells(3 + i, 59) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cstchgdat_after").ToString
+            Next
+        End With
+
+        With xlsApp
+            '.Range(.Cells(7, 1), .Cells(7, 1)).ColumnWidth = 15
+            '.Range(.Cells(7, 2), .Cells(7, 2)).ColumnWidth = 5.57
+            '.Range(.Cells(7, 3), .Cells(1, 7)).ColumnWidth = 4.57
+            .Columns("A:BQ").EntireColumn.AutoFit()
+            .Columns(13).ColumnWidth = 10
+            .Columns("A:BQ").EntireColumn.HorizontalAlignment = Excel.Constants.xlCenter
+            .Rows("1:2").Font.Bold = True
+        End With
+
+        xlsApp.Visible = True
+
+        ' Release reference
+        rs_IAR00001_ItemPriceHistory = Nothing
+        xlsWS = Nothing
+        xlsWB = Nothing
+        xlsApp = Nothing
+
+        Me.Cursor = Windows.Forms.Cursors.Default
     End Sub
+
 End Class

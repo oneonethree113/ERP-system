@@ -41,14 +41,14 @@ Partial Class IAR00001
         Me.txtTranToDate = New System.Windows.Forms.MaskedTextBox
         Me.txtTranFromDate = New System.Windows.Forms.MaskedTextBox
         Me.lblSearchParam = New System.Windows.Forms.Label
-        Me.optBOMItm = New System.Windows.Forms.RadioButton
-        Me.optItmMtr = New System.Windows.Forms.RadioButton
+        Me.optItmPrcHis = New System.Windows.Forms.RadioButton
         Me.optByExcel_New = New System.Windows.Forms.RadioButton
         Me.optByExcel = New System.Windows.Forms.RadioButton
         Me.chkAssort = New System.Windows.Forms.CheckBox
         Me.chkExcel = New System.Windows.Forms.CheckBox
         Me.cmdShowReport = New System.Windows.Forms.Button
         Me.btnExExcel = New System.Windows.Forms.Button
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -65,6 +65,7 @@ Partial Class IAR00001
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.RadioButton1)
         Me.GroupBox1.Controls.Add(Me.txtItmNo)
         Me.GroupBox1.Controls.Add(Me.txt_S_DV)
         Me.GroupBox1.Controls.Add(Me.cmd_S_DV)
@@ -81,8 +82,7 @@ Partial Class IAR00001
         Me.GroupBox1.Controls.Add(Me.txtTranToDate)
         Me.GroupBox1.Controls.Add(Me.txtTranFromDate)
         Me.GroupBox1.Controls.Add(Me.lblSearchParam)
-        Me.GroupBox1.Controls.Add(Me.optBOMItm)
-        Me.GroupBox1.Controls.Add(Me.optItmMtr)
+        Me.GroupBox1.Controls.Add(Me.optItmPrcHis)
         Me.GroupBox1.Controls.Add(Me.optByExcel_New)
         Me.GroupBox1.Controls.Add(Me.optByExcel)
         Me.GroupBox1.Controls.Add(Me.chkAssort)
@@ -226,49 +226,37 @@ Partial Class IAR00001
         Me.lblSearchParam.TabIndex = 4
         Me.lblSearchParam.Text = "Transaction Date"
         '
-        'optBOMItm
+        'optItmPrcHis
         '
-        Me.optBOMItm.AutoSize = True
-        Me.optBOMItm.Location = New System.Drawing.Point(282, 215)
-        Me.optBOMItm.Name = "optBOMItm"
-        Me.optBOMItm.Size = New System.Drawing.Size(129, 16)
-        Me.optBOMItm.TabIndex = 3
-        Me.optBOMItm.TabStop = True
-        Me.optBOMItm.Text = "By BOM Item(useless)"
-        Me.optBOMItm.UseVisualStyleBackColor = True
-        Me.optBOMItm.Visible = False
-        '
-        'optItmMtr
-        '
-        Me.optItmMtr.AutoSize = True
-        Me.optItmMtr.Location = New System.Drawing.Point(469, 22)
-        Me.optItmMtr.Name = "optItmMtr"
-        Me.optItmMtr.Size = New System.Drawing.Size(95, 16)
-        Me.optItmMtr.TabIndex = 2
-        Me.optItmMtr.TabStop = True
-        Me.optItmMtr.Text = "By Item Master"
-        Me.optItmMtr.UseVisualStyleBackColor = True
+        Me.optItmPrcHis.AutoSize = True
+        Me.optItmPrcHis.Location = New System.Drawing.Point(482, 21)
+        Me.optItmPrcHis.Name = "optItmPrcHis"
+        Me.optItmPrcHis.Size = New System.Drawing.Size(122, 16)
+        Me.optItmPrcHis.TabIndex = 2
+        Me.optItmPrcHis.TabStop = True
+        Me.optItmPrcHis.Text = "Price Change History"
+        Me.optItmPrcHis.UseVisualStyleBackColor = True
         '
         'optByExcel_New
         '
         Me.optByExcel_New.AutoSize = True
-        Me.optByExcel_New.Location = New System.Drawing.Point(262, 22)
+        Me.optByExcel_New.Location = New System.Drawing.Point(162, 21)
         Me.optByExcel_New.Name = "optByExcel_New"
-        Me.optByExcel_New.Size = New System.Drawing.Size(138, 16)
+        Me.optByExcel_New.Size = New System.Drawing.Size(155, 16)
         Me.optByExcel_New.TabIndex = 1
         Me.optByExcel_New.TabStop = True
-        Me.optByExcel_New.Text = "By Excel (New w/ Alias)"
+        Me.optByExcel_New.Text = "Excel upload data with Alias"
         Me.optByExcel_New.UseVisualStyleBackColor = True
         '
         'optByExcel
         '
         Me.optByExcel.AutoSize = True
-        Me.optByExcel.Location = New System.Drawing.Point(74, 22)
+        Me.optByExcel.Location = New System.Drawing.Point(10, 21)
         Me.optByExcel.Name = "optByExcel"
-        Me.optByExcel.Size = New System.Drawing.Size(99, 16)
+        Me.optByExcel.Size = New System.Drawing.Size(146, 16)
         Me.optByExcel.TabIndex = 0
         Me.optByExcel.TabStop = True
-        Me.optByExcel.Text = "By Excel (UPD)"
+        Me.optByExcel.Text = "Excel upload data with IM"
         Me.optByExcel.UseVisualStyleBackColor = True
         '
         'chkAssort
@@ -309,6 +297,17 @@ Partial Class IAR00001
         Me.btnExExcel.Text = "Export to Excel"
         Me.btnExExcel.UseVisualStyleBackColor = True
         '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(321, 21)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(159, 16)
+        Me.RadioButton1.TabIndex = 85
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Excel upload data with Temp"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
         'IAR00001
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -332,8 +331,7 @@ Partial Class IAR00001
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents lblSearchParam As System.Windows.Forms.Label
-    Friend WithEvents optBOMItm As System.Windows.Forms.RadioButton
-    Friend WithEvents optItmMtr As System.Windows.Forms.RadioButton
+    Friend WithEvents optItmPrcHis As System.Windows.Forms.RadioButton
     Friend WithEvents optByExcel_New As System.Windows.Forms.RadioButton
     Friend WithEvents optByExcel As System.Windows.Forms.RadioButton
     Friend WithEvents txtTranFromDate As System.Windows.Forms.MaskedTextBox
@@ -355,4 +353,5 @@ Partial Class IAR00001
     Friend WithEvents txt_S_DV As System.Windows.Forms.TextBox
     Friend WithEvents cmd_S_DV As System.Windows.Forms.Button
     Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
 End Class

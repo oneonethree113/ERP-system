@@ -23,7 +23,6 @@ Partial Class IMR00005
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IMR00005))
-        Me.cmdShow = New System.Windows.Forms.Button
         Me.Label6 = New System.Windows.Forms.Label
         Me.Label7 = New System.Windows.Forms.Label
         Me.dtpToTrand = New System.Windows.Forms.DateTimePicker
@@ -36,21 +35,20 @@ Partial Class IMR00005
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label8 = New System.Windows.Forms.Label
+        Me.txt_S_SecCustAll = New System.Windows.Forms.TextBox
+        Me.cmd_S_SecCustAll = New System.Windows.Forms.Button
+        Me.Label9 = New System.Windows.Forms.Label
+        Me.txt_S_PriCustAll = New System.Windows.Forms.TextBox
+        Me.cmd_S_PriCustAll = New System.Windows.Forms.Button
+        Me.Label10 = New System.Windows.Forms.Label
+        Me.cmdShowExcel = New System.Windows.Forms.Button
+        Me.cmdShow = New System.Windows.Forms.Button
         Me.SuspendLayout()
-        '
-        'cmdShow
-        '
-        Me.cmdShow.Location = New System.Drawing.Point(259, 244)
-        Me.cmdShow.Name = "cmdShow"
-        Me.cmdShow.Size = New System.Drawing.Size(140, 22)
-        Me.cmdShow.TabIndex = 6
-        Me.cmdShow.Text = "&Show Report"
-        Me.cmdShow.UseVisualStyleBackColor = True
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(437, 143)
+        Me.Label6.Location = New System.Drawing.Point(437, 199)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(79, 12)
         Me.Label6.TabIndex = 5
@@ -59,7 +57,7 @@ Partial Class IMR00005
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(380, 122)
+        Me.Label7.Location = New System.Drawing.Point(380, 178)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(18, 12)
         Me.Label7.TabIndex = 4
@@ -68,16 +66,16 @@ Partial Class IMR00005
         'dtpToTrand
         '
         Me.dtpToTrand.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpToTrand.Location = New System.Drawing.Point(436, 119)
+        Me.dtpToTrand.Location = New System.Drawing.Point(436, 175)
         Me.dtpToTrand.Name = "dtpToTrand"
         Me.dtpToTrand.Size = New System.Drawing.Size(90, 22)
-        Me.dtpToTrand.TabIndex = 3
+        Me.dtpToTrand.TabIndex = 8
         Me.dtpToTrand.Value = New Date(2012, 5, 29, 0, 0, 0, 0)
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(225, 143)
+        Me.Label5.Location = New System.Drawing.Point(183, 199)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(79, 12)
         Me.Label5.TabIndex = 2
@@ -86,7 +84,7 @@ Partial Class IMR00005
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(180, 122)
+        Me.Label4.Location = New System.Drawing.Point(138, 178)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(30, 12)
         Me.Label4.TabIndex = 1
@@ -95,18 +93,19 @@ Partial Class IMR00005
         'dtpFromTrand
         '
         Me.dtpFromTrand.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpFromTrand.Location = New System.Drawing.Point(224, 119)
+        Me.dtpFromTrand.Location = New System.Drawing.Point(182, 175)
         Me.dtpFromTrand.Name = "dtpFromTrand"
         Me.dtpFromTrand.Size = New System.Drawing.Size(95, 22)
-        Me.dtpFromTrand.TabIndex = 0
+        Me.dtpFromTrand.TabIndex = 7
         Me.dtpFromTrand.Value = New Date(2012, 5, 29, 0, 0, 0, 0)
         '
         'txtToItmno
         '
         Me.txtToItmno.Location = New System.Drawing.Point(436, 28)
+        Me.txtToItmno.MaxLength = 20
         Me.txtToItmno.Name = "txtToItmno"
         Me.txtToItmno.Size = New System.Drawing.Size(124, 22)
-        Me.txtToItmno.TabIndex = 3
+        Me.txtToItmno.TabIndex = 2
         '
         'Label3
         '
@@ -119,7 +118,8 @@ Partial Class IMR00005
         '
         'txtFromItmno
         '
-        Me.txtFromItmno.Location = New System.Drawing.Point(224, 28)
+        Me.txtFromItmno.Location = New System.Drawing.Point(182, 28)
+        Me.txtFromItmno.MaxLength = 20
         Me.txtFromItmno.Name = "txtFromItmno"
         Me.txtFromItmno.Size = New System.Drawing.Size(124, 22)
         Me.txtFromItmno.TabIndex = 1
@@ -127,7 +127,7 @@ Partial Class IMR00005
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(180, 31)
+        Me.Label2.Location = New System.Drawing.Point(138, 31)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(30, 12)
         Me.Label2.TabIndex = 0
@@ -136,7 +136,7 @@ Partial Class IMR00005
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(59, 122)
+        Me.Label1.Location = New System.Drawing.Point(17, 178)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(83, 12)
         Me.Label1.TabIndex = 7
@@ -145,17 +145,93 @@ Partial Class IMR00005
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(59, 31)
+        Me.Label8.Location = New System.Drawing.Point(17, 31)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(46, 12)
         Me.Label8.TabIndex = 8
         Me.Label8.Text = "Item No."
+        '
+        'txt_S_SecCustAll
+        '
+        Me.txt_S_SecCustAll.Location = New System.Drawing.Point(182, 122)
+        Me.txt_S_SecCustAll.Name = "txt_S_SecCustAll"
+        Me.txt_S_SecCustAll.Size = New System.Drawing.Size(378, 22)
+        Me.txt_S_SecCustAll.TabIndex = 6
+        '
+        'cmd_S_SecCustAll
+        '
+        Me.cmd_S_SecCustAll.Location = New System.Drawing.Point(125, 122)
+        Me.cmd_S_SecCustAll.Name = "cmd_S_SecCustAll"
+        Me.cmd_S_SecCustAll.Size = New System.Drawing.Size(45, 22)
+        Me.cmd_S_SecCustAll.TabIndex = 5
+        Me.cmd_S_SecCustAll.Text = "＞＞"
+        Me.cmd_S_SecCustAll.UseVisualStyleBackColor = True
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(17, 125)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(51, 12)
+        Me.Label9.TabIndex = 12
+        Me.Label9.Text = "Sec. Cust."
+        '
+        'txt_S_PriCustAll
+        '
+        Me.txt_S_PriCustAll.Location = New System.Drawing.Point(182, 71)
+        Me.txt_S_PriCustAll.Name = "txt_S_PriCustAll"
+        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(378, 22)
+        Me.txt_S_PriCustAll.TabIndex = 4
+        '
+        'cmd_S_PriCustAll
+        '
+        Me.cmd_S_PriCustAll.Location = New System.Drawing.Point(125, 71)
+        Me.cmd_S_PriCustAll.Name = "cmd_S_PriCustAll"
+        Me.cmd_S_PriCustAll.Size = New System.Drawing.Size(45, 22)
+        Me.cmd_S_PriCustAll.TabIndex = 3
+        Me.cmd_S_PriCustAll.Text = "＞＞"
+        Me.cmd_S_PriCustAll.UseVisualStyleBackColor = True
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(17, 74)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(48, 12)
+        Me.Label10.TabIndex = 9
+        Me.Label10.Text = "Pri. Cust."
+        '
+        'cmdShowExcel
+        '
+        Me.cmdShowExcel.Location = New System.Drawing.Point(270, 246)
+        Me.cmdShowExcel.Name = "cmdShowExcel"
+        Me.cmdShowExcel.Size = New System.Drawing.Size(140, 22)
+        Me.cmdShowExcel.TabIndex = 10
+        Me.cmdShowExcel.Text = "&Show Report (excel)"
+        Me.cmdShowExcel.UseVisualStyleBackColor = True
+        '
+        'cmdShow
+        '
+        Me.cmdShow.Location = New System.Drawing.Point(12, 228)
+        Me.cmdShow.Name = "cmdShow"
+        Me.cmdShow.Size = New System.Drawing.Size(140, 40)
+        Me.cmdShow.TabIndex = 9
+        Me.cmdShow.Text = "Show Report (PDF) (invisible)"
+        Me.cmdShow.UseVisualStyleBackColor = True
+        Me.cmdShow.Visible = False
         '
         'IMR00005
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(634, 271)
+        Me.Controls.Add(Me.cmdShowExcel)
+        Me.Controls.Add(Me.txt_S_SecCustAll)
+        Me.Controls.Add(Me.cmd_S_SecCustAll)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.txt_S_PriCustAll)
+        Me.Controls.Add(Me.cmd_S_PriCustAll)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtToItmno)
         Me.Controls.Add(Me.Label1)
@@ -178,7 +254,6 @@ Partial Class IMR00005
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents cmdShow As System.Windows.Forms.Button
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents dtpToTrand As System.Windows.Forms.DateTimePicker
@@ -191,4 +266,12 @@ Partial Class IMR00005
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents txt_S_SecCustAll As System.Windows.Forms.TextBox
+    Friend WithEvents cmd_S_SecCustAll As System.Windows.Forms.Button
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents txt_S_PriCustAll As System.Windows.Forms.TextBox
+    Friend WithEvents cmd_S_PriCustAll As System.Windows.Forms.Button
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents cmdShowExcel As System.Windows.Forms.Button
+    Friend WithEvents cmdShow As System.Windows.Forms.Button
 End Class
