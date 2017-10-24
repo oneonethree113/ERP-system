@@ -2131,7 +2131,7 @@ Public Class IMM00001
         Me.PanelCostPrice.Controls.Add(Me.Label52)
         Me.PanelCostPrice.Location = New System.Drawing.Point(149, 71)
         Me.PanelCostPrice.Name = "PanelCostPrice"
-        Me.PanelCostPrice.Size = New System.Drawing.Size(60, 49)
+        Me.PanelCostPrice.Size = New System.Drawing.Size(79, 59)
         Me.PanelCostPrice.TabIndex = 89
         Me.PanelCostPrice.Visible = False
         '
@@ -5184,7 +5184,8 @@ Public Class IMM00001
         '
         'IMM00001
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 15)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(954, 631)
         Me.Controls.Add(Me.PanelMOQMOA)
         Me.Controls.Add(Me.PanelCostPrice)
@@ -5293,7 +5294,7 @@ Public Class IMM00001
     Const imm_moa As Integer = 9
 
     Const tabCostPrice As Integer = 4
-
+    ReadOnly dpiRatio As Double = Me.CreateGraphics().DpiX / 96
     Dim dsNewRow As DataRow
 
     Dim mode As String
@@ -13354,7 +13355,7 @@ Public Class IMM00001
         all_cmd_dis()
         freeze_TabControl(-1)
 
-        PanelPacking.Size = New System.Drawing.Size(532, 369)
+        PanelPacking.Size = New System.Drawing.Size(532 * dpiRatio, 369 * dpiRatio)
         PanelPacking.Visible = True
 
         If Split(cboItmTyp.Text, " - ")(0) = "ASS" Then
@@ -13390,7 +13391,8 @@ Public Class IMM00001
     Private Sub dgPacking_RowHeaderMouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles dgPacking.RowHeaderMouseDoubleClick
         freeze_TabControl(-1)
         all_cmd_dis()
-        PanelPacking.Size = New System.Drawing.Size(532, 369)
+
+        PanelPacking.Size = New System.Drawing.Size(532 * dpiRatio, 369 * dpiRatio)
         PanelPacking.Visible = True
         PanelPacking.BringToFront()
         If mode = "UPDATE" Or mode = "ADD" Then
@@ -14744,7 +14746,8 @@ Public Class IMM00001
 
         freeze_TabControl(-1)
         all_cmd_dis()
-        Me.PanelCostPrice.Size = New System.Drawing.Size(553, 295)
+
+        Me.PanelCostPrice.Size = New System.Drawing.Size(553 * dpiRatio, 295 * dpiRatio)
         PanelCostPrice.Visible = True
         PanelCostPrice.BringToFront()
         If mode = "UPDATE" Or mode = "ADD" Then
@@ -19327,7 +19330,7 @@ Public Class IMM00001
             Exit Sub
         End If
         all_cmd_dis()
-        PanelMOQMOA.Size = New System.Drawing.Size(409, 162)
+        PanelMOQMOA.Size = New System.Drawing.Size(409 * dpiRatio, 162 * dpiRatio)
         PanelMOQMOA.Visible = True
         display_PanelMOQMOA("MOQMOA_INSERT")
     End Sub
@@ -19768,7 +19771,7 @@ Public Class IMM00001
         all_cmd_dis()
         freeze_TabControl(5)
 
-        PanelMOQMOA.Size = New System.Drawing.Size(409, 162)
+        PanelMOQMOA.Size = New System.Drawing.Size(409 * dpiRatio, 162 * dpiRatio)
         PanelMOQMOA.Visible = True
         If mode = "UPDATE" Or mode = "ADD" Then
             Dim curvalue As String = dgMOQMOA.CurrentRow.Cells(imm_status).Value
