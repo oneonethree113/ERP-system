@@ -95,11 +95,11 @@ Partial Class MSR00008
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label1.ForeColor = System.Drawing.Color.Blue
         Me.Label1.Location = New System.Drawing.Point(124, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(387, 25)
+        Me.Label1.Size = New System.Drawing.Size(335, 24)
         Me.Label1.TabIndex = 35
         Me.Label1.Text = "Monthly Statement for Sample Charges"
         '

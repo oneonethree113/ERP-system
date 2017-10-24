@@ -338,11 +338,11 @@ Partial Class MSR00005
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label1.ForeColor = System.Drawing.Color.Blue
         Me.Label1.Location = New System.Drawing.Point(169, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(271, 20)
+        Me.Label1.Size = New System.Drawing.Size(284, 24)
         Me.Label1.TabIndex = 35
         Me.Label1.Text = "Outstanding Order Report By PO"
         '
@@ -701,7 +701,7 @@ Partial Class MSR00005
         '
         'cmdShow
         '
-        Me.cmdShow.Location = New System.Drawing.Point(484, 309)
+        Me.cmdShow.Location = New System.Drawing.Point(484, 307)
         Me.cmdShow.Name = "cmdShow"
         Me.cmdShow.Size = New System.Drawing.Size(82, 31)
         Me.cmdShow.TabIndex = 34

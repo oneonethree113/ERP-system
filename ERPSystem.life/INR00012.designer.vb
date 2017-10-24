@@ -474,11 +474,11 @@ Partial Class INR00012
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label13.ForeColor = System.Drawing.Color.Blue
         Me.Label13.Location = New System.Drawing.Point(188, 5)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(262, 25)
+        Me.Label13.Size = New System.Drawing.Size(232, 24)
         Me.Label13.TabIndex = 18
         Me.Label13.Text = "Shipping Schedule Report"
         '
