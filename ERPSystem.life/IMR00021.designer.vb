@@ -50,7 +50,7 @@ Partial Class IMR00021
         Me.grpSearch.Controls.Add(Me.GroupBox3)
         Me.grpSearch.Controls.Add(Me.GroupBox2)
         Me.grpSearch.Controls.Add(Me.GroupBox1)
-        Me.grpSearch.Location = New System.Drawing.Point(12, 59)
+        Me.grpSearch.Location = New System.Drawing.Point(12, 37)
         Me.grpSearch.Name = "grpSearch"
         Me.grpSearch.Size = New System.Drawing.Size(616, 237)
         Me.grpSearch.TabIndex = 4
@@ -214,7 +214,7 @@ Partial Class IMR00021
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(634, 329)
+        Me.ClientSize = New System.Drawing.Size(634, 294)
         Me.Controls.Add(Me.Label23)
         Me.Controls.Add(Me.grpSearch)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog

@@ -22,6 +22,7 @@ Partial Class INR00004
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(INR00004))
         Me.cboSCTo = New System.Windows.Forms.ComboBox
         Me.cboVenTo = New System.Windows.Forms.ComboBox
         Me.Label32 = New System.Windows.Forms.Label
@@ -100,11 +101,11 @@ Partial Class INR00004
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.Label1.ForeColor = System.Drawing.Color.Blue
         Me.Label1.Location = New System.Drawing.Point(188, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(236, 20)
+        Me.Label1.Size = New System.Drawing.Size(248, 24)
         Me.Label1.TabIndex = 35
         Me.Label1.Text = "Production Capacity in CBM "
         '
@@ -258,6 +259,7 @@ Partial Class INR00004
         Me.Controls.Add(Me.cboCocde)
         Me.Controls.Add(Me.Label5)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "INR00004"
         Me.Text = "INR00004 - Production Capacity in CBM  (INR04)"

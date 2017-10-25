@@ -59,11 +59,11 @@ Partial Class MSR00012
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label1.ForeColor = System.Drawing.Color.Blue
-        Me.Label1.Location = New System.Drawing.Point(126, 8)
+        Me.Label1.Location = New System.Drawing.Point(137, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(329, 20)
+        Me.Label1.Size = New System.Drawing.Size(343, 24)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = " Outstanding Order Report By Customer"
         '
@@ -176,7 +176,7 @@ Partial Class MSR00012
         'cboCustTo
         '
         Me.cboCustTo.FormattingEnabled = True
-        Me.cboCustTo.Location = New System.Drawing.Point(402, 17)
+        Me.cboCustTo.Location = New System.Drawing.Point(402, 19)
         Me.cboCustTo.Name = "cboCustTo"
         Me.cboCustTo.Size = New System.Drawing.Size(176, 20)
         Me.cboCustTo.TabIndex = 3
@@ -216,7 +216,7 @@ Partial Class MSR00012
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(370, 21)
+        Me.Label31.Location = New System.Drawing.Point(370, 23)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(18, 12)
         Me.Label31.TabIndex = 36
@@ -233,7 +233,7 @@ Partial Class MSR00012
         'cboCustFrom
         '
         Me.cboCustFrom.FormattingEnabled = True
-        Me.cboCustFrom.Location = New System.Drawing.Point(188, 17)
+        Me.cboCustFrom.Location = New System.Drawing.Point(188, 19)
         Me.cboCustFrom.Name = "cboCustFrom"
         Me.cboCustFrom.Size = New System.Drawing.Size(176, 20)
         Me.cboCustFrom.TabIndex = 2
@@ -250,7 +250,7 @@ Partial Class MSR00012
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(146, 21)
+        Me.Label20.Location = New System.Drawing.Point(146, 23)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(30, 12)
         Me.Label20.TabIndex = 14

@@ -259,11 +259,11 @@ Partial Class IMR00027
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.Label1.ForeColor = System.Drawing.Color.Blue
         Me.Label1.Location = New System.Drawing.Point(207, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(351, 20)
+        Me.Label1.Size = New System.Drawing.Size(365, 24)
         Me.Label1.TabIndex = 221
         Me.Label1.Text = "Export Item Image to Excel (With Barcode)"
         '
@@ -651,10 +651,10 @@ Partial Class IMR00027
         '
         'lblNote
         '
-        Me.lblNote.Location = New System.Drawing.Point(473, 402)
+        Me.lblNote.Location = New System.Drawing.Point(473, 318)
         Me.lblNote.Name = "lblNote"
         Me.lblNote.ReadOnly = True
-        Me.lblNote.Size = New System.Drawing.Size(208, 116)
+        Me.lblNote.Size = New System.Drawing.Size(208, 200)
         Me.lblNote.TabIndex = 264
         Me.lblNote.Text = ""
         '

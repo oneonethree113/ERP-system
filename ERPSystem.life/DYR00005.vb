@@ -71,7 +71,7 @@ Public Class DYR00005
         '
         Me.StatusBar1.Location = New System.Drawing.Point(0, 166)
         Me.StatusBar1.Name = "StatusBar1"
-        Me.StatusBar1.Size = New System.Drawing.Size(714, 16)
+        Me.StatusBar1.Size = New System.Drawing.Size(548, 16)
         Me.StatusBar1.TabIndex = 1
         Me.StatusBar1.Text = "StatusBar1"
         '
@@ -91,7 +91,7 @@ Public Class DYR00005
         '
         'cmdShow
         '
-        Me.cmdShow.Location = New System.Drawing.Point(312, 123)
+        Me.cmdShow.Location = New System.Drawing.Point(190, 124)
         Me.cmdShow.Name = "cmdShow"
         Me.cmdShow.Size = New System.Drawing.Size(140, 22)
         Me.cmdShow.TabIndex = 162
@@ -103,7 +103,7 @@ Public Class DYR00005
         Me.cboRptType.FormattingEnabled = True
         Me.cboRptType.Location = New System.Drawing.Point(130, 79)
         Me.cboRptType.Name = "cboRptType"
-        Me.cboRptType.Size = New System.Drawing.Size(556, 20)
+        Me.cboRptType.Size = New System.Drawing.Size(389, 20)
         Me.cboRptType.TabIndex = 163
         '
         'Label1
@@ -163,7 +163,7 @@ Public Class DYR00005
         'DYR00005
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 15)
-        Me.ClientSize = New System.Drawing.Size(714, 182)
+        Me.ClientSize = New System.Drawing.Size(548, 182)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cboRptType)

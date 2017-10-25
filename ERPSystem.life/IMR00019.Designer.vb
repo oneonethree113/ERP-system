@@ -43,11 +43,11 @@ Partial Class IMR00019
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label3.ForeColor = System.Drawing.Color.Blue
         Me.Label3.Location = New System.Drawing.Point(146, 8)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(343, 20)
+        Me.Label3.Size = New System.Drawing.Size(353, 24)
         Me.Label3.TabIndex = 37
         Me.Label3.Text = "External Item Image List (Export to Excel)"
         '

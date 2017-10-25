@@ -337,11 +337,11 @@ Partial Class MSR00032
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label16.ForeColor = System.Drawing.Color.Blue
-        Me.Label16.Location = New System.Drawing.Point(210, 5)
+        Me.Label16.Location = New System.Drawing.Point(233, 9)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(224, 25)
+        Me.Label16.Size = New System.Drawing.Size(194, 24)
         Me.Label16.TabIndex = 18
         Me.Label16.Text = "Document List by item"
         '
