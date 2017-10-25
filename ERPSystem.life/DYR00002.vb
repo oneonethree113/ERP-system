@@ -56,6 +56,7 @@ Public Class DYR00002
     Friend WithEvents cmdShow As System.Windows.Forms.Button
     Friend WithEvents TabPage7 As System.Windows.Forms.TabPage
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DYR00002))
         Me.StatusBar1 = New System.Windows.Forms.StatusBar
         Me.TabPage6 = New System.Windows.Forms.TabPage
         Me.TabPage7 = New System.Windows.Forms.TabPage
@@ -75,7 +76,7 @@ Public Class DYR00002
         '
         Me.StatusBar1.Location = New System.Drawing.Point(0, 159)
         Me.StatusBar1.Name = "StatusBar1"
-        Me.StatusBar1.Size = New System.Drawing.Size(752, 16)
+        Me.StatusBar1.Size = New System.Drawing.Size(714, 16)
         Me.StatusBar1.TabIndex = 1
         '
         'TabPage6
@@ -123,7 +124,7 @@ Public Class DYR00002
         Me.lbl_S_ItmNo.AutoSize = True
         Me.lbl_S_ItmNo.Location = New System.Drawing.Point(17, 92)
         Me.lbl_S_ItmNo.Name = "lbl_S_ItmNo"
-        Me.lbl_S_ItmNo.Size = New System.Drawing.Size(47, 15)
+        Me.lbl_S_ItmNo.Size = New System.Drawing.Size(43, 12)
         Me.lbl_S_ItmNo.TabIndex = 110
         Me.lbl_S_ItmNo.Text = "Item No"
         Me.lbl_S_ItmNo.Visible = False
@@ -133,7 +134,7 @@ Public Class DYR00002
         Me.txt_S_ItmNo.Location = New System.Drawing.Point(201, 89)
         Me.txt_S_ItmNo.MaxLength = 5000
         Me.txt_S_ItmNo.Name = "txt_S_ItmNo"
-        Me.txt_S_ItmNo.Size = New System.Drawing.Size(529, 21)
+        Me.txt_S_ItmNo.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_ItmNo.TabIndex = 126
         Me.txt_S_ItmNo.Visible = False
         '
@@ -142,7 +143,7 @@ Public Class DYR00002
         Me.txt_S_PriCustAll.Location = New System.Drawing.Point(201, 50)
         Me.txt_S_PriCustAll.MaxLength = 5000
         Me.txt_S_PriCustAll.Name = "txt_S_PriCustAll"
-        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(529, 21)
+        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_PriCustAll.TabIndex = 114
         '
         'txt_S_CoCde
@@ -151,7 +152,7 @@ Public Class DYR00002
         Me.txt_S_CoCde.Location = New System.Drawing.Point(201, 12)
         Me.txt_S_CoCde.MaxLength = 5000
         Me.txt_S_CoCde.Name = "txt_S_CoCde"
-        Me.txt_S_CoCde.Size = New System.Drawing.Size(529, 21)
+        Me.txt_S_CoCde.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_CoCde.TabIndex = 112
         '
         'lbl_S_PriCust
@@ -159,7 +160,7 @@ Public Class DYR00002
         Me.lbl_S_PriCust.AutoSize = True
         Me.lbl_S_PriCust.Location = New System.Drawing.Point(17, 55)
         Me.lbl_S_PriCust.Name = "lbl_S_PriCust"
-        Me.lbl_S_PriCust.Size = New System.Drawing.Size(71, 15)
+        Me.lbl_S_PriCust.Size = New System.Drawing.Size(66, 12)
         Me.lbl_S_PriCust.TabIndex = 105
         Me.lbl_S_PriCust.Text = "Pri Customer"
         '
@@ -168,23 +169,23 @@ Public Class DYR00002
         Me.lbl_S_CoCde.AutoSize = True
         Me.lbl_S_CoCde.Location = New System.Drawing.Point(17, 17)
         Me.lbl_S_CoCde.Name = "lbl_S_CoCde"
-        Me.lbl_S_CoCde.Size = New System.Drawing.Size(83, 15)
+        Me.lbl_S_CoCde.Size = New System.Drawing.Size(79, 12)
         Me.lbl_S_CoCde.TabIndex = 104
         Me.lbl_S_CoCde.Text = "Company Code"
         '
         'cmdShow
         '
-        Me.cmdShow.Location = New System.Drawing.Point(347, 116)
+        Me.cmdShow.Location = New System.Drawing.Point(310, 131)
         Me.cmdShow.Name = "cmdShow"
-        Me.cmdShow.Size = New System.Drawing.Size(133, 33)
+        Me.cmdShow.Size = New System.Drawing.Size(140, 22)
         Me.cmdShow.TabIndex = 162
         Me.cmdShow.Text = "Show Report"
         Me.cmdShow.UseVisualStyleBackColor = True
         '
         'DYR00002
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 14)
-        Me.ClientSize = New System.Drawing.Size(752, 175)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 15)
+        Me.ClientSize = New System.Drawing.Size(714, 175)
         Me.Controls.Add(Me.cmdShow)
         Me.Controls.Add(Me.cmd_S_ItmNo)
         Me.Controls.Add(Me.cmd_S_PriCustAll)
@@ -196,9 +197,10 @@ Public Class DYR00002
         Me.Controls.Add(Me.lbl_S_PriCust)
         Me.Controls.Add(Me.lbl_S_CoCde)
         Me.Controls.Add(Me.StatusBar1)
-        Me.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "DYR00002"
-        Me.Text = "DYR00002 - Dynamic Report vw_CusMaster_EC2"
+        Me.Text = "DYR00002 - Dynamic Report vw_CusMaster_EC2 (DYR02)"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -142,14 +142,14 @@ Public Class IMM00004
         Me.StatusBarPanel1.Alignment = System.Windows.Forms.HorizontalAlignment.Right
         Me.StatusBarPanel1.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
         Me.StatusBarPanel1.Name = "StatusBarPanel1"
-        Me.StatusBarPanel1.Width = 468
+        Me.StatusBarPanel1.Width = 469
         '
         'StatusBarPanel2
         '
         Me.StatusBarPanel2.Alignment = System.Windows.Forms.HorizontalAlignment.Right
         Me.StatusBarPanel2.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
         Me.StatusBarPanel2.Name = "StatusBarPanel2"
-        Me.StatusBarPanel2.Width = 468
+        Me.StatusBarPanel2.Width = 469
         '
         'TextBox11
         '

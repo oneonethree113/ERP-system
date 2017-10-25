@@ -361,6 +361,7 @@ Class MPM00002
         Me.mmdDelRow = New System.Windows.Forms.ToolStripMenuItem
         Me.t4 = New System.Windows.Forms.ToolStripMenuItem
         Me.mmdPrint = New System.Windows.Forms.ToolStripMenuItem
+        Me.tsiMPR03 = New System.Windows.Forms.ToolStripMenuItem
         Me.t5 = New System.Windows.Forms.ToolStripMenuItem
         Me.mmdAttach = New System.Windows.Forms.ToolStripMenuItem
         Me.t6 = New System.Windows.Forms.ToolStripMenuItem
@@ -547,7 +548,6 @@ Class MPM00002
         Me.Label27 = New System.Windows.Forms.Label
         Me.tpMPM00002_3 = New System.Windows.Forms.TabPage
         Me.grdSummary = New System.Windows.Forms.DataGridView
-        Me.tsiMPR03 = New System.Windows.Forms.ToolStripMenuItem
         CType(Me.StatusBarPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StatusBarPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menuStrip.SuspendLayout()
@@ -651,14 +651,14 @@ Class MPM00002
         Me.StatusBarPanel1.Alignment = System.Windows.Forms.HorizontalAlignment.Right
         Me.StatusBarPanel1.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
         Me.StatusBarPanel1.Name = "StatusBarPanel1"
-        Me.StatusBarPanel1.Width = 468
+        Me.StatusBarPanel1.Width = 469
         '
         'StatusBarPanel2
         '
         Me.StatusBarPanel2.Alignment = System.Windows.Forms.HorizontalAlignment.Right
         Me.StatusBarPanel2.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
         Me.StatusBarPanel2.Name = "StatusBarPanel2"
-        Me.StatusBarPanel2.Width = 468
+        Me.StatusBarPanel2.Width = 469
         '
         'TextBox11
         '
@@ -845,6 +845,12 @@ Class MPM00002
         Me.mmdPrint.Size = New System.Drawing.Size(44, 19)
         Me.mmdPrint.Text = "&Print"
         '
+        'tsiMPR03
+        '
+        Me.tsiMPR03.Name = "tsiMPR03"
+        Me.tsiMPR03.Size = New System.Drawing.Size(197, 22)
+        Me.tsiMPR03.Text = "GRN Transfer Reports"
+        '
         't5
         '
         Me.t5.AutoSize = False
@@ -877,13 +883,13 @@ Class MPM00002
         'mmdRel
         '
         Me.mmdRel.Name = "mmdRel"
-        Me.mmdRel.Size = New System.Drawing.Size(152, 22)
+        Me.mmdRel.Size = New System.Drawing.Size(121, 22)
         Me.mmdRel.Text = "Release"
         '
         'mmdApv
         '
         Me.mmdApv.Name = "mmdApv"
-        Me.mmdApv.Size = New System.Drawing.Size(152, 22)
+        Me.mmdApv.Size = New System.Drawing.Size(121, 22)
         Me.mmdApv.Text = "Approval"
         '
         't7
@@ -2744,12 +2750,6 @@ Class MPM00002
         Me.grdSummary.RowTemplate.Height = 16
         Me.grdSummary.Size = New System.Drawing.Size(928, 496)
         Me.grdSummary.TabIndex = 367
-        '
-        'tsiMPR03
-        '
-        Me.tsiMPR03.Name = "tsiMPR03"
-        Me.tsiMPR03.Size = New System.Drawing.Size(197, 22)
-        Me.tsiMPR03.Text = "GRN Transfer Reports"
         '
         'MPM00002
         '

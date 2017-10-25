@@ -455,6 +455,7 @@ Err_Handler:
         End If
 
 
+        Call Formstartup(Me.Name)
         Call FillcboCust()
 
     End Sub

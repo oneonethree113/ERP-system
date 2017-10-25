@@ -34,6 +34,7 @@ Public Class IMR00013
             Exit Sub
         Else
 
+            Call Formstartup(Me.Name)
             Call FillcboVen()
         End If
     End Sub

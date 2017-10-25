@@ -2696,6 +2696,10 @@
       <DependentUpon>BOR00001.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="BSP00004.resx">
+      <DependentUpon>BSP00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="BSP00004aRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BSP00004aRpt.vb</LastGenOutput>
@@ -2898,6 +2902,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IMM00002.resx">
       <DependentUpon>IMM00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMM00004.resx">
+      <DependentUpon>IMM00004.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="IMM00007.resx">
@@ -3116,6 +3124,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>INR00001Rpt_ftr2.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="INR00004.resx">
+      <DependentUpon>INR00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="INR00004rpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>INR00004rpt.vb</LastGenOutput>
@@ -3123,6 +3135,10 @@
     <EmbeddedResource Include="INR00004RptA.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>INR00004RptA.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INR00010.resx">
+      <DependentUpon>INR00010.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="INR00010Rpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -3132,6 +3148,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>INR00010_MS.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="INR00011.resx">
+      <DependentUpon>INR00011.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="INR00011brpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>INR00011brpt.vb</LastGenOutput>
@@ -3139,6 +3159,10 @@
     <EmbeddedResource Include="INR00011rpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>INR00011rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INR00012.resx">
+      <DependentUpon>INR00012.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="INR00012a.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -3148,17 +3172,65 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>INR00012_MS.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="INR00013.resx">
+      <DependentUpon>INR00013.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="INR00013rpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>INR00013rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MIM00001.resx">
+      <DependentUpon>MIM00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MIM00002.resx">
+      <DependentUpon>MIM00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPM00001.resx">
+      <DependentUpon>MPM00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPM00002.resx">
+      <DependentUpon>MPM00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPM00003.resx">
+      <DependentUpon>MPM00003.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPO00001.resx">
+      <DependentUpon>MPO00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPO00002.resx">
+      <DependentUpon>MPO00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPO00003.resx">
+      <DependentUpon>MPO00003.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR00001.resx">
+      <DependentUpon>MPR00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="mpr00001rpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>mpr00001rpt.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="MPR00002.resx">
+      <DependentUpon>MPR00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="mpr00002rpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>mpr00002rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR00003.resx">
+      <DependentUpon>MPR00003.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MPR00003_cust.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -3175,6 +3247,18 @@
     <EmbeddedResource Include="MPR00003_rpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MPR00003_rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR00004.resx">
+      <DependentUpon>MPR00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR00005.resx">
+      <DependentUpon>MPR00005.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR00006.resx">
+      <DependentUpon>MPR00006.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MSR00001.resx">
       <DependentUpon>MSR00001.vb</DependentUpon>
@@ -3212,9 +3296,17 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MSR00005rpt.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="MSR00007.resx">
+      <DependentUpon>MSR00007.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="MSR00007Rpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MSR00007Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSR00008.resx">
+      <DependentUpon>MSR00008.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MSR00008rpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -3683,6 +3775,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>SCR00001RptHH.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="SCR00002.resx">
+      <DependentUpon>SCR00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="SCR00002Rpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>SCR00002Rpt.vb</LastGenOutput>
@@ -3743,6 +3839,14 @@
       <DependentUpon>POM00002.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SMR00001.resx">
+      <DependentUpon>SMR00001.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMR00002.resx">
+      <DependentUpon>SMR00002.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="SYM00001.resx">
       <DependentUpon>SYM00001.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -3785,6 +3889,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SYM00018.resx">
       <DependentUpon>SYM00018.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYM00020.resx">
+      <DependentUpon>SYM00020.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="SYM00021.resx">

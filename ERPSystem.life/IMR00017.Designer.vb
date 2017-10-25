@@ -22,6 +22,7 @@ Partial Class IMR00017
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IMR00017))
         Me.grpSearchType = New System.Windows.Forms.GroupBox
         Me.optDAA = New System.Windows.Forms.RadioButton
         Me.optDAC = New System.Windows.Forms.RadioButton
@@ -93,14 +94,14 @@ Partial Class IMR00017
         Me.grpSearchType.Controls.Add(Me.Label1)
         Me.grpSearchType.Location = New System.Drawing.Point(12, 11)
         Me.grpSearchType.Name = "grpSearchType"
-        Me.grpSearchType.Size = New System.Drawing.Size(662, 45)
+        Me.grpSearchType.Size = New System.Drawing.Size(690, 45)
         Me.grpSearchType.TabIndex = 0
         Me.grpSearchType.TabStop = False
         '
         'optDAA
         '
         Me.optDAA.AutoSize = True
-        Me.optDAA.Location = New System.Drawing.Point(474, 17)
+        Me.optDAA.Location = New System.Drawing.Point(511, 17)
         Me.optDAA.Name = "optDAA"
         Me.optDAA.Size = New System.Drawing.Size(172, 16)
         Me.optDAA.TabIndex = 4
@@ -111,7 +112,7 @@ Partial Class IMR00017
         'optDAC
         '
         Me.optDAC.AutoSize = True
-        Me.optDAC.Location = New System.Drawing.Point(320, 17)
+        Me.optDAC.Location = New System.Drawing.Point(357, 17)
         Me.optDAC.Name = "optDAC"
         Me.optDAC.Size = New System.Drawing.Size(142, 16)
         Me.optDAC.TabIndex = 3
@@ -122,7 +123,7 @@ Partial Class IMR00017
         'optLST
         '
         Me.optLST.AutoSize = True
-        Me.optLST.Location = New System.Drawing.Point(210, 17)
+        Me.optLST.Location = New System.Drawing.Point(247, 17)
         Me.optLST.Name = "optLST"
         Me.optLST.Size = New System.Drawing.Size(105, 16)
         Me.optLST.TabIndex = 2
@@ -133,7 +134,7 @@ Partial Class IMR00017
         'optITM
         '
         Me.optITM.AutoSize = True
-        Me.optITM.Location = New System.Drawing.Point(84, 17)
+        Me.optITM.Location = New System.Drawing.Point(121, 17)
         Me.optITM.Name = "optITM"
         Me.optITM.Size = New System.Drawing.Size(118, 16)
         Me.optITM.TabIndex = 1
@@ -146,9 +147,9 @@ Partial Class IMR00017
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(7, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 12)
+        Me.Label1.Size = New System.Drawing.Size(63, 12)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Search Type:"
+        Me.Label1.Text = "Search Type"
         '
         'grpITM
         '
@@ -159,7 +160,7 @@ Partial Class IMR00017
         Me.grpITM.Controls.Add(Me.Label3)
         Me.grpITM.Location = New System.Drawing.Point(12, 62)
         Me.grpITM.Name = "grpITM"
-        Me.grpITM.Size = New System.Drawing.Size(662, 57)
+        Me.grpITM.Size = New System.Drawing.Size(690, 57)
         Me.grpITM.TabIndex = 1
         Me.grpITM.TabStop = False
         '
@@ -213,7 +214,7 @@ Partial Class IMR00017
         Me.grpLST.Controls.Add(Me.Label7)
         Me.grpLST.Location = New System.Drawing.Point(12, 62)
         Me.grpLST.Name = "grpLST"
-        Me.grpLST.Size = New System.Drawing.Size(662, 57)
+        Me.grpLST.Size = New System.Drawing.Size(690, 57)
         Me.grpLST.TabIndex = 2
         Me.grpLST.TabStop = False
         '
@@ -271,7 +272,7 @@ Partial Class IMR00017
         Me.grpDAT.Controls.Add(Me.Label9)
         Me.grpDAT.Location = New System.Drawing.Point(12, 63)
         Me.grpDAT.Name = "grpDAT"
-        Me.grpDAT.Size = New System.Drawing.Size(662, 57)
+        Me.grpDAT.Size = New System.Drawing.Size(690, 57)
         Me.grpDAT.TabIndex = 3
         Me.grpDAT.TabStop = False
         '
@@ -288,7 +289,7 @@ Partial Class IMR00017
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(504, 18)
+        Me.Label13.Location = New System.Drawing.Point(547, 18)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(87, 12)
         Me.Label13.TabIndex = 6
@@ -305,7 +306,7 @@ Partial Class IMR00017
         '
         'txtUpddatTo
         '
-        Me.txtUpddatTo.Location = New System.Drawing.Point(417, 16)
+        Me.txtUpddatTo.Location = New System.Drawing.Point(460, 16)
         Me.txtUpddatTo.Mask = "##/##/####"
         Me.txtUpddatTo.Name = "txtUpddatTo"
         Me.txtUpddatTo.Size = New System.Drawing.Size(81, 22)
@@ -314,7 +315,7 @@ Partial Class IMR00017
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(381, 18)
+        Me.Label11.Location = New System.Drawing.Point(424, 18)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(18, 12)
         Me.Label11.TabIndex = 3
@@ -342,9 +343,9 @@ Partial Class IMR00017
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(7, 18)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(65, 12)
+        Me.Label9.Size = New System.Drawing.Size(62, 12)
         Me.Label9.TabIndex = 0
-        Me.Label9.Text = "Update Date:"
+        Me.Label9.Text = "Update Date"
         '
         'grpSearchDetail
         '
@@ -376,7 +377,7 @@ Partial Class IMR00017
         Me.grpSearchDetail.Controls.Add(Me.Label15)
         Me.grpSearchDetail.Location = New System.Drawing.Point(13, 126)
         Me.grpSearchDetail.Name = "grpSearchDetail"
-        Me.grpSearchDetail.Size = New System.Drawing.Size(661, 200)
+        Me.grpSearchDetail.Size = New System.Drawing.Size(689, 200)
         Me.grpSearchDetail.TabIndex = 3
         Me.grpSearchDetail.TabStop = False
         '
@@ -393,7 +394,7 @@ Partial Class IMR00017
         '
         Me.txt_S_SecCustAll.Location = New System.Drawing.Point(196, 137)
         Me.txt_S_SecCustAll.Name = "txt_S_SecCustAll"
-        Me.txt_S_SecCustAll.Size = New System.Drawing.Size(435, 22)
+        Me.txt_S_SecCustAll.Size = New System.Drawing.Size(475, 22)
         Me.txt_S_SecCustAll.TabIndex = 91
         '
         'cmd_S_SecCustAll
@@ -408,7 +409,7 @@ Partial Class IMR00017
         '
         Me.txt_S_PriCustAll.Location = New System.Drawing.Point(196, 109)
         Me.txt_S_PriCustAll.Name = "txt_S_PriCustAll"
-        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(435, 22)
+        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(475, 22)
         Me.txt_S_PriCustAll.TabIndex = 89
         '
         'cmd_S_PriCustAll
@@ -441,7 +442,7 @@ Partial Class IMR00017
         '
         Me.txt_S_DV.Location = New System.Drawing.Point(197, 164)
         Me.txt_S_DV.Name = "txt_S_DV"
-        Me.txt_S_DV.Size = New System.Drawing.Size(434, 22)
+        Me.txt_S_DV.Size = New System.Drawing.Size(474, 22)
         Me.txt_S_DV.TabIndex = 93
         '
         'cmd_S_DV
@@ -457,7 +458,7 @@ Partial Class IMR00017
         '
         Me.LblPeriodFormat.AutoSize = True
         Me.LblPeriodFormat.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblPeriodFormat.Location = New System.Drawing.Point(506, 96)
+        Me.LblPeriodFormat.Location = New System.Drawing.Point(504, 96)
         Me.LblPeriodFormat.Name = "LblPeriodFormat"
         Me.LblPeriodFormat.Size = New System.Drawing.Size(46, 12)
         Me.LblPeriodFormat.TabIndex = 45
@@ -494,15 +495,15 @@ Partial Class IMR00017
         Me.Label25.AutoSize = True
         Me.Label25.Location = New System.Drawing.Point(9, 78)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(59, 12)
+        Me.Label25.Size = New System.Drawing.Size(56, 12)
         Me.Label25.TabIndex = 15
-        Me.Label25.Text = "Item Status:"
+        Me.Label25.Text = "Item Status"
         '
         'cboPrdVTo
         '
         Me.cboPrdVTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboPrdVTo.FormattingEnabled = True
-        Me.cboPrdVTo.Location = New System.Drawing.Point(406, 47)
+        Me.cboPrdVTo.Location = New System.Drawing.Point(446, 47)
         Me.cboPrdVTo.Name = "cboPrdVTo"
         Me.cboPrdVTo.Size = New System.Drawing.Size(225, 20)
         Me.cboPrdVTo.TabIndex = 14
@@ -510,7 +511,7 @@ Partial Class IMR00017
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(380, 50)
+        Me.Label21.Location = New System.Drawing.Point(420, 50)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(18, 12)
         Me.Label21.TabIndex = 13
@@ -567,7 +568,7 @@ Partial Class IMR00017
         '
         Me.cboToCatLvl4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboToCatLvl4.FormattingEnabled = True
-        Me.cboToCatLvl4.Location = New System.Drawing.Point(406, 16)
+        Me.cboToCatLvl4.Location = New System.Drawing.Point(446, 16)
         Me.cboToCatLvl4.Name = "cboToCatLvl4"
         Me.cboToCatLvl4.Size = New System.Drawing.Size(225, 20)
         Me.cboToCatLvl4.TabIndex = 11
@@ -575,7 +576,7 @@ Partial Class IMR00017
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(380, 18)
+        Me.Label17.Location = New System.Drawing.Point(420, 18)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(18, 12)
         Me.Label17.TabIndex = 3
@@ -621,15 +622,17 @@ Partial Class IMR00017
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(687, 368)
+        Me.ClientSize = New System.Drawing.Size(714, 368)
         Me.Controls.Add(Me.grpDAT)
         Me.Controls.Add(Me.cmdShow)
         Me.Controls.Add(Me.grpSearchDetail)
         Me.Controls.Add(Me.grpSearchType)
         Me.Controls.Add(Me.grpLST)
         Me.Controls.Add(Me.grpITM)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "IMR00017"
-        Me.Text = "IMR00017 - Item Pricing Report (Export to Excel)"
+        Me.Text = "IMR00017 - Item Pricing Report (Export to Excel) (IMR17)"
         Me.grpSearchType.ResumeLayout(False)
         Me.grpSearchType.PerformLayout()
         Me.grpITM.ResumeLayout(False)

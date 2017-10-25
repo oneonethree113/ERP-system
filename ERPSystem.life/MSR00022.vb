@@ -1006,7 +1006,7 @@
     Private Sub MSR00022_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         ' Me.Width = 760
-        Me.Height = 372
+        'Me.Height = 372
 
         '#If useMTS Then
         '        Set objBSGate = CreateObject("ucpBS_Gate.clsBSGate", serverName)

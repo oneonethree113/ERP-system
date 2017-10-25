@@ -69,6 +69,7 @@
                           "3. Product Size Input format" + vbCrLf & _
                           "   D 52 INCH - Diameter, 52, INCH"
 
+        Call Formstartup(Me.Name)
     End Sub
     Private Function removeDuplicateItem(ByVal strInput As String) As String
 

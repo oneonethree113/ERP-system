@@ -61,20 +61,20 @@ Public Class DYR00006
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents txt_S_QUIssdatTo As AxMSMask.AxMaskEdBox
     Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents txt_S_QUIssdatFm As AxMSMask.AxMaskEdBox
     Friend WithEvents cmd_S_PV As System.Windows.Forms.Button
     Friend WithEvents lbl_S_PV As System.Windows.Forms.Label
     Friend WithEvents txt_S_PV As System.Windows.Forms.TextBox
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents Label26 As System.Windows.Forms.Label
-    Friend WithEvents txt_S_QURvsdatTo As AxMSMask.AxMaskEdBox
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents Label28 As System.Windows.Forms.Label
-    Friend WithEvents txt_S_QURvsdatFm As AxMSMask.AxMaskEdBox
+    Friend WithEvents txt_S_QUIssdatFm As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_S_QUIssdatTo As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_S_QURvsdatTo As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_S_QURvsdatFm As System.Windows.Forms.MaskedTextBox
     Friend WithEvents TabPage7 As System.Windows.Forms.TabPage
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DYR00006))
@@ -100,31 +100,27 @@ Public Class DYR00006
         Me.Label19 = New System.Windows.Forms.Label
         Me.Label20 = New System.Windows.Forms.Label
         Me.Label21 = New System.Windows.Forms.Label
-        Me.txt_S_QUIssdatTo = New AxMSMask.AxMaskEdBox
         Me.Label22 = New System.Windows.Forms.Label
         Me.Label23 = New System.Windows.Forms.Label
-        Me.txt_S_QUIssdatFm = New AxMSMask.AxMaskEdBox
         Me.cmd_S_PV = New System.Windows.Forms.Button
         Me.lbl_S_PV = New System.Windows.Forms.Label
         Me.txt_S_PV = New System.Windows.Forms.TextBox
         Me.Label24 = New System.Windows.Forms.Label
         Me.Label25 = New System.Windows.Forms.Label
         Me.Label26 = New System.Windows.Forms.Label
-        Me.txt_S_QURvsdatTo = New AxMSMask.AxMaskEdBox
         Me.Label27 = New System.Windows.Forms.Label
         Me.Label28 = New System.Windows.Forms.Label
-        Me.txt_S_QURvsdatFm = New AxMSMask.AxMaskEdBox
-        CType(Me.txt_S_QUIssdatTo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_S_QUIssdatFm, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_S_QURvsdatTo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_S_QURvsdatFm, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.txt_S_QUIssdatFm = New System.Windows.Forms.MaskedTextBox
+        Me.txt_S_QUIssdatTo = New System.Windows.Forms.MaskedTextBox
+        Me.txt_S_QURvsdatTo = New System.Windows.Forms.MaskedTextBox
+        Me.txt_S_QURvsdatFm = New System.Windows.Forms.MaskedTextBox
         Me.SuspendLayout()
         '
         'StatusBar1
         '
         Me.StatusBar1.Location = New System.Drawing.Point(0, 295)
         Me.StatusBar1.Name = "StatusBar1"
-        Me.StatusBar1.Size = New System.Drawing.Size(792, 16)
+        Me.StatusBar1.Size = New System.Drawing.Size(714, 16)
         Me.StatusBar1.TabIndex = 1
         Me.StatusBar1.Text = "StatusBar1"
         '
@@ -170,9 +166,9 @@ Public Class DYR00006
         'lbl_S_ItmNo
         '
         Me.lbl_S_ItmNo.AutoSize = True
-        Me.lbl_S_ItmNo.Location = New System.Drawing.Point(17, 96)
+        Me.lbl_S_ItmNo.Location = New System.Drawing.Point(17, 97)
         Me.lbl_S_ItmNo.Name = "lbl_S_ItmNo"
-        Me.lbl_S_ItmNo.Size = New System.Drawing.Size(47, 15)
+        Me.lbl_S_ItmNo.Size = New System.Drawing.Size(43, 12)
         Me.lbl_S_ItmNo.TabIndex = 110
         Me.lbl_S_ItmNo.Text = "Item No"
         '
@@ -181,7 +177,7 @@ Public Class DYR00006
         Me.txt_S_ItmNo.Location = New System.Drawing.Point(201, 93)
         Me.txt_S_ItmNo.MaxLength = 5000
         Me.txt_S_ItmNo.Name = "txt_S_ItmNo"
-        Me.txt_S_ItmNo.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_ItmNo.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_ItmNo.TabIndex = 126
         '
         'txt_S_PriCustAll
@@ -189,7 +185,7 @@ Public Class DYR00006
         Me.txt_S_PriCustAll.Location = New System.Drawing.Point(201, 39)
         Me.txt_S_PriCustAll.MaxLength = 5000
         Me.txt_S_PriCustAll.Name = "txt_S_PriCustAll"
-        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_PriCustAll.TabIndex = 114
         '
         'txt_S_CoCde
@@ -198,7 +194,7 @@ Public Class DYR00006
         Me.txt_S_CoCde.Location = New System.Drawing.Point(201, 12)
         Me.txt_S_CoCde.MaxLength = 5000
         Me.txt_S_CoCde.Name = "txt_S_CoCde"
-        Me.txt_S_CoCde.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_CoCde.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_CoCde.TabIndex = 112
         '
         'lbl_S_PriCust
@@ -206,7 +202,7 @@ Public Class DYR00006
         Me.lbl_S_PriCust.AutoSize = True
         Me.lbl_S_PriCust.Location = New System.Drawing.Point(17, 44)
         Me.lbl_S_PriCust.Name = "lbl_S_PriCust"
-        Me.lbl_S_PriCust.Size = New System.Drawing.Size(71, 15)
+        Me.lbl_S_PriCust.Size = New System.Drawing.Size(66, 12)
         Me.lbl_S_PriCust.TabIndex = 105
         Me.lbl_S_PriCust.Text = "Pri Customer"
         '
@@ -215,15 +211,15 @@ Public Class DYR00006
         Me.lbl_S_CoCde.AutoSize = True
         Me.lbl_S_CoCde.Location = New System.Drawing.Point(17, 17)
         Me.lbl_S_CoCde.Name = "lbl_S_CoCde"
-        Me.lbl_S_CoCde.Size = New System.Drawing.Size(83, 15)
+        Me.lbl_S_CoCde.Size = New System.Drawing.Size(79, 12)
         Me.lbl_S_CoCde.TabIndex = 104
         Me.lbl_S_CoCde.Text = "Company Code"
         '
         'cmdShow
         '
-        Me.cmdShow.Location = New System.Drawing.Point(337, 256)
+        Me.cmdShow.Location = New System.Drawing.Point(290, 257)
         Me.cmdShow.Name = "cmdShow"
-        Me.cmdShow.Size = New System.Drawing.Size(133, 33)
+        Me.cmdShow.Size = New System.Drawing.Size(140, 22)
         Me.cmdShow.TabIndex = 162
         Me.cmdShow.Text = "Show Report"
         Me.cmdShow.UseVisualStyleBackColor = True
@@ -241,7 +237,7 @@ Public Class DYR00006
         Me.Label18.AutoSize = True
         Me.Label18.Location = New System.Drawing.Point(17, 124)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(78, 15)
+        Me.Label18.Size = New System.Drawing.Size(75, 12)
         Me.Label18.TabIndex = 163
         Me.Label18.Text = "Design Vendor"
         '
@@ -250,7 +246,7 @@ Public Class DYR00006
         Me.txt_S_DV.Location = New System.Drawing.Point(201, 120)
         Me.txt_S_DV.MaxLength = 5000
         Me.txt_S_DV.Name = "txt_S_DV"
-        Me.txt_S_DV.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_DV.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_DV.TabIndex = 165
         '
         'cmd_S_SecCustAll
@@ -266,15 +262,15 @@ Public Class DYR00006
         Me.txt_S_SecCustAll.Location = New System.Drawing.Point(201, 66)
         Me.txt_S_SecCustAll.MaxLength = 5000
         Me.txt_S_SecCustAll.Name = "txt_S_SecCustAll"
-        Me.txt_S_SecCustAll.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_SecCustAll.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_SecCustAll.TabIndex = 168
         '
         'lbl_S_SecCust
         '
         Me.lbl_S_SecCust.AutoSize = True
-        Me.lbl_S_SecCust.Location = New System.Drawing.Point(17, 74)
+        Me.lbl_S_SecCust.Location = New System.Drawing.Point(17, 70)
         Me.lbl_S_SecCust.Name = "lbl_S_SecCust"
-        Me.lbl_S_SecCust.Size = New System.Drawing.Size(73, 15)
+        Me.lbl_S_SecCust.Size = New System.Drawing.Size(69, 12)
         Me.lbl_S_SecCust.TabIndex = 166
         Me.lbl_S_SecCust.Text = "Sec Customer"
         '
@@ -283,38 +279,30 @@ Public Class DYR00006
         Me.Label19.AutoSize = True
         Me.Label19.Location = New System.Drawing.Point(161, 179)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(33, 15)
+        Me.Label19.Size = New System.Drawing.Size(30, 12)
         Me.Label19.TabIndex = 175
         Me.Label19.Text = "From"
         '
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(449, 179)
+        Me.Label20.Location = New System.Drawing.Point(449, 180)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(21, 15)
+        Me.Label20.Size = New System.Drawing.Size(18, 12)
         Me.Label20.TabIndex = 174
         Me.Label20.Text = "To"
         '
         'Label21
         '
-        Me.Label21.Location = New System.Drawing.Point(577, 187)
+        Me.Label21.Location = New System.Drawing.Point(577, 179)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(100, 16)
         Me.Label21.TabIndex = 173
         Me.Label21.Text = "(MM/DD/YYYY)"
         '
-        'txt_S_QUIssdatTo
-        '
-        Me.txt_S_QUIssdatTo.Location = New System.Drawing.Point(481, 179)
-        Me.txt_S_QUIssdatTo.Name = "txt_S_QUIssdatTo"
-        Me.txt_S_QUIssdatTo.OcxState = CType(resources.GetObject("txt_S_QUIssdatTo.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt_S_QUIssdatTo.Size = New System.Drawing.Size(88, 23)
-        Me.txt_S_QUIssdatTo.TabIndex = 170
-        '
         'Label22
         '
-        Me.Label22.Location = New System.Drawing.Point(297, 187)
+        Me.Label22.Location = New System.Drawing.Point(297, 179)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(100, 16)
         Me.Label22.TabIndex = 172
@@ -328,14 +316,6 @@ Public Class DYR00006
         Me.Label23.TabIndex = 171
         Me.Label23.Text = "Quotation Issue Date"
         '
-        'txt_S_QUIssdatFm
-        '
-        Me.txt_S_QUIssdatFm.Location = New System.Drawing.Point(201, 179)
-        Me.txt_S_QUIssdatFm.Name = "txt_S_QUIssdatFm"
-        Me.txt_S_QUIssdatFm.OcxState = CType(resources.GetObject("txt_S_QUIssdatFm.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt_S_QUIssdatFm.Size = New System.Drawing.Size(88, 23)
-        Me.txt_S_QUIssdatFm.TabIndex = 169
-        '
         'cmd_S_PV
         '
         Me.cmd_S_PV.Location = New System.Drawing.Point(129, 147)
@@ -347,9 +327,9 @@ Public Class DYR00006
         'lbl_S_PV
         '
         Me.lbl_S_PV.AutoSize = True
-        Me.lbl_S_PV.Location = New System.Drawing.Point(17, 155)
+        Me.lbl_S_PV.Location = New System.Drawing.Point(17, 152)
         Me.lbl_S_PV.Name = "lbl_S_PV"
-        Me.lbl_S_PV.Size = New System.Drawing.Size(98, 15)
+        Me.lbl_S_PV.Size = New System.Drawing.Size(94, 12)
         Me.lbl_S_PV.TabIndex = 176
         Me.lbl_S_PV.Text = "Production Vendor"
         '
@@ -358,7 +338,7 @@ Public Class DYR00006
         Me.txt_S_PV.Location = New System.Drawing.Point(201, 147)
         Me.txt_S_PV.MaxLength = 5000
         Me.txt_S_PV.Name = "txt_S_PV"
-        Me.txt_S_PV.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_PV.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_PV.TabIndex = 178
         '
         'Label24
@@ -366,7 +346,7 @@ Public Class DYR00006
         Me.Label24.AutoSize = True
         Me.Label24.Location = New System.Drawing.Point(161, 212)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(33, 15)
+        Me.Label24.Size = New System.Drawing.Size(30, 12)
         Me.Label24.TabIndex = 185
         Me.Label24.Text = "From"
         '
@@ -375,29 +355,21 @@ Public Class DYR00006
         Me.Label25.AutoSize = True
         Me.Label25.Location = New System.Drawing.Point(449, 212)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(21, 15)
+        Me.Label25.Size = New System.Drawing.Size(18, 12)
         Me.Label25.TabIndex = 184
         Me.Label25.Text = "To"
         '
         'Label26
         '
-        Me.Label26.Location = New System.Drawing.Point(577, 220)
+        Me.Label26.Location = New System.Drawing.Point(577, 212)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(100, 16)
         Me.Label26.TabIndex = 183
         Me.Label26.Text = "(MM/DD/YYYY)"
         '
-        'txt_S_QURvsdatTo
-        '
-        Me.txt_S_QURvsdatTo.Location = New System.Drawing.Point(481, 212)
-        Me.txt_S_QURvsdatTo.Name = "txt_S_QURvsdatTo"
-        Me.txt_S_QURvsdatTo.OcxState = CType(resources.GetObject("txt_S_QURvsdatTo.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt_S_QURvsdatTo.Size = New System.Drawing.Size(88, 23)
-        Me.txt_S_QURvsdatTo.TabIndex = 180
-        '
         'Label27
         '
-        Me.Label27.Location = New System.Drawing.Point(297, 220)
+        Me.Label27.Location = New System.Drawing.Point(297, 212)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(100, 16)
         Me.Label27.TabIndex = 182
@@ -411,35 +383,59 @@ Public Class DYR00006
         Me.Label28.TabIndex = 181
         Me.Label28.Text = "Quotation Revised Date"
         '
+        'txt_S_QUIssdatFm
+        '
+        Me.txt_S_QUIssdatFm.Location = New System.Drawing.Point(203, 175)
+        Me.txt_S_QUIssdatFm.Mask = "00/00/0000"
+        Me.txt_S_QUIssdatFm.Name = "txt_S_QUIssdatFm"
+        Me.txt_S_QUIssdatFm.Size = New System.Drawing.Size(88, 22)
+        Me.txt_S_QUIssdatFm.TabIndex = 186
+        '
+        'txt_S_QUIssdatTo
+        '
+        Me.txt_S_QUIssdatTo.Location = New System.Drawing.Point(483, 176)
+        Me.txt_S_QUIssdatTo.Mask = "00/00/0000"
+        Me.txt_S_QUIssdatTo.Name = "txt_S_QUIssdatTo"
+        Me.txt_S_QUIssdatTo.Size = New System.Drawing.Size(88, 22)
+        Me.txt_S_QUIssdatTo.TabIndex = 187
+        '
+        'txt_S_QURvsdatTo
+        '
+        Me.txt_S_QURvsdatTo.Location = New System.Drawing.Point(483, 209)
+        Me.txt_S_QURvsdatTo.Mask = "00/00/0000"
+        Me.txt_S_QURvsdatTo.Name = "txt_S_QURvsdatTo"
+        Me.txt_S_QURvsdatTo.Size = New System.Drawing.Size(88, 22)
+        Me.txt_S_QURvsdatTo.TabIndex = 188
+        '
         'txt_S_QURvsdatFm
         '
-        Me.txt_S_QURvsdatFm.Location = New System.Drawing.Point(201, 212)
+        Me.txt_S_QURvsdatFm.Location = New System.Drawing.Point(203, 209)
+        Me.txt_S_QURvsdatFm.Mask = "00/00/0000"
         Me.txt_S_QURvsdatFm.Name = "txt_S_QURvsdatFm"
-        Me.txt_S_QURvsdatFm.OcxState = CType(resources.GetObject("txt_S_QURvsdatFm.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt_S_QURvsdatFm.Size = New System.Drawing.Size(88, 23)
-        Me.txt_S_QURvsdatFm.TabIndex = 179
+        Me.txt_S_QURvsdatFm.Size = New System.Drawing.Size(88, 22)
+        Me.txt_S_QURvsdatFm.TabIndex = 189
         '
         'DYR00006
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 14)
-        Me.ClientSize = New System.Drawing.Size(792, 311)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 15)
+        Me.ClientSize = New System.Drawing.Size(714, 311)
+        Me.Controls.Add(Me.txt_S_QURvsdatFm)
+        Me.Controls.Add(Me.txt_S_QURvsdatTo)
+        Me.Controls.Add(Me.txt_S_QUIssdatTo)
+        Me.Controls.Add(Me.txt_S_QUIssdatFm)
         Me.Controls.Add(Me.Label24)
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.Label26)
-        Me.Controls.Add(Me.txt_S_QURvsdatTo)
         Me.Controls.Add(Me.Label27)
         Me.Controls.Add(Me.Label28)
-        Me.Controls.Add(Me.txt_S_QURvsdatFm)
         Me.Controls.Add(Me.cmd_S_PV)
         Me.Controls.Add(Me.lbl_S_PV)
         Me.Controls.Add(Me.txt_S_PV)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.Label21)
-        Me.Controls.Add(Me.txt_S_QUIssdatTo)
         Me.Controls.Add(Me.Label22)
         Me.Controls.Add(Me.Label23)
-        Me.Controls.Add(Me.txt_S_QUIssdatFm)
         Me.Controls.Add(Me.cmd_S_SecCustAll)
         Me.Controls.Add(Me.txt_S_SecCustAll)
         Me.Controls.Add(Me.lbl_S_SecCust)
@@ -457,13 +453,11 @@ Public Class DYR00006
         Me.Controls.Add(Me.lbl_S_PriCust)
         Me.Controls.Add(Me.lbl_S_CoCde)
         Me.Controls.Add(Me.StatusBar1)
-        Me.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "DYR00006"
-        Me.Text = "DYR00006 - Dynamic Report vw_Quotation"
-        CType(Me.txt_S_QUIssdatTo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_S_QUIssdatFm, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_S_QURvsdatTo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_S_QURvsdatFm, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Text = "DYR00006 - Dynamic Report vw_Quotation (DYR06)"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -648,33 +642,33 @@ Public Class DYR00006
         End If
 
 
-        If Me.txt_S_QUIssdatFm.CtlText <> "__/__/____" Then
-            If Not IsDate(Me.txt_S_QUIssdatFm.CtlText) Then
+        If Me.txt_S_QUIssdatFm.Text <> "__/__/____" Then
+            If Not IsDate(Me.txt_S_QUIssdatFm.Text) Then
                 MsgBox("Invalid Date Format: QU Issue Date From")
                 Me.txt_S_QUIssdatFm.Focus()
                 Exit Sub
             End If
         End If
 
-        If Me.txt_S_QUIssdatTo.CtlText <> "__/__/____" Then
-            If Not IsDate(Me.txt_S_QUIssdatTo.CtlText) Then
+        If Me.txt_S_QUIssdatTo.Text <> "__/__/____" Then
+            If Not IsDate(Me.txt_S_QUIssdatTo.Text) Then
                 MsgBox("Invalid Date Format: QU Issue Date To")
                 Me.txt_S_QUIssdatTo.Focus()
                 Exit Sub
             End If
         End If
 
-        If Mid(Me.txt_S_QUIssdatFm.CtlText, 7) > Mid(Me.txt_S_QUIssdatTo.CtlText, 7) Then
+        If Mid(Me.txt_S_QUIssdatFm.Text, 7) > Mid(Me.txt_S_QUIssdatTo.Text, 7) Then
             MsgBox("QU Issue Date: End Date < Start Date (YY)")
             Me.txt_S_QUIssdatFm.Focus()
             Exit Sub
-        ElseIf Mid(Me.txt_S_QUIssdatFm.CtlText, 7) = Mid(Me.txt_S_QUIssdatTo.CtlText, 7) Then
-            If Me.txt_S_QUIssdatFm.CtlText.Substring(0, 2) > Me.txt_S_QUIssdatTo.CtlText.Substring(0, 2) Then
+        ElseIf Mid(Me.txt_S_QUIssdatFm.Text, 7) = Mid(Me.txt_S_QUIssdatTo.Text, 7) Then
+            If Me.txt_S_QUIssdatFm.Text.Substring(0, 2) > Me.txt_S_QUIssdatTo.Text.Substring(0, 2) Then
                 MsgBox("QU Issue Date: End Date < Start Date (MM)")
                 Me.txt_S_QUIssdatFm.Focus()
                 Exit Sub
-            ElseIf Me.txt_S_QUIssdatFm.CtlText.Substring(0, 2) = Me.txt_S_QUIssdatTo.CtlText.Substring(0, 2) Then
-                If Me.txt_S_QUIssdatFm.CtlText.Substring(3, 2) > Me.txt_S_QUIssdatTo.CtlText.Substring(3, 2) Then
+            ElseIf Me.txt_S_QUIssdatFm.Text.Substring(0, 2) = Me.txt_S_QUIssdatTo.Text.Substring(0, 2) Then
+                If Me.txt_S_QUIssdatFm.Text.Substring(3, 2) > Me.txt_S_QUIssdatTo.Text.Substring(3, 2) Then
                     MsgBox("QU Issue Date: End Date < Start Date (DD)")
                     Me.txt_S_QUIssdatFm.Focus()
                     Exit Sub
@@ -682,47 +676,47 @@ Public Class DYR00006
             End If
         End If
 
-        If Me.txt_S_QUIssdatFm.CtlText = "__/__/____" Then
+        If Me.txt_S_QUIssdatFm.Text = "__/__/____" Then
             QUISSDATFM = "01/01/1900"
         Else
-            QUISSDATFM = Me.txt_S_QUIssdatFm.CtlText
+            QUISSDATFM = Me.txt_S_QUIssdatFm.Text
         End If
 
-        If Me.txt_S_QUIssdatTo.CtlText = "__/__/____" Then
+        If Me.txt_S_QUIssdatTo.Text = "__/__/____" Then
             QUISSDATTO = "01/01/1900"
         Else
-            QUISSDATTO = Me.txt_S_QUIssdatTo.CtlText
+            QUISSDATTO = Me.txt_S_QUIssdatTo.Text
         End If
 
 
 
-        If Me.txt_S_QURvsdatFm.CtlText <> "__/__/____" Then
-            If Not IsDate(Me.txt_S_QURvsdatFm.CtlText) Then
+        If Me.txt_S_QURvsdatFm.Text <> "__/__/____" Then
+            If Not IsDate(Me.txt_S_QURvsdatFm.Text) Then
                 MsgBox("Invalid Date Format: QU Revised Date From")
                 Me.txt_S_QURvsdatFm.Focus()
                 Exit Sub
             End If
         End If
 
-        If Me.txt_S_QURvsdatTo.CtlText <> "__/__/____" Then
-            If Not IsDate(Me.txt_S_QURvsdatTo.CtlText) Then
+        If Me.txt_S_QURvsdatTo.Text <> "__/__/____" Then
+            If Not IsDate(Me.txt_S_QURvsdatTo.Text) Then
                 MsgBox("Invalid Date Format: QU Revised Date To")
                 Me.txt_S_QURvsdatTo.Focus()
                 Exit Sub
             End If
         End If
 
-        If Mid(Me.txt_S_QURvsdatFm.CtlText, 7) > Mid(Me.txt_S_QURvsdatTo.CtlText, 7) Then
+        If Mid(Me.txt_S_QURvsdatFm.Text, 7) > Mid(Me.txt_S_QURvsdatTo.Text, 7) Then
             MsgBox("QU Revised Date: End Date < Start Date (YY)")
             Me.txt_S_QURvsdatFm.Focus()
             Exit Sub
-        ElseIf Mid(Me.txt_S_QURvsdatFm.CtlText, 7) = Mid(Me.txt_S_QURvsdatTo.CtlText, 7) Then
-            If Me.txt_S_QURvsdatFm.CtlText.Substring(0, 2) > Me.txt_S_QURvsdatTo.CtlText.Substring(0, 2) Then
+        ElseIf Mid(Me.txt_S_QURvsdatFm.Text, 7) = Mid(Me.txt_S_QURvsdatTo.Text, 7) Then
+            If Me.txt_S_QURvsdatFm.Text.Substring(0, 2) > Me.txt_S_QURvsdatTo.Text.Substring(0, 2) Then
                 MsgBox("QU Revised Date: End Date < Start Date (MM)")
                 Me.txt_S_QURvsdatFm.Focus()
                 Exit Sub
-            ElseIf Me.txt_S_QURvsdatFm.CtlText.Substring(0, 2) = Me.txt_S_QURvsdatTo.CtlText.Substring(0, 2) Then
-                If Me.txt_S_QURvsdatFm.CtlText.Substring(3, 2) > Me.txt_S_QURvsdatTo.CtlText.Substring(3, 2) Then
+            ElseIf Me.txt_S_QURvsdatFm.Text.Substring(0, 2) = Me.txt_S_QURvsdatTo.Text.Substring(0, 2) Then
+                If Me.txt_S_QURvsdatFm.Text.Substring(3, 2) > Me.txt_S_QURvsdatTo.Text.Substring(3, 2) Then
                     MsgBox("QU Revised Date: End Date < Start Date (DD)")
                     Me.txt_S_QURvsdatFm.Focus()
                     Exit Sub
@@ -730,16 +724,16 @@ Public Class DYR00006
             End If
         End If
 
-        If Me.txt_S_QURvsdatFm.CtlText = "__/__/____" Then
+        If Me.txt_S_QURvsdatFm.Text = "__/__/____" Then
             QURVSDATFM = "01/01/1900"
         Else
-            QURVSDATFM = Me.txt_S_QURvsdatFm.CtlText
+            QURVSDATFM = Me.txt_S_QURvsdatFm.Text
         End If
 
-        If Me.txt_S_QURvsdatTo.CtlText = "__/__/____" Then
+        If Me.txt_S_QURvsdatTo.Text = "__/__/____" Then
             QURVSDATTO = "01/01/1900"
         Else
-            QURVSDATTO = Me.txt_S_QURvsdatTo.CtlText
+            QURVSDATTO = Me.txt_S_QURvsdatTo.Text
         End If
 
         If QUISSDATFM = "01/01/1900" And QUISSDATTO = "01/01/1900" And QURVSDATFM = "01/01/1900" And QURVSDATTO = "01/01/1900" Then

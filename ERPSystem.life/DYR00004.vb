@@ -45,24 +45,18 @@ Public Class DYR00004
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents txt_S_CustPODateTo As AxMSMask.AxMaskEdBox
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents lbl_S_CustPODate As System.Windows.Forms.Label
-    Friend WithEvents txt_S_CustPODateFm As AxMSMask.AxMaskEdBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents txt_S_ShipDateTo As AxMSMask.AxMaskEdBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents lbl_S_ShipDate As System.Windows.Forms.Label
-    Friend WithEvents txt_S_ShipDateFm As AxMSMask.AxMaskEdBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents txt_S_SCIssDateTo As AxMSMask.AxMaskEdBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents lbl_S_SCIssDate As System.Windows.Forms.Label
-    Friend WithEvents txt_S_SCIssDateFm As AxMSMask.AxMaskEdBox
     Friend WithEvents cmd_S_SalTem As System.Windows.Forms.Button
     Friend WithEvents lbl_S_SalTem As System.Windows.Forms.Label
     Friend WithEvents txt_S_SalTem As System.Windows.Forms.TextBox
@@ -96,14 +90,14 @@ Public Class DYR00004
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents txt_S_CredatTo As AxMSMask.AxMaskEdBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents txt_S_CredatFm As AxMSMask.AxMaskEdBox
     Friend WithEvents cmdShow As System.Windows.Forms.Button
     Friend WithEvents cmd_S_DV As System.Windows.Forms.Button
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents txt_S_DV As System.Windows.Forms.TextBox
+    Friend WithEvents txt_S_CredatFm As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_S_CredatTo As System.Windows.Forms.MaskedTextBox
     Friend WithEvents TabPage7 As System.Windows.Forms.TabPage
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DYR00004))
@@ -113,24 +107,18 @@ Public Class DYR00004
         Me.Label11 = New System.Windows.Forms.Label
         Me.Label12 = New System.Windows.Forms.Label
         Me.Label13 = New System.Windows.Forms.Label
-        Me.txt_S_CustPODateTo = New AxMSMask.AxMaskEdBox
         Me.Label14 = New System.Windows.Forms.Label
         Me.lbl_S_CustPODate = New System.Windows.Forms.Label
-        Me.txt_S_CustPODateFm = New AxMSMask.AxMaskEdBox
         Me.Label6 = New System.Windows.Forms.Label
         Me.Label7 = New System.Windows.Forms.Label
         Me.Label8 = New System.Windows.Forms.Label
-        Me.txt_S_ShipDateTo = New AxMSMask.AxMaskEdBox
         Me.Label9 = New System.Windows.Forms.Label
         Me.lbl_S_ShipDate = New System.Windows.Forms.Label
-        Me.txt_S_ShipDateFm = New AxMSMask.AxMaskEdBox
         Me.Label5 = New System.Windows.Forms.Label
         Me.Label4 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
-        Me.txt_S_SCIssDateTo = New AxMSMask.AxMaskEdBox
         Me.Label1 = New System.Windows.Forms.Label
         Me.lbl_S_SCIssDate = New System.Windows.Forms.Label
-        Me.txt_S_SCIssDateFm = New AxMSMask.AxMaskEdBox
         Me.cmd_S_SalTem = New System.Windows.Forms.Button
         Me.lbl_S_SalTem = New System.Windows.Forms.Label
         Me.txt_S_SalTem = New System.Windows.Forms.TextBox
@@ -164,29 +152,21 @@ Public Class DYR00004
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label10 = New System.Windows.Forms.Label
         Me.Label15 = New System.Windows.Forms.Label
-        Me.txt_S_CredatTo = New AxMSMask.AxMaskEdBox
         Me.Label16 = New System.Windows.Forms.Label
         Me.Label17 = New System.Windows.Forms.Label
-        Me.txt_S_CredatFm = New AxMSMask.AxMaskEdBox
         Me.cmdShow = New System.Windows.Forms.Button
         Me.cmd_S_DV = New System.Windows.Forms.Button
         Me.Label18 = New System.Windows.Forms.Label
         Me.txt_S_DV = New System.Windows.Forms.TextBox
-        CType(Me.txt_S_CustPODateTo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_S_CustPODateFm, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_S_ShipDateTo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_S_ShipDateFm, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_S_SCIssDateTo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_S_SCIssDateFm, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_S_CredatTo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_S_CredatFm, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.txt_S_CredatFm = New System.Windows.Forms.MaskedTextBox
+        Me.txt_S_CredatTo = New System.Windows.Forms.MaskedTextBox
         Me.SuspendLayout()
         '
         'StatusBar1
         '
-        Me.StatusBar1.Location = New System.Drawing.Point(0, 233)
+        Me.StatusBar1.Location = New System.Drawing.Point(0, 229)
         Me.StatusBar1.Name = "StatusBar1"
-        Me.StatusBar1.Size = New System.Drawing.Size(792, 16)
+        Me.StatusBar1.Size = New System.Drawing.Size(714, 16)
         Me.StatusBar1.TabIndex = 1
         Me.StatusBar1.Text = "StatusBar1"
         '
@@ -209,7 +189,7 @@ Public Class DYR00004
         Me.Label11.AutoSize = True
         Me.Label11.Location = New System.Drawing.Point(161, 472)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(33, 15)
+        Me.Label11.Size = New System.Drawing.Size(30, 12)
         Me.Label11.TabIndex = 154
         Me.Label11.Text = "From"
         Me.Label11.Visible = False
@@ -219,7 +199,7 @@ Public Class DYR00004
         Me.Label12.AutoSize = True
         Me.Label12.Location = New System.Drawing.Point(449, 472)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(21, 15)
+        Me.Label12.Size = New System.Drawing.Size(18, 12)
         Me.Label12.TabIndex = 153
         Me.Label12.Text = "To"
         Me.Label12.Visible = False
@@ -232,15 +212,6 @@ Public Class DYR00004
         Me.Label13.TabIndex = 152
         Me.Label13.Text = "(MM/DD/YYYY)"
         Me.Label13.Visible = False
-        '
-        'txt_S_CustPODateTo
-        '
-        Me.txt_S_CustPODateTo.Location = New System.Drawing.Point(481, 472)
-        Me.txt_S_CustPODateTo.Name = "txt_S_CustPODateTo"
-        Me.txt_S_CustPODateTo.OcxState = CType(resources.GetObject("txt_S_CustPODateTo.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt_S_CustPODateTo.Size = New System.Drawing.Size(88, 23)
-        Me.txt_S_CustPODateTo.TabIndex = 144
-        Me.txt_S_CustPODateTo.Visible = False
         '
         'Label14
         '
@@ -260,21 +231,12 @@ Public Class DYR00004
         Me.lbl_S_CustPODate.Text = "Cust PO Date"
         Me.lbl_S_CustPODate.Visible = False
         '
-        'txt_S_CustPODateFm
-        '
-        Me.txt_S_CustPODateFm.Location = New System.Drawing.Point(201, 472)
-        Me.txt_S_CustPODateFm.Name = "txt_S_CustPODateFm"
-        Me.txt_S_CustPODateFm.OcxState = CType(resources.GetObject("txt_S_CustPODateFm.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt_S_CustPODateFm.Size = New System.Drawing.Size(88, 23)
-        Me.txt_S_CustPODateFm.TabIndex = 143
-        Me.txt_S_CustPODateFm.Visible = False
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(161, 448)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(33, 15)
+        Me.Label6.Size = New System.Drawing.Size(30, 12)
         Me.Label6.TabIndex = 149
         Me.Label6.Text = "From"
         Me.Label6.Visible = False
@@ -284,7 +246,7 @@ Public Class DYR00004
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(449, 448)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(21, 15)
+        Me.Label7.Size = New System.Drawing.Size(18, 12)
         Me.Label7.TabIndex = 148
         Me.Label7.Text = "To"
         Me.Label7.Visible = False
@@ -297,15 +259,6 @@ Public Class DYR00004
         Me.Label8.TabIndex = 147
         Me.Label8.Text = "(MM/DD/YYYY)"
         Me.Label8.Visible = False
-        '
-        'txt_S_ShipDateTo
-        '
-        Me.txt_S_ShipDateTo.Location = New System.Drawing.Point(481, 448)
-        Me.txt_S_ShipDateTo.Name = "txt_S_ShipDateTo"
-        Me.txt_S_ShipDateTo.OcxState = CType(resources.GetObject("txt_S_ShipDateTo.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt_S_ShipDateTo.Size = New System.Drawing.Size(88, 23)
-        Me.txt_S_ShipDateTo.TabIndex = 142
-        Me.txt_S_ShipDateTo.Visible = False
         '
         'Label9
         '
@@ -325,21 +278,12 @@ Public Class DYR00004
         Me.lbl_S_ShipDate.Text = "Ship Date"
         Me.lbl_S_ShipDate.Visible = False
         '
-        'txt_S_ShipDateFm
-        '
-        Me.txt_S_ShipDateFm.Location = New System.Drawing.Point(201, 448)
-        Me.txt_S_ShipDateFm.Name = "txt_S_ShipDateFm"
-        Me.txt_S_ShipDateFm.OcxState = CType(resources.GetObject("txt_S_ShipDateFm.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt_S_ShipDateFm.Size = New System.Drawing.Size(88, 23)
-        Me.txt_S_ShipDateFm.TabIndex = 139
-        Me.txt_S_ShipDateFm.Visible = False
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(161, 424)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(33, 15)
+        Me.Label5.Size = New System.Drawing.Size(30, 12)
         Me.Label5.TabIndex = 141
         Me.Label5.Text = "From"
         Me.Label5.Visible = False
@@ -349,7 +293,7 @@ Public Class DYR00004
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(449, 424)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(21, 15)
+        Me.Label4.Size = New System.Drawing.Size(18, 12)
         Me.Label4.TabIndex = 140
         Me.Label4.Text = "To"
         Me.Label4.Visible = False
@@ -362,15 +306,6 @@ Public Class DYR00004
         Me.Label3.TabIndex = 138
         Me.Label3.Text = "(MM/DD/YYYY)"
         Me.Label3.Visible = False
-        '
-        'txt_S_SCIssDateTo
-        '
-        Me.txt_S_SCIssDateTo.Location = New System.Drawing.Point(481, 424)
-        Me.txt_S_SCIssDateTo.Name = "txt_S_SCIssDateTo"
-        Me.txt_S_SCIssDateTo.OcxState = CType(resources.GetObject("txt_S_SCIssDateTo.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt_S_SCIssDateTo.Size = New System.Drawing.Size(88, 23)
-        Me.txt_S_SCIssDateTo.TabIndex = 137
-        Me.txt_S_SCIssDateTo.Visible = False
         '
         'Label1
         '
@@ -390,15 +325,6 @@ Public Class DYR00004
         Me.lbl_S_SCIssDate.Text = "SC Issue Date"
         Me.lbl_S_SCIssDate.Visible = False
         '
-        'txt_S_SCIssDateFm
-        '
-        Me.txt_S_SCIssDateFm.Location = New System.Drawing.Point(201, 424)
-        Me.txt_S_SCIssDateFm.Name = "txt_S_SCIssDateFm"
-        Me.txt_S_SCIssDateFm.OcxState = CType(resources.GetObject("txt_S_SCIssDateFm.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt_S_SCIssDateFm.Size = New System.Drawing.Size(88, 23)
-        Me.txt_S_SCIssDateFm.TabIndex = 136
-        Me.txt_S_SCIssDateFm.Visible = False
-        '
         'cmd_S_SalTem
         '
         Me.cmd_S_SalTem.Location = New System.Drawing.Point(129, 397)
@@ -413,7 +339,7 @@ Public Class DYR00004
         Me.lbl_S_SalTem.AutoSize = True
         Me.lbl_S_SalTem.Location = New System.Drawing.Point(17, 405)
         Me.lbl_S_SalTem.Name = "lbl_S_SalTem"
-        Me.lbl_S_SalTem.Size = New System.Drawing.Size(61, 15)
+        Me.lbl_S_SalTem.Size = New System.Drawing.Size(57, 12)
         Me.lbl_S_SalTem.TabIndex = 128
         Me.lbl_S_SalTem.Text = "Sales Team"
         Me.lbl_S_SalTem.Visible = False
@@ -423,7 +349,7 @@ Public Class DYR00004
         Me.txt_S_SalTem.Location = New System.Drawing.Point(201, 397)
         Me.txt_S_SalTem.MaxLength = 5000
         Me.txt_S_SalTem.Name = "txt_S_SalTem"
-        Me.txt_S_SalTem.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_SalTem.Size = New System.Drawing.Size(560, 22)
         Me.txt_S_SalTem.TabIndex = 134
         Me.txt_S_SalTem.Visible = False
         '
@@ -441,7 +367,7 @@ Public Class DYR00004
         Me.lbl_S_PV.AutoSize = True
         Me.lbl_S_PV.Location = New System.Drawing.Point(17, 381)
         Me.lbl_S_PV.Name = "lbl_S_PV"
-        Me.lbl_S_PV.Size = New System.Drawing.Size(98, 15)
+        Me.lbl_S_PV.Size = New System.Drawing.Size(94, 12)
         Me.lbl_S_PV.TabIndex = 122
         Me.lbl_S_PV.Text = "Production Vendor"
         Me.lbl_S_PV.Visible = False
@@ -451,7 +377,7 @@ Public Class DYR00004
         Me.txt_S_PV.Location = New System.Drawing.Point(201, 373)
         Me.txt_S_PV.MaxLength = 5000
         Me.txt_S_PV.Name = "txt_S_PV"
-        Me.txt_S_PV.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_PV.Size = New System.Drawing.Size(560, 22)
         Me.txt_S_PV.TabIndex = 131
         Me.txt_S_PV.Visible = False
         '
@@ -469,7 +395,7 @@ Public Class DYR00004
         Me.lbl_S_CV.AutoSize = True
         Me.lbl_S_CV.Location = New System.Drawing.Point(17, 357)
         Me.lbl_S_CV.Name = "lbl_S_CV"
-        Me.lbl_S_CV.Size = New System.Drawing.Size(83, 15)
+        Me.lbl_S_CV.Size = New System.Drawing.Size(79, 12)
         Me.lbl_S_CV.TabIndex = 118
         Me.lbl_S_CV.Text = "Custom Vendor"
         Me.lbl_S_CV.Visible = False
@@ -479,7 +405,7 @@ Public Class DYR00004
         Me.txt_S_CV.Location = New System.Drawing.Point(201, 349)
         Me.txt_S_CV.MaxLength = 5000
         Me.txt_S_CV.Name = "txt_S_CV"
-        Me.txt_S_CV.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_CV.Size = New System.Drawing.Size(560, 22)
         Me.txt_S_CV.TabIndex = 129
         Me.txt_S_CV.Visible = False
         '
@@ -549,7 +475,7 @@ Public Class DYR00004
         Me.lbl_S_ItmNo.AutoSize = True
         Me.lbl_S_ItmNo.Location = New System.Drawing.Point(17, 92)
         Me.lbl_S_ItmNo.Name = "lbl_S_ItmNo"
-        Me.lbl_S_ItmNo.Size = New System.Drawing.Size(47, 15)
+        Me.lbl_S_ItmNo.Size = New System.Drawing.Size(43, 12)
         Me.lbl_S_ItmNo.TabIndex = 110
         Me.lbl_S_ItmNo.Text = "Item No"
         '
@@ -558,7 +484,7 @@ Public Class DYR00004
         Me.lbl_S_SCNo.AutoSize = True
         Me.lbl_S_SCNo.Location = New System.Drawing.Point(17, 332)
         Me.lbl_S_SCNo.Name = "lbl_S_SCNo"
-        Me.lbl_S_SCNo.Size = New System.Drawing.Size(39, 15)
+        Me.lbl_S_SCNo.Size = New System.Drawing.Size(36, 12)
         Me.lbl_S_SCNo.TabIndex = 109
         Me.lbl_S_SCNo.Text = "SC No"
         Me.lbl_S_SCNo.Visible = False
@@ -568,7 +494,7 @@ Public Class DYR00004
         Me.lbl_S_PONo.AutoSize = True
         Me.lbl_S_PONo.Location = New System.Drawing.Point(17, 308)
         Me.lbl_S_PONo.Name = "lbl_S_PONo"
-        Me.lbl_S_PONo.Size = New System.Drawing.Size(41, 15)
+        Me.lbl_S_PONo.Size = New System.Drawing.Size(36, 12)
         Me.lbl_S_PONo.TabIndex = 108
         Me.lbl_S_PONo.Text = "PO No"
         Me.lbl_S_PONo.Visible = False
@@ -578,7 +504,7 @@ Public Class DYR00004
         Me.lbl_S_CustPO.AutoSize = True
         Me.lbl_S_CustPO.Location = New System.Drawing.Point(17, 284)
         Me.lbl_S_CustPO.Name = "lbl_S_CustPO"
-        Me.lbl_S_CustPO.Size = New System.Drawing.Size(67, 15)
+        Me.lbl_S_CustPO.Size = New System.Drawing.Size(60, 12)
         Me.lbl_S_CustPO.TabIndex = 107
         Me.lbl_S_CustPO.Text = "Cust PO No"
         Me.lbl_S_CustPO.Visible = False
@@ -588,7 +514,7 @@ Public Class DYR00004
         Me.txt_S_ItmNo.Location = New System.Drawing.Point(201, 89)
         Me.txt_S_ItmNo.MaxLength = 5000
         Me.txt_S_ItmNo.Name = "txt_S_ItmNo"
-        Me.txt_S_ItmNo.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_ItmNo.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_ItmNo.TabIndex = 126
         '
         'txt_S_SCNo
@@ -596,7 +522,7 @@ Public Class DYR00004
         Me.txt_S_SCNo.Location = New System.Drawing.Point(201, 324)
         Me.txt_S_SCNo.MaxLength = 5000
         Me.txt_S_SCNo.Name = "txt_S_SCNo"
-        Me.txt_S_SCNo.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_SCNo.Size = New System.Drawing.Size(560, 22)
         Me.txt_S_SCNo.TabIndex = 124
         Me.txt_S_SCNo.Visible = False
         '
@@ -605,7 +531,7 @@ Public Class DYR00004
         Me.txt_S_PONo.Location = New System.Drawing.Point(201, 300)
         Me.txt_S_PONo.MaxLength = 5000
         Me.txt_S_PONo.Name = "txt_S_PONo"
-        Me.txt_S_PONo.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_PONo.Size = New System.Drawing.Size(560, 22)
         Me.txt_S_PONo.TabIndex = 121
         Me.txt_S_PONo.Visible = False
         '
@@ -614,7 +540,7 @@ Public Class DYR00004
         Me.txt_S_CustPONo.Location = New System.Drawing.Point(201, 276)
         Me.txt_S_CustPONo.MaxLength = 5000
         Me.txt_S_CustPONo.Name = "txt_S_CustPONo"
-        Me.txt_S_CustPONo.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_CustPONo.Size = New System.Drawing.Size(560, 22)
         Me.txt_S_CustPONo.TabIndex = 119
         Me.txt_S_CustPONo.Visible = False
         '
@@ -623,7 +549,7 @@ Public Class DYR00004
         Me.txt_S_SecCust.Location = New System.Drawing.Point(201, 252)
         Me.txt_S_SecCust.MaxLength = 5000
         Me.txt_S_SecCust.Name = "txt_S_SecCust"
-        Me.txt_S_SecCust.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_SecCust.Size = New System.Drawing.Size(560, 22)
         Me.txt_S_SecCust.TabIndex = 116
         Me.txt_S_SecCust.Visible = False
         '
@@ -632,7 +558,7 @@ Public Class DYR00004
         Me.txt_S_PriCustAll.Location = New System.Drawing.Point(201, 50)
         Me.txt_S_PriCustAll.MaxLength = 5000
         Me.txt_S_PriCustAll.Name = "txt_S_PriCustAll"
-        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_PriCustAll.TabIndex = 114
         '
         'txt_S_CoCde
@@ -641,7 +567,7 @@ Public Class DYR00004
         Me.txt_S_CoCde.Location = New System.Drawing.Point(201, 12)
         Me.txt_S_CoCde.MaxLength = 5000
         Me.txt_S_CoCde.Name = "txt_S_CoCde"
-        Me.txt_S_CoCde.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_CoCde.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_CoCde.TabIndex = 112
         '
         'lbl_S_SecCust
@@ -649,7 +575,7 @@ Public Class DYR00004
         Me.lbl_S_SecCust.AutoSize = True
         Me.lbl_S_SecCust.Location = New System.Drawing.Point(17, 260)
         Me.lbl_S_SecCust.Name = "lbl_S_SecCust"
-        Me.lbl_S_SecCust.Size = New System.Drawing.Size(73, 15)
+        Me.lbl_S_SecCust.Size = New System.Drawing.Size(69, 12)
         Me.lbl_S_SecCust.TabIndex = 106
         Me.lbl_S_SecCust.Text = "Sec Customer"
         Me.lbl_S_SecCust.Visible = False
@@ -659,7 +585,7 @@ Public Class DYR00004
         Me.lbl_S_PriCust.AutoSize = True
         Me.lbl_S_PriCust.Location = New System.Drawing.Point(17, 55)
         Me.lbl_S_PriCust.Name = "lbl_S_PriCust"
-        Me.lbl_S_PriCust.Size = New System.Drawing.Size(71, 15)
+        Me.lbl_S_PriCust.Size = New System.Drawing.Size(66, 12)
         Me.lbl_S_PriCust.TabIndex = 105
         Me.lbl_S_PriCust.Text = "Pri Customer"
         '
@@ -668,7 +594,7 @@ Public Class DYR00004
         Me.lbl_S_CoCde.AutoSize = True
         Me.lbl_S_CoCde.Location = New System.Drawing.Point(17, 17)
         Me.lbl_S_CoCde.Name = "lbl_S_CoCde"
-        Me.lbl_S_CoCde.Size = New System.Drawing.Size(83, 15)
+        Me.lbl_S_CoCde.Size = New System.Drawing.Size(79, 12)
         Me.lbl_S_CoCde.TabIndex = 104
         Me.lbl_S_CoCde.Text = "Company Code"
         '
@@ -677,7 +603,7 @@ Public Class DYR00004
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(161, 162)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(33, 15)
+        Me.Label2.Size = New System.Drawing.Size(30, 12)
         Me.Label2.TabIndex = 161
         Me.Label2.Text = "From"
         '
@@ -686,29 +612,21 @@ Public Class DYR00004
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(449, 162)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(21, 15)
+        Me.Label10.Size = New System.Drawing.Size(18, 12)
         Me.Label10.TabIndex = 160
         Me.Label10.Text = "To"
         '
         'Label15
         '
-        Me.Label15.Location = New System.Drawing.Point(577, 170)
+        Me.Label15.Location = New System.Drawing.Point(577, 163)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(100, 16)
         Me.Label15.TabIndex = 159
         Me.Label15.Text = "(MM/DD/YYYY)"
         '
-        'txt_S_CredatTo
-        '
-        Me.txt_S_CredatTo.Location = New System.Drawing.Point(481, 162)
-        Me.txt_S_CredatTo.Name = "txt_S_CredatTo"
-        Me.txt_S_CredatTo.OcxState = CType(resources.GetObject("txt_S_CredatTo.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt_S_CredatTo.Size = New System.Drawing.Size(88, 23)
-        Me.txt_S_CredatTo.TabIndex = 156
-        '
         'Label16
         '
-        Me.Label16.Location = New System.Drawing.Point(297, 170)
+        Me.Label16.Location = New System.Drawing.Point(297, 162)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(100, 16)
         Me.Label16.TabIndex = 158
@@ -716,25 +634,17 @@ Public Class DYR00004
         '
         'Label17
         '
-        Me.Label17.Location = New System.Drawing.Point(17, 162)
+        Me.Label17.Location = New System.Drawing.Point(17, 163)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(100, 23)
         Me.Label17.TabIndex = 157
         Me.Label17.Text = "Create Date"
         '
-        'txt_S_CredatFm
-        '
-        Me.txt_S_CredatFm.Location = New System.Drawing.Point(201, 162)
-        Me.txt_S_CredatFm.Name = "txt_S_CredatFm"
-        Me.txt_S_CredatFm.OcxState = CType(resources.GetObject("txt_S_CredatFm.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.txt_S_CredatFm.Size = New System.Drawing.Size(88, 23)
-        Me.txt_S_CredatFm.TabIndex = 155
-        '
         'cmdShow
         '
-        Me.cmdShow.Location = New System.Drawing.Point(337, 198)
+        Me.cmdShow.Location = New System.Drawing.Point(336, 189)
         Me.cmdShow.Name = "cmdShow"
-        Me.cmdShow.Size = New System.Drawing.Size(133, 33)
+        Me.cmdShow.Size = New System.Drawing.Size(140, 22)
         Me.cmdShow.TabIndex = 162
         Me.cmdShow.Text = "Show Report"
         Me.cmdShow.UseVisualStyleBackColor = True
@@ -752,7 +662,7 @@ Public Class DYR00004
         Me.Label18.AutoSize = True
         Me.Label18.Location = New System.Drawing.Point(17, 130)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(78, 15)
+        Me.Label18.Size = New System.Drawing.Size(75, 12)
         Me.Label18.TabIndex = 163
         Me.Label18.Text = "Design Vendor"
         '
@@ -761,13 +671,31 @@ Public Class DYR00004
         Me.txt_S_DV.Location = New System.Drawing.Point(201, 126)
         Me.txt_S_DV.MaxLength = 5000
         Me.txt_S_DV.Name = "txt_S_DV"
-        Me.txt_S_DV.Size = New System.Drawing.Size(560, 21)
+        Me.txt_S_DV.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_DV.TabIndex = 165
+        '
+        'txt_S_CredatFm
+        '
+        Me.txt_S_CredatFm.Location = New System.Drawing.Point(203, 159)
+        Me.txt_S_CredatFm.Mask = "00/00/0000"
+        Me.txt_S_CredatFm.Name = "txt_S_CredatFm"
+        Me.txt_S_CredatFm.Size = New System.Drawing.Size(88, 22)
+        Me.txt_S_CredatFm.TabIndex = 166
+        '
+        'txt_S_CredatTo
+        '
+        Me.txt_S_CredatTo.Location = New System.Drawing.Point(483, 159)
+        Me.txt_S_CredatTo.Mask = "00/00/0000"
+        Me.txt_S_CredatTo.Name = "txt_S_CredatTo"
+        Me.txt_S_CredatTo.Size = New System.Drawing.Size(88, 22)
+        Me.txt_S_CredatTo.TabIndex = 167
         '
         'DYR00004
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 14)
-        Me.ClientSize = New System.Drawing.Size(792, 249)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 15)
+        Me.ClientSize = New System.Drawing.Size(714, 245)
+        Me.Controls.Add(Me.txt_S_CredatTo)
+        Me.Controls.Add(Me.txt_S_CredatFm)
         Me.Controls.Add(Me.cmd_S_DV)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.txt_S_DV)
@@ -775,31 +703,23 @@ Public Class DYR00004
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.txt_S_CredatTo)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.txt_S_CredatFm)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.txt_S_CustPODateTo)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.lbl_S_CustPODate)
-        Me.Controls.Add(Me.txt_S_CustPODateFm)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.txt_S_ShipDateTo)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.lbl_S_ShipDate)
-        Me.Controls.Add(Me.txt_S_ShipDateFm)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txt_S_SCIssDateTo)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lbl_S_SCIssDate)
-        Me.Controls.Add(Me.txt_S_SCIssDateFm)
         Me.Controls.Add(Me.cmd_S_SalTem)
         Me.Controls.Add(Me.lbl_S_SalTem)
         Me.Controls.Add(Me.txt_S_SalTem)
@@ -831,17 +751,11 @@ Public Class DYR00004
         Me.Controls.Add(Me.lbl_S_PriCust)
         Me.Controls.Add(Me.lbl_S_CoCde)
         Me.Controls.Add(Me.StatusBar1)
-        Me.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "DYR00004"
-        Me.Text = "DYR00004 - Dynamic Report vw_ItemMaster_Hist"
-        CType(Me.txt_S_CustPODateTo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_S_CustPODateFm, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_S_ShipDateTo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_S_ShipDateFm, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_S_SCIssDateTo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_S_SCIssDateFm, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_S_CredatTo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_S_CredatFm, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Text = "DYR00004 - Dynamic Report vw_ItemMaster_Hist (DYR04)"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1073,33 +987,33 @@ Public Class DYR00004
         End If
 
 
-        If Me.txt_S_CredatFm.CtlText <> "__/__/____" Then
-            If Not IsDate(Me.txt_S_CredatFm.CtlText) Then
+        If Me.txt_S_CredatFm.Text <> "__/__/____" Then
+            If Not IsDate(Me.txt_S_CredatFm.Text) Then
                 MsgBox("Invalid Date Format: Create Date From")
                 Me.txt_S_CredatFm.Focus()
                 Exit Sub
             End If
         End If
 
-        If Me.txt_S_CredatTo.CtlText <> "__/__/____" Then
-            If Not IsDate(Me.txt_S_CredatTo.CtlText) Then
+        If Me.txt_S_CredatTo.Text <> "__/__/____" Then
+            If Not IsDate(Me.txt_S_CredatTo.Text) Then
                 MsgBox("Invalid Date Format: Create Date To")
                 Me.txt_S_CredatTo.Focus()
                 Exit Sub
             End If
         End If
 
-        If Mid(Me.txt_S_CredatFm.CtlText, 7) > Mid(Me.txt_S_CredatTo.CtlText, 7) Then
+        If Mid(Me.txt_S_CredatFm.Text, 7) > Mid(Me.txt_S_CredatTo.Text, 7) Then
             MsgBox("Create Date: End Date < Start Date (YY)")
             Me.txt_S_CredatFm.Focus()
             Exit Sub
-        ElseIf Mid(Me.txt_S_CredatFm.CtlText, 7) = Mid(Me.txt_S_CredatTo.CtlText, 7) Then
-            If Me.txt_S_CredatFm.CtlText.Substring(0, 2) > Me.txt_S_CredatTo.CtlText.Substring(0, 2) Then
+        ElseIf Mid(Me.txt_S_CredatFm.Text, 7) = Mid(Me.txt_S_CredatTo.Text, 7) Then
+            If Me.txt_S_CredatFm.Text.Substring(0, 2) > Me.txt_S_CredatTo.Text.Substring(0, 2) Then
                 MsgBox("Create Date: End Date < Start Date (MM)")
                 Me.txt_S_CredatFm.Focus()
                 Exit Sub
-            ElseIf Me.txt_S_CredatFm.CtlText.Substring(0, 2) = Me.txt_S_CredatTo.CtlText.Substring(0, 2) Then
-                If Me.txt_S_CredatFm.CtlText.Substring(3, 2) > Me.txt_S_CredatTo.CtlText.Substring(3, 2) Then
+            ElseIf Me.txt_S_CredatFm.Text.Substring(0, 2) = Me.txt_S_CredatTo.Text.Substring(0, 2) Then
+                If Me.txt_S_CredatFm.Text.Substring(3, 2) > Me.txt_S_CredatTo.Text.Substring(3, 2) Then
                     MsgBox("Create Date: End Date < Start Date (DD)")
                     Me.txt_S_CredatFm.Focus()
                     Exit Sub
@@ -1107,16 +1021,16 @@ Public Class DYR00004
             End If
         End If
 
-        If Me.txt_S_CredatFm.CtlText = "__/__/____" Then
+        If Me.txt_S_CredatFm.Text = "__/__/____" Then
             CREDATFM = "01/01/1900"
         Else
-            CREDATFM = Me.txt_S_CredatFm.CtlText
+            CREDATFM = Me.txt_S_CredatFm.Text
         End If
 
-        If Me.txt_S_CredatTo.CtlText = "__/__/____" Then
+        If Me.txt_S_CredatTo.Text = "__/__/____" Then
             CREDATTO = "01/01/1900"
         Else
-            CREDATTO = Me.txt_S_CredatTo.CtlText
+            CREDATTO = Me.txt_S_CredatTo.Text
         End If
         'CREDATFM = ""
         'CREDATTO = ""

@@ -661,24 +661,24 @@ Public Class ERP00000new
         '
         Me.FileToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiReLegin, Me.ToolStripMenuItem22, Me.ExitToolStripMenuItem1})
         Me.FileToolStripMenuItem1.Name = "FileToolStripMenuItem1"
-        Me.FileToolStripMenuItem1.Size = New System.Drawing.Size(38, 19)
+        Me.FileToolStripMenuItem1.Size = New System.Drawing.Size(34, 16)
         Me.FileToolStripMenuItem1.Text = "&File"
         '
         'smiReLegin
         '
         Me.smiReLegin.Name = "smiReLegin"
-        Me.smiReLegin.Size = New System.Drawing.Size(126, 22)
+        Me.smiReLegin.Size = New System.Drawing.Size(115, 22)
         Me.smiReLegin.Text = "Re-Login"
         '
         'ToolStripMenuItem22
         '
         Me.ToolStripMenuItem22.Name = "ToolStripMenuItem22"
-        Me.ToolStripMenuItem22.Size = New System.Drawing.Size(123, 6)
+        Me.ToolStripMenuItem22.Size = New System.Drawing.Size(112, 6)
         '
         'ExitToolStripMenuItem1
         '
         Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
-        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(126, 22)
+        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(115, 22)
         Me.ExitToolStripMenuItem1.Text = "Exit"
         '
         'ToolStripTextBox2
@@ -692,173 +692,173 @@ Public Class ERP00000new
         '
         Me.smiSYS.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiSYS01, Me.smiSYS02, Me.smiSYS03, Me.smiSYS04, Me.ToolStripSeparator51, Me.smiSYM01, Me.smiSYM02, Me.smiSYM03, Me.smiSYM04, Me.smiSYM05, Me.smiSYM06, Me.smiSYM07, Me.smiSYM08, Me.smiSYM09, Me.smiSYM10, Me.smiSYM11, Me.smiSYM12, Me.smiSYM13, Me.smiSYM14, Me.smiSYM15, Me.smiSYM16, Me.smiSYM17, Me.smiSYM23, Me.smiSYM26, Me.smiSYM28, Me.smiSYM29, Me.ToolStripSeparator52, Me.smiSYM33})
         Me.smiSYS.Name = "smiSYS"
-        Me.smiSYS.Size = New System.Drawing.Size(59, 19)
+        Me.smiSYS.Size = New System.Drawing.Size(50, 16)
         Me.smiSYS.Text = "System"
         '
         'smiSYS01
         '
         Me.smiSYS01.Name = "smiSYS01"
-        Me.smiSYS01.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYS01.Size = New System.Drawing.Size(270, 22)
         Me.smiSYS01.Text = "SYS01 - User Group"
         '
         'smiSYS02
         '
         Me.smiSYS02.Name = "smiSYS02"
-        Me.smiSYS02.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYS02.Size = New System.Drawing.Size(270, 22)
         Me.smiSYS02.Text = "SYS02 - User Profile"
         '
         'smiSYS03
         '
         Me.smiSYS03.Name = "smiSYS03"
-        Me.smiSYS03.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYS03.Size = New System.Drawing.Size(270, 22)
         Me.smiSYS03.Text = "SYS03 - User Function"
         '
         'smiSYS04
         '
         Me.smiSYS04.Name = "smiSYS04"
-        Me.smiSYS04.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYS04.Size = New System.Drawing.Size(270, 22)
         Me.smiSYS04.Text = "SYS04 - User Authorization"
         '
         'ToolStripSeparator51
         '
         Me.ToolStripSeparator51.Name = "ToolStripSeparator51"
-        Me.ToolStripSeparator51.Size = New System.Drawing.Size(307, 6)
+        Me.ToolStripSeparator51.Size = New System.Drawing.Size(267, 6)
         '
         'smiSYM01
         '
         Me.smiSYM01.Name = "smiSYM01"
-        Me.smiSYM01.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM01.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM01.Text = "SYM01 - Company"
         '
         'smiSYM02
         '
         Me.smiSYM02.Name = "smiSYM02"
-        Me.smiSYM02.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM02.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM02.Text = "SYM02 - System Document Control"
         '
         'smiSYM03
         '
         Me.smiSYM03.Name = "smiSYM03"
-        Me.smiSYM03.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM03.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM03.Text = "SYM03 - Color"
         '
         'smiSYM04
         '
         Me.smiSYM04.Name = "smiSYM04"
-        Me.smiSYM04.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM04.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM04.Text = "SYM04 - Product Line"
         '
         'smiSYM05
         '
         Me.smiSYM05.Name = "smiSYM05"
-        Me.smiSYM05.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM05.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM05.Text = "SYM05 - Category"
         '
         'smiSYM06
         '
         Me.smiSYM06.Name = "smiSYM06"
-        Me.smiSYM06.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM06.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM06.Text = "SYM06 - Category Relation"
         '
         'smiSYM07
         '
         Me.smiSYM07.Name = "smiSYM07"
-        Me.smiSYM07.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM07.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM07.Text = "SYM07 - Harmonized Code"
         '
         'smiSYM08
         '
         Me.smiSYM08.Name = "smiSYM08"
-        Me.smiSYM08.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM08.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM08.Text = "SYM08 - Setup"
         '
         'smiSYM09
         '
         Me.smiSYM09.Name = "smiSYM09"
-        Me.smiSYM09.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM09.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM09.Text = "SYM09 - Conversion Factor"
         '
         'smiSYM10
         '
         Me.smiSYM10.Name = "smiSYM10"
-        Me.smiSYM10.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM10.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM10.Text = "SYM10 - Sales Representative"
         '
         'smiSYM11
         '
         Me.smiSYM11.Name = "smiSYM11"
-        Me.smiSYM11.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM11.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM11.Text = "SYM11 - MOQ / MOA and Commission"
         '
         'smiSYM12
         '
         Me.smiSYM12.Name = "smiSYM12"
-        Me.smiSYM12.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM12.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM12.Text = "SYM12 - Agent"
         '
         'smiSYM13
         '
         Me.smiSYM13.Name = "smiSYM13"
-        Me.smiSYM13.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM13.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM13.Text = "SYM13 - Discount/Premium"
         '
         'smiSYM14
         '
         Me.smiSYM14.Name = "smiSYM14"
-        Me.smiSYM14.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM14.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM14.Text = "SYM14 - Sample Terms"
         '
         'smiSYM15
         '
         Me.smiSYM15.Name = "smiSYM15"
-        Me.smiSYM15.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM15.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM15.Text = "SYM15 - External Vendor Price Formula"
         '
         'smiSYM16
         '
         Me.smiSYM16.Name = "smiSYM16"
-        Me.smiSYM16.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM16.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM16.Text = "SYM16 - Internal Vendor Price Formula"
         '
         'smiSYM17
         '
         Me.smiSYM17.Name = "smiSYM17"
-        Me.smiSYM17.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM17.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM17.Text = "SYM17 - Formula Maintenance"
         '
         'smiSYM23
         '
         Me.smiSYM23.Name = "smiSYM23"
-        Me.smiSYM23.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM23.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM23.Text = "SYM23 - ABCD Cost Setup"
         '
         'smiSYM26
         '
         Me.smiSYM26.Name = "smiSYM26"
-        Me.smiSYM26.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM26.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM26.Text = "SYM26 - Currency Maintenance"
         '
         'smiSYM28
         '
         Me.smiSYM28.Name = "smiSYM28"
-        Me.smiSYM28.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM28.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM28.Text = "SYM28 - Sales Team Maintenance"
         '
         'smiSYM29
         '
         Me.smiSYM29.Name = "smiSYM29"
-        Me.smiSYM29.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM29.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM29.Text = "SYM29 - SAP Unit of Measure Mapping "
         '
         'ToolStripSeparator52
         '
         Me.ToolStripSeparator52.Name = "ToolStripSeparator52"
-        Me.ToolStripSeparator52.Size = New System.Drawing.Size(307, 6)
+        Me.ToolStripSeparator52.Size = New System.Drawing.Size(267, 6)
         '
         'smiSYM33
         '
         Me.smiSYM33.Name = "smiSYM33"
-        Me.smiSYM33.Size = New System.Drawing.Size(310, 22)
+        Me.smiSYM33.Size = New System.Drawing.Size(270, 22)
         Me.smiSYM33.Text = "SYM33 - Shipping Charges Formula Setup"
         '
         'smiIMM
@@ -866,1433 +866,1433 @@ Public Class ERP00000new
         Me.smiIMM.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiIMM01, Me.ToolStripSeparator53, Me.smiIMM04, Me.smiIMX07, Me.smiIMR35, Me.ToolStripSeparator54, Me.smiIMX01, Me.smiIMM02, Me.smiIMM13, Me.smiIMR04, Me.smiIMR05, Me.smiIMR34, Me.ToolStripSeparator55, Me.smiIMX05, Me.smiIMM12, Me.smiIMR18, Me.smiIMM15, Me.ToolStripSeparator56, Me.smiIMG01, Me.smiIMG02})
         Me.smiIMM.Name = "smiIMM"
         Me.smiIMM.Overflow = System.Windows.Forms.ToolStripItemOverflow.AsNeeded
-        Me.smiIMM.Size = New System.Drawing.Size(44, 19)
+        Me.smiIMM.Size = New System.Drawing.Size(38, 16)
         Me.smiIMM.Text = "Item"
         '
         'smiIMM01
         '
         Me.smiIMM01.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.smiIMM01.Name = "smiIMM01"
-        Me.smiIMM01.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMM01.Size = New System.Drawing.Size(440, 22)
         Me.smiIMM01.Text = "IMM01 - Item Master Maintenance"
         '
         'ToolStripSeparator53
         '
         Me.ToolStripSeparator53.Name = "ToolStripSeparator53"
-        Me.ToolStripSeparator53.Size = New System.Drawing.Size(502, 6)
+        Me.ToolStripSeparator53.Size = New System.Drawing.Size(437, 6)
         '
         'smiIMM04
         '
         Me.smiIMM04.Name = "smiIMM04"
-        Me.smiIMM04.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMM04.Size = New System.Drawing.Size(440, 22)
         Me.smiIMM04.Text = "IMM04 - Hold / Release Item Status"
         '
         'smiIMX07
         '
         Me.smiIMX07.Name = "smiIMX07"
-        Me.smiIMX07.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMX07.Size = New System.Drawing.Size(440, 22)
         Me.smiIMX07.Text = "IMX07 - Temp Item and Real Item Matching Excel File Upload"
         '
         'smiIMR35
         '
         Me.smiIMR35.Name = "smiIMR35"
-        Me.smiIMR35.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMR35.Size = New System.Drawing.Size(440, 22)
         Me.smiIMR35.Text = "IMR35  - Item Master Price Change Report"
         '
         'ToolStripSeparator54
         '
         Me.ToolStripSeparator54.Name = "ToolStripSeparator54"
-        Me.ToolStripSeparator54.Size = New System.Drawing.Size(502, 6)
+        Me.ToolStripSeparator54.Size = New System.Drawing.Size(437, 6)
         '
         'smiIMX01
         '
         Me.smiIMX01.Name = "smiIMX01"
-        Me.smiIMX01.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMX01.Size = New System.Drawing.Size(440, 22)
         Me.smiIMX01.Text = "IMX01 - Item Excel File Upload (Interal && Joint Venture Item)"
         '
         'smiIMM02
         '
         Me.smiIMM02.Name = "smiIMM02"
-        Me.smiIMM02.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMM02.Size = New System.Drawing.Size(440, 22)
         Me.smiIMM02.Text = "IMM02 - Item Master Approval && Rejection (Internal && Joint Venture Item)"
         '
         'smiIMM13
         '
         Me.smiIMM13.Name = "smiIMM13"
-        Me.smiIMM13.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMM13.Size = New System.Drawing.Size(440, 22)
         Me.smiIMM13.Text = "IMM13 - Item Master Invalid Item Reactivation (Internal && Joint Venture Item)"
         '
         'smiIMR04
         '
         Me.smiIMR04.Name = "smiIMR04"
-        Me.smiIMR04.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMR04.Size = New System.Drawing.Size(440, 22)
         Me.smiIMR04.Text = "IMR04 - Item Validation Report (Internal && Joint Venture Item)"
         '
         'smiIMR05
         '
         Me.smiIMR05.Name = "smiIMR05"
-        Me.smiIMR05.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMR05.Size = New System.Drawing.Size(440, 22)
         Me.smiIMR05.Text = "IMR05 - Excel File Search Report (Internal && Joint Venture Item)"
         '
         'smiIMR34
         '
         Me.smiIMR34.Name = "smiIMR34"
-        Me.smiIMR34.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMR34.Size = New System.Drawing.Size(440, 22)
         Me.smiIMR34.Text = "IMR34 - Item Master Report Export (Internal && Joint Venture Item)"
         '
         'ToolStripSeparator55
         '
         Me.ToolStripSeparator55.Name = "ToolStripSeparator55"
-        Me.ToolStripSeparator55.Size = New System.Drawing.Size(502, 6)
+        Me.ToolStripSeparator55.Size = New System.Drawing.Size(437, 6)
         '
         'smiIMX05
         '
         Me.smiIMX05.Name = "smiIMX05"
-        Me.smiIMX05.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMX05.Size = New System.Drawing.Size(440, 22)
         Me.smiIMX05.Text = "IMX05 - Item Excel File Upload (External Item)"
         '
         'smiIMM12
         '
         Me.smiIMM12.Name = "smiIMM12"
-        Me.smiIMM12.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMM12.Size = New System.Drawing.Size(440, 22)
         Me.smiIMM12.Text = "IMM12 - Item Master Approval && Rejection (External Item)"
         '
         'smiIMR18
         '
         Me.smiIMR18.Name = "smiIMR18"
-        Me.smiIMR18.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMR18.Size = New System.Drawing.Size(440, 22)
         Me.smiIMR18.Text = "IMR18 - Item Validation Report (External Item)"
         '
         'smiIMM15
         '
         Me.smiIMM15.Name = "smiIMM15"
-        Me.smiIMM15.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMM15.Size = New System.Drawing.Size(440, 22)
         Me.smiIMM15.Text = "IMM15 - Item Master Data Export (External Item)"
         '
         'ToolStripSeparator56
         '
         Me.ToolStripSeparator56.Name = "ToolStripSeparator56"
-        Me.ToolStripSeparator56.Size = New System.Drawing.Size(502, 6)
+        Me.ToolStripSeparator56.Size = New System.Drawing.Size(437, 6)
         '
         'smiIMG01
         '
         Me.smiIMG01.Name = "smiIMG01"
-        Me.smiIMG01.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMG01.Size = New System.Drawing.Size(440, 22)
         Me.smiIMG01.Text = "IMG01 - Item Master Image Upload"
         '
         'smiIMG02
         '
         Me.smiIMG02.Name = "smiIMG02"
-        Me.smiIMG02.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMG02.Size = New System.Drawing.Size(440, 22)
         Me.smiIMG02.Text = "IMG02 - Item Master Image Upload (External Item)"
         '
         'smiCUS
         '
         Me.smiCUS.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiCUM01, Me.smiCUM02, Me.smiCUM03})
         Me.smiCUS.Name = "smiCUS"
-        Me.smiCUS.Size = New System.Drawing.Size(73, 19)
+        Me.smiCUS.Size = New System.Drawing.Size(62, 16)
         Me.smiCUS.Text = "Customer"
         '
         'smiCUM01
         '
         Me.smiCUM01.Name = "smiCUM01"
-        Me.smiCUM01.Size = New System.Drawing.Size(301, 22)
+        Me.smiCUM01.Size = New System.Drawing.Size(259, 22)
         Me.smiCUM01.Text = "CUM01 - Customer Master Maintenance"
         '
         'smiCUM02
         '
         Me.smiCUM02.Name = "smiCUM02"
-        Me.smiCUM02.Size = New System.Drawing.Size(301, 22)
+        Me.smiCUM02.Size = New System.Drawing.Size(259, 22)
         Me.smiCUM02.Text = "CUM02 - Customer Item History (Old)"
         '
         'smiCUM03
         '
         Me.smiCUM03.Name = "smiCUM03"
-        Me.smiCUM03.Size = New System.Drawing.Size(301, 22)
+        Me.smiCUM03.Size = New System.Drawing.Size(259, 22)
         Me.smiCUM03.Text = "CUM03 - Customer Item History (New)"
         '
         'smiVN
         '
         Me.smiVN.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiVNM01, Me.ToolStripSeparator57, Me.ToolStripMenuItem338, Me.ToolStripMenuItem339, Me.ToolStripSeparator58, Me.ToolStripMenuItem340})
         Me.smiVN.Name = "smiVN"
-        Me.smiVN.Size = New System.Drawing.Size(61, 19)
+        Me.smiVN.Size = New System.Drawing.Size(52, 16)
         Me.smiVN.Text = "Vendor"
         '
         'smiVNM01
         '
         Me.smiVNM01.Name = "smiVNM01"
-        Me.smiVNM01.Size = New System.Drawing.Size(310, 22)
+        Me.smiVNM01.Size = New System.Drawing.Size(276, 22)
         Me.smiVNM01.Text = "VNM01 - Vendor Master Maintenance"
         '
         'ToolStripSeparator57
         '
         Me.ToolStripSeparator57.Name = "ToolStripSeparator57"
-        Me.ToolStripSeparator57.Size = New System.Drawing.Size(307, 6)
+        Me.ToolStripSeparator57.Size = New System.Drawing.Size(273, 6)
         '
         'ToolStripMenuItem338
         '
         Me.ToolStripMenuItem338.Name = "ToolStripMenuItem338"
-        Me.ToolStripMenuItem338.Size = New System.Drawing.Size(310, 22)
+        Me.ToolStripMenuItem338.Size = New System.Drawing.Size(276, 22)
         Me.ToolStripMenuItem338.Text = "SYM34 - Trading Term Maintenance "
         '
         'ToolStripMenuItem339
         '
         Me.ToolStripMenuItem339.Name = "ToolStripMenuItem339"
-        Me.ToolStripMenuItem339.Size = New System.Drawing.Size(310, 22)
+        Me.ToolStripMenuItem339.Size = New System.Drawing.Size(276, 22)
         Me.ToolStripMenuItem339.Text = "SYM35 - Vendor Trading Term Setup"
         '
         'ToolStripSeparator58
         '
         Me.ToolStripSeparator58.Name = "ToolStripSeparator58"
-        Me.ToolStripSeparator58.Size = New System.Drawing.Size(307, 6)
+        Me.ToolStripSeparator58.Size = New System.Drawing.Size(273, 6)
         '
         'ToolStripMenuItem340
         '
         Me.ToolStripMenuItem340.Name = "ToolStripMenuItem340"
-        Me.ToolStripMenuItem340.Size = New System.Drawing.Size(310, 22)
+        Me.ToolStripMenuItem340.Size = New System.Drawing.Size(276, 22)
         Me.ToolStripMenuItem340.Text = "SYR01 - Vendor Trading Terms List Report"
         '
         'smiQU
         '
         Me.smiQU.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiQUM01, Me.smiQUA01, Me.smiQUM04, Me.ToolStripSeparator59, Me.smiQUR01, Me.ToolStripSeparator60, Me.smiQUX01, Me.smiQUR03, Me.ToolStripSeparator61, Me.ToolStripMenuItem348, Me.ToolStripMenuItem349, Me.smiRIR01})
         Me.smiQU.Name = "smiQU"
-        Me.smiQU.Size = New System.Drawing.Size(77, 19)
+        Me.smiQU.Size = New System.Drawing.Size(63, 16)
         Me.smiQU.Text = "Quotation"
         '
         'smiQUM01
         '
         Me.smiQUM01.Name = "smiQUM01"
-        Me.smiQUM01.Size = New System.Drawing.Size(422, 22)
+        Me.smiQUM01.Size = New System.Drawing.Size(368, 22)
         Me.smiQUM01.Text = "QUM01 - Quotation Maintenance"
         '
         'smiQUA01
         '
         Me.smiQUA01.Name = "smiQUA01"
-        Me.smiQUA01.Size = New System.Drawing.Size(422, 22)
+        Me.smiQUA01.Size = New System.Drawing.Size(368, 22)
         Me.smiQUA01.Text = "QUA01 - Quotation Apps Approval / Reject"
         '
         'smiQUM04
         '
         Me.smiQUM04.Name = "smiQUM04"
-        Me.smiQUM04.Size = New System.Drawing.Size(422, 22)
+        Me.smiQUM04.Size = New System.Drawing.Size(368, 22)
         Me.smiQUM04.Text = "QUM04 - PDA Quotation Approve / Reject"
         '
         'ToolStripSeparator59
         '
         Me.ToolStripSeparator59.Name = "ToolStripSeparator59"
-        Me.ToolStripSeparator59.Size = New System.Drawing.Size(419, 6)
+        Me.ToolStripSeparator59.Size = New System.Drawing.Size(365, 6)
         '
         'smiQUR01
         '
         Me.smiQUR01.Name = "smiQUR01"
-        Me.smiQUR01.Size = New System.Drawing.Size(422, 22)
+        Me.smiQUR01.Size = New System.Drawing.Size(368, 22)
         Me.smiQUR01.Text = "QUR01 - Print Quotation"
         '
         'ToolStripSeparator60
         '
         Me.ToolStripSeparator60.Name = "ToolStripSeparator60"
-        Me.ToolStripSeparator60.Size = New System.Drawing.Size(419, 6)
+        Me.ToolStripSeparator60.Size = New System.Drawing.Size(365, 6)
         '
         'smiQUX01
         '
         Me.smiQUX01.Name = "smiQUX01"
-        Me.smiQUX01.Size = New System.Drawing.Size(422, 22)
+        Me.smiQUX01.Size = New System.Drawing.Size(368, 22)
         Me.smiQUX01.Text = "QUX01 - Upload Quotation Excel to ERP"
         '
         'smiQUR03
         '
         Me.smiQUR03.Name = "smiQUR03"
-        Me.smiQUR03.Size = New System.Drawing.Size(422, 22)
+        Me.smiQUR03.Size = New System.Drawing.Size(368, 22)
         Me.smiQUR03.Text = "QUR03 - Export Quotation to Excel"
         '
         'ToolStripSeparator61
         '
         Me.ToolStripSeparator61.Name = "ToolStripSeparator61"
-        Me.ToolStripSeparator61.Size = New System.Drawing.Size(419, 6)
+        Me.ToolStripSeparator61.Size = New System.Drawing.Size(365, 6)
         '
         'ToolStripMenuItem348
         '
         Me.ToolStripMenuItem348.Name = "ToolStripMenuItem348"
-        Me.ToolStripMenuItem348.Size = New System.Drawing.Size(422, 22)
+        Me.ToolStripMenuItem348.Size = New System.Drawing.Size(368, 22)
         Me.ToolStripMenuItem348.Text = "IMXLSx004 - Customer Style Number"
         '
         'ToolStripMenuItem349
         '
         Me.ToolStripMenuItem349.Name = "ToolStripMenuItem349"
-        Me.ToolStripMenuItem349.Size = New System.Drawing.Size(422, 22)
+        Me.ToolStripMenuItem349.Size = New System.Drawing.Size(368, 22)
         Me.ToolStripMenuItem349.Text = "IMRx00010 - Item Validation Report (Customer Style Number)"
         '
         'smiRIR01
         '
         Me.smiRIR01.Name = "smiRIR01"
-        Me.smiRIR01.Size = New System.Drawing.Size(422, 22)
+        Me.smiRIR01.Size = New System.Drawing.Size(368, 22)
         Me.smiRIR01.Text = "RIR01 - ReQuote Item List"
         '
         'smiSAM
         '
         Me.smiSAM.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiSAM04, Me.smiSAM01, Me.smiSAM02, Me.smiSAM03, Me.smiSAM05, Me.ToolStripSeparator62, Me.smiSAR05, Me.smiSAR06, Me.smiSAR07})
         Me.smiSAM.Name = "smiSAM"
-        Me.smiSAM.Size = New System.Drawing.Size(62, 19)
+        Me.smiSAM.Size = New System.Drawing.Size(51, 16)
         Me.smiSAM.Text = "Sample"
         '
         'smiSAM04
         '
         Me.smiSAM04.Name = "smiSAM04"
-        Me.smiSAM04.Size = New System.Drawing.Size(295, 22)
+        Me.smiSAM04.Size = New System.Drawing.Size(252, 22)
         Me.smiSAM04.Text = "SAM04 - Sample Request Generation"
         '
         'smiSAM01
         '
         Me.smiSAM01.Name = "smiSAM01"
-        Me.smiSAM01.Size = New System.Drawing.Size(295, 22)
+        Me.smiSAM01.Size = New System.Drawing.Size(252, 22)
         Me.smiSAM01.Text = "SAM01 - Sample Request Maintenance"
         '
         'smiSAM02
         '
         Me.smiSAM02.Name = "smiSAM02"
-        Me.smiSAM02.Size = New System.Drawing.Size(295, 22)
+        Me.smiSAM02.Size = New System.Drawing.Size(252, 22)
         Me.smiSAM02.Text = "SAM02 - Sample Order Summary"
         '
         'smiSAM03
         '
         Me.smiSAM03.Name = "smiSAM03"
-        Me.smiSAM03.Size = New System.Drawing.Size(295, 22)
+        Me.smiSAM03.Size = New System.Drawing.Size(252, 22)
         Me.smiSAM03.Text = "SAM03 - Sample Invoice Information"
         '
         'smiSAM05
         '
         Me.smiSAM05.Name = "smiSAM05"
-        Me.smiSAM05.Size = New System.Drawing.Size(295, 22)
+        Me.smiSAM05.Size = New System.Drawing.Size(252, 22)
         Me.smiSAM05.Text = "SAM05 - Sample Invoice Generation"
         '
         'ToolStripSeparator62
         '
         Me.ToolStripSeparator62.Name = "ToolStripSeparator62"
-        Me.ToolStripSeparator62.Size = New System.Drawing.Size(292, 6)
+        Me.ToolStripSeparator62.Size = New System.Drawing.Size(249, 6)
         '
         'smiSAR05
         '
         Me.smiSAR05.Name = "smiSAR05"
-        Me.smiSAR05.Size = New System.Drawing.Size(295, 22)
+        Me.smiSAR05.Size = New System.Drawing.Size(252, 22)
         Me.smiSAR05.Text = "SAR05 - Sample Invoice Report"
         '
         'smiSAR06
         '
         Me.smiSAR06.Name = "smiSAR06"
-        Me.smiSAR06.Size = New System.Drawing.Size(295, 22)
+        Me.smiSAR06.Size = New System.Drawing.Size(252, 22)
         Me.smiSAR06.Text = "SAR06 - Sample Request Report "
         '
         'smiSAR07
         '
         Me.smiSAR07.Name = "smiSAR07"
-        Me.smiSAR07.Size = New System.Drawing.Size(295, 22)
+        Me.smiSAR07.Size = New System.Drawing.Size(252, 22)
         Me.smiSAR07.Text = "SAR07 - Packing List Report"
         '
         'smiTO
         '
         Me.smiTO.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiTOM02, Me.smiTOM01, Me.smiTOM03, Me.smiTOM04, Me.smiTOM05})
         Me.smiTO.Name = "smiTO"
-        Me.smiTO.Size = New System.Drawing.Size(71, 19)
+        Me.smiTO.Size = New System.Drawing.Size(60, 16)
         Me.smiTO.Text = "Tentative"
         '
         'smiTOM02
         '
         Me.smiTOM02.Name = "smiTOM02"
-        Me.smiTOM02.Size = New System.Drawing.Size(331, 22)
+        Me.smiTOM02.Size = New System.Drawing.Size(282, 22)
         Me.smiTOM02.Text = "TOM02 - Tentative Order Generation"
         '
         'smiTOM01
         '
         Me.smiTOM01.Name = "smiTOM01"
-        Me.smiTOM01.Size = New System.Drawing.Size(331, 22)
+        Me.smiTOM01.Size = New System.Drawing.Size(282, 22)
         Me.smiTOM01.Text = "TOM01 - Tentative Order Maintenance"
         '
         'smiTOM03
         '
         Me.smiTOM03.Name = "smiTOM03"
-        Me.smiTOM03.Size = New System.Drawing.Size(331, 22)
+        Me.smiTOM03.Size = New System.Drawing.Size(282, 22)
         Me.smiTOM03.Text = "TOM03 - Tenetaive Order Release/UnRelease"
         '
         'smiTOM04
         '
         Me.smiTOM04.Name = "smiTOM04"
-        Me.smiTOM04.Size = New System.Drawing.Size(331, 22)
+        Me.smiTOM04.Size = New System.Drawing.Size(282, 22)
         Me.smiTOM04.Text = "TOM04 - Tentative Order History"
         '
         'smiTOM05
         '
         Me.smiTOM05.Name = "smiTOM05"
-        Me.smiTOM05.Size = New System.Drawing.Size(331, 22)
+        Me.smiTOM05.Size = New System.Drawing.Size(282, 22)
         Me.smiTOM05.Text = "TOM05 - Export Tentative to Excel"
         '
         'smiSCM
         '
         Me.smiSCM.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiSCM01, Me.smiSCM04, Me.smiSCM07, Me.smiSCM03, Me.smiSCM06, Me.ToolStripSeparator63, Me.smiSCR01, Me.smiSCR03, Me.smiIMR09, Me.smiIMR24, Me.smiIMR25, Me.smiIMR26, Me.smiIMR29, Me.smiIMR30, Me.smiIMR31, Me.smiIMR36, Me.smiIMR32})
         Me.smiSCM.Name = "smiSCM"
-        Me.smiSCM.Size = New System.Drawing.Size(48, 19)
+        Me.smiSCM.Size = New System.Drawing.Size(40, 16)
         Me.smiSCM.Text = "Sales"
         '
         'smiSCM01
         '
         Me.smiSCM01.Name = "smiSCM01"
-        Me.smiSCM01.Size = New System.Drawing.Size(371, 22)
+        Me.smiSCM01.Size = New System.Drawing.Size(329, 22)
         Me.smiSCM01.Text = "SCM01 - Sales Confirmation Maintenance"
         '
         'smiSCM04
         '
         Me.smiSCM04.Name = "smiSCM04"
-        Me.smiSCM04.Size = New System.Drawing.Size(371, 22)
+        Me.smiSCM04.Size = New System.Drawing.Size(329, 22)
         Me.smiSCM04.Text = "SCM04 - Transport Shipmark Maintenance"
         '
         'smiSCM07
         '
         Me.smiSCM07.Name = "smiSCM07"
-        Me.smiSCM07.Size = New System.Drawing.Size(371, 22)
+        Me.smiSCM07.Size = New System.Drawing.Size(329, 22)
         Me.smiSCM07.Text = "SCM07 - Release/Unrelease Sales Confirmation"
         '
         'smiSCM03
         '
         Me.smiSCM03.Name = "smiSCM03"
-        Me.smiSCM03.Size = New System.Drawing.Size(371, 22)
+        Me.smiSCM03.Size = New System.Drawing.Size(329, 22)
         Me.smiSCM03.Text = "SCM03 - SC Factory Data Approval && Rejecction"
         '
         'smiSCM06
         '
         Me.smiSCM06.Name = "smiSCM06"
-        Me.smiSCM06.Size = New System.Drawing.Size(371, 22)
+        Me.smiSCM06.Size = New System.Drawing.Size(329, 22)
         Me.smiSCM06.Text = "SCM06 - SC Approval && Rejection"
         '
         'ToolStripSeparator63
         '
         Me.ToolStripSeparator63.Name = "ToolStripSeparator63"
-        Me.ToolStripSeparator63.Size = New System.Drawing.Size(368, 6)
+        Me.ToolStripSeparator63.Size = New System.Drawing.Size(326, 6)
         '
         'smiSCR01
         '
         Me.smiSCR01.Name = "smiSCR01"
-        Me.smiSCR01.Size = New System.Drawing.Size(371, 22)
+        Me.smiSCR01.Size = New System.Drawing.Size(329, 22)
         Me.smiSCR01.Text = "SCR01 - Print Sales Confirmation Report"
         '
         'smiSCR03
         '
         Me.smiSCR03.Name = "smiSCR03"
-        Me.smiSCR03.Size = New System.Drawing.Size(371, 22)
+        Me.smiSCR03.Size = New System.Drawing.Size(329, 22)
         Me.smiSCR03.Text = "SCR03 - Print Cancellation SC with BOM Item"
         '
         'smiIMR09
         '
         Me.smiIMR09.Name = "smiIMR09"
-        Me.smiIMR09.Size = New System.Drawing.Size(371, 22)
+        Me.smiIMR09.Size = New System.Drawing.Size(329, 22)
         Me.smiIMR09.Text = "IMR09 - Print Product Label List"
         '
         'smiIMR24
         '
         Me.smiIMR24.Name = "smiIMR24"
-        Me.smiIMR24.Size = New System.Drawing.Size(371, 22)
+        Me.smiIMR24.Size = New System.Drawing.Size(329, 22)
         Me.smiIMR24.Text = "IMR24 - Attachment Update History"
         '
         'smiIMR25
         '
         Me.smiIMR25.Name = "smiIMR25"
-        Me.smiIMR25.Size = New System.Drawing.Size(371, 22)
+        Me.smiIMR25.Size = New System.Drawing.Size(329, 22)
         Me.smiIMR25.Text = "IMR25 - MOQ SC Records"
         '
         'smiIMR26
         '
         Me.smiIMR26.Name = "smiIMR26"
-        Me.smiIMR26.Size = New System.Drawing.Size(371, 22)
+        Me.smiIMR26.Size = New System.Drawing.Size(329, 22)
         Me.smiIMR26.Text = "IMR26 - MOQ Outstanding Records"
         Me.smiIMR26.Visible = False
         '
         'smiIMR29
         '
         Me.smiIMR29.Name = "smiIMR29"
-        Me.smiIMR29.Size = New System.Drawing.Size(371, 22)
+        Me.smiIMR29.Size = New System.Drawing.Size(329, 22)
         Me.smiIMR29.Text = "IMR29 - Factory Approve Data Comparison Report"
         '
         'smiIMR30
         '
         Me.smiIMR30.Name = "smiIMR30"
-        Me.smiIMR30.Size = New System.Drawing.Size(371, 22)
+        Me.smiIMR30.Size = New System.Drawing.Size(329, 22)
         Me.smiIMR30.Text = "IMR30 - Factory Approve Data Batch Report"
         '
         'smiIMR31
         '
         Me.smiIMR31.Name = "smiIMR31"
-        Me.smiIMR31.Size = New System.Drawing.Size(371, 22)
+        Me.smiIMR31.Size = New System.Drawing.Size(329, 22)
         Me.smiIMR31.Text = "IMR31 - Sales Confirmation List to Excel"
         '
         'smiIMR36
         '
         Me.smiIMR36.Name = "smiIMR36"
-        Me.smiIMR36.Size = New System.Drawing.Size(371, 22)
+        Me.smiIMR36.Size = New System.Drawing.Size(329, 22)
         Me.smiIMR36.Text = "IMR36 - Sales Confirmation List to Excel (Check Data)"
         '
         'smiIMR32
         '
         Me.smiIMR32.Name = "smiIMR32"
-        Me.smiIMR32.Size = New System.Drawing.Size(371, 22)
+        Me.smiIMR32.Size = New System.Drawing.Size(329, 22)
         Me.smiIMR32.Text = "IMR32 - Late Shipment Report"
         '
         'smiPO
         '
         Me.smiPO.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiPOM01, Me.smiPOM02, Me.smiBOM01, Me.ToolStripSeparator64, Me.smiPOR01, Me.smiPOR03, Me.smiPOR05, Me.smiPOR07, Me.smiBOR01, Me.ToolStripSeparator65, Me.smiPOM03})
         Me.smiPO.Name = "smiPO"
-        Me.smiPO.Size = New System.Drawing.Size(69, 19)
+        Me.smiPO.Size = New System.Drawing.Size(58, 16)
         Me.smiPO.Text = "Purchase"
         '
         'smiPOM01
         '
         Me.smiPOM01.Name = "smiPOM01"
-        Me.smiPOM01.Size = New System.Drawing.Size(346, 22)
+        Me.smiPOM01.Size = New System.Drawing.Size(296, 22)
         Me.smiPOM01.Text = "POM01 - Purchase Order Maintenance"
         '
         'smiPOM02
         '
         Me.smiPOM02.Name = "smiPOM02"
-        Me.smiPOM02.Size = New System.Drawing.Size(346, 22)
+        Me.smiPOM02.Size = New System.Drawing.Size(296, 22)
         Me.smiPOM02.Text = "POM02  - Release/Unrelease Purchase Order"
         '
         'smiBOM01
         '
         Me.smiBOM01.Name = "smiBOM01"
-        Me.smiBOM01.Size = New System.Drawing.Size(346, 22)
+        Me.smiBOM01.Size = New System.Drawing.Size(296, 22)
         Me.smiBOM01.Text = "BOM01 - BOM Order Maintenance"
         '
         'ToolStripSeparator64
         '
         Me.ToolStripSeparator64.Name = "ToolStripSeparator64"
-        Me.ToolStripSeparator64.Size = New System.Drawing.Size(343, 6)
+        Me.ToolStripSeparator64.Size = New System.Drawing.Size(293, 6)
         '
         'smiPOR01
         '
         Me.smiPOR01.Name = "smiPOR01"
-        Me.smiPOR01.Size = New System.Drawing.Size(346, 22)
+        Me.smiPOR01.Size = New System.Drawing.Size(296, 22)
         Me.smiPOR01.Text = "POR01 - Purchase Order Report"
         '
         'smiPOR03
         '
         Me.smiPOR03.Name = "smiPOR03"
-        Me.smiPOR03.Size = New System.Drawing.Size(346, 22)
+        Me.smiPOR03.Size = New System.Drawing.Size(296, 22)
         Me.smiPOR03.Text = "POR03 - BOM Purchase Order"
         '
         'smiPOR05
         '
         Me.smiPOR05.Name = "smiPOR05"
-        Me.smiPOR05.Size = New System.Drawing.Size(346, 22)
+        Me.smiPOR05.Size = New System.Drawing.Size(296, 22)
         Me.smiPOR05.Text = "POR05 - Print Production Note (Job Order)"
         '
         'smiPOR07
         '
         Me.smiPOR07.Name = "smiPOR07"
-        Me.smiPOR07.Size = New System.Drawing.Size(346, 22)
+        Me.smiPOR07.Size = New System.Drawing.Size(296, 22)
         Me.smiPOR07.Text = "POR07 - BOM PO Report (Export to Excel)"
         '
         'smiBOR01
         '
         Me.smiBOR01.Name = "smiBOR01"
-        Me.smiBOR01.Size = New System.Drawing.Size(346, 22)
+        Me.smiBOR01.Size = New System.Drawing.Size(296, 22)
         Me.smiBOR01.Text = "BOR01 - Vendor Purchase Report (BOM)"
         '
         'ToolStripSeparator65
         '
         Me.ToolStripSeparator65.Name = "ToolStripSeparator65"
-        Me.ToolStripSeparator65.Size = New System.Drawing.Size(343, 6)
+        Me.ToolStripSeparator65.Size = New System.Drawing.Size(293, 6)
         '
         'smiPOM03
         '
         Me.smiPOM03.Name = "smiPOM03"
-        Me.smiPOM03.Size = New System.Drawing.Size(346, 22)
+        Me.smiPOM03.Size = New System.Drawing.Size(296, 22)
         Me.smiPOM03.Text = "POM03 - Purchase Order Approval Maintenance"
         '
         'smiSHP
         '
         Me.smiSHP.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiSHM01, Me.smiSYM30, Me.ToolStripSeparator66, Me.smiSHM02, Me.ToolStripSeparator67, Me.smiSYM36, Me.smiSHM07, Me.ToolStripSeparator68, Me.smiINR01, Me.smiPKR01, Me.smiSHR10, Me.ToolStripSeparator69, Me.smiMSR09, Me.smiMSR27, Me.smiMSR36})
         Me.smiSHP.Name = "smiSHP"
-        Me.smiSHP.Size = New System.Drawing.Size(70, 19)
+        Me.smiSHP.Size = New System.Drawing.Size(59, 16)
         Me.smiSHP.Text = "Shipping"
         '
         'smiSHM01
         '
         Me.smiSHM01.Name = "smiSHM01"
-        Me.smiSHM01.Size = New System.Drawing.Size(383, 22)
+        Me.smiSHM01.Size = New System.Drawing.Size(335, 22)
         Me.smiSHM01.Text = "SHM01 - Shipping Maintenance"
         '
         'smiSYM30
         '
         Me.smiSYM30.Name = "smiSYM30"
-        Me.smiSYM30.Size = New System.Drawing.Size(383, 22)
+        Me.smiSYM30.Size = New System.Drawing.Size(335, 22)
         Me.smiSYM30.Text = "SYM30 - Shipping Customer Self-defined Maintenance"
         '
         'ToolStripSeparator66
         '
         Me.ToolStripSeparator66.Name = "ToolStripSeparator66"
-        Me.ToolStripSeparator66.Size = New System.Drawing.Size(380, 6)
+        Me.ToolStripSeparator66.Size = New System.Drawing.Size(332, 6)
         '
         'smiSHM02
         '
         Me.smiSHM02.Name = "smiSHM02"
-        Me.smiSHM02.Size = New System.Drawing.Size(383, 22)
+        Me.smiSHM02.Size = New System.Drawing.Size(335, 22)
         Me.smiSHM02.Text = "SHM02 - Credit / Debit Note Information "
         '
         'ToolStripSeparator67
         '
         Me.ToolStripSeparator67.Name = "ToolStripSeparator67"
-        Me.ToolStripSeparator67.Size = New System.Drawing.Size(380, 6)
+        Me.ToolStripSeparator67.Size = New System.Drawing.Size(332, 6)
         '
         'smiSYM36
         '
         Me.smiSYM36.Name = "smiSYM36"
-        Me.smiSYM36.Size = New System.Drawing.Size(383, 22)
+        Me.smiSYM36.Size = New System.Drawing.Size(335, 22)
         Me.smiSYM36.Text = "SYM36 - Shipping Forwarder Maintenance"
         '
         'smiSHM07
         '
         Me.smiSHM07.Name = "smiSHM07"
-        Me.smiSHM07.Size = New System.Drawing.Size(383, 22)
+        Me.smiSHM07.Size = New System.Drawing.Size(335, 22)
         Me.smiSHM07.Text = "SHM07 - Shipping Charges Maintenance"
         '
         'ToolStripSeparator68
         '
         Me.ToolStripSeparator68.Name = "ToolStripSeparator68"
-        Me.ToolStripSeparator68.Size = New System.Drawing.Size(380, 6)
+        Me.ToolStripSeparator68.Size = New System.Drawing.Size(332, 6)
         '
         'smiINR01
         '
         Me.smiINR01.Name = "smiINR01"
-        Me.smiINR01.Size = New System.Drawing.Size(383, 22)
+        Me.smiINR01.Size = New System.Drawing.Size(335, 22)
         Me.smiINR01.Text = "INR01 - Print Invoice"
         '
         'smiPKR01
         '
         Me.smiPKR01.Name = "smiPKR01"
-        Me.smiPKR01.Size = New System.Drawing.Size(383, 22)
+        Me.smiPKR01.Size = New System.Drawing.Size(335, 22)
         Me.smiPKR01.Text = "PKR01 - Print Packing List"
         '
         'smiSHR10
         '
         Me.smiSHR10.Name = "smiSHR10"
-        Me.smiSHR10.Size = New System.Drawing.Size(383, 22)
+        Me.smiSHR10.Size = New System.Drawing.Size(335, 22)
         Me.smiSHR10.Text = "SHR10 - Print Shipping Charges Report"
         '
         'ToolStripSeparator69
         '
         Me.ToolStripSeparator69.Name = "ToolStripSeparator69"
-        Me.ToolStripSeparator69.Size = New System.Drawing.Size(380, 6)
+        Me.ToolStripSeparator69.Size = New System.Drawing.Size(332, 6)
         '
         'smiMSR09
         '
         Me.smiMSR09.Name = "smiMSR09"
-        Me.smiMSR09.Size = New System.Drawing.Size(383, 22)
+        Me.smiMSR09.Size = New System.Drawing.Size(335, 22)
         Me.smiMSR09.Text = "MSR09 - Print Invoice Summary Report"
         '
         'smiMSR27
         '
         Me.smiMSR27.Name = "smiMSR27"
-        Me.smiMSR27.Size = New System.Drawing.Size(383, 22)
+        Me.smiMSR27.Size = New System.Drawing.Size(335, 22)
         Me.smiMSR27.Text = "MSR27 - Print Container Search Report"
         '
         'smiMSR36
         '
         Me.smiMSR36.Name = "smiMSR36"
-        Me.smiMSR36.Size = New System.Drawing.Size(383, 22)
+        Me.smiMSR36.Size = New System.Drawing.Size(335, 22)
         Me.smiMSR36.Text = "MSR36 - Print Container Summery Report By Customer"
         '
         'smiPGM
         '
         Me.smiPGM.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiSYM31, Me.ToolStripSeparator70, Me.smiPGM01, Me.ToolStripSeparator71, Me.smiPGM02, Me.smiPGM03, Me.smiPGX01, Me.smiPGR01, Me.ToolStripSeparator72, Me.smiPGM05, Me.smiPGM04, Me.smiPGM08, Me.ToolStripSeparator73, Me.smiPGM09, Me.ToolStripSeparator74, Me.msiPGM06, Me.smiPGM11, Me.smiPGM12, Me.smiPGM13, Me.ToolStripSeparator75, Me.msiPGM07})
         Me.smiPGM.Name = "smiPGM"
-        Me.smiPGM.Size = New System.Drawing.Size(78, 19)
+        Me.smiPGM.Size = New System.Drawing.Size(65, 16)
         Me.smiPGM.Text = "Packaging"
         '
         'smiSYM31
         '
         Me.smiSYM31.Name = "smiSYM31"
-        Me.smiSYM31.Size = New System.Drawing.Size(394, 22)
+        Me.smiSYM31.Size = New System.Drawing.Size(339, 22)
         Me.smiSYM31.Text = "SYM31 - Packaging Component Maintenance"
         '
         'ToolStripSeparator70
         '
         Me.ToolStripSeparator70.Name = "ToolStripSeparator70"
-        Me.ToolStripSeparator70.Size = New System.Drawing.Size(391, 6)
+        Me.ToolStripSeparator70.Size = New System.Drawing.Size(336, 6)
         '
         'smiPGM01
         '
         Me.smiPGM01.Name = "smiPGM01"
-        Me.smiPGM01.Size = New System.Drawing.Size(394, 22)
+        Me.smiPGM01.Size = New System.Drawing.Size(339, 22)
         Me.smiPGM01.Text = "PGM01 - Packaging Item Master Maintenance"
         '
         'ToolStripSeparator71
         '
         Me.ToolStripSeparator71.Name = "ToolStripSeparator71"
-        Me.ToolStripSeparator71.Size = New System.Drawing.Size(391, 6)
+        Me.ToolStripSeparator71.Size = New System.Drawing.Size(336, 6)
         '
         'smiPGM02
         '
         Me.smiPGM02.Name = "smiPGM02"
-        Me.smiPGM02.Size = New System.Drawing.Size(394, 22)
+        Me.smiPGM02.Size = New System.Drawing.Size(339, 22)
         Me.smiPGM02.Text = "PGM02 - Packaging Request Maintenance"
         '
         'smiPGM03
         '
         Me.smiPGM03.Name = "smiPGM03"
-        Me.smiPGM03.Size = New System.Drawing.Size(394, 22)
+        Me.smiPGM03.Size = New System.Drawing.Size(339, 22)
         Me.smiPGM03.Text = "PGM03 - Release/Unrelease Packaging Request"
         '
         'smiPGX01
         '
         Me.smiPGX01.Name = "smiPGX01"
-        Me.smiPGX01.Size = New System.Drawing.Size(394, 22)
+        Me.smiPGX01.Size = New System.Drawing.Size(339, 22)
         Me.smiPGX01.Text = "PGX01 - Excel Upload for Packaging Request Generation"
         '
         'smiPGR01
         '
         Me.smiPGR01.Name = "smiPGR01"
-        Me.smiPGR01.Size = New System.Drawing.Size(394, 22)
+        Me.smiPGR01.Size = New System.Drawing.Size(339, 22)
         Me.smiPGR01.Text = "PGR01 - Packaging Request Information Export"
         '
         'ToolStripSeparator72
         '
         Me.ToolStripSeparator72.Name = "ToolStripSeparator72"
-        Me.ToolStripSeparator72.Size = New System.Drawing.Size(391, 6)
+        Me.ToolStripSeparator72.Size = New System.Drawing.Size(336, 6)
         '
         'smiPGM05
         '
         Me.smiPGM05.Name = "smiPGM05"
-        Me.smiPGM05.Size = New System.Drawing.Size(394, 22)
+        Me.smiPGM05.Size = New System.Drawing.Size(339, 22)
         Me.smiPGM05.Text = "PGM05 - Packaging Order Generation and Update"
         '
         'smiPGM04
         '
         Me.smiPGM04.Name = "smiPGM04"
-        Me.smiPGM04.Size = New System.Drawing.Size(394, 22)
+        Me.smiPGM04.Size = New System.Drawing.Size(339, 22)
         Me.smiPGM04.Text = "PGM04 - Packaging Order Maintenance"
         '
         'smiPGM08
         '
         Me.smiPGM08.Name = "smiPGM08"
-        Me.smiPGM08.Size = New System.Drawing.Size(394, 22)
+        Me.smiPGM08.Size = New System.Drawing.Size(339, 22)
         Me.smiPGM08.Text = "PGM08 - Release/Unrelease Packaging Order"
         '
         'ToolStripSeparator73
         '
         Me.ToolStripSeparator73.Name = "ToolStripSeparator73"
-        Me.ToolStripSeparator73.Size = New System.Drawing.Size(391, 6)
+        Me.ToolStripSeparator73.Size = New System.Drawing.Size(336, 6)
         '
         'smiPGM09
         '
         Me.smiPGM09.Name = "smiPGM09"
-        Me.smiPGM09.Size = New System.Drawing.Size(394, 22)
+        Me.smiPGM09.Size = New System.Drawing.Size(339, 22)
         Me.smiPGM09.Text = "PGM09 - Packaging Order Creation (Label/Hangtag)"
         '
         'ToolStripSeparator74
         '
         Me.ToolStripSeparator74.Name = "ToolStripSeparator74"
-        Me.ToolStripSeparator74.Size = New System.Drawing.Size(391, 6)
+        Me.ToolStripSeparator74.Size = New System.Drawing.Size(336, 6)
         '
         'msiPGM06
         '
         Me.msiPGM06.Name = "msiPGM06"
-        Me.msiPGM06.Size = New System.Drawing.Size(394, 22)
+        Me.msiPGM06.Size = New System.Drawing.Size(339, 22)
         Me.msiPGM06.Text = "PGM06 - Packaging Order Approval"
         '
         'smiPGM11
         '
         Me.smiPGM11.Name = "smiPGM11"
-        Me.smiPGM11.Size = New System.Drawing.Size(394, 22)
+        Me.smiPGM11.Size = New System.Drawing.Size(339, 22)
         Me.smiPGM11.Text = "PGM11 - Packaging Order Approval (Read Only)"
         '
         'smiPGM12
         '
         Me.smiPGM12.Name = "smiPGM12"
-        Me.smiPGM12.Size = New System.Drawing.Size(394, 22)
+        Me.smiPGM12.Size = New System.Drawing.Size(339, 22)
         Me.smiPGM12.Text = "PGM12 - Packaging Analysis Report"
         '
         'smiPGM13
         '
         Me.smiPGM13.Name = "smiPGM13"
-        Me.smiPGM13.Size = New System.Drawing.Size(394, 22)
+        Me.smiPGM13.Size = New System.Drawing.Size(339, 22)
         Me.smiPGM13.Text = "PGM13 - Packaging Order Cost Comparsion Report"
         '
         'ToolStripSeparator75
         '
         Me.ToolStripSeparator75.Name = "ToolStripSeparator75"
-        Me.ToolStripSeparator75.Size = New System.Drawing.Size(391, 6)
+        Me.ToolStripSeparator75.Size = New System.Drawing.Size(336, 6)
         '
         'msiPGM07
         '
         Me.msiPGM07.Name = "msiPGM07"
-        Me.msiPGM07.Size = New System.Drawing.Size(394, 22)
+        Me.msiPGM07.Size = New System.Drawing.Size(339, 22)
         Me.msiPGM07.Text = "PGM07 - Print Packaging Order"
         '
         'ToolStripMenuItem421
         '
         Me.ToolStripMenuItem421.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiSYM37, Me.smiSYM38, Me.ToolStripSeparator76, Me.smiCLM01, Me.ToolStripSeparator77, Me.smiCLR04, Me.smiCLR05, Me.ToolStripSeparator78, Me.smiCLR01})
         Me.ToolStripMenuItem421.Name = "ToolStripMenuItem421"
-        Me.ToolStripMenuItem421.Size = New System.Drawing.Size(56, 19)
+        Me.ToolStripMenuItem421.Size = New System.Drawing.Size(49, 16)
         Me.ToolStripMenuItem421.Text = "Claims"
         '
         'smiSYM37
         '
         Me.smiSYM37.Name = "smiSYM37"
-        Me.smiSYM37.Size = New System.Drawing.Size(375, 22)
+        Me.smiSYM37.Size = New System.Drawing.Size(336, 22)
         Me.smiSYM37.Text = "SYM37 - Claims Category Maintenance"
         '
         'smiSYM38
         '
         Me.smiSYM38.Name = "smiSYM38"
-        Me.smiSYM38.Size = New System.Drawing.Size(375, 22)
+        Me.smiSYM38.Size = New System.Drawing.Size(336, 22)
         Me.smiSYM38.Text = "SYM38 - Claims Currency Maintenance"
         '
         'ToolStripSeparator76
         '
         Me.ToolStripSeparator76.Name = "ToolStripSeparator76"
-        Me.ToolStripSeparator76.Size = New System.Drawing.Size(372, 6)
+        Me.ToolStripSeparator76.Size = New System.Drawing.Size(333, 6)
         '
         'smiCLM01
         '
         Me.smiCLM01.Name = "smiCLM01"
-        Me.smiCLM01.Size = New System.Drawing.Size(375, 22)
+        Me.smiCLM01.Size = New System.Drawing.Size(336, 22)
         Me.smiCLM01.Text = "CLM01 - Claims Transaction Maintenance"
         '
         'ToolStripSeparator77
         '
         Me.ToolStripSeparator77.Name = "ToolStripSeparator77"
-        Me.ToolStripSeparator77.Size = New System.Drawing.Size(372, 6)
+        Me.ToolStripSeparator77.Size = New System.Drawing.Size(333, 6)
         '
         'smiCLR04
         '
         Me.smiCLR04.Name = "smiCLR04"
-        Me.smiCLR04.Size = New System.Drawing.Size(375, 22)
+        Me.smiCLR04.Size = New System.Drawing.Size(336, 22)
         Me.smiCLR04.Text = "CLR04 - Claims Analysis Report (Account Format)"
         '
         'smiCLR05
         '
         Me.smiCLR05.Name = "smiCLR05"
-        Me.smiCLR05.Size = New System.Drawing.Size(375, 22)
+        Me.smiCLR05.Size = New System.Drawing.Size(336, 22)
         Me.smiCLR05.Text = "CLR05 - Claims Analysis Report (Summary List Format)"
         '
         'ToolStripSeparator78
         '
         Me.ToolStripSeparator78.Name = "ToolStripSeparator78"
-        Me.ToolStripSeparator78.Size = New System.Drawing.Size(372, 6)
+        Me.ToolStripSeparator78.Size = New System.Drawing.Size(333, 6)
         '
         'smiCLR01
         '
         Me.smiCLR01.Name = "smiCLR01"
-        Me.smiCLR01.Size = New System.Drawing.Size(375, 22)
+        Me.smiCLR01.Size = New System.Drawing.Size(336, 22)
         Me.smiCLR01.Text = "CLR01 - Print Claims Report"
         '
         'smiACR
         '
         Me.smiACR.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.msiPCM01, Me.msiSYM32, Me.ToolStripSeparator79, Me.smiACR01, Me.ToolStripSeparator80, Me.smiSMR01, Me.smiSMR02})
         Me.smiACR.Name = "smiACR"
-        Me.smiACR.Size = New System.Drawing.Size(65, 19)
+        Me.smiACR.Size = New System.Drawing.Size(56, 16)
         Me.smiACR.Text = "Account"
         '
         'msiPCM01
         '
         Me.msiPCM01.Name = "msiPCM01"
-        Me.msiPCM01.Size = New System.Drawing.Size(343, 22)
+        Me.msiPCM01.Size = New System.Drawing.Size(298, 22)
         Me.msiPCM01.Text = "PCM01 - Account Setup Master"
         '
         'msiSYM32
         '
         Me.msiSYM32.Name = "msiSYM32"
-        Me.msiSYM32.Size = New System.Drawing.Size(343, 22)
+        Me.msiSYM32.Size = New System.Drawing.Size(298, 22)
         Me.msiSYM32.Text = "SYM32 - Currency Maintenance (Account)"
         '
         'ToolStripSeparator79
         '
         Me.ToolStripSeparator79.Name = "ToolStripSeparator79"
-        Me.ToolStripSeparator79.Size = New System.Drawing.Size(340, 6)
+        Me.ToolStripSeparator79.Size = New System.Drawing.Size(295, 6)
         '
         'smiACR01
         '
         Me.smiACR01.Name = "smiACR01"
-        Me.smiACR01.Size = New System.Drawing.Size(343, 22)
+        Me.smiACR01.Size = New System.Drawing.Size(298, 22)
         Me.smiACR01.Text = "ACR01 - LAI FEI Analysis Report"
         '
         'ToolStripSeparator80
         '
         Me.ToolStripSeparator80.Name = "ToolStripSeparator80"
-        Me.ToolStripSeparator80.Size = New System.Drawing.Size(340, 6)
+        Me.ToolStripSeparator80.Size = New System.Drawing.Size(295, 6)
         '
         'smiSMR01
         '
         Me.smiSMR01.Name = "smiSMR01"
-        Me.smiSMR01.Size = New System.Drawing.Size(343, 22)
+        Me.smiSMR01.Size = New System.Drawing.Size(298, 22)
         Me.smiSMR01.Text = "SMR01 - Shipment Matching Report"
         '
         'smiSMR02
         '
         Me.smiSMR02.Name = "smiSMR02"
-        Me.smiSMR02.Size = New System.Drawing.Size(343, 22)
+        Me.smiSMR02.Size = New System.Drawing.Size(298, 22)
         Me.smiSMR02.Text = "SMR02 - Shipment Matching Report (Summary)"
         '
         'smiBFR01
         '
         Me.smiBFR01.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.msiBJR01, Me.msiFTY01, Me.smiFTY04})
         Me.smiBFR01.Name = "smiBFR01"
-        Me.smiBFR01.Size = New System.Drawing.Size(45, 19)
+        Me.smiBFR01.Size = New System.Drawing.Size(39, 16)
         Me.smiBFR01.Text = "PDO"
         '
         'msiBJR01
         '
         Me.msiBJR01.Name = "msiBJR01"
-        Me.msiBJR01.Size = New System.Drawing.Size(249, 22)
+        Me.msiBJR01.Size = New System.Drawing.Size(223, 22)
         Me.msiBJR01.Text = "BJR01 - Batch Job Generation"
         '
         'msiFTY01
         '
         Me.msiFTY01.Name = "msiFTY01"
-        Me.msiFTY01.Size = New System.Drawing.Size(249, 22)
+        Me.msiFTY01.Size = New System.Drawing.Size(223, 22)
         Me.msiFTY01.Text = "FTY01 - PDO System"
         '
         'smiFTY04
         '
         Me.smiFTY04.Name = "smiFTY04"
-        Me.smiFTY04.Size = New System.Drawing.Size(249, 22)
+        Me.smiFTY04.Size = New System.Drawing.Size(223, 22)
         Me.smiFTY04.Text = "FTY04 - PDO Document History"
         '
         'ToolStripMenuItem438
         '
         Me.ToolStripMenuItem438.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiMPM01, Me.smiMPM02, Me.smiMPM03, Me.ToolStripSeparator81, Me.smiMPO01, Me.smiMPO02, Me.smiMPO03, Me.ToolStripSeparator82, Me.smiMPR01, Me.smiMPR02, Me.smiMPR03, Me.smiMPR04, Me.smiMPR05, Me.smiMPR06, Me.ToolStripSeparator83, Me.smiMIM01, Me.smiMIM02, Me.smiSYM20})
         Me.ToolStripMenuItem438.Name = "ToolStripMenuItem438"
-        Me.ToolStripMenuItem438.Size = New System.Drawing.Size(48, 19)
+        Me.ToolStripMenuItem438.Size = New System.Drawing.Size(41, 16)
         Me.ToolStripMenuItem438.Text = "MPO"
         '
         'smiMPM01
         '
         Me.smiMPM01.Name = "smiMPM01"
-        Me.smiMPM01.Size = New System.Drawing.Size(443, 22)
+        Me.smiMPM01.Size = New System.Drawing.Size(382, 22)
         Me.smiMPM01.Text = "MPM01 - Manufacturing Purchase Order Maintenance"
         '
         'smiMPM02
         '
         Me.smiMPM02.Name = "smiMPM02"
-        Me.smiMPM02.Size = New System.Drawing.Size(443, 22)
+        Me.smiMPM02.Size = New System.Drawing.Size(382, 22)
         Me.smiMPM02.Text = "MPM02 - GRN Transfer Maintenance"
         '
         'smiMPM03
         '
         Me.smiMPM03.Name = "smiMPM03"
-        Me.smiMPM03.Size = New System.Drawing.Size(443, 22)
+        Me.smiMPM03.Size = New System.Drawing.Size(382, 22)
         Me.smiMPM03.Text = "MPM03 - Supplier Delivery Maintenance"
         '
         'ToolStripSeparator81
         '
         Me.ToolStripSeparator81.Name = "ToolStripSeparator81"
-        Me.ToolStripSeparator81.Size = New System.Drawing.Size(440, 6)
+        Me.ToolStripSeparator81.Size = New System.Drawing.Size(379, 6)
         '
         'smiMPO01
         '
         Me.smiMPO01.Name = "smiMPO01"
-        Me.smiMPO01.Size = New System.Drawing.Size(443, 22)
+        Me.smiMPO01.Size = New System.Drawing.Size(382, 22)
         Me.smiMPO01.Text = "MPO01 - (WT) Manufacturing Purchase Order Search"
         '
         'smiMPO02
         '
         Me.smiMPO02.Name = "smiMPO02"
-        Me.smiMPO02.Size = New System.Drawing.Size(443, 22)
+        Me.smiMPO02.Size = New System.Drawing.Size(382, 22)
         Me.smiMPO02.Text = "MPO02 - (WT) Manufacturing Purchase Order Generation"
         '
         'smiMPO03
         '
         Me.smiMPO03.Name = "smiMPO03"
-        Me.smiMPO03.Size = New System.Drawing.Size(443, 22)
+        Me.smiMPO03.Size = New System.Drawing.Size(382, 22)
         Me.smiMPO03.Text = "MPO03 - (WT) Manufacturing Purchase Order Approval/Rejection"
         '
         'ToolStripSeparator82
         '
         Me.ToolStripSeparator82.Name = "ToolStripSeparator82"
-        Me.ToolStripSeparator82.Size = New System.Drawing.Size(440, 6)
+        Me.ToolStripSeparator82.Size = New System.Drawing.Size(379, 6)
         '
         'smiMPR01
         '
         Me.smiMPR01.Name = "smiMPR01"
-        Me.smiMPR01.Size = New System.Drawing.Size(443, 22)
+        Me.smiMPR01.Size = New System.Drawing.Size(382, 22)
         Me.smiMPR01.Text = "MPR01 - (WT) Manufacturing Purchase Order Exception Report"
         '
         'smiMPR02
         '
         Me.smiMPR02.Name = "smiMPR02"
-        Me.smiMPR02.Size = New System.Drawing.Size(443, 22)
+        Me.smiMPR02.Size = New System.Drawing.Size(382, 22)
         Me.smiMPR02.Text = "MPR02 - Print Manufacturing Purchase Order"
         '
         'smiMPR03
         '
         Me.smiMPR03.Name = "smiMPR03"
-        Me.smiMPR03.Size = New System.Drawing.Size(443, 22)
+        Me.smiMPR03.Size = New System.Drawing.Size(382, 22)
         Me.smiMPR03.Text = "MPR03 - GRN Transfer Reports"
         '
         'smiMPR04
         '
         Me.smiMPR04.Name = "smiMPR04"
-        Me.smiMPR04.Size = New System.Drawing.Size(443, 22)
+        Me.smiMPR04.Size = New System.Drawing.Size(382, 22)
         Me.smiMPR04.Text = "MPR04 - MPO Item Master Listing"
         '
         'smiMPR05
         '
         Me.smiMPR05.Name = "smiMPR05"
-        Me.smiMPR05.Size = New System.Drawing.Size(443, 22)
+        Me.smiMPR05.Size = New System.Drawing.Size(382, 22)
         Me.smiMPR05.Text = "MPR05 - GRN Transaction List (Adhoc Misc Type Only)"
         '
         'smiMPR06
         '
         Me.smiMPR06.Name = "smiMPR06"
-        Me.smiMPR06.Size = New System.Drawing.Size(443, 22)
+        Me.smiMPR06.Size = New System.Drawing.Size(382, 22)
         Me.smiMPR06.Text = "MPR06 - MPR Transaction Statistics Report"
         '
         'ToolStripSeparator83
         '
         Me.ToolStripSeparator83.Name = "ToolStripSeparator83"
-        Me.ToolStripSeparator83.Size = New System.Drawing.Size(440, 6)
+        Me.ToolStripSeparator83.Size = New System.Drawing.Size(379, 6)
         '
         'smiMIM01
         '
         Me.smiMIM01.Name = "smiMIM01"
-        Me.smiMIM01.Size = New System.Drawing.Size(443, 22)
+        Me.smiMIM01.Size = New System.Drawing.Size(382, 22)
         Me.smiMIM01.Text = "MIM01 - WT Factory Item Master"
         '
         'smiMIM02
         '
         Me.smiMIM02.Name = "smiMIM02"
-        Me.smiMIM02.Size = New System.Drawing.Size(443, 22)
+        Me.smiMIM02.Size = New System.Drawing.Size(382, 22)
         Me.smiMIM02.Text = "MIM02 - Item Master Approval Rejection (WT)"
         '
         'smiSYM20
         '
         Me.smiSYM20.Name = "smiSYM20"
-        Me.smiSYM20.Size = New System.Drawing.Size(443, 22)
+        Me.smiSYM20.Size = New System.Drawing.Size(382, 22)
         Me.smiSYM20.Text = "SYM20 - PRC Item Category Maintenance"
         '
         'msiQC
         '
         Me.msiQC.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiSYM39, Me.smiSYM40, Me.ToolStripSeparator84, Me.smiQCM01, Me.smiQCM02, Me.smiQCM03, Me.ToolStripSeparator85, Me.smiQCM04, Me.smiQCM09, Me.ToolStripSeparator86, Me.smiQCM05, Me.smiQCM06, Me.ToolStripSeparator87, Me.smiQCM07, Me.smiQCM10})
         Me.msiQC.Name = "msiQC"
-        Me.msiQC.Size = New System.Drawing.Size(37, 19)
+        Me.msiQC.Size = New System.Drawing.Size(33, 16)
         Me.msiQC.Text = "QC"
         '
         'smiSYM39
         '
         Me.smiSYM39.Name = "smiSYM39"
-        Me.smiSYM39.Size = New System.Drawing.Size(371, 22)
+        Me.smiSYM39.Size = New System.Drawing.Size(317, 22)
         Me.smiSYM39.Text = "SYM39 - SZ Sales Team Maintenance"
         '
         'smiSYM40
         '
         Me.smiSYM40.Name = "smiSYM40"
-        Me.smiSYM40.Size = New System.Drawing.Size(371, 22)
+        Me.smiSYM40.Size = New System.Drawing.Size(317, 22)
         Me.smiSYM40.Text = "SYM40 - AQL Maintenance"
         '
         'ToolStripSeparator84
         '
         Me.ToolStripSeparator84.Name = "ToolStripSeparator84"
-        Me.ToolStripSeparator84.Size = New System.Drawing.Size(368, 6)
+        Me.ToolStripSeparator84.Size = New System.Drawing.Size(314, 6)
         '
         'smiQCM01
         '
         Me.smiQCM01.Name = "smiQCM01"
-        Me.smiQCM01.Size = New System.Drawing.Size(371, 22)
+        Me.smiQCM01.Size = New System.Drawing.Size(317, 22)
         Me.smiQCM01.Text = "QCM01 - QC Inspection Request Generation"
         '
         'smiQCM02
         '
         Me.smiQCM02.Name = "smiQCM02"
-        Me.smiQCM02.Size = New System.Drawing.Size(371, 22)
+        Me.smiQCM02.Size = New System.Drawing.Size(317, 22)
         Me.smiQCM02.Text = "QCM02 - QC Inspection Request Maintenance"
         '
         'smiQCM03
         '
         Me.smiQCM03.Name = "smiQCM03"
-        Me.smiQCM03.Size = New System.Drawing.Size(371, 22)
+        Me.smiQCM03.Size = New System.Drawing.Size(317, 22)
         Me.smiQCM03.Text = "QCM03 - Release / Unrelease QC Inspection Request"
         '
         'ToolStripSeparator85
         '
         Me.ToolStripSeparator85.Name = "ToolStripSeparator85"
-        Me.ToolStripSeparator85.Size = New System.Drawing.Size(368, 6)
+        Me.ToolStripSeparator85.Size = New System.Drawing.Size(314, 6)
         '
         'smiQCM04
         '
         Me.smiQCM04.Name = "smiQCM04"
-        Me.smiQCM04.Size = New System.Drawing.Size(371, 22)
+        Me.smiQCM04.Size = New System.Drawing.Size(317, 22)
         Me.smiQCM04.Text = "QCM04 - QC Inspection Request Summary"
         '
         'smiQCM09
         '
         Me.smiQCM09.Name = "smiQCM09"
-        Me.smiQCM09.Size = New System.Drawing.Size(371, 22)
+        Me.smiQCM09.Size = New System.Drawing.Size(317, 22)
         Me.smiQCM09.Text = "QCM09 - QC Attachment Maintenance"
         '
         'ToolStripSeparator86
         '
         Me.ToolStripSeparator86.Name = "ToolStripSeparator86"
-        Me.ToolStripSeparator86.Size = New System.Drawing.Size(368, 6)
+        Me.ToolStripSeparator86.Size = New System.Drawing.Size(314, 6)
         '
         'smiQCM05
         '
         Me.smiQCM05.Name = "smiQCM05"
-        Me.smiQCM05.Size = New System.Drawing.Size(371, 22)
+        Me.smiQCM05.Size = New System.Drawing.Size(317, 22)
         Me.smiQCM05.Text = "QCM05 - QC Inspection Request List (Summary)"
         '
         'smiQCM06
         '
         Me.smiQCM06.Name = "smiQCM06"
-        Me.smiQCM06.Size = New System.Drawing.Size(371, 22)
+        Me.smiQCM06.Size = New System.Drawing.Size(317, 22)
         Me.smiQCM06.Text = "QCM06 - QC Inspection Request Check List"
         '
         'ToolStripSeparator87
         '
         Me.ToolStripSeparator87.Name = "ToolStripSeparator87"
-        Me.ToolStripSeparator87.Size = New System.Drawing.Size(368, 6)
+        Me.ToolStripSeparator87.Size = New System.Drawing.Size(314, 6)
         '
         'smiQCM07
         '
         Me.smiQCM07.Name = "smiQCM07"
-        Me.smiQCM07.Size = New System.Drawing.Size(371, 22)
+        Me.smiQCM07.Size = New System.Drawing.Size(317, 22)
         Me.smiQCM07.Text = "QCM07 - QC Report History Summary"
         '
         'smiQCM10
         '
         Me.smiQCM10.Name = "smiQCM10"
-        Me.smiQCM10.Size = New System.Drawing.Size(371, 22)
+        Me.smiQCM10.Size = New System.Drawing.Size(317, 22)
         Me.smiQCM10.Text = "QCM10 - QC Inspection Certificate Report"
         '
         'ToolStripMenuItem465
         '
         Me.ToolStripMenuItem465.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem466, Me.ToolStripMenuItem476, Me.ToolStripSeparator4, Me.ToolStripMenuItem483, Me.ToolStripMenuItem489, Me.ToolStripMenuItem495, Me.smiINR132, Me.ToolStripMenuItem501, Me.ToolStripSeparator5, Me.ToolStripMenuItem503, Me.ToolStripSeparator88, Me.smiCOR01})
         Me.ToolStripMenuItem465.Name = "ToolStripMenuItem465"
-        Me.ToolStripMenuItem465.Size = New System.Drawing.Size(58, 19)
+        Me.ToolStripMenuItem465.Size = New System.Drawing.Size(49, 16)
         Me.ToolStripMenuItem465.Text = "Report"
         '
         'ToolStripMenuItem466
         '
         Me.ToolStripMenuItem466.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiIAR01, Me.smiIMR17, Me.smiMSR32, Me.smiIMR13, Me.smiIMR23, Me.smiIMR27, Me.smiIMR21, Me.smiIMR22, Me.ToolStripSeparator3, Me.smiINR14})
         Me.ToolStripMenuItem466.Name = "ToolStripMenuItem466"
-        Me.ToolStripMenuItem466.Size = New System.Drawing.Size(296, 22)
+        Me.ToolStripMenuItem466.Size = New System.Drawing.Size(256, 22)
         Me.ToolStripMenuItem466.Text = "Item Information Report"
         '
         'smiIAR01
         '
         Me.smiIAR01.Name = "smiIAR01"
-        Me.smiIAR01.Size = New System.Drawing.Size(357, 22)
+        Me.smiIAR01.Size = New System.Drawing.Size(316, 22)
         Me.smiIAR01.Text = "IAR01 - Impact Analysis Report"
         '
         'smiIMR17
         '
         Me.smiIMR17.Name = "smiIMR17"
-        Me.smiIMR17.Size = New System.Drawing.Size(357, 22)
+        Me.smiIMR17.Size = New System.Drawing.Size(316, 22)
         Me.smiIMR17.Text = "IMR17 - Item Pricing Report (Export to Excel)"
         '
         'smiMSR32
         '
         Me.smiMSR32.Name = "smiMSR32"
-        Me.smiMSR32.Size = New System.Drawing.Size(357, 22)
+        Me.smiMSR32.Size = New System.Drawing.Size(316, 22)
         Me.smiMSR32.Text = "MSR32 - Document List by Item"
         '
         'smiIMR13
         '
         Me.smiIMR13.Name = "smiIMR13"
-        Me.smiIMR13.Size = New System.Drawing.Size(357, 22)
+        Me.smiIMR13.Size = New System.Drawing.Size(316, 22)
         Me.smiIMR13.Text = "IMR13 - Item Image Analyst Report"
         '
         'smiIMR23
         '
         Me.smiIMR23.Name = "smiIMR23"
-        Me.smiIMR23.Size = New System.Drawing.Size(357, 22)
+        Me.smiIMR23.Size = New System.Drawing.Size(316, 22)
         Me.smiIMR23.Text = "IMR23 - Export Item Image to Excel"
         '
         'smiIMR27
         '
         Me.smiIMR27.Name = "smiIMR27"
-        Me.smiIMR27.Size = New System.Drawing.Size(357, 22)
+        Me.smiIMR27.Size = New System.Drawing.Size(316, 22)
         Me.smiIMR27.Text = "IMR27 - Export Item Image to Excel (with Barcode)"
         '
         'smiIMR21
         '
         Me.smiIMR21.Name = "smiIMR21"
-        Me.smiIMR21.Size = New System.Drawing.Size(357, 22)
+        Me.smiIMR21.Size = New System.Drawing.Size(316, 22)
         Me.smiIMR21.Text = "IMR21 - Assorted Item List"
         '
         'smiIMR22
         '
         Me.smiIMR22.Name = "smiIMR22"
-        Me.smiIMR22.Size = New System.Drawing.Size(357, 22)
+        Me.smiIMR22.Size = New System.Drawing.Size(316, 22)
         Me.smiIMR22.Text = "IMR22 - Customer Alias Item List"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(354, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(313, 6)
         '
         'smiINR14
         '
         Me.smiINR14.Name = "smiINR14"
-        Me.smiINR14.Size = New System.Drawing.Size(357, 22)
+        Me.smiINR14.Size = New System.Drawing.Size(316, 22)
         Me.smiINR14.Text = "INR14 - CBM Report"
         '
         'ToolStripMenuItem476
         '
         Me.ToolStripMenuItem476.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiMSR02, Me.smiMSR19, Me.smiMSR20, Me.smiMSR22, Me.smiMSR31, Me.smiMSR33})
         Me.ToolStripMenuItem476.Name = "ToolStripMenuItem476"
-        Me.ToolStripMenuItem476.Size = New System.Drawing.Size(296, 22)
+        Me.ToolStripMenuItem476.Size = New System.Drawing.Size(256, 22)
         Me.ToolStripMenuItem476.Text = "Document Index / Record Listing"
         '
         'smiMSR02
         '
         Me.smiMSR02.Name = "smiMSR02"
-        Me.smiMSR02.Size = New System.Drawing.Size(266, 22)
+        Me.smiMSR02.Size = New System.Drawing.Size(235, 22)
         Me.smiMSR02.Text = "MSR02 - Quotation Index"
         '
         'smiMSR19
         '
         Me.smiMSR19.Name = "smiMSR19"
-        Me.smiMSR19.Size = New System.Drawing.Size(266, 22)
+        Me.smiMSR19.Size = New System.Drawing.Size(235, 22)
         Me.smiMSR19.Text = "MSR19 - Sales Confirmation Index"
         '
         'smiMSR20
         '
         Me.smiMSR20.Name = "smiMSR20"
-        Me.smiMSR20.Size = New System.Drawing.Size(266, 22)
+        Me.smiMSR20.Size = New System.Drawing.Size(235, 22)
         Me.smiMSR20.Text = "MSR20 - Purchase Order Index"
         '
         'smiMSR22
         '
         Me.smiMSR22.Name = "smiMSR22"
-        Me.smiMSR22.Size = New System.Drawing.Size(266, 22)
+        Me.smiMSR22.Size = New System.Drawing.Size(235, 22)
         Me.smiMSR22.Text = "MSR22 - BOM PO Index"
         '
         'smiMSR31
         '
         Me.smiMSR31.Name = "smiMSR31"
-        Me.smiMSR31.Size = New System.Drawing.Size(266, 22)
+        Me.smiMSR31.Size = New System.Drawing.Size(235, 22)
         Me.smiMSR31.Text = "MSR31 - Invoice Index"
         '
         'smiMSR33
         '
         Me.smiMSR33.Name = "smiMSR33"
-        Me.smiMSR33.Size = New System.Drawing.Size(266, 22)
+        Me.smiMSR33.Size = New System.Drawing.Size(235, 22)
         Me.smiMSR33.Text = "MSR33 - Sample Invoice Index"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(293, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(253, 6)
         '
         'ToolStripMenuItem483
         '
         Me.ToolStripMenuItem483.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.msiMSR01, Me.msiMSR04, Me.msiMSR12, Me.msiMSR05, Me.msiMSR35})
         Me.ToolStripMenuItem483.Name = "ToolStripMenuItem483"
-        Me.ToolStripMenuItem483.Size = New System.Drawing.Size(296, 22)
+        Me.ToolStripMenuItem483.Size = New System.Drawing.Size(256, 22)
         Me.ToolStripMenuItem483.Text = "Outstanding Reports"
         '
         'msiMSR01
         '
         Me.msiMSR01.Name = "msiMSR01"
-        Me.msiMSR01.Size = New System.Drawing.Size(363, 22)
+        Me.msiMSR01.Size = New System.Drawing.Size(316, 22)
         Me.msiMSR01.Text = "MSR01 - Outstanding Report By Sales Confirmation"
         '
         'msiMSR04
         '
         Me.msiMSR04.Name = "msiMSR04"
-        Me.msiMSR04.Size = New System.Drawing.Size(363, 22)
+        Me.msiMSR04.Size = New System.Drawing.Size(316, 22)
         Me.msiMSR04.Text = "MSR04 - Outstanding Report By Vendor"
         '
         'msiMSR12
         '
         Me.msiMSR12.Name = "msiMSR12"
-        Me.msiMSR12.Size = New System.Drawing.Size(363, 22)
+        Me.msiMSR12.Size = New System.Drawing.Size(316, 22)
         Me.msiMSR12.Text = "MSR12 - Outstanding Report By Customer"
         '
         'msiMSR05
         '
         Me.msiMSR05.Name = "msiMSR05"
-        Me.msiMSR05.Size = New System.Drawing.Size(363, 22)
+        Me.msiMSR05.Size = New System.Drawing.Size(316, 22)
         Me.msiMSR05.Text = "MSR05 - Outstanding Report By Purchase Order"
         '
         'msiMSR35
         '
         Me.msiMSR35.Name = "msiMSR35"
-        Me.msiMSR35.Size = New System.Drawing.Size(363, 22)
+        Me.msiMSR35.Size = New System.Drawing.Size(316, 22)
         Me.msiMSR35.Text = "MSR35 - Outstanding Report (Shipping)"
         '
         'ToolStripMenuItem489
         '
         Me.ToolStripMenuItem489.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.msiIMR19, Me.smiINR11, Me.smiSCR02, Me.smiMSR07, Me.smiBSP04})
         Me.ToolStripMenuItem489.Name = "ToolStripMenuItem489"
-        Me.ToolStripMenuItem489.Size = New System.Drawing.Size(296, 22)
+        Me.ToolStripMenuItem489.Size = New System.Drawing.Size(256, 22)
         Me.ToolStripMenuItem489.Text = "Sales Analysis Reports"
         '
         'msiIMR19
         '
         Me.msiIMR19.Name = "msiIMR19"
-        Me.msiIMR19.Size = New System.Drawing.Size(350, 22)
+        Me.msiIMR19.Size = New System.Drawing.Size(313, 22)
         Me.msiIMR19.Text = "IMR19 - External Item Image List (Export to Excel)"
         '
         'smiINR11
         '
         Me.smiINR11.Name = "smiINR11"
-        Me.smiINR11.Size = New System.Drawing.Size(350, 22)
+        Me.smiINR11.Size = New System.Drawing.Size(313, 22)
         Me.smiINR11.Text = "INR11 - S/C Summary Report"
         '
         'smiSCR02
         '
         Me.smiSCR02.Name = "smiSCR02"
-        Me.smiSCR02.Size = New System.Drawing.Size(350, 22)
+        Me.smiSCR02.Size = New System.Drawing.Size(313, 22)
         Me.smiSCR02.Text = "SCR02 - Sales Confirmation Analysis Report"
         '
         'smiMSR07
         '
         Me.smiMSR07.Name = "smiMSR07"
-        Me.smiMSR07.Size = New System.Drawing.Size(350, 22)
+        Me.smiMSR07.Size = New System.Drawing.Size(313, 22)
         Me.smiMSR07.Text = "MSR07 - Customer Item History Report"
         '
         'smiBSP04
         '
         Me.smiBSP04.Name = "smiBSP04"
-        Me.smiBSP04.Size = New System.Drawing.Size(350, 22)
+        Me.smiBSP04.Size = New System.Drawing.Size(313, 22)
         Me.smiBSP04.Text = "BSP04 - Sales Analysis By Designer"
         '
         'ToolStripMenuItem495
         '
         Me.ToolStripMenuItem495.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiINR04, Me.smiINR10})
         Me.ToolStripMenuItem495.Name = "ToolStripMenuItem495"
-        Me.ToolStripMenuItem495.Size = New System.Drawing.Size(296, 22)
+        Me.ToolStripMenuItem495.Size = New System.Drawing.Size(256, 22)
         Me.ToolStripMenuItem495.Text = "Purchases / Production Analysis Reports"
         '
         'smiINR04
         '
         Me.smiINR04.Name = "smiINR04"
-        Me.smiINR04.Size = New System.Drawing.Size(352, 22)
+        Me.smiINR04.Size = New System.Drawing.Size(309, 22)
         Me.smiINR04.Text = "INR04 - Production Capacity in CBM Report"
         '
         'smiINR10
         '
         Me.smiINR10.Name = "smiINR10"
-        Me.smiINR10.Size = New System.Drawing.Size(352, 22)
+        Me.smiINR10.Size = New System.Drawing.Size(309, 22)
         Me.smiINR10.Text = "INR10 - CBM Ordered Report (Factory Ship-Date)"
         '
         'smiINR132
         '
         Me.smiINR132.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiINR13, Me.smiINR12})
         Me.smiINR132.Name = "smiINR132"
-        Me.smiINR132.Size = New System.Drawing.Size(296, 22)
+        Me.smiINR132.Size = New System.Drawing.Size(256, 22)
         Me.smiINR132.Text = "Shipping / Invoice Analysis Reports"
         '
         'smiINR13
         '
         Me.smiINR13.Name = "smiINR13"
-        Me.smiINR13.Size = New System.Drawing.Size(269, 22)
+        Me.smiINR13.Size = New System.Drawing.Size(237, 22)
         Me.smiINR13.Text = "INR13 - Shipping Summary Report"
         '
         'smiINR12
         '
         Me.smiINR12.Name = "smiINR12"
-        Me.smiINR12.Size = New System.Drawing.Size(269, 22)
+        Me.smiINR12.Size = New System.Drawing.Size(237, 22)
         Me.smiINR12.Text = "INR12 - Shipping Schedule Report"
         '
         'ToolStripMenuItem501
         '
         Me.ToolStripMenuItem501.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiMSR08})
         Me.ToolStripMenuItem501.Name = "ToolStripMenuItem501"
-        Me.ToolStripMenuItem501.Size = New System.Drawing.Size(296, 22)
+        Me.ToolStripMenuItem501.Size = New System.Drawing.Size(256, 22)
         Me.ToolStripMenuItem501.Text = "Sample Order Reports"
         '
         'smiMSR08
         '
         Me.smiMSR08.Name = "smiMSR08"
-        Me.smiMSR08.Size = New System.Drawing.Size(348, 22)
+        Me.smiMSR08.Size = New System.Drawing.Size(299, 22)
         Me.smiMSR08.Text = "MSR08 - Monthly Statement for Sample Charges"
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(293, 6)
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(253, 6)
         '
         'ToolStripMenuItem503
         '
         Me.ToolStripMenuItem503.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiDYR01, Me.smiDYR02, Me.smiDYR03, Me.smiDYR04, Me.smiDYR05, Me.smiDYR06, Me.smiDYR07, Me.smiDYR08, Me.smiDYR09, Me.smiDYR10})
         Me.ToolStripMenuItem503.Name = "ToolStripMenuItem503"
-        Me.ToolStripMenuItem503.Size = New System.Drawing.Size(296, 22)
+        Me.ToolStripMenuItem503.Size = New System.Drawing.Size(256, 22)
         Me.ToolStripMenuItem503.Text = "Data Extraction"
         '
         'smiDYR01
         '
         Me.smiDYR01.Name = "smiDYR01"
-        Me.smiDYR01.Size = New System.Drawing.Size(266, 22)
+        Me.smiDYR01.Size = New System.Drawing.Size(243, 22)
         Me.smiDYR01.Text = "DYR01 - vw_CIH_Repoort"
         '
         'smiDYR02
         '
         Me.smiDYR02.Name = "smiDYR02"
-        Me.smiDYR02.Size = New System.Drawing.Size(266, 22)
+        Me.smiDYR02.Size = New System.Drawing.Size(243, 22)
         Me.smiDYR02.Text = "DYR02 - vw_CusMaster_EC2"
         '
         'smiDYR03
         '
         Me.smiDYR03.Name = "smiDYR03"
-        Me.smiDYR03.Size = New System.Drawing.Size(266, 22)
+        Me.smiDYR03.Size = New System.Drawing.Size(243, 22)
         Me.smiDYR03.Text = "DYR03 - vw_ItemMaster"
         '
         'smiDYR04
         '
         Me.smiDYR04.Name = "smiDYR04"
-        Me.smiDYR04.Size = New System.Drawing.Size(266, 22)
+        Me.smiDYR04.Size = New System.Drawing.Size(243, 22)
         Me.smiDYR04.Text = "DYR04 - vw_ItemMaster_Hist"
         '
         'smiDYR05
         '
         Me.smiDYR05.Name = "smiDYR05"
-        Me.smiDYR05.Size = New System.Drawing.Size(266, 22)
+        Me.smiDYR05.Size = New System.Drawing.Size(243, 22)
         Me.smiDYR05.Text = "DYR05 - vw_SYSETINF"
         '
         'smiDYR06
         '
         Me.smiDYR06.Name = "smiDYR06"
-        Me.smiDYR06.Size = New System.Drawing.Size(266, 22)
+        Me.smiDYR06.Size = New System.Drawing.Size(243, 22)
         Me.smiDYR06.Text = "DYR06 - vw_Quotation"
         '
         'smiDYR07
         '
         Me.smiDYR07.Name = "smiDYR07"
-        Me.smiDYR07.Size = New System.Drawing.Size(266, 22)
+        Me.smiDYR07.Size = New System.Drawing.Size(243, 22)
         Me.smiDYR07.Text = "DYR07 - vw_SampleInvoice"
         '
         'smiDYR08
         '
         Me.smiDYR08.Name = "smiDYR08"
-        Me.smiDYR08.Size = New System.Drawing.Size(266, 22)
+        Me.smiDYR08.Size = New System.Drawing.Size(243, 22)
         Me.smiDYR08.Text = "DYR08 - vw_SampleRequest"
         '
         'smiDYR09
         '
         Me.smiDYR09.Name = "smiDYR09"
-        Me.smiDYR09.Size = New System.Drawing.Size(266, 22)
+        Me.smiDYR09.Size = New System.Drawing.Size(243, 22)
         Me.smiDYR09.Text = "DYR09 - vw_SalesConfirmation_EC"
         '
         'smiDYR10
         '
         Me.smiDYR10.Name = "smiDYR10"
-        Me.smiDYR10.Size = New System.Drawing.Size(266, 22)
+        Me.smiDYR10.Size = New System.Drawing.Size(243, 22)
         Me.smiDYR10.Text = "DYR10 - vw_ShippingInfo"
         '
         'ToolStripSeparator88
         '
         Me.ToolStripSeparator88.Name = "ToolStripSeparator88"
-        Me.ToolStripSeparator88.Size = New System.Drawing.Size(293, 6)
+        Me.ToolStripSeparator88.Size = New System.Drawing.Size(253, 6)
         '
         'smiCOR01
         '
         Me.smiCOR01.Name = "smiCOR01"
-        Me.smiCOR01.Size = New System.Drawing.Size(296, 22)
+        Me.smiCOR01.Size = New System.Drawing.Size(256, 22)
         Me.smiCOR01.Text = "COR01 - Audit Trail Report"
         '
         'WindowToolStripMenuItem
         '
         Me.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem"
-        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(66, 19)
+        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(57, 16)
         Me.WindowToolStripMenuItem.Text = "Window"
         '
         'Splitter1
@@ -2329,14 +2329,14 @@ Public Class ERP00000new
         Me.MenuBarSetup.Image = CType(resources.GetObject("MenuBarSetup.Image"), System.Drawing.Image)
         Me.MenuBarSetup.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.MenuBarSetup.Name = "MenuBarSetup"
-        Me.MenuBarSetup.Size = New System.Drawing.Size(126, 20)
+        Me.MenuBarSetup.Size = New System.Drawing.Size(110, 20)
         Me.MenuBarSetup.Text = "Menu Bar Setup"
         '
         'TopMenuBarMainOnToolStripMenuItem
         '
         Me.TopMenuBarMainOnToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.TopMenuBarMainOnToolStripMenuItem.Name = "TopMenuBarMainOnToolStripMenuItem"
-        Me.TopMenuBarMainOnToolStripMenuItem.Size = New System.Drawing.Size(300, 22)
+        Me.TopMenuBarMainOnToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.TopMenuBarMainOnToolStripMenuItem.Text = "Top Menu Bar (Main) - On"
         Me.TopMenuBarMainOnToolStripMenuItem.Visible = False
         '
@@ -2344,7 +2344,7 @@ Public Class ERP00000new
         '
         Me.TopMenuBarERPOnToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.TopMenuBarERPOnToolStripMenuItem.Name = "TopMenuBarERPOnToolStripMenuItem"
-        Me.TopMenuBarERPOnToolStripMenuItem.Size = New System.Drawing.Size(300, 22)
+        Me.TopMenuBarERPOnToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.TopMenuBarERPOnToolStripMenuItem.Text = "Top Menu Bar (ERP) - On"
         Me.TopMenuBarERPOnToolStripMenuItem.Visible = False
         '
@@ -2352,76 +2352,76 @@ Public Class ERP00000new
         '
         Me.btnOldEnableStyle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.btnOldEnableStyle.Name = "btnOldEnableStyle"
-        Me.btnOldEnableStyle.Size = New System.Drawing.Size(300, 22)
+        Me.btnOldEnableStyle.Size = New System.Drawing.Size(263, 22)
         Me.btnOldEnableStyle.Text = "1 - LongCode MenuBar (Enable version)"
         '
         'btnOldVisibleStyle
         '
         Me.btnOldVisibleStyle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.btnOldVisibleStyle.Name = "btnOldVisibleStyle"
-        Me.btnOldVisibleStyle.Size = New System.Drawing.Size(300, 22)
+        Me.btnOldVisibleStyle.Size = New System.Drawing.Size(263, 22)
         Me.btnOldVisibleStyle.Text = "2 - LongCode MenuBar (Visible version)"
         '
         'btnNewMenuEnableStyle
         '
         Me.btnNewMenuEnableStyle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.btnNewMenuEnableStyle.Name = "btnNewMenuEnableStyle"
-        Me.btnNewMenuEnableStyle.Size = New System.Drawing.Size(300, 22)
+        Me.btnNewMenuEnableStyle.Size = New System.Drawing.Size(263, 22)
         Me.btnNewMenuEnableStyle.Text = "3 - ShortCode MenuBar (Enable version)"
         '
         'btnNewVisibleStyle
         '
         Me.btnNewVisibleStyle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.btnNewVisibleStyle.Name = "btnNewVisibleStyle"
-        Me.btnNewVisibleStyle.Size = New System.Drawing.Size(300, 22)
+        Me.btnNewVisibleStyle.Size = New System.Drawing.Size(263, 22)
         Me.btnNewVisibleStyle.Text = "4 - ShortCode MenuBar (Visible version)"
         '
         'ts0
         '
         Me.ts0.Name = "ts0"
-        Me.ts0.Size = New System.Drawing.Size(10, 17)
+        Me.ts0.Size = New System.Drawing.Size(7, 17)
         Me.ts0.Text = "|"
         Me.ts0.Visible = False
         '
         'DocumentDiagramToolStripStatusLabel
         '
         Me.DocumentDiagramToolStripStatusLabel.Name = "DocumentDiagramToolStripStatusLabel"
-        Me.DocumentDiagramToolStripStatusLabel.Size = New System.Drawing.Size(146, 17)
+        Me.DocumentDiagramToolStripStatusLabel.Size = New System.Drawing.Size(120, 17)
         Me.DocumentDiagramToolStripStatusLabel.Text = "Document Diagram - On"
         Me.DocumentDiagramToolStripStatusLabel.Visible = False
         '
         'ts1
         '
         Me.ts1.Name = "ts1"
-        Me.ts1.Size = New System.Drawing.Size(10, 17)
+        Me.ts1.Size = New System.Drawing.Size(7, 17)
         Me.ts1.Text = "|"
         Me.ts1.Visible = False
         '
         'LeftMenuToolStripStatusLabel
         '
         Me.LeftMenuToolStripStatusLabel.Name = "LeftMenuToolStripStatusLabel"
-        Me.LeftMenuToolStripStatusLabel.Size = New System.Drawing.Size(113, 17)
+        Me.LeftMenuToolStripStatusLabel.Size = New System.Drawing.Size(98, 17)
         Me.LeftMenuToolStripStatusLabel.Text = "Left Menu Bar - On"
         Me.LeftMenuToolStripStatusLabel.Visible = False
         '
         'ts2
         '
         Me.ts2.Name = "ts2"
-        Me.ts2.Size = New System.Drawing.Size(10, 17)
+        Me.ts2.Size = New System.Drawing.Size(7, 17)
         Me.ts2.Text = "|"
         Me.ts2.Visible = False
         '
         'RightMenuToolStripStatusLabel
         '
         Me.RightMenuToolStripStatusLabel.Name = "RightMenuToolStripStatusLabel"
-        Me.RightMenuToolStripStatusLabel.Size = New System.Drawing.Size(122, 17)
+        Me.RightMenuToolStripStatusLabel.Size = New System.Drawing.Size(105, 17)
         Me.RightMenuToolStripStatusLabel.Text = "Right Menu Bar - On"
         Me.RightMenuToolStripStatusLabel.Visible = False
         '
         't3
         '
         Me.t3.Name = "t3"
-        Me.t3.Size = New System.Drawing.Size(10, 17)
+        Me.t3.Size = New System.Drawing.Size(7, 17)
         Me.t3.Text = "|"
         Me.t3.Visible = False
         '
@@ -3087,7 +3087,7 @@ Public Class ERP00000new
 
     End Sub
 
-
+  
 
     Private Sub timeout_Trigger()
         timeout.Enabled = False
@@ -6271,11 +6271,5 @@ Public Class ERP00000new
 
     Private Sub smiQCM10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles smiQCM10.Click
         showForm2(sender, Me)
-    End Sub
-
-    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-        Dim formGraphics As Graphics = Me.CreateGraphics()
-        MessageBox.Show("X dpi : " + formGraphics.DpiX.ToString + "Y dpi:" + formGraphics.DpiY.ToString)
     End Sub
 End Class

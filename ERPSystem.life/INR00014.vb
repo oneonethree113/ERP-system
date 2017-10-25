@@ -51,8 +51,8 @@ Public Class INR00014
         'Me.txt_S_DateFm.CtlText = "08/21/2010"
         'Me.txt_S_DateTo.CtlText = "09/21/2010"
 
-        Me.txt_S_DateFm.CtlText = System.DateTime.Now.AddMonths(-1).ToString("MM/dd/yyyy")
-        Me.txt_S_DateTo.CtlText = System.DateTime.Now.ToString("MM/dd/yyyy")
+        Me.txt_S_DateFm.Text = System.DateTime.Now.AddMonths(-1).ToString("MM/dd/yyyy")
+        Me.txt_S_DateTo.Text = System.DateTime.Now.ToString("MM/dd/yyyy")
         Me.optView1.Checked = True
         Me.opt1w.Checked = True
         Me.optALL.Checked = True
@@ -117,33 +117,33 @@ Public Class INR00014
                 VDRCDELIST = VDRCDELIST.Replace("'", "''")
             End If
 
-            If Me.txt_S_DateFm.CtlText <> "__/__/____" Then
-                If Not IsDate(Me.txt_S_DateFm.CtlText) Then
+            If Me.txt_S_DateFm.Text <> "__/__/____" Then
+                If Not IsDate(Me.txt_S_DateFm.Text) Then
                     MsgBox("Invalid Date Format: Date From")
                     Me.txt_S_DateFm.Focus()
                     Exit Sub
                 End If
             End If
 
-            If Me.txt_S_DateTo.CtlText <> "__/__/____" Then
-                If Not IsDate(Me.txt_S_DateTo.CtlText) Then
+            If Me.txt_S_DateTo.Text <> "__/__/____" Then
+                If Not IsDate(Me.txt_S_DateTo.Text) Then
                     MsgBox("Invalid Date Format: Date To")
                     Me.txt_S_DateTo.Focus()
                     Exit Sub
                 End If
             End If
 
-            If Mid(Me.txt_S_DateFm.CtlText, 7) > Mid(Me.txt_S_DateTo.CtlText, 7) Then
+            If Mid(Me.txt_S_DateFm.Text, 7) > Mid(Me.txt_S_DateTo.Text, 7) Then
                 MsgBox("Date: End Date < Start Date (YY)")
                 Me.txt_S_DateFm.Focus()
                 Exit Sub
-            ElseIf Mid(Me.txt_S_DateFm.CtlText, 7) = Mid(Me.txt_S_DateTo.CtlText, 7) Then
-                If Me.txt_S_DateFm.CtlText.Substring(0, 2) > Me.txt_S_DateTo.CtlText.Substring(0, 2) Then
+            ElseIf Mid(Me.txt_S_DateFm.Text, 7) = Mid(Me.txt_S_DateTo.Text, 7) Then
+                If Me.txt_S_DateFm.Text.Substring(0, 2) > Me.txt_S_DateTo.Text.Substring(0, 2) Then
                     MsgBox("Date: End Date < Start Date (MM)")
                     Me.txt_S_DateFm.Focus()
                     Exit Sub
-                ElseIf Me.txt_S_DateFm.CtlText.Substring(0, 2) = Me.txt_S_DateTo.CtlText.Substring(0, 2) Then
-                    If Me.txt_S_DateFm.CtlText.Substring(4, 2) > Me.txt_S_DateTo.CtlText.Substring(4, 2) Then
+                ElseIf Me.txt_S_DateFm.Text.Substring(0, 2) = Me.txt_S_DateTo.Text.Substring(0, 2) Then
+                    If Me.txt_S_DateFm.Text.Substring(4, 2) > Me.txt_S_DateTo.Text.Substring(4, 2) Then
                         MsgBox("Date: End Date < Start Date (DD)")
                         Me.txt_S_DateFm.Focus()
                         Exit Sub
@@ -151,16 +151,16 @@ Public Class INR00014
                 End If
             End If
 
-            If Me.txt_S_DateFm.CtlText = "__/__/____" Then
+            If Me.txt_S_DateFm.Text = "__/__/____" Then
                 DATFM = "01/01/1900"
             Else
-                DATFM = Me.txt_S_DateFm.CtlText
+                DATFM = Me.txt_S_DateFm.Text
             End If
 
-            If Me.txt_S_DateTo.CtlText = "__/__/____" Then
+            If Me.txt_S_DateTo.Text = "__/__/____" Then
                 DATTO = "01/01/1900"
             Else
-                DATTO = Me.txt_S_DateTo.CtlText
+                DATTO = Me.txt_S_DateTo.Text
             End If
 
             ' C-All Shipment, P-Partial Shipment
@@ -356,7 +356,7 @@ Public Class INR00014
 
                 ' Row 4
                 .Range(.Cells(4, 1), .Cells(4, 5)).Merge()
-                .Cells(4, 1) = "Date Range : " & Me.txt_S_DateFm.CtlText & " - " & Me.txt_S_DateTo.CtlText
+                .Cells(4, 1) = "Date Range : " & Me.txt_S_DateFm.Text & " - " & Me.txt_S_DateTo.Text
                 .Cells(4, 1).Font.Bold = True
 
                 ' Row 6

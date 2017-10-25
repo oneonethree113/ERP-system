@@ -427,7 +427,7 @@
 
     Private Sub Form_Load()
 
-        Me.Icon = ERP00000.Icon
+        Me.Icon = ERP00000new.Icon
 
         Dim S As String
         Dim rs As DataSet

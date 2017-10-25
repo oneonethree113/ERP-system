@@ -114,14 +114,14 @@ Class MPM00003
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.grdDelivery = New System.Windows.Forms.DataGridView
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.Panel1 = New System.Windows.Forms.Panel
-        Me.cmdInsRow = New System.Windows.Forms.Button
-        Me.cmdSave = New System.Windows.Forms.Button
-        Me.cmdDelRow = New System.Windows.Forms.Button
         Me.Label3 = New System.Windows.Forms.Label
         Me.txtItmNo = New System.Windows.Forms.TextBox
         Me.Label2 = New System.Windows.Forms.Label
         Me.txtDlvNo = New System.Windows.Forms.TextBox
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.cmdInsRow = New System.Windows.Forms.Button
+        Me.cmdSave = New System.Windows.Forms.Button
+        Me.cmdDelRow = New System.Windows.Forms.Button
         Me.GroupBox3 = New System.Windows.Forms.GroupBox
         Me.grdMPO = New System.Windows.Forms.DataGridView
         Me.cmdReset = New System.Windows.Forms.Button
@@ -174,14 +174,14 @@ Class MPM00003
         Me.StatusBarPanel1.Alignment = System.Windows.Forms.HorizontalAlignment.Right
         Me.StatusBarPanel1.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
         Me.StatusBarPanel1.Name = "StatusBarPanel1"
-        Me.StatusBarPanel1.Width = 468
+        Me.StatusBarPanel1.Width = 469
         '
         'StatusBarPanel2
         '
         Me.StatusBarPanel2.Alignment = System.Windows.Forms.HorizontalAlignment.Right
         Me.StatusBarPanel2.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring
         Me.StatusBarPanel2.Name = "StatusBarPanel2"
-        Me.StatusBarPanel2.Width = 468
+        Me.StatusBarPanel2.Width = 469
         '
         'TextBox11
         '
@@ -284,6 +284,42 @@ Class MPM00003
         Me.GroupBox2.TabIndex = 285
         Me.GroupBox2.TabStop = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(20, 77)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(43, 12)
+        Me.Label3.TabIndex = 287
+        Me.Label3.Text = "Item No"
+        '
+        'txtItmNo
+        '
+        Me.txtItmNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.txtItmNo.Location = New System.Drawing.Point(98, 74)
+        Me.txtItmNo.MaxLength = 10
+        Me.txtItmNo.Name = "txtItmNo"
+        Me.txtItmNo.Size = New System.Drawing.Size(146, 20)
+        Me.txtItmNo.TabIndex = 3
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(20, 51)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(62, 12)
+        Me.Label2.TabIndex = 285
+        Me.Label2.Text = "Delivery No"
+        '
+        'txtDlvNo
+        '
+        Me.txtDlvNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.txtDlvNo.Location = New System.Drawing.Point(98, 47)
+        Me.txtDlvNo.MaxLength = 10
+        Me.txtDlvNo.Name = "txtDlvNo"
+        Me.txtDlvNo.Size = New System.Drawing.Size(146, 20)
+        Me.txtDlvNo.TabIndex = 2
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.optModify)
@@ -322,42 +358,6 @@ Class MPM00003
         Me.cmdDelRow.TabIndex = 8
         Me.cmdDelRow.TabStop = False
         Me.cmdDelRow.Text = "Del Ro&w"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(20, 77)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(43, 12)
-        Me.Label3.TabIndex = 287
-        Me.Label3.Text = "Item No"
-        '
-        'txtItmNo
-        '
-        Me.txtItmNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.txtItmNo.Location = New System.Drawing.Point(98, 74)
-        Me.txtItmNo.MaxLength = 10
-        Me.txtItmNo.Name = "txtItmNo"
-        Me.txtItmNo.Size = New System.Drawing.Size(146, 20)
-        Me.txtItmNo.TabIndex = 3
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(20, 51)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(62, 12)
-        Me.Label2.TabIndex = 285
-        Me.Label2.Text = "Delivery No"
-        '
-        'txtDlvNo
-        '
-        Me.txtDlvNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.txtDlvNo.Location = New System.Drawing.Point(98, 47)
-        Me.txtDlvNo.MaxLength = 10
-        Me.txtDlvNo.Name = "txtDlvNo"
-        Me.txtDlvNo.Size = New System.Drawing.Size(146, 20)
-        Me.txtDlvNo.TabIndex = 2
         '
         'GroupBox3
         '

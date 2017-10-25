@@ -60,6 +60,7 @@ Public Class DYR00001
     Friend WithEvents txt_S_CredatTo As System.Windows.Forms.MaskedTextBox
     Friend WithEvents TabPage7 As System.Windows.Forms.TabPage
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DYR00001))
         Me.StatusBar1 = New System.Windows.Forms.StatusBar
         Me.TabPage6 = New System.Windows.Forms.TabPage
         Me.TabPage7 = New System.Windows.Forms.TabPage
@@ -89,7 +90,7 @@ Public Class DYR00001
         '
         Me.StatusBar1.Location = New System.Drawing.Point(0, 240)
         Me.StatusBar1.Name = "StatusBar1"
-        Me.StatusBar1.Size = New System.Drawing.Size(752, 16)
+        Me.StatusBar1.Size = New System.Drawing.Size(714, 16)
         Me.StatusBar1.TabIndex = 1
         '
         'TabPage6
@@ -136,7 +137,7 @@ Public Class DYR00001
         Me.lbl_S_ItmNo.AutoSize = True
         Me.lbl_S_ItmNo.Location = New System.Drawing.Point(17, 92)
         Me.lbl_S_ItmNo.Name = "lbl_S_ItmNo"
-        Me.lbl_S_ItmNo.Size = New System.Drawing.Size(47, 15)
+        Me.lbl_S_ItmNo.Size = New System.Drawing.Size(43, 12)
         Me.lbl_S_ItmNo.TabIndex = 110
         Me.lbl_S_ItmNo.Text = "Item No"
         '
@@ -145,7 +146,7 @@ Public Class DYR00001
         Me.txt_S_ItmNo.Location = New System.Drawing.Point(201, 89)
         Me.txt_S_ItmNo.MaxLength = 5000
         Me.txt_S_ItmNo.Name = "txt_S_ItmNo"
-        Me.txt_S_ItmNo.Size = New System.Drawing.Size(515, 21)
+        Me.txt_S_ItmNo.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_ItmNo.TabIndex = 5
         '
         'txt_S_PriCustAll
@@ -153,16 +154,16 @@ Public Class DYR00001
         Me.txt_S_PriCustAll.Location = New System.Drawing.Point(201, 50)
         Me.txt_S_PriCustAll.MaxLength = 5000
         Me.txt_S_PriCustAll.Name = "txt_S_PriCustAll"
-        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(515, 21)
+        Me.txt_S_PriCustAll.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_PriCustAll.TabIndex = 3
         '
         'txt_S_CoCde
         '
         Me.txt_S_CoCde.Enabled = False
-        Me.txt_S_CoCde.Location = New System.Drawing.Point(201, 12)
+        Me.txt_S_CoCde.Location = New System.Drawing.Point(201, 13)
         Me.txt_S_CoCde.MaxLength = 5000
         Me.txt_S_CoCde.Name = "txt_S_CoCde"
-        Me.txt_S_CoCde.Size = New System.Drawing.Size(515, 21)
+        Me.txt_S_CoCde.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_CoCde.TabIndex = 1
         '
         'lbl_S_PriCust
@@ -170,7 +171,7 @@ Public Class DYR00001
         Me.lbl_S_PriCust.AutoSize = True
         Me.lbl_S_PriCust.Location = New System.Drawing.Point(17, 55)
         Me.lbl_S_PriCust.Name = "lbl_S_PriCust"
-        Me.lbl_S_PriCust.Size = New System.Drawing.Size(71, 15)
+        Me.lbl_S_PriCust.Size = New System.Drawing.Size(66, 12)
         Me.lbl_S_PriCust.TabIndex = 105
         Me.lbl_S_PriCust.Text = "Pri Customer"
         '
@@ -179,25 +180,25 @@ Public Class DYR00001
         Me.lbl_S_CoCde.AutoSize = True
         Me.lbl_S_CoCde.Location = New System.Drawing.Point(17, 17)
         Me.lbl_S_CoCde.Name = "lbl_S_CoCde"
-        Me.lbl_S_CoCde.Size = New System.Drawing.Size(83, 15)
+        Me.lbl_S_CoCde.Size = New System.Drawing.Size(79, 12)
         Me.lbl_S_CoCde.TabIndex = 104
         Me.lbl_S_CoCde.Text = "Company Code"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(161, 162)
+        Me.Label2.Location = New System.Drawing.Point(163, 167)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(33, 15)
+        Me.Label2.Size = New System.Drawing.Size(30, 12)
         Me.Label2.TabIndex = 161
         Me.Label2.Text = "From"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(449, 162)
+        Me.Label10.Location = New System.Drawing.Point(449, 167)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(21, 15)
+        Me.Label10.Size = New System.Drawing.Size(18, 12)
         Me.Label10.TabIndex = 160
         Me.Label10.Text = "To"
         '
@@ -219,7 +220,7 @@ Public Class DYR00001
         '
         'Label17
         '
-        Me.Label17.Location = New System.Drawing.Point(17, 162)
+        Me.Label17.Location = New System.Drawing.Point(19, 167)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(100, 23)
         Me.Label17.TabIndex = 157
@@ -229,7 +230,7 @@ Public Class DYR00001
         '
         Me.cmdShow.Location = New System.Drawing.Point(337, 198)
         Me.cmdShow.Name = "cmdShow"
-        Me.cmdShow.Size = New System.Drawing.Size(133, 33)
+        Me.cmdShow.Size = New System.Drawing.Size(140, 22)
         Me.cmdShow.TabIndex = 10
         Me.cmdShow.Text = "Show Report"
         Me.cmdShow.UseVisualStyleBackColor = True
@@ -247,7 +248,7 @@ Public Class DYR00001
         Me.Label18.AutoSize = True
         Me.Label18.Location = New System.Drawing.Point(17, 130)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(78, 15)
+        Me.Label18.Size = New System.Drawing.Size(75, 12)
         Me.Label18.TabIndex = 163
         Me.Label18.Text = "Design Vendor"
         '
@@ -256,7 +257,7 @@ Public Class DYR00001
         Me.txt_S_DV.Location = New System.Drawing.Point(201, 126)
         Me.txt_S_DV.MaxLength = 5000
         Me.txt_S_DV.Name = "txt_S_DV"
-        Me.txt_S_DV.Size = New System.Drawing.Size(515, 21)
+        Me.txt_S_DV.Size = New System.Drawing.Size(501, 22)
         Me.txt_S_DV.TabIndex = 7
         '
         'txt_S_CredatFm
@@ -264,7 +265,7 @@ Public Class DYR00001
         Me.txt_S_CredatFm.Location = New System.Drawing.Point(201, 165)
         Me.txt_S_CredatFm.Mask = "00/00/0000"
         Me.txt_S_CredatFm.Name = "txt_S_CredatFm"
-        Me.txt_S_CredatFm.Size = New System.Drawing.Size(88, 21)
+        Me.txt_S_CredatFm.Size = New System.Drawing.Size(88, 22)
         Me.txt_S_CredatFm.TabIndex = 8
         '
         'txt_S_CredatTo
@@ -272,13 +273,13 @@ Public Class DYR00001
         Me.txt_S_CredatTo.Location = New System.Drawing.Point(486, 164)
         Me.txt_S_CredatTo.Mask = "00/00/0000"
         Me.txt_S_CredatTo.Name = "txt_S_CredatTo"
-        Me.txt_S_CredatTo.Size = New System.Drawing.Size(85, 21)
+        Me.txt_S_CredatTo.Size = New System.Drawing.Size(85, 22)
         Me.txt_S_CredatTo.TabIndex = 9
         '
         'DYR00001
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 14)
-        Me.ClientSize = New System.Drawing.Size(752, 256)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 15)
+        Me.ClientSize = New System.Drawing.Size(714, 256)
         Me.Controls.Add(Me.txt_S_CredatTo)
         Me.Controls.Add(Me.txt_S_CredatFm)
         Me.Controls.Add(Me.cmd_S_DV)
@@ -300,9 +301,10 @@ Public Class DYR00001
         Me.Controls.Add(Me.lbl_S_PriCust)
         Me.Controls.Add(Me.lbl_S_CoCde)
         Me.Controls.Add(Me.StatusBar1)
-        Me.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "DYR00001"
-        Me.Text = "DYR00001 - Dynamic Report vw_CIH_Report"
+        Me.Text = "DYR00001 - Dynamic Report vw_CIH_Report (DYR01)"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

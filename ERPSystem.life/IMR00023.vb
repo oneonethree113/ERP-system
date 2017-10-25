@@ -37,6 +37,8 @@
         dirSource.Nodes(0).Expand()
         dirSource.SelectedNode = dirSource.Nodes(0)
 
+        Formstartup(Me.Name)
+
         txtProcess.Text = ""
         txtProcess.Refresh()
 
