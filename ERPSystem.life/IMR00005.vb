@@ -187,6 +187,10 @@ Public Class IMR00005
 
         Me.Cursor = Windows.Forms.Cursors.Default
         xlsApp.Visible = True
+        xlsWS = Nothing
+        xlsWB = Nothing
+        xlsApp = Nothing
+
     End Sub
 
     Private Sub setExcelFormat(ByVal xlsApp As Excel.Application, _

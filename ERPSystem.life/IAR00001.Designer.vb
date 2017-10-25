@@ -25,6 +25,7 @@ Partial Class IAR00001
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IAR00001))
         Me.Label1 = New System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton
         Me.txtItmNo = New System.Windows.Forms.TextBox
         Me.txt_S_DV = New System.Windows.Forms.TextBox
         Me.cmd_S_DV = New System.Windows.Forms.Button
@@ -48,7 +49,6 @@ Partial Class IAR00001
         Me.chkExcel = New System.Windows.Forms.CheckBox
         Me.cmdShowReport = New System.Windows.Forms.Button
         Me.btnExExcel = New System.Windows.Forms.Button
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -92,6 +92,17 @@ Partial Class IAR00001
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Selection Criteria"
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(321, 21)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(159, 16)
+        Me.RadioButton1.TabIndex = 85
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Excel upload data with Temp"
+        Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'txtItmNo
         '
@@ -187,7 +198,7 @@ Partial Class IAR00001
         Me.cmd_S_ItmNo.Location = New System.Drawing.Point(136, 87)
         Me.cmd_S_ItmNo.Name = "cmd_S_ItmNo"
         Me.cmd_S_ItmNo.Size = New System.Drawing.Size(45, 22)
-        Me.cmd_S_ItmNo.TabIndex = 74
+        Me.cmd_S_ItmNo.TabIndex = 8
         Me.cmd_S_ItmNo.Text = "＞＞"
         '
         'lblTranDateTo
@@ -296,17 +307,6 @@ Partial Class IAR00001
         Me.btnExExcel.TabIndex = 4
         Me.btnExExcel.Text = "Export to Excel"
         Me.btnExExcel.UseVisualStyleBackColor = True
-        '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(321, 21)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(159, 16)
-        Me.RadioButton1.TabIndex = 85
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Excel upload data with Temp"
-        Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'IAR00001
         '

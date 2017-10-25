@@ -1142,15 +1142,6 @@ Public Class IAR00001
             txtTranToDate.Visible = True
             chkAssort.Visible = False
             btnExExcel.Enabled = True
-            'ElseIf optBOMItm.Checked = True Then
-            '    lblSearchParam.Visible = True
-            '    lblSearchParam.Text = "Show Assortment Item"
-            '    txtTranFromDate.Visible = False
-            '    lblTranDateTo.Visible = False
-            '    txtTranToDate.Visible = False
-            '    chkAssort.Visible = True
-            '    chkAssort.Checked = True
-            '    btnExExcel.Enabled = True
         End If
     End Sub
 
@@ -1291,7 +1282,7 @@ Public Class IAR00001
             MsgBox("There are more than 65535 records!")
             Exit Sub
         End If
-
+        ''''Start: Dont care about this part. This is the code farmat to call a excel'''''''
         Dim xlsApp As New Excel.ApplicationClass
         Dim xlsWB As Excel.Workbook = Nothing
         Dim xlsWS As Excel.Worksheet = Nothing
@@ -1313,188 +1304,17 @@ Public Class IAR00001
 
         xlsWB = xlsApp.Workbooks.Add()
         xlsWS = xlsWB.ActiveSheet
+        ''''End: Dont care about this part. This is the code farmat to call a excel''''''''''''
 
-        With xlsApp
-            'Header Initialization
-            .Range(.Cells(1, 1), .Cells(2, 1)).MergeCells = True
-            .Range(.Cells(1, 1), .Cells(2, 1)).VerticalAlignment = Excel.Constants.xlCenter
-            .Range(.Cells(1, 1), .Cells(2, 1)).Value = "Item No."
-            .Range(.Cells(1, 2), .Cells(2, 2)).MergeCells = True
-            .Range(.Cells(1, 2), .Cells(2, 2)).VerticalAlignment = Excel.Constants.xlCenter
-            .Range(.Cells(1, 2), .Cells(2, 2)).Value = "Item Type"
-            .Range(.Cells(1, 3), .Cells(2, 3)).MergeCells = True
-            .Range(.Cells(1, 3), .Cells(2, 3)).VerticalAlignment = Excel.Constants.xlCenter
-            .Range(.Cells(1, 3), .Cells(2, 3)).Value = "DV"
-            .Range(.Cells(1, 4), .Cells(2, 4)).MergeCells = True
-            .Range(.Cells(1, 4), .Cells(2, 4)).VerticalAlignment = Excel.Constants.xlCenter
-            .Range(.Cells(1, 4), .Cells(2, 4)).Value = "PV"
-            .Range(.Cells(1, 5), .Cells(2, 5)).MergeCells = True
-            .Range(.Cells(1, 5), .Cells(2, 5)).VerticalAlignment = Excel.Constants.xlCenter
-            .Range(.Cells(1, 5), .Cells(2, 5)).Value = "UM"
-            .Range(.Cells(1, 6), .Cells(2, 6)).MergeCells = True
-            .Range(.Cells(1, 6), .Cells(2, 6)).VerticalAlignment = Excel.Constants.xlCenter
-            .Range(.Cells(1, 6), .Cells(2, 6)).Value = "Inr"
-            .Range(.Cells(1, 7), .Cells(2, 7)).MergeCells = True
-            .Range(.Cells(1, 7), .Cells(2, 7)).VerticalAlignment = Excel.Constants.xlCenter
-            .Range(.Cells(1, 7), .Cells(2, 7)).Value = "Mtr"
-            .Range(.Cells(1, 8), .Cells(2, 8)).MergeCells = True
-            .Range(.Cells(1, 8), .Cells(2, 8)).VerticalAlignment = Excel.Constants.xlCenter
-            .Range(.Cells(1, 8), .Cells(2, 8)).Value = "CFT"
-            .Range(.Cells(1, 9), .Cells(2, 9)).MergeCells = True
-            .Range(.Cells(1, 9), .Cells(2, 9)).VerticalAlignment = Excel.Constants.xlCenter
-            .Range(.Cells(1, 9), .Cells(2, 9)).Value = "Pri Cus"
-            .Range(.Cells(1, 10), .Cells(2, 10)).MergeCells = True
-            .Range(.Cells(1, 10), .Cells(2, 10)).VerticalAlignment = Excel.Constants.xlCenter
-            .Range(.Cells(1, 10), .Cells(2, 10)).Value = "Sec Cus"
-            .Range(.Cells(1, 11), .Cells(2, 11)).MergeCells = True
-            .Range(.Cells(1, 11), .Cells(2, 11)).VerticalAlignment = Excel.Constants.xlCenter
-            .Range(.Cells(1, 11), .Cells(2, 11)).WrapText = True
-            .Range(.Cells(1, 11), .Cells(2, 11)).Value = "FTY Price Term"
-            .Range(.Cells(1, 12), .Cells(2, 12)).MergeCells = True
-            .Range(.Cells(1, 12), .Cells(2, 12)).VerticalAlignment = Excel.Constants.xlCenter
-            .Range(.Cells(1, 12), .Cells(2, 12)).WrapText = True
-            .Range(.Cells(1, 12), .Cells(2, 12)).Value = "HK Price Term"
+        fillitemPriceHistorycontent(xlsApp)
+        itemPriceHistoryExcelFormat(xlsApp)
+       
 
-            .Range(.Cells(1, 13), .Cells(2, 13)).MergeCells = True
-            .Range(.Cells(1, 13), .Cells(2, 13)).VerticalAlignment = Excel.Constants.xlCenter
-            .Range(.Cells(1, 13), .Cells(2, 13)).WrapText = True
-            .Range(.Cells(1, 13), .Cells(2, 13)).Value = "Transport" & Environment.NewLine & "Term"
-
-            .Range(.Cells(1, 14), .Cells(2, 14)).MergeCells = True
-            .Range(.Cells(1, 14), .Cells(2, 14)).VerticalAlignment = Excel.Constants.xlCenter
-            .Range(.Cells(1, 14), .Cells(2, 14)).WrapText = True
-            .Range(.Cells(1, 14), .Cells(2, 14)).Value = "Price Change Date"
-            .Range(.Cells(1, 15), .Cells(2, 15)).MergeCells = True
-            .Range(.Cells(1, 15), .Cells(2, 15)).VerticalAlignment = Excel.Constants.xlCenter
-            .Range(.Cells(1, 15), .Cells(2, 15)).WrapText = True
-            .Range(.Cells(1, 15), .Cells(2, 15)).Value = "Price Change Reason"
-
-
-
-            .Range(.Cells(1, 16), .Cells(1, 44)).MergeCells = True
-            .Range(.Cells(1, 16), .Cells(1, 44)).Value = "Before"
-            .Cells(2, 16) = "Effective Date"
-            .Cells(2, 17) = "Expiry Date"
-            .Cells(2, 18) = "CCY"
-            .Cells(2, 19) = "FTY Cst TTL"
-            .Cells(2, 20) = "FTY Cst A"
-            .Cells(2, 21) = "FTY Cst B"
-            .Cells(2, 22) = "FTY Cst C"
-            .Cells(2, 23) = "FTY Cst D"
-            .Cells(2, 24) = "FTY Cst E"
-            .Cells(2, 25) = "FTY Cst Tran"
-            .Cells(2, 26) = "FTY Cst Pack"
-            .Cells(2, 27) = "FTY Prc TTL"
-            .Cells(2, 28) = "BOM Cst"
-            .Cells(2, 29) = "TTL Cst"
-            .Cells(2, 30) = "Neg Prc"
-            .Cells(2, 31) = "Markup"
-            .Cells(2, 32) = "Basic CCY"
-            .Cells(2, 33) = "Item Prc"
-            .Cells(2, 34) = "BOM Prc"
-            .Cells(2, 35) = "Basic Prc"
-            .Cells(2, 36) = "Period"
-            .Cells(2, 37) = "Cost Change Date"
-            .Range(.Cells(1, 38), .Cells(1, 73)).MergeCells = True
-            .Range(.Cells(1, 38), .Cells(1, 73)).Value = "After"
-            .Cells(2, 38) = "Effective Date"
-            .Cells(2, 39) = "Expiry Date"
-            .Cells(2, 40) = "CCY"
-            .Cells(2, 41) = "FTY Cst TTL"
-            .Cells(2, 42) = "FTY Cst A"
-            .Cells(2, 43) = "FTY Cst B"
-            .Cells(2, 44) = "FTY Cst C"
-            .Cells(2, 45) = "FTY Cst D"
-            .Cells(2, 46) = "FTY Cst E"
-            .Cells(2, 47) = "FTY Cst Tran"
-            .Cells(2, 48) = "FTY Cst Pack"
-            .Cells(2, 49) = "FTY Prc TTL"
-            .Cells(2, 50) = "BOM Cst"
-            .Cells(2, 51) = "TTL Cst"
-            .Cells(2, 52) = "Neg Prc"
-            .Cells(2, 53) = "Markup"
-            .Cells(2, 54) = "Basic CCY"
-            .Cells(2, 55) = "Item Prc"
-            .Cells(2, 56) = "BOM Prc"
-            .Cells(2, 57) = "Basic Prc"
-            .Cells(2, 58) = "Period"
-            .Cells(2, 59) = "Cost Change Date"
-        End With
-
-        With xlsApp
-            For i As Integer = 0 To rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows.Count - 1
-
-                .Cells(3 + i, 1) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_itmno").ToString
-                .Cells(3 + i, 2) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_typ").ToString
-                .Cells(3 + i, 3) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_venno").ToString
-                .Cells(3 + i, 4) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_prdven").ToString
-                .Cells(3 + i, 5) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_pckunt").ToString
-                .Cells(3 + i, 6) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_inrqty").ToString
-                .Cells(3 + i, 7) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_mtrqty").ToString
-                .Cells(3 + i, 8) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cft").ToString
-                .Cells(3 + i, 9) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cus1no").ToString
-                .Cells(3 + i, 10) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cus2no").ToString
-                .Cells(3 + i, 11) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyprctrm").ToString
-                .Cells(3 + i, 12) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_hkprctrm").ToString
-                .Cells(3 + i, 13) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_trantrm").ToString
-                .Cells(3 + i, 14) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_chgdat").ToString
-                .Cells(3 + i, 15) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_chgreason").ToString
-                .Cells(3 + i, 16) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_effdat_before").ToString
-                .Cells(3 + i, 17) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_expdat_before").ToString
-                .Cells(3 + i, 18) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_curcde_before").ToString
-                .Cells(3 + i, 19) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycst_before").ToString
-                .Cells(3 + i, 20) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstA_before").ToString
-                .Cells(3 + i, 21) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstB_before").ToString
-                .Cells(3 + i, 22) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstC_before").ToString
-                .Cells(3 + i, 23) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstD_before").ToString
-                .Cells(3 + i, 24) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstE_before").ToString
-                .Cells(3 + i, 25) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstTran_before").ToString
-                .Cells(3 + i, 26) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstPack_before").ToString
-                .Cells(3 + i, 27) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyprc_before").ToString
-                .Cells(3 + i, 28) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_bomcst_before").ToString
-                .Cells(3 + i, 29) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ttlcst_before").ToString
-                .Cells(3 + i, 30) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_negprc_before").ToString
-                .Cells(3 + i, 31) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_fmlopt_before").ToString
-                .Cells(3 + i, 32) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_bcurcde_before").ToString
-                .Cells(3 + i, 33) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_itmprc_before").ToString
-                .Cells(3 + i, 34) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_bomprc_before").ToString
-                .Cells(3 + i, 35) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_basprc_before").ToString
-                .Cells(3 + i, 36) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_period_before").ToString
-                .Cells(3 + i, 37) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cstchgdat_before").ToString
-                .Cells(3 + i, 38) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_effdat_after").ToString
-                .Cells(3 + i, 39) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_expdat_after").ToString
-                .Cells(3 + i, 40) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_curcde_after").ToString
-                .Cells(3 + i, 41) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycst_after").ToString
-                .Cells(3 + i, 42) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstA_after").ToString
-                .Cells(3 + i, 43) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstB_after").ToString
-                .Cells(3 + i, 44) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstC_after").ToString
-                .Cells(3 + i, 45) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstD_after").ToString
-                .Cells(3 + i, 46) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstE_after").ToString
-                .Cells(3 + i, 47) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstTran_after").ToString
-                .Cells(3 + i, 48) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstPack_after").ToString
-                .Cells(3 + i, 49) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyprc_after").ToString
-                .Cells(3 + i, 50) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_bomcst_after").ToString
-                .Cells(3 + i, 51) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ttlcst_after").ToString
-                .Cells(3 + i, 52) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_negprc_after").ToString
-                .Cells(3 + i, 53) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_fmlopt_after").ToString
-                .Cells(3 + i, 54) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_bcurcde_after").ToString
-                .Cells(3 + i, 55) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_itmprc_after").ToString
-                .Cells(3 + i, 56) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_bomprc_after").ToString
-                .Cells(3 + i, 57) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_basprc_after").ToString
-                .Cells(3 + i, 58) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_period_after").ToString
-                .Cells(3 + i, 59) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cstchgdat_after").ToString
-            Next
-        End With
-
-        With xlsApp
-            '.Range(.Cells(7, 1), .Cells(7, 1)).ColumnWidth = 15
-            '.Range(.Cells(7, 2), .Cells(7, 2)).ColumnWidth = 5.57
-            '.Range(.Cells(7, 3), .Cells(1, 7)).ColumnWidth = 4.57
-            .Columns("A:BQ").EntireColumn.AutoFit()
-            .Columns(13).ColumnWidth = 10
-            .Columns("A:BQ").EntireColumn.HorizontalAlignment = Excel.Constants.xlCenter
-            .Rows("1:2").Font.Bold = True
-        End With
+        'With xlsApp
+        '    .Columns("A:BQ").EntireColumn.AutoFit()
+        '    .Columns(13).ColumnWidth = 10
+        '    .Columns("A:BQ").EntireColumn.HorizontalAlignment = Excel.Constants.xlCenter
+        'End With
 
         xlsApp.Visible = True
 
@@ -1507,4 +1327,265 @@ Public Class IAR00001
         Me.Cursor = Windows.Forms.Cursors.Default
     End Sub
 
+    Private Sub itemPriceHistoryExcelFormat(ByVal xlsApp As Excel.Application)
+
+        With xlsApp
+            'Header Initialization
+
+            Dim curCol As Integer = 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Pri" + Environment.NewLine + "Cust."
+            .Columns(curCol).ColumnWidth = 7
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Sec" + Environment.NewLine + "Cust."
+            .Columns(curCol).ColumnWidth = 7
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Item No."
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Temp Item No."
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Prc Chg Date"
+            .Columns(curCol).ColumnWidth = 16
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Mode"
+            .Columns(curCol).ColumnWidth = 6
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Range(.Cells(2, curCol + 1), .Cells(2, curCol + 1)).Select() 'Freeze cell
+            .ActiveWindow.FreezePanes = True
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Prc Chg Reason"
+            .Columns(curCol).ColumnWidth = 20
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "DV"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "UM"
+            .Columns(curCol).ColumnWidth = 7
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Ftr"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Inr"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Mtr"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "CFT"
+            .Columns(curCol).ColumnWidth = 9
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Fty Prc" + Environment.NewLine + "Term"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "HK Prc" + Environment.NewLine + "Term"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Tran" + Environment.NewLine + "Term"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "CCY"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Fty Cst" + Environment.NewLine + "A"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Fty Cst" + Environment.NewLine + "B"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Fty Cst" + Environment.NewLine + "C"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Fty Cst" + Environment.NewLine + "D"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Fty Cst" + Environment.NewLine + "E"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Fty Cst" + Environment.NewLine + "Tran"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Fty Cst" + Environment.NewLine + "Pack"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Fty Cst TTL"
+            .Columns(curCol).ColumnWidth = 10
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Fty Prc TTL"
+            .Columns(curCol).ColumnWidth = 10
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Fty Cst" + Environment.NewLine + "Diff (%)"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Fty Prc" + Environment.NewLine + "Diff (%)"
+            .Columns(curCol).ColumnWidth = 8
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Period"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Eff Date"
+            .Columns(curCol).ColumnWidth = 11
+            .Columns(curCol).NumberFormat = "MM/dd/yyyy"
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Exp Date"
+            .Columns(curCol).ColumnWidth = 11
+            .Columns(curCol).NumberFormat = "MM/dd/yyyy"
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "Basic Prc" + Environment.NewLine + "(USD)"
+            .Columns(curCol).ColumnWidth = 11
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+            .Range(.Cells(1, curCol), .Cells(1, curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            .Cells(1, curCol).Value = "HK MU"
+            .Columns(curCol).ColumnWidth = 13
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+
+            'set header row align and filter
+            .Rows(1).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            xlsApp.Range(xlsApp.Cells(1, 1), xlsApp.Cells(1, curCol)).AutoFilter(1, Type.Missing, Excel.XlAutoFilterOperator.xlAnd, Type.Missing, True)
+
+
+        End With
+    End Sub
+
+    Private Sub fillitemPriceHistorycontent(ByVal xlsApp As Excel.Application)
+        With xlsApp
+            For i As Integer = 0 To rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows.Count - 1
+
+                Dim notNewRecode As Boolean = notNewItemPriceHistRow(i)
+                Dim curCol As Integer = 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cus1no").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cus2no").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_itmno").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_tempitmno").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cstchgdat").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_mode").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_chgreason").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_venno").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_pckunt").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_conftr").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_inrqty").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_mtrqty").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cft").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyprctrm").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_hkprctrm").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_trantrm").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_curcde").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstA").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstB").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstC").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstD").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstE").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstTran").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstPack").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycst").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyprc").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstdiff").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyPrcDiff").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_period").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_effdat").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_expdat").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_basprc").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_fmlopt_after").ToString, "")
+            Next
+        End With
+    End Sub
+
+    Function notNewItemPriceHistRow(ByVal curRow As Integer) As Boolean
+        Return (rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(curRow)("imu_basprc") <> 0)
+
+    End Function
 End Class
