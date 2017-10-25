@@ -1513,7 +1513,7 @@ Public Class IAR00001
         With xlsApp
             For i As Integer = 0 To rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows.Count - 1
 
-                Dim notNewRecode As Boolean = notNewItemPriceHistRow(i)
+                Dim notNewRecord As Boolean = notNewItemPriceHistRow(i)
                 Dim curCol As Integer = 1
                 .Cells(2 + i, curCol) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cus1no").ToString
                 curCol = curCol + 1
@@ -1523,68 +1523,69 @@ Public Class IAR00001
                 curCol = curCol + 1
                 .Cells(2 + i, curCol) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_tempitmno").ToString
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cstchgdat").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cstchgdat").ToString, "")
                 curCol = curCol + 1
                 .Cells(2 + i, curCol) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_mode").ToString
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_chgreason").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_chgreason").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_venno").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_venno").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_pckunt").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_pckunt").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_conftr").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_conftr").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_inrqty").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_inrqty").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_mtrqty").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_mtrqty").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cft").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cft").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyprctrm").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyprctrm").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_hkprctrm").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_hkprctrm").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_trantrm").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_trantrm").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_curcde").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_curcde").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstA").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstA").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstB").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstB").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstC").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstC").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstD").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstD").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstE").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstE").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstTran").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstTran").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstPack").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstPack").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycst").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycst").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyprc").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyprc").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstdiff").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstdiff").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyPrcDiff").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyPrcDiff").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_period").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_period").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_effdat").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_effdat").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_expdat").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_expdat").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_basprc").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_basprc").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecode, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_fmlopt_after").ToString, "")
+                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_fmlopt_after").ToString, "")
             Next
         End With
     End Sub
 
     Function notNewItemPriceHistRow(ByVal curRow As Integer) As Boolean
+        'if the record have no basic price, that means the record does not exist beofre change->new
         Return (rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(curRow)("imu_basprc") <> 0)
 
     End Function
