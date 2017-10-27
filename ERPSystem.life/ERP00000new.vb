@@ -333,6 +333,7 @@ Public Class ERP00000new
     Friend WithEvents btnNewMenuEnableStyle As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents smiQCM10 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents smiINR15 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TopMenuBarERPOnToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ERP00000new))
@@ -637,6 +638,7 @@ Public Class ERP00000new
         Me.btnToLong = New System.Windows.Forms.Button
         Me.btnToShort = New System.Windows.Forms.Button
         Me.Button5 = New System.Windows.Forms.Button
+        Me.smiINR15 = New System.Windows.Forms.ToolStripMenuItem
         Me.msMenuERP.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -1973,7 +1975,7 @@ Public Class ERP00000new
         '
         'ToolStripMenuItem466
         '
-        Me.ToolStripMenuItem466.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiIAR01, Me.smiIMR17, Me.smiMSR32, Me.smiIMR13, Me.smiIMR23, Me.smiIMR27, Me.smiIMR21, Me.smiIMR22, Me.ToolStripSeparator3, Me.smiINR14})
+        Me.ToolStripMenuItem466.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiIAR01, Me.smiIMR17, Me.smiMSR32, Me.smiIMR13, Me.smiIMR23, Me.smiIMR27, Me.smiIMR21, Me.smiIMR22, Me.ToolStripSeparator3, Me.smiINR14, Me.smiINR15})
         Me.ToolStripMenuItem466.Name = "ToolStripMenuItem466"
         Me.ToolStripMenuItem466.Size = New System.Drawing.Size(296, 22)
         Me.ToolStripMenuItem466.Text = "Item Information Report"
@@ -2490,12 +2492,19 @@ Public Class ERP00000new
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(90, 56)
+        Me.Button5.Location = New System.Drawing.Point(9, 24)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(120, 44)
         Me.Button5.TabIndex = 36
-        Me.Button5.Text = "set backgroud image"
+        Me.Button5.Text = "Set Backgroud Image"
         Me.Button5.UseVisualStyleBackColor = True
+        Me.Button5.Visible = False
+        '
+        'smiINR15
+        '
+        Me.smiINR15.Name = "smiINR15"
+        Me.smiINR15.Size = New System.Drawing.Size(357, 22)
+        Me.smiINR15.Text = "INR15 - Search Photo Desc. Report "
         '
         'ERP00000new
         '
@@ -2586,7 +2595,8 @@ Public Class ERP00000new
 
 
         MenuBarSetup.Visible = True
-
+        smiINR15.Enabled = True
+        smiINR15.Visible = True
     End Sub
     Private Sub setDropdownAutofit(ByRef menustrip As MenuStrip)
 
@@ -6320,5 +6330,9 @@ Public Class ERP00000new
                 End If
             End Try
         End If
+    End Sub
+
+    Private Sub smiINR15_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles smiINR15.Click
+        showForm2(sender, Me)
     End Sub
 End Class

@@ -22,9 +22,9 @@ Public Class IAR00001
         Dim day As String
         month = "0" + Date.Today.Month.ToString
         day = "0" + Date.Today.Day.ToString
-        txtTranFromDate.Text = month.Substring(month.Length - 2, 2) + "/" + day.Substring(day.Length - 2, 2) + "/" + CStr(Date.Today.Year)
+        txtTranFromDate.Text = month.Substring(month.Length - 2, 2) + "/" + day.Substring(day.Length - 2, 2) + "/" + CStr(Date.Today.Year - 1)
         txtTranToDate.Text = month.Substring(month.Length - 2, 2) + "/" + day.Substring(day.Length - 2, 2) + "/" + CStr(Date.Today.Year)
-        optByExcel.Select()
+        optIMupd.Select()
         txtItmNo.Focus()
         txtItmNo.Select()
         Call AddSearchBtnHandler()
@@ -61,21 +61,22 @@ Public Class IAR00001
         frmItemList.ShowDialog()
         txtItmNo.Text = frmItemList.strSel
     End Sub
+#Region "NotRunAnymore"
     Private Sub cmdShowReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdShowReport.Click
 
-        If Not IsDate(txtTranFromDate.Text) And (optByExcel.Checked = True Or optByExcel_New.Checked = True) Then
+        If Not IsDate(txtTranFromDate.Text) And (optIMupd.Checked = True Or optNewWithAlias.Checked = True) Then
             MsgBox("Invalid Transaction Date", MsgBoxStyle.Information, "Invalid Input Parameter")
             txtTranFromDate.Focus()
             txtTranFromDate.SelectAll()
             Exit Sub
         End If
-        If Not IsDate(txtTranToDate.Text) And (optByExcel.Checked = True Or optByExcel_New.Checked = True) Then
+        If Not IsDate(txtTranToDate.Text) And (optIMupd.Checked = True Or optNewWithAlias.Checked = True) Then
             MsgBox("Invalid Transaction Date", MsgBoxStyle.Information, "Invalid Input Parameter")
             txtTranToDate.Focus()
             txtTranToDate.SelectAll()
             Exit Sub
         End If
-        If CDate(txtTranFromDate.Text) > CDate(txtTranToDate.Text) And (optByExcel.Checked = True Or optByExcel_New.Checked = True) Then
+        If CDate(txtTranFromDate.Text) > CDate(txtTranToDate.Text) And (optIMupd.Checked = True Or optNewWithAlias.Checked = True) Then
             MsgBox("Transaction End Date must be later or equal to Start Date", MsgBoxStyle.Information, "Invalid Input Parameter")
             txtTranToDate.Focus()
             txtTranToDate.SelectAll()
@@ -122,8 +123,7 @@ Public Class IAR00001
 
         If itmList = "" Then
 
-            'If optByExl.Value = True Then
-            If optByExcel.Checked = True Or optByExcel_New.Checked = True Then
+            If optIMupd.Checked = True Or optNewWithAlias.Checked = True Then
                 itmList = "''"
                 Me.txtItmNo.Text = ""
             Else
@@ -152,7 +152,7 @@ Public Class IAR00001
                 Exit Sub
             End If
         Else
-            If optByExcel.Checked = True Then
+            If optIMupd.Checked = True Then
                 gspStr = "sp_select_IAR00001 'UCPP','" & txtTranFromDate.Text & "','" & txtTranToDate.Text & "','" & itmList & "','" & cus1no & "','" & cus2no & "','" & venno & "','" & gsUsrID & "'"
                 rtnLong = execute_SQLStatement(gspStr, rs_IAR00001, rtnStr)
                 If rtnLong <> RC_SUCCESS Then
@@ -160,7 +160,7 @@ Public Class IAR00001
                     MsgBox("Error on loading IAR00001 sp_select_IAR00001 : " & rtnStr)
                     Exit Sub
                 End If
-            ElseIf optByExcel_New.Checked = True Then
+            ElseIf optNewWithAlias.Checked = True Then
                 gspStr = "sp_select_IAR00001_new 'UCPP','" & txtTranFromDate.Text & "','" & txtTranToDate.Text & "','" & itmList & "','" & cus1no & "','" & cus2no & "','" & venno & "','" & gsUsrID & "'"
                 rtnLong = execute_SQLStatement(gspStr, rs_IAR00001, rtnStr)
                 If rtnLong <> RC_SUCCESS Then
@@ -168,17 +168,9 @@ Public Class IAR00001
                     MsgBox("Error on loading IAR00001 sp_select_IAR00001_new : " & rtnStr)
                     Exit Sub
                 End If
-                'ElseIf optBOMItm.Checked = True Then
-                '    gspStr = "sp_select_IAR00003 'UCPP','" & Trim(txtItmNo.Text) & "','" & cus1no & "','" & cus2no & "','" & venno & "','" & chkAssort.Checked & "'"
-                '    rtnLong = execute_SQLStatement(gspStr, rs_IAR00003, rtnStr)
-                '    If rtnLong <> RC_SUCCESS Then
-                '        Me.Cursor = Windows.Forms.Cursors.Default
-                '        MsgBox("Error on loading IAR00001 sp_select_IAR00003 : " & rtnStr)
-                '        Exit Sub
-                '    End If
             Else
                 MsgBox("Please select a search method", MsgBoxStyle.Information, "Missing Search Parameter")
-                optByExcel.Focus()
+                optIMupd.Focus()
                 Exit Sub
             End If
         End If
@@ -186,7 +178,7 @@ Public Class IAR00001
         Me.Cursor = Windows.Forms.Cursors.Default
         Dim answer As Integer
 
-        If optByExcel.Checked = True Or optByExcel_New.Checked = True Then
+        If optIMupd.Checked = True Or optNewWithAlias.Checked = True Then
             If rs_IAR00001.Tables("RESULT").Rows.Count = 0 Then
                 MsgBox("No Record Found", MsgBoxStyle.Information)
                 Exit Sub
@@ -201,7 +193,7 @@ Public Class IAR00001
                     exportExcel_IAR00001(rs_IAR00001)
                 Else
                     Dim objRpt As Object
-                    If optByExcel.Checked = True Then
+                    If optIMupd.Checked = True Then
                         objRpt = New IAR00001Rpt
                     Else
                         objRpt = New IAR00001NRpt
@@ -237,27 +229,6 @@ Public Class IAR00001
                     frmReportView.Show()
                 End If
             End If
-            'ElseIf optBOMItm.Checked = True Then
-            'If rs_IAR00003.Tables("RESULT").Rows.Count = 0 Then
-            '    MsgBox("No Record Found", MsgBoxStyle.Information)
-            '    Exit Sub
-            'Else
-            '    If chkExcel.Checked = True Then
-            '        If rs_IAR00003.Tables("RESULT").Rows.Count > 30000 Then
-            '            answer = MsgBox("Number of records are over 30000! Only the first 30000 records will be shown.", MsgBoxStyle.YesNo, "Exceeding Maximum Allowable Lines")
-            '            If answer = Windows.Forms.DialogResult.No Then
-            '                Exit Sub
-            '            End If
-            '            exportExcel_IAR00003(rs_IAR00003)
-            '        End If
-            '    Else
-            '        Dim objRpt As New IAR00003Rpt
-            '        objRpt.SetDataSource(rs_IAR00003.Tables("RESULT"))
-            '        Dim frmReportView As New frmReport
-            '        frmReportView.CrystalReportViewer.ReportSource = objRpt
-            '        frmReportView.Show()
-            '    End If
-            'End If
         End If
 
     End Sub
@@ -1116,31 +1087,28 @@ Public Class IAR00001
         xlsApp = Nothing
 
     End Sub
-
-    Private Sub optPressed(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optByExcel.CheckedChanged, optByExcel_New.CheckedChanged, optItmPrcHis.CheckedChanged
-        If optByExcel.Checked = True Then
+#End Region
+    Private Sub optPressed(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optIMupd.CheckedChanged, optNewWithAlias.CheckedChanged, optItmPrcHis.CheckedChanged
+        If optIMupd.Checked = True Then
             lblSearchParam.Visible = True
             lblSearchParam.Text = "Transaction Date"
             txtTranFromDate.Visible = True
             lblTranDateTo.Visible = True
             txtTranToDate.Visible = True
-            chkAssort.Visible = False
             btnExExcel.Enabled = True
-        ElseIf optByExcel_New.Checked = True Then
+        ElseIf optNewWithAlias.Checked = True Then
             lblSearchParam.Visible = True
             lblSearchParam.Text = "Transaction Date"
             txtTranFromDate.Visible = True
             lblTranDateTo.Visible = True
             txtTranToDate.Visible = True
-            chkAssort.Visible = False
-            btnExExcel.Enabled = False
+            btnExExcel.Enabled = True
         ElseIf optItmPrcHis.Checked = True Then
             lblSearchParam.Visible = True
             txtTranFromDate.Visible = True
             lblSearchParam.Text = "Price change date"
             lblTranDateTo.Visible = True
             txtTranToDate.Visible = True
-            chkAssort.Visible = False
             btnExExcel.Enabled = True
         End If
     End Sub
@@ -1156,20 +1124,879 @@ Public Class IAR00001
     End Sub
 
     Private Sub btnExExcel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExExcel.Click
-        'in the past, to export the excel the user need to check a checkbox call chkExcel and press cmdShowReport bottom
-        'if you concern about where the chkExcelis,  it is at the behind the btnExExcel button
-        If optItmPrcHis.Checked = True Then
+        'Warning:If you have to modify IAR00001 report, 
+        '       please make sure IM,new with alias, new with temp still work properly
+        '       I am serious.
+
+        If optIMupd.Checked = True Then
+            exportUpdateReport()
+        ElseIf optNewWithAlias.Checked = True Then
+            exportNewWithAliasReport()
+        ElseIf optNewWithTemp.Checked = True Then
+            exportNewWithTempReport()
+        ElseIf optItmPrcHis.Checked = True Then
             exportItemPriceHistory()
         Else
-
-            chkExcel.Checked = True
-            cmdShowReport_Click(sender, e)
-            chkExcel.Checked = False
+            MsgBox("Please select a search method", MsgBoxStyle.Information, "Missing Search Parameter")
+            optIMupd.Focus()
+            Exit Sub
         End If
 
     End Sub
 
+#Region "UpdateItemReport"
+    Private Sub exportUpdateReport()
 
+        If Not validUploadReportInput() Then
+            Exit Sub
+        End If
+
+        Me.Cursor = Windows.Forms.Cursors.WaitCursor
+
+        Dim rs_IAR00001_ItmInfo As DataSet
+        Dim rs_IAR00001_BOM As DataSet
+
+        Dim getDataSuccess As Boolean
+        getDataSuccess = getUpdateRecords(rs_IAR00001_ItmInfo, rs_IAR00001_BOM)
+
+        If Not getDataSuccess Then
+            MsgBox("Fail to get data!")
+            Me.Cursor = Windows.Forms.Cursors.Default
+            Exit Sub
+        End If
+
+        If rs_IAR00001_ItmInfo.Tables("RESULT").Rows.Count = 0 Then
+            MsgBox("No Record Found!", MsgBoxStyle.Information, "Information")
+            Me.Cursor = Windows.Forms.Cursors.Default
+            Exit Sub
+        End If
+
+        generateReportExcel(rs_IAR00001_ItmInfo, rs_IAR00001_BOM)
+
+        Me.Cursor = Windows.Forms.Cursors.Default
+    End Sub
+
+    Private Function getUpdateRecords(ByRef rs_IAR00001_ItmInfo As DataSet, ByRef rs_IAR00001_BOM As DataSet) As Boolean
+        'why visual studio 2008 has no extract method for vb.net?! M$ I hate you!!!!
+
+        'This is input pre-process. I will extract it as a method if there is extract method 
+        'in visual studio 2008 
+        If (Trim(txtItmNo.Text).Length = 0) Then
+            txtItmNo.Text = ""
+        End If
+
+        Dim itmList As String = ""
+        Dim ttl As Integer
+        Dim i As Integer
+        Dim cus1no As String
+        Dim cus2no As String
+        Dim venno As String
+
+        cus1no = txt_S_PriCustAll.Text
+        cus1no = cus1no.Replace("'", "''")
+        cus2no = txt_S_SecCustAll.Text
+        cus2no = cus2no.Replace("'", "''")
+        venno = txt_S_DV.Text
+        venno = venno.Replace("'", "''")
+        txtItmNo.Text = txtItmNo.Text.Replace(Chr(10), "").Replace(Chr(13), "")
+
+        ttl = UBound(Split(txtItmNo.Text, "*"))
+
+        If Trim(txtItmNo.Text = "*") Then
+            itmList = ""
+        Else
+            For i = 0 To ttl
+                If i = ttl Then
+                    itmList = itmList & "''" & Split(txtItmNo.Text, "*")(i) & "''"
+                Else
+                    itmList = itmList & "''" & Split(txtItmNo.Text, "*")(i) & "'',"
+                End If
+            Next
+        End If
+
+        If itmList = "" Then
+            itmList = "''"
+            Me.txtItmNo.Text = ""
+        End If
+        'input pre-process end
+        gspStr = "sp_select_IAR00001_updItemInfo 'UCPP','" & txtTranFromDate.Text & "','" & txtTranToDate.Text & "','" & itmList & "','" & cus1no & "','" & cus2no & "','" & venno & "','" & gsUsrID & "'"
+        rtnLong = execute_SQLStatement(gspStr, rs_IAR00001_ItmInfo, rtnStr)
+        If rtnLong <> RC_SUCCESS Then
+            Me.Cursor = Windows.Forms.Cursors.Default
+            MsgBox("Error on loading IAR00001 sp_select_IAR00001upd : " & rtnStr)
+            Return False
+        End If
+
+        gspStr = "sp_select_IAR00001_updBOM 'UCPP','" & txtTranFromDate.Text & "','" & txtTranToDate.Text & "','" & itmList & "','" & cus1no & "','" & cus2no & "','" & venno & "','" & gsUsrID & "'"
+        rtnLong = execute_SQLStatement(gspStr, rs_IAR00001_BOM, rtnStr)
+        If rtnLong <> RC_SUCCESS Then
+            Me.Cursor = Windows.Forms.Cursors.Default
+            MsgBox("Error on loading IAR00001 sp_select_IAR00001_updBOM : " & rtnStr)
+            Return False
+        End If
+
+        Return True
+    End Function
+
+#End Region
+
+#Region "NewWithTempItemReport"
+    Private Sub exportNewWithTempReport()
+
+        If Not validUploadReportInput() Then
+            Exit Sub
+        End If
+
+        Me.Cursor = Windows.Forms.Cursors.WaitCursor
+
+        Dim rs_IAR00001_ItmInfo As DataSet
+        Dim rs_IAR00001_BOM As DataSet
+
+        Dim getDataSuccess As Boolean
+        getDataSuccess = getNewWithTempRecords(rs_IAR00001_ItmInfo, rs_IAR00001_BOM)
+
+        If Not getDataSuccess Then
+            MsgBox("Fail to get data!")
+            Me.Cursor = Windows.Forms.Cursors.Default
+            Exit Sub
+        End If
+
+        If rs_IAR00001_ItmInfo.Tables("RESULT").Rows.Count = 0 Then
+            MsgBox("No Record Found!", MsgBoxStyle.Information, "Information")
+            Me.Cursor = Windows.Forms.Cursors.Default
+            Exit Sub
+        End If
+
+        generateReportExcel(rs_IAR00001_ItmInfo, rs_IAR00001_BOM)
+
+        Me.Cursor = Windows.Forms.Cursors.Default
+
+    End Sub
+
+    Private Function getNewWithTempRecords(ByRef rs_IAR00001_ItmInfo As DataSet, ByRef rs_IAR00001_BOM As DataSet) As Boolean
+        'why visual studio 2008 has no extract method for vb.net?! M$ I hate you!!!!
+
+        'This is input pre-process. I will extract it as a method if there is extract method 
+        'in visual studio 2008 
+        If (Trim(txtItmNo.Text).Length = 0) Then
+            txtItmNo.Text = ""
+        End If
+
+        Dim itmList As String = ""
+        Dim ttl As Integer
+        Dim i As Integer
+        Dim cus1no As String
+        Dim cus2no As String
+        Dim venno As String
+
+        cus1no = txt_S_PriCustAll.Text
+        cus1no = cus1no.Replace("'", "''")
+        cus2no = txt_S_SecCustAll.Text
+        cus2no = cus2no.Replace("'", "''")
+        venno = txt_S_DV.Text
+        venno = venno.Replace("'", "''")
+        txtItmNo.Text = txtItmNo.Text.Replace(Chr(10), "").Replace(Chr(13), "")
+
+        ttl = UBound(Split(txtItmNo.Text, "*"))
+
+        If Trim(txtItmNo.Text = "*") Then
+            itmList = ""
+        Else
+            For i = 0 To ttl
+                If i = ttl Then
+                    itmList = itmList & "''" & Split(txtItmNo.Text, "*")(i) & "''"
+                Else
+                    itmList = itmList & "''" & Split(txtItmNo.Text, "*")(i) & "'',"
+                End If
+            Next
+        End If
+
+        If itmList = "" Then
+            itmList = "''"
+            Me.txtItmNo.Text = ""
+        End If
+        'input pre-process end
+        gspStr = "sp_select_IAR00001_tempItemInfo 'UCPP','" & txtTranFromDate.Text & "','" & txtTranToDate.Text & "','" & itmList & "','" & cus1no & "','" & cus2no & "','" & venno & "','" & gsUsrID & "'"
+        rtnLong = execute_SQLStatement(gspStr, rs_IAR00001_ItmInfo, rtnStr)
+        If rtnLong <> RC_SUCCESS Then
+            Me.Cursor = Windows.Forms.Cursors.Default
+            MsgBox("Error on loading IAR00001 sp_select_IAR00001_aliasItemInfo : " & rtnStr)
+            Return False
+        End If
+
+        gspStr = "sp_select_IAR00001_tempBOM 'UCPP','" & txtTranFromDate.Text & "','" & txtTranToDate.Text & "','" & itmList & "','" & cus1no & "','" & cus2no & "','" & venno & "','" & gsUsrID & "'"
+        rtnLong = execute_SQLStatement(gspStr, rs_IAR00001_BOM, rtnStr)
+        If rtnLong <> RC_SUCCESS Then
+            Me.Cursor = Windows.Forms.Cursors.Default
+            MsgBox("Error on loading IAR00001 sp_select_IAR00001_aliasBOM : " & rtnStr)
+            Return False
+        End If
+
+        Return True
+    End Function
+
+#End Region
+
+#Region "NewWithAliasItemReport"
+    Private Sub exportNewWithAliasReport()
+
+        If Not validUploadReportInput() Then
+            Exit Sub
+        End If
+
+        Me.Cursor = Windows.Forms.Cursors.WaitCursor
+
+        Dim rs_IAR00001_ItmInfo As DataSet
+        Dim rs_IAR00001_BOM As DataSet
+
+        Dim getDataSuccess As Boolean
+        getDataSuccess = getNewWithAliasRecords(rs_IAR00001_ItmInfo, rs_IAR00001_BOM)
+
+        If Not getDataSuccess Then
+            MsgBox("Fail to get data!")
+            Me.Cursor = Windows.Forms.Cursors.Default
+            Exit Sub
+        End If
+
+        If rs_IAR00001_ItmInfo.Tables("RESULT").Rows.Count = 0 Then
+            MsgBox("No Record Found!", MsgBoxStyle.Information, "Information")
+            Me.Cursor = Windows.Forms.Cursors.Default
+            Exit Sub
+        End If
+
+        generateReportExcel(rs_IAR00001_ItmInfo, rs_IAR00001_BOM)
+
+        Me.Cursor = Windows.Forms.Cursors.Default
+
+    End Sub
+
+    Private Function getNewWithAliasRecords(ByRef rs_IAR00001_ItmInfo As DataSet, ByRef rs_IAR00001_BOM As DataSet) As Boolean
+        'why visual studio 2008 has no extract method for vb.net?! M$ I hate you!!!!
+
+        'This is input pre-process. I will extract it as a method if there is extract method 
+        'in visual studio 2008 
+        If (Trim(txtItmNo.Text).Length = 0) Then
+            txtItmNo.Text = ""
+        End If
+
+        Dim itmList As String = ""
+        Dim ttl As Integer
+        Dim i As Integer
+        Dim cus1no As String
+        Dim cus2no As String
+        Dim venno As String
+
+        cus1no = txt_S_PriCustAll.Text
+        cus1no = cus1no.Replace("'", "''")
+        cus2no = txt_S_SecCustAll.Text
+        cus2no = cus2no.Replace("'", "''")
+        venno = txt_S_DV.Text
+        venno = venno.Replace("'", "''")
+        txtItmNo.Text = txtItmNo.Text.Replace(Chr(10), "").Replace(Chr(13), "")
+
+        ttl = UBound(Split(txtItmNo.Text, "*"))
+
+        If Trim(txtItmNo.Text = "*") Then
+            itmList = ""
+        Else
+            For i = 0 To ttl
+                If i = ttl Then
+                    itmList = itmList & "''" & Split(txtItmNo.Text, "*")(i) & "''"
+                Else
+                    itmList = itmList & "''" & Split(txtItmNo.Text, "*")(i) & "'',"
+                End If
+            Next
+        End If
+
+        If itmList = "" Then
+            itmList = "''"
+            Me.txtItmNo.Text = ""
+        End If
+        'input pre-process end
+        gspStr = "sp_select_IAR00001_aliasItemInfo 'UCPP','" & txtTranFromDate.Text & "','" & txtTranToDate.Text & "','" & itmList & "','" & cus1no & "','" & cus2no & "','" & venno & "','" & gsUsrID & "'"
+        rtnLong = execute_SQLStatement(gspStr, rs_IAR00001_ItmInfo, rtnStr)
+        If rtnLong <> RC_SUCCESS Then
+            Me.Cursor = Windows.Forms.Cursors.Default
+            MsgBox("Error on loading IAR00001 sp_select_IAR00001_aliasItemInfo : " & rtnStr)
+            Return False
+        End If
+
+        gspStr = "sp_select_IAR00001_aliasBOM 'UCPP','" & txtTranFromDate.Text & "','" & txtTranToDate.Text & "','" & itmList & "','" & cus1no & "','" & cus2no & "','" & venno & "','" & gsUsrID & "'"
+        rtnLong = execute_SQLStatement(gspStr, rs_IAR00001_BOM, rtnStr)
+        If rtnLong <> RC_SUCCESS Then
+            Me.Cursor = Windows.Forms.Cursors.Default
+            MsgBox("Error on loading IAR00001 sp_select_IAR00001_aliasBOM : " & rtnStr)
+            Return False
+        End If
+
+        Return True
+    End Function
+
+#End Region
+
+    Function validUploadReportInput() As Boolean
+        If Not IsDate(txtTranFromDate.Text) And (optIMupd.Checked = True Or optNewWithAlias.Checked = True) Then
+            MsgBox("Invalid Transaction Date", MsgBoxStyle.Information, "Invalid Input Parameter")
+            txtTranFromDate.Focus()
+            txtTranFromDate.SelectAll()
+            Return False
+        End If
+
+        If Not IsDate(txtTranToDate.Text) And (optIMupd.Checked = True Or optNewWithAlias.Checked = True) Then
+            MsgBox("Invalid Transaction Date", MsgBoxStyle.Information, "Invalid Input Parameter")
+            txtTranToDate.Focus()
+            txtTranToDate.SelectAll()
+            Return False
+        End If
+
+        If CDate(txtTranFromDate.Text) > CDate(txtTranToDate.Text) And (optIMupd.Checked = True Or optNewWithAlias.Checked = True) Then
+            MsgBox("Transaction End Date must be later or equal to Start Date", MsgBoxStyle.Information, "Invalid Input Parameter")
+            txtTranToDate.Focus()
+            txtTranToDate.SelectAll()
+            Return False
+        End If
+
+        If Len(Trim(txt_S_PriCustAll.Text)) > 1000 Then
+            MsgBox("Primary Customer list exceeds maximum allowable length (1000 Characters).", MsgBoxStyle.Exclamation, "Invalid Input")
+            txt_S_PriCustAll.Focus()
+            Return False
+        End If
+
+        Return True
+    End Function
+
+    Private Sub generateReportExcel(ByRef rs_IAR00001_ItmInfo As DataSet, ByRef rs_IAR00001_BOM As DataSet)
+        ''''Start: Dont care about this part. This is the code farmat to call a excel'''''''
+        Dim xlsApp As New Excel.ApplicationClass
+        Dim xlsWB As Excel.Workbook = Nothing
+        Dim xlsWS As Excel.Worksheet = Nothing
+
+        Me.Cursor = Windows.Forms.Cursors.WaitCursor
+
+        xlsApp = New Excel.Application
+        xlsApp.Visible = False
+        xlsApp.UserControl = True
+
+        Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
+
+        xlsWB = xlsApp.Workbooks.Add()
+        xlsWS = xlsWB.ActiveSheet
+        ''''End: Dont care about this part. This is the code farmat to call a excel''''''''''''
+
+        exportExcelItemInfoPage(rs_IAR00001_ItmInfo, xlsApp)
+
+        xlsApp.Sheets(2).Activate()
+        exportExcelBOMPaage(rs_IAR00001_BOM, xlsApp)
+
+        xlsApp.Sheets(1).Activate()
+        xlsApp.Visible = True
+
+
+        ' Release reference
+        rs_IAR00001_ItmInfo = Nothing
+        rs_IAR00001_BOM = Nothing
+        xlsWS = Nothing
+        xlsWB = Nothing
+        xlsApp = Nothing
+
+        Me.Cursor = Windows.Forms.Cursors.Default
+    End Sub
+
+    Private Sub exportExcelItemInfoPage(ByVal rs_IAR00001_ItmInfo As DataSet, ByVal xlsApp As Excel.Application)
+        fillItemInfo(rs_IAR00001_ItmInfo, xlsApp)
+        setItemInfoFormat(xlsApp)
+    End Sub
+
+    Private Sub fillItemInfo(ByVal rs_IAR00001_ItmInfo As DataSet, ByVal xlsApp As Excel.Application)
+        With xlsApp
+            For i As Integer = 0 To rs_IAR00001_ItmInfo.Tables("RESULT").Rows.Count - 1
+                Dim curCol As Integer = 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iic_cus1no").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iic_cus2no").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_itmno").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("itr_tmpitm").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_alsitmno").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_venno").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_credat").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("ibi_engdsc").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_engdsc").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("ibi_chndsc").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_chndsc").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_untcde").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_conftr").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_inrqty").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_mtrqty").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("ipi_cft").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_ftyprctrm").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_prctrm").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_trantrm").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_cft").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_curcde").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("imu_ftycstA").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iic_fcA").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("imu_ftycstB").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iic_fcB").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("imu_ftycstC").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iic_fcC").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("imu_ftycstD").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iic_fcD").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("imu_ftycstE").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iic_fcE").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("imu_ftycstTran").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iic_fcTran").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("imu_ftycstPack").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iic_fcPack").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("imu_ftycst").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iic_ftycst").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("ftyCstDiff").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("imu_ftyprc").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iic_ftyprc").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("ftyPrcDiff").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("imu_period").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_qutdat").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_cstexpdat_bef").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_cstexpdat").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("bomlist_bef").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("bomlist_aft").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("imu_fmlopt").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_fmlopt").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("imu_basprc").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("iid_basprc").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_ItmInfo.Tables("RESULT").Rows(i)("basPrcDiff").ToString
+            Next
+
+        End With
+    End Sub
+
+    Private Sub setItemInfoFormat(ByVal xlsApp As Excel.Application)
+
+        With xlsApp
+            'Header Initialization
+
+            Dim rowFtyCstA As Integer
+            Dim rowNewFtyPackCst As Integer
+            Dim rowEngDesc As Integer
+            Dim rowNewChinDesc As Integer
+            Dim curCol As Integer = 1
+
+            .Cells(1, curCol).Value = "Pri" + Environment.NewLine + "Cust."
+            .Columns(curCol).ColumnWidth = 7
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Sec" + Environment.NewLine + "Cust."
+            .Columns(curCol).ColumnWidth = 7
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Item No."
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Temp Item No."
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Cells(2, curCol + 1).Select() 'Freeze cell
+            .ActiveWindow.FreezePanes = True
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Alias Item No."
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "DV"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Prc Chg Date"
+            .Columns(curCol).ColumnWidth = 11
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Columns(curCol).NumberFormat = "MM/dd/yyyy"
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Eng Desc"
+            .Columns(curCol).ColumnWidth = 50
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Columns(curCol).WrapText = True
+            rowEngDesc = curCol
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New Eng Desc"
+            .Columns(curCol).ColumnWidth = 50
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Columns(curCol).WrapText = True
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Chin Desc"
+            .Columns(curCol).ColumnWidth = 50
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Columns(curCol).WrapText = True
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New Chin Desc"
+            .Columns(curCol).ColumnWidth = 50
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Columns(curCol).WrapText = True
+            rowNewChinDesc = curCol
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "UM"
+            .Columns(curCol).ColumnWidth = 7
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Ftr"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Inr"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Mtr"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "CFT"
+            .Columns(curCol).ColumnWidth = 9
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Fty Prc" + Environment.NewLine + "Term"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "HK Prc" + Environment.NewLine + "Term"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Tran" + Environment.NewLine + "Term"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New CFT"
+            .Columns(curCol).ColumnWidth = 9
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "CCY"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Fty Cst A"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            rowFtyCstA = curCol
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New Fty" + Environment.NewLine + "Cst A"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Fty Cst B"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New Fty" + Environment.NewLine + "Cst B"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Fty Cst C"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New Fty" + Environment.NewLine + "Cst C"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Fty Cst D"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New Fty" + Environment.NewLine + "Cst D"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Fty Cst E"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New Fty" + Environment.NewLine + "Cst E"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Fty Cst Tran"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New Fty" + Environment.NewLine + "Cst Tran"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Fty Cst Pack"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New Fty" + Environment.NewLine + "Cst Pack"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            rowNewFtyPackCst = curCol
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Fty Cst TTL"
+            .Columns(curCol).ColumnWidth = 10
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New Fty Cst" + Environment.NewLine + "TTL"
+            .Columns(curCol).ColumnWidth = 10
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Fty Cst" + Environment.NewLine + "Diff (%)"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            .Columns(curCol).NumberFormat = "###,###,##0.00"
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Fty Prc TTL"
+            .Columns(curCol).ColumnWidth = 10
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New Frt Prc" + Environment.NewLine + "TTL"
+            .Columns(curCol).ColumnWidth = 10
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Fty Prc" + Environment.NewLine + "Diff (%)"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            .Columns(curCol).NumberFormat = "###,###,##0.00"
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "IM Period"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New IM" + Environment.NewLine + "Period"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Exp Date"
+            .Columns(curCol).ColumnWidth = 11
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Columns(curCol).NumberFormat = "MM/dd/yyyy"
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New Exp" + Environment.NewLine + "Date"
+            .Columns(curCol).ColumnWidth = 11
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Columns(curCol).NumberFormat = "MM/dd/yyyy"
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "BOM Item"
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New BOM Item"
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "HK MU"
+            .Columns(curCol).ColumnWidth = 13
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New HK MU"
+            .Columns(curCol).ColumnWidth = 13
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Basic Prc" + Environment.NewLine + "(USD)"
+            .Columns(curCol).ColumnWidth = 11
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "New Basic" + Environment.NewLine + "Prc (USD)"
+            .Columns(curCol).ColumnWidth = 11
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Basic Prc" + Environment.NewLine + "Diff (%)"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            .Columns(curCol).NumberFormat = "###,###,##0.00"
+            curCol = curCol + 1
+
+
+            'Dim rowFtyCstA As Integer
+            'Dim rowNewFtyPackCst As Integer
+
+            .Rows(1).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Range(xlsApp.Cells(1, 1), xlsApp.Cells(1, curCol)).AutoFilter(1, Type.Missing, Excel.XlAutoFilterOperator.xlAnd, Type.Missing, True)
+
+            .Range(.Columns(1), .Columns(curCol)).VerticalAlignment = Excel.Constants.xlCenter
+            'grouping
+            .Range(.Columns(rowFtyCstA), .Columns(rowNewFtyPackCst)).Group()
+            .Range(.Columns(rowEngDesc), .Columns(rowNewChinDesc)).Group()
+            'Set page name 
+            Dim xlsWS As Excel.Worksheet = Nothing
+            xlsWS = .Worksheets(1)
+            xlsWS.Name = "Item Info"
+        End With
+
+
+    End Sub
+
+    Private Sub exportExcelBOMPaage(ByRef rs_IAR00001_BOM As DataSet, ByVal xlsApp As Excel.Application)
+        fillBom(rs_IAR00001_BOM, xlsApp)
+        setBomFormat(xlsApp)
+    End Sub
+
+    Private Sub setBomFormat(ByVal xlsApp As Excel.Application)
+        With xlsApp
+            'Header Initialization
+
+            Dim curCol As Integer = 1
+            .Cells(1, curCol).Value = "Item No."
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Cells(2, curCol + 1).Select() 'Freeze cell
+            .ActiveWindow.FreezePanes = True
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Mode"
+            .Columns(curCol).ColumnWidth = 6
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "BOM Item"
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "BOM Item Desc"
+            .Columns(curCol).ColumnWidth = 50
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Columns(curCol).WrapText = True
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "BOM Qty"
+            .Columns(curCol).ColumnWidth = 10
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Range(xlsApp.Cells(1, 1), xlsApp.Cells(1, curCol)).AutoFilter(1, Type.Missing, Excel.XlAutoFilterOperator.xlAnd, Type.Missing, True)
+
+
+            .Rows(1).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+
+            Dim xlsWS As Excel.Worksheet = Nothing
+            xlsWS = .Worksheets(2)
+            xlsWS.Name = "BOM"
+        End With
+
+    End Sub
+
+    Private Sub fillBom(ByVal rs_IAR00001_BOM As DataSet, ByVal xlsApp As Excel.Application)
+        With xlsApp
+            For i As Integer = 0 To rs_IAR00001_BOM.Tables("RESULT").Rows.Count - 1
+                Dim curCol As Integer = 1
+                .Cells(2 + i, curCol) = rs_IAR00001_BOM.Tables("RESULT").Rows(i)("iba_itmno").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_BOM.Tables("RESULT").Rows(i)("Mode").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_BOM.Tables("RESULT").Rows(i)("iba_assitm").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_BOM.Tables("RESULT").Rows(i)("ibi_engdsc").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_IAR00001_BOM.Tables("RESULT").Rows(i)("iba_bomqty").ToString
+                curCol = curCol + 1
+            Next
+        End With
+    End Sub
+
+
+#Region "ItemPriceHistoryReport"
     Private Sub exportItemPriceHistory()
 
         If Len(Trim(txtItmNo.Text)) > 1000 Then
@@ -1257,8 +2084,8 @@ Public Class IAR00001
         End If
 
 
-        gspStr = "sp_select_IAR00001PrcHis 'UCPP','" & itmno & "','" & upldatFrom & "','" & upldatto & "','" & Pricuslist & "','" & Seccuslist & "','" & DVlist & "','" & gsUsrID & "'"
-       
+        gspStr = "sp_select_IAR00001_PrcHis 'UCPP','" & itmno & "','" & upldatFrom & "','" & upldatto & "','" & Pricuslist & "','" & Seccuslist & "','" & DVlist & "','" & gsUsrID & "'"
+
         Me.Cursor = Windows.Forms.Cursors.WaitCursor
 
         rtnLong = execute_SQLStatement(gspStr, rs_IAR00001_ItemPriceHistory, rtnStr)
@@ -1266,18 +2093,18 @@ Public Class IAR00001
         Me.Cursor = Windows.Forms.Cursors.Default
 
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading IMR00035 sp_list_IMR00035 : " & rtnStr)
+            MsgBox("Error on loading IAR00001 sp_select_IAR00001_PrcHis : " & rtnStr)
             Exit Sub
         End If
 
         If rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows.Count = 0 Then
             MsgBox("No Record Found!", MsgBoxStyle.Information, "Information")
         Else
-            ExportExcel()
+            ExportItemPriceHistoryExcel()
         End If
     End Sub
 
-    Private Sub ExportExcel()
+    Private Sub ExportItemPriceHistoryExcel()
         If rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows.Count >= 65535 Then
             MsgBox("There are more than 65535 records!")
             Exit Sub
@@ -1287,13 +2114,7 @@ Public Class IAR00001
         Dim xlsWB As Excel.Workbook = Nothing
         Dim xlsWS As Excel.Worksheet = Nothing
 
-        Dim strCompany As String
-        Dim strTitle As String
-
         Me.Cursor = Windows.Forms.Cursors.WaitCursor
-
-        strCompany = "UNITED CHINESE GROUP"
-        strTitle = "PRICE CHANGE REPORT"
 
         xlsApp = New Excel.Application
         xlsApp.Visible = False
@@ -1308,13 +2129,6 @@ Public Class IAR00001
 
         fillitemPriceHistorycontent(xlsApp)
         itemPriceHistoryExcelFormat(xlsApp)
-       
-
-        'With xlsApp
-        '    .Columns("A:BQ").EntireColumn.AutoFit()
-        '    .Columns(13).ColumnWidth = 10
-        '    .Columns("A:BQ").EntireColumn.HorizontalAlignment = Excel.Constants.xlCenter
-        'End With
 
         xlsApp.Visible = True
 
@@ -1513,7 +2327,7 @@ Public Class IAR00001
         With xlsApp
             For i As Integer = 0 To rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows.Count - 1
 
-                Dim notNewRecord As Boolean = notNewItemPriceHistRow(i)
+                Dim RecordUpdate As Boolean = notNewItemPriceHistRow(i)
                 Dim curCol As Integer = 1
                 .Cells(2 + i, curCol) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cus1no").ToString
                 curCol = curCol + 1
@@ -1523,70 +2337,74 @@ Public Class IAR00001
                 curCol = curCol + 1
                 .Cells(2 + i, curCol) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_tempitmno").ToString
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cstchgdat").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cstchgdat").ToString, "")
                 curCol = curCol + 1
                 .Cells(2 + i, curCol) = rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_mode").ToString
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_chgreason").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_chgreason").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_venno").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_venno").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_pckunt").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_pckunt").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_conftr").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_conftr").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_inrqty").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_inrqty").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_mtrqty").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_mtrqty").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cft").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_cft").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyprctrm").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyprctrm").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_hkprctrm").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_hkprctrm").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_trantrm").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_trantrm").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_curcde").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_curcde").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstA").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstA").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstB").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstB").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstC").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstC").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstD").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstD").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstE").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstE").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstTran").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstTran").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstPack").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstPack").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycst").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycst").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyprc").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyprc").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstdiff").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftycstdiff").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyPrcDiff").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_ftyPrcDiff").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_period").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_period").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_effdat").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_effdat").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_expdat").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_expdat").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_basprc").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_basprc").ToString, "")
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = IIf(notNewRecord, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_fmlopt_after").ToString, "")
+                .Cells(2 + i, curCol) = IIf(RecordUpdate, rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(i)("imu_fmlopt_after").ToString, "")
             Next
         End With
     End Sub
 
     Function notNewItemPriceHistRow(ByVal curRow As Integer) As Boolean
-        'if the record have no basic price, that means the record does not exist beofre change->new
+        'if the record has basic price, that means the record exist beofre change->update
         Return (rs_IAR00001_ItemPriceHistory.Tables("RESULT").Rows(curRow)("imu_basprc") <> 0)
 
     End Function
+
+#End Region
+
+
 End Class

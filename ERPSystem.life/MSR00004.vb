@@ -83,7 +83,7 @@
         'txtDateFrom = "  /  /    "
         'txtDateTo = "  /  /    "
 
-       
+
 
 
 
@@ -450,7 +450,7 @@
             Exit Sub
         End If
 
-        
+
         Me.Cursor = Cursors.WaitCursor
 
         '   S = "㊣MSR00004※L" & _
@@ -537,7 +537,7 @@
                 "','" & SORTBY & "','" & gsUsrID & "','" & gsSalTem & "'"
 
 
-       
+
 
         'Relocation to report server
         '  rs = objBSGate.Enquire(gsConnStr, "sp_general", S)

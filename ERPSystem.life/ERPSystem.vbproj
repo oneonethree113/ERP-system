@@ -310,6 +310,18 @@
     <Compile Include="CLR00005.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="INR00004.designer.vb">
+      <DependentUpon>INR00004.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INR00004.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INR00015.designer.vb">
+      <DependentUpon>INR00015.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INR00015.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="COR00001.designer.vb">
       <DependentUpon>COR00001.vb</DependentUpon>
     </Compile>
@@ -777,12 +789,6 @@
       <DependentUpon>INR00001Rpt_ftr2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="INR00004.designer.vb">
-      <DependentUpon>INR00004.vb</DependentUpon>
-    </Compile>
-    <Compile Include="INR00004.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="INR00004Data.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1023,6 +1029,12 @@
     <Compile Include="MSR00001.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MSR00004.designer.vb">
+      <DependentUpon>MSR00004.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MSR00004.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MSR00005.designer.vb">
       <DependentUpon>MSR00005.vb</DependentUpon>
     </Compile>
@@ -1158,12 +1170,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MSR00002Rpt.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MSR00004.designer.vb">
-      <DependentUpon>MSR00004.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MSR00004.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="MSR00004Rpt.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -2614,12 +2620,6 @@
     <Compile Include="SYM00040.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SYR00001.Designer.vb">
-      <DependentUpon>SYR00001.vb</DependentUpon>
-    </Compile>
-    <Compile Include="SYR00001.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="SYR00103.Designer.vb">
       <DependentUpon>SYR00103.vb</DependentUpon>
     </Compile>
@@ -2748,6 +2748,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CLR00005.resx">
       <DependentUpon>CLR00005.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INR00004.resx">
+      <DependentUpon>INR00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INR00015.resx">
+      <DependentUpon>INR00015.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="COR00001.resx">
@@ -3128,10 +3136,6 @@
     <EmbeddedResource Include="INR00001Rpt_ftr2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>INR00001Rpt_ftr2.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="INR00004.resx">
-      <DependentUpon>INR00004.vb</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="INR00004rpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -4026,10 +4030,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SYM00036.resx">
       <DependentUpon>SYM00036.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SYR00001.resx">
-      <DependentUpon>SYR00001.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="SYR00103.resx">

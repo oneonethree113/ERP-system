@@ -25,7 +25,7 @@ Partial Class IAR00001
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IAR00001))
         Me.Label1 = New System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton
+        Me.optNewWithTemp = New System.Windows.Forms.RadioButton
         Me.txtItmNo = New System.Windows.Forms.TextBox
         Me.txt_S_DV = New System.Windows.Forms.TextBox
         Me.cmd_S_DV = New System.Windows.Forms.Button
@@ -43,9 +43,8 @@ Partial Class IAR00001
         Me.txtTranFromDate = New System.Windows.Forms.MaskedTextBox
         Me.lblSearchParam = New System.Windows.Forms.Label
         Me.optItmPrcHis = New System.Windows.Forms.RadioButton
-        Me.optByExcel_New = New System.Windows.Forms.RadioButton
-        Me.optByExcel = New System.Windows.Forms.RadioButton
-        Me.chkAssort = New System.Windows.Forms.CheckBox
+        Me.optNewWithAlias = New System.Windows.Forms.RadioButton
+        Me.optIMupd = New System.Windows.Forms.RadioButton
         Me.chkExcel = New System.Windows.Forms.CheckBox
         Me.cmdShowReport = New System.Windows.Forms.Button
         Me.btnExExcel = New System.Windows.Forms.Button
@@ -65,7 +64,7 @@ Partial Class IAR00001
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.RadioButton1)
+        Me.GroupBox1.Controls.Add(Me.optNewWithTemp)
         Me.GroupBox1.Controls.Add(Me.txtItmNo)
         Me.GroupBox1.Controls.Add(Me.txt_S_DV)
         Me.GroupBox1.Controls.Add(Me.cmd_S_DV)
@@ -83,9 +82,8 @@ Partial Class IAR00001
         Me.GroupBox1.Controls.Add(Me.txtTranFromDate)
         Me.GroupBox1.Controls.Add(Me.lblSearchParam)
         Me.GroupBox1.Controls.Add(Me.optItmPrcHis)
-        Me.GroupBox1.Controls.Add(Me.optByExcel_New)
-        Me.GroupBox1.Controls.Add(Me.optByExcel)
-        Me.GroupBox1.Controls.Add(Me.chkAssort)
+        Me.GroupBox1.Controls.Add(Me.optNewWithAlias)
+        Me.GroupBox1.Controls.Add(Me.optIMupd)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 47)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(610, 248)
@@ -93,16 +91,16 @@ Partial Class IAR00001
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Selection Criteria"
         '
-        'RadioButton1
+        'optNewWithTemp
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(321, 21)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(159, 16)
-        Me.RadioButton1.TabIndex = 85
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Excel upload data with Temp"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.optNewWithTemp.AutoSize = True
+        Me.optNewWithTemp.Location = New System.Drawing.Point(321, 21)
+        Me.optNewWithTemp.Name = "optNewWithTemp"
+        Me.optNewWithTemp.Size = New System.Drawing.Size(159, 16)
+        Me.optNewWithTemp.TabIndex = 85
+        Me.optNewWithTemp.TabStop = True
+        Me.optNewWithTemp.Text = "Excel upload data with Temp"
+        Me.optNewWithTemp.UseVisualStyleBackColor = True
         '
         'txtItmNo
         '
@@ -248,41 +246,32 @@ Partial Class IAR00001
         Me.optItmPrcHis.Text = "Price Change History"
         Me.optItmPrcHis.UseVisualStyleBackColor = True
         '
-        'optByExcel_New
+        'optNewWithAlias
         '
-        Me.optByExcel_New.AutoSize = True
-        Me.optByExcel_New.Location = New System.Drawing.Point(162, 21)
-        Me.optByExcel_New.Name = "optByExcel_New"
-        Me.optByExcel_New.Size = New System.Drawing.Size(155, 16)
-        Me.optByExcel_New.TabIndex = 1
-        Me.optByExcel_New.TabStop = True
-        Me.optByExcel_New.Text = "Excel upload data with Alias"
-        Me.optByExcel_New.UseVisualStyleBackColor = True
+        Me.optNewWithAlias.AutoSize = True
+        Me.optNewWithAlias.Location = New System.Drawing.Point(162, 21)
+        Me.optNewWithAlias.Name = "optNewWithAlias"
+        Me.optNewWithAlias.Size = New System.Drawing.Size(155, 16)
+        Me.optNewWithAlias.TabIndex = 1
+        Me.optNewWithAlias.TabStop = True
+        Me.optNewWithAlias.Text = "Excel upload data with Alias"
+        Me.optNewWithAlias.UseVisualStyleBackColor = True
         '
-        'optByExcel
+        'optIMupd
         '
-        Me.optByExcel.AutoSize = True
-        Me.optByExcel.Location = New System.Drawing.Point(10, 21)
-        Me.optByExcel.Name = "optByExcel"
-        Me.optByExcel.Size = New System.Drawing.Size(146, 16)
-        Me.optByExcel.TabIndex = 0
-        Me.optByExcel.TabStop = True
-        Me.optByExcel.Text = "Excel upload data with IM"
-        Me.optByExcel.UseVisualStyleBackColor = True
-        '
-        'chkAssort
-        '
-        Me.chkAssort.AutoSize = True
-        Me.chkAssort.Location = New System.Drawing.Point(187, 56)
-        Me.chkAssort.Name = "chkAssort"
-        Me.chkAssort.Size = New System.Drawing.Size(15, 14)
-        Me.chkAssort.TabIndex = 10
-        Me.chkAssort.UseVisualStyleBackColor = True
+        Me.optIMupd.AutoSize = True
+        Me.optIMupd.Location = New System.Drawing.Point(10, 21)
+        Me.optIMupd.Name = "optIMupd"
+        Me.optIMupd.Size = New System.Drawing.Size(146, 16)
+        Me.optIMupd.TabIndex = 0
+        Me.optIMupd.TabStop = True
+        Me.optIMupd.Text = "Excel upload data with IM"
+        Me.optIMupd.UseVisualStyleBackColor = True
         '
         'chkExcel
         '
         Me.chkExcel.AutoSize = True
-        Me.chkExcel.Location = New System.Drawing.Point(213, 306)
+        Me.chkExcel.Location = New System.Drawing.Point(505, 306)
         Me.chkExcel.Name = "chkExcel"
         Me.chkExcel.Size = New System.Drawing.Size(97, 16)
         Me.chkExcel.TabIndex = 2
@@ -292,16 +281,17 @@ Partial Class IAR00001
         '
         'cmdShowReport
         '
-        Me.cmdShowReport.Location = New System.Drawing.Point(338, 301)
+        Me.cmdShowReport.Location = New System.Drawing.Point(494, 301)
         Me.cmdShowReport.Name = "cmdShowReport"
         Me.cmdShowReport.Size = New System.Drawing.Size(108, 24)
         Me.cmdShowReport.TabIndex = 3
         Me.cmdShowReport.Text = "&Show Report"
         Me.cmdShowReport.UseVisualStyleBackColor = True
+        Me.cmdShowReport.Visible = False
         '
         'btnExExcel
         '
-        Me.btnExExcel.Location = New System.Drawing.Point(204, 301)
+        Me.btnExExcel.Location = New System.Drawing.Point(289, 301)
         Me.btnExExcel.Name = "btnExExcel"
         Me.btnExExcel.Size = New System.Drawing.Size(108, 24)
         Me.btnExExcel.TabIndex = 4
@@ -320,6 +310,7 @@ Partial Class IAR00001
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "IAR00001"
         Me.Text = "IAR00001 - Impact Analysis Report (IAR01)"
         Me.GroupBox1.ResumeLayout(False)
@@ -332,8 +323,8 @@ Partial Class IAR00001
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents lblSearchParam As System.Windows.Forms.Label
     Friend WithEvents optItmPrcHis As System.Windows.Forms.RadioButton
-    Friend WithEvents optByExcel_New As System.Windows.Forms.RadioButton
-    Friend WithEvents optByExcel As System.Windows.Forms.RadioButton
+    Friend WithEvents optNewWithAlias As System.Windows.Forms.RadioButton
+    Friend WithEvents optIMupd As System.Windows.Forms.RadioButton
     Friend WithEvents txtTranFromDate As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents lblTranDateTo As System.Windows.Forms.Label
@@ -341,7 +332,6 @@ Partial Class IAR00001
     Friend WithEvents txtItmNo As System.Windows.Forms.TextBox
     Friend WithEvents chkExcel As System.Windows.Forms.CheckBox
     Friend WithEvents cmdShowReport As System.Windows.Forms.Button
-    Friend WithEvents chkAssort As System.Windows.Forms.CheckBox
     Friend WithEvents btnExExcel As System.Windows.Forms.Button
     Friend WithEvents cmd_S_ItmNo As System.Windows.Forms.Button
     Friend WithEvents txt_S_SecCustAll As System.Windows.Forms.TextBox
@@ -353,5 +343,5 @@ Partial Class IAR00001
     Friend WithEvents txt_S_DV As System.Windows.Forms.TextBox
     Friend WithEvents cmd_S_DV As System.Windows.Forms.Button
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
+    Friend WithEvents optNewWithTemp As System.Windows.Forms.RadioButton
 End Class
