@@ -78,11 +78,16 @@ Partial Class IMR00017
         Me.Label16 = New System.Windows.Forms.Label
         Me.Label15 = New System.Windows.Forms.Label
         Me.cmdShow = New System.Windows.Forms.Button
+        Me.Label6 = New System.Windows.Forms.Label
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.optInt = New System.Windows.Forms.RadioButton
+        Me.optExt = New System.Windows.Forms.RadioButton
         Me.grpSearchType.SuspendLayout()
         Me.grpITM.SuspendLayout()
         Me.grpLST.SuspendLayout()
         Me.grpDAT.SuspendLayout()
         Me.grpSearchDetail.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'grpSearchType
@@ -349,6 +354,8 @@ Partial Class IMR00017
         '
         'grpSearchDetail
         '
+        Me.grpSearchDetail.Controls.Add(Me.Panel1)
+        Me.grpSearchDetail.Controls.Add(Me.Label6)
         Me.grpSearchDetail.Controls.Add(Me.Label24)
         Me.grpSearchDetail.Controls.Add(Me.txt_S_SecCustAll)
         Me.grpSearchDetail.Controls.Add(Me.cmd_S_SecCustAll)
@@ -440,7 +447,7 @@ Partial Class IMR00017
         '
         'txt_S_DV
         '
-        Me.txt_S_DV.Location = New System.Drawing.Point(197, 164)
+        Me.txt_S_DV.Location = New System.Drawing.Point(197, 167)
         Me.txt_S_DV.Name = "txt_S_DV"
         Me.txt_S_DV.Size = New System.Drawing.Size(474, 22)
         Me.txt_S_DV.TabIndex = 93
@@ -458,7 +465,7 @@ Partial Class IMR00017
         '
         Me.LblPeriodFormat.AutoSize = True
         Me.LblPeriodFormat.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblPeriodFormat.Location = New System.Drawing.Point(504, 96)
+        Me.LblPeriodFormat.Location = New System.Drawing.Point(448, 97)
         Me.LblPeriodFormat.Name = "LblPeriodFormat"
         Me.LblPeriodFormat.Size = New System.Drawing.Size(46, 12)
         Me.LblPeriodFormat.TabIndex = 45
@@ -467,7 +474,7 @@ Partial Class IMR00017
         'lblPeriod
         '
         Me.lblPeriod.AutoSize = True
-        Me.lblPeriod.Location = New System.Drawing.Point(461, 79)
+        Me.lblPeriod.Location = New System.Drawing.Point(405, 80)
         Me.lblPeriod.Name = "lblPeriod"
         Me.lblPeriod.Size = New System.Drawing.Size(35, 12)
         Me.lblPeriod.TabIndex = 44
@@ -475,7 +482,7 @@ Partial Class IMR00017
         '
         'txt_S_Period
         '
-        Me.txt_S_Period.Location = New System.Drawing.Point(502, 74)
+        Me.txt_S_Period.Location = New System.Drawing.Point(446, 75)
         Me.txt_S_Period.Mask = "0000-00"
         Me.txt_S_Period.Name = "txt_S_Period"
         Me.txt_S_Period.Size = New System.Drawing.Size(50, 22)
@@ -506,6 +513,7 @@ Partial Class IMR00017
         Me.cboPrdVTo.Location = New System.Drawing.Point(446, 47)
         Me.cboPrdVTo.Name = "cboPrdVTo"
         Me.cboPrdVTo.Size = New System.Drawing.Size(225, 20)
+        Me.cboPrdVTo.Sorted = True
         Me.cboPrdVTo.TabIndex = 14
         '
         'Label21
@@ -524,6 +532,7 @@ Partial Class IMR00017
         Me.cboPrdVFm.Location = New System.Drawing.Point(145, 47)
         Me.cboPrdVFm.Name = "cboPrdVFm"
         Me.cboPrdVFm.Size = New System.Drawing.Size(225, 20)
+        Me.cboPrdVFm.Sorted = True
         Me.cboPrdVFm.TabIndex = 12
         '
         'Label22
@@ -618,6 +627,46 @@ Partial Class IMR00017
         Me.cmdShow.Text = "&Show Report"
         Me.cmdShow.UseVisualStyleBackColor = True
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(502, 78)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(73, 12)
+        Me.Label6.TabIndex = 94
+        Me.Label6.Text = "Report Format"
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.optExt)
+        Me.Panel1.Controls.Add(Me.optInt)
+        Me.Panel1.Location = New System.Drawing.Point(576, 72)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(94, 23)
+        Me.Panel1.TabIndex = 95
+        '
+        'optInt
+        '
+        Me.optInt.AutoSize = True
+        Me.optInt.Location = New System.Drawing.Point(6, 4)
+        Me.optInt.Name = "optInt"
+        Me.optInt.Size = New System.Drawing.Size(36, 16)
+        Me.optInt.TabIndex = 0
+        Me.optInt.TabStop = True
+        Me.optInt.Text = "Int"
+        Me.optInt.UseVisualStyleBackColor = True
+        '
+        'optExt
+        '
+        Me.optExt.AutoSize = True
+        Me.optExt.Location = New System.Drawing.Point(48, 4)
+        Me.optExt.Name = "optExt"
+        Me.optExt.Size = New System.Drawing.Size(39, 16)
+        Me.optExt.TabIndex = 1
+        Me.optExt.TabStop = True
+        Me.optExt.Text = "Ext"
+        Me.optExt.UseVisualStyleBackColor = True
+        '
         'IMR00017
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -643,6 +692,8 @@ Partial Class IMR00017
         Me.grpDAT.PerformLayout()
         Me.grpSearchDetail.ResumeLayout(False)
         Me.grpSearchDetail.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -701,4 +752,8 @@ Partial Class IMR00017
     Friend WithEvents SLabel_2 As System.Windows.Forms.Label
     Friend WithEvents SLabel_1 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents optExt As System.Windows.Forms.RadioButton
+    Friend WithEvents optInt As System.Windows.Forms.RadioButton
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 End Class

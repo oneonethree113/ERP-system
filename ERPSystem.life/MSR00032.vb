@@ -9,7 +9,7 @@ Public Class MSR00032
     Public dr() As DataRow
     Dim rs_CUBASINF_P As New DataSet
 
-
+#Region "Loading"
     Private Sub MSR00032_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Formstartup(Me.Name)
 
@@ -41,6 +41,85 @@ Public Class MSR00032
 
     End Sub
 
+    Private Sub format_cboVen()
+        cboVenFm.Items.Clear()
+        cboVenTo.Items.Clear()
+
+        cboVenFm.Items.Add("")
+        cboVenTo.Items.Add("")
+
+        For i As Integer = 0 To rs_VNBASINF.Tables("RESULT").Rows.Count - 1
+            cboVenFm.Items.Add(rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_vensna"))
+            cboVenTo.Items.Add(rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_vensna"))
+        Next
+    End Sub
+
+    Private Sub format_cboSC()
+        cboSCFm.Items.Clear()
+        cboSCTo.Items.Clear()
+
+        cboSCFm.Items.Add("")
+        cboSCTo.Items.Add("")
+
+        For i As Integer = 0 To rs_VNBASINF.Tables("RESULT").Rows.Count - 1
+            cboSCFm.Items.Add(rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_vensna"))
+            cboSCTo.Items.Add(rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_vensna"))
+        Next
+    End Sub
+
+    Private Sub FillcboCust()
+        gspStr = "sp_list_CUBASINF '" & cboCoCde.Text & "','PA'"
+        rtnLong = execute_SQLStatement(gspStr, rs_CUBASINF, rtnStr)
+        gspStr = ""
+
+        If rs_CUBASINF Is Nothing Then
+            Exit Sub
+        End If
+
+
+        cboCUFm.Items.Clear()
+        cboCUTo.Items.Clear()
+        cboCUFm.Items.Add("")
+        cboCUTo.Items.Add("")
+
+        If rs_CUBASINF.Tables("RESULT").Rows.Count > 0 Then
+            dr = rs_CUBASINF.Tables("RESULT").Select("cbi_cusno >= '50000' and cbi_cusno < '60000'")
+
+            For i As Integer = 0 To dr.Length - 1
+                cboCUFm.Items.Add(dr(i)("cbi_cusno") & " - " & dr(i)("cbi_cussna"))
+                cboCUTo.Items.Add(dr(i)("cbi_cusno") & " - " & dr(i)("cbi_cussna"))
+            Next
+
+            cboCUFm.SelectedIndex = 0
+            cboCUTo.SelectedIndex = 0
+        End If
+    End Sub
+
+    Private Sub fillcboPriCust()
+
+        Dim dr() As DataRow
+
+        rs_CUBASINF_P.Tables("RESULT").DefaultView.Sort = "cbi_cusno"
+
+        dr = rs_CUBASINF_P.Tables("RESULT").Select("cbi_cusno >= '50000'")
+
+
+        If dr.Length > 0 Then
+            cboCUFm.Items.Clear()
+            cboCUTo.Items.Clear()
+
+            For i As Integer = 0 To dr.Length - 1
+                cboCUFm.Items.Add(dr(i).Item("cbi_cusno") & " - " & dr(i).Item("cbi_cussna"))
+                cboCUTo.Items.Add(dr(i).Item("cbi_cusno") & " - " & dr(i).Item("cbi_cussna"))
+            Next
+        End If
+
+        cboCUFm.SelectedIndex = 0
+        cboCUTo.SelectedIndex = cboCUTo.Items.Count - 1
+    End Sub
+#End Region
+
+#Region "notRun"
     Private Sub cmdShow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdShow.Click
 
 
@@ -58,11 +137,6 @@ Public Class MSR00032
         '------------------------------------------
 
 
-
-        'If InputIsValid = False Then
-        '    Exit Sub
-        'End If
-
         Dim S As String
         Dim Co As String
         Dim CuFm As String
@@ -72,9 +146,6 @@ Public Class MSR00032
         Dim scFM As String
         Dim ScTo As String
         Dim rs() As DataSet
-
-        'ReDim ReportName(0) As String
-        'ReDim ReportRS(0) As ADOR.Recordset
 
         Me.Cursor = Windows.Forms.Cursors.WaitCursor
 
@@ -114,36 +185,11 @@ Public Class MSR00032
         End If
 
 
-        'If Me.cboVenFm.Text > Me.cboVenTo.Text Then
-        '            Me.Cursor = Windows.Forms.Cursors.Default
-        '    MsgBox "Vendor No: From > To!"
-        '    Exit Sub
-        'End If
-        'If Me.cboSCFm.Text > Me.cboSCTo.Text Then
-        '            Me.Cursor = Windows.Forms.Cursors.Default
-        '    MsgBox "Sub Code: From > To!"
-        '    Exit Sub
-        'End If
-        'If Me.cboCuFm.Text > Me.cboCuTo.Text Then
-        '            Me.Cursor = Windows.Forms.Cursors.Default
-        '    MsgBox "Customer No: From > To!"
-        '    Exit Sub
-        'End If
 
 
 
         Me.Cursor = Windows.Forms.Cursors.WaitCursor
 
-
-        'gspStr = "sp_select_MSR00033 '" & cboCoCde.Text & _
-        '    "','" & CNF & "','" & cnt & _
-        '    "','" & txtSIFm.Text & "','" & txtSITo.Text & _
-        '    "','" & VENCDEFM & "','" & VENCDETO & _
-        '    "','" & VenSubCdeFm & "','" & VenSubCdeTo & _
-        '    "','" & VenTypFm & "','" & VenTypTo & _
-        '    "','" & IDF & "','" & IDT & _
-        '    "','" & status & _
-        '    "','" & sort & "','" & gsUsrID & "'"
 
 
         gspStr = "temp_sp_select_MSR00032 '" & cboCoCde.Text & _
@@ -157,8 +203,6 @@ Public Class MSR00032
             "','" & CuTo & _
             "','" & gsSalTem & _
             "','" & gsUsrID & "'"
-
-        'gspStr = "sp_select_MSR00032 'UCP','50000','59999','','','','','','','','','03/01/2009','03/01/2013','ALL','','mis'"
 
         Me.Cursor = Windows.Forms.Cursors.WaitCursor
         rtnLong = execute_SQLStatement(gspStr, rs_MSR00032, rtnStr)
@@ -192,315 +236,6 @@ Public Class MSR00032
 
     End Sub
 
-    Private Sub cboCoCde_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboCoCde.SelectedIndexChanged
-        '  Call cboCoCdeClick()
-        If cboCoCde.Text <> "UC-G" Then
-            txtCoNam.Text = ChangeCompany(cboCoCde.Text, Me.Name)
-
-            gspStr = "sp_select_CUBASINF_PC '" & cboCoCde.Text & "','" & gsUsrID & "','" & "QU" & "','Primary'"
-            rtnLong = execute_SQLStatement(gspStr, rs_CUBASINF_P, rtnStr)
-            gspStr = ""
-
-            Me.Cursor = Windows.Forms.Cursors.Default
-            If rtnLong <> RC_SUCCESS Then
-                MsgBox("Error on loading QUM00001  sp_select_CUBASINF_P : " & rtnStr)
-                Exit Sub
-            End If
-
-
-            Call fillcboPriCust()
-
-
-
-
-        Else
-
-            txtCoNam.Text = "UNITED CHINESE GROUP"
-            Call FillcboCust()
-        End If
-
-
-    End Sub
-    Private Sub cboCoCdeClick()
-        txtCoNam.Text = ChangeCompany(cboCoCde.Text, Me.Name)
-        'Call getDefault_Path()
-
-    End Sub
-
-    Public Function ChangeCompany(ByVal CoCde As String, ByVal FormName As String) As String
-        Dim dr() As DataRow
-
-        ChangeCompany = ""
-        gsCompany = CoCde
-
-        dr = rs_SYCOMINF_NAME.Tables("RESULT").Select("yco_cocde = '" & gsCompany & "'")
-        If Not dr.Length > 0 Then
-            'MsgBox("Invalid Company Name")
-        Else
-            ChangeCompany = dr(0)("yco_conam").ToString
-        End If
-        Call Update_gs_Value(gsCompany)
-        Call AccessRight(FormName)
-        Call FillcboCust()
-
-    End Function
-    Private Sub format_cboVen()
-        cboVenFm.Items.Clear()
-        cboVenTo.Items.Clear()
-
-        cboVenFm.Items.Add("")
-        cboVenTo.Items.Add("")
-
-        For i As Integer = 0 To rs_VNBASINF.Tables("RESULT").Rows.Count - 1
-            cboVenFm.Items.Add(rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_vensna"))
-            cboVenTo.Items.Add(rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_vensna"))
-        Next
-    End Sub
-
-    Private Sub format_cboSC()
-        cboSCFm.Items.Clear()
-        cboSCTo.Items.Clear()
-
-        cboSCFm.Items.Add("")
-        cboSCTo.Items.Add("")
-
-        For i As Integer = 0 To rs_VNBASINF.Tables("RESULT").Rows.Count - 1
-            cboSCFm.Items.Add(rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_vensna"))
-            cboSCTo.Items.Add(rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_vensna"))
-        Next
-    End Sub
-    'Private Sub FillcboCust()
-
-
-    '    gspStr = "sp_list_CUBASINF '" & cboCoCde.Text & "','PA'"
-    '    rtnLong = execute_SQLStatement(gspStr, rs_CUBASINF, rtnStr)
-    '    gspStr = ""
-
-    '    Cursor = Cursors.Default
-
-    '    If rtnLong <> RC_SUCCESS Then
-    '        MsgBox("Error on loading Load sp_list_CUBASINF :" & rtnStr)
-    '        Exit Sub
-    '    End If
-
-    '    Cursor = Cursors.WaitCursor
-
-
-    '    If rs_CUBASINF.Tables("RESULT").Rows.Count > 0 Then
-
-    '        rs_CUBASINF.Tables("RESULT").DefaultView.Sort = "cbi_cusno"
-    '        dr = rs_CUBASINF.Tables("RESULT").Select("cbi_cusno >= '50000' and cbi_cusno < '60000'")
-
-    '        'Dim tmp_array(0) As String
-    '        'tmp_array(0) = "cbi_cusno"
-    '        'dr.Sort(tmp_array)
-
-
-    '        For i As Integer = 0 To dr.Length - 1
-    '            cboCUFm.Items.Add(dr(i)("cbi_cusno") & " - " & dr(i)("cbi_cussna"))
-    '            cboCUTo.Items.Add(dr(i)("cbi_cusno") & " - " & dr(i)("cbi_cussna"))
-    '        Next
-
-    '        cboCUFm.SelectedIndex = 0
-    '        cboCUTo.SelectedIndex = cboCUTo.Items.Count - 1
-    '    End If
-    'End Sub
-
-    Private Sub FillcboCust()
-        gspStr = "sp_list_CUBASINF '" & cboCoCde.Text & "','PA'"
-        rtnLong = execute_SQLStatement(gspStr, rs_CUBASINF, rtnStr)
-        gspStr = ""
-
-        If rs_CUBASINF Is Nothing Then
-            Exit Sub
-        End If
-
-
-        cboCUFm.Items.Clear()
-        cboCUTo.Items.Clear()
-        cboCUFm.Items.Add("")
-        cboCUTo.Items.Add("")
-
-        If rs_CUBASINF.Tables("RESULT").Rows.Count > 0 Then
-            dr = rs_CUBASINF.Tables("RESULT").Select("cbi_cusno >= '50000' and cbi_cusno < '60000'")
-
-            For i As Integer = 0 To dr.Length - 1
-                cboCUFm.Items.Add(dr(i)("cbi_cusno") & " - " & dr(i)("cbi_cussna"))
-                cboCUTo.Items.Add(dr(i)("cbi_cusno") & " - " & dr(i)("cbi_cussna"))
-            Next
-
-            cboCUFm.SelectedIndex = 0
-            cboCUTo.SelectedIndex = 0
-        End If
-    End Sub
-
-
-
-    Private Sub Label5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label5.Click
-
-    End Sub
-
-    Private Sub txtFromItmno_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtFromItmno.TextChanged
-
-    End Sub
-
-    Private Sub Label4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label4.Click
-
-    End Sub
-
-    Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label3.Click
-
-    End Sub
-
-    '    Private Sub CmdExportExcel_Click()
-
-    '        On Error GoTo Err_Handler
-
-    '        Cursor = Cursors.WaitCursor
-
-    '        Dim xlApp As Excel.Application
-    '        Dim xlWb As Excel.Workbook
-    '        Dim xlWs As Excel.Worksheet
-
-    '        '        Dim recArray As Object
-
-    '        Dim fldCount As Integer
-    '        Dim recCount As Long
-    '        Dim iCol As Integer
-    '        Dim iRow As Integer
-
-    '        xlApp = CreateObject("Excel.Application")
-    '        xlWb = xlApp.Workbooks.Add
-    '        xlWs = xlWb.Worksheets(1)
-
-    '        xlApp.Visible = True
-    '        xlApp.UserControl = True
-
-    '        xlWs.Cells(1, 1) = "Itmno"
-    '        xlWs.Cells(1, 2) = "Colpck"
-    '        xlWs.Cells(1, 3) = "Type"
-    '        xlWs.Cells(1, 4) = "DOCType"
-    '        xlWs.Cells(1, 5) = "Cus1no"
-    '        xlWs.Cells(1, 6) = "Cussna_sort"
-    '        xlWs.Cells(1, 7) = "DocNo"
-    '        xlWs.Cells(1, 8) = "Cussna"
-    '        xlWs.Cells(1, 9) = "issdat"
-    '        xlWs.Cells(1, 10) = "rvsdat"
-    '        xlWs.Cells(1, 11) = "smpUM"
-    '        xlWs.Cells(1, 12) = "venno"
-    '        xlWs.Cells(1, 13) = "subcde"
-    '        xlWs.Cells(1, 14) = "OrderQty"
-    '        xlWs.Cells(1, 15) = "ShpQty"
-    '        xlWs.Cells(1, 16) = "OSQty"
-    '        xlWs.Cells(1, 17) = "ShpStr"
-    '        xlWs.Cells(1, 18) = "ShpEnd"
-    '        xlWs.Cells(1, 19) = "compName"
-
-
-    '        For col As Integer = 9 To rs_MSR00032.Tables("RESULT").Columns.Count - 1
-    '            For row As Integer = 0 To rs_MSR00032.Tables("RESULT").Rows.Count - 1
-    '                xlWs.Cells(row + 1 + 1, col + 1 - 9) = rs_MSR00032.Tables("RESULT").Rows(row).ItemArray(col)
-
-    '            Next
-
-    '        Next
-
-    '        '        // Copy the values from a DataTable to an Excel Sheet (cell-by-cell)
-    '        'for (int col = 0; col < dataTable.Columns.Count; col++)
-    '        '{
-    '        '    for (int row = 0; row < dataTable.Rows.Count; row++)
-    '        '    {
-    '        '        excelSheet.Cells[row + 1, col + 1] = 
-    '        '                dataTable.Rows[row].ItemArray[col];
-    '        '    }
-    '        '}
-
-
-    '        ' ''fldCount = rs_MSR00032.Tables("RESULT").Rows.Count
-
-    '        ' ''For iCol = 1 To fldCount
-
-    '        ' ''    ''Just input the names here
-
-    '        ' ''    ''            xlWs.Cells(1, iCol).Value = rs_MSR00032.Fields(iCol - 1).Name
-    '        ' ''    xlWs.Rows(1).Font.Bold = True
-    '        ' ''    xlWs.Rows(1).Font.Size = 10
-    '        ' ''    xlWs.Rows(1).Font.Underline = True
-    '        ' ''Next
-
-    '        ' ''If Val(Mid(xlApp.Version, 1, InStr(1, xlApp.Version, ".") - 1)) > 8 Then
-    '        ' ''    xlWs.Cells(2, 1).CopyFromRecordset(rs_MSR00032)
-    '        ' ''Else
-
-    '        ' ''    MsgBox("This Option only works with EXCEL 2000 or 2002.", vbExclamation)
-    '        ' ''    'recArray = rs_MSR00032.GetRows
-
-
-    '        ' ''    Dim recArray(rs_MSR00032.Tables("RESULT").Rows.Count - 1, rs_MSR00032.Tables("RESULT").Columns.Count - 1) As String '(row,col)
-    '        ' ''    For intRow As Integer = 0 To rs_MSR00032.Tables("RESULT").Rows.Count - 1
-    '        ' ''        For intCol As Integer = 0 To rs_MSR00032.Tables("RESULT").Columns.Count - 1
-    '        ' ''            recArray(intRow, intCol) = CStr(rs_MSR00032.Tables("RESULT").Rows(intRow).Item(intCol))
-    '        ' ''        Next intCol
-    '        ' ''    Next intRow
-
-
-    '        ' ''    recCount = UBound(recArray, 2) + 1 '+ 1 since 0-based array
-    '        ' ''    For iCol = 0 To fldCount - 1
-    '        ' ''        For iRow = 0 To recCount - 1
-    '        ' ''            If IsDate(recArray(iCol, iRow)) Then
-    '        ' ''                recArray(iCol, iRow) = Format(recArray(iCol, iRow))
-    '        ' ''            ElseIf IsArray(recArray(iCol, iRow)) Then
-    '        ' ''                recArray(iCol, iRow) = "Array Field"
-    '        ' ''            End If
-    '        ' ''        Next iRow 'next record
-    '        ' ''    Next iCol 'next field
-
-    '        ' ''    xlWs.Cells(2, 1).resize(recCount, fldCount).Value = recArray
-
-    '        ' ''End If
-
-    '        xlApp.Selection.CurrentRegion.Columns.AutoFit()
-    '        xlApp.Selection.CurrentRegion.rows.AutoFit()
-
-    '        xlWs.Rows(1).RowHeight = 25
-
-    '        rs_MSR00032 = Nothing
-
-
-    '        xlWs = Nothing
-    '        xlWb = Nothing
-    '        xlApp = Nothing
-
-    '        'With Screen
-    '        '  Me.Move (.width - width) \ 2, (.Height - Height) \ 2
-    '        'End With
-
-    '        Cursor = Cursors.Default
-
-    '        Exit Sub
-
-    'Err_Handler:
-    '        If Err.Number = -2147417851 Then
-    '            Resume Next
-    '        End If
-
-    '        Cursor = Cursors.Default
-
-
-    '        MsgBox(Err.Description, vbCritical, "Error: " & Err.Number)
-
-    '        rs_MSR00032 = Nothing
-
-    '        xlWs = Nothing
-    '        xlWb = Nothing
-    '        xlApp = Nothing
-
-
-    '    End Sub
-
-
-
-
     Private Sub CmdExportExcel_Click()
 
         On Error GoTo Err_Handler
@@ -511,7 +246,6 @@ Public Class MSR00032
         Dim xlWb As Excel.Workbook
         Dim xlWs As Excel.Worksheet
 
-        '        Dim recArray As Object
 
         Dim fldCount As Integer
         Dim recCount As Long
@@ -676,28 +410,6 @@ Public Class MSR00032
         End With
 
 
-        'xlWs.Cells(1, 1) = "Itmno"
-        'xlWs.Cells(1, 2) = "Colpck"
-        'xlWs.Cells(1, 3) = "Type"
-        'xlWs.Cells(1, 4) = "DOCType"
-        'xlWs.Cells(1, 5) = "Cus1no"
-        'xlWs.Cells(1, 6) = "Cussna_sort"
-        'xlWs.Cells(1, 7) = "DocNo"
-        'xlWs.Cells(1, 8) = "Cussna"
-        'xlWs.Cells(1, 9) = "issdat"
-        'xlWs.Cells(1, 10) = "rvsdat"
-        'xlWs.Cells(1, 11) = "smpUM"
-        'xlWs.Cells(1, 12) = "venno"
-        'xlWs.Cells(1, 13) = "subcde"
-        'xlWs.Cells(1, 14) = "OrderQty"
-        'xlWs.Cells(1, 15) = "ShpQty"
-        'xlWs.Cells(1, 16) = "OSQty"
-        'xlWs.Cells(1, 17) = "ShpStr"
-        'xlWs.Cells(1, 18) = "ShpEnd"
-        'xlWs.Cells(1, 19) = "compName"
-
-
-        '        For col As Integer =  To rs_MSR00032.Tables("RESULT").Columns.Count - 1
         For row As Integer = 0 To rs_MSR00032.Tables("RESULT").Rows.Count - 1
             If row > 0 Then
 
@@ -788,10 +500,6 @@ And rs_MSR00032.Tables("RESULT").Rows(row - 1).ItemArray(9) = rs_MSR00032.Tables
                 xlWs.Cells(row + 1 + 9, 4 + 1 + 1) = rs_MSR00032.Tables("RESULT").Rows(row).ItemArray(12)
 
                 xlWs.Cells(row + 1 + 9, 5 + 1 + 1) = rs_MSR00032.Tables("RESULT").Rows(row).ItemArray(15)
-                'xlWs.Cells(row + 1 + 9, 6 + 1 + 1) = rs_MSR00032.Tables("RESULT").Rows(row).ItemArray(17)
-                'xlWs.Cells(row + 1 + 9, 7 + 1 + 1) = rs_MSR00032.Tables("RESULT").Rows(row).ItemArray(18)
-                'xlWs.Cells(row + 1 + 9, 8 + 1 + 1) = rs_MSR00032.Tables("RESULT").Rows(row).ItemArray(25)
-                'xlWs.Cells(row + 1 + 9, 9 + 1 + 1) = rs_MSR00032.Tables("RESULT").Rows(row).ItemArray(26)
 
 
                 If rs_MSR00032.Tables("RESULT").Rows(row).ItemArray(17) = "01/01/1900" Then
@@ -865,92 +573,6 @@ And rs_MSR00032.Tables("RESULT").Rows(row - 1).ItemArray(9) = rs_MSR00032.Tables
         End With
 
 
-        'Next
-
-        '        // Copy the values from a DataTable to an Excel Sheet (cell-by-cell)
-        'for (int col = 0; col < dataTable.Columns.Count; col++)
-        '{
-        '    for (int row = 0; row < dataTable.Rows.Count; row++)
-        '    {
-        '        excelSheet.Cells[row + 1, col + 1] = 
-        '                dataTable.Rows[row].ItemArray[col];
-        '    }
-        '}
-
-
-        ' ''fldCount = rs_MSR00032.Tables("RESULT").Rows.Count
-
-        ' ''For iCol = 1 To fldCount
-
-        ' ''    ''Just input the names here
-
-        ' ''    ''            xlWs.Cells(1, iCol).Value = rs_MSR00032.Fields(iCol - 1).Name
-        ' ''    xlWs.Rows(1).Font.Bold = True
-        ' ''    xlWs.Rows(1).Font.Size = 10
-        ' ''    xlWs.Rows(1).Font.Underline = True
-        ' ''Next
-
-        ' ''If Val(Mid(xlApp.Version, 1, InStr(1, xlApp.Version, ".") - 1)) > 8 Then
-        ' ''    xlWs.Cells(2, 1).CopyFromRecordset(rs_MSR00032)
-        ' ''Else
-
-        ' ''    MsgBox("This Option only works with EXCEL 2000 or 2002.", vbExclamation)
-        ' ''    'recArray = rs_MSR00032.GetRows
-
-
-        ' ''    Dim recArray(rs_MSR00032.Tables("RESULT").Rows.Count - 1, rs_MSR00032.Tables("RESULT").Columns.Count - 1) As String '(row,col)
-        ' ''    For intRow As Integer = 0 To rs_MSR00032.Tables("RESULT").Rows.Count - 1
-        ' ''        For intCol As Integer = 0 To rs_MSR00032.Tables("RESULT").Columns.Count - 1
-        ' ''            recArray(intRow, intCol) = CStr(rs_MSR00032.Tables("RESULT").Rows(intRow).Item(intCol))
-        ' ''        Next intCol
-        ' ''    Next intRow
-
-
-        ' ''    recCount = UBound(recArray, 2) + 1 '+ 1 since 0-based array
-        ' ''    For iCol = 0 To fldCount - 1
-        ' ''        For iRow = 0 To recCount - 1
-        ' ''            If IsDate(recArray(iCol, iRow)) Then
-        ' ''                recArray(iCol, iRow) = Format(recArray(iCol, iRow))
-        ' ''            ElseIf IsArray(recArray(iCol, iRow)) Then
-        ' ''                recArray(iCol, iRow) = "Array Field"
-        ' ''            End If
-        ' ''        Next iRow 'next record
-        ' ''    Next iCol 'next field
-
-        ' ''    xlWs.Cells(2, 1).resize(recCount, fldCount).Value = recArray
-
-        ' ''End If
-
-        '        xlApp.Selection.CurrentRegion.Columns.AutoFit()
-        '       xlApp.Selection.CurrentRegion.rows.AutoFit()
-
-        '      xlApp.Worksheets("Sheet1").Columns("A:Z").AutoFit()
-
-        '''20130214
-        'xlWs.Columns("A:A").AutoFit()
-        'xlWs.Columns("C:C").AutoFit()
-        'xlWs.Columns("E:K").AutoFit()
-        'xlWs.Columns("M:Z").AutoFit()
-
-        '   xlWs.Rows(1).RowHeight = 25
-        '        xlWs.Columns("A:Z").ColumnWidth = 10.13
-        ''xlWs.Columns("A").ColumnWidth = 10.13
-        ''xlWs.Columns("B").ColumnWidth = 10.13
-        ''xlWs.Columns("C").ColumnWidth = 10.13
-        ''xlWs.Columns("D").ColumnWidth = 10.13
-        ''xlWs.Columns("E").ColumnWidth = 10.13
-        ''xlWs.Columns("F").ColumnWidth = 10.13
-        ''xlWs.Columns("A").ColumnWidth = 10.13
-        ''xlWs.Columns("A").ColumnWidth = 10.13
-        ''xlWs.Columns("A").ColumnWidth = 10.13
-        ''xlWs.Columns("A").ColumnWidth = 10.13
-        ''xlWs.Columns("A").ColumnWidth = 10.13
-        ''xlWs.Columns("A").ColumnWidth = 10.13
-        ''xlWs.Columns("A").ColumnWidth = 10.13
-        ''xlWs.Columns("A").ColumnWidth = 10.13
-        ''xlWs.Columns("A").ColumnWidth = 10.13
-
-
 
         rs_MSR00032 = Nothing
 
@@ -958,10 +580,6 @@ And rs_MSR00032.Tables("RESULT").Rows(row - 1).ItemArray(9) = rs_MSR00032.Tables
         xlWs = Nothing
         xlWb = Nothing
         xlApp = Nothing
-
-        'With Screen
-        '  Me.Move (.width - width) \ 2, (.Height - Height) \ 2
-        'End With
 
         Cursor = Cursors.Default
 
@@ -985,97 +603,558 @@ Err_Handler:
 
 
     End Sub
+#End Region
+
+#Region "UIlittlefuntion"
+    Private Sub cboCoCde_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboCoCde.SelectedIndexChanged
+
+        If cboCoCde.Text <> "UC-G" Then
+            txtCoNam.Text = ChangeCompany(cboCoCde.Text, Me.Name)
+
+            gspStr = "sp_select_CUBASINF_PC '" & cboCoCde.Text & "','" & gsUsrID & "','" & "QU" & "','Primary'"
+            rtnLong = execute_SQLStatement(gspStr, rs_CUBASINF_P, rtnStr)
+            gspStr = ""
+
+            Me.Cursor = Windows.Forms.Cursors.Default
+            If rtnLong <> RC_SUCCESS Then
+                MsgBox("Error on loading QUM00001  sp_select_CUBASINF_P : " & rtnStr)
+                Exit Sub
+            End If
 
 
-    Private Sub fillcboPriCust()
+            Call fillcboPriCust()
 
-        Dim dr() As DataRow
-        '        If addFlag = True Then
+        Else
 
-        rs_CUBASINF_P.Tables("RESULT").DefaultView.Sort = "cbi_cusno"
-
-        dr = rs_CUBASINF_P.Tables("RESULT").Select("cbi_cusno >= '50000'")
-        'Else
-        'dr = rs_CUBASINF_P.Tables("RESULT").Select("")
-        'End If
-
-        If dr.Length > 0 Then
-            cboCUFm.Items.Clear()
-            cboCUTo.Items.Clear()
-
-            For i As Integer = 0 To dr.Length - 1
-                cboCUFm.Items.Add(dr(i).Item("cbi_cusno") & " - " & dr(i).Item("cbi_cussna"))
-                cboCUTo.Items.Add(dr(i).Item("cbi_cusno") & " - " & dr(i).Item("cbi_cussna"))
-            Next
+            txtCoNam.Text = "UNITED CHINESE GROUP"
+            Call FillcboCust()
         End If
 
-        cboCUFm.SelectedIndex = 0
-        cboCUTo.SelectedIndex = cboCUTo.Items.Count - 1
+
     End Sub
+    Private Sub cboCoCdeClick()
+        txtCoNam.Text = ChangeCompany(cboCoCde.Text, Me.Name)
+    End Sub
+
+    Public Function ChangeCompany(ByVal CoCde As String, ByVal FormName As String) As String
+        Dim dr() As DataRow
+
+        ChangeCompany = ""
+        gsCompany = CoCde
+
+        dr = rs_SYCOMINF_NAME.Tables("RESULT").Select("yco_cocde = '" & gsCompany & "'")
+        If Not dr.Length > 0 Then
+            'MsgBox("Invalid Company Name")
+        Else
+            ChangeCompany = dr(0)("yco_conam").ToString
+        End If
+        Call Update_gs_Value(gsCompany)
+        Call AccessRight(FormName)
+        Call FillcboCust()
+
+    End Function
+
 
     Private Sub cboVenFm_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles cboVenFm.KeyUp
         Call auto_search_combo(cboVenFm, e.KeyCode)
-
     End Sub
 
     Private Sub cboVenFm_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles cboVenFm.LostFocus
         cboVenTo.Text = cboVenFm.Text
         cboVenTo.Focus()
         cboVenTo.SelectAll()
-
-    End Sub
-
-
-    Private Sub cboVenFm_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboVenFm.SelectedIndexChanged
-
     End Sub
 
     Private Sub cboVenTo_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles cboVenTo.GotFocus
         cboVenTo.SelectAll()
-
     End Sub
 
     Private Sub cboVenTo_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles cboVenTo.KeyUp
         Call auto_search_combo(cboVenTo, e.KeyCode)
-
-    End Sub
-
-    Private Sub cboVenTo_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboVenTo.SelectedIndexChanged
-
     End Sub
 
     Private Sub cboCUFm_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles cboCUFm.KeyUp
         Call auto_search_combo(cboCUFm, e.KeyCode)
-
     End Sub
 
     Private Sub cboCUFm_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles cboCUFm.LostFocus
         cboCUTo.Text = cboCUFm.Text
         cboCUFm.Focus()
         cboCUFm.SelectAll()
-
-    End Sub
-
-    Private Sub cboCUFm_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboCUFm.SelectedIndexChanged
-
     End Sub
 
     Private Sub cboCUTo_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles cboCUTo.GotFocus
         cboCUTo.Focus()
         cboCUTo.SelectAll()
-
     End Sub
 
     Private Sub cboCUTo_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles cboCUTo.KeyUp
         Call auto_search_combo(cboCUTo, e.KeyCode)
-
     End Sub
 
-    Private Sub cboCUTo_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboCUTo.SelectedIndexChanged
+    Private Sub cmd_S_ItmNo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_S_ItmNo.Click
+        frmItemList.strItem = txtItmNo.Text
+        Call frmItemList.getform("IAR00001")
+        frmItemList.ShowDialog()
+        txtItmNo.Text = frmItemList.strSel
+    End Sub
+#End Region
 
+#Region "Export Report Funtion"
+    Private Sub btnExportExcel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExportExcel.Click
+        ExportExcel()
     End Sub
 
-    Private Sub txtCoNam_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCoNam.TextChanged
+    Private Sub ExportExcel()
+        If Not validInput() Then
+            Exit Sub
+        End If
 
+        Me.Cursor = Windows.Forms.Cursors.WaitCursor
+
+        Dim rs_MSR00032 As DataSet
+
+        Dim getDataSuccess As Boolean
+        getDataSuccess = getDocList(rs_MSR00032)
+
+        If Not getDataSuccess Then
+            MsgBox("Fail to get data!")
+            Me.Cursor = Windows.Forms.Cursors.Default
+            Exit Sub
+        End If
+
+        If rs_MSR00032.Tables("RESULT").Rows.Count = 0 Then
+            MsgBox("No Record Found!", MsgBoxStyle.Information, "Information")
+            Me.Cursor = Windows.Forms.Cursors.Default
+            Exit Sub
+        End If
+
+        generateReportExcel(rs_MSR00032)
+
+        If allItemWithDoc(rs_MSR00032) <> True Then
+            MessageBox.Show("Some Items have no Doc.")
+            generateNoDocListItem(rs_MSR00032)
+        End If
+
+        Me.Cursor = Windows.Forms.Cursors.Default
+    End Sub
+
+    Function validInput() As Boolean
+        If Trim(txtItmNo.Text) = "" Then
+            MsgBox("Please Input the Item No. list!")
+            txtFromItmno.Focus()
+            Exit Function
+        End If
+
+        If txtItmNo.Text.Length > 4000 Then
+            MsgBox("Item No. list cannot be more than 4000 character")
+            txtFromItmno.Focus()
+            Exit Function
+        End If
+        Return True
+    End Function
+
+    Function getDocList(ByRef rs_MSR00032 As DataSet) As Boolean
+
+        '--- Update Company Code before execute ---
+        gsCompany = Trim(cboCoCde.Text)
+        Call Update_gs_Value(gsCompany)
+        '------------------------------------------
+
+
+        Dim S As String
+        Dim Co As String
+        Dim CuFm As String
+        Dim CuTo As String
+        Dim VnFm As String
+        Dim VnTo As String
+        Dim scFM As String
+        Dim ScTo As String
+        Dim rs() As DataSet
+
+        Me.Cursor = Windows.Forms.Cursors.WaitCursor
+
+
+        If cboVenFm.Text = "" Then
+            VnFm = ""
+        Else
+            VnFm = Split(cboVenFm.Text, " - ")(0)
+        End If
+        If cboVenTo.Text = "" Then
+            VnTo = ""
+        Else
+            VnTo = Split(cboVenTo.Text, " - ")(0)
+        End If
+
+        If cboCUFm.Text = "" Then
+            CuFm = ""
+        Else
+            CuFm = Split(cboCUFm.Text, " - ")(0)
+        End If
+        If cboCUTo.Text = "" Then
+            CuTo = ""
+        Else
+            CuTo = Split(cboCUTo.Text, " - ")(0)
+        End If
+
+
+
+
+
+        Me.Cursor = Windows.Forms.Cursors.WaitCursor
+
+
+
+        gspStr = "sp_select_MSR00032 '" & cboCoCde.Text & _
+            "','" & UCase(txtItmNo.Text) & _
+            "','" & VnFm & _
+            "','" & VnTo & _
+            "','" & CuFm & _
+            "','" & CuTo & _
+            "','" & gsSalTem & _
+            "','" & gsUsrID & "'"
+
+        Me.Cursor = Windows.Forms.Cursors.WaitCursor
+        rtnLong = execute_SQLStatement(gspStr, rs_MSR00032, rtnStr)
+
+        If rtnLong <> RC_SUCCESS Then
+            MsgBox("Error on loading MSR00032 : " & rtnStr)
+            Exit Function
+        End If
+        Return True
+    End Function
+
+#Region "Generating Reprot"
+    Private Sub generateReportExcel(ByRef rs_MSR00032 As DataSet)
+
+        Me.Cursor = Windows.Forms.Cursors.WaitCursor
+        Dim itemGroupList As DataTable = getItemGroupList(rs_MSR00032)
+        For Each itemGroup As DataRow In itemGroupList.Rows
+            ''''Start: Dont care about this part. This is the code farmat to call a excel'''''''
+            Dim xlsApp As New Excel.ApplicationClass
+            Dim xlsWB As Excel.Workbook = Nothing
+            Dim xlsWS As Excel.Worksheet = Nothing
+
+            xlsApp = New Excel.Application
+            xlsApp.Visible = False
+            xlsApp.UserControl = True
+
+            Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+            System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
+
+            xlsWB = xlsApp.Workbooks.Add()
+            xlsWS = xlsWB.ActiveSheet
+            ''''End: Dont care about this part. This is the code farmat to call a excel''''''''''''
+            Dim itemGroupName As String = itemGroup.Item("ItemGroup")
+
+            fillDocListContent(xlsApp, rs_MSR00032, itemGroupName)
+            setFormat(xlsApp)
+            saveExcel(xlsApp, xlsWB, itemGroupName)
+            ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+            xlsApp.Quit()
+            releaseObject(xlsWS)
+            releaseObject(xlsWB)
+            releaseObject(xlsApp)
+            xlsWS = Nothing
+            xlsWB = Nothing
+            xlsApp = Nothing
+        Next
+        MessageBox.Show("Finish Exporting Excel File(s)")
+        Me.Cursor = Windows.Forms.Cursors.Default
+    End Sub
+
+    Function getItemGroupList(ByVal rs_MSR00032 As DataSet) As DataTable
+        Return rs_MSR00032.Tables("RESULT").DefaultView.ToTable(True, "ItemGroup")
+    End Function
+
+    Private Sub fillDocListContent(ByRef xlsApp As Excel.Application, ByVal rs_MSR00032 As DataSet, ByVal ItemGroupName As String)
+        rs_MSR00032.Tables("RESULT").DefaultView.RowFilter = "ItemGroup='" + ItemGroupName + "'"
+
+        With xlsApp
+            For i As Integer = 0 To rs_MSR00032.Tables("result").DefaultView.Count - 1
+                Dim docType As String = rs_MSR00032.Tables("RESULT").Rows(i)("DOCType").ToString
+                Dim curCol As Integer = 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("ItemGroup").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("Itmno").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("Cus1na").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("Cus2na").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("Salteam").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("Col").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("MU").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("ftr").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("inr").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("mtr").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("ctf").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = If(docType = "QU", rs_MSR00032.Tables("RESULT").Rows(i)("quoteExp").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("DOCType").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("doc_status").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("DocNo").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("issdat").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("rvsdat").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = If(docType = "SC", rs_MSR00032.Tables("RESULT").Rows(i)("ShpStr").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = If(docType = "SC", rs_MSR00032.Tables("RESULT").Rows(i)("ShpEnd").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("venno").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = "" 'rs_MSR00032.Tables("RESULT").Rows(i)("smpUM").ToString
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = If(docType <> "QU", rs_MSR00032.Tables("RESULT").Rows(i)("OrderQty").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = If(docType <> "QU", rs_MSR00032.Tables("RESULT").Rows(i)("ShpQty").ToString, "")
+                curCol = curCol + 1
+                .Cells(2 + i, curCol) = If(docType <> "QU", rs_MSR00032.Tables("RESULT").Rows(i)("OSQty").ToString, "")
+                curCol = curCol + 1
+            Next
+        End With
+        rs_MSR00032.Tables("RESULT").DefaultView.RowFilter = ""
+    End Sub
+
+    Private Sub setFormat(ByVal xlsApp As Excel.Application)
+
+        Dim curCol As Integer = 1
+
+        With xlsApp
+            .Cells(1, curCol).Value = "Group Item"
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Item No."
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Cells(2, curCol + 1).Select() 'Freeze cell
+            .ActiveWindow.FreezePanes = True
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Pri Cust."
+            .Columns(curCol).ColumnWidth = 32
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Sec Cust."
+            .Columns(curCol).ColumnWidth = 32
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Sales Team"
+            .Columns(curCol).ColumnWidth = 10
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Color"
+            .Columns(curCol).ColumnWidth = 13
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "UM"
+            .Columns(curCol).ColumnWidth = 7
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Ftr"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Inr"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Mtr"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "CFT"
+            .Columns(curCol).ColumnWidth = 9
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Quote Expiry Date"
+            .Columns(curCol).ColumnWidth = 11
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Columns(curCol).NumberFormat = "MM/dd/yyyy"
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Doc Type"
+            .Columns(curCol).ColumnWidth = 10
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Status"
+            .Columns(curCol).ColumnWidth = 10
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Doc No."
+            .Columns(curCol).ColumnWidth = 15
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Issue Date"
+            .Columns(curCol).ColumnWidth = 11
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Columns(curCol).NumberFormat = "MM/dd/yyyy"
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Revise Date"
+            .Columns(curCol).ColumnWidth = 11
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Columns(curCol).NumberFormat = "MM/dd/yyyy"
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Ship Start"
+            .Columns(curCol).ColumnWidth = 11
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Columns(curCol).NumberFormat = "MM/dd/yyyy"
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Ship End"
+            .Columns(curCol).ColumnWidth = 11
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Columns(curCol).NumberFormat = "MM/dd/yyyy"
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "PV"
+            .Columns(curCol).ColumnWidth = 15
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Smp.UM"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Order Qty"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Shipped Qty"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "OS Qty"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+        End With
+
+        'styling
+        With xlsApp
+            .Rows(1).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            '.Rows(1).Font.Bold = True
+            .Range(xlsApp.Cells(1, 1), xlsApp.Cells(1, curCol)).AutoFilter(1, Type.Missing, Excel.XlAutoFilterOperator.xlAnd, Type.Missing, True)
+
+            .Range(.Columns(1), .Columns(curCol)).WrapText = True
+            .Range(.Columns(1), .Columns(curCol)).VerticalAlignment = Excel.Constants.xlCenter
+
+            'Set page name 
+        End With
+    End Sub
+
+    Private Sub saveExcel(ByRef xlsApp As Excel.Application, ByRef xlsWB As Excel.Workbook, ByVal itemGroup As String)
+        Dim def_path_cons As String = "C:\ERP_Excel\"
+        Dim xlSaveConflictResolution1 As Excel.XlSaveConflictResolution = Excel.XlSaveConflictResolution.xlLocalSessionChanges
+        xlsApp.DisplayAlerts = False
+        xlsWB.SaveAs(Filename:=def_path_cons + itemGroup.ToString() + "_" + DateTime.Now.ToString("yyyyMMddHHmm"), FileFormat:=52, ConflictResolution:=2)
+        xlsApp.DisplayAlerts = True
+        xlsWB.Close()
+    End Sub
+#End Region
+
+
+#Region "Check Item with no Doc."
+    Function allItemWithDoc(ByVal rs_MSR00032 As DataSet) As Boolean
+        Dim resultTable As DataTable = rs_MSR00032.Tables("RESULT").DefaultView.ToTable(True, "Itmno")
+        Dim itemList As String() = Split(txtItmNo.Text, ",")
+        For Each itmno As String In itemList
+            resultTable.DefaultView.RowFilter = "Itmno='" + Trim(itmno) + "'"
+            If resultTable.DefaultView.Count = 0 Then
+                Return False
+            End If
+            resultTable.DefaultView.RowFilter = ""
+        Next
+        Return True
+    End Function
+
+    Private Sub generateNoDocListItem(ByVal rs_MSR00032 As DataSet)
+        Dim resultTable As DataTable = rs_MSR00032.Tables("RESULT").DefaultView.ToTable(True, "Itmno")
+        Dim itemList As String() = Split(txtItmNo.Text, ",")
+        Dim itemNoDocList As New ArrayList()
+        Dim al As New ArrayList()
+        For Each itmno As String In itemList
+            If itemNoDocList.Contains(Trim(itmno)) Then
+                Continue For
+            End If
+
+            resultTable.DefaultView.RowFilter = "Itmno='" + Trim(itmno) + "'"
+            If resultTable.DefaultView.Count = 0 Then
+                itemNoDocList.Add(Trim(itmno))
+            End If
+            resultTable.DefaultView.RowFilter = ""
+        Next
+        ''''End: Dont care about this part. This is the code farmat to call a excel''''''''''''
+
+        Dim xlsApp As New Excel.ApplicationClass
+        Dim xlsWB As Excel.Workbook = Nothing
+        Dim xlsWS As Excel.Worksheet = Nothing
+
+        xlsApp = New Excel.Application
+        xlsApp.Visible = False
+        xlsApp.UserControl = True
+
+        Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
+
+        xlsWB = xlsApp.Workbooks.Add()
+        xlsWS = xlsWB.ActiveSheet
+        ''''End: Dont care about this part. This is the code farmat to call a excel''''''''''''
+
+        xlsApp.Cells(1, 1) = "Item no. have no Doc."
+        itemNoDocList.Sort()
+        For i As Integer = 0 To itemNoDocList.Count - 1
+            xlsApp.Cells(2 + i, 1) = itemNoDocList(i)
+        Next
+
+        ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+        xlsApp.Visible = True
+        xlsWS = Nothing
+        xlsWB = Nothing
+        xlsApp = Nothing
+    End Sub
+#End Region
+#End Region
+    Private Sub releaseObject(ByVal obj As Object)
+        Try
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+            obj = Nothing
+        Catch ex As Exception
+            obj = Nothing
+        Finally
+            GC.Collect()
+        End Try
     End Sub
 End Class

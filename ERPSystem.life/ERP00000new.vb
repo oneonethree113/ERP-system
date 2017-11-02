@@ -2595,8 +2595,8 @@ Public Class ERP00000new
 
 
         MenuBarSetup.Visible = True
-        smiINR15.Enabled = True
-        smiINR15.Visible = True
+        'smiINR15.Enabled = True
+        'smiINR15.Visible = True
     End Sub
     Private Sub setDropdownAutofit(ByRef menustrip As MenuStrip)
 

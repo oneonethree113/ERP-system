@@ -5715,56 +5715,6 @@ Public Class IMM00001
             Exit Sub
         End If
 
-
-        'gspStr = "sp_select_IMPCKINF '',''"
-        'rtnLong = execute_SQLStatement(gspStr, rs_IMPCKINF, rtnStr)
-        'If rtnLong <> RC_SUCCESS Then
-        '    MsgBox("Error on loading IMM00001_Load sp_select_IMPCKINF :" & rtnStr)
-        '    Exit Sub
-        'End If
-
-        'gspStr = "sp_select_IMVENINF '',''"
-        'rtnLong = execute_SQLStatement(gspStr, rs_IMVENINF, rtnStr)
-        'If rtnLong <> RC_SUCCESS Then  
-        '    MsgBox("Error on loading IMM00001_Load sp_select_IMVENINF :" & rtnStr)
-        '    Exit Sub
-        'End If
-
-        'gspStr = "sp_select_IMCUSNO '',''"
-        'rtnLong = execute_SQLStatement(gspStr, rs_IMCUSNO, rtnStr)
-        'If rtnLong <> RC_SUCCESS Then
-        '    MsgBox("Error on loading IMM00001_Load sp_select_IMCUSNO :" & rtnStr)
-        '    Exit Sub
-        'End If
-
-        'gspStr = "sp_select_IMPRCINF '',''"
-        'rtnLong = execute_SQLStatement(gspStr, rs_IMPRCINF, rtnStr)
-        'If rtnLong <> RC_SUCCESS Then
-        '    MsgBox("Error on loading IMM00001_Load sp_select_IMPRCINF :" & rtnStr)
-        '    Exit Sub
-        'End If
-
-        'gspStr = "sp_select_IMCTYINF '',''"
-        'rtnLong = execute_SQLStatement(gspStr, rs_IMCTYINF, rtnStr)
-        'If rtnLong <> RC_SUCCESS Then
-        '    MsgBox("Error on loading IMM00001_Load sp_select_IMCTYINF :" & rtnStr)
-        '    Exit Sub
-        'End If
-
-        'gspStr = "sp_select_IMCUSSTY '',''"
-        'rtnLong = execute_SQLStatement(gspStr, rs_IMCUSSTY, rtnStr)
-        'If rtnLong <> RC_SUCCESS Then
-        '    MsgBox("Error on loading IMM00001_Load sp_select_IMCUSSTY :" & rtnStr)
-        '    Exit Sub
-        'End If
-
-        'gspStr = "sp_select_IMMATBKD '',''"
-        'rtnLong = execute_SQLStatement(gspStr, rs_IMMATBKD, rtnStr)
-        'If rtnLong <> RC_SUCCESS Then
-        '    MsgBox("Error on loading IMM00001_Load sp_select_IMMATBKD :" & rtnStr)
-        '    Exit Sub
-        'End If
-
         format_VendorCombo()
 
         display_dgColor("IM")

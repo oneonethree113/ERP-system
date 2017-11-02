@@ -22,7 +22,7 @@ Public Class IAR00001
         Dim day As String
         month = "0" + Date.Today.Month.ToString
         day = "0" + Date.Today.Day.ToString
-        txtTranFromDate.Text = month.Substring(month.Length - 2, 2) + "/" + day.Substring(day.Length - 2, 2) + "/" + CStr(Date.Today.Year - 1)
+        txtTranFromDate.Text = month.Substring(month.Length - 2, 2) + "/" + day.Substring(day.Length - 2, 2) + "/" + CStr(Date.Today.Year)
         txtTranToDate.Text = month.Substring(month.Length - 2, 2) + "/" + day.Substring(day.Length - 2, 2) + "/" + CStr(Date.Today.Year)
         optIMupd.Select()
         txtItmNo.Focus()
@@ -1622,15 +1622,14 @@ Public Class IAR00001
 
     Private Sub setItemInfoFormat(ByVal xlsApp As Excel.Application)
 
+        Dim rowFtyCstA As Integer
+        Dim rowNewFtyPackCst As Integer
+        Dim rowEngDesc As Integer
+        Dim rowNewChinDesc As Integer
+        Dim curCol As Integer = 1
+
         With xlsApp
             'Header Initialization
-
-            Dim rowFtyCstA As Integer
-            Dim rowNewFtyPackCst As Integer
-            Dim rowEngDesc As Integer
-            Dim rowNewChinDesc As Integer
-            Dim curCol As Integer = 1
-
             .Cells(1, curCol).Value = "Pri" + Environment.NewLine + "Cust."
             .Columns(curCol).ColumnWidth = 7
             .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
@@ -1908,9 +1907,12 @@ Public Class IAR00001
             curCol = curCol + 1
 
 
-            'Dim rowFtyCstA As Integer
-            'Dim rowNewFtyPackCst As Integer
 
+
+        End With
+
+        'styling
+        With xlsApp
             .Rows(1).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
             .Range(xlsApp.Cells(1, 1), xlsApp.Cells(1, curCol)).AutoFilter(1, Type.Missing, Excel.XlAutoFilterOperator.xlAnd, Type.Missing, True)
 
@@ -1923,7 +1925,6 @@ Public Class IAR00001
             xlsWS = .Worksheets(1)
             xlsWS.Name = "Item Info"
         End With
-
 
     End Sub
 

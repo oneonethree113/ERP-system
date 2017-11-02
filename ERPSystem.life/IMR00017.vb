@@ -5,8 +5,12 @@ Imports Excel = Microsoft.Office.Interop.Excel
 
 Public Class IMR00017
     Dim rs_SYCATCDE_level4 As DataSet
-    Dim rs_VNBASINF As DataSet
+    Dim rs_VNBASINF_I As DataSet
+    Dim rs_VNBASINF_J As DataSet
+    Dim rs_VNBASINF_E As DataSet
     Dim rs_EXCEL As DataSet
+    Dim rs_IMDateAdo As New ADODB.Recordset
+    Dim rs_BOMAdo As New ADODB.Recordset
 
     Const xls_itmno As Integer = 0
     Const xls_itmsts As Integer = 1
@@ -65,19 +69,55 @@ Public Class IMR00017
             Exit Sub
         End If
 
-        gspStr = "sp_list_VNBASINF ''"
-        rtnLong = execute_SQLStatement(gspStr, rs_VNBASINF, rtnStr)
+        gspStr = "sp_list_VNBASINF_ventyp_all '','I'"
+        rtnLong = execute_SQLStatement(gspStr, rs_VNBASINF_I, rtnStr)
         If rtnLong <> RC_SUCCESS Then
             MsgBox("Error on loading IMR00017_Load #002 sp_list_VNBASINF_vensna :" & rtnStr)
         End If
-
+        gspStr = "sp_list_VNBASINF_ventyp_all '','E'"
+        rtnLong = execute_SQLStatement(gspStr, rs_VNBASINF_E, rtnStr)
+        If rtnLong <> RC_SUCCESS Then
+            MsgBox("Error on loading IMR00017_Load #002 sp_list_VNBASINF_vensna :" & rtnStr)
+        End If
+        gspStr = "sp_list_VNBASINF_ventyp_all '','J'"
+        rtnLong = execute_SQLStatement(gspStr, rs_VNBASINF_J, rtnStr)
+        If rtnLong <> RC_SUCCESS Then
+            MsgBox("Error on loading IMR00017_Load #002 sp_list_VNBASINF_vensna :" & rtnStr)
+        End If
         format_CatLvl4()
         format_cboDV_cboPV()
         format_cboStatus()
+        format_cboReportFormat()
 
     End Sub
-
+#Region "Export Report"
     Private Sub cmdShow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdShow.Click
+        If optInt.Checked = True Then
+            intFormat()
+        Else
+            extFormat()
+        End If
+    End Sub
+
+    Private Sub intFormat()
+        If Not getPriceRecordIntSuccess() Then
+            Exit Sub
+        End If
+
+        If rs_IMDateAdo.RecordCount = 0 Then
+            MsgBox("No Record Found!")
+            Exit Sub
+        End If
+
+        If rs_IMDateAdo.RecordCount > 65535 Then
+            MsgBox("Result has over 65535 entries. Result cannot be exported to Excel!")
+            Exit Sub
+        End If
+
+        ExportIntExcel()
+    End Sub
+
+    Function getPriceRecordIntSuccess() As Boolean
         Dim opt As String
         Dim itmFm As String
         Dim itmTo As String
@@ -111,21 +151,21 @@ Public Class IMR00017
                 MsgBox("Please input Item No From!")
                 txtFromItmNo.Focus()
                 txtFromItmNo.SelectAll()
-                Exit Sub
+                Exit Function
             End If
 
             If Trim(txtToItmNo.Text) = "" Then
                 MsgBox("Please input Item No To!")
                 txtToItmNo.Focus()
                 txtToItmNo.SelectAll()
-                Exit Sub
+                Exit Function
             End If
 
             If Trim(txtFromItmNo.Text) > Trim(txtToItmNo.Text) Then
                 MsgBox("Item Number From cannot smaller than Item Number To!")
                 txtFromItmNo.Focus()
                 txtFromItmNo.SelectAll()
-                Exit Sub
+                Exit Function
             End If
 
             itmFm = UCase(Trim(txtFromItmNo.Text))
@@ -135,7 +175,7 @@ Public Class IMR00017
                 MsgBox("Please input Item No List!")
                 txtItmLst.Focus()
                 txtItmLst.SelectAll()
-                Exit Sub
+                Exit Function
             End If
 
             itmLST = UCase(Trim(txtItmLst.Text))
@@ -145,20 +185,20 @@ Public Class IMR00017
                     MsgBox("Invalid Update Date From value!")
                     txtUpddatFm.Focus()
                     txtUpddatFm.SelectAll()
-                    Exit Sub
+                    Exit Function
                 End If
                 If Not IsDate(txtUpddatTo.Text) Then
                     MsgBox("Invalid Update Date To value!")
                     txtUpddatTo.Focus()
                     txtUpddatTo.SelectAll()
-                    Exit Sub
+                    Exit Function
                 End If
 
                 If CDate(txtUpddatFm.Text) > CDate(txtUpddatTo.Text) Then
                     MsgBox("Update Date From > Update Date To!")
                     txtUpddatFm.Focus()
                     txtUpddatFm.SelectAll()
-                    Exit Sub
+                    Exit Function
                 End If
             End If
 
@@ -179,14 +219,14 @@ Public Class IMR00017
             MsgBox("Category Code From > To!")
             cboToCatLvl4.Focus()
             cboToCatLvl4.SelectAll()
-            Exit Sub
+            Exit Function
         End If
 
         If txt_S_Period.Text <> "    -" Then
             If Not DateTime.TryParse(txt_S_Period.Text.Replace("   ", " "), "9999-12") Then
                 MsgBox("Item Update Date: Invalid End Date", MsgBoxStyle.Information, "Invalid Input")
                 highlight_date(txt_S_Period, Nothing)
-                Exit Sub
+                Exit Function
             End If
         End If
 
@@ -195,7 +235,7 @@ Public Class IMR00017
                 MsgBox("Category Code From not empty but Category Code To is empty!")
                 cboToCatLvl4.Focus()
                 cboToCatLvl4.SelectAll()
-                Exit Sub
+                Exit Function
             End If
             catFm = Trim(Split(cboFromCatLvl4.Text, " - ")(0))
             catTo = Trim(Split(cboToCatLvl4.Text, " - ")(0))
@@ -209,7 +249,7 @@ Public Class IMR00017
             MsgBox("Design Vendor: To < From!")
             cboDsgTo.Focus()
             cboDsgTo.SelectAll()
-            Exit Sub
+            Exit Function
         End If
 
         If cboDsgFm.Text <> "" Then
@@ -217,7 +257,7 @@ Public Class IMR00017
                 MsgBox("Design Vendor From not empty but Design Vendor To is empty!")
                 cboDsgTo.Focus()
                 cboDsgTo.SelectAll()
-                Exit Sub
+                Exit Function
             End If
             dvFm = Trim(Split(cboDsgFm.Text, " - ")(0))
             dvTo = Trim(Split(cboDsgTo.Text, " - ")(0))
@@ -231,7 +271,7 @@ Public Class IMR00017
             MsgBox("Production Vendor: To < From!")
             cboPrdVTo.Focus()
             cboPrdVTo.SelectAll()
-            Exit Sub
+            Exit Function
         End If
 
         If cboPrdVFm.Text <> "" Then
@@ -239,7 +279,7 @@ Public Class IMR00017
                 MsgBox("Production Vendor From not empty but Production Vendor To is empty!")
                 cboPrdVTo.Focus()
                 cboPrdVTo.SelectAll()
-                Exit Sub
+                Exit Function
             End If
             pvFm = Trim(Split(cboPrdVFm.Text, " - ")(0))
             pvTo = Trim(Split(cboPrdVTo.Text, " - ")(0))
@@ -258,28 +298,631 @@ Public Class IMR00017
             If Not DateTime.TryParse(txt_S_Period.Text.Replace("   ", " "), "9999-12") Then
                 MsgBox("Item Update Date: Invalid End Date", MsgBoxStyle.Information, "Invalid Input")
                 highlight_date(txt_S_Period, Nothing)
-                Exit Sub
+                Exit Function
             End If
         End If
 
         If Len(Trim(txt_S_PriCustAll.Text)) > 1000 Then
             MsgBox("Primary Customer list exceeds maximum allowable length (1000 Characters).", MsgBoxStyle.Exclamation, "Invalid Input")
             txt_S_PriCustAll.Focus()
-            Exit Sub
+            Exit Function
         End If
 
         If Len(Trim(txt_S_SecCustAll.Text)) > 1000 Then
             MsgBox("Secondary Customer list exceeds maximum allowable length (1000 Characters).", MsgBoxStyle.Exclamation, "Invalid Input")
             txt_S_PriCustAll.Focus()
-            Exit Sub
+            Exit Function
         End If
 
         If (Trim(txtItmLst.Text).Length = 0) Then
             txtItmLst.Text = ""
-            'MsgBox("Please Enter " & IIf(optBOMItm.Checked = True, "BOM ", "") & "Item No.", MsgBoxStyle.Information, "Missing Input Parameter")
-            'txtItmNo.Focus()
-            'txtItmNo.SelectAll()
-            'Exit Sub
+        End If
+
+
+        If txt_S_Period.Text = "    -" Then
+            period = "1900/01"
+        Else
+            period = txt_S_Period.Text.Replace("-", "/")
+        End If
+
+        Dim cus1no As String
+        Dim cus2no As String
+        Dim venno As String
+
+        cus1no = txt_S_PriCustAll.Text
+        cus1no = cus1no.Replace("'", "''")
+        cus2no = txt_S_SecCustAll.Text
+        cus2no = cus2no.Replace("'", "''")
+        venno = txt_S_DV.Text
+        venno = venno.Replace("'", "''")
+
+        gspStr = "sp_select_IMR00017_INT 'UCPP','" & itmLST & "','" & catFm & "','" & catTo & "','" & itmFm & "','" & itmTo & "','" & _
+                 dvFm & "','" & dvTo & "','" & pvFm & "','" & pvTo & "','" & period & "','" & cus1no & "','" & cus2no & "','" & venno & "','" & dateFm & "','" & dateTo & "','" & sts & "','" & opt & "'"
+
+        Me.Cursor = Windows.Forms.Cursors.WaitCursor
+
+        rtnLong = execute_SQLStatementRPT_ADO(gspStr, rs_IMDateAdo, rtnStr)
+
+        Me.Cursor = Windows.Forms.Cursors.Default
+
+        If rtnLong <> RC_SUCCESS Then
+            MsgBox("Error on loading IMR00017 #003 sp_select_IMR00017 :" & rtnStr)
+            Exit Function
+        End If
+
+
+
+        gspStr = "sp_select_IMR00017_intBOM 'UCPP','" & itmLST & "','" & catFm & "','" & catTo & "','" & itmFm & "','" & itmTo & "','" & _
+                 dvFm & "','" & dvTo & "','" & pvFm & "','" & pvTo & "','" & period & "','" & cus1no & "','" & cus2no & "','" & venno & "','" & dateFm & "','" & dateTo & "','" & sts & "','" & opt & "'"
+
+        Me.Cursor = Windows.Forms.Cursors.WaitCursor
+
+        rtnLong = execute_SQLStatementRPT_ADO(gspStr, rs_BOMAdo, rtnStr)
+
+        Me.Cursor = Windows.Forms.Cursors.Default
+
+        If rtnLong <> RC_SUCCESS Then
+            MsgBox("Error on loading IMR00017 #003 sp_select_IMR00017 :" & rtnStr)
+            Exit Function
+        End If
+        Return True
+    End Function
+
+    Private Sub ExportIntExcel()
+        ''''Start: Dont care about this part. This is the code farmat to call a excel'''''''
+        Dim xlsApp As New Excel.ApplicationClass
+        Dim xlsWB As Excel.Workbook = Nothing
+        Dim xlsWS As Excel.Worksheet = Nothing
+
+        Me.Cursor = Windows.Forms.Cursors.WaitCursor
+
+        xlsApp = New Excel.Application
+        xlsApp.Visible = False
+        xlsApp.UserControl = True
+
+        Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
+
+        xlsWB = xlsApp.Workbooks.Add()
+        xlsWS = xlsWB.ActiveSheet
+        ''''End: Dont care about this part. This is the code farmat to call a excel''''''''''''
+
+        exportExcelIMDataPage(xlsApp)
+
+        xlsApp.Sheets(2).Activate()
+        exportExcelBOMPaage(xlsApp)
+
+        xlsApp.Sheets(1).Activate()
+        xlsApp.Visible = True
+
+        xlsWS = Nothing
+        xlsWB = Nothing
+        xlsApp = Nothing
+
+        Me.Cursor = Windows.Forms.Cursors.Default
+    End Sub
+
+    Private Sub exportExcelIMDataPage(ByVal xlsApp As Excel.Application)
+        fillIMData(xlsApp)
+        setIMDataFormat(xlsApp)
+    End Sub
+
+    Private Sub fillIMData(ByVal xlsApp As Excel.Application)
+        xlsApp.Cells(2, 1).copyfromrecordset(rs_IMDateAdo)
+    End Sub
+
+    Private Sub setIMDataFormat(ByVal xlsApp As Excel.Application)
+
+        Dim curCol As Integer = 1
+
+        With xlsApp
+            'Header Initialization
+            .Cells(1, curCol).Value = "Item No."
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Cells(2, curCol + 1).Select() 'Freeze cell
+            .ActiveWindow.FreezePanes = True
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Temp Item No."
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Item Status"
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Pri Cust"
+            .Columns(curCol).ColumnWidth = 32
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Sec Cust"
+            .Columns(curCol).ColumnWidth = 32
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Item Remark"
+            .Columns(curCol).ColumnWidth = 36
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "MOQ UM"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "MOQ"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Eng Desc"
+            .Columns(curCol).ColumnWidth = 50
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Category L4"
+            .Columns(curCol).ColumnWidth = 15
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Category L4 Name"
+            .Columns(curCol).ColumnWidth = 50
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Product Line"
+            .Columns(curCol).ColumnWidth = 12
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Color Code"
+            .Columns(curCol).ColumnWidth = 13
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Period"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "UM"
+            .Columns(curCol).ColumnWidth = 7
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Ftr"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Inr"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Mtr"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "CFT"
+            .Columns(curCol).ColumnWidth = 9
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "FTY Prc" + Environment.NewLine + "Trm"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "HK Prc" + Environment.NewLine + "Trm"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Tran" + Environment.NewLine + "Trm"
+            .Columns(curCol).ColumnWidth = 5
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Packing Instruction"
+            .Columns(curCol).ColumnWidth = 23
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "DV"
+            .Columns(curCol).ColumnWidth = 22
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "PV"
+            .Columns(curCol).ColumnWidth = 22
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Eff Date"
+            .Columns(curCol).ColumnWidth = 11
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Exp Date"
+            .Columns(curCol).ColumnWidth = 11
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "FTY CCY"
+            .Columns(curCol).ColumnWidth = 7
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "FTY Cost" + Environment.NewLine + "A"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "FTY Cost" + Environment.NewLine + "B"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "FTY Cost" + Environment.NewLine + "C"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "FTY Cost" + Environment.NewLine + "D"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "FTY Cost" + Environment.NewLine + "E"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "FTY Cost" + Environment.NewLine + "Tran"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "FTY Cost" + Environment.NewLine + "Pack"
+            .Columns(curCol).ColumnWidth = 8
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "FTY Cst TTL"
+            .Columns(curCol).ColumnWidth = 10
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "FTY Prc TTL"
+            .Columns(curCol).ColumnWidth = 10
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "HK MU"
+            .Columns(curCol).ColumnWidth = 13
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Basic" + Environment.NewLine + "CCY"
+            .Columns(curCol).ColumnWidth = 7
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Basic Price"
+            .Columns(curCol).ColumnWidth = 11
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Cost Remark"
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Asst No."
+            .Columns(curCol).ColumnWidth = 20
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "Alias No."
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+        End With
+
+        'styling
+        With xlsApp
+            .Rows(1).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Rows(1).Font.Bold = True
+            .Range(xlsApp.Cells(1, 1), xlsApp.Cells(1, curCol)).AutoFilter(1, Type.Missing, Excel.XlAutoFilterOperator.xlAnd, Type.Missing, True)
+
+            .Range(.Columns(1), .Columns(curCol)).VerticalAlignment = Excel.Constants.xlCenter
+
+            .Range(.Columns(1), .Columns(curCol)).WrapText = True
+            xlsApp.Selection.CurrentRegion.rows.AutoFit()
+            'Set page name 
+            Dim xlsWS As Excel.Worksheet = Nothing
+            xlsWS = .Worksheets(1)
+            xlsWS.Name = "IM DATA"
+        End With
+    End Sub
+
+    Private Sub exportExcelBOMPaage(ByVal xlsApp As Excel.Application)
+        fillBOMData(xlsApp)
+        setBOMFormat(xlsApp)
+    End Sub
+
+    Private Sub fillBOMData(ByVal xlsApp As Excel.Application)
+
+        xlsApp.Cells(2, 1).copyfromrecordset(rs_BOMAdo)
+    End Sub
+
+    Private Sub setBOMFormat(ByVal xlsApp As Excel.Application)
+
+        Dim curCol As Integer = 1
+
+        With xlsApp
+            .Cells(1, curCol).Value = "Item No."
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Cells(2, curCol + 1).Select() 'Freeze cell
+            .ActiveWindow.FreezePanes = True
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "BOM Item"
+            .Columns(curCol).ColumnWidth = 17
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "BOM Item Desc"
+            .Columns(curCol).ColumnWidth = 50
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            curCol = curCol + 1
+
+            .Cells(1, curCol).Value = "BOM Qty"
+            .Columns(curCol).ColumnWidth = 10
+            .Columns(curCol).HorizontalAlignment = Excel.XlHAlign.xlHAlignRight
+            curCol = curCol + 1
+        End With
+
+        'styling
+        With xlsApp
+            .Rows(1).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+            .Rows(1).Font.Bold = True
+            .Range(xlsApp.Cells(1, 1), xlsApp.Cells(1, curCol)).AutoFilter(1, Type.Missing, Excel.XlAutoFilterOperator.xlAnd, Type.Missing, True)
+
+            .Range(.Columns(1), .Columns(curCol)).WrapText = True
+            .Range(.Columns(1), .Columns(curCol)).VerticalAlignment = Excel.Constants.xlCenter
+
+            'Set page name 
+            Dim xlsWS As Excel.Worksheet = Nothing
+            xlsWS = .Worksheets(2)
+            xlsWS.Name = "BOM"
+        End With
+    End Sub
+
+    Private Sub extFormat()
+        If Not getPriceRecordExtSuccess() Then
+            Exit Sub
+        End If
+
+        If rs_EXCEL.Tables("RESULT").Rows.Count = 0 Then
+            MsgBox("No Record Found!")
+            Exit Sub
+        End If
+
+        If rs_EXCEL.Tables("RESULT").Rows.Count > 65535 Then
+            MsgBox("Result has over 65535 entries. Result cannot be exported to Excel!")
+            Exit Sub
+        End If
+
+        ExportExtExcel()
+    End Sub
+
+    Function getPriceRecordExtSuccess() As Boolean
+        Dim opt As String
+        Dim itmFm As String
+        Dim itmTo As String
+        Dim itmLST As String
+        Dim dateFm As String
+        Dim dateTo As String
+
+        opt = ""
+        itmFm = ""
+        itmTo = ""
+        itmLST = ""
+        dateFm = ""
+        dateTo = ""
+
+        rs_EXCEL = Nothing
+
+        If optITM.Checked = True Then
+            opt = "ITM"
+        ElseIf optLST.Checked = True Then
+            opt = "LST"
+        ElseIf optDAA.Checked = True Then
+            opt = "DAA"
+        ElseIf optDAC.Checked = True Then
+            opt = "DAC"
+        Else
+            opt = ""
+        End If
+
+        If opt = "ITM" Then
+            If Trim(txtFromItmNo.Text) = "" Then
+                MsgBox("Please input Item No From!")
+                txtFromItmNo.Focus()
+                txtFromItmNo.SelectAll()
+                Exit Function
+            End If
+
+            If Trim(txtToItmNo.Text) = "" Then
+                MsgBox("Please input Item No To!")
+                txtToItmNo.Focus()
+                txtToItmNo.SelectAll()
+                Exit Function
+            End If
+
+            If Trim(txtFromItmNo.Text) > Trim(txtToItmNo.Text) Then
+                MsgBox("Item Number From cannot smaller than Item Number To!")
+                txtFromItmNo.Focus()
+                txtFromItmNo.SelectAll()
+                Exit Function
+            End If
+
+            itmFm = UCase(Trim(txtFromItmNo.Text))
+            itmTo = UCase(Trim(txtToItmNo.Text))
+        ElseIf opt = "LST" Then
+            If Trim(txtItmLst.Text) = "" Then
+                MsgBox("Please input Item No List!")
+                txtItmLst.Focus()
+                txtItmLst.SelectAll()
+                Exit Function
+            End If
+
+            itmLST = UCase(Trim(txtItmLst.Text))
+        Else
+            If txtUpddatFm.Text <> "  /  /" Or txtUpddatTo.Text <> "  /  /" Then
+                If Not IsDate(txtUpddatFm.Text) Then
+                    MsgBox("Invalid Update Date From value!")
+                    txtUpddatFm.Focus()
+                    txtUpddatFm.SelectAll()
+                    Exit Function
+                End If
+                If Not IsDate(txtUpddatTo.Text) Then
+                    MsgBox("Invalid Update Date To value!")
+                    txtUpddatTo.Focus()
+                    txtUpddatTo.SelectAll()
+                    Exit Function
+                End If
+
+                If CDate(txtUpddatFm.Text) > CDate(txtUpddatTo.Text) Then
+                    MsgBox("Update Date From > Update Date To!")
+                    txtUpddatFm.Focus()
+                    txtUpddatFm.SelectAll()
+                    Exit Function
+                End If
+            End If
+
+            dateFm = IIf(txtUpddatFm.Text = "  /  /", "01/01/1900", txtUpddatFm.Text)
+            dateTo = IIf(txtUpddatTo.Text = "  /  /", "01/01/1900", txtUpddatTo.Text)
+        End If
+
+        Dim catFm As String
+        Dim catTo As String
+        Dim dvFm As String
+        Dim dvTo As String
+        Dim pvFm As String
+        Dim pvTo As String
+        Dim sts As String
+        Dim period As String
+
+        If cboFromCatLvl4.Text > cboToCatLvl4.Text Then
+            MsgBox("Category Code From > To!")
+            cboToCatLvl4.Focus()
+            cboToCatLvl4.SelectAll()
+            Exit Function
+        End If
+
+        If txt_S_Period.Text <> "    -" Then
+            If Not DateTime.TryParse(txt_S_Period.Text.Replace("   ", " "), "9999-12") Then
+                MsgBox("Item Update Date: Invalid End Date", MsgBoxStyle.Information, "Invalid Input")
+                highlight_date(txt_S_Period, Nothing)
+                Exit Function
+            End If
+        End If
+
+        If cboFromCatLvl4.Text <> "" Then
+            If cboToCatLvl4.Text = "" Then
+                MsgBox("Category Code From not empty but Category Code To is empty!")
+                cboToCatLvl4.Focus()
+                cboToCatLvl4.SelectAll()
+                Exit Function
+            End If
+            catFm = Trim(Split(cboFromCatLvl4.Text, " - ")(0))
+            catTo = Trim(Split(cboToCatLvl4.Text, " - ")(0))
+        Else
+            catFm = ""
+            catTo = ""
+        End If
+
+
+        If cboDsgFm.Text > cboDsgTo.Text Then
+            MsgBox("Design Vendor: To < From!")
+            cboDsgTo.Focus()
+            cboDsgTo.SelectAll()
+            Exit Function
+        End If
+
+        If cboDsgFm.Text <> "" Then
+            If cboDsgTo.Text = "" Then
+                MsgBox("Design Vendor From not empty but Design Vendor To is empty!")
+                cboDsgTo.Focus()
+                cboDsgTo.SelectAll()
+                Exit Function
+            End If
+            dvFm = Trim(Split(cboDsgFm.Text, " - ")(0))
+            dvTo = Trim(Split(cboDsgTo.Text, " - ")(0))
+        Else
+            dvFm = ""
+            dvTo = ""
+        End If
+
+
+        If cboPrdVFm.Text > cboPrdVTo.Text Then
+            MsgBox("Production Vendor: To < From!")
+            cboPrdVTo.Focus()
+            cboPrdVTo.SelectAll()
+            Exit Function
+        End If
+
+        If cboPrdVFm.Text <> "" Then
+            If cboPrdVTo.Text = "" Then
+                MsgBox("Production Vendor From not empty but Production Vendor To is empty!")
+                cboPrdVTo.Focus()
+                cboPrdVTo.SelectAll()
+                Exit Function
+            End If
+            pvFm = Trim(Split(cboPrdVFm.Text, " - ")(0))
+            pvTo = Trim(Split(cboPrdVTo.Text, " - ")(0))
+        Else
+            pvFm = ""
+            pvTo = ""
+        End If
+
+        If cboStatus.Text <> "" Then
+            sts = Trim(Split(cboStatus.Text, " - ")(0))
+        Else
+            sts = ""
+        End If
+
+        If txt_S_Period.Text <> "    -" Then
+            If Not DateTime.TryParse(txt_S_Period.Text.Replace("   ", " "), "9999-12") Then
+                MsgBox("Item Update Date: Invalid End Date", MsgBoxStyle.Information, "Invalid Input")
+                highlight_date(txt_S_Period, Nothing)
+                Exit Function
+            End If
+        End If
+
+        If Len(Trim(txt_S_PriCustAll.Text)) > 1000 Then
+            MsgBox("Primary Customer list exceeds maximum allowable length (1000 Characters).", MsgBoxStyle.Exclamation, "Invalid Input")
+            txt_S_PriCustAll.Focus()
+            Exit Function
+        End If
+
+        If Len(Trim(txt_S_SecCustAll.Text)) > 1000 Then
+            MsgBox("Secondary Customer list exceeds maximum allowable length (1000 Characters).", MsgBoxStyle.Exclamation, "Invalid Input")
+            txt_S_PriCustAll.Focus()
+            Exit Function
+        End If
+
+        If (Trim(txtItmLst.Text).Length = 0) Then
+            txtItmLst.Text = ""
         End If
 
 
@@ -311,21 +954,12 @@ Public Class IMR00017
 
         If rtnLong <> RC_SUCCESS Then
             MsgBox("Error on loading IMR00017 #003 sp_select_IMR00017 :" & rtnStr)
-            Exit Sub
+            Exit Function
         End If
+        Return True
+    End Function
 
-        If rs_EXCEL.Tables("RESULT").Rows.Count = 0 Then
-            MsgBox("No Record Found!")
-            Exit Sub
-        ElseIf rs_EXCEL.Tables("RESULT").Rows.Count > 65535 Then
-            MsgBox("Result has over 65535 entries. Result cannot be exported to Excel!")
-            Exit Sub
-        Else
-            ExportExcel()
-        End If
-    End Sub
-
-    Private Sub ExportExcel()
+    Private Sub ExportExtExcel()
         Dim xlsApp As New Excel.ApplicationClass
         Dim xlsWB As Excel.Workbook = Nothing
         Dim xlsWS As Excel.Worksheet = Nothing
@@ -452,14 +1086,6 @@ Public Class IMR00017
             .Cells(headerRow, headerCol) = "Cost Remark"
         End With
 
-        'Populate with Data
-        'With xlsApp
-        '    For i As Integer = 0 To rs_EXCEL.Tables("RESULT").Rows.Count - 1
-        '        For j As Integer = 0 To rs_EXCEL.Tables("RESULT").Columns.Count - 2
-        '            .Cells(headerRow + 1 + i, j + 1) = rs_EXCEL.Tables("RESULT").Rows(i)(j)
-        '        Next
-        '    Next
-        'End With
 
         Dim entry(rs_EXCEL.Tables("RESULT").Columns.Count - 1) As Object
         'Dim entry(42) As Object
@@ -524,7 +1150,7 @@ Public Class IMR00017
 
         Me.Cursor = Windows.Forms.Cursors.Default
     End Sub
-
+#End Region
     Private Sub format_CatLvl4()
         cboFromCatLvl4.Items.Clear()
         cboToCatLvl4.Items.Clear()
@@ -548,13 +1174,38 @@ Public Class IMR00017
         cboDsgTo.Items.Add("")
         cboPrdVFm.Items.Add("")
         cboPrdVTo.Items.Add("")
+        Dim rs_symusrco As DataSet
+        gspStr = "sp_select_SYMUSRCO '" & gsCompany & "','" & gsUsrID & "'"
+        rtnLong = execute_SQLStatement(gspStr, rs_symusrco, rtnStr)
+        If rtnLong <> RC_SUCCESS Then
+            MsgBox("Error on loading SYS00002 sp_select_SYMUSRCO : " & rtnStr)
+            Exit Sub
+        End If
+        If rs_symusrco.Tables("RESULT").Rows(0)("yuc_flgcst") = 1 Then
+            For i As Integer = 0 To rs_VNBASINF_I.Tables("RESULT").Rows.Count - 1
+                cboDsgFm.Items.Add(rs_VNBASINF_I.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_I.Tables("RESULT").Rows(i)("vbi_vensna"))
+                cboDsgTo.Items.Add(rs_VNBASINF_I.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_I.Tables("RESULT").Rows(i)("vbi_vensna"))
+                cboPrdVFm.Items.Add(rs_VNBASINF_I.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_I.Tables("RESULT").Rows(i)("vbi_vensna"))
+                cboPrdVTo.Items.Add(rs_VNBASINF_I.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_I.Tables("RESULT").Rows(i)("vbi_vensna"))
+            Next
+        End If
 
-        For i As Integer = 0 To rs_VNBASINF.Tables("RESULT").Rows.Count - 1
-            cboDsgFm.Items.Add(rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_vensna"))
-            cboDsgTo.Items.Add(rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_vensna"))
-            cboPrdVFm.Items.Add(rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_vensna"))
-            cboPrdVTo.Items.Add(rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF.Tables("RESULT").Rows(i)("vbi_vensna"))
+        If rs_symusrco.Tables("RESULT").Rows(0)("yuc_flgcstext") = 1 Then
+            For i As Integer = 0 To rs_VNBASINF_E.Tables("RESULT").Rows.Count - 1
+                cboDsgFm.Items.Add(rs_VNBASINF_E.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_E.Tables("RESULT").Rows(i)("vbi_vensna"))
+                cboDsgTo.Items.Add(rs_VNBASINF_E.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_E.Tables("RESULT").Rows(i)("vbi_vensna"))
+                cboPrdVFm.Items.Add(rs_VNBASINF_E.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_E.Tables("RESULT").Rows(i)("vbi_vensna"))
+                cboPrdVTo.Items.Add(rs_VNBASINF_E.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_E.Tables("RESULT").Rows(i)("vbi_vensna"))
+            Next
+        End If
+
+        For i As Integer = 0 To rs_VNBASINF_J.Tables("RESULT").Rows.Count - 1
+            cboDsgFm.Items.Add(rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_vensna"))
+            cboDsgTo.Items.Add(rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_vensna"))
+            cboPrdVFm.Items.Add(rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_vensna"))
+            cboPrdVTo.Items.Add(rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_vensna"))
         Next
+
     End Sub
 
     Private Sub format_cboStatus()
@@ -568,6 +1219,24 @@ Public Class IMR00017
         cboStatus.Items.Add("INA - Inactive Item")
         cboStatus.Items.Add("CLO - Closed Item")
         cboStatus.Items.Add("OLD - Old Item")
+    End Sub
+
+    Private Sub format_cboReportFormat()
+        Dim rs_symusrco As DataSet
+        gspStr = "sp_select_SYMUSRCO '" & gsCompany & "','" & gsUsrID & "'"
+        rtnLong = execute_SQLStatement(gspStr, rs_symusrco, rtnStr)
+        If rtnLong <> RC_SUCCESS Then
+            MsgBox("Error on loading SYS00002 sp_select_SYMUSRCO : " & rtnStr)
+            Exit Sub
+        End If
+
+
+        If rs_symusrco.Tables("RESULT").Rows(0)("yuc_flgcst") = 1 Then
+            optInt.Checked = True
+        Else
+            optInt.Enabled = False
+            optExt.Checked = True
+        End If
     End Sub
 
     Private Sub optITM_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optITM.CheckedChanged
@@ -620,7 +1289,6 @@ Public Class IMR00017
 
     Private Sub cmd_S_ItmNo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_S_ItmNo.Click
         frmItemList.strItem = txtItmLst.Text
-        'frmItemList.Show(vbModal)
         Call frmItemList.getform("IMR00017")
         frmItemList.ShowDialog()
         txtItmLst.Text = frmItemList.strSel
@@ -630,22 +1298,10 @@ Public Class IMR00017
         textboxlist.Add(txt_S_PriCustAll, "cmd_S_PriCustAll")
         textboxlist.Add(txt_S_SecCustAll, "cmd_S_SecCustAll")
         textboxlist.Add(txt_S_DV, "cmd_S_DV")
-        'textboxlist.Add(txt_S_CV, "cmd_S_CV")
-        'textboxlist.Add(txt_S_FA, "cmd_S_FA")
-        'textboxlist.Add(txt_S_SCNo, "cmd_S_SCNo")
-        'textboxlist.Add(txt_S_PONo, "cmd_S_PONo")
-        'textboxlist.Add(txt_S_CustPONo, "cmd_S_CustPONo")
-        'textboxlist.Add(txtItmNo, "cmd_S_ItmNo")
 
         AddHandler cmd_S_PriCustAll.Click, AddressOf cmd_S_Click
         AddHandler cmd_S_SecCustAll.Click, AddressOf cmd_S_Click
         AddHandler cmd_S_DV.Click, AddressOf cmd_S_Click
-        'AddHandler cmd_S_CV.Click, AddressOf cmd_S_Click
-        'AddHandler cmd_S_FA.Click, AddressOf cmd_S_Click
-        'AddHandler cmd_S_SCNo.Click, AddressOf cmd_S_Click
-        'AddHandler cmd_S_PONo.Click, AddressOf cmd_S_Click
-        'AddHandler cmd_S_CustPONo.Click, AddressOf cmd_S_Click
-        'AddHandler cmd_S_ItmNo.Click, AddressOf cmd_S_Click
 
 
     End Sub
