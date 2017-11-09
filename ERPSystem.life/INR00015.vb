@@ -275,14 +275,14 @@ Public Class INR00015
 
 
         If ckbEngDesc.Checked And txtEngDescFrm.Text = "" Then
-            MsgBox("Chinese description field must be filled in the partial mode")
-            txtItmnoFrm.Focus()
+            MsgBox("English description field must be filled in the partial mode")
+            txtEngDescFrm.Focus()
             Return False
         End If
 
         If ckbEngDesc.Checked = False And Me.txtEngDescFrm.Text > Me.txtEngDescTo.Text Then
-            MsgBox("Chinese description : From > To")
-            txtItmnoFrm.Focus()
+            MsgBox("English description : From > To")
+            txtChiDescFrm.Focus()
             Return False
         End If
 
@@ -324,22 +324,22 @@ Public Class INR00015
 
     Function getItemDescPhoto(ByRef rs_INR00015 As ADODB.Recordset) As Boolean
         gspStr = "sp_select_INR00015 '" _
-                    & Replace(Split(cboVenFm.Text, " - ")(0), "'", "''") & "','" _
-                    & Replace(Split(cboVenTo.Text, " - ")(0), "'", "''") & "','" _
-                    & Replace(txtItmnoFrm.Text, "'", "''") & "','" _
-                    & Replace(txtItmnoTo.Text, "'", "''") & "','" _
+                    & Trim(Replace(Split(cboVenFm.Text, " - ")(0), "'", "''")) & "','" _
+                    & Trim(Replace(Split(cboVenTo.Text, " - ")(0), "'", "''")) & "','" _
+                    & Trim(Replace(txtItmnoFrm.Text, "'", "''")) & "','" _
+                    & Trim(Replace(txtItmnoTo.Text, "'", "''")) & "','" _
                     & IIf(ckbItemno.Checked, "Y", "N") & "','" _
-                    & Replace(txtChiDescFrm.Text, "'", "''") & "','" _
-                    & Replace(txtChiDescTo.Text, "'", "''") & "','" _
+                    & Trim(Replace(txtChiDescFrm.Text, "'", "''")) & "','" _
+                    & Trim(Replace(txtChiDescTo.Text, "'", "''")) & "','" _
                     & IIf(ckbChiDesc.Checked, "Y", "N") & "','" _
-                    & Replace(txtEngDescFrm.Text, "'", "''") & "','" _
-                    & Replace(txtEngDescTo.Text, "'", "''") & "','" _
+                    & Trim(Replace(txtEngDescFrm.Text, "'", "''")) & "','" _
+                    & Trim(Replace(txtEngDescTo.Text, "'", "''")) & "','" _
                     & IIf(ckbEngDesc.Checked, "Y", "N") & "','" _
-                    & Split(cboStatus.Text, " - ")(0) & "','" _
-                    & Replace(cboPrdLneFrm.Text, "'", "''") & "','" _
-                    & Replace(cboPrdLneTo.Text, "'", "''") & "','" _
-                    & Replace(Split(cboCategoryFrm.Text, " - ")(0), "'", "''") & "','" _
-                    & Replace(Split(cboCategoryTo.Text, " - ")(0), "'", "''") & "','" _
+                    & Replace(Split(cboStatus.Text, " - ")(0), "'", "''") & "','" _
+                    & Trim(Replace(cboPrdLneFrm.Text, "'", "''")) & "','" _
+                    & Trim(Replace(cboPrdLneTo.Text, "'", "''")) & "','" _
+                    & Trim(Replace(Split(cboCategoryFrm.Text, " - ")(0), "'", "''")) & "','" _
+                    & Trim(Replace(Split(cboCategoryTo.Text, " - ")(0), "'", "''")) & "','" _
                     & txtUpddatFm.Text & "','" _
                     & txtUpddatTo.Text & "','" _
                     & IIf(ckbWithPhoto.Checked, "Y", "N") & "'"

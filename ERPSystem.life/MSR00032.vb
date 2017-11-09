@@ -805,14 +805,14 @@ Err_Handler:
 
 
 
-        gspStr = "sp_select_MSR00032 '" & cboCoCde.Text & _
-            "','" & UCase(txtItmNo.Text) & _
-            "','" & VnFm & _
-            "','" & VnTo & _
-            "','" & CuFm & _
-            "','" & CuTo & _
-            "','" & gsSalTem & _
-            "','" & gsUsrID & "'"
+        gspStr = "sp_select_MSR00032 '" & cboCoCde.Text.Replace("'", "''") & _
+            "','" & UCase(txtItmNo.Text).Replace("'", "''") & _
+            "','" & VnFm.Replace("'", "''") & _
+            "','" & VnTo.Replace("'", "''") & _
+            "','" & CuFm.Replace("'", "''") & _
+            "','" & CuTo.Replace("'", "''") & _
+            "','" & gsSalTem.Replace("'", "''") & _
+            "','" & gsUsrID.Replace("'", "''") & "'"
 
         Me.Cursor = Windows.Forms.Cursors.WaitCursor
         rtnLong = execute_SQLStatement(gspStr, rs_MSR00032, rtnStr)
@@ -860,7 +860,7 @@ Err_Handler:
             xlsWB = Nothing
             xlsApp = Nothing
         Next
-        MessageBox.Show("Finish Exporting Excel File(s)")
+        MessageBox.Show("Finish Exporting Excel File(s) to C:\ERP_Excel")
         Me.Cursor = Windows.Forms.Cursors.Default
     End Sub
 
@@ -915,7 +915,7 @@ Err_Handler:
                 curCol = curCol + 1
                 .Cells(2 + i, curCol) = rs_MSR00032.Tables("RESULT").Rows(i)("venno").ToString
                 curCol = curCol + 1
-                .Cells(2 + i, curCol) = "" 'rs_MSR00032.Tables("RESULT").Rows(i)("smpUM").ToString
+                .Cells(2 + i, curCol) = "" 'If(docType <> "QU", rs_MSR00032.Tables("RESULT").Rows(i)("smpUM").ToString, "")
                 curCol = curCol + 1
                 .Cells(2 + i, curCol) = If(docType <> "QU", rs_MSR00032.Tables("RESULT").Rows(i)("OrderQty").ToString, "")
                 curCol = curCol + 1
@@ -1090,7 +1090,10 @@ Err_Handler:
         Dim resultTable As DataTable = rs_MSR00032.Tables("RESULT").DefaultView.ToTable(True, "Itmno")
         Dim itemList As String() = Split(txtItmNo.Text, ",")
         For Each itmno As String In itemList
-            resultTable.DefaultView.RowFilter = "Itmno='" + Trim(itmno) + "'"
+            If itmno = "" Then
+                Continue For
+            End If
+            resultTable.DefaultView.RowFilter = "Itmno='" + Trim(itmno).Replace("'", "''") + "'"
             If resultTable.DefaultView.Count = 0 Then
                 Return False
             End If
@@ -1105,11 +1108,14 @@ Err_Handler:
         Dim itemNoDocList As New ArrayList()
         Dim al As New ArrayList()
         For Each itmno As String In itemList
+            If itmno = "" Then
+                Continue For
+            End If
             If itemNoDocList.Contains(Trim(itmno)) Then
                 Continue For
             End If
 
-            resultTable.DefaultView.RowFilter = "Itmno='" + Trim(itmno) + "'"
+            resultTable.DefaultView.RowFilter = "Itmno='" + Trim(itmno).Replace("'", "''") + "'"
             If resultTable.DefaultView.Count = 0 Then
                 itemNoDocList.Add(Trim(itmno))
             End If

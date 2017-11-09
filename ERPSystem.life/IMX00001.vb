@@ -1400,7 +1400,7 @@ FILE_ACCESS_ERROR:
         rtnLong = execute_SQLStatement(gspStr, rs_XLS, rtnStr)
         Me.Cursor = Windows.Forms.Cursors.Default
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on saving " & Me.Name & " #007 sp_update_IMITMDAT_XLS : " & rtnStr)
+            MsgBox("Error on saving " & Me.Name & " #007 sp_update_IMITMDAT_XLS_conftr : " & rtnStr)
             Exit Sub
         End If
 

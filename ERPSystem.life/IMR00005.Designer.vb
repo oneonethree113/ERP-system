@@ -207,7 +207,7 @@ Partial Class IMR00005
         Me.cmdShowExcel.Name = "cmdShowExcel"
         Me.cmdShowExcel.Size = New System.Drawing.Size(140, 22)
         Me.cmdShowExcel.TabIndex = 10
-        Me.cmdShowExcel.Text = "&Show Report (excel)"
+        Me.cmdShowExcel.Text = "&Show Report"
         Me.cmdShowExcel.UseVisualStyleBackColor = True
         '
         'cmdShow

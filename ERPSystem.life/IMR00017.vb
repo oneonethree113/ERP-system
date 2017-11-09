@@ -77,12 +77,12 @@ Public Class IMR00017
         gspStr = "sp_list_VNBASINF_ventyp_all '','E'"
         rtnLong = execute_SQLStatement(gspStr, rs_VNBASINF_E, rtnStr)
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading IMR00017_Load #002 sp_list_VNBASINF_vensna :" & rtnStr)
+            MsgBox("Error on loading IMR00017_Load #003 sp_list_VNBASINF_vensna :" & rtnStr)
         End If
         gspStr = "sp_list_VNBASINF_ventyp_all '','J'"
         rtnLong = execute_SQLStatement(gspStr, rs_VNBASINF_J, rtnStr)
         If rtnLong <> RC_SUCCESS Then
-            MsgBox("Error on loading IMR00017_Load #002 sp_list_VNBASINF_vensna :" & rtnStr)
+            MsgBox("Error on loading IMR00017_Load #004 sp_list_VNBASINF_vensna :" & rtnStr)
         End If
         format_CatLvl4()
         format_cboDV_cboPV()
@@ -357,7 +357,7 @@ Public Class IMR00017
 
         Me.Cursor = Windows.Forms.Cursors.WaitCursor
 
-        rtnLong = execute_SQLStatementRPT_ADO(gspStr, rs_BOMAdo, rtnStr)
+        rtnLong = execute_SQLStatement_ADO(gspStr, rs_BOMAdo, rtnStr)
 
         Me.Cursor = Windows.Forms.Cursors.Default
 
@@ -1199,12 +1199,15 @@ Public Class IMR00017
             Next
         End If
 
-        For i As Integer = 0 To rs_VNBASINF_J.Tables("RESULT").Rows.Count - 1
-            cboDsgFm.Items.Add(rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_vensna"))
-            cboDsgTo.Items.Add(rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_vensna"))
-            cboPrdVFm.Items.Add(rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_vensna"))
-            cboPrdVTo.Items.Add(rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_vensna"))
-        Next
+
+        If rs_symusrco.Tables("RESULT").Rows(0)("yuc_flgcst") = 1 Then
+            For i As Integer = 0 To rs_VNBASINF_J.Tables("RESULT").Rows.Count - 1
+                cboDsgFm.Items.Add(rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_vensna"))
+                cboDsgTo.Items.Add(rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_vensna"))
+                cboPrdVFm.Items.Add(rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_vensna"))
+                cboPrdVTo.Items.Add(rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_venno") & " - " & rs_VNBASINF_J.Tables("RESULT").Rows(i)("vbi_vensna"))
+            Next
+        End If
 
     End Sub
 

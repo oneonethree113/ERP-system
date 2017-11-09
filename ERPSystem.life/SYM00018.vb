@@ -11,7 +11,7 @@
     Public strModule As String
     Public keyName As String
 
-    Const EMPTY As String = "*EMPTY*"
+    Const EMPTY As String = " "
 
     Public Sub show_frmSYM00018(ByVal frm As Form)
         frmS = frm
@@ -490,17 +490,15 @@
         cboCriteria2.Items.Clear()
         cboCriteria3.Items.Clear()
 
+        cboCriteria1.Items.Add(EMPTY)
+        cboCriteria2.Items.Add(EMPTY)
+        cboCriteria3.Items.Add(EMPTY)
+
         For i As Integer = 0 To rs_SYSCHCON.Tables("RESULT").Rows.Count - 1
             cboCriteria1.Items.Add(rs_SYSCHCON.Tables("RESULT").Rows(i)("ssc_display"))
             cboCriteria2.Items.Add(rs_SYSCHCON.Tables("RESULT").Rows(i)("ssc_display"))
             cboCriteria3.Items.Add(rs_SYSCHCON.Tables("RESULT").Rows(i)("ssc_display"))
         Next
-
-        If strModule = "IM" Then
-            cboCriteria1.Items.Add(EMPTY)
-            cboCriteria2.Items.Add(EMPTY)
-            cboCriteria3.Items.Add(EMPTY)
-        End If
         cboCriteria1.SelectedIndex = -1
         cboCriteria2.SelectedIndex = -1
         cboCriteria3.SelectedIndex = -1

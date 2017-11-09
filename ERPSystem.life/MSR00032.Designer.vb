@@ -30,26 +30,26 @@ Partial Class MSR00032
         Me.grpSearch = New System.Windows.Forms.GroupBox
         Me.cmd_S_ItmNo = New System.Windows.Forms.Button
         Me.txtItmNo = New System.Windows.Forms.TextBox
-        Me.txtToItmno = New System.Windows.Forms.TextBox
-        Me.txtFromItmno = New System.Windows.Forms.TextBox
         Me.cboCUTo = New System.Windows.Forms.ComboBox
         Me.Label12 = New System.Windows.Forms.Label
         Me.cboCUFm = New System.Windows.Forms.ComboBox
         Me.Label13 = New System.Windows.Forms.Label
         Me.Label14 = New System.Windows.Forms.Label
-        Me.cboSCTo = New System.Windows.Forms.ComboBox
-        Me.Label9 = New System.Windows.Forms.Label
-        Me.cboSCFm = New System.Windows.Forms.ComboBox
-        Me.Label10 = New System.Windows.Forms.Label
-        Me.Label11 = New System.Windows.Forms.Label
         Me.cboVenTo = New System.Windows.Forms.ComboBox
         Me.Label6 = New System.Windows.Forms.Label
         Me.cboVenFm = New System.Windows.Forms.ComboBox
         Me.Label7 = New System.Windows.Forms.Label
         Me.Label8 = New System.Windows.Forms.Label
+        Me.Label3 = New System.Windows.Forms.Label
+        Me.cboSCTo = New System.Windows.Forms.ComboBox
+        Me.Label9 = New System.Windows.Forms.Label
+        Me.cboSCFm = New System.Windows.Forms.ComboBox
+        Me.Label10 = New System.Windows.Forms.Label
+        Me.Label11 = New System.Windows.Forms.Label
+        Me.txtToItmno = New System.Windows.Forms.TextBox
+        Me.txtFromItmno = New System.Windows.Forms.TextBox
         Me.Label5 = New System.Windows.Forms.Label
         Me.Label4 = New System.Windows.Forms.Label
-        Me.Label3 = New System.Windows.Forms.Label
         Me.Label15 = New System.Windows.Forms.Label
         Me.optExcel = New System.Windows.Forms.RadioButton
         Me.optCR = New System.Windows.Forms.RadioButton
@@ -106,11 +106,6 @@ Partial Class MSR00032
         Me.grpSearch.Controls.Add(Me.cboCUFm)
         Me.grpSearch.Controls.Add(Me.Label13)
         Me.grpSearch.Controls.Add(Me.Label14)
-        Me.grpSearch.Controls.Add(Me.cboSCTo)
-        Me.grpSearch.Controls.Add(Me.Label9)
-        Me.grpSearch.Controls.Add(Me.cboSCFm)
-        Me.grpSearch.Controls.Add(Me.Label10)
-        Me.grpSearch.Controls.Add(Me.Label11)
         Me.grpSearch.Controls.Add(Me.cboVenTo)
         Me.grpSearch.Controls.Add(Me.Label6)
         Me.grpSearch.Controls.Add(Me.cboVenFm)
@@ -125,19 +120,162 @@ Partial Class MSR00032
         '
         'cmd_S_ItmNo
         '
-        Me.cmd_S_ItmNo.Location = New System.Drawing.Point(100, 16)
+        Me.cmd_S_ItmNo.Location = New System.Drawing.Point(105, 29)
         Me.cmd_S_ItmNo.Name = "cmd_S_ItmNo"
-        Me.cmd_S_ItmNo.Size = New System.Drawing.Size(45, 22)
+        Me.cmd_S_ItmNo.Size = New System.Drawing.Size(43, 20)
         Me.cmd_S_ItmNo.TabIndex = 20
         Me.cmd_S_ItmNo.Text = "＞＞"
         '
         'txtItmNo
         '
-        Me.txtItmNo.Location = New System.Drawing.Point(151, 18)
+        Me.txtItmNo.Location = New System.Drawing.Point(151, 28)
         Me.txtItmNo.MaxLength = 0
         Me.txtItmNo.Name = "txtItmNo"
         Me.txtItmNo.Size = New System.Drawing.Size(437, 22)
         Me.txtItmNo.TabIndex = 19
+        '
+        'cboCUTo
+        '
+        Me.cboCUTo.FormattingEnabled = True
+        Me.cboCUTo.Location = New System.Drawing.Point(401, 126)
+        Me.cboCUTo.Name = "cboCUTo"
+        Me.cboCUTo.Size = New System.Drawing.Size(187, 20)
+        Me.cboCUTo.TabIndex = 10
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(371, 129)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(18, 12)
+        Me.Label12.TabIndex = 18
+        Me.Label12.Text = "To"
+        '
+        'cboCUFm
+        '
+        Me.cboCUFm.FormattingEnabled = True
+        Me.cboCUFm.Location = New System.Drawing.Point(151, 126)
+        Me.cboCUFm.Name = "cboCUFm"
+        Me.cboCUFm.Size = New System.Drawing.Size(187, 20)
+        Me.cboCUFm.TabIndex = 9
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(110, 129)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(30, 12)
+        Me.Label13.TabIndex = 16
+        Me.Label13.Text = "From"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(17, 129)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(70, 12)
+        Me.Label14.TabIndex = 15
+        Me.Label14.Text = "Customer No."
+        '
+        'cboVenTo
+        '
+        Me.cboVenTo.FormattingEnabled = True
+        Me.cboVenTo.Location = New System.Drawing.Point(401, 75)
+        Me.cboVenTo.Name = "cboVenTo"
+        Me.cboVenTo.Size = New System.Drawing.Size(187, 20)
+        Me.cboVenTo.TabIndex = 6
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(371, 78)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(18, 12)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "To"
+        '
+        'cboVenFm
+        '
+        Me.cboVenFm.FormattingEnabled = True
+        Me.cboVenFm.Location = New System.Drawing.Point(151, 75)
+        Me.cboVenFm.Name = "cboVenFm"
+        Me.cboVenFm.Size = New System.Drawing.Size(187, 20)
+        Me.cboVenFm.TabIndex = 5
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(110, 78)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(30, 12)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "From"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(17, 78)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(19, 12)
+        Me.Label8.TabIndex = 5
+        Me.Label8.Text = "PV"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(17, 31)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(46, 12)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Item No."
+        '
+        'cboSCTo
+        '
+        Me.cboSCTo.FormattingEnabled = True
+        Me.cboSCTo.Location = New System.Drawing.Point(447, 293)
+        Me.cboSCTo.Name = "cboSCTo"
+        Me.cboSCTo.Size = New System.Drawing.Size(187, 20)
+        Me.cboSCTo.TabIndex = 8
+        Me.cboSCTo.Visible = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(417, 296)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(18, 12)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "To"
+        Me.Label9.Visible = False
+        '
+        'cboSCFm
+        '
+        Me.cboSCFm.FormattingEnabled = True
+        Me.cboSCFm.Location = New System.Drawing.Point(430, 306)
+        Me.cboSCFm.Name = "cboSCFm"
+        Me.cboSCFm.Size = New System.Drawing.Size(187, 20)
+        Me.cboSCFm.TabIndex = 7
+        Me.cboSCFm.Visible = False
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(389, 309)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(30, 12)
+        Me.Label10.TabIndex = 11
+        Me.Label10.Text = "From"
+        Me.Label10.Visible = False
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(296, 309)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(51, 12)
+        Me.Label11.TabIndex = 10
+        Me.Label11.Text = "Sub Code"
+        Me.Label11.Visible = False
         '
         'txtToItmno
         '
@@ -156,140 +294,6 @@ Partial Class MSR00032
         Me.txtFromItmno.Size = New System.Drawing.Size(187, 22)
         Me.txtFromItmno.TabIndex = 3
         Me.txtFromItmno.Visible = False
-        '
-        'cboCUTo
-        '
-        Me.cboCUTo.FormattingEnabled = True
-        Me.cboCUTo.Location = New System.Drawing.Point(401, 142)
-        Me.cboCUTo.Name = "cboCUTo"
-        Me.cboCUTo.Size = New System.Drawing.Size(187, 20)
-        Me.cboCUTo.TabIndex = 10
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(371, 145)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(18, 12)
-        Me.Label12.TabIndex = 18
-        Me.Label12.Text = "To"
-        '
-        'cboCUFm
-        '
-        Me.cboCUFm.FormattingEnabled = True
-        Me.cboCUFm.Location = New System.Drawing.Point(151, 142)
-        Me.cboCUFm.Name = "cboCUFm"
-        Me.cboCUFm.Size = New System.Drawing.Size(187, 20)
-        Me.cboCUFm.TabIndex = 9
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(110, 145)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(30, 12)
-        Me.Label13.TabIndex = 16
-        Me.Label13.Text = "From"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(17, 145)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(70, 12)
-        Me.Label14.TabIndex = 15
-        Me.Label14.Text = "Customer No."
-        '
-        'cboSCTo
-        '
-        Me.cboSCTo.FormattingEnabled = True
-        Me.cboSCTo.Location = New System.Drawing.Point(401, 100)
-        Me.cboSCTo.Name = "cboSCTo"
-        Me.cboSCTo.Size = New System.Drawing.Size(187, 20)
-        Me.cboSCTo.TabIndex = 8
-        Me.cboSCTo.Visible = False
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(371, 103)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(18, 12)
-        Me.Label9.TabIndex = 13
-        Me.Label9.Text = "To"
-        Me.Label9.Visible = False
-        '
-        'cboSCFm
-        '
-        Me.cboSCFm.FormattingEnabled = True
-        Me.cboSCFm.Location = New System.Drawing.Point(151, 100)
-        Me.cboSCFm.Name = "cboSCFm"
-        Me.cboSCFm.Size = New System.Drawing.Size(187, 20)
-        Me.cboSCFm.TabIndex = 7
-        Me.cboSCFm.Visible = False
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(110, 103)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(30, 12)
-        Me.Label10.TabIndex = 11
-        Me.Label10.Text = "From"
-        Me.Label10.Visible = False
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(17, 103)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(51, 12)
-        Me.Label11.TabIndex = 10
-        Me.Label11.Text = "Sub Code"
-        Me.Label11.Visible = False
-        '
-        'cboVenTo
-        '
-        Me.cboVenTo.FormattingEnabled = True
-        Me.cboVenTo.Location = New System.Drawing.Point(401, 60)
-        Me.cboVenTo.Name = "cboVenTo"
-        Me.cboVenTo.Size = New System.Drawing.Size(187, 20)
-        Me.cboVenTo.TabIndex = 6
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(371, 63)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(18, 12)
-        Me.Label6.TabIndex = 8
-        Me.Label6.Text = "To"
-        '
-        'cboVenFm
-        '
-        Me.cboVenFm.FormattingEnabled = True
-        Me.cboVenFm.Location = New System.Drawing.Point(151, 60)
-        Me.cboVenFm.Name = "cboVenFm"
-        Me.cboVenFm.Size = New System.Drawing.Size(187, 20)
-        Me.cboVenFm.TabIndex = 5
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(110, 63)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(30, 12)
-        Me.Label7.TabIndex = 6
-        Me.Label7.Text = "From"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(17, 63)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(19, 12)
-        Me.Label8.TabIndex = 5
-        Me.Label8.Text = "PV"
         '
         'Label5
         '
@@ -310,15 +314,6 @@ Partial Class MSR00032
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "From"
         Me.Label4.Visible = False
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(17, 21)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(46, 12)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Item No."
         '
         'Label15
         '
@@ -377,7 +372,7 @@ Partial Class MSR00032
         '
         'btnExportExcel
         '
-        Me.btnExportExcel.Location = New System.Drawing.Point(267, 289)
+        Me.btnExportExcel.Location = New System.Drawing.Point(267, 281)
         Me.btnExportExcel.Name = "btnExportExcel"
         Me.btnExportExcel.Size = New System.Drawing.Size(140, 22)
         Me.btnExportExcel.TabIndex = 19
@@ -396,7 +391,12 @@ Partial Class MSR00032
         Me.Controls.Add(Me.txtFromItmno)
         Me.Controls.Add(Me.optCR)
         Me.Controls.Add(Me.optExcel)
+        Me.Controls.Add(Me.cboSCFm)
+        Me.Controls.Add(Me.cboSCTo)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.grpSearch)
         Me.Controls.Add(Me.txtCoNam)
         Me.Controls.Add(Me.Label2)

@@ -64,6 +64,10 @@ Partial Class IMM00002
         Me.cmdPrev_dtl = New System.Windows.Forms.Button
         Me.cmdFirst_dtl = New System.Windows.Forms.Button
         Me.TabBOMASS = New System.Windows.Forms.TabPage
+        Me.cmdLast_BOM = New System.Windows.Forms.Button
+        Me.cmdNext_BOM = New System.Windows.Forms.Button
+        Me.cmdPrev_BOM = New System.Windows.Forms.Button
+        Me.cmdFirst_BOM = New System.Windows.Forms.Button
         Me.lblNewBOMASS = New System.Windows.Forms.Label
         Me.lblOldBOMASS = New System.Windows.Forms.Label
         Me.grdNewRecord = New System.Windows.Forms.DataGridView
@@ -164,10 +168,6 @@ Partial Class IMM00002
         Me.Label32 = New System.Windows.Forms.Label
         Me.Label33 = New System.Windows.Forms.Label
         Me.Label34 = New System.Windows.Forms.Label
-        Me.cmdLast_BOM = New System.Windows.Forms.Button
-        Me.cmdNext_BOM = New System.Windows.Forms.Button
-        Me.cmdPrev_BOM = New System.Windows.Forms.Button
-        Me.cmdFirst_BOM = New System.Windows.Forms.Button
         Me.tabFrame.SuspendLayout()
         Me.tabSummary.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -633,6 +633,46 @@ Partial Class IMM00002
         Me.TabBOMASS.TabIndex = 2
         Me.TabBOMASS.Text = "(3)BOM"
         Me.TabBOMASS.UseVisualStyleBackColor = True
+        '
+        'cmdLast_BOM
+        '
+        Me.cmdLast_BOM.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdLast_BOM.Location = New System.Drawing.Point(873, 7)
+        Me.cmdLast_BOM.Name = "cmdLast_BOM"
+        Me.cmdLast_BOM.Size = New System.Drawing.Size(50, 20)
+        Me.cmdLast_BOM.TabIndex = 31
+        Me.cmdLast_BOM.Text = "Last"
+        Me.cmdLast_BOM.UseVisualStyleBackColor = True
+        '
+        'cmdNext_BOM
+        '
+        Me.cmdNext_BOM.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdNext_BOM.Location = New System.Drawing.Point(823, 7)
+        Me.cmdNext_BOM.Name = "cmdNext_BOM"
+        Me.cmdNext_BOM.Size = New System.Drawing.Size(50, 20)
+        Me.cmdNext_BOM.TabIndex = 30
+        Me.cmdNext_BOM.Text = "Next"
+        Me.cmdNext_BOM.UseVisualStyleBackColor = True
+        '
+        'cmdPrev_BOM
+        '
+        Me.cmdPrev_BOM.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdPrev_BOM.Location = New System.Drawing.Point(773, 7)
+        Me.cmdPrev_BOM.Name = "cmdPrev_BOM"
+        Me.cmdPrev_BOM.Size = New System.Drawing.Size(50, 20)
+        Me.cmdPrev_BOM.TabIndex = 29
+        Me.cmdPrev_BOM.Text = "Prev"
+        Me.cmdPrev_BOM.UseVisualStyleBackColor = True
+        '
+        'cmdFirst_BOM
+        '
+        Me.cmdFirst_BOM.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdFirst_BOM.Location = New System.Drawing.Point(723, 7)
+        Me.cmdFirst_BOM.Name = "cmdFirst_BOM"
+        Me.cmdFirst_BOM.Size = New System.Drawing.Size(50, 20)
+        Me.cmdFirst_BOM.TabIndex = 28
+        Me.cmdFirst_BOM.Text = "First"
+        Me.cmdFirst_BOM.UseVisualStyleBackColor = True
         '
         'lblNewBOMASS
         '
@@ -1115,7 +1155,6 @@ Partial Class IMM00002
         '
         Me.grpReason.Controls.Add(Me.radTmpYes)
         Me.grpReason.Controls.Add(Me.radTmpNo)
-        Me.grpReason.Controls.Add(Me.cmdApplyTmp)
         Me.grpReason.Controls.Add(Me.chkSalesReq)
         Me.grpReason.Controls.Add(Me.chkHmnErrFTY)
         Me.grpReason.Controls.Add(Me.chkMrkupFTY)
@@ -1127,6 +1166,7 @@ Partial Class IMM00002
         Me.grpReason.Controls.Add(Me.txtApplyReasonTo)
         Me.grpReason.Controls.Add(Me.cmdApplyReason)
         Me.grpReason.Controls.Add(Me.txtReason)
+        Me.grpReason.Controls.Add(Me.cmdApplyTmp)
         Me.grpReason.Location = New System.Drawing.Point(460, 90)
         Me.grpReason.Name = "grpReason"
         Me.grpReason.Size = New System.Drawing.Size(484, 97)
@@ -1572,46 +1612,6 @@ Partial Class IMM00002
         Me.Label34.Size = New System.Drawing.Size(30, 12)
         Me.Label34.TabIndex = 254
         Me.Label34.Text = "From"
-        '
-        'cmdLast_BOM
-        '
-        Me.cmdLast_BOM.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdLast_BOM.Location = New System.Drawing.Point(873, 7)
-        Me.cmdLast_BOM.Name = "cmdLast_BOM"
-        Me.cmdLast_BOM.Size = New System.Drawing.Size(50, 20)
-        Me.cmdLast_BOM.TabIndex = 31
-        Me.cmdLast_BOM.Text = "Last"
-        Me.cmdLast_BOM.UseVisualStyleBackColor = True
-        '
-        'cmdNext_BOM
-        '
-        Me.cmdNext_BOM.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdNext_BOM.Location = New System.Drawing.Point(823, 7)
-        Me.cmdNext_BOM.Name = "cmdNext_BOM"
-        Me.cmdNext_BOM.Size = New System.Drawing.Size(50, 20)
-        Me.cmdNext_BOM.TabIndex = 30
-        Me.cmdNext_BOM.Text = "Next"
-        Me.cmdNext_BOM.UseVisualStyleBackColor = True
-        '
-        'cmdPrev_BOM
-        '
-        Me.cmdPrev_BOM.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdPrev_BOM.Location = New System.Drawing.Point(773, 7)
-        Me.cmdPrev_BOM.Name = "cmdPrev_BOM"
-        Me.cmdPrev_BOM.Size = New System.Drawing.Size(50, 20)
-        Me.cmdPrev_BOM.TabIndex = 29
-        Me.cmdPrev_BOM.Text = "Prev"
-        Me.cmdPrev_BOM.UseVisualStyleBackColor = True
-        '
-        'cmdFirst_BOM
-        '
-        Me.cmdFirst_BOM.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdFirst_BOM.Location = New System.Drawing.Point(723, 7)
-        Me.cmdFirst_BOM.Name = "cmdFirst_BOM"
-        Me.cmdFirst_BOM.Size = New System.Drawing.Size(50, 20)
-        Me.cmdFirst_BOM.TabIndex = 28
-        Me.cmdFirst_BOM.Text = "First"
-        Me.cmdFirst_BOM.UseVisualStyleBackColor = True
         '
         'IMM00002
         '

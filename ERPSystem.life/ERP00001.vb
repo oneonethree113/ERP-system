@@ -398,10 +398,16 @@ Public Class ERP00001
 
             '5. Show Main Form
             Me.Hide()
-            Dim MainFormNew As New ERP00000new
-            MainFormNew.Text = "United Chinese Group: New ERP System " & gsERPVer & "     (Env: " & Replace(gsDBSvr, "\MSSQLSERVER2012", "") & " - " & gsDB & " ; Login: " & gsUsrID & " ; Date: " & lblUpddat.Text & ")"
-            MainFormNew.Owner = Me
-            MainFormNew.Show()
+            'Dim MainFormNew As New ERP00000
+            'MainFormNew.Text = "United Chinese Group: New ERP System " & gsERPVer & "     (Env: " & Replace(gsDBSvr, "\MSSQLSERVER2012", "") & " - " & gsDB & " ; Login: " & gsUsrID & " ; Date: " & lblUpddat.Text & ")"
+            'MainFormNew.Owner = Me
+            'MainFormNew.Show()
+
+
+            Dim MainFormNew1 As New ERP00000new
+            MainFormNew1.Text = "United Chinese Group: New ERP System " & gsERPVer & "     (Env: " & Replace(gsDBSvr, "\MSSQLSERVER2012", "") & " - " & gsDB & " ; Login: " & gsUsrID & " ; Date: " & lblUpddat.Text & ")"
+            MainFormNew1.Owner = Me
+            MainFormNew1.Show()
 
             'If gsUsrID = "mis" Then
             '    Dim MainFormNew As New ERP00000new

@@ -334,6 +334,8 @@ Public Class ERP00000new
     Friend WithEvents smiQCM10 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents smiINR15 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents smiIMM17 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents smiIMM16 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TopMenuBarERPOnToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ERP00000new))
@@ -386,6 +388,8 @@ Public Class ERP00000new
         Me.smiIMR04 = New System.Windows.Forms.ToolStripMenuItem
         Me.smiIMR05 = New System.Windows.Forms.ToolStripMenuItem
         Me.smiIMR34 = New System.Windows.Forms.ToolStripMenuItem
+        Me.smiIMM16 = New System.Windows.Forms.ToolStripMenuItem
+        Me.smiIMM17 = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripSeparator55 = New System.Windows.Forms.ToolStripSeparator
         Me.smiIMX05 = New System.Windows.Forms.ToolStripMenuItem
         Me.smiIMM12 = New System.Windows.Forms.ToolStripMenuItem
@@ -571,6 +575,7 @@ Public Class ERP00000new
         Me.smiIMR22 = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator
         Me.smiINR14 = New System.Windows.Forms.ToolStripMenuItem
+        Me.smiINR15 = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem476 = New System.Windows.Forms.ToolStripMenuItem
         Me.smiMSR02 = New System.Windows.Forms.ToolStripMenuItem
         Me.smiMSR19 = New System.Windows.Forms.ToolStripMenuItem
@@ -638,7 +643,6 @@ Public Class ERP00000new
         Me.btnToLong = New System.Windows.Forms.Button
         Me.btnToShort = New System.Windows.Forms.Button
         Me.Button5 = New System.Windows.Forms.Button
-        Me.smiINR15 = New System.Windows.Forms.ToolStripMenuItem
         Me.msMenuERP.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -869,7 +873,7 @@ Public Class ERP00000new
         '
         'smiIMM
         '
-        Me.smiIMM.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiIMM01, Me.ToolStripSeparator53, Me.smiIMM04, Me.smiIMX07, Me.smiIMR35, Me.ToolStripSeparator54, Me.smiIMX01, Me.smiIMM02, Me.smiIMM13, Me.smiIMR04, Me.smiIMR05, Me.smiIMR34, Me.ToolStripSeparator55, Me.smiIMX05, Me.smiIMM12, Me.smiIMR18, Me.smiIMM15, Me.ToolStripSeparator56, Me.smiIMG01, Me.smiIMG02})
+        Me.smiIMM.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiIMM01, Me.ToolStripSeparator53, Me.smiIMM04, Me.smiIMX07, Me.smiIMR35, Me.ToolStripSeparator54, Me.smiIMX01, Me.smiIMM02, Me.smiIMM13, Me.smiIMR04, Me.smiIMR05, Me.smiIMR34, Me.smiIMM16, Me.smiIMM17, Me.ToolStripSeparator55, Me.smiIMX05, Me.smiIMM12, Me.smiIMR18, Me.smiIMM15, Me.ToolStripSeparator56, Me.smiIMG01, Me.smiIMG02})
         Me.smiIMM.Name = "smiIMM"
         Me.smiIMM.Overflow = System.Windows.Forms.ToolStripItemOverflow.AsNeeded
         Me.smiIMM.Size = New System.Drawing.Size(44, 19)
@@ -945,6 +949,18 @@ Public Class ERP00000new
         Me.smiIMR34.Name = "smiIMR34"
         Me.smiIMR34.Size = New System.Drawing.Size(505, 22)
         Me.smiIMR34.Text = "IMR34 - Item Master Report Export (Internal && Joint Venture Item)"
+        '
+        'smiIMM16
+        '
+        Me.smiIMM16.Name = "smiIMM16"
+        Me.smiIMM16.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMM16.Text = "IMM16 ¡V IM Quote Chase Excel Upload"
+        '
+        'smiIMM17
+        '
+        Me.smiIMM17.Name = "smiIMM17"
+        Me.smiIMM17.Size = New System.Drawing.Size(505, 22)
+        Me.smiIMM17.Text = "IMM17 ¡V IM Quote Chase Export Excel"
         '
         'ToolStripSeparator55
         '
@@ -2039,6 +2055,12 @@ Public Class ERP00000new
         Me.smiINR14.Size = New System.Drawing.Size(357, 22)
         Me.smiINR14.Text = "INR14 - CBM Report"
         '
+        'smiINR15
+        '
+        Me.smiINR15.Name = "smiINR15"
+        Me.smiINR15.Size = New System.Drawing.Size(357, 22)
+        Me.smiINR15.Text = "INR15 - Search Photo Desc. Report "
+        '
         'ToolStripMenuItem476
         '
         Me.ToolStripMenuItem476.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiMSR02, Me.smiMSR19, Me.smiMSR20, Me.smiMSR22, Me.smiMSR31, Me.smiMSR33})
@@ -2492,19 +2514,13 @@ Public Class ERP00000new
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(9, 24)
+        Me.Button5.Location = New System.Drawing.Point(96, 108)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(120, 44)
         Me.Button5.TabIndex = 36
         Me.Button5.Text = "Set Backgroud Image"
         Me.Button5.UseVisualStyleBackColor = True
         Me.Button5.Visible = False
-        '
-        'smiINR15
-        '
-        Me.smiINR15.Name = "smiINR15"
-        Me.smiINR15.Size = New System.Drawing.Size(357, 22)
-        Me.smiINR15.Text = "INR15 - Search Photo Desc. Report "
         '
         'ERP00000new
         '
@@ -6333,6 +6349,14 @@ Public Class ERP00000new
     End Sub
 
     Private Sub smiINR15_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles smiINR15.Click
+        showForm2(sender, Me)
+    End Sub
+
+    Private Sub smiIMM16_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles smiIMM16.Click
+        showForm2(sender, Me)
+    End Sub
+
+    Private Sub smiIMM17_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles smiIMM17.Click
         showForm2(sender, Me)
     End Sub
 End Class

@@ -120,9 +120,9 @@ Partial Class INR00015
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(25, 47)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(60, 12)
+        Me.Label6.Size = New System.Drawing.Size(21, 12)
         Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Vendor No."
+        Me.Label6.Text = "DV"
         '
         'cmdShow
         '
@@ -406,7 +406,6 @@ Partial Class INR00015
         Me.txtUpddatTo.Name = "txtUpddatTo"
         Me.txtUpddatTo.Size = New System.Drawing.Size(70, 22)
         Me.txtUpddatTo.TabIndex = 73
-        Me.txtUpddatTo.Text = "09012018"
         '
         'txtUpddatFm
         '
@@ -415,7 +414,6 @@ Partial Class INR00015
         Me.txtUpddatFm.Name = "txtUpddatFm"
         Me.txtUpddatFm.Size = New System.Drawing.Size(75, 22)
         Me.txtUpddatFm.TabIndex = 72
-        Me.txtUpddatFm.Text = "09012017"
         '
         'Label21
         '

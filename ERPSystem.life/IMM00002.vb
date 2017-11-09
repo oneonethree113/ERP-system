@@ -173,6 +173,7 @@
     End Sub
 
     Private Sub mmdSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mmdSave.Click
+
         If checkFocus(Me) Then Exit Sub
         Dim IsUpdated As Boolean = False
         Dim rs_update, rs_temp As New DataSet
@@ -717,7 +718,15 @@
             grdOldRecord.DataSource = Nothing
             If rs_IMITMDAT.Tables("RESULT").Rows(selected_Rowno)("iid_itmtyp") = "REG" Then
 
-                gspStr = "sp_select_BOMASS" & " 'OLD','" & rs_IMITMDAT.Tables("RESULT").Rows(selected_Rowno)("iid_itmtyp") & "','','" & rs_IMITMDAT.Tables("RESULT").Rows(selected_Rowno)("iid_venitm") & "'"
+                Dim oldItmNo As String
+                oldItmNo = rs_IMITMDAT.Tables("RESULT").Rows(selected_Rowno)("iid_venitm")
+                If rs_IMITMDAT.Tables("RESULT").Rows(selected_Rowno)("iid_alstmpitmno") <> "" Then
+                    oldItmNo = rs_IMITMDAT.Tables("RESULT").Rows(selected_Rowno)("iid_alstmpitmno")
+                End If
+                If rs_IMITMDAT.Tables("RESULT").Rows(selected_Rowno)("iid_alsitmno") <> "" Then
+                    oldItmNo = rs_IMITMDAT.Tables("RESULT").Rows(selected_Rowno)("iid_alsitmno")
+                End If
+                gspStr = "sp_select_BOMASS" & " 'OLD','" & rs_IMITMDAT.Tables("RESULT").Rows(selected_Rowno)("iid_itmtyp") & "','','" & oldItmNo & "'"
 
                 rtnLong = execute_SQLStatement(gspStr, rs_BOMASSold, rtnStr)
                 grdOldRecord.DataSource = rs_BOMASSold.Tables("RESULT").DefaultView

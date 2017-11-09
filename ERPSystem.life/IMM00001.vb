@@ -384,9 +384,6 @@ Public Class IMM00001
     Friend WithEvents txtPanCPFtyCstE As System.Windows.Forms.TextBox
     Friend WithEvents cmdRelItm As System.Windows.Forms.Button
     Friend WithEvents cmdCopyPV As System.Windows.Forms.Button
-    Friend WithEvents txtItmRmk2 As System.Windows.Forms.TextBox
-    Friend WithEvents txtSChnDsc As System.Windows.Forms.TextBox
-    Friend WithEvents txtFtrRmk As System.Windows.Forms.RichTextBox
     Friend WithEvents menuStrip As System.Windows.Forms.MenuStrip
     Friend WithEvents mmdAdd As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mmdSave As System.Windows.Forms.ToolStripMenuItem
@@ -690,9 +687,6 @@ Public Class IMM00001
         Me.cmdMapping = New System.Windows.Forms.Button
         Me.TabPageMain = New ERPSystem.BaseTabControl
         Me.TabPage1 = New System.Windows.Forms.TabPage
-        Me.txtFtrRmk = New System.Windows.Forms.RichTextBox
-        Me.txtSChnDsc = New System.Windows.Forms.TextBox
-        Me.txtItmRmk2 = New System.Windows.Forms.TextBox
         Me.txtItmRmk = New System.Windows.Forms.RichTextBox
         Me.cmdBatchUpdate = New System.Windows.Forms.Button
         Me.pbImage = New System.Windows.Forms.PictureBox
@@ -2131,7 +2125,7 @@ Public Class IMM00001
         Me.PanelCostPrice.Controls.Add(Me.Label52)
         Me.PanelCostPrice.Location = New System.Drawing.Point(149, 71)
         Me.PanelCostPrice.Name = "PanelCostPrice"
-        Me.PanelCostPrice.Size = New System.Drawing.Size(60, 49)
+        Me.PanelCostPrice.Size = New System.Drawing.Size(79, 59)
         Me.PanelCostPrice.TabIndex = 89
         Me.PanelCostPrice.Visible = False
         '
@@ -3185,9 +3179,6 @@ Public Class IMM00001
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.txtFtrRmk)
-        Me.TabPage1.Controls.Add(Me.txtSChnDsc)
-        Me.TabPage1.Controls.Add(Me.txtItmRmk2)
         Me.TabPage1.Controls.Add(Me.txtItmRmk)
         Me.TabPage1.Controls.Add(Me.cmdBatchUpdate)
         Me.TabPage1.Controls.Add(Me.pbImage)
@@ -3208,40 +3199,6 @@ Public Class IMM00001
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "(1) Basic"
         Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'txtFtrRmk
-        '
-        Me.txtFtrRmk.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.txtFtrRmk.Location = New System.Drawing.Point(814, 454)
-        Me.txtFtrRmk.Name = "txtFtrRmk"
-        Me.txtFtrRmk.Size = New System.Drawing.Size(23, 23)
-        Me.txtFtrRmk.TabIndex = 360
-        Me.txtFtrRmk.Text = ""
-        Me.txtFtrRmk.Visible = False
-        '
-        'txtSChnDsc
-        '
-        Me.txtSChnDsc.BackColor = System.Drawing.Color.White
-        Me.txtSChnDsc.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSChnDsc.Location = New System.Drawing.Point(880, 462)
-        Me.txtSChnDsc.Multiline = True
-        Me.txtSChnDsc.Name = "txtSChnDsc"
-        Me.txtSChnDsc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtSChnDsc.Size = New System.Drawing.Size(29, 15)
-        Me.txtSChnDsc.TabIndex = 85
-        Me.txtSChnDsc.Visible = False
-        '
-        'txtItmRmk2
-        '
-        Me.txtItmRmk2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtItmRmk2.Location = New System.Drawing.Point(843, 454)
-        Me.txtItmRmk2.MaxLength = 800
-        Me.txtItmRmk2.Multiline = True
-        Me.txtItmRmk2.Name = "txtItmRmk2"
-        Me.txtItmRmk2.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.txtItmRmk2.Size = New System.Drawing.Size(21, 20)
-        Me.txtItmRmk2.TabIndex = 84
-        Me.txtItmRmk2.Visible = False
         '
         'txtItmRmk
         '
@@ -5184,7 +5141,8 @@ Public Class IMM00001
         '
         'IMM00001
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 15)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(954, 631)
         Me.Controls.Add(Me.PanelMOQMOA)
         Me.Controls.Add(Me.PanelCostPrice)
@@ -5293,7 +5251,7 @@ Public Class IMM00001
     Const imm_moa As Integer = 9
 
     Const tabCostPrice As Integer = 4
-
+    Dim dpiRatio As Double = 1 'Me.CreateGraphics().DpiX / 96
     Dim dsNewRow As DataRow
 
     Dim mode As String
@@ -5715,6 +5673,56 @@ Public Class IMM00001
             Exit Sub
         End If
 
+
+        'gspStr = "sp_select_IMPCKINF '',''"
+        'rtnLong = execute_SQLStatement(gspStr, rs_IMPCKINF, rtnStr)
+        'If rtnLong <> RC_SUCCESS Then
+        '    MsgBox("Error on loading IMM00001_Load sp_select_IMPCKINF :" & rtnStr)
+        '    Exit Sub
+        'End If
+
+        'gspStr = "sp_select_IMVENINF '',''"
+        'rtnLong = execute_SQLStatement(gspStr, rs_IMVENINF, rtnStr)
+        'If rtnLong <> RC_SUCCESS Then  
+        '    MsgBox("Error on loading IMM00001_Load sp_select_IMVENINF :" & rtnStr)
+        '    Exit Sub
+        'End If
+
+        'gspStr = "sp_select_IMCUSNO '',''"
+        'rtnLong = execute_SQLStatement(gspStr, rs_IMCUSNO, rtnStr)
+        'If rtnLong <> RC_SUCCESS Then
+        '    MsgBox("Error on loading IMM00001_Load sp_select_IMCUSNO :" & rtnStr)
+        '    Exit Sub
+        'End If
+
+        'gspStr = "sp_select_IMPRCINF '',''"
+        'rtnLong = execute_SQLStatement(gspStr, rs_IMPRCINF, rtnStr)
+        'If rtnLong <> RC_SUCCESS Then
+        '    MsgBox("Error on loading IMM00001_Load sp_select_IMPRCINF :" & rtnStr)
+        '    Exit Sub
+        'End If
+
+        'gspStr = "sp_select_IMCTYINF '',''"
+        'rtnLong = execute_SQLStatement(gspStr, rs_IMCTYINF, rtnStr)
+        'If rtnLong <> RC_SUCCESS Then
+        '    MsgBox("Error on loading IMM00001_Load sp_select_IMCTYINF :" & rtnStr)
+        '    Exit Sub
+        'End If
+
+        'gspStr = "sp_select_IMCUSSTY '',''"
+        'rtnLong = execute_SQLStatement(gspStr, rs_IMCUSSTY, rtnStr)
+        'If rtnLong <> RC_SUCCESS Then
+        '    MsgBox("Error on loading IMM00001_Load sp_select_IMCUSSTY :" & rtnStr)
+        '    Exit Sub
+        'End If
+
+        'gspStr = "sp_select_IMMATBKD '',''"
+        'rtnLong = execute_SQLStatement(gspStr, rs_IMMATBKD, rtnStr)
+        'If rtnLong <> RC_SUCCESS Then
+        '    MsgBox("Error on loading IMM00001_Load sp_select_IMMATBKD :" & rtnStr)
+        '    Exit Sub
+        'End If
+
         format_VendorCombo()
 
         display_dgColor("IM")
@@ -5762,7 +5770,7 @@ Public Class IMM00001
         mode = "INIT"
         Call formInit(mode)
         txtItmNo.Select()
-
+        dpiRatio = Me.CreateGraphics().DpiX / 96
 
         panelMoveTimer = New Timer()
         panelMoveTimer.Interval = 2
@@ -6005,15 +6013,6 @@ Public Class IMM00001
             txtItmRmk.Enabled = True
             txtItmRmk.ReadOnly = False
 
-            txtItmRmk2.Enabled = True
-            txtItmRmk2.ReadOnly = False
-
-            txtFtrRmk.Enabled = True
-            txtFtrRmk.ReadOnly = False
-
-            txtSChnDsc.Enabled = True
-            txtSChnDsc.ReadOnly = False
-
             txtCstRmk.Enabled = True
             txtCstRmk.ReadOnly = False
             txtCstExpDat.Enabled = True
@@ -6077,15 +6076,8 @@ Public Class IMM00001
             txtItmRmk.Enabled = True
             txtItmRmk.ReadOnly = False
 
-            txtItmRmk2.Enabled = True
-            txtItmRmk2.ReadOnly = False
-
-            txtSChnDsc.Enabled = True
-            txtSChnDsc.ReadOnly = False
 
 
-            txtFtrRmk.Enabled = True
-            txtFtrRmk.ReadOnly = False
 
             txtCstRmk.Enabled = True
             txtCstRmk.ReadOnly = False
@@ -6161,13 +6153,6 @@ Public Class IMM00001
 
             txtItmRmk.Enabled = True
             txtItmRmk.ReadOnly = True
-
-            txtItmRmk2.Enabled = True
-            txtItmRmk2.ReadOnly = True
-
-
-            txtSChnDsc.Enabled = True
-            txtSChnDsc.ReadOnly = True
 
             txtCstRmk.Enabled = True
             txtCstRmk.ReadOnly = True
@@ -13304,7 +13289,7 @@ Public Class IMM00001
         all_cmd_dis()
         freeze_TabControl(-1)
 
-        PanelPacking.Size = New System.Drawing.Size(532, 369)
+        PanelPacking.Size = New System.Drawing.Size(532 * dpiRatio, 369 * dpiRatio)
         PanelPacking.Visible = True
 
         If Split(cboItmTyp.Text, " - ")(0) = "ASS" Then
@@ -13340,7 +13325,8 @@ Public Class IMM00001
     Private Sub dgPacking_RowHeaderMouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles dgPacking.RowHeaderMouseDoubleClick
         freeze_TabControl(-1)
         all_cmd_dis()
-        PanelPacking.Size = New System.Drawing.Size(532, 369)
+
+        PanelPacking.Size = New System.Drawing.Size(532 * dpiRatio, 369 * dpiRatio)
         PanelPacking.Visible = True
         PanelPacking.BringToFront()
         If mode = "UPDATE" Or mode = "ADD" Then
@@ -14694,7 +14680,8 @@ Public Class IMM00001
 
         freeze_TabControl(-1)
         all_cmd_dis()
-        Me.PanelCostPrice.Size = New System.Drawing.Size(553, 295)
+
+        Me.PanelCostPrice.Size = New System.Drawing.Size(553 * dpiRatio, 295 * dpiRatio)
         PanelCostPrice.Visible = True
         PanelCostPrice.BringToFront()
         If mode = "UPDATE" Or mode = "ADD" Then
@@ -19277,7 +19264,7 @@ Public Class IMM00001
             Exit Sub
         End If
         all_cmd_dis()
-        PanelMOQMOA.Size = New System.Drawing.Size(409, 162)
+        PanelMOQMOA.Size = New System.Drawing.Size(409 * dpiRatio, 162 * dpiRatio)
         PanelMOQMOA.Visible = True
         display_PanelMOQMOA("MOQMOA_INSERT")
     End Sub
@@ -19718,7 +19705,7 @@ Public Class IMM00001
         all_cmd_dis()
         freeze_TabControl(5)
 
-        PanelMOQMOA.Size = New System.Drawing.Size(409, 162)
+        PanelMOQMOA.Size = New System.Drawing.Size(409 * dpiRatio, 162 * dpiRatio)
         PanelMOQMOA.Visible = True
         If mode = "UPDATE" Or mode = "ADD" Then
             Dim curvalue As String = dgMOQMOA.CurrentRow.Cells(imm_status).Value
