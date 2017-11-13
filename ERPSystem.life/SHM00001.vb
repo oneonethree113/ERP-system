@@ -29788,6 +29788,7 @@ result:
         Select Case e.ColumnIndex
             Case grdShpSum_hid_invno
                 rs_SHIPGDTL.Tables("RESULT").Rows(sReadingIndexS).Item("hid_invno") = Trim(grdShpSum.CurrentCell.Value)
+                rs_SHIPGDTL.Tables("RESULT").Rows(sReadingIndexS).Item("hid_usrinvno") = Trim(grdShpSum.CurrentCell.Value)
             Case grdShpSum_hid_ctrsiz
                 rs_SHIPGDTL.Tables("RESULT").Rows(sReadingIndexS).Item("hid_ctrsiz") = Trim(grdShpSum.CurrentCell.Value)
             Case grdShpSum_hid_ctrcfs
@@ -29823,6 +29824,8 @@ result:
         Next
 
         '        Call display_grdShpSum()
+
+
 
 
         If rs_SHIPGDTL.Tables("RESULT").Rows(sReadingIndexS)("hid_creusr").ToString = "~*NEW*~" Or rs_SHIPGDTL.Tables("RESULT").Rows(sReadingIndexS)("hid_creusr").ToString = "~*ADD*~" Then

@@ -653,7 +653,7 @@ Public Class ERP00000new
         Me.msMenuERP.Location = New System.Drawing.Point(0, 0)
         Me.msMenuERP.MdiWindowListItem = Me.WindowToolStripMenuItem
         Me.msMenuERP.Name = "msMenuERP"
-        Me.msMenuERP.Size = New System.Drawing.Size(992, 42)
+        Me.msMenuERP.Size = New System.Drawing.Size(992, 20)
         Me.msMenuERP.TabIndex = 6
         Me.msMenuERP.Text = "MenuStrip1"
         '
@@ -2297,9 +2297,9 @@ Public Class ERP00000new
         '
         'Splitter1
         '
-        Me.Splitter1.Location = New System.Drawing.Point(0, 42)
+        Me.Splitter1.Location = New System.Drawing.Point(0, 20)
         Me.Splitter1.Name = "Splitter1"
-        Me.Splitter1.Size = New System.Drawing.Size(3, 681)
+        Me.Splitter1.Size = New System.Drawing.Size(3, 703)
         Me.Splitter1.TabIndex = 16
         Me.Splitter1.TabStop = False
         Me.Splitter1.Visible = False
@@ -2307,9 +2307,9 @@ Public Class ERP00000new
         'Splitter2
         '
         Me.Splitter2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Splitter2.Location = New System.Drawing.Point(989, 42)
+        Me.Splitter2.Location = New System.Drawing.Point(989, 20)
         Me.Splitter2.Name = "Splitter2"
-        Me.Splitter2.Size = New System.Drawing.Size(3, 681)
+        Me.Splitter2.Size = New System.Drawing.Size(3, 703)
         Me.Splitter2.TabIndex = 18
         Me.Splitter2.TabStop = False
         Me.Splitter2.Visible = False
@@ -2508,7 +2508,7 @@ Public Class ERP00000new
         Me.KeyPreview = True
         Me.Name = "ERP00000new"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "s"
+        Me.Text = "ERP00000new"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.msMenuERP.ResumeLayout(False)
         Me.msMenuERP.PerformLayout()

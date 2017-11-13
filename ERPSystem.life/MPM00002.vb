@@ -7493,7 +7493,7 @@ err_Handle_Check_Delete:
                 'cmdInsRow.Enabled = True
                 'cmdDelRow.Enabled = True
                 mmdInsRow.Enabled = Enq_right_local     '2006-03-18
-                mmdDelRow.Enabled = Del_right_local
+                mmdDelRow.Enabled = Enq_right_local
 
                 '            cmdfirstD.Enabled = True
                 '            cmdlastD.Enabled = True
@@ -7540,7 +7540,7 @@ err_Handle_Check_Delete:
                 'cmdInsRow.Enabled = True
                 'cmdDelRow.Enabled = True
                 mmdInsRow.Enabled = Enq_right_local     '2006-03-18
-                mmdDelRow.Enabled = Del_right_local
+                mmdDelRow.Enabled = Enq_right_local
 
                 '            cmdfirstD.Enabled = True
                 '            cmdlastD.Enabled = True

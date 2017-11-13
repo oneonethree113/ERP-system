@@ -747,37 +747,41 @@
 
                     ma.Is_Updating_item = True
 
+
+                    Dim qutseq As Integer
+                    '    qutseq = ma.rs_QUOTNDTL.Tables("RESULT").Rows(index).Item("qud_qutseq")
+                    For i As Integer = 0 To ma.rs_QUOTNDTL.Tables("RESULT").Rows.Count - 1
+                        If ma.rs_QUOTNDTL.Tables("RESULT").Rows(i)("qud_qutseq") = rs_Result.Tables("RESULT").Rows(index)("qud_qutseq") Then
+                            qutseq = i
+                        End If
+                    Next
                     ''check & update
                     'txtitmno_press
-                    temp_PckCstAmt = ma.rs_QUOTNDTL.Tables("RESULT").Rows(index).Item("qpe_pkgper")
-                    temp_ItmCommAmt = ma.rs_QUOTNDTL.Tables("RESULT").Rows(index).Item("qpe_icmper")
+                    temp_PckCstAmt = ma.rs_QUOTNDTL.Tables("RESULT").Rows(qutseq).Item("qpe_pkgper")
+                    temp_ItmCommAmt = ma.rs_QUOTNDTL.Tables("RESULT").Rows(qutseq).Item("qpe_icmper")
 
                     '''20130909 
                     ''' pack & color 
-                    temp_cboColCde_SelectedText = ma.rs_QUOTNDTL.Tables("RESULT").Rows(index).Item("qud_colcde")
+                    temp_cboColCde_SelectedText = ma.rs_QUOTNDTL.Tables("RESULT").Rows(qutseq).Item("qud_colcde")
 
-                    temp_cboPcking_SelectedText = ma.rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_untcde").ToString.Trim + " / " + _
-            ma.rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_inrqty").ToString.Trim + " / " + _
-            ma.rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_mtrqty").ToString.Trim + " / " + _
-            ma.rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_cft").ToString.Trim + " / " + _
-            ma.rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_cbm").ToString.Trim + " / " + _
-            ma.rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_ftyprctrm").ToString.Trim + " / " + _
-            ma.rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_prctrm").ToString.Trim + " / " + _
-            ma.rs_QUOTNDTL.Tables("RESULT").Rows(index)("qud_trantrm").ToString.Trim
+                    temp_cboPcking_SelectedText = ma.rs_QUOTNDTL.Tables("RESULT").Rows(qutseq)("qud_untcde").ToString.Trim + " / " + _
+            ma.rs_QUOTNDTL.Tables("RESULT").Rows(qutseq)("qud_inrqty").ToString.Trim + " / " + _
+            ma.rs_QUOTNDTL.Tables("RESULT").Rows(qutseq)("qud_mtrqty").ToString.Trim + " / " + _
+            ma.rs_QUOTNDTL.Tables("RESULT").Rows(qutseq)("qud_cft").ToString.Trim + " / " + _
+            ma.rs_QUOTNDTL.Tables("RESULT").Rows(qutseq)("qud_cbm").ToString.Trim + " / " + _
+            ma.rs_QUOTNDTL.Tables("RESULT").Rows(qutseq)("qud_ftyprctrm").ToString.Trim + " / " + _
+            ma.rs_QUOTNDTL.Tables("RESULT").Rows(qutseq)("qud_prctrm").ToString.Trim + " / " + _
+            ma.rs_QUOTNDTL.Tables("RESULT").Rows(qutseq)("qud_trantrm").ToString.Trim
 
 
                     '''seqno & cur_index
                     'ma.txtSeq = ma.rs_QUOTNDTL.Tables("RESULT").Rows(index).Item("qud_qutseq")
-                    ma.sReadingIndexQ = index
+                    ma.sReadingIndexQ = qutseq
 
                     If ma.rs_QUOTNDTL.Tables("RESULT").Rows(ma.sReadingIndexQ).Item("qud_creusr") = "~*ADD*~" Or rs_QUOTNDTL.Tables("RESULT").Rows(ma.sReadingIndexQ).Item("qud_creusr") = "~*NEW*~" Then
                         ma.rs_QUOTNDTL.Tables("RESULT").Rows(ma.sReadingIndexQ).Item("qud_creusr") = "~*NEW*~"
                     End If
-
-                    Dim qutseq As Integer
-                    '    qutseq = ma.rs_QUOTNDTL.Tables("RESULT").Rows(index).Item("qud_qutseq")
-                    qutseq = rs_Result.Tables("RESULT").DefaultView(index)("qud_qutseq")
-                    Call ma.display_Detail(qutseq)
+                    Call ma.display_Detail(ma.rs_QUOTNDTL.Tables("RESULT").Rows(qutseq)("qud_qutseq"))
 
                     '''update each item
 

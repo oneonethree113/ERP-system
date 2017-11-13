@@ -8005,7 +8005,7 @@ Me.gbPacking.TabStop = false
 'cbocusprc
 '
 Me.cbocusprc.FormattingEnabled = true
-Me.cbocusprc.Location = New System.Drawing.Point(203, 31)
+Me.cbocusprc.Location = New System.Drawing.Point(209, 32)
 Me.cbocusprc.Name = "cbocusprc"
 Me.cbocusprc.Size = New System.Drawing.Size(63, 20)
 Me.cbocusprc.TabIndex = 446

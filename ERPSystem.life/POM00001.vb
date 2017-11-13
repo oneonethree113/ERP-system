@@ -277,7 +277,7 @@
             End If
 
             mmdInsRow.Enabled = Enq_right_local 'True '*** Access Right used  - added by Tommy on 10 March 2002
-            mmdDelRow.Enabled = Del_right_local 'True '*** Access Right used  - added by Tommy on 10 March 2002
+            mmdDelRow.Enabled = Enq_right_local 'True '*** Access Right used  - added by Tommy on 10 March 2002
             mmdSave.Enabled = Enq_right_local 'True '*** Access Right used  - added by Tommy on 10 March 2002
 
         ElseIf Mode = "Save" Then

@@ -781,7 +781,7 @@ Public Class QUM00001
             Me.mmdDelete.Enabled = False
             Me.mmdCopy.Enabled = False
             Me.mmdFind.Enabled = True
-            Me.mmdClear.Enabled = True
+            Me.mmdClear.Enabled = False
 
             Me.mmdSearch.Enabled = True
 
@@ -9593,7 +9593,7 @@ Then
                                 mmdDelRow.Enabled = False
                             Else
                                 mmdInsRow.Enabled = Enq_right_local 'True
-                                mmdDelRow.Enabled = Del_right_local 'True
+                                mmdDelRow.Enabled = Enq_right_local 'True
                             End If
                         Else
                             If Microsoft.VisualBasic.Right(Trim(rs_QUOTNHDR.Tables("RESULT").Rows(0)("quh_cus1no").ToString), 8) <> "(Active)" Then
@@ -9601,12 +9601,12 @@ Then
                                 mmdDelRow.Enabled = False
                             Else
                                 mmdInsRow.Enabled = Enq_right_local 'True
-                                mmdDelRow.Enabled = Del_right_local 'True
+                                mmdDelRow.Enabled = Enq_right_local 'True
                             End If
                         End If
                     Else
                         mmdInsRow.Enabled = Enq_right_local
-                        mmdDelRow.Enabled = Del_right_local
+                        mmdDelRow.Enabled = Enq_right_local
                     End If
                     'Disable packing
                     cboPcking.Enabled = False
@@ -9693,7 +9693,7 @@ Then
     End Sub
 
     Public Sub txtItmNo_Press()
-
+        cbocusprc.Items.Clear()
         Dim temp_pack_string As String
 
         'for less messaging    
@@ -10341,7 +10341,8 @@ Then
                         ''20130903
                         If found_pack_incbo(temp_pack_string) = False Then
                             cboPcking.Items.Add(temp_pack_string)
-                            cbocusprc.Items.Add(rs_IMPRCINF_NewAddItem.Tables("RESULT").Rows(index1)("imu_cus1no").ToString)
+
+                            cbocusprc.Items.Add(rs_IMPRCINF_NewAddItem.Tables("RESULT").Rows(index1)("imu_cus1no").ToString) 
                         End If
 
                     End If
@@ -18278,8 +18279,8 @@ Then
 
 
                         gspStr = "sp_update_TOORDHDR_tbc '" & _
-    "T" & rs_select_quotation_tbc.Tables("RESULT").Rows(0)("qud_qutno").ToString & "','" & _
-    gsUsrID & "'"
+                            "T" & rs_select_quotation_tbc.Tables("RESULT").Rows(0)("qud_qutno").ToString & "','" & _
+                            gsUsrID & "'"
 
                         rtnLong = execute_SQLStatement(gspStr, rs_update_quotation_tbc, rtnStr)
 
@@ -18312,8 +18313,6 @@ Then
 
 
             txtMU.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mu")
-            'lblMUMin.Text = "(Min " + Format(round(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_mumin"), 2), "###,###,##0.00") + "%" + _
-            '                            " ; " + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_curcde").ToString + " $" + rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_muminprc").ToString + ")"
             refresh_lblMUMin()
 
             txtPckCstAmt.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qpe_pkgper")
@@ -18344,9 +18343,6 @@ Then
 
 
 
-
-            'obopacking
-            'save
 
         End If
 
@@ -21159,7 +21155,7 @@ Then
                 If Not IsDBNull(IsDBNull(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ)("qud_basprc"))) Then
 
                     If Split(rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_qutitmsts"), " - ")(0) = "W" _
-        And rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_apprve") = "N" Then
+                    And rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_apprve") = "N" Then
                         rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_qutitmsts") = "W - Wait for Approval"
                         txtQutItmSts.Text = rs_QUOTNDTL.Tables("RESULT").Rows(sReadingIndexQ).Item("qud_qutitmsts")
                     End If
@@ -21221,19 +21217,38 @@ Then
         'find the packing info
         If cboPcking.Text <> "" And cboPcking.Text <> " / 0 / 0 / 0 / 0 / / /" Then
             If Not rs_IMPCKINF.Tables("RESULT") Is Nothing Then
+                Dim fullMatchExist As Boolean = False
+
                 For index As Integer = 0 To rs_IMPCKINF.Tables("RESULT").Rows.Count - 1
                     If rs_IMPCKINF.Tables("RESULT").Rows(index)("ipi_pckunt").ToString = Split(cboPcking.Text, " / ")(0) And _
                        rs_IMPCKINF.Tables("RESULT").Rows(index)("ipi_inrqty").ToString = Split(cboPcking.Text, " / ")(1) And _
                        rs_IMPCKINF.Tables("RESULT").Rows(index)("ipi_mtrqty").ToString = Split(cboPcking.Text, " / ")(2) And _
-                       CDbl(rs_IMPCKINF.Tables("RESULT").Rows(index)("ipi_cft").ToString) = CDbl(Split(cboPcking.Text, " / ")(3)) And _
-                       CDbl(rs_IMPCKINF.Tables("RESULT").Rows(index)("ipi_cbm").ToString) = CDbl(Split(cboPcking.Text, " / ")(4)) And _
-                        rs_IMPCKINF.Tables("RESULT").Rows(index)("ipi_cus1no").ToString = cbocusprc.Items(cboPcking.SelectedIndex).ToString Then
+                        CDbl(rs_IMPCKINF.Tables("RESULT").Rows(index)("ipi_cft").ToString) = CDbl(Split(cboPcking.Text, " / ")(3)) And _
+                        CDbl(rs_IMPCKINF.Tables("RESULT").Rows(index)("ipi_cbm").ToString) = CDbl(Split(cboPcking.Text, " / ")(4)) And _
+                        rs_IMPCKINF.Tables("RESULT").Rows(index)("ipi_cus1no").ToString = cbocusprc.Items(cboPcking.SelectedIndex).ToString Then 'cbocusprc.Items(cboPcking.SelectedIndex).ToString Then
 
                         i = index
                         sReadingIndexP = i
+                        fullMatchExist = True
                         Exit For
                     End If
                 Next
+                If fullMatchExist = False Then 'CFT/CBM may be change
+
+                    For index As Integer = 0 To rs_IMPCKINF.Tables("RESULT").Rows.Count - 1
+                        If rs_IMPCKINF.Tables("RESULT").Rows(index)("ipi_pckunt").ToString = Split(cboPcking.Text, " / ")(0) And _
+                           rs_IMPCKINF.Tables("RESULT").Rows(index)("ipi_inrqty").ToString = Split(cboPcking.Text, " / ")(1) And _
+                           rs_IMPCKINF.Tables("RESULT").Rows(index)("ipi_mtrqty").ToString = Split(cboPcking.Text, " / ")(2) And _
+                            rs_IMPCKINF.Tables("RESULT").Rows(index)("ipi_cus1no").ToString = cbocusprc.Items(cboPcking.SelectedIndex).ToString Then
+                            'CDbl(rs_IMPCKINF.Tables("RESULT").Rows(index)("ipi_cft").ToString) = CDbl(Split(cboPcking.Text, " / ")(3)) And _
+                            'CDbl(rs_IMPCKINF.Tables("RESULT").Rows(index)("ipi_cbm").ToString) = CDbl(Split(cboPcking.Text, " / ")(4)) And _
+
+                            i = index
+                            sReadingIndexP = i
+                            Exit For
+                        End If
+                    Next
+                End If
             End If
 
             cboUM.Text = rs_IMPCKINF.Tables("RESULT").Rows(i)("ipi_pckunt")
@@ -22566,7 +22581,7 @@ Then
             mmdInsRow.Enabled = False
             mmdDelRow.Enabled = False
             mmdExit.Enabled = True
-            mmdClear.Enabled = True
+            mmdClear.Enabled = False
             mmdSearch.Enabled = True
             mmdFunction.Enabled = False
             tsiCIH.Enabled = False
@@ -23112,7 +23127,7 @@ Then
                     mmdDelRow.Enabled = False
                 Else
                     mmdInsRow.Enabled = Enq_right_local
-                    mmdDelRow.Enabled = Del_right_local
+                    mmdDelRow.Enabled = Enq_right_local
                     mmdInsRow.Enabled = False
                     mmdDelRow.Enabled = False
                 End If

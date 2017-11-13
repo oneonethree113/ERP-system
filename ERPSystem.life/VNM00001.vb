@@ -300,11 +300,7 @@ Public Class VNM00001
         format_cboVndFlag()
         txtVenNo.Enabled = True
 
-        If (Microsoft.VisualBasic.Left(cboVenSts.Text, 1) = "D" Or Microsoft.VisualBasic.Left(cboVenSts.Text, 1) = "A") And gsUsrRank <= 4 And Enq_right_local = True Then
-            chkDiCoTi.Visible = True
-        Else
-            chkDiCoTi.Visible = False
-        End If
+
 
         txtVenNo.Select()
     End Sub
@@ -1193,6 +1189,11 @@ Public Class VNM00001
 
             format_itmnat()
 
+            If (Microsoft.VisualBasic.Left(cboVenSts.Text, 1) = "D" Or Microsoft.VisualBasic.Left(cboVenSts.Text, 1) = "A") And gsUsrRank <= 4 And Enq_right_local = True Then
+                chkDiCoTi.Visible = True
+            Else
+                chkDiCoTi.Visible = False
+            End If
 
         End If
 
@@ -4362,12 +4363,12 @@ Public Class VNM00001
 
         If Add_flag = True Then
 
-            gspStr = "sp_insert_VNBASINF '" & vbi_cocde & "','" & vbi_venno & "','" & vbi_vensts & "','" & vbi_vensna & "','" & _
+            gspStr = "sp_insert_VNBASINF '" & vbi_cocde & "','" & vbi_venno & "','" & vbi_vensts & "',N'" & vbi_vensna & "','" & _
                    vbi_vennam & "','" & vbi_venrat & "','" & vbi_prctrm & "','" & vbi_paytrm & "','" & vbi_curcde & "'," & vbi_discnt & ",'" & _
                    vbi_orgven & "','" & vbi_rmk & "'," & vbi_ledtim & "," & vbi_tsttim & "," & vbi_bufday & ",'" & vbi_venweb & _
                    "','" & vbi_ventyp & "','" & vbi_moqchg & "','" & vbi_frurcde & "'," & vbi_framt & ",'" _
                    & vci_adr & "','" & vci_stt & "','" & vci_city & "','" & vci_town & "','" & vci_cty & _
-                    "','" & vci_zip & "','" & vbi_venchnnam & "','" & vci_chnadr & "','" & vbi_venfty & "','" & vbi_ventranflg & "','" & vbi_venflag & "','" & gsUsrID & "'"
+                    "','" & vci_zip & "',N'" & vbi_venchnnam & "','" & vci_chnadr & "','" & vbi_venfty & "','" & vbi_ventranflg & "','" & vbi_venflag & "','" & gsUsrID & "'"
 
             rtnLong = execute_SQLStatement(gspStr, rs, rtnStr)
             If rtnLong <> RC_SUCCESS Then
@@ -4378,11 +4379,11 @@ Public Class VNM00001
 
         Else
 
-            gspStr = "sp_update_VNBASINF '" & vbi_cocde & "','" & vbi_venno & "','" & vbi_vensts & "','" & vbi_vensna & "','" & _
+            gspStr = "sp_update_VNBASINF '" & vbi_cocde & "','" & vbi_venno & "','" & vbi_vensts & "',N'" & vbi_vensna & "','" & _
                   vbi_vennam & "','" & vbi_venrat & "','" & vbi_prctrm & "','" & vbi_paytrm & "','" & vbi_curcde & "'," & vbi_discnt & ",'" & _
                   vbi_orgven & "','" & vbi_rmk & "'," & vbi_ledtim & "," & vbi_tsttim & "," & vbi_bufday & ",'" & vbi_venweb & _
                   "','" & vbi_ventyp & "','" & vbi_moqchg & "','" & vbi_frurcde & "'," & vbi_framt & _
-                   ",'" & vbi_venchnnam & "','" & vbi_venfty & "','" & vbi_ventranflg & "','" & vbi_venflag & "','" & gsUsrID & "'"
+                   ",N'" & vbi_venchnnam & "','" & vbi_venfty & "','" & vbi_ventranflg & "','" & vbi_venflag & "','" & gsUsrID & "'"
 
             rtnLong = execute_SQLStatement(gspStr, rs, rtnStr)
             If rtnLong <> RC_SUCCESS Then
