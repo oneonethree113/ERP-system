@@ -12318,18 +12318,7 @@ Public Class IMM00001
                         e.Cancel = True
                         Exit Sub
                     End If
-
-                    'If IsDate(txtPanCPEffDate.Text) And IsDate(txtPanCPExpDate.Text) Then
-                    '    Dim effdate As DateTime
-                    '    Dim expdate As DateTime
-                    '    effdate = txtPanCPEffDate.Text
-                    '    expdate = txtPanCPExpDate.Text
-                    '    If effdate > expdate Then
-                    '        MsgBox("Effective Date greater than Expiry Date!")
-                    '        e.Cancel = True
-                    '    End If
-                    'End If
-
+					
                     If IsDate(row.Cells(dgCostPrice_imu_expdat).EditedFormattedValue.ToString.Trim) Then
                         Dim effdate As DateTime
                         Dim expdate As DateTime
@@ -12346,6 +12335,7 @@ Public Class IMM00001
                         e.Cancel = True
                         Exit Sub
                     End If
+					
                     If IsDate(row.Cells(dgCostPrice_imu_effdat).EditedFormattedValue.ToString.Trim) Then
                         Dim effdate As DateTime
                         Dim expdate As DateTime
