@@ -630,10 +630,13 @@ Public Class IMR00036
         txt_S_CoCde.Enabled = False
         cmdtlCocde.Enabled = True
 
-        txt_S_PriCustAll.Enabled = False
+        'txt_S_PriCustAll.Enabled = False
+        'Request enabled at 2017-11-21
+        txt_S_PriCustAll.Enabled = True
         cmdtlCus1no.Enabled = True
 
-        txt_S_SecCustAll.Enabled = False
+        'txt_S_SecCustAll.Enabled = False
+        txt_S_SecCustAll.Enabled = True
         cmdtlCus2no.Enabled = True
 
         txt_S_CustPONo.Enabled = True

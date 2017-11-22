@@ -330,6 +330,7 @@ Public Class ERP00000new
     Friend WithEvents btnToShort As System.Windows.Forms.Button
     Friend WithEvents btnNewMenuEnableStyle As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents smiQCM10 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents smiSCR04 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TopMenuBarERPOnToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ERP00000new))
@@ -439,6 +440,7 @@ Public Class ERP00000new
         Me.ToolStripSeparator63 = New System.Windows.Forms.ToolStripSeparator
         Me.smiSCR01 = New System.Windows.Forms.ToolStripMenuItem
         Me.smiSCR03 = New System.Windows.Forms.ToolStripMenuItem
+        Me.smiSCR04 = New System.Windows.Forms.ToolStripMenuItem
         Me.smiIMR09 = New System.Windows.Forms.ToolStripMenuItem
         Me.smiIMR24 = New System.Windows.Forms.ToolStripMenuItem
         Me.smiIMR25 = New System.Windows.Forms.ToolStripMenuItem
@@ -1227,7 +1229,7 @@ Public Class ERP00000new
         '
         'smiSCM
         '
-        Me.smiSCM.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiSCM01, Me.smiSCM04, Me.smiSCM07, Me.smiSCM03, Me.smiSCM06, Me.ToolStripSeparator63, Me.smiSCR01, Me.smiSCR03, Me.smiIMR09, Me.smiIMR24, Me.smiIMR25, Me.smiIMR26, Me.smiIMR29, Me.smiIMR30, Me.smiIMR31, Me.smiIMR36, Me.smiIMR32})
+        Me.smiSCM.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smiSCM01, Me.smiSCM04, Me.smiSCM07, Me.smiSCM03, Me.smiSCM06, Me.ToolStripSeparator63, Me.smiSCR01, Me.smiSCR03, Me.smiSCR04, Me.smiIMR09, Me.smiIMR24, Me.smiIMR25, Me.smiIMR26, Me.smiIMR29, Me.smiIMR30, Me.smiIMR31, Me.smiIMR36, Me.smiIMR32})
         Me.smiSCM.Name = "smiSCM"
         Me.smiSCM.Size = New System.Drawing.Size(40, 16)
         Me.smiSCM.Text = "Sales"
@@ -1278,6 +1280,12 @@ Public Class ERP00000new
         Me.smiSCR03.Name = "smiSCR03"
         Me.smiSCR03.Size = New System.Drawing.Size(329, 22)
         Me.smiSCR03.Text = "SCR03 - Print Cancellation SC with BOM Item"
+        '
+        'smiSCR04
+        '
+        Me.smiSCR04.Name = "smiSCR04"
+        Me.smiSCR04.Size = New System.Drawing.Size(329, 22)
+        Me.smiSCR04.Text = "SCR04 - Sales Confirmation Approval Report"
         '
         'smiIMR09
         '
@@ -3087,7 +3095,7 @@ Public Class ERP00000new
 
     End Sub
 
-  
+
 
     Private Sub timeout_Trigger()
         timeout.Enabled = False
@@ -6270,6 +6278,10 @@ Public Class ERP00000new
     End Sub
 
     Private Sub smiQCM10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles smiQCM10.Click
+        showForm2(sender, Me)
+    End Sub
+
+    Private Sub smiSCR04_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles smiSCR04.Click
         showForm2(sender, Me)
     End Sub
 End Class

@@ -16098,14 +16098,47 @@ err_handle_MOQSC:
     End Sub
 
     Private Sub txtRemark_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtRemark.GotFocus
-        'sender.BringtoFront()
-        'sender.Height = sender.Height + 60
-        ''sender.Location = New Point(sender.Location.X, sender.Location.Y - 70)
+        sender.BringtoFront()
+        sender.Height = sender.Height + 90
+        sender.Location = New Point(sender.Location.X, sender.Location.Y - 90)
     End Sub
 
     Private Sub txtRemark_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtRemark.LostFocus
-        'sender.Height = sender.Height - 60
-        ''sender.Location = New Point(sender.Location.X, sender.Location.Y + 70)
+        sender.Height = sender.Height - 90
+        sender.Location = New Point(sender.Location.X, sender.Location.Y + 90)
+    End Sub
+
+    Private Sub txtSCRemark_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtSCRemark.GotFocus
+        sender.BringtoFront()
+        sender.Height = sender.Height + 90
+        sender.Location = New Point(sender.Location.X, sender.Location.Y - 90)
+    End Sub
+
+    Private Sub txtSCRemark_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtSCRemark.LostFocus
+        sender.Height = sender.Height - 90
+        sender.Location = New Point(sender.Location.X, sender.Location.Y + 90)
+    End Sub
+
+    Private Sub txtDtlSCRmk_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtDtlSCRmk.GotFocus
+        sender.BringtoFront()
+        sender.Height = sender.Height + 90
+        sender.Location = New Point(sender.Location.X, sender.Location.Y - 90)
+    End Sub
+
+    Private Sub txtDtlSCRmk_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtDtlSCRmk.LostFocus
+        sender.Height = sender.Height - 90
+        sender.Location = New Point(sender.Location.X, sender.Location.Y + 90)
+    End Sub
+
+    Private Sub txtDtlPORmk_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtDtlPORmk.GotFocus
+        sender.BringtoFront()
+        sender.Height = sender.Height + 90
+        sender.Location = New Point(sender.Location.X, sender.Location.Y - 90)
+    End Sub
+
+    Private Sub txtDtlPORmk_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtDtlPORmk.LostFocus
+        sender.Height = sender.Height - 90
+        sender.Location = New Point(sender.Location.X, sender.Location.Y + 90)
     End Sub
 
     Private Sub txtEngDsc_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtEngDsc.GotFocus, txtChiDsc.GotFocus, txtEngRmk.GotFocus

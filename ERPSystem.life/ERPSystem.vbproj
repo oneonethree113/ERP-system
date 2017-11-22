@@ -2241,6 +2241,12 @@
       <DependentUpon>SCR00003Rpt.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="SCR00004.designer.vb">
+      <DependentUpon>SCR00004.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SCR00004.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SHM00001.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -3802,6 +3808,10 @@
     <EmbeddedResource Include="SCR00003Rpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>SCR00003Rpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCR00004.resx">
+      <DependentUpon>SCR00004.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="SHM00001.resx">
       <DependentUpon>SHM00001.vb</DependentUpon>

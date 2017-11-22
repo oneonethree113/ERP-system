@@ -4363,12 +4363,12 @@ Public Class VNM00001
 
         If Add_flag = True Then
 
-            gspStr = "sp_insert_VNBASINF '" & vbi_cocde & "','" & vbi_venno & "','" & vbi_vensts & "',N'" & vbi_vensna & "','" & _
+            gspStr = "sp_insert_VNBASINF '" & vbi_cocde & "','" & vbi_venno & "','" & vbi_vensts & "','" & vbi_vensna & "','" & _
                    vbi_vennam & "','" & vbi_venrat & "','" & vbi_prctrm & "','" & vbi_paytrm & "','" & vbi_curcde & "'," & vbi_discnt & ",'" & _
                    vbi_orgven & "','" & vbi_rmk & "'," & vbi_ledtim & "," & vbi_tsttim & "," & vbi_bufday & ",'" & vbi_venweb & _
                    "','" & vbi_ventyp & "','" & vbi_moqchg & "','" & vbi_frurcde & "'," & vbi_framt & ",'" _
                    & vci_adr & "','" & vci_stt & "','" & vci_city & "','" & vci_town & "','" & vci_cty & _
-                    "','" & vci_zip & "',N'" & vbi_venchnnam & "','" & vci_chnadr & "','" & vbi_venfty & "','" & vbi_ventranflg & "','" & vbi_venflag & "','" & gsUsrID & "'"
+                    "','" & vci_zip & "','" & vbi_venchnnam & "','" & vci_chnadr & "','" & vbi_venfty & "','" & vbi_ventranflg & "','" & vbi_venflag & "','" & gsUsrID & "'"
 
             rtnLong = execute_SQLStatement(gspStr, rs, rtnStr)
             If rtnLong <> RC_SUCCESS Then
@@ -4379,11 +4379,11 @@ Public Class VNM00001
 
         Else
 
-            gspStr = "sp_update_VNBASINF '" & vbi_cocde & "','" & vbi_venno & "','" & vbi_vensts & "',N'" & vbi_vensna & "','" & _
+            gspStr = "sp_update_VNBASINF '" & vbi_cocde & "','" & vbi_venno & "','" & vbi_vensts & "','" & vbi_vensna & "','" & _
                   vbi_vennam & "','" & vbi_venrat & "','" & vbi_prctrm & "','" & vbi_paytrm & "','" & vbi_curcde & "'," & vbi_discnt & ",'" & _
                   vbi_orgven & "','" & vbi_rmk & "'," & vbi_ledtim & "," & vbi_tsttim & "," & vbi_bufday & ",'" & vbi_venweb & _
                   "','" & vbi_ventyp & "','" & vbi_moqchg & "','" & vbi_frurcde & "'," & vbi_framt & _
-                   ",N'" & vbi_venchnnam & "','" & vbi_venfty & "','" & vbi_ventranflg & "','" & vbi_venflag & "','" & gsUsrID & "'"
+                   ",'" & vbi_venchnnam & "','" & vbi_venfty & "','" & vbi_ventranflg & "','" & vbi_venflag & "','" & gsUsrID & "'"
 
             rtnLong = execute_SQLStatement(gspStr, rs, rtnStr)
             If rtnLong <> RC_SUCCESS Then
